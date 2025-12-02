@@ -1,0 +1,284 @@
+{
+    "problems": [
+{
+    "id": null,
+    "title": "Rotate Array by 1 Position Right",
+    "description": "Problem Statement\nYou are given an array of N integers. Your task is to rotate the array to the right by 1 position.\nAfter rotation, the last element of the array moves to the first position and all other elements shift to the right by one place.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the array elements after rotating by 1 position to the right.\n\nExplanation\nFor example, if the array is [1 2 3 4 5], after one right rotation it becomes [5 1 2 3 4].",
+    "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\n5 1 2 3 4",
+    "constraints": "1 ≤ N ≤ 10^5\nArray elements may be negative or positive\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+    "hints": 1,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "difficulty": 1,
+    "subdomainId": 2019,
+    "streamId": null,
+    "testCases": [
+      { "id": null, "problemId": null, "input": "5\n1 2 3 4 5", "expectedOutput": "5 1 2 3 4", "problemTitle": "Rotate Array by 1 Position Right" },
+      { "id": null, "problemId": null, "input": "4\n10 20 30 40", "expectedOutput": "40 10 20 30", "problemTitle": "Rotate Array by 1 Position Right" },
+      { "id": null, "problemId": null, "input": "1\n7", "expectedOutput": "7", "problemTitle": "Rotate Array by 1 Position Right" },
+      { "id": null, "problemId": null, "input": "6\n-1 -2 -3 -4 -5 -6", "expectedOutput": "-6 -1 -2 -3 -4 -5", "problemTitle": "Rotate Array by 1 Position Right" }
+    ],
+    "starterCodes": [
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "def rotateArray(arr, n):\n    # TODO: Rotate array by 1 position to the right\n    return arr\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    result = rotateArray(arr, n)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+        "problemTitle": "Rotate Array by 1 Position Right"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass Result {\n    public static int[] rotateArray(int[] arr, int n) {\n        // TODO: Rotate array by 1 position to the right\n        return arr;\n    }\n}\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0;i<n;i++) arr[i] = sc.nextInt();\n        int[] ans = Result.rotateArray(arr, n);\n        for(int i=0;i<n;i++) System.out.print(ans[i] + (i+1<n?\" \":\"\"));\n    }\n}",
+        "problemTitle": "Rotate Array by 1 Position Right"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "function rotateArray(arr, n) {\n    // TODO: Rotate array by 1 position to the right\n    return arr;\n}\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(rotateArray(arr, n).join(\" \"));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Rotate Array by 1 Position Right"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nvector<long long> rotateArray(vector<long long> arr, int n) {\n    // TODO: Rotate array by 1 position to the right\n    return arr;\n}\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<long long> arr(n);\n    for(int i=0;i<n;i++) cin >> arr[i];\n    vector<long long> ans = rotateArray(arr, n);\n    for(int i=0;i<n;i++) cout << ans[i] << (i+1<n?\" \":\"\");\n    return 0;\n}",
+        "problemTitle": "Rotate Array by 1 Position Right"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\nvoid rotateArray(long long arr[], int n) {\n    // TODO: Rotate array by 1 position to the right\n}\nint main(){\n    int n; scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i=0;i<n;i++) scanf(\"%lld\", &arr[i]);\n    rotateArray(arr, n);\n    for(int i=0;i<n;i++) printf(\"%lld%s\", arr[i], (i+1<n?\" \":\"\"));\n    return 0;\n}",
+        "problemTitle": "Rotate Array by 1 Position Right"
+      }
+    ],
+    "hintsList": [
+      "Save the last element, shift elements to the right, place saved value at index 0."
+    ]
+  },
+  {
+    "id": null,
+    "title": "Rotate Array by 1 Position Left",
+    "description": "Problem Statement\nYou are given an array of N integers. Your task is to rotate the array to the left by 1 position.\nAfter rotation, the first element moves to the last position, and all other elements shift to the left by one place.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the array elements after rotating by 1 position to the left.\n\nExplanation\nFor example, if the array is [1 2 3 4 5], after one left rotation it becomes [2 3 4 5 1].",
+    "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\n2 3 4 5 1",
+    "constraints": "1 ≤ N ≤ 100000\nArray elements may be negative or positive\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+    "hints": 1,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "difficulty": 1,
+    "subdomainId": 2019,
+    "streamId": null,
+  
+    "testCases": [
+      { "input": "5\n1 2 3 4 5", "expectedOutput": "2 3 4 5 1", "problemTitle": "Rotate Array by 1 Position Left" },
+      { "input": "4\n10 20 30 40", "expectedOutput": "20 30 40 10", "problemTitle": "Rotate Array by 1 Position Left" },
+      { "input": "1\n7", "expectedOutput": "7", "problemTitle": "Rotate Array by 1 Position Left" },
+      { "input": "6\n-1 -2 -3 -4 -5 -6", "expectedOutput": "-2 -3 -4 -5 -6 -1", "problemTitle": "Rotate Array by 1 Position Left" },
+      { "input": "5\n9 8 7 6 5", "expectedOutput": "8 7 6 5 9", "problemTitle": "Rotate Array by 1 Position Left" }
+    ],
+  
+    "starterCodes": [
+      {
+        "language": 1,
+        "code": "def rotateArray(arr, n):\n    # TODO: Rotate array by 1 position to the left\n    return arr\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    result = rotateArray(arr, n)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+        "problemTitle": "Rotate Array by 1 Position Left"
+      },
+      {
+        "language": 2,
+        "code": "import java.util.*;\nclass Result {\n    public static int[] rotateArray(int[] arr, int n) {\n        // TODO: Rotate array by 1 position to the left\n        return arr;\n    }\n}\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0;i<n;i++) arr[i] = sc.nextInt();\n        int[] ans = Result.rotateArray(arr, n);\n        for(int i=0;i<n;i++) System.out.print(ans[i] + (i+1<n?\" \":\"\"));\n    }\n}",
+        "problemTitle": "Rotate Array by 1 Position Left"
+      },
+      {
+        "language": 3,
+        "code": "function rotateArray(arr, n) {\n    // TODO: Rotate array by 1 position to the left\n    return arr;\n}\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(rotateArray(arr, n).join(\" \"));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Rotate Array by 1 Position Left"
+      },
+      {
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nvector<long long> rotateArray(vector<long long> arr, int n) {\n    // TODO: Rotate array by 1 position to the left\n    return arr;\n}\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<long long> arr(n);\n    for(int i=0;i<n;i++) cin >> arr[i];\n    vector<long long> ans = rotateArray(arr, n);\n    for(int i=0;i<n;i++) cout << ans[i] << (i+1<n?\" \":\"\");\n    return 0;\n}",
+        "problemTitle": "Rotate Array by 1 Position Left"
+      },
+      {
+        "language": 5,
+        "code": "#include <stdio.h>\nvoid rotateArray(long long arr[], int n) {\n    // TODO: Rotate array by 1 position to the left\n}\nint main(){\n    int n; scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i=0;i<n;i++) scanf(\"%lld\", &arr[i]);\n    rotateArray(arr, n);\n    for(int i=0;i<n;i++) printf(\"%lld%s\", arr[i], (i+1<n?\" \":\"\"));\n    return 0;\n}",
+        "problemTitle": "Rotate Array by 1 Position Left"
+      }
+    ],
+  
+    "hintsList": [
+      "Store the first element, shift all elements left, and place stored value at the last index."
+    ]
+  },
+  {
+    "id": null,
+    "title": "Count Duplicates in an Array",
+    "description": "Problem Statement\nYou are given an array of N integers. Your task is to count how many distinct elements in the array appear more than once (duplicates). Print the count of unique duplicate values.\nFor example, in the array [1 2 2 3 3 3 4], duplicates are {2, 3}. So the answer is 2.\n\nTime Complexity\nUse a hashing frequency method. It runs in O(N) time and uses O(N) extra space.\n\nInput Format\nThe first line contains an integer N (size of array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint a single integer representing the number of distinct duplicate elements.\n\nExplanation Example\nInput: 7\n1 2 2 3 3 3 4\nDuplicate elements are: 2, 3\nCount = 2",
+    "examples": "Sample Input\n7\n1 2 2 3 3 3 4\n\nSample Output\n2",
+    "constraints": "1 ≤ N ≤ 100000\nValues may be negative or positive\nExpected time complexity: O(N)",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "difficulty": 1,
+    "subdomainId": 2019,
+    "streamId": null,
+  
+    "testCases": [
+      { "input": "7\n1 2 2 3 3 3 4", "expectedOutput": "2", "problemTitle": "Count Duplicates in an Array" },
+      { "input": "5\n1 2 3 4 5", "expectedOutput": "0", "problemTitle": "Count Duplicates in an Array" },
+      { "input": "8\n5 5 5 5 7 7 8 9", "expectedOutput": "2", "problemTitle": "Count Duplicates in an Array" },
+      { "input": "6\n-1 -1 -2 -2 -3 -3", "expectedOutput": "3", "problemTitle": "Count Duplicates in an Array" },
+      { "input": "1\n10", "expectedOutput": "0", "problemTitle": "Count Duplicates in an Array" }
+    ],
+  
+    "starterCodes": [
+      {
+        "language": 1,
+        "code": "def countDuplicates(arr, n):\n    # TODO: Count distinct elements that appear more than once\n    return 0\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    result = countDuplicates(arr, n)\n    print(result)\n\nif __name__ == '__main__':\n    solve()",
+        "problemTitle": "Count Duplicates in an Array"
+      },
+      {
+        "language": 2,
+        "code": "import java.util.*;\nclass Result {\n    public static int countDuplicates(int[] arr, int n) {\n        // TODO: Count distinct elements that appear more than once\n        return 0;\n    }\n}\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0;i<n;i++) arr[i] = sc.nextInt();\n        int ans = Result.countDuplicates(arr, n);\n        System.out.print(ans);\n    }\n}",
+        "problemTitle": "Count Duplicates in an Array"
+      },
+      {
+        "language": 3,
+        "code": "function countDuplicates(arr, n) {\n    // TODO: Count distinct elements that appear more than once\n    return 0;\n}\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(countDuplicates(arr, n));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Count Duplicates in an Array"
+      },
+      {
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nint countDuplicates(vector<long long> arr, int n) {\n    // TODO: Count distinct elements that appear more than once\n    return 0;\n}\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<long long> arr(n);\n    for(int i=0;i<n;i++) cin >> arr[i];\n    int ans = countDuplicates(arr, n);\n    cout << ans;\n    return 0;\n}",
+        "problemTitle": "Count Duplicates in an Array"
+      },
+      {
+        "language": 5,
+        "code": "#include <stdio.h>\nint countDuplicates(long long arr[], int n) {\n    // TODO: Count distinct elements that appear more than once\n    return 0;\n}\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i=0;i<n;i++) scanf(\"%lld\", &arr[i]);\n    int ans = countDuplicates(arr, n);\n    printf(\"%d\", ans);\n    return 0;\n}",
+        "problemTitle": "Count Duplicates in an Array"
+      }
+    ],
+  
+    "hintsList": [
+      "Use a hashmap or dictionary to store frequency of each element.",
+      "Count only elements having frequency greater than 1."
+    ]
+  },
+  {
+    "id": null,
+    "title": "Check if Array Contains Duplicate",
+    "description": "Problem Statement\nYou are given an array of N integers. Your task is to check whether the array contains any duplicate value.\nIf any element appears more than once, print \"YES\". Otherwise print \"NO\".\n\nTime Complexity\nThe optimal solution uses a hash set and runs in O(N) time with O(N) extra space.\n\nInput Format\nThe first line contains an integer N (size of array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint YES if duplicates exist, otherwise print NO.\n\nExplanation Example\nInput:\n6\n1 2 3 4 1 5\nOutput:\nYES\nBecause the value 1 appears more than once.",
+    "examples": "Sample Input\n6\n1 2 3 4 1 5\n\nSample Output\nYES",
+    "constraints": "1 ≤ N ≤ 100000\nValues may be negative or positive\nExpected time complexity: O(N)",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "difficulty": 1,
+    "subdomainId": 2019,
+    "streamId": null,
+  
+    "testCases": [
+      { "input": "6\n1 2 3 4 1 5", "expectedOutput": "YES", "problemTitle": "Check if Array Contains Duplicate" },
+      { "input": "5\n10 20 30 40 50", "expectedOutput": "NO", "problemTitle": "Check if Array Contains Duplicate" },
+      { "input": "8\n7 7 7 7 7 7 7 7", "expectedOutput": "YES", "problemTitle": "Check if Array Contains Duplicate" },
+      { "input": "4\n-1 -2 -3 -1", "expectedOutput": "YES", "problemTitle": "Check if Array Contains Duplicate" },
+      { "input": "1\n100", "expectedOutput": "NO", "problemTitle": "Check if Array Contains Duplicate" }
+    ],
+  
+    "starterCodes": [
+      {
+        "language": 1,
+        "code": "def containsDuplicate(arr, n):\n    # TODO: Return YES if duplicates exist otherwise NO\n    return \"NO\"\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    result = containsDuplicate(arr, n)\n    print(result)\n\nif __name__ == '__main__':\n    solve()",
+        "problemTitle": "Check if Array Contains Duplicate"
+      },
+      {
+        "language": 2,
+        "code": "import java.util.*;\nclass Result {\n    public static String containsDuplicate(int[] arr, int n) {\n        // TODO: Return YES if duplicates exist otherwise NO\n        return \"NO\";\n    }\n}\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0;i<n;i++) arr[i] = sc.nextInt();\n        String ans = Result.containsDuplicate(arr, n);\n        System.out.print(ans);\n    }\n}",
+        "problemTitle": "Check if Array Contains Duplicate"
+      },
+      {
+        "language": 3,
+        "code": "function containsDuplicate(arr, n) {\n    // TODO: Return YES if duplicates exist otherwise NO\n    return \"NO\";\n}\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(containsDuplicate(arr, n));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Check if Array Contains Duplicate"
+      },
+      {
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstring containsDuplicate(vector<long long> arr, int n) {\n    // TODO: Return YES if duplicates exist otherwise NO\n    return \"NO\";\n}\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<long long> arr(n);\n    for(int i=0;i<n;i++) cin >> arr[i];\n    string ans = containsDuplicate(arr, n);\n    cout << ans;\n    return 0;\n}",
+        "problemTitle": "Check if Array Contains Duplicate"
+      },
+      {
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <string.h>\nchar* containsDuplicate(long long arr[], int n) {\n    // TODO: Return YES if duplicates exist otherwise NO\n    return \"NO\";\n}\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i=0;i<n;i++) scanf(\"%lld\", &arr[i]);\n    printf(\"%s\", containsDuplicate(arr, n));\n    return 0;\n}",
+        "problemTitle": "Check if Array Contains Duplicate"
+      }
+    ],
+  
+    "hintsList": [
+      "Use a set to track visited elements.",
+      "Stop early when any element repeats."
+    ]
+  },
+  {
+    "id": null,
+    "title": "Find Pair with Given Sum (Brute Force)",
+    "description": "Problem Statement\nYou are given an array of N integers and a target value K. Your task is to determine whether there exists a pair of elements in the array whose sum equals K using a brute-force approach.\nIf such a pair exists, print YES, otherwise print NO.\n\nBrute Force Approach\nCheck all possible pairs using two nested loops and compare their sum with K.\n\nTime Complexity\nThe brute force solution checks all pairs, resulting in O(N^2) time complexity.\nSpace Complexity is O(1).\n\nInput Format\nThe first line contains an integer N (size of array).\nThe second line contains N space-separated integers.\nThe third line contains an integer K (target sum).\n\nOutput Format\nPrint YES if a valid pair exists, otherwise print NO.\n\nExplanation Example\nInput:\n5\n1 2 3 4 5\n6\nPossible pairs: (1,5), (2,4), etc. Pair (1,5) = 6 so output is YES.",
+    "examples": "Sample Input\n5\n1 2 3 4 5\n6\n\nSample Output\nYES",
+    "constraints": "1 ≤ N ≤ 10000\nArray values may be negative or positive\nExpected time complexity: O(N^2)",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "difficulty": 1,
+    "subdomainId": 2019,
+    "streamId": null,
+  
+    "testCases": [
+      { "input": "5\n1 2 3 4 5\n6", "expectedOutput": "YES", "problemTitle": "Find Pair with Given Sum (Brute Force)" },
+      { "input": "4\n10 20 30 40\n100", "expectedOutput": "NO", "problemTitle": "Find Pair with Given Sum (Brute Force)" },
+      { "input": "6\n-1 -2 -3 4 5 6\n3", "expectedOutput": "YES", "problemTitle": "Find Pair with Given Sum (Brute Force)" },
+      { "input": "3\n5 5 5\n15", "expectedOutput": "NO", "problemTitle": "Find Pair with Given Sum (Brute Force)" },
+      { "input": "6\n0 1 2 3 4 5\n9", "expectedOutput": "YES", "problemTitle": "Find Pair with Given Sum (Brute Force)" }
+    ],
+  
+    "starterCodes": [
+      {
+        "language": 1,
+        "code": "def findPair(arr, n, k):\n    # TODO: Return YES if any pair sum equals k, else NO using brute force\n    return \"NO\"\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    k = int(input())\n    result = findPair(arr, n, k)\n    print(result)\n\nif __name__ == '__main__':\n    solve()",
+        "problemTitle": "Find Pair with Given Sum (Brute Force)"
+      },
+      {
+        "language": 2,
+        "code": "import java.util.*;\nclass Result {\n    public static String findPair(int[] arr, int n, int k) {\n        // TODO: Return YES if any pair sum equals k, else NO using brute force\n        return \"NO\";\n    }\n}\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0;i<n;i++) arr[i] = sc.nextInt();\n        int k = sc.nextInt();\n        String ans = Result.findPair(arr, n, k);\n        System.out.print(ans);\n    }\n}",
+        "problemTitle": "Find Pair with Given Sum (Brute Force)"
+      },
+      {
+        "language": 3,
+        "code": "function findPair(arr, n, k) {\n    // TODO: Return YES if any pair sum equals k, else NO using brute force\n    return \"NO\";\n}\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const arr = lines[1].split(\" \").map(Number);\n    const k = parseInt(lines[2]);\n    console.log(findPair(arr, n, k));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Find Pair with Given Sum (Brute Force)"
+      },
+      {
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstring findPair(vector<long long> arr, int n, int k) {\n    // TODO: Return YES if any pair sum equals k, else NO using brute force\n    return \"NO\";\n}\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, k;\n    cin >> n;\n    vector<long long> arr(n);\n    for(int i=0;i<n;i++) cin >> arr[i];\n    cin >> k;\n    string ans = findPair(arr, n, k);\n    cout << ans;\n    return 0;\n}",
+        "problemTitle": "Find Pair with Given Sum (Brute Force)"
+      },
+      {
+        "language": 5,
+        "code": "#include <stdio.h>\nchar* findPair(long long arr[], int n, int k) {\n    // TODO: Return YES if any pair sum equals k, else NO using brute force\n    return \"NO\";\n}\nint main(){\n    int n, k;\n    scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i=0;i<n;i++) scanf(\"%lld\", &arr[i]);\n    scanf(\"%d\", &k);\n    printf(\"%s\", findPair(arr, n, k));\n    return 0;\n}",
+        "problemTitle": "Find Pair with Given Sum (Brute Force)"
+      }
+    ],
+  
+    "hintsList": [
+      "Use nested loops to check every possible pair.",
+      "Stop early when one valid pair is found."
+    ]
+  }
+  
+    
+
+
+]
+}
+
+  

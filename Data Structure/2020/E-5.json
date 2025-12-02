@@ -1,0 +1,280 @@
+{
+  "problems": [
+   {
+  "id": null,
+  "title": "Create and Display a Singly Linked List (SLL)",
+  "description": "Problem Statement\nYou are given N integers. Your task is to create a Singly Linked List (SLL) by inserting elements at the end. After creation, display the linked list elements.\n\nTime Complexity\nCreating the list by insertion at end and displaying takes O(N) time.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the elements of the linked list separated by space.\n\nExample\nInput:\n5\n10 20 30 40 50\nOutput:\n10 20 30 40 50\nExplanation: Insert elements at end and then display final linked list.",
+  "examples": "Sample Input\n5\n10 20 30 40 50\n\nSample Output\n10 20 30 40 50",
+  "constraints": "1 ≤ N ≤ 100000\nValues may be negative or positive\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "difficulty": 1,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n10 20 30 40 50", "expectedOutput": "10 20 30 40 50", "problemTitle": "Create and Display a Singly Linked List (SLL)" },
+    { "input": "4\n1 2 3 4", "expectedOutput": "1 2 3 4", "problemTitle": "Create and Display a Singly Linked List (SLL)" },
+    { "input": "1\n99", "expectedOutput": "99", "problemTitle": "Create and Display a Singly Linked List (SLL)" },
+    { "input": "6\n5 5 5 5 5 5", "expectedOutput": "5 5 5 5 5 5", "problemTitle": "Create and Display a Singly Linked List (SLL)" },
+    { "input": "3\n-1 0 1", "expectedOutput": "-1 0 1", "problemTitle": "Create and Display a Singly Linked List (SLL)" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef createLinkedList(arr, n):\n    # TODO: Insert nodes at end and return head\n    return None\n\ndef display(head):\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    head = createLinkedList(arr, n)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Create and Display a Singly Linked List (SLL)"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node {\n    int data;\n    Node next;\n    Node(int d){ data=d; next=null; }\n}\nclass Result {\n    public static Node createLinkedList(int[] arr, int n) {\n        // TODO: Insert nodes at end and return head\n        return null;\n    }\n}\npublic class Solution {\n    public static void display(Node head){\n        while(head != null){\n            System.out.print(head.data + \" \");\n            head = head.next;\n        }\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0;i<n;i++) arr[i] = sc.nextInt();\n        Node head = Result.createLinkedList(arr, n);\n        display(head);\n    }\n}",
+      "problemTitle": "Create and Display a Singly Linked List (SLL)"
+    },
+    {
+      "language": 3,
+      "code": "class Node {\n    constructor(data){ this.data=data; this.next=null; }\n}\nfunction createLinkedList(arr, n){\n    // TODO: Insert nodes at end\n    return null;\n}\nfunction display(head){\n    let curr = head;\n    let result = [];\n    while(curr){ result.push(curr.data); curr = curr.next; }\n    console.log(result.join(\" \"));\n}\nfunction solve(input){\n    const lines = input.trim().split(\"\\n\");\n    const n = Number(lines[0]);\n    const arr = lines[1].split(\" \").map(Number);\n    let head = createLinkedList(arr, n);\n    display(head);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Create and Display a Singly Linked List (SLL)"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node { long long data; Node* next; Node(long long x):data(x),next(NULL){} };\nNode* createLinkedList(vector<long long> arr, int n) {\n    // TODO: Insert nodes at end\n    return NULL;\n}\nvoid display(Node* head){ while(head){ cout<<head->data<<\" \"; head=head->next; }}\nint main(){ ios::sync_with_stdio(false); cin.tie(NULL);\n    int n; cin>>n;\n    vector<long long> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Node* head = createLinkedList(arr, n);\n    display(head);\n    return 0;\n}",
+      "problemTitle": "Create and Display a Singly Linked List (SLL)"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\ntypedef long long ll;\ntypedef struct Node { ll data; struct Node* next; } Node;\nNode* createLinkedList(ll arr[], int n){\n    // TODO: Insert at end and return head\n    return NULL;\n}\nvoid display(Node* head){ while(head){ printf(\"%lld \", head->data); head=head->next; }}\nint main(){ int n; scanf(\"%d\", &n);\n    ll arr[100001];\n    for(int i=0;i<n;i++) scanf(\"%lld\", &arr[i]);\n    Node* head = createLinkedList(arr, n);\n    display(head);\n    return 0;\n}",
+      "problemTitle": "Create and Display a Singly Linked List (SLL)"
+    }
+  ],
+
+  "hintsList": [
+    "Create Node class/struct and connect nodes using next pointer.",
+    "Keep pointer to last node for O(1) insertion at end."
+  ]
+},
+{
+  "id": null,
+  "title": "Insert Node at End (SLL)",
+  "description": "Problem Statement\nYou are given N integers. Your task is to create a Singly Linked List (SLL) by inserting each element at the end. After inserting all elements, display the final linked list.\n\nTime Complexity\nEach insertion at end takes O(1) if tail pointer maintained, so total O(N).\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint all elements of the linked list separated by space.\n\nExample\nInput:\n5\n10 20 30 40 50\nOutput:\n10 20 30 40 50\nExplanation: Insert each element at end and display the final linked list.",
+  "examples": "Sample Input\n5\n10 20 30 40 50\n\nSample Output\n10 20 30 40 50",
+  "constraints": "1 ≤ N ≤ 100000\nValues may be negative or positive\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "difficulty": 1,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n10 20 30 40 50", "expectedOutput": "10 20 30 40 50", "problemTitle": "Insert Node at End (SLL)" },
+    { "input": "4\n1 2 3 4", "expectedOutput": "1 2 3 4", "problemTitle": "Insert Node at End (SLL)" },
+    { "input": "1\n99", "expectedOutput": "99", "problemTitle": "Insert Node at End (SLL)" },
+    { "input": "6\n5 5 5 5 5 5", "expectedOutput": "5 5 5 5 5 5", "problemTitle": "Insert Node at End (SLL)" },
+    { "input": "3\n-1 0 1", "expectedOutput": "-1 0 1", "problemTitle": "Insert Node at End (SLL)" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    # TODO: Insert nodes at the end and return head\n    return None\n\ndef display(head):\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    head = insertAtEnd(arr, n)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Insert Node at End (SLL)"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node {\n    int data; Node next;\n    Node(int d){ data=d; next=null; }\n}\nclass Result {\n    public static Node insertAtEnd(int[] arr, int n) {\n        // TODO: Insert nodes at end and return head\n        return null;\n    }\n}\npublic class Solution {\n    public static void display(Node head){ while(head != null){ System.out.print(head.data + \" \"); head = head.next; }}\n    public static void main(String[] args){\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0;i<n;i++) arr[i] = sc.nextInt();\n        Node head = Result.insertAtEnd(arr, n);\n        display(head);\n    }\n}",
+      "problemTitle": "Insert Node at End (SLL)"
+    },
+    {
+      "language": 3,
+      "code": "class Node { constructor(data){ this.data = data; this.next = null; }}\nfunction insertAtEnd(arr, n){\n    // TODO: Insert nodes at end and return head\n    return null;\n}\nfunction display(head){ let result=[]; while(head){ result.push(head.data); head=head.next; } console.log(result.join(\" \")); }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); const n=Number(lines[0]); const arr=lines[1].split(\" \").map(Number); const head=insertAtEnd(arr,n); display(head);} \nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Insert Node at End (SLL)"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node { long long data; Node* next; Node(long long x):data(x),next(NULL){} };\nNode* insertAtEnd(vector<long long> arr, int n){\n    // TODO: Insert nodes at end\n    return NULL;\n}\nvoid display(Node* head){ while(head){ cout<<head->data<<\" \"; head=head->next; }}\nint main(){ int n; cin>>n; vector<long long> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; Node* head=insertAtEnd(arr,n); display(head); }",
+      "problemTitle": "Insert Node at End (SLL)"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\ntypedef long long ll;\ntypedef struct Node { ll data; struct Node* next; } Node;\nNode* insertAtEnd(ll arr[], int n){\n    // TODO: Insert nodes at end\n    return NULL;\n}\nvoid display(Node* head){ while(head){ printf(\"%lld \", head->data); head=head->next; }}\nint main(){ int n; scanf(\"%d\", &n); ll arr[100001]; for(int i=0;i<n;i++) scanf(\"%lld\", &arr[i]); Node* head=insertAtEnd(arr,n); display(head); return 0;}",
+      "problemTitle": "Insert Node at End (SLL)"
+    }
+  ],
+
+  "hintsList": [
+    "Maintain a tail pointer for O(1) insertion at end.",
+    "Move tail = tail.next after linking new node."
+  ]
+},
+{
+  "id": null,
+  "title": "Insert Node at End (SLL)",
+  "description": "Problem Statement\nYou are given N integers. Your task is to create a Singly Linked List (SLL) by inserting each element at the end. After inserting all elements, display the final linked list.\n\nTime Complexity\nEach insertion at end takes O(1) if tail pointer maintained, so total O(N).\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint all elements of the linked list separated by space.\n\nExample\nInput:\n5\n10 20 30 40 50\nOutput:\n10 20 30 40 50\nExplanation: Insert each element at end and display the final linked list.",
+  "examples": "Sample Input\n5\n10 20 30 40 50\n\nSample Output\n10 20 30 40 50",
+  "constraints": "1 ≤ N ≤ 100000\nValues may be negative or positive\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "difficulty": 1,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n10 20 30 40 50", "expectedOutput": "10 20 30 40 50", "problemTitle": "Insert Node at End (SLL)" },
+    { "input": "4\n1 2 3 4", "expectedOutput": "1 2 3 4", "problemTitle": "Insert Node at End (SLL)" },
+    { "input": "1\n99", "expectedOutput": "99", "problemTitle": "Insert Node at End (SLL)" },
+    { "input": "6\n5 5 5 5 5 5", "expectedOutput": "5 5 5 5 5 5", "problemTitle": "Insert Node at End (SLL)" },
+    { "input": "3\n-1 0 1", "expectedOutput": "-1 0 1", "problemTitle": "Insert Node at End (SLL)" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    # TODO: Insert nodes at the end and return head\n    return None\n\ndef display(head):\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    head = insertAtEnd(arr, n)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Insert Node at End (SLL)"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node {\n    int data; Node next;\n    Node(int d){ data=d; next=null; }\n}\nclass Result {\n    public static Node insertAtEnd(int[] arr, int n) {\n        // TODO: Insert nodes at end and return head\n        return null;\n    }\n}\npublic class Solution {\n    public static void display(Node head){ while(head != null){ System.out.print(head.data + \" \"); head = head.next; }}\n    public static void main(String[] args){\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0;i<n;i++) arr[i] = sc.nextInt();\n        Node head = Result.insertAtEnd(arr, n);\n        display(head);\n    }\n}",
+      "problemTitle": "Insert Node at End (SLL)"
+    },
+    {
+      "language": 3,
+      "code": "class Node { constructor(data){ this.data = data; this.next = null; }}\nfunction insertAtEnd(arr, n){\n    // TODO: Insert nodes at end and return head\n    return null;\n}\nfunction display(head){ let result=[]; while(head){ result.push(head.data); head=head.next; } console.log(result.join(\" \")); }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); const n=Number(lines[0]); const arr=lines[1].split(\" \").map(Number); const head=insertAtEnd(arr,n); display(head);} \nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Insert Node at End (SLL)"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node { long long data; Node* next; Node(long long x):data(x),next(NULL){} };\nNode* insertAtEnd(vector<long long> arr, int n){\n    // TODO: Insert nodes at end\n    return NULL;\n}\nvoid display(Node* head){ while(head){ cout<<head->data<<\" \"; head=head->next; }}\nint main(){ int n; cin>>n; vector<long long> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; Node* head=insertAtEnd(arr,n); display(head); }",
+      "problemTitle": "Insert Node at End (SLL)"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\ntypedef long long ll;\ntypedef struct Node { ll data; struct Node* next; } Node;\nNode* insertAtEnd(ll arr[], int n){\n    // TODO: Insert nodes at end\n    return NULL;\n}\nvoid display(Node* head){ while(head){ printf(\"%lld \", head->data); head=head->next; }}\nint main(){ int n; scanf(\"%d\", &n); ll arr[100001]; for(int i=0;i<n;i++) scanf(\"%lld\", &arr[i]); Node* head=insertAtEnd(arr,n); display(head); return 0;}",
+      "problemTitle": "Insert Node at End (SLL)"
+    }
+  ],
+
+  "hintsList": [
+    "Maintain a tail pointer for O(1) insertion at end.",
+    "Move tail = tail.next after linking new node."
+  ]
+}
+,
+{
+  "id": null,
+  "title": "Delete First Node (SLL)",
+  "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) by inserting elements at the end. Your task is to delete the first node of the list and then display the remaining list. If the list becomes empty after deletion, print -1.\n\nTime Complexity\nDeleting the first node takes O(1). Building and printing the list takes O(N).\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the updated linked list elements separated by space. If the list becomes empty, print -1.\n\nExample\nInput:\n5\n10 20 30 40 50\nOutput:\n20 30 40 50\nExplanation: Delete the first node and display the rest.",
+  "examples": "Sample Input\n5\n10 20 30 40 50\n\nSample Output\n20 30 40 50",
+  "constraints": "1 ≤ N ≤ 100000\nValues may be negative or positive\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "difficulty": 1,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n10 20 30 40 50", "expectedOutput": "20 30 40 50", "problemTitle": "Delete First Node (SLL)" },
+    { "input": "1\n99", "expectedOutput": "-1", "problemTitle": "Delete First Node (SLL)" },
+    { "input": "4\n5 10 15 20", "expectedOutput": "10 15 20", "problemTitle": "Delete First Node (SLL)" },
+    { "input": "6\n7 7 7 7 7 7", "expectedOutput": "7 7 7 7 7", "problemTitle": "Delete First Node (SLL)" },
+    { "input": "3\n-1 0 1", "expectedOutput": "0 1", "problemTitle": "Delete First Node (SLL)" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = None\n    tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef deleteFirst(head):\n    # TODO: delete the first node and return new head\n    return head\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    head = insertAtEnd(arr, n)\n    head = deleteFirst(head)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Delete First Node (SLL)"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node next; Node(int d){ data=d; next=null; }}\nclass Result{\n    public static Node insertAtEnd(int[] arr, int n){\n        Node head=null, tail=null;\n        for(int x: arr){\n            Node temp=new Node(x);\n            if(head==null){ head=tail=temp; }\n            else{ tail.next=temp; tail=temp; }\n        }\n        return head;\n    }\n    public static Node deleteFirst(Node head){\n        // TODO: delete first node\n        return head;\n    }\n}\npublic class Solution{\n    public static void display(Node head){ if(head==null){ System.out.print(-1); return;} while(head!=null){ System.out.print(head.data+\" \"); head=head.next; }}\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); int[] arr=new int[n]; for(int i=0;i<n;i++) arr[i]=sc.nextInt(); Node head=Result.insertAtEnd(arr,n); head=Result.deleteFirst(head); display(head); }}",
+      "problemTitle": "Delete First Node (SLL)"
+    },
+    {
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.next=null; }}\nfunction insertAtEnd(arr,n){ let head=null,tail=null; arr.forEach(x=>{ let t=new Node(x); if(!head){ head=tail=t;} else{ tail.next=t; tail=t; }}); return head; }\nfunction deleteFirst(head){ // TODO return head.next\n    return head;\n}\nfunction display(head){ if(!head) return console.log(-1); let res=[]; while(head){ res.push(head.data); head=head.next;} console.log(res.join(\" \")); }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); const n=Number(lines[0]); const arr=lines[1].split(\" \").map(Number); let head=insertAtEnd(arr,n); head=deleteFirst(head); display(head);} const fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Delete First Node (SLL)"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ long long data; Node* next; Node(long long x):data(x),next(NULL){} };\nNode* insertAtEnd(vector<long long> arr,int n){ Node* head=NULL; Node* tail=NULL; for(long long x:arr){ Node* temp=new Node(x); if(!head){ head=tail=temp;} else{ tail->next=temp; tail=temp; }} return head; }\nNode* deleteFirst(Node* head){ // TODO: delete first node\n    return head;\n}\nvoid display(Node* head){ if(!head){ cout<<-1; return;} while(head){ cout<<head->data<<\" \"; head=head->next; }}\nint main(){ int n; cin>>n; vector<long long> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; Node* head=insertAtEnd(arr,n); head=deleteFirst(head); display(head);}",
+      "problemTitle": "Delete First Node (SLL)"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\ntypedef long long ll;\ntypedef struct Node{ ll data; struct Node* next;} Node;\nNode* insertAtEnd(ll arr[], int n){ Node *head=NULL,*tail=NULL,*temp; for(int i=0;i<n;i++){ temp=(Node*)malloc(sizeof(Node)); temp->data=arr[i]; temp->next=NULL; if(head==NULL){ head=tail=temp;} else{ tail->next=temp; tail=temp; }} return head; }\nNode* deleteFirst(Node* head){ // TODO: delete first node & return new head\n    return head;\n}\nvoid display(Node* head){ if(!head){ printf(\"-1\"); return;} while(head){ printf(\"%lld \", head->data); head=head->next; }}\nint main(){ int n; scanf(\"%d\",&n); ll arr[100001]; for(int i=0;i<n;i++) scanf(\"%lld\",&arr[i]); Node* head=insertAtEnd(arr,n); head=deleteFirst(head); display(head); return 0;}",
+      "problemTitle": "Delete First Node (SLL)"
+    }
+  ],
+
+  "hintsList": [
+    "Deleting first node means moving head to head.next.",
+    "If the list has only one node, output should be -1."
+  ]
+}
+,
+{
+  "id": null,
+  "title": "Delete Last Node (SLL)",
+  "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) by inserting elements at the end. Your task is to delete the last node of the list and then display the remaining list. If the list becomes empty after deletion, print -1.\n\nTime Complexity\nDeleting the last node takes O(N) since traversal is required to reach the second last node.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the updated linked list elements separated by space. If the list becomes empty, print -1.\n\nExample\nInput:\n5\n10 20 30 40 50\nOutput:\n10 20 30 40\nExplanation: Delete the last node and print the remaining nodes.",
+  "examples": "Sample Input\n5\n10 20 30 40 50\n\nSample Output\n10 20 30 40",
+  "constraints": "1 ≤ N ≤ 100000\nValues may be negative or positive\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "difficulty": 1,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n10 20 30 40 50", "expectedOutput": "10 20 30 40", "problemTitle": "Delete Last Node (SLL)" },
+    { "input": "1\n99", "expectedOutput": "-1", "problemTitle": "Delete Last Node (SLL)" },
+    { "input": "4\n5 10 15 20", "expectedOutput": "5 10 15", "problemTitle": "Delete Last Node (SLL)" },
+    { "input": "6\n7 7 7 7 7 7", "expectedOutput": "7 7 7 7 7", "problemTitle": "Delete Last Node (SLL)" },
+    { "input": "3\n-1 0 1", "expectedOutput": "-1 0", "problemTitle": "Delete Last Node (SLL)" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef deleteLast(head):\n    # TODO: delete the last node and return new head\n    return head\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    head = insertAtEnd(arr, n)\n    head = deleteLast(head)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Delete Last Node (SLL)"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node next; Node(int d){ data=d; next=null; }}\nclass Result{\n    public static Node insertAtEnd(int[] arr,int n){ Node head=null,tail=null; for(int x:arr){ Node t=new Node(x); if(head==null){ head=tail=t;} else{ tail.next=t; tail=t; }} return head; }\n    public static Node deleteLast(Node head){\n        // TODO: delete last node and return new head\n        return head;\n    }\n}\npublic class Solution{\n    public static void display(Node head){ if(head==null){ System.out.print(-1); return;} while(head!=null){ System.out.print(head.data+\" \"); head=head.next; }}\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); int[] arr=new int[n]; for(int i=0;i<n;i++) arr[i]=sc.nextInt(); Node head=Result.insertAtEnd(arr,n); head=Result.deleteLast(head); display(head);} }",
+      "problemTitle": "Delete Last Node (SLL)"
+    },
+    {
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.next=null; }}\nfunction insertAtEnd(arr,n){ let head=null,tail=null; arr.forEach(x=>{ let t=new Node(x); if(!head){ head=tail=t;} else{ tail.next=t; tail=t; }}); return head; }\nfunction deleteLast(head){ // TODO: delete last node\n    return head;\n}\nfunction display(head){ if(!head) return console.log(-1); let res=[]; while(head){ res.push(head.data); head=head.next;} console.log(res.join(\" \")); }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); const n=Number(lines[0]); const arr=lines[1].split(\" \").map(Number); let head=insertAtEnd(arr,n); head=deleteLast(head); display(head);} const fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Delete Last Node (SLL)"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ long long data; Node* next; Node(long long x):data(x),next(NULL){} };\nNode* insertAtEnd(vector<long long> arr,int n){ Node* head=NULL,*tail=NULL; for(long long x:arr){ Node* t=new Node(x); if(!head){ head=tail=t;} else{ tail->next=t; tail=t; }} return head; }\nNode* deleteLast(Node* head){ // TODO delete last\n    return head;\n}\nvoid display(Node* head){ if(!head){ cout<<-1; return;} while(head){ cout<<head->data<<\" \"; head=head->next; }}\nint main(){ int n; cin>>n; vector<long long> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; Node* head=insertAtEnd(arr,n); head=deleteLast(head); display(head);} ",
+      "problemTitle": "Delete Last Node (SLL)"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\ntypedef long long ll;\ntypedef struct Node{ ll data; struct Node* next;} Node;\nNode* insertAtEnd(ll arr[], int n){ Node *head=NULL,*tail=NULL,*temp; for(int i=0;i<n;i++){ temp=(Node*)malloc(sizeof(Node)); temp->data=arr[i]; temp->next=NULL; if(!head){ head=tail=temp;} else{ tail->next=temp; tail=temp; }} return head; }\nNode* deleteLast(Node* head){ // TODO delete last\n    return head;\n}\nvoid display(Node* head){ if(!head){ printf(\"-1\"); return;} while(head){ printf(\"%lld \", head->data); head=head->next; }}\nint main(){ int n; scanf(\"%d\",&n); ll arr[100001]; for(int i=0;i<n;i++) scanf(\"%lld\",&arr[i]); Node* head=insertAtEnd(arr,n); head=deleteLast(head); display(head); return 0;}",
+      "problemTitle": "Delete Last Node (SLL)"
+    }
+  ],
+
+  "hintsList": [
+    "To delete last node, traverse to second last node and set its next to NULL.",
+    "If head == NULL or head.next == NULL, result becomes empty."
+  ]
+}
+
+
+
+   
+  ]
+}

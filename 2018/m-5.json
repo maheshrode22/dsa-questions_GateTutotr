@@ -1,0 +1,337 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Hash Function Using Digit Extraction Technique",
+      "description": "Problem Statement\nYou are given a hash table of size N initialized with -1. You also receive M integers and a digit position K.\nYour task is to compute the hash index using the Digit Extraction Technique:\n1. Extract the K-th digit (from right, 1-based index) of the number.\n2. Use hash = extracted_digit % N.\n3. Insert the value at this index.\n4. If collision occurs (index occupied), use linear probing to find the next available slot.\nIf a number has fewer digits than K, treat the extracted digit as 0.\nFinally, print the resulting hash table.\n\nInput Format\nThe first line contains three integers N (table size), M (number of keys), and K (digit position).\nThe second line contains M space-separated integers.\n\nOutput Format\nPrint N space-separated integers representing the hash table.\n\nExample 1\nInput:\n7 4 2\n57 123 89 5\n\nOutput:\n-1 -1 123 57 89 -1 5\n\nExplanation:\n57 → 2nd digit from right = 5 → 5 % 7 = 5 → table[5] = 57\n123 → digit = 2 → 2 % 7 = 2 → table[2] = 123\n89 → digit = 8 → 8 % 7 = 1 → table[1] = 89\n5 → no 2nd digit → digit = 0 → 0 % 7 = 0 → table[0] = 5",
+      "examples": "Sample Input\n5 3 1\n9 27 45\n\nSample Output\n9 -1 -1 27 45",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\nK ≥ 1\n-10^9 ≤ values ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7 4 2\n57 123 89 5", "expectedOutput": "-1 -1 123 57 89 -1 5", "problemTitle": "Hash Function Using Digit Extraction Technique" },
+        { "id": null, "problemId": null, "input": "5 3 1\n9 27 45", "expectedOutput": "9 -1 -1 27 45", "problemTitle": "Hash Function Using Digit Extraction Technique" },
+        { "id": null, "problemId": null, "input": "6 4 3\n1234 98 5 70003", "expectedOutput": "-1 -1 -1 98 5 1234", "problemTitle": "Hash Function Using Digit Extraction Technique" },
+        { "id": null, "problemId": null, "input": "8 5 2\n12 34 56 78 90", "expectedOutput": "90 12 34 56 78 -1 -1 -1", "problemTitle": "Hash Function Using Digit Extraction Technique" },
+        { "id": null, "problemId": null, "input": "5 4 4\n1000 500 20 7", "expectedOutput": "500 -1 -1 -1 1000", "problemTitle": "Hash Function Using Digit Extraction Technique" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def digitExtractionHash(n, arr, k):\n    # TODO: Implement digit extraction hashing with linear probing\n    return []\n\ndef solve():\n    n, m, k = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = digitExtractionHash(n, arr, k)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Hash Function Using Digit Extraction Technique"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] digitExtractionHash(int n, long[] arr, int k) {\n        // TODO: Implement digit extraction hashing with linear probing\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int m = Integer.parseInt(first[1]);\n        int k = Integer.parseInt(first[2]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] result = Result.digitExtractionHash(n, arr, k);\n        for (int i = 0; i < n; i++) System.out.print(result[i] + (i + 1 < n ? \" \" : \"\"));\n    }\n}",
+          "problemTitle": "Hash Function Using Digit Extraction Technique"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function digitExtractionHash(n, arr, k) {\n    // TODO: Implement digit extraction hashing with linear probing\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, m, k] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    const result = digitExtractionHash(n, arr, k);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Hash Function Using Digit Extraction Technique"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> digitExtractionHash(int n, vector<long long> arr, int k) {\n    // TODO: Implement digit extraction hashing with linear probing\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m, k;\n    cin >> n >> m >> k;\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n\n    vector<long long> result = digitExtractionHash(n, arr, k);\n    for(int i = 0; i < n; i++) cout << result[i] << (i + 1 < n ? \" \" : \"\");\n\n    return 0;\n}",
+          "problemTitle": "Hash Function Using Digit Extraction Technique"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid digitExtractionHash(long long table[], int n, long long arr[], int m, int k) {\n    // TODO: Implement digit extraction hashing with linear probing\n}\n\nint main(){\n    int n, m, k;\n    scanf(\"%d %d %d\", &n, &m, &k);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    digitExtractionHash(table, n, arr, m, k);\n\n    for(int i = 0; i < n; i++) printf(\"%lld%s\", table[i], (i + 1 < n ? \" \" : \"\"));\n\n    return 0;\n}",
+          "problemTitle": "Hash Function Using Digit Extraction Technique"
+        }
+      ],
+
+      "hintsList": [
+        "To extract K-th digit: (abs(value) // 10^(K-1)) % 10.",
+        "Use linear probing if the computed hash index is already occupied."
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Hashing using Fold Shift Method",
+      "description": "Problem Statement\nYou are given a hash table of size N initialized with -1. You are also given M positive integers. Your task is to store each number using the Fold Shift Hashing Method.\nSteps:\n1. Break the number into groups of K digits (from right to left). The leftmost group may have fewer digits.\n2. Sum all these groups.\n3. Compute: hashIndex = (sum % N).\n4. Insert the value at hashIndex.\n5. If collision occurs, use linear probing to find next available slot.\nAfter inserting all numbers, print the final hash table.\n\nInput Format\nThe first line contains three integers N (table size), M (number of keys), and K (digit group size).\nThe second line contains M space-separated integers.\n\nOutput Format\nPrint N space-separated integers representing the hash table.\n\nExample 1\nInput:\n7 3 2\n1234 987 56\n\nOutput:\n-1 56 -1 -1 1234 987 -1\n\nExplanation:\n1234 → groups: [12, 34], sum = 46 → 46 % 7 = 4 → table[4] = 1234\n987 → groups: [9, 87], sum = 96 → 96 % 7 = 5 → table[5] = 987\n56 → groups: [56], sum = 56 → 56 % 7 = 0 → table[0] (but 0 occupied?) → next free = index 1 → table[1] = 56",
+      "examples": "Sample Input\n6 2 1\n45 82\n\nSample Output\n45 82 -1 -1 -1 -1",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\n1 ≤ K ≤ 10\nNumbers can be large (up to 10^18)",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7 3 2\n1234 987 56", "expectedOutput": "-1 56 -1 -1 1234 987 -1", "problemTitle": "Hashing using Fold Shift Method" },
+        { "id": null, "problemId": null, "input": "6 2 1\n45 82", "expectedOutput": "45 82 -1 -1 -1 -1", "problemTitle": "Hashing using Fold Shift Method" },
+        { "id": null, "problemId": null, "input": "5 3 2\n5001 999 45", "expectedOutput": "-1 45 -1 5001 999", "problemTitle": "Hashing using Fold Shift Method" },
+        { "id": null, "problemId": null, "input": "8 4 3\n123456 99999 7 100", "expectedOutput": "7 -1 100 -1 -1 -1 123456 99999", "problemTitle": "Hashing using Fold Shift Method" },
+        { "id": null, "problemId": null, "input": "6 4 2\n11 22 33 44", "expectedOutput": "-1 -1 11 22 33 44", "problemTitle": "Hashing using Fold Shift Method" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def foldShiftHash(n, arr, k):\n    # TODO: Implement fold shift hashing with linear probing\n    return []\n\ndef solve():\n    n, m, k = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = foldShiftHash(n, arr, k)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Hashing using Fold Shift Method"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] foldShiftHash(int n, long[] arr, int k) {\n        # TODO: Implement fold shift hashing with linear probing\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int m = Integer.parseInt(parts[1]);\n        int k = Integer.parseInt(parts[2]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] result = Result.foldShiftHash(n, arr, k);\n        for(int i = 0; i < n; i++) System.out.print(result[i] + (i + 1 < n ? \" \" : \"\"));\n    }\n}",
+          "problemTitle": "Hashing using Fold Shift Method"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function foldShiftHash(n, arr, k) {\n    // TODO: Implement fold shift hashing with linear probing\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, m, k] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(foldShiftHash(n, arr, k).join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Hashing using Fold Shift Method"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> foldShiftHash(int n, vector<long long> arr, int k) {\n    // TODO: Implement fold shift hashing with linear probing\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m, k;\n    cin >> n >> m >> k;\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n\n    vector<long long> result = foldShiftHash(n, arr, k);\n    for(int i = 0; i < n; i++) cout << result[i] << (i + 1 < n ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Hashing using Fold Shift Method"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid foldShiftHash(long long table[], int n, long long arr[], int m, int k) {\n    // TODO: Implement fold shift hashing with linear probing\n}\n\nint main(){\n    int n, m, k;\n    scanf(\"%d %d %d\", &n, &m, &k);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    foldShiftHash(table, n, arr, m, k);\n\n    for(int i = 0; i < n; i++) printf(\"%lld%s\", table[i], (i + 1 < n ? \" \" : \"\"));\n    return 0;\n}",
+          "problemTitle": "Hashing using Fold Shift Method"
+        }
+      ],
+
+      "hintsList": [
+        "Split the number into groups of K digits: use pow(10, K).",
+        "Sum all groups, then compute index = sum % N.",
+        "Use linear probing if collision occurs."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Hashing using Fold Boundary Method",
+      "description": "Problem Statement\nYou are given a hash table of size N initialized with -1. You are also given M positive integers. Your task is to hash each number using the Fold Boundary Method.\nSteps:\n1. Convert the number to a string.\n2. Split the number exactly into two halves:\n   - If digits are odd: left half gets ⌈len/2⌉ digits, right half gets ⌊len/2⌋ digits.\n3. Compute: hashValue = |leftHalf - rightHalf|\n4. Compute hashIndex = hashValue % N\n5. If collision occurs, use linear probing to find next available index.\nFinally, print the complete hash table.\n\nInput Format\nThe first line contains two integers N (table size) and M (number of keys).\nThe second line contains M space-separated integers.\n\nOutput Format\nPrint N space-separated integers representing the final hash table.\n\nExample 1\nInput:\n7 3\n1234 567 89\n\nOutput:\n-1 567 -1 89 1234 -1 -1\n\nExplanation:\n1234 → split: 12 | 34 → |12 - 34| = 22 → 22 % 7 = 1 → table[1] = 1234\n567 → split: 56 | 7 → |56 - 7| = 49 → 49 % 7 = 0 → table[0] = 567\n89 → split: 8 | 9 → |8 - 9| = 1 → 1 % 7 = 1 → collision → next free = index 3 → table[3] = 89",
+      "examples": "Sample Input\n6 2\n45 82\n\nSample Output\n45 82 -1 -1 -1 -1",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\nNumbers may be large (up to 10^18)",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7 3\n1234 567 89", "expectedOutput": "-1 567 -1 89 1234 -1 -1", "problemTitle": "Hashing using Fold Boundary Method" },
+        { "id": null, "problemId": null, "input": "6 2\n45 82", "expectedOutput": "45 82 -1 -1 -1 -1", "problemTitle": "Hashing using Fold Boundary Method" },
+        { "id": null, "problemId": null, "input": "5 3\n5001 999 45", "expectedOutput": "-1 -1 45 5001 999", "problemTitle": "Hashing using Fold Boundary Method" },
+        { "id": null, "problemId": null, "input": "8 4\n123456 99999 7 100", "expectedOutput": "7 100 -1 -1 -1 -1 99999 123456", "problemTitle": "Hashing using Fold Boundary Method" },
+        { "id": null, "problemId": null, "input": "6 4\n11 22 33 44", "expectedOutput": "22 -1 11 44 -1 33", "problemTitle": "Hashing using Fold Boundary Method" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def foldBoundaryHash(n, arr):\n    # TODO: Implement fold boundary hashing with linear probing\n    return []\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = foldBoundaryHash(n, arr)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Hashing using Fold Boundary Method"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] foldBoundaryHash(int n, long[] arr) {\n        // TODO: Implement fold boundary hashing with linear probing\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int m = Integer.parseInt(parts[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] result = Result.foldBoundaryHash(n, arr);\n        for(int i = 0; i < n; i++) System.out.print(result[i] + (i + 1 < n ? \" \" : \"\"));\n    }\n}",
+          "problemTitle": "Hashing using Fold Boundary Method"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function foldBoundaryHash(n, arr) {\n    // TODO: Implement fold boundary hashing with linear probing\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, m] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(foldBoundaryHash(n, arr).join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Hashing using Fold Boundary Method"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> foldBoundaryHash(int n, vector<long long> arr) {\n    // TODO: Implement fold boundary hashing with linear probing\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n\n    vector<long long> result = foldBoundaryHash(n, arr);\n    for(int i = 0; i < n; i++) cout << result[i] << (i + 1 < n ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Hashing using Fold Boundary Method"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid foldBoundaryHash(long long table[], int n, long long arr[], int m) {\n    // TODO: Implement fold boundary hashing with linear probing\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    foldBoundaryHash(table, n, arr, m);\n\n    for(int i = 0; i < n; i++) printf(\"%lld%s\", table[i], (i + 1 < n ? \" \" : \"\"));\n    return 0;\n}",
+          "problemTitle": "Hashing using Fold Boundary Method"
+        }
+      ],
+
+      "hintsList": [
+        "Convert number to string and split into two halves.",
+        "Calculate |left - right|, then take modulo N.",
+        "Use linear probing if a collision occurs."
+      ]
+    },{
+      "id": null,
+      "title": "Implement Linear Probing with Wrap-Around",
+      "description": "Problem Statement\nYou are given a hash table of size N initialized with -1. You must insert M integers into this hash table.\nUse modulo hashing:\nindex = value % N.\nIf the index is empty, insert the value.\nIf the index is already occupied, apply Linear Probing with Wrap-Around:\n- Move to (index + 1) % N\n- Continue probing until an empty slot is found.\nIf the table becomes full before all values are inserted, ignore remaining values.\nFinally, print the final hash table.\n\nInput Format\nThe first line contains two integers N (size of table) and M (number of keys).\nThe second line contains M space-separated integers.\n\nOutput Format\nPrint N space-separated integers representing the final hash table.\n\nExample 1\nInput:\n5 4\n12 7 15 22\n\nOutput:\n12 22 7 15 -1\n\nExplanation:\n12 → 12%5 = 2 → table[2] = 12\n7 → 7%5 = 2 → collision → 3 → table[3] = 7\n15 → 15%5 = 0 → table[0] = 15\n22 → 22%5 = 2 → collision chain → 3 → 4 → table[4] = 22",
+      "examples": "Sample Input\n6 3\n10 22 34\n\nSample Output\n10 -1 22 -1 34 -1",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\n-10^9 ≤ values ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5 4\n12 7 15 22", "expectedOutput": "12 22 7 15 -1", "problemTitle": "Implement Linear Probing with Wrap-Around" },
+        { "id": null, "problemId": null, "input": "6 3\n10 22 34", "expectedOutput": "10 -1 22 -1 34 -1", "problemTitle": "Implement Linear Probing with Wrap-Around" },
+        { "id": null, "problemId": null, "input": "7 5\n14 21 28 35 42", "expectedOutput": "14 21 28 35 42 -1 -1", "problemTitle": "Implement Linear Probing with Wrap-Around" },
+        { "id": null, "problemId": null, "input": "5 6\n5 10 15 20 25 30", "expectedOutput": "25 -1 -1 -1 -1", "problemTitle": "Implement Linear Probing with Wrap-Around" },
+        { "id": null, "problemId": null, "input": "6 5\n7 1 13 19 25", "expectedOutput": "19 1 7 13 25 -1", "problemTitle": "Implement Linear Probing with Wrap-Around" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def linearProbingWrap(n, arr):\n    # TODO: Implement linear probing with wrap-around\n    return []\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = linearProbingWrap(n, arr)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Implement Linear Probing with Wrap-Around"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] linearProbingWrap(int n, long[] arr) {\n        // TODO: Implement linear probing with wrap-around\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] nm = br.readLine().split(\" \");\n        int n = Integer.parseInt(nm[0]);\n        int m = Integer.parseInt(nm[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] result = Result.linearProbingWrap(n, arr);\n        for(int i = 0; i < n; i++) System.out.print(result[i] + (i+1<n ? \" \" : \"\"));\n    }\n}",
+          "problemTitle": "Implement Linear Probing with Wrap-Around"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function linearProbingWrap(n, arr) {\n    // TODO: Implement linear probing with wrap-around\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, m] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(linearProbingWrap(n, arr).join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Implement Linear Probing with Wrap-Around"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> linearProbingWrap(int n, vector<long long> arr) {\n    // TODO: Implement linear probing with wrap-around\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n\n    vector<long long> result = linearProbingWrap(n, arr);\n    for(int i = 0; i < n; i++) cout << result[i] << (i+1<n ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Implement Linear Probing with Wrap-Around"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid linearProbingWrap(long long table[], int n, long long arr[], int m) {\n    // TODO: Implement linear probing with wrap-around\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    linearProbingWrap(table, n, arr, m);\n\n    for(int i = 0; i < n; i++) printf(\"%lld%s\", table[i], (i+1<n ? \" \" : \"\"));\n\n    return 0;\n}",
+          "problemTitle": "Implement Linear Probing with Wrap-Around"
+        }
+      ],
+
+      "hintsList": [
+        "Use index = value % N.",
+        "On collision, move to (index + 1) % N until slot is found.",
+        "This ensures circular movement → wrap-around probing."
+      ]
+    },{
+      "id": null,
+      "title": "Insert K Elements and Report Total Collisions",
+      "description": "Problem Statement\nYou are given a hash table of size N initialized with -1, and M integers to insert.\nUse modulo hashing:\nindex = value % N.\nIf the index is empty, insert the value.\nIf the index is occupied, increment the collision count and use linear probing with wrap-around until an empty slot is found.\nAfter inserting all M elements, print the total number of collisions that occurred.\n\nImportant: If the table becomes full, ignore remaining elements but continue counting collisions until fullness.\n\nInput Format\nThe first line contains two integers N (table size) and M (number of keys).\nThe second line contains M space-separated integers.\n\nOutput Format\nPrint a single integer — the total number of collisions during insertion.\n\nExample 1\nInput:\n5 4\n12 7 15 22\n\nOutput:\n3\n\nExplanation:\n12 → index 2 → no collision\n7 → index 2 → collision #1 → index 3 → insert\n15 → index 0 → no collision\n22 → index 2 → collision #2 → 3 (collision #3) → 4 → insert\nTotal collisions = 3",
+      "examples": "Sample Input\n5 3\n1 6 11\n\nSample Output\n2",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\n-10^9 ≤ values ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5 4\n12 7 15 22", "expectedOutput": "3", "problemTitle": "Insert K Elements and Report Total Collisions" },
+        { "id": null, "problemId": null, "input": "5 3\n1 6 11", "expectedOutput": "2", "problemTitle": "Insert K Elements and Report Total Collisions" },
+        { "id": null, "problemId": null, "input": "7 4\n14 21 28 35", "expectedOutput": "0", "problemTitle": "Insert K Elements and Report Total Collisions" },
+        { "id": null, "problemId": null, "input": "5 6\n5 10 15 20 25 30", "expectedOutput": "4", "problemTitle": "Insert K Elements and Report Total Collisions" },
+        { "id": null, "problemId": null, "input": "6 5\n7 1 13 19 25", "expectedOutput": "4", "problemTitle": "Insert K Elements and Report Total Collisions" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def countCollisions(n, arr):\n    # TODO: Insert values using linear probing and count collisions\n    return 0\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    print(countCollisions(n, arr))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Insert K Elements and Report Total Collisions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long countCollisions(int n, long[] arr) {\n        // TODO: Implement linear probing with collision counting\n        return 0L;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] nm = br.readLine().split(\" \");\n        int n = Integer.parseInt(nm[0]);\n        int m = Integer.parseInt(nm[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        System.out.println(Result.countCollisions(n, arr));\n    }\n}",
+          "problemTitle": "Insert K Elements and Report Total Collisions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function countCollisions(n, arr) {\n    // TODO: Implement linear probing and count collisions\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, m] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(countCollisions(n, arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Insert K Elements and Report Total Collisions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nlong long countCollisions(int n, vector<long long> arr) {\n    // TODO: Implement linear probing and count collisions\n    return 0;\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n    cout << countCollisions(n, arr);\n    return 0;\n}",
+          "problemTitle": "Insert K Elements and Report Total Collisions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long countCollisions(long long table[], int n, long long arr[], int m) {\n    // TODO: Implement linear probing and count collisions\n    return 0;\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    printf(\"%lld\", countCollisions(table, n, arr, m));\n    return 0;\n}",
+          "problemTitle": "Insert K Elements and Report Total Collisions"
+        }
+      ],
+
+      "hintsList": [
+        "Use index = value % N.",
+        "Every time a position is occupied, increment collision counter.",
+        "Use (index + 1) % N for probing."
+      ]
+    }
+  ]
+}

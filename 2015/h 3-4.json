@@ -1,0 +1,137 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "N Queens Problem",
+      "description": "Problem Statement\nPlace N queens on an N×N chessboard such that no two queens attack each other (not in same row, column, or diagonal).\n\nPrint any one valid configuration. If impossible, print -1.\n\nInput Format\nSingle integer N\n\nOutput Format\nIf solution exists → N lines with N characters each ('Q' = queen, '.' = empty)\nIf no solution → single line with -1\n\nExample\nInput:\n4\n\nOutput:\n.Q..\n...Q\nQ...\n..Q.",
+      "examples": "Sample Input\n4\nSample Output\n.Q..\n...Q\nQ...\n..Q.",
+      "constraints": "1 ≤ N ≤ 10",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 3,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "1", "expectedOutput": "Q", "problemTitle": "N Queens Problem" },
+        { "id": null, "problemId": null, "input": "2", "expectedOutput": "-1", "problemTitle": "N Queens Problem" },
+        { "id": null, "problemId": null, "input": "3", "expectedOutput": "-1", "problemTitle": "N Queens Problem" },
+        { "id": null, "problemId": null, "input": "4", "expectedOutput": ".Q..\n...Q\nQ...\n..Q.", "problemTitle": "N Queens Problem" },
+        { "id": null, "problemId": null, "input": "5", "expectedOutput": "Q....\n..Q..\n....Q\n.Q...\n...Q.", "problemTitle": "N Queens Problem" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def isSafe(board, row, col, n):\n    # TODO: Check column and both diagonals (upwards only)\n    pass\n\ndef solveNQueens(board, row, n):\n    # TODO: Place queen in each row using backtracking\n    pass\n\ndef main():\n    n = int(input().strip())\n    board = [[\".\"] * n for _ in range(n)]\n    if solveNQueens(board, 0, n):\n        for r in board:\n            print(\"\".join(r))\n    else:\n        print(-1)\n\nif __name__ == \"__main__\":\n    main()",
+          "problemTitle": "N Queens Problem"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\n\nclass Solution {\n    static boolean isSafe(char[][] board, int row, int col, int n) {\n        // TODO: Check column & both diagonals\n        return true;\n    }\n\n    static boolean solve(char[][] board, int row, int n) {\n        // TODO: Try placing queen in each column of current row\n        return false;\n    }\n\n    public static void main(String[] args) throws Exception {\n        int n = Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine().trim());\n        char[][] board = new char[n][n];\n        for(char[] r : board) java.util.Arrays.fill(r, '.');\n\n        if(solve(board, 0, n)) {\n            for(char[] r : board) System.out.println(new String(r));\n        } else {\n            System.out.println(-1);\n        }\n    }\n}",
+          "problemTitle": "N Queens Problem"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function isSafe(board, row, col, n) {\n    // TODO: Implement safety check\n    return true;\n}\n\nfunction solve(board, row, n) {\n    // TODO: Place queen row by row\n    return false;\n}\n\nconst n = Number(require('fs').readFileSync(0, 'utf-8').trim());\nconst board = Array(n).fill().map(() => Array(n).fill('.'));\n\nif (solve(board, 0, n)) {\n    board.forEach(r => console.log(r.join('')));\n} else {\n    console.log(-1);\n}",
+          "problemTitle": "N Queens Problem"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nbool isSafe(vector<string>& board, int row, int col, int n) {\n    // TODO: Check column and both diagonals\n    return false;\n}\n\nbool solve(vector<string>& board, int row, int n) {\n    // TODO: Backtracking to place queens\n    return false;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<string> board(n, string(n, '.'));\n    if(solve(board, 0, n)) {\n        for(auto& s : board) cout << s << endl;\n    } else {\n        cout << -1 << endl;\n    }\n    return 0;\n}",
+          "problemTitle": "N Queens Problem"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\nchar board[11][12];\nint n;\n\nint isSafe(int row, int col) {\n    // TODO: Check column and diagonals\n    return 1;\n}\n\nint solve(int row) {\n    // TODO: Place queen in current row\n    return 0;\n}\n\nint main() {\n    scanf(\"%d\", &n);\n    for(int i=0; i<n; i++)\n        for(int j=0; j<n; j++)\n            board[i][j] = '.';\n    if(solve(0)) {\n        for(int i=0; i<n; i++) {\n            board[i][n] = '\\0';\n            printf(\"%s\\n\", board[i]);\n        }\n    } else {\n        printf(\"-1\\n\");\n    }\n    return 0;\n}",
+          "problemTitle": "N Queens Problem"
+        }
+      ],
+
+      "hintsList": [
+        "Place one queen per row to avoid row conflicts",
+        "Check only upward directions: same column, left diagonal, right diagonal"
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Rat in a Maze",
+      "description": "Problem Statement\nA rat starts at (0,0) in an N×N grid and wants to reach (N-1,N-1). It can move only Right ('R') or Down ('D'). Cells with 0 are blocked, 1 are open.\n\nPrint any one valid path as a string of moves. If no path exists, print -1.\n\nInput Format\nFirst line: N\nNext N lines: N integers (0 or 1)\n\nOutput Format\nString of 'R' and 'D' or -1\n\nExample\nInput:\n4\n1 0 0 0\n1 1 0 1\n1 1 0 0\n0 1 1 1\n\nOutput:\nDRDRR",
+      "examples": "Sample Input\n4\n1 0 0 0\n1 1 0 1\n1 1 0 0\n0 1 1 1\nSample Output\nDRDRR",
+      "constraints": "2 ≤ N ≤ 10",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 3,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "4\n1 0 0 0\n1 1 0 1\n1 1 0 0\n0 1 1 1", "expectedOutput": "DRDRR", "problemTitle": "Rat in a Maze" },
+        { "id": null, "problemId": null, "input": "3\n1 0 0\n1 1 0\n1 1 1", "expectedOutput": "DDRR", "problemTitle": "Rat in a Maze" },
+        { "id": null, "problemId": null, "input": "2\n1 0\n1 1", "expectedOutput": "DR", "problemTitle": "Rat in a Maze" },
+        { "id": null, "problemId": null, "input": "3\n1 0 1\n1 0 1\n1 1 1", "expectedOutput": "DRDR", "problemTitle": "Rat in a Maze" },
+        { "id": null, "problemId": null, "input": "3\n1 0 0\n0 1 0\n0 0 1", "expectedOutput": "-1", "problemTitle": "Rat in a Maze" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def isSafe(maze, x, y, n):\n    # TODO: Check bounds and if cell is open\n    pass\n\ndef solve(maze, x, y, n, path):\n    # TODO: Try Down then Right, use backtracking\n    pass\n\ndef main():\n    n = int(input().strip())\n    maze = [list(map(int, input().split())) for _ in range(n)]\n    path = []\n    if maze[0][0] == 1 and solve(maze, 0, 0, n, path):\n        print(''.join(path))\n    else:\n        print(-1)\n\nif __name__ == '__main__':\n    main()",
+          "problemTitle": "Rat in a Maze"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\n\nclass Solution {\n    static boolean isSAFE(int[][] m, int x, int y, int n) {\n        // TODO\n        return false;\n    }\n\n    static boolean solve(int[][] maze, int x, int y, int n, StringBuilder path) {\n        // TODO: Try 'D' then 'R'\n        return false;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] maze = new int[n][n];\n        for(int i = 0; i < n; i++) {\n            String[] row = br.readLine().split(\" \");\n            for(int j = 0; j < n; j++) maze[i][j] = Integer.parseInt(row[j]);\n        }\n        StringBuilder path = new StringBuilder();\n        if(maze[0][0] == 1 && solve(maze, 0, 0, n, path)) {\n            System.out.println(path.toString());\n        } else {\n            System.out.println(-1);\n        }\n    }\n}",
+          "problemTitle": "Rat in a Maze"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function isSafe(maze, x, y, n) {\n    // TODO\n    return false;\n}\n\nfunction solve(maze, x, y, n, path) {\n    // TODO: Add 'D' or 'R' and recurse\n    return false;\n}\n\nconst input = require('fs').readFileSync(0,'utf-8').trim().split('\\n');\nconst n = Number(input[0]);\nconst maze = input.slice(1).map(l => l.split(' ').map(Number));\nconst path = [];\n\nif(maze[0][0] === 1 && solve(maze, 0, 0, n, path)) {\n    console.log(path.join(''));\n} else {\n    console.log(-1);\n}",
+          "problemTitle": "Rat in a Maze"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nbool isSafe(vector<vector<int>>& maze, int x, int y, int n) {\n    // TODO\n    return false;\n}\n\nbool solve(vector<vector<int>>& maze, int x, int y, int n, string& path) {\n    // TODO: Try Down then Right\n    return false;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<vector<int>> maze(n, vector<int>(n));\n    for(int i=0; i<n; i++)\n        for(int j=0; j<n; j++)\n            cin >> maze[i][j];\n    string path = \"\";\n    if(maze[0][0] == 1 && solve(maze, 0, 0, n, path)) {\n        cout << path << endl;\n    } else {\n        cout << -1 << endl;\n    }\n    return 0;\n}",
+          "problemTitle": "Rat in a Maze"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\nint maze[12][12], n;\nchar path[205];\nint len = 0;\n\nint isSafe(int x, int y) {\n    // TODO\n    return 0;\n}\n\nint solve(int x, int y) {\n    // TODO: Implement backtracking with 'D' and 'R'\n    return 0;\n}\n\nint main() {\n    scanf(\"%d\", &n);\n    for(int i=0; i<n; i++)\n        for(int j=0; j<n; j++)\n            scanf(\"%d\", &maze[i][j]);\n    if(maze[0][0]==1 && solve(0,0)) {\n        path[len] = '\\0';\n        printf(\"%s\\n\", path);\n    } else {\n        printf(\"-1\\n\");\n    }\n    return 0;\n}",
+          "problemTitle": "Rat in a Maze"
+        }
+      ],
+
+      "hintsList": [
+        "Mark visited cells with 2 to avoid cycles",
+        "Try Down first, then Right (any valid path accepted)"
+      ]
+    }
+  ]
+}

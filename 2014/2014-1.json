@@ -1,0 +1,70 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Sum of Even Numbers in an Array",
+      "description": "Problem Statement\nYou are given an integer N and an array A of N integers. Your task is to calculate and return the sum of all even numbers present in the array.\n\nInput Format\nFirst line contains a single integer N.\nSecond line contains N space-separated integers representing the array A.\n\nOutput Format\nPrint a single integer - the sum of all even elements in the array.\n\nExample 1\nInput:\n6\n4 7 2 8 8 5 6\n\nOutput:\n20\n\nExplanation: Even numbers are 4, 2, 8, 6 → sum = 20\n\nExample 2\nInput:\n5\n1 3 5 7 9\n\nOutput:\n0",
+      "examples": "Sample Input\n6\n4 7 2 8 5 6\n\nSample Output\n20",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2014,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "6\n4 7 2 8 5 6", "expectedOutput": "20", "problemTitle": "Sum of Even Numbers in an Array" },
+        { "id": null, "problemId": null, "input": "5\n1 3 5 7 9", "expectedOutput": "0", "problemTitle": "Sum of Even Numbers in an Array" },
+        { "id": null, "problemId": null, "input": "1\n-4", "expectedOutput": "-4", "problemTitle": "Sum of Even Numbers in an Array" },
+        { "id": null, "problemId": null, "input": "10\n-2 -4 6 8 10 -12 14 0 16 -18", "expectedOutput": "18", "problemTitle": "Sum of Even Numbers in an Array" },
+        { "id": null, "problemId": null, "input": "3\n1000000000 -1000000000 2", "expectedOutput": "2", "problemTitle": "Sum of Even Numbers in an Array" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def sumOfEvenNumbers(arr):\n    # TODO: Return sum of all even numbers in the array\n    return 0\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    result = sumOfEvenNumbers(arr)\n    print(result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Sum of Even Numbers in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long sumOfEvenNumbers(int[] arr) {\n        // TODO: Return sum of all even elements\n        return 0L;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        System.out.println(Result.sumOfEvenNumbers(arr));\n    }\n}",
+          "problemTitle": "Sum of Even Numbers in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function sumOfEvenNumbers(arr) {\n    // TODO: Return sum of even numbers\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(sumOfEvenNumbers(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Sum of Even Numbers in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nlong long sumOfEvenNumbers(vector<long long> arr) {\n    // TODO: Return sum of all even numbers\n    return 0;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cout << sumOfEvenNumbers(arr) << endl;\n    return 0;\n}",
+          "problemTitle": "Sum of Even Numbers in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long sumOfEvenNumbers(int arr[], int n) {\n    // TODO: Return sum of even numbers\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    printf(\"%lld\\n\", sumOfEvenNumbers(arr, n));\n    return 0;\n}",
+          "problemTitle": "Sum of Even Numbers in an Array"
+        }
+      ],
+
+      "hintsList": [
+        "num % 2 == 0 checks even for negative numbers too",
+        "Use long long / long because sum can be up to 10^14 in absolute value"
+      ]
+    }
+  ]
+}

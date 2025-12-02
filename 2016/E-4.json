@@ -1,0 +1,70 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Sort First K Elements Using Bubble Sort",
+      "description": "Problem Statement\nYou are given an integer N, an integer K, and an array A of N integers. Your task is to sort only the first K elements of the array using the Bubble Sort algorithm. The remaining elements of the array must remain unchanged.\nBubble Sort compares adjacent elements and swaps them when they are in the wrong order. Perform sorting only on the first K positions of the array.\n\nInput Format\nThe first line contains two integers N and K.\nThe second line contains N space-separated integers representing the array A.\n\nOutput Format\nPrint the updated array after sorting only the first K elements.\n\nExample 1\nInput:\n7 4\n5 3 9 1 2 8 6\n\nOutput:\n1 3 5 9 2 8 6\n\nExplanation:\nOnly the first 4 elements {5, 3, 9, 1} are sorted → {1, 3, 5, 9}. The rest of the array remains unchanged.",
+      "examples": "Sample Input\n6 3\n4 2 6 9 1 5\n\nSample Output\n2 4 6 9 1 5",
+      "constraints": "1 ≤ N ≤ 10^4\n1 ≤ K ≤ N\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2016,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7 4\n5 3 9 1 2 8 6", "expectedOutput": "1 3 5 9 2 8 6", "problemTitle": "Sort First K Elements Using Bubble Sort" },
+        { "id": null, "problemId": null, "input": "6 3\n4 2 6 9 1 5", "expectedOutput": "2 4 6 9 1 5", "problemTitle": "Sort First K Elements Using Bubble Sort" },
+        { "id": null, "problemId": null, "input": "5 5\n10 5 8 2 7", "expectedOutput": "2 5 7 8 10", "problemTitle": "Sort First K Elements Using Bubble Sort" },
+        { "id": null, "problemId": null, "input": "4 1\n8 3 9 2", "expectedOutput": "8 3 9 2", "problemTitle": "Sort First K Elements Using Bubble Sort" },
+        { "id": null, "problemId": null, "input": "5 2\n0 -4 7 1 -1", "expectedOutput": "-4 0 7 1 -1", "problemTitle": "Sort First K Elements Using Bubble Sort" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def bubbleSortFirstK(arr, k):\n    # TODO: Implement bubble sort only for first k elements\n    return arr\n\ndef solve():\n    n, k = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = bubbleSortFirstK(arr, k)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Sort First K Elements Using Bubble Sort"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int[] bubbleSortFirstK(int[] arr, int k) {\n        // TODO: Write bubble sort logic only for first k elements\n        return arr;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] nk = br.readLine().split(\" \");\n        int n = Integer.parseInt(nk[0]);\n        int k = Integer.parseInt(nk[1]);\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        arr = Result.bubbleSortFirstK(arr, k);\n        for(int x : arr) System.out.print(x + \" \");\n    }\n}",
+          "problemTitle": "Sort First K Elements Using Bubble Sort"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function bubbleSortFirstK(arr, k) {\n    // TODO: Implement bubble sort only for indexes < k\n    return arr;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, k] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    const result = bubbleSortFirstK(arr, k);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Sort First K Elements Using Bubble Sort"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> bubbleSortFirstK(vector<long long> arr, int k) {\n    // TODO: Apply bubble sort only on first k elements\n    return arr;\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, k;\n    cin >> n >> k;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    arr = bubbleSortFirstK(arr, k);\n    for(long long x : arr) cout << x << \" \";\n    return 0;\n}",
+          "problemTitle": "Sort First K Elements Using Bubble Sort"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid bubbleSortFirstK(long long arr[], int n, int k) {\n    // TODO: Bubble sort logic only for first k values\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    long long arr[10001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    bubbleSortFirstK(arr, n, k);\n    for(int i = 0; i < n; i++) printf(\"%lld \", arr[i]);\n    return 0;\n}",
+          "problemTitle": "Sort First K Elements Using Bubble Sort"
+        }
+      ],
+
+      "hintsList": [
+        "Perform bubble sort loops but only inside index range [0, k-1]",
+        "Do not touch remaining N-K elements"
+      ]
+    }
+  ]
+}

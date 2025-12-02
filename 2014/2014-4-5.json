@@ -1,0 +1,137 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Reverse an Array",
+      "description": "Problem Statement\nGiven an array of N integers, reverse the array in-place (without using extra space) and print the reversed array.\n\nInput Format\nFirst line contains integer N.\nSecond line contains N space-separated integers.\n\nOutput Format\nPrint the array in reversed order, elements separated by space.\n\nExample 1\nInput:\n6\n1 2 3 4 5 6\n\nOutput:\n6 5 4 3 2 1\n\nExample 2\nInput:\n5\n10 20 30 40 50\n\nOutput:\n50 40 30 20 10",
+      "examples": "Sample Input\n6\n1 2 3 4 5 6\n\nSample Output\n6 5 4 3 2 1",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2014,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "6\n1 2 3 4 5 6", "expectedOutput": "6 5 4 3 2 1", "problemTitle": "Reverse an Array" },
+        { "id": null, "problemId": null, "input": "5\n10 20 30 40 50", "expectedOutput": "50 40 30 20 10", "problemTitle": "Reverse an Array" },
+        { "id": null, "problemId": null, "input": "1\n999", "expectedOutput": "999", "problemTitle": "Reverse an Array" },
+        { "id": null, "problemId": null, "input": "4\n-1 -2 -3 -4", "expectedOutput": "-4 -3 -2 -1", "problemTitle": "Reverse an Array" },
+        { "id": null, "problemId": null, "input": "7\n5 5 5 5 5 5 5", "expectedOutput": "5 5 5 5 5 5 5", "problemTitle": "Reverse an Array" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def reverseArray(arr):\n    # TODO: Reverse the array in-place and return it\n    return arr\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    result = reverseArray(arr)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Reverse an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int[] reverseArray(int[] arr) {\n        // TODO: Reverse array in-place and return it\n        return arr;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int[] result = Result.reverseArray(arr);\n        for(int i = 0; i < result.length; i++) {\n            System.out.print(result[i] + (i < result.length-1 ? \" \" : \"\"));\n        }\n    }\n}",
+          "problemTitle": "Reverse an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function reverseArray(arr) {\n    // TODO: Reverse array in-place and return it\n    return arr;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    let arr = lines[1].split(\" \").map(Number);\n    arr = reverseArray(arr);\n    console.log(arr.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Reverse an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<int> reverseArray(vector<int> arr) {\n    // TODO: Reverse the vector in-place and return it\n    return arr;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    arr = reverseArray(arr);\n    for(int i = 0; i < n; i++) cout << arr[i] << (i<n-1 ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Reverse an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid reverseArray(int arr[], int n) {\n    // TODO: Reverse array in-place (modify arr directly)\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    reverseArray(arr, n);\n    for(int i = 0; i < n; i++) printf(\"%d%s\", arr[i], i<n-1 ? \" \" : \"\\n\");\n    return 0;\n}",
+          "problemTitle": "Reverse an Array"
+        }
+      ],
+
+      "hintsList": [
+        "Swap elements from start and end moving towards center",
+        "Use two pointers: i = 0 and j = n-1"
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Count Odd Numbers in an Array",
+      "description": "Problem Statement\nYou are given an array of N integers. Your task is to count and return how many numbers in the array are odd.\n\nInput Format\nFirst line contains integer N.\nSecond line contains N space-separated integers.\n\nOutput Format\nPrint a single integer — the count of odd numbers.\n\nExample 1\nInput:\n6\n1 2 3 4 5 6\n\nOutput:\n3\n\nExplanation: 1, 3, 5 are odd\n\nExample 2\nInput:\n5\n2 4 6 8 10\n\nOutput:\n0",
+      "examples": "Sample Input\n6\n1 2 3 4 5 6\n\nSample Output\n3",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2014,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "6\n1 2 3 4 5 6", "expectedOutput": "3", "problemTitle": "Count Odd Numbers in an Array" },
+        { "id": null, "problemId": null, "input": "5\n2 4 6 8 10", "expectedOutput": "0", "problemTitle": "Count Odd Numbers in an Array" },
+        { "id": null, "problemId": null, "input": "1\n-5", "expectedOutput": "1", "problemTitle": "Count Odd Numbers in an Array" },
+        { "id": null, "problemId": null, "input": "8\n-3 -1 0 2 4 7 9 11", "expectedOutput": "5", "problemTitle": "Count Odd Numbers in an Array" },
+        { "id": null, "problemId": null, "input": "4\n1000000000 -1000000000 3 -7", "expectedOutput": "2", "problemTitle": "Count Odd Numbers in an Array" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def countOddNumbers(arr):\n    # TODO: Return count of odd numbers\n    return 0\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    result = countOddNumbers(arr)\n    print(result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Count Odd Numbers in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int countOddNumbers(int[] arr) {\n        // TODO: Return count of odd numbers\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        System.out.println(Result.countOddNumbers(arr));\n    }\n}",
+          "problemTitle": "Count Odd Numbers in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function countOddNumbers(arr) {\n    // TODO: Return count of odd numbers\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(countOddNumbers(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Count Odd Numbers in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint countOddNumbers(vector<int> arr) {\n    // TODO: Return count of odd numbers\n    return 0;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cout << countOddNumbers(arr) << endl;\n    return 0;\n}",
+          "problemTitle": "Count Odd Numbers in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint countOddNumbers(int arr[], int n) {\n    // TODO: Return count of odd numbers\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    printf(\"%d\\n\", countOddNumbers(arr, n));\n    return 0;\n}",
+          "problemTitle": "Count Odd Numbers in an Array"
+        }
+      ],
+
+      "hintsList": [
+        "A number is odd if num % 2 != 0 (or num & 1)",
+        "Negative numbers can also be odd: -3, -1, -7 etc."
+      ]
+    }
+  ]
+}

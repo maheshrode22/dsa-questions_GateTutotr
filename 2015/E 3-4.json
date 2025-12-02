@@ -1,0 +1,101 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Sum of Digits using Recursion",
+      "description": "Problem Statement\nGiven a non-negative integer N, find the sum of its digits using recursion.\n\nInput Format\nSingle integer N\n\nOutput Format\nSingle integer: sum of digits of N\n\nExample\nInput:\n12345\n\nOutput:\n15\n\nExplanation: 1 + 2 + 3 + 4 + 5 = 15",
+      "examples": "Sample Input\n12345\nSample Output\n15",
+      "constraints": "0 ≤ N ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 1,
+
+      "testCases": [
+        { "input": "12345", "expectedOutput": "15" },
+        { "input": "999", "expectedOutput": "27" },
+        { "input": "0", "expectedOutput": "0" },
+        { "input": "55555", "expectedOutput": "25" },
+        { "input": "1000000000", "expectedOutput": "1" }
+      ],
+
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "def sumOfDigits(n):\n    # TODO: Return sum of digits using recursion\n    pass\n\ndef main():\n    n = int(input().strip())\n    print(sumOfDigits(n))\n\nif __name__ == \"__main__\":\n    main()"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\n\nclass Solution {\n    public static int sumOfDigits(long n) {\n        // TODO: Implement recursive sum of digits\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        long n = Long.parseLong(br.readLine().trim());\n        System.out.println(sumOfDigits(n));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "function sumOfDigits(n) {\n    // TODO: Implement recursive sum of digits\n    return 0;\n}\n\nconst n = BigInt(require('fs').readFileSync(0, 'utf-8').trim());\nconsole.log(Number(sumOfDigits(n)));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint sumOfDigits(long long n) {\n    // TODO: Implement recursive sum of digits\n    return 0;\n}\n\nint main() {\n    long long n;\n    cin >> n;\n    cout << sumOfDigits(n) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint sumOfDigits(long long n) {\n    // TODO: Implement recursive sum of digits\n    return 0;\n}\n\nint main() {\n    long long n;\n    scanf(\"%lld\", &n);\n    printf(\"%d\\n\", sumOfDigits(n));\n    return 0;\n}"
+        }
+      ],
+
+      "hintsList": [
+        "Base case: if n == 0 → return 0",
+        "Recursive step: return (n % 10) + sumOfDigits(n / 10)"
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Reverse a String using Recursion",
+      "description": "Problem Statement\nGiven a string S, reverse it using recursion and print the reversed string.\n\nInput Format\nSingle line containing string S\n\nOutput Format\nPrint the reversed string\n\nExample\nInput:\nhello\n\nOutput:\nolleh",
+      "examples": "Sample Input\nhello\nSample Output\nolleh",
+      "constraints": "1 ≤ |S| ≤ 1000\nString contains only lowercase English letters",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 1,
+
+      "testCases": [
+        { "input": "hello", "expectedOutput": "olleh" },
+        { "input": "recursion", "expectedOutput": "noisrucer" },
+        { "input": "a", "expectedOutput": "a" },
+        { "input": "abcde", "expectedOutput": "edcba" },
+        { "input": "programming", "expectedOutput": "gnimmargorp" }
+      ],
+
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "def reverseString(s):\n    # TODO: Return reversed string using recursion\n    pass\n\ndef main():\n    s = input().strip()\n    print(reverseString(s))\n\nif __name__ == \"__main__\":\n    main()"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\n\nclass Solution {\n    public static String reverseString(String s) {\n        // TODO: Implement recursive string reverse\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        System.out.println(reverseString(s));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "function reverseString(s) {\n    // TODO: Implement recursive string reverse\n    return \"\";\n}\n\nconst s = require('fs').readFileSync(0, 'utf-8').trim();\nconsole.log(reverseString(s));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nstring reverseString(string s) {\n    // TODO: Implement recursive string reverse\n    return \"\";\n}\n\nint main() {\n    string s;\n    cin >> s;\n    cout << reverseString(s) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nvoid reverseString(char str[], int start, int end) {\n    // TODO: Reverse string in-place using recursion\n}\n\nint main() {\n    char str[1005];\n    scanf(\"%s\", str);\n    int len = strlen(str);\n    reverseString(str, 0, len-1);\n    printf(\"%s\\n\", str);\n    return 0;\n}"
+        }
+      ],
+
+      "hintsList": [
+        "Base case: if string length <= 1 → return as is",
+        "Recursive: return reverse(substring(1:)) + first character"
+      ]
+    }
+  ]
+}

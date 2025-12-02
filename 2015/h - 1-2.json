@@ -1,0 +1,94 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Permutations of String",
+      "description": "Problem Statement\nGiven a string S containing distinct lowercase letters, print all possible permutations of the string in lexicographical order.\n\nInput Format\nSingle string S\n\nOutput Format\nEach permutation on a new line (lexicographically sorted)\n\nExample\nInput:\nabc\n\nOutput:\nabc\nacb\nbac\nbca\ncab\ncba",
+      "examples": "Sample Input\nabc\nSample Output\nabc\nacb\nbac\nbca\ncab\ncba",
+      "constraints": "1 ≤ |S| ≤ 9\nAll characters are distinct lowercase letters",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 3,
+      "testCases": [
+        { "input": "ab", "expectedOutput": "ab\nba" },
+        { "input": "abc", "expectedOutput": "abc\nacb\nbac\nbca\ncab\ncba" },
+        { "input": "a", "expectedOutput": "a" },
+        { "input": "xy", "expectedOutput": "xy\nyx" },
+        { "input": "abcd", "expectedOutput": "24 permutations in lex order" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "def permute(s, left, right):\n    # TODO: Print all permutations in lex order using recursion\n    pass\n\ndef main():\n    s = sorted(input().strip())\n    permute(s, 0, len(s)-1)\n\nif __name__ == \"__main__\":\n    main()"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public static void permute(char[] s, int l, int r) {\n        // TODO: Print all permutations in lex order\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        char[] s = br.readLine().trim().toCharArray();\n        Arrays.sort(s);\n        permute(s, 0, s.length-1);\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "function permute(arr, l, r) {\n    // TODO: Print all permutations in lex order\n}\n\nconst s = require('fs').readFileSync(0,'utf-8').trim().split('').sort();\npermute(s, 0, s.length-1);"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid permute(string &s, int l, int r) {\n    // TODO: Print all permutations in lex order\n}\n\nint main() {\n    string s;\n    cin >> s;\n    sort(s.begin(), s.end());\n    permute(s, 0, s.size()-1);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\nvoid permute(char s[], int l, int r) {\n    // TODO: Print all permutations\n}\nint main() {\n    char s[10];\n    scanf(\"%s\", s);\n    int n = strlen(s);\n    char temp[10];\n    strcpy(temp, s);\n    for(int i=0; i<n; i++)\n        for(int j=i+1; j<n; j++)\n            if(temp[i] > temp[j]) {\n                char t = temp[i]; temp[i] = temp[j]; temp[j] = t;\n            }\n    permute(temp, 0, n-1);\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Fix one character at a time and recurse on remaining",
+        "Swap characters and backtrack"
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Print All Balanced Parentheses",
+      "description": "Problem Statement\nGiven an integer N, print all possible ways to form N pairs of balanced parentheses.\n\nInput Format\nSingle integer N\n\nOutput Format\nPrint each valid combination on a new line (any order)\n\nExample\nInput:\n3\n\nOutput:\n((()))\n(()())\n(())()\n()(())\n()()()",
+      "examples": "Sample Input\n3\nSample Output\n((()))\n(()())\n(())()\n()(())\n()()()",
+      "constraints": "1 ≤ N ≤ 10",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 3,
+      "testCases": [
+        { "input": "1", "expectedOutput": "()" },
+        { "input": "2", "expectedOutput": "(())\n()()" },
+        { "input": "3", "expectedOutput": "((()))\n(()())\n(())()\n()(())\n()()()" },
+        { "input": "4", "expectedOutput": "14 valid combinations" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "def generateParenthesis(open, close, current):\n    # TODO: Print all valid combinations for N pairs\n    pass\n\ndef main():\n    n = int(input().strip())\n    generateParenthesis(n, n, \"\")\n\nif __name__ == \"__main__\":\n    main()"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\n\nclass Solution {\n    public static void generate(int open, int close, String current) {\n        // TODO: Print all valid parentheses\n    }\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        generate(n, n, \"\");\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "function generate(open, close, current) {\n    // TODO: Print all valid combinations\n}\n\nconst n = Number(require('fs').readFileSync(0,'utf-8').trim());\ngenerate(n, n, '');"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid generate(int open, int close, string current) {\n    // TODO: Print all valid parentheses\n}\n\nint main() {\n    int n;\n    cin >> n;\n    generate(n, n, \"\");\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\nvoid generate(int open, int close, char current[], int pos) {\n    // TODO: Print all valid combinations\n}\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    char current[25] = {0};\n    generate(n, n, current, 0);\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Add '(' if open > 0",
+        "Add ')' only if close open"
+      ]
+    }
+  ]
+}

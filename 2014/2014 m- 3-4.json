@@ -1,0 +1,137 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Rotate Array by K Positions",
+      "description": "Problem Statement\nGiven an array of N integers and an integer K, rotate the array to the right by K positions. If K is larger than N, it should still work correctly.\n\nInput Format\nFirst line contains integer N.\nSecond line contains N space-separated integers.\nThird line contains integer K.\n\nOutput Format\nPrint the rotated array with elements separated by space.\n\nExample 1\nInput:\n7\n1 2 3 4 5 6 7\n3\n\nOutput:\n5 6 7 1 2 3 4\n\nExample 2\nInput:\n5\n10 20 30 40 50\n7\n\nOutput:\n40 50 10 20 30",
+      "examples": "Sample Input\n7\n1 2 3 4 5 6 7\n3\n\nSample Output\n5 6 7 1 2 3 4",
+      "constraints": "1 ≤ N ≤ 10^5\n0 ≤ K ≤ 10^9\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2014,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7\n1 2 3 4 5 6 7\n3", "expectedOutput": "5 6 7 1 2 3 4", "problemTitle": "Rotate Array by K Positions" },
+        { "id": null, "problemId": null, "input": "5\n10 20 30 40 50\n2", "expectedOutput": "40 50 10 20 30", "problemTitle": "Rotate Array by K Positions" },
+        { "id": null, "problemId": null, "input": "6\n1 2 3 4 5 6\n8", "expectedOutput": "5 6 1 2 3 4", "problemTitle": "Rotate Array by K Positions" },
+        { "id": null, "problemId": null, "input": "4\n-1 -2 -3 -4\n4", "expectedOutput": "-1 -2 -3 -4", "problemTitle": "Rotate Array by K Positions" },
+        { "id": null, "problemId": null, "input": "1\n100\n10", "expectedOutput": "100", "problemTitle": "Rotate Array by K Positions" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def rotateArray(arr, k):\n    # TODO: Return rotated array (right rotation by k)\n    return arr\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    k = int(input().strip())\n    result = rotateArray(arr, k)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Rotate Array by K Positions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int[] rotateArray(int[] arr, int k) {\n        // TODO: Return rotated array (right rotation)\n        return arr;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int k = Integer.parseInt(br.readLine().trim());\n        int[] result = Result.rotateArray(arr, k);\n        for(int i = 0; i < result.length; i++) {\n            System.out.print(result[i]);\n            if(i < result.length - 1) System.out.print(\" \");\n        }\n    }\n}",
+          "problemTitle": "Rotate Array by K Positions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function rotateArray(arr, k) {\n    // TODO: Return rotated array (right rotation by k)\n    return arr;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    let arr = lines[1].split(\" \").map(Number);\n    const k = Number(lines[2]);\n    arr = rotateArray(arr, k);\n    console.log(arr.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Rotate Array by K Positions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<int> rotateArray(vector<int> arr, int k) {\n    // TODO: Return rotated array (right rotation by k)\n    return arr;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, k;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cin >> k;\n    arr = rotateArray(arr, k);\n    for(int i = 0; i < n; i++) {\n        cout << arr[i];\n        if(i < n-1) cout << \" \";\n    }\n    return 0;\n}",
+          "problemTitle": "Rotate Array by K Positions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid rotateArray(int arr[], int n, int k) {\n    // TODO: Modify arr in-place (right rotation by k)\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    scanf(\"%d\", &k);\n    rotateArray(arr, n, k);\n    for(int i = 0; i < n; i++) {\n        printf(\"%d\", arr[i]);\n        if(i < n-1) printf(\" \");\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+          "problemTitle": "Rotate Array by K Positions"
+        }
+      ],
+
+      "hintsList": [
+        "Always do k = k % n first (handles large K)",
+        "Best method: Reverse entire array → reverse first (n-k) → reverse last k"
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Find Second Largest Element",
+      "description": "Problem Statement\nGiven an array of N integers, find and return the second largest distinct element. If there is no second largest (all elements same or N < 2), return -1.\n\nInput Format\nFirst line contains integer N.\nSecond line contains N space-separated integers.\n\nOutput Format\nPrint a single integer: the second largest element or -1.\n\nExample 1\nInput:\n6\n12 35 1 10 34 1\n\nOutput:\n34\n\nExample 2\nInput:\n5\n8 8 8 8 8\n\nOutput:\n-1",
+      "examples": "Sample Input\n6\n12 35 1 10 34 1\n\nSample Output\n34",
+      "constraints": "2 ≤ N ≤ 10^5\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2014,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "6\n12 35 1 10 34 1", "expectedOutput": "34", "problemTitle": "Find Second Largest Element" },
+        { "id": null, "problemId": null, "input": "5\n8 8 8 8 8", "expectedOutput": "-1", "problemTitle": "Find Second Largest Element" },
+        { "id": null, "problemId": null, "input": "4\n10 5 10 20", "expectedOutput": "10", "problemTitle": "Find Second Largest Element" },
+        { "id": null, "problemId": null, "input": "3\n-5 -1 -10", "expectedOutput": "-5", "problemTitle": "Find Second Largest Element" },
+        { "id": null, "problemId": null, "input": "2\n100 100", "expectedOutput": "-1", "problemTitle": "Find Second Largest Element" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def secondLargest(arr):\n    # TODO: Return second largest distinct element or -1\n    return -1\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    print(secondLargest(arr))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Find Second Largest Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long secondLargest(int[] arr) {\n        // TODO: Return second largest or -1\n        return -1L;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        System.out.println(Result.secondLargest(arr));\n    }\n}",
+          "problemTitle": "Find Second Largest Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function secondLargest(arr) {\n    // TODO: Return second largest or -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(secondLargest(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Find Second Largest Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nlong long secondLargest(vector<long long>& arr) {\n    // TODO: Return second largest or -1\n    return -1;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cout << secondLargest(arr) << endl;\n    return 0;\n}",
+          "problemTitle": "Find Second Largest Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long secondLargest(int arr[], int n) {\n    // TODO: Return second largest or -1\n    return -1;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    printf(\"%lld\\n\", secondLargest(arr, n));\n    return 0;\n}",
+          "problemTitle": "Find Second Largest Element"
+        }
+      ],
+
+      "hintsList": [
+        "Single pass: keep track of first and second maximum",
+        "Update second only when you find a number < first and > second"
+      ]
+    }
+  ]
+}

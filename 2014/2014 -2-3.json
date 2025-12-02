@@ -1,0 +1,137 @@
+{
+    "problems": [
+      {
+        "id": null,
+        "title": "Count Numbers Greater Than X",
+        "description": "Problem Statement\nYou are given an array of N integers and an integer X. Your task is to count how many numbers in the array are strictly greater than X.\n\nInput Format\nFirst line contains integer N.\nSecond line contains N space-separated integers.\nThird line contains integer X.\n\nOutput Format\nPrint a single integer — the count of elements strictly greater than X.\n\nExample 1\nInput:\n6\n10 5 8 20 3 15\n12\n\nOutput:\n2\n\nExplanation: 20 and 15 are > 12\n\nExample 2\nInput:\n5\n1 2 3 4 5\n5\n\nOutput:\n0",
+        "examples": "Sample Input\n6\n10 5 8 20 3 15\n12\n\nSample Output\n2",
+        "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], X ≤ 10^9",
+        "hints": 2,
+        "timeLimit": 1,
+        "memoryLimit": 256,
+        "subdomainId": 2014,
+        "difficulty": 1,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+  
+        "testCases": [
+          { "id": null, "problemId": null, "input": "6\n10 5 8 20 3 15\n12", "expectedOutput": "2", "problemTitle": "Count Numbers Greater Than X" },
+          { "id": null, "problemId": null, "input": "5\n1 2 3 4 5\n5", "expectedOutput": "0", "problemTitle": "Count Numbers Greater Than X" },
+          { "id": null, "problemId": null, "input": "4\n-1 -5 0 10\n-10", "expectedOutput": "4", "problemTitle": "Count Numbers Greater Than X" },
+          { "id": null, "problemId": null, "input": "1\n100\n100", "expectedOutput": "0", "problemTitle": "Count Numbers Greater Than X" },
+          { "id": null, "problemId": null, "input": "8\n7 7 7 7 7 7 7 7\n6", "expectedOutput": "8", "problemTitle": "Count Numbers Greater Than X" }
+        ],
+  
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def countGreaterThanX(arr, x):\n    # TODO: Return count of elements strictly greater than x\n    return 0\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    result = countGreaterThanX(arr, x)\n    print(result)\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Count Numbers Greater Than X"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int countGreaterThanX(int[] arr, int x) {\n        // TODO: Return count of elements > x\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int x = Integer.parseInt(br.readLine().trim());\n        System.out.println(Result.countGreaterThanX(arr, x));\n    }\n}",
+            "problemTitle": "Count Numbers Greater Than X"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function countGreaterThanX(arr, x) {\n    // TODO: Return count of numbers strictly greater than x\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(countGreaterThanX(arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Count Numbers Greater Than X"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint countGreaterThanX(vector<int> arr, int x) {\n    // TODO: Return count of elements > x\n    return 0;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, x;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cin >> x;\n    cout << countGreaterThanX(arr, x) << endl;\n    return 0;\n}",
+            "problemTitle": "Count Numbers Greater Than X"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n\nint countGreaterThanX(int arr[], int n, int x) {\n    // TODO: Return count of elements > x\n    return 0;\n}\n\nint main() {\n    int n, x;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    scanf(\"%d\", &x);\n    printf(\"%d\\n\", countGreaterThanX(arr, n, x));\n    return 0;\n}",
+            "problemTitle": "Count Numbers Greater Than X"
+          }
+        ],
+  
+        "hintsList": [
+          "Use a loop and increment counter when arr[i] > x",
+          "Remember: strictly greater means == not counted"
+        ]
+      },
+  
+      {
+        "id": null,
+        "title": "Find Minimum and Maximum in an Array",
+        "description": "Problem Statement\nGiven an array of N integers, find the minimum and maximum value in the array and print them in a single line separated by space.\n\nInput Format\nFirst line contains integer N.\nSecond line contains N space-separated integers.\n\nOutput Format\nPrint two integers: minimum maximum\n\nExample 1\nInput:\n6\n2 5 1 9 3 7\n\nOutput:\n1 9\n\nExample 2\nInput:\n4\n-5 -1 0 10\n\nOutput:\n-5 10",
+        "examples": "Sample Input\n6\n2 5 1 9 3 7\n\nSample Output\n1 9",
+        "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i] ≤ 10^9",
+        "hints": 2,
+        "timeLimit": 1,
+        "memoryLimit": 256,
+        "subdomainId": 2014,
+        "difficulty": 1,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+  
+        "testCases": [
+          { "id": null, "problemId": null, "input": "6\n2 5 1 9 3 7", "expectedOutput": "1 9", "problemTitle": "Find Minimum and Maximum in an Array" },
+          { "id": null, "problemId": null, "input": "4\n-5 -1 0 10", "expectedOutput": "-5 10", "problemTitle": "Find Minimum and Maximum in an Array" },
+          { "id": null, "problemId": null, "input": "1\n-1000000000", "expectedOutput": "-1000000000 -1000000000", "problemTitle": "Find Minimum and Maximum in an Array" },
+          { "id": null, "problemId": null, "input": "5\n1000000000 -1000000000 0 500 -500", "expectedOutput": "-1000000000 1000000000", "problemTitle": "Find Minimum and Maximum in an Array" },
+          { "id": null, "problemId": null, "input": "3\n7 7 7", "expectedOutput": "7 7", "problemTitle": "Find Minimum and Maximum in an Array" }
+        ],
+  
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def findMinMax(arr):\n    # TODO: Return (minimum, maximum) as tuple\n    return (0, 0)\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    mn, mx = findMinMax(arr)\n    print(mn, mx)\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Find Minimum and Maximum in an Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] findMinMax(int[] arr) {\n        // TODO: Return long array of size 2 → [min, max]\n        return new long[]{0, 0};\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        long[] res = Result.findMinMax(arr);\n        System.out.println(res[0] + \" \" + res[1]);\n    }\n}",
+            "problemTitle": "Find Minimum and Maximum in an Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function findMinMax(arr) {\n    // TODO: Return [min, max]\n    return [0, 0];\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const [mn, mx] = findMinMax(arr);\n    console.log(mn + \" \" + mx);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Find Minimum and Maximum in an Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\npair<long long, long long> findMinMax(vector<long long> arr) {\n    // TODO: Return {minimum, maximum}\n    return {0, 0};\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    auto p = findMinMax(arr);\n    cout << p.first << \" \" << p.second << endl;\n    return 0;\n}",
+            "problemTitle": "Find Minimum and Maximum in an Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n\nvoid findMinMax(int arr[], int n, long long *min_val, long long *max_val) {\n    // TODO: Update min_val and max_val accordingly\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    long long mn, mx;\n    findMinMax(arr, n, &mn, &mx);\n    printf(\"%lld %lld\\n\", mn, mx);\n    return 0;\n}",
+            "problemTitle": "Find Minimum and Maximum in an Array"
+          }
+        ],
+  
+        "hintsList": [
+          "You can initialize min with first element and max with first element",
+          "Single element array: min and max are the same element itself"
+        ]
+      }
+    ]
+  }

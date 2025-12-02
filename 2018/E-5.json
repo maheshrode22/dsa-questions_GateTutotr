@@ -1,0 +1,335 @@
+
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Create a Hash Table using Modulo Hashing",
+      "description": "Problem Statement\nYou are given two integers N (size of hash table) and M (number of elements). Then you are given M integers to insert into the hash table.\nUse modulo hashing: index = value % N.\nIf the index is empty, insert the element.\nIf the index is already occupied, overwrite it (simple hashing without collision handling, for practice).\nAfter inserting all elements, print the final hash table.\n\nInput Format\nThe first line contains two integers N and M.\nThe second line contains M space-separated integers to insert.\n\nOutput Format\nPrint N integers representing the hash table after all insertions. Empty cells should contain -1.\n\nExample 1\nInput:\n5 3\n12 7 15\n\nOutput:\n-1 7 -1 12 15\n\nExplanation:\n12 % 5 = 2 → table[2] = 12\n7 % 5 = 2 → overwrite table[2] = 7\n15 % 5 = 0 → table[0] = 15",
+      "examples": "Sample Input\n5 4\n1 6 11 3\n\nSample Output\n1 6 11 -1 3",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\n-10^9 ≤ values ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5 3\n12 7 15", "expectedOutput": "-1 7 -1 12 15", "problemTitle": "Create a Hash Table using Modulo Hashing" },
+        { "id": null, "problemId": null, "input": "5 4\n1 6 11 3", "expectedOutput": "1 6 11 -1 3", "problemTitle": "Create a Hash Table using Modulo Hashing" },
+        { "id": null, "problemId": null, "input": "4 2\n8 12", "expectedOutput": "-1 -1 -1 12", "problemTitle": "Create a Hash Table using Modulo Hashing" },
+        { "id": null, "problemId": null, "input": "6 1\n25", "expectedOutput": "-1 -1 -1 -1 1 -1", "problemTitle": "Create a Hash Table using Modulo Hashing" },
+        { "id": null, "problemId": null, "input": "3 3\n7 10 13", "expectedOutput": "13 10 7", "problemTitle": "Create a Hash Table using Modulo Hashing" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def createHashTable(n, arr):\n    # TODO: Implement modulo hashing without collision handling\n    return []\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = createHashTable(n, arr)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Create a Hash Table using Modulo Hashing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] createHashTable(int n, long[] arr) {\n        // TODO: Implement modulo hashing without collision handling\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int m = Integer.parseInt(first[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] result = Result.createHashTable(n, arr);\n        for (int i = 0; i < n; i++) System.out.print(result[i] + (i+1<n ? \" \" : \"\"));\n    }\n}",
+          "problemTitle": "Create a Hash Table using Modulo Hashing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function createHashTable(n, arr) {\n    // TODO: Implement modulo hashing without collision handling\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const nm = lines[0].split(\" \").map(Number);\n    const n = nm[0];\n    const arr = lines[1].split(\" \").map(Number);\n    const result = createHashTable(n, arr);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Create a Hash Table using Modulo Hashing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> createHashTable(int n, vector<long long> arr) {\n    // TODO: Implement modulo hashing without collision handling\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n    vector<long long> result = createHashTable(n, arr);\n    for(int i = 0; i < n; i++) cout << result[i] << (i+1<n ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Create a Hash Table using Modulo Hashing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid createHashTable(long long table[], int n, long long arr[], int m) {\n    // TODO: Implement modulo hashing without collision handling\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    createHashTable(table, n, arr, m);\n\n    for(int i = 0; i < n; i++) printf(\"%lld%s\", table[i], i+1<n ? \" \" : \"\");\n\n    return 0;\n}",
+          "problemTitle": "Create a Hash Table using Modulo Hashing"
+        }
+      ],
+
+      "hintsList": [
+        "Use index = value % N.",
+        "If collision occurs, overwrite existing value (simple hashing)."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Search an Element in Hash Table (Modulo Method)",
+      "description": "Problem Statement\nYou are given a hash table of size N. The table is filled using modulo hashing:\nindex = value % N.\nIf multiple values hash to the same index, the latest value overwrites the previous one (simple overwrite hashing).\nYour task: after inserting all values, search for a given target X.\nIf X is stored at the hashed index, print \"FOUND\"; otherwise print \"NOT FOUND\".\n\nInput Format\nThe first line contains two integers N (table size) and M (number of elements).\nThe second line contains M space-separated integers to insert into the hash table.\nThe third line contains the target X to search.\n\nOutput Format\nPrint \"FOUND\" if X exists in the hash table, else print \"NOT FOUND\".\n\nExample 1\nInput:\n5 3\n12 7 15\n7\n\nOutput:\nFOUND\n\nExplanation:\nHash table after insertions: [-1, 7, -1, 12, 15]. Searching 7 → stored at index 2%5 = 2 → FOUND.",
+      "examples": "Sample Input\n5 4\n1 6 11 3\n10\n\nSample Output\nNOT FOUND",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\n-10^9 ≤ values, X ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5 3\n12 7 15\n7", "expectedOutput": "FOUND", "problemTitle": "Search an Element in Hash Table (Modulo Method)" },
+        { "id": null, "problemId": null, "input": "5 4\n1 6 11 3\n10", "expectedOutput": "NOT FOUND", "problemTitle": "Search an Element in Hash Table (Modulo Method)" },
+        { "id": null, "problemId": null, "input": "4 2\n8 12\n8", "expectedOutput": "NOT FOUND", "problemTitle": "Search an Element in Hash Table (Modulo Method)" },
+        { "id": null, "problemId": null, "input": "6 1\n25\n25", "expectedOutput": "FOUND", "problemTitle": "Search an Element in Hash Table (Modulo Method)" },
+        { "id": null, "problemId": null, "input": "3 3\n7 10 13\n7", "expectedOutput": "NOT FOUND", "problemTitle": "Search an Element in Hash Table (Modulo Method)" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def searchHashTable(n, arr, x):\n    # TODO: Implement modulo hashing and search\n    return \"NOT FOUND\"\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    print(searchHashTable(n, arr, x))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Search an Element in Hash Table (Modulo Method)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static String searchHashTable(int n, long[] arr, long x) {\n        // TODO: Implement modulo hashing + search\n        return \"NOT FOUND\";\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int m = Integer.parseInt(first[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long x = Long.parseLong(br.readLine().trim());\n        System.out.println(Result.searchHashTable(n, arr, x));\n    }\n}",
+          "problemTitle": "Search an Element in Hash Table (Modulo Method)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function searchHashTable(n, arr, x) {\n    // TODO: Implement modulo hashing + search\n    return \"NOT FOUND\";\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const nm = lines[0].split(\" \").map(Number);\n    const n = nm[0];\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(searchHashTable(n, arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Search an Element in Hash Table (Modulo Method)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nstring searchHashTable(int n, vector<long long> arr, long long x) {\n    // TODO: Implement modulo hashing + search\n    return \"NOT FOUND\";\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n\n    long long x;\n    cin >> x;\n\n    cout << searchHashTable(n, arr, x);\n    return 0;\n}",
+          "problemTitle": "Search an Element in Hash Table (Modulo Method)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nconst char* searchHashTable(long long table[], int n, long long arr[], int m, long long x) {\n    // TODO: Implement modulo hashing + search\n    return \"NOT FOUND\";\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long x;\n    scanf(\"%lld\", &x);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    printf(\"%s\", searchHashTable(table, n, arr, m, x));\n    return 0;\n}",
+          "problemTitle": "Search an Element in Hash Table (Modulo Method)"
+        }
+      ],
+
+      "hintsList": [
+        "Use index = value % N.",
+        "Since collision overwrites, check only the hashed index for the target."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Insert and Display in Hash Table using Direct Hashing",
+      "description": "Problem Statement\nYou are given two integers N (size of hash table) and M (number of values). A hash table of size N must be created and initialized with -1.\nUsing direct hashing:\nindex = value.\nInsert each given value directly at table[value], if it lies within the hash table range (0 to N-1). Values outside the range should be ignored.\nAfter processing all values, print the entire hash table.\n\nInput Format\nThe first line contains two integers N and M.\nThe second line contains M space-separated integers.\n\nOutput Format\nPrint N space-separated integers representing the final hash table.\n\nExample 1\nInput:\n10 5\n1 3 7 9 11\n\nOutput:\n-1 1 -1 3 -1 -1 -1 7 -1 9\n\nExplanation:\n11 ignored because it is outside range 0 to 9.",
+      "examples": "Sample Input\n5 3\n0 2 4\n\nSample Output\n0 -1 2 -1 4",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\n-10^9 ≤ values ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "10 5\n1 3 7 9 11", "expectedOutput": "-1 1 -1 3 -1 -1 -1 7 -1 9", "problemTitle": "Insert and Display in Hash Table using Direct Hashing" },
+        { "id": null, "problemId": null, "input": "5 3\n0 2 4", "expectedOutput": "0 -1 2 -1 4", "problemTitle": "Insert and Display in Hash Table using Direct Hashing" },
+        { "id": null, "problemId": null, "input": "6 4\n5 1 10 3", "expectedOutput": "-1 1 -1 3 -1 5", "problemTitle": "Insert and Display in Hash Table using Direct Hashing" },
+        { "id": null, "problemId": null, "input": "8 2\n100 -5", "expectedOutput": "-1 -1 -1 -1 -1 -1 -1 -1", "problemTitle": "Insert and Display in Hash Table using Direct Hashing" },
+        { "id": null, "problemId": null, "input": "7 5\n6 0 6 2 1", "expectedOutput": "0 1 2 -1 -1 -1 6", "problemTitle": "Insert and Display in Hash Table using Direct Hashing" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def directHashing(n, arr):\n    # TODO: Implement direct hashing\n    return []\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = directHashing(n, arr)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Insert and Display in Hash Table using Direct Hashing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] directHashing(int n, long[] arr) {\n        // TODO: Implement direct hashing\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int m = Integer.parseInt(first[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] result = Result.directHashing(n, arr);\n        for (int i = 0; i < n; i++) System.out.print(result[i] + (i+1<n ? \" \" : \"\"));\n    }\n}",
+          "problemTitle": "Insert and Display in Hash Table using Direct Hashing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function directHashing(n, arr) {\n    // TODO: Implement direct hashing\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const nm = lines[0].split(\" \").map(Number);\n    const n = nm[0];\n    const arr = lines[1].split(\" \").map(Number);\n    const result = directHashing(n, arr);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Insert and Display in Hash Table using Direct Hashing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> directHashing(int n, vector<long long> arr) {\n    // TODO: Implement direct hashing\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n\n    vector<long long> result = directHashing(n, arr);\n    for(int i = 0; i < n; i++) cout << result[i] << (i+1<n ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Insert and Display in Hash Table using Direct Hashing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid directHashing(long long table[], int n, long long arr[], int m) {\n    // TODO: Implement direct hashing\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    directHashing(table, n, arr, m);\n\n    for(int i = 0; i < n; i++) printf(\"%lld%s\", table[i], i+1<n ? \" \" : \"\");\n\n    return 0;\n}",
+          "problemTitle": "Insert and Display in Hash Table using Direct Hashing"
+        }
+      ],
+
+      "hintsList": [
+        "Direct hashing means index = value.",
+        "Ignore values outside the range [0, N-1]."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Simple Collision Handling using Linear Probing",
+      "description": "Problem Statement\nYou are given a hash table of size N, initialized with -1. You are also given M integers to insert.\nUse modulo hashing:\nindex = value % N.\nIf the index is empty, insert the value.\nIf the index is occupied, use Linear Probing:\n- Move to (index + 1) % N\n- Continue until you find an empty slot.\nAfter inserting all elements, print the final hash table.\n\nInput Format\nThe first line contains two integers N and M.\nThe second line contains M space-separated integers.\n\nOutput Format\nPrint N space-separated integers representing the hash table.\n\nExample 1\nInput:\n5 4\n12 7 15 22\n\nOutput:\n12 22 7 15 -1\n\nExplanation:\n12 % 5 = 2 → table[2] = 12\n7 % 5 = 2 → collision → next free index = 3 → table[3] = 7\n15 % 5 = 0 → table[0] = 15\n22 % 5 = 2 → collision at 2 → 3 → 4 → table[4] = 22",
+      "examples": "Sample Input\n5 3\n1 6 11\n\nSample Output\n1 6 11 -1 -1",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\n-10^9 ≤ values ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5 4\n12 7 15 22", "expectedOutput": "12 22 7 15 -1", "problemTitle": "Simple Collision Handling using Linear Probing" },
+        { "id": null, "problemId": null, "input": "5 3\n1 6 11", "expectedOutput": "1 6 11 -1 -1", "problemTitle": "Simple Collision Handling using Linear Probing" },
+        { "id": null, "problemId": null, "input": "7 4\n14 21 28 35", "expectedOutput": "14 21 28 35 -1 -1 -1", "problemTitle": "Simple Collision Handling using Linear Probing" },
+        { "id": null, "problemId": null, "input": "5 5\n5 10 15 20 25", "expectedOutput": "25 -1 -1 -1 -1", "problemTitle": "Simple Collision Handling using Linear Probing" },
+        { "id": null, "problemId": null, "input": "6 5\n7 1 13 19 25", "expectedOutput": "19 1 7 13 25 -1", "problemTitle": "Simple Collision Handling using Linear Probing" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def linearProbing(n, arr):\n    # TODO: Implement linear probing collision handling\n    return []\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = linearProbing(n, arr)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Simple Collision Handling using Linear Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] linearProbing(int n, long[] arr) {\n        // TODO: Implement linear probing collision handling\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int m = Integer.parseInt(first[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] result = Result.linearProbing(n, arr);\n        for (int i = 0; i < n; i++) System.out.print(result[i] + (i+1<n ? \" \" : \"\"));\n    }\n}",
+          "problemTitle": "Simple Collision Handling using Linear Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function linearProbing(n, arr) {\n    // TODO: Implement linear probing\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const nm = lines[0].split(\" \").map(Number);\n    const n = nm[0];\n    const arr = lines[1].split(\" \").map(Number);\n    const result = linearProbing(n, arr);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Simple Collision Handling using Linear Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> linearProbing(int n, vector<long long> arr) {\n    // TODO: Implement linear probing collision handling\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n\n    vector<long long> result = linearProbing(n, arr);\n    for(int i = 0; i < n; i++) cout << result[i] << (i+1<n ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Simple Collision Handling using Linear Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid linearProbing(long long table[], int n, long long arr[], int m) {\n    // TODO: Implement linear probing\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    linearProbing(table, n, arr, m);\n\n    for(int i = 0; i < n; i++) printf(\"%lld%s\", table[i], i+1<n ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Simple Collision Handling using Linear Probing"
+        }
+      ],
+
+      "hintsList": [
+        "Use index = value % N.",
+        "On collision, probe the next index until you find an empty slot."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Delete Element in Hash Table using Linear Probing",
+      "description": "Problem Statement\nYou are given a hash table of size N, initially filled with -1. You need to insert M values using linear probing:\nindex = value % N.\nIf the index is occupied, move to the next index (circular).\nAfter all insertions, you are given a target X to delete.\nIf X exists in the hash table, replace that index with -1.\n\nNote: We do NOT rehash or shift elements after deletion (simple deletion). Print the final table.\n\nInput Format\nFirst line: two integers N (table size) and M (number of elements).\nSecond line: M space-separated integers to insert.\nThird line: the value X to delete.\n\nOutput Format\nPrint the final hash table after deletion.\n\nExample 1\nInput:\n5 4\n12 7 15 22\n7\n\nOutput:\n12 22 -1 15 -1\n\nExplanation:\nAfter all insertions, table = [12, 22, 7, 15, -1]\n7 is deleted → index becomes -1.",
+      "examples": "Sample Input\n5 3\n1 6 11\n6\n\nSample Output\n1 -1 11 -1 -1",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\n-10^9 ≤ values, X ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5 4\n12 7 15 22\n7", "expectedOutput": "12 22 -1 15 -1", "problemTitle": "Delete Element in Hash Table using Linear Probing" },
+        { "id": null, "problemId": null, "input": "5 3\n1 6 11\n6", "expectedOutput": "1 -1 11 -1 -1", "problemTitle": "Delete Element in Hash Table using Linear Probing" },
+        { "id": null, "problemId": null, "input": "7 4\n14 21 28 35\n28", "expectedOutput": "14 21 -1 35 -1 -1 -1", "problemTitle": "Delete Element in Hash Table using Linear Probing" },
+        { "id": null, "problemId": null, "input": "6 5\n7 1 13 19 25\n13", "expectedOutput": "19 1 7 -1 25 -1", "problemTitle": "Delete Element in Hash Table using Linear Probing" },
+        { "id": null, "problemId": null, "input": "5 5\n5 10 15 20 25\n30", "expectedOutput": "25 -1 -1 -1 -1", "problemTitle": "Delete Element in Hash Table using Linear Probing" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def deleteLinearProbing(n, arr, x):\n    # TODO: Insert using linear probing, then delete x\n    return []\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    result = deleteLinearProbing(n, arr, x)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Delete Element in Hash Table using Linear Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] deleteLinearProbing(int n, long[] arr, long x) {\n        // TODO: Insert using linear probing, then delete x\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int m = Integer.parseInt(first[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long x = Long.parseLong(br.readLine().trim());\n        long[] result = Result.deleteLinearProbing(n, arr, x);\n        for (int i = 0; i < n; i++) System.out.print(result[i] + (i+1<n ? \" \" : \"\"));\n    }\n}",
+          "problemTitle": "Delete Element in Hash Table using Linear Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function deleteLinearProbing(n, arr, x) {\n    // TODO: Insert using linear probing, then delete x\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const nm = lines[0].split(\" \").map(Number);\n    const n = nm[0];\n    const m = nm[1];\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(deleteLinearProbing(n, arr, x).join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Delete Element in Hash Table using Linear Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> deleteLinearProbing(int n, vector<long long> arr, long long x) {\n    // TODO: Insert using linear probing, then delete x\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i = 0; i < m; i++) cin >> arr[i];\n    long long x;\n    cin >> x;\n\n    vector<long long> result = deleteLinearProbing(n, arr, x);\n    for(int i = 0; i < n; i++) cout << result[i] << (i+1<n ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Delete Element in Hash Table using Linear Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid deleteLinearProbing(long long table[], int n, long long arr[], int m, long long x) {\n    # TODO: Insert using linear probing, then delete x\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i = 0; i < m; i++) scanf(\"%lld\", &arr[i]);\n\n    long long x;\n    scanf(\"%lld\", &x);\n\n    long long table[100001];\n    for(int i = 0; i < n; i++) table[i] = -1;\n\n    deleteLinearProbing(table, n, arr, m, x);\n\n    for(int i = 0; i < n; i++) printf(\"%lld%s\", table[i], i+1<n ? \" \" : \"\");\n    return 0;\n}",
+          "problemTitle": "Delete Element in Hash Table using Linear Probing"
+        }
+      ],
+
+      "hintsList": [
+        "Insert using linear probing: index = value % N, move forward on collisions.",
+        "To delete, search for the value using the same probing sequence and replace with -1."
+      ]
+    }
+  ]
+}

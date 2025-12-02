@@ -1,0 +1,101 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Compute Factorial of a Number",
+      "description": "Problem Statement\nWrite a recursive function to compute the factorial of a given non-negative integer N.\n\nInput Format\nSingle integer N\n\nOutput Format\nSingle integer: N!\n\nExample\nInput:\n5\n\nOutput:\n120",
+      "examples": "Sample Input\n5\nSample Output\n120",
+      "constraints": "0 ≤ N ≤ 20",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 1,
+
+      "testCases": [
+        { "input": "5", "expectedOutput": "120" },
+        { "input": "0", "expectedOutput": "1" },
+        { "input": "1", "expectedOutput": "1" },
+        { "input": "10", "expectedOutput": "3628800" },
+        { "input": "20", "expectedOutput": "2432902008176640000" }
+      ],
+
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "def factorial(n):\n    # TODO: Write recursive function to return n!\n    pass\n\ndef main():\n    n = int(input().strip())\n    print(factorial(n))\n\nif __name__ == \"__main__\":\n    main()"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\n\nclass Solution {\n    public static long factorial(int n) {\n        // TODO: Implement recursive factorial\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        System.out.println(factorial(n));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "function factorial(n) {\n    // TODO: Implement recursive factorial\n    return 0;\n}\n\nconst n = Number(require('fs').readFileSync(0, 'utf-8').trim());\nconsole.log(factorial(n));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nlong long factorial(int n) {\n    // TODO: Implement recursive factorial\n    return 0;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    cout << factorial(n) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long factorial(int n) {\n    // TODO: Implement recursive factorial\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%lld\\n\", factorial(n));\n    return 0;\n}"
+        }
+      ],
+
+      "hintsList": [
+        "Base case: if n == 0 return  →  return 1",
+        "Recursive case: return n * factorial(n-1)"
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Print Fibonacci Series using Recursion",
+      "description": "Problem Statement\nGiven an integer N, print the first N Fibonacci numbers starting from 0 using recursion.\n\nInput Format\nSingle integer N\n\nOutput Format\nPrint N Fibonacci numbers in one line separated by space.\n\nExample\nInput:\n8\n\nOutput:\n0 1 1 2 3 5 8 13",
+      "examples": "Sample Input\n8\nSample Output\n0 1 1 2 3 5 8 13",
+      "constraints": "1 ≤ N ≤ 20",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 1,
+
+      "testCases": [
+        { "input": "8", "expectedOutput": "0 1 1 2 3 5 8 13" },
+        { "input": "1", "expectedOutput": "0" },
+        { "input": "5", "expectedOutput": "0 1 1 2 3" },
+        { "input": "10", "expectedOutput": "0 1 1 2 3 5 8 13 21 34" },
+        { "input": "15", "expectedOutput": "0 1 1 2 3 5 8 13 21 34 55 89 144 233 377" }
+      ],
+
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "def fib(n):\n    # TODO: Return nth fibonacci number (0-indexed, fib(0)=0, fib(1)=1)\n    pass\n\ndef main():\n    n = int(input().strip())\n    for i in range(n):\n        print(fib(i), end=\" \" if i < n-1 else \"\\n\")\n\nif __name__ == \"__main__\":\n    main()"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\n\nclass Solution {\n    public static long fib(int n) {\n        // TODO: Return nth fibonacci\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        for(int i = 0; i < n; i++) {\n            System.out.print(fib(i));\n            if(i < n-1) System.out.print(\" \");\n        }\n        System.out.println();\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "function fib(n) {\n    // TODO: Return nth fibonacci number\n    return 0;\n}\n\nconst n = Number(require('fs').readFileSync(0, 'utf-8').trim());\nlet result = [];\nfor(let i = 0; i < n; i++) {\n    result.push(fib(i));\n}\nconsole.log(result.join(' '));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nlong long fib(int n) {\n    // TODO: Return nth fibonacci number\n    return 0;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    for(int i = 0; i < n; i++) {\n        cout << fib(i);\n        if(i < n-1) cout << \" \";\n    }\n    cout << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long fib(int n) {\n    // TODO: Return nth fibonacci number\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    for(int i = 0; i < n; i++) {\n        printf(\"%lld\", fib(i));\n        if(i < n-1) printf(\" \");\n    }\n    printf(\"\\n\");\n    return 0;\n}"
+        }
+      ],
+
+      "hintsList": [
+        "fib(0) = 0, fib(1) = 1",
+        "fib(n) = fib(n-1) + fib(n-2)"
+      ]
+    }
+  ]
+}

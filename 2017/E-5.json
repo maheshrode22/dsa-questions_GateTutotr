@@ -1,0 +1,332 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Find Number in Array using Linear Search",
+      "description": "Problem Statement\nYou are given an integer N and an array A of N integers. You are also given an integer X. Your task is to find whether X exists in the array using the Linear Search algorithm.\nLinear Search checks each element one-by-one from left to right until the target is found.\nIf X is found, print its index (0-based). If X is not present in the array, print -1.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers representing the array A.\nThe third line contains the integer X to search.\n\nOutput Format\nPrint a single integer: the index of X if found, otherwise -1.\n\nExample 1\nInput:\n6\n4 2 8 9 1 7\n9\n\nOutput:\n3\n\nExplanation:\nThe value 9 is found at index 3 using linear search.",
+      "examples": "Sample Input\n5\n10 20 30 40 50\n30\n\nSample Output\n2",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], X ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2017,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "6\n4 2 8 9 1 7\n9", "expectedOutput": "3", "problemTitle": "Find Number in Array using Linear Search" },
+        { "id": null, "problemId": null, "input": "5\n10 20 30 40 50\n30", "expectedOutput": "2", "problemTitle": "Find Number in Array using Linear Search" },
+        { "id": null, "problemId": null, "input": "4\n5 15 25 35\n100", "expectedOutput": "-1", "problemTitle": "Find Number in Array using Linear Search" },
+        { "id": null, "problemId": null, "input": "1\n42\n42", "expectedOutput": "0", "problemTitle": "Find Number in Array using Linear Search" },
+        { "id": null, "problemId": null, "input": "7\n3 3 3 3 3 3 3\n3", "expectedOutput": "0", "problemTitle": "Find Number in Array using Linear Search" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def linearSearch(arr, x):\n    # TODO: Return the index of x using linear search, else -1\n    return -1\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    print(linearSearch(arr, x))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Find Number in Array using Linear Search"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int linearSearch(int[] arr, int x) {\n        // TODO: Implement linear search and return index or -1\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int x = Integer.parseInt(br.readLine().trim());\n        System.out.println(Result.linearSearch(arr, x));\n    }\n}",
+          "problemTitle": "Find Number in Array using Linear Search"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function linearSearch(arr, x) {\n    // TODO: Perform linear search and return index or -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = Number(lines[0]);\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(linearSearch(arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Find Number in Array using Linear Search"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint linearSearch(vector<long long> arr, long long x) {\n    # TODO: Return index of x or -1\n    return -1;\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    long long x; cin >> x;\n    cout << linearSearch(arr, x);\n    return 0;\n}",
+          "problemTitle": "Find Number in Array using Linear Search"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint linearSearch(long long arr[], int n, long long x) {\n    // TODO: Find x and return index or -1\n    return -1;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    long long x;\n    scanf(\"%lld\", &x);\n    printf(\"%d\", linearSearch(arr, n, x));\n    return 0;\n}",
+          "problemTitle": "Find Number in Array using Linear Search"
+        }
+      ],
+
+      "hintsList": [
+        "Traverse the array from left to right and compare each element with X",
+        "Return the index as soon as X is found"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Count Occurrences of an Element",
+      "description": "Problem Statement\nYou are given an integer N and an array A containing N integers. You are also given an integer X. Your task is to count how many times X appears in the array.\nYou must use simple linear searching: traverse the array from left to right and count every match.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers representing the array A.\nThe third line contains the integer X whose occurrences you must count.\n\nOutput Format\nPrint a single integer: the count of X in the array.\n\nExample 1\nInput:\n7\n2 3 2 5 2 7 9\n2\n\nOutput:\n3\n\nExplanation:\nThe number 2 appears three times in the array.",
+      "examples": "Sample Input\n6\n1 4 1 2 1 3\n1\n\nSample Output\n3",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], X ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2017,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7\n2 3 2 5 2 7 9\n2", "expectedOutput": "3", "problemTitle": "Count Occurrences of an Element" },
+        { "id": null, "problemId": null, "input": "6\n1 4 1 2 1 3\n1", "expectedOutput": "3", "problemTitle": "Count Occurrences of an Element" },
+        { "id": null, "problemId": null, "input": "5\n10 20 30 40 50\n25", "expectedOutput": "0", "problemTitle": "Count Occurrences of an Element" },
+        { "id": null, "problemId": null, "input": "1\n100\n100", "expectedOutput": "1", "problemTitle": "Count Occurrences of an Element" },
+        { "id": null, "problemId": null, "input": "8\n3 3 3 3 3 3 3 3\n3", "expectedOutput": "8", "problemTitle": "Count Occurrences of an Element" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def countOccurrences(arr, x):\n    # TODO: Count how many times x appears in arr\n    return 0\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    print(countOccurrences(arr, x))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Count Occurrences of an Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int countOccurrences(int[] arr, int x) {\n        // TODO: Count occurrences of x in arr\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int x = Integer.parseInt(br.readLine().trim());\n        System.out.println(Result.countOccurrences(arr, x));\n    }\n}",
+          "problemTitle": "Count Occurrences of an Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function countOccurrences(arr, x) {\n    // TODO: Count number of times x is present\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(countOccurrences(arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Count Occurrences of an Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nlong long countOccurrences(vector<long long> arr, long long x) {\n    // TODO: Count how many times x occurs\n    return 0;\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    long long x; cin >> x;\n    cout << countOccurrences(arr, x);\n    return 0;\n}",
+          "problemTitle": "Count Occurrences of an Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long countOccurrences(long long arr[], int n, long long x) {\n    // TODO: Count how many times x appears\n    return 0;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    long long x;\n    scanf(\"%lld\", &x);\n    printf(\"%lld\", countOccurrences(arr, n, x));\n    return 0;\n}",
+          "problemTitle": "Count Occurrences of an Element"
+        }
+      ],
+
+      "hintsList": [
+        "Use a simple loop and increment a counter whenever A[i] equals X",
+        "Linear search naturally handles duplicates and negative values"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Find Index of a Target Element",
+      "description": "Problem Statement\nYou are given an integer N and an array A of N integers. You are also given an integer X. Your task is to find the index of X in the array using Linear Search.\nLinear Search checks elements from left to right. If X is found, return its first occurrence index (0-based). If X is not found, return -1.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers representing the array A.\nThe third line contains the integer X to search.\n\nOutput Format\nPrint a single integer: the index of X if found, otherwise -1.\n\nExample 1\nInput:\n6\n4 2 8 9 1 7\n8\n\nOutput:\n2\n\nExplanation:\nElement 8 is found at index 2.",
+      "examples": "Sample Input\n5\n10 20 30 40 50\n40\n\nSample Output\n3",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], X ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2017,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "6\n4 2 8 9 1 7\n8", "expectedOutput": "2", "problemTitle": "Find Index of a Target Element" },
+        { "id": null, "problemId": null, "input": "5\n10 20 30 40 50\n40", "expectedOutput": "3", "problemTitle": "Find Index of a Target Element" },
+        { "id": null, "problemId": null, "input": "4\n5 15 25 35\n100", "expectedOutput": "-1", "problemTitle": "Find Index of a Target Element" },
+        { "id": null, "problemId": null, "input": "1\n99\n99", "expectedOutput": "0", "problemTitle": "Find Index of a Target Element" },
+        { "id": null, "problemId": null, "input": "7\n3 3 3 3 3 3 3\n3", "expectedOutput": "0", "problemTitle": "Find Index of a Target Element" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def findIndex(arr, x):\n    # TODO: Return first index of x or -1\n    return -1\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    print(findIndex(arr, x))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Find Index of a Target Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int findIndex(int[] arr, int x) {\n        // TODO: Linear search for x, return index or -1\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int x = Integer.parseInt(br.readLine().trim());\n        System.out.println(Result.findIndex(arr, x));\n    }\n}",
+          "problemTitle": "Find Index of a Target Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function findIndex(arr, x) {\n    // TODO: Return first index of x or -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(findIndex(arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Find Index of a Target Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint findIndex(vector<long long> arr, long long x) {\n    // TODO: Return first index of x or -1\n    return -1;\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    long long x; cin >> x;\n    cout << findIndex(arr, x);\n    return 0;\n}",
+          "problemTitle": "Find Index of a Target Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint findIndex(long long arr[], int n, long long x) {\n    // TODO: Return index of x or -1\n    return -1;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    long long x;\n    scanf(\"%lld\", &x);\n    printf(\"%d\", findIndex(arr, n, x));\n    return 0;\n}",
+          "problemTitle": "Find Index of a Target Element"
+        }
+      ],
+
+      "hintsList": [
+        "Use a simple loop from index 0 to N-1",
+        "Return the first position where A[i] equals X"
+      ]
+    },{
+      "id": null,
+      "title": "Check if Even Number Exists",
+      "description": "Problem Statement\nYou are given an integer N and an array A of N integers. Your task is to check whether the array contains at least one even number.\nIf an even number exists, print \"YES\". If no even number exists, print \"NO\".\nAn even number is any integer divisible by 2.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers representing the array A.\n\nOutput Format\nPrint \"YES\" if the array contains an even number, otherwise print \"NO\".\n\nExample 1\nInput:\n5\n1 3 5 2 7\n\nOutput:\nYES\n\nExplanation:\nThe number 2 is even, so the answer is YES.",
+      "examples": "Sample Input\n4\n1 3 5 7\n\nSample Output\nNO",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2017,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5\n1 3 5 2 7", "expectedOutput": "YES", "problemTitle": "Check if Even Number Exists" },
+        { "id": null, "problemId": null, "input": "4\n1 3 5 7", "expectedOutput": "NO", "problemTitle": "Check if Even Number Exists" },
+        { "id": null, "problemId": null, "input": "1\n8", "expectedOutput": "YES", "problemTitle": "Check if Even Number Exists" },
+        { "id": null, "problemId": null, "input": "1\n9", "expectedOutput": "NO", "problemTitle": "Check if Even Number Exists" },
+        { "id": null, "problemId": null, "input": "6\n2 4 6 8 10 12", "expectedOutput": "YES", "problemTitle": "Check if Even Number Exists" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def hasEven(arr):\n    # TODO: Return \"YES\" if any element is even, else \"NO\"\n    return \"NO\"\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    print(hasEven(arr))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Check if Even Number Exists"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static String hasEven(int[] arr) {\n        // TODO: Return \"YES\" if even exists else \"NO\"\n        return \"NO\";\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        System.out.println(Result.hasEven(arr));\n    }\n}",
+          "problemTitle": "Check if Even Number Exists"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function hasEven(arr) {\n    // TODO: Check if any number is even\n    return \"NO\";\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(hasEven(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Check if Even Number Exists"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nstring hasEven(vector<long long> arr) {\n    // TODO: Return \"YES\" if any even exists, else \"NO\"\n    return \"NO\";\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cout << hasEven(arr);\n    return 0;\n}",
+          "problemTitle": "Check if Even Number Exists"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nconst char* hasEven(long long arr[], int n) {\n    // TODO: Check if any number is even\n    return \"NO\";\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    printf(\"%s\", hasEven(arr, n));\n    return 0;\n}",
+          "problemTitle": "Check if Even Number Exists"
+        }
+      ],
+
+      "hintsList": [
+        "An even number is divisible by 2 without remainder",
+        "Return YES immediately when you find the first even number"
+      ]
+    },{
+      "id": null,
+      "title": "Find First Occurrence of an Element",
+      "description": "Problem Statement\nYou are given an integer N and an array A of N integers. You are also given an integer X. Your task is to find the first occurrence of X in the array using Linear Search.\nLinear Search checks each element one-by-one from left to right. When you find X for the first time, return its index (0-based).\nIf X does not exist in the array, return -1.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers representing the array A.\nThe third line contains the integer X.\n\nOutput Format\nPrint a single integer: the index of the first occurrence of X, or -1 if X is not found.\n\nExample 1\nInput:\n7\n4 2 8 2 9 2 1\n2\n\nOutput:\n1\n\nExplanation:\nThe number 2 first appears at index 1.",
+      "examples": "Sample Input\n6\n5 5 5 5 5 5\n5\n\nSample Output\n0",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], X ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2017,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7\n4 2 8 2 9 2 1\n2", "expectedOutput": "1", "problemTitle": "Find First Occurrence of an Element" },
+        { "id": null, "problemId": null, "input": "6\n5 5 5 5 5 5\n5", "expectedOutput": "0", "problemTitle": "Find First Occurrence of an Element" },
+        { "id": null, "problemId": null, "input": "5\n10 20 30 40 50\n25", "expectedOutput": "-1", "problemTitle": "Find First Occurrence of an Element" },
+        { "id": null, "problemId": null, "input": "1\n99\n99", "expectedOutput": "0", "problemTitle": "Find First Occurrence of an Element" },
+        { "id": null, "problemId": null, "input": "8\n3 3 3 3 7 7 3 3\n7", "expectedOutput": "4", "problemTitle": "Find First Occurrence of an Element" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def firstOccurrence(arr, x):\n    # TODO: Return first index of x, otherwise -1\n    return -1\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    print(firstOccurrence(arr, x))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Find First Occurrence of an Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int firstOccurrence(int[] arr, int x) {\n        // TODO: Return first index of x or -1\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int x = Integer.parseInt(br.readLine().trim());\n        System.out.println(Result.firstOccurrence(arr, x));\n    }\n}",
+          "problemTitle": "Find First Occurrence of an Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function firstOccurrence(arr, x) {\n    // TODO: Return first index of x or -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(firstOccurrence(arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Find First Occurrence of an Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint firstOccurrence(vector<long long> arr, long long x) {\n    // TODO: Return first index of x or -1\n    return -1;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    long long x; cin >> x;\n    cout << firstOccurrence(arr, x);\n    return 0;\n}",
+          "problemTitle": "Find First Occurrence of an Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint firstOccurrence(long long arr[], int n, long long x) {\n    // TODO: Return first index of x or -1\n    return -1;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n\n    long long x;\n    scanf(\"%lld\", &x);\n\n    printf(\"%d\", firstOccurrence(arr, n, x));\n    return 0;\n}",
+          "problemTitle": "Find First Occurrence of an Element"
+        }
+      ],
+
+      "hintsList": [
+        "Scan the array from left to right and return the first index where A[i] equals X",
+        "If the loop finishes without finding X, return -1"
+      ]
+    }
+  ]
+}

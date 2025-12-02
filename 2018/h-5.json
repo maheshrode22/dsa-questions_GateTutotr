@@ -1,0 +1,428 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Implement Hash Table using Quadratic Probing",
+      "description": "Problem Statement\nYou are given a hash table of size N initialized with -1, and M integers to insert.\nUse modulo hashing:\nindex = value % N.\nIf the index is empty, insert the value.\nIf the index is occupied, use Quadratic Probing:\nNewIndex = (index + i*i) % N   for i = 1, 2, 3, ...\nContinue probing until an empty slot is found or table becomes full.\nIf the table fills before all values are inserted, ignore remaining values.\nFinally, print the final hash table contents.\n\nInput Format\nThe first line contains two integers N (table size) and M (number of values).\nThe second line contains M space-separated integers.\n\nOutput Format\nPrint N space-separated integers representing the final hash table.\n\nExample 1\nInput:\n7 4\n10 17 24 31\n\nOutput:\n10 -1 17 -1 24 31 -1\n\nExplanation:\n10 → 10%7 = 3 → table[3] = 10\n17 → 17%7 = 3 → collision → i=1 → (3+1)/7=4 → table[4] = 17\n24 → 24%7 = 3 → collision → i=1 → 4 occupied → i=2 → (3+4)=7→0 → table[0]=24\n31 → 31%7 = 3 → i=1 →4→i=2→0→i=3→(3+9)=12→5 → table[5] = 31",
+      "examples": "Sample Input\n5 3\n5 12 19\n\nSample Output\n5 -1 12 -1 19",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\nAbsolute values ≤ 10^9\nUse long long for hash computations",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2018,
+      "difficulty": 3,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7 4\n10 17 24 31", "expectedOutput": "24 -1 17 10 -1 31 -1", "problemTitle": "Implement Hash Table using Quadratic Probing" },
+        { "id": null, "problemId": null, "input": "5 3\n5 12 19", "expectedOutput": "5 -1 12 -1 19", "problemTitle": "Implement Hash Table using Quadratic Probing" },
+        { "id": null, "problemId": null, "input": "6 4\n7 13 25 31", "expectedOutput": "25 31 -1 -1 13 7", "problemTitle": "Implement Hash Table using Quadratic Probing" },
+        { "id": null, "problemId": null, "input": "7 5\n14 21 28 35 42", "expectedOutput": "28 35 -1 14 42 21 -1", "problemTitle": "Implement Hash Table using Quadratic Probing" },
+        { "id": null, "problemId": null, "input": "5 6\n1 6 11 16 21 26", "expectedOutput": "1 6 11 16 21", "problemTitle": "Implement Hash Table using Quadratic Probing" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def quadraticProbing(n, arr):\n    # TODO: Insert elements using quadratic probing\n    return []\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = quadraticProbing(n, arr)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Implement Hash Table using Quadratic Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] quadraticProbing(int n, long[] arr) {\n        // TODO: Implement quadratic probing\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] nm = br.readLine().split(\" \");\n        int n = Integer.parseInt(nm[0]);\n        int m = Integer.parseInt(nm[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] ans = Result.quadraticProbing(n, arr);\n        for(int i=0;i<n;i++) System.out.print(ans[i] + (i+1<n?\" \":\"\"));\n    }\n}",
+          "problemTitle": "Implement Hash Table using Quadratic Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function quadraticProbing(n, arr) {\n    // TODO: Insert elements using quadratic probing\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, m] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(quadraticProbing(n, arr).join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Implement Hash Table using Quadratic Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> quadraticProbing(int n, vector<long long> arr) {\n    // TODO: Implement quadratic probing\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i=0;i<m;i++) cin >> arr[i];\n    vector<long long> ans = quadraticProbing(n, arr);\n    for(int i=0;i<n;i++) cout << ans[i] << (i+1<n?\" \":\"\");\n    return 0;\n}",
+          "problemTitle": "Implement Hash Table using Quadratic Probing"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid quadraticProbing(long long table[], int n, long long arr[], int m) {\n    // TODO: Implement quadratic probing\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i=0;i<m;i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i=0;i<n;i++) table[i] = -1;\n\n    quadraticProbing(table, n, arr, m);\n\n    for(int i=0;i<n;i++) printf(\"%lld%s\", table[i], (i+1<n?\" \":\"\"));\n    return 0;\n}",
+          "problemTitle": "Implement Hash Table using Quadratic Probing"
+        }
+      ],
+
+      "hintsList": [
+        "Use (index + i*i) % N for probing.",
+        "Quadratic probing reduces clustering compared to linear probing.",
+        "Stop when either an empty slot is found or the table becomes full."
+      ]
+    },
+    {
+        "id": null,
+        "title": "Double Hashing for Collision Resolution",
+        "description": "Problem Statement\nYou are given a hash table of size N initialized with -1. You must insert M integers using Double Hashing for collision resolution.\nPrimary hash: h1(x) = x % N\nSecondary hash: h2(x) = 1 + (x % (N - 1))\nIf a collision occurs at h1(x), compute:\nindex = (h1(x) + i * h2(x)) % N   for i = 1, 2, 3...\nInsert into the first empty slot found.\nIf the table becomes full before inserting all values, ignore remaining values.\nFinally, print the final hash table.\n\nInput Format\nThe first line contains two integers N (table size) and M (number of elements).\nThe second line contains M integers to insert.\n\nOutput Format\nPrint N space-separated integers representing the final hash table.\n\nExample 1\nInput:\n7 4\n10 17 24 31\n\nOutput:\n24 -1 17 10 -1 31 -1\n\nExplanation:\n10 → h1=3 → table[3]=10\n17 → h1=3 collision → h2=1+(17%6)=1+5=6 → new index=(3+1*6)%7=2 → table[2]=17\n24 → h1=3 collision → h2=1+(24%6)=1+0=1 → i=1 → 4 occupied → i=2 → (3+2)%7=5 → table[5]=24\n31 → h1=3 collision → h2=1+(31%6)=1+1=2 → i=1→5 occupied → i=2→(3+4)%7=0 → table[0]=31",
+        "examples": "Sample Input\n5 3\n5 12 19\n\nSample Output\n5 -1 12 -1 19",
+        "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\nAbsolute values ≤ 10^9\nN should be prime for better performance",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2018,
+        "difficulty": 3,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+  
+        "testCases": [
+          { "id": null, "problemId": null, "input": "7 4\n10 17 24 31", "expectedOutput": "31 -1 17 10 -1 24 -1", "problemTitle": "Double Hashing for Collision Resolution" },
+          { "id": null, "problemId": null, "input": "5 3\n5 12 19", "expectedOutput": "5 -1 12 -1 19", "problemTitle": "Double Hashing for Collision Resolution" },
+          { "id": null, "problemId": null, "input": "6 4\n7 13 25 31", "expectedOutput": "31 -1 25 7 -1 13", "problemTitle": "Double Hashing for Collision Resolution" },
+          { "id": null, "problemId": null, "input": "7 5\n14 21 28 35 42", "expectedOutput": "42 -1 28 14 -1 35 21", "problemTitle": "Double Hashing for Collision Resolution" },
+          { "id": null, "problemId": null, "input": "5 6\n1 6 11 16 21 26", "expectedOutput": "1 6 11 16 21", "problemTitle": "Double Hashing for Collision Resolution" }
+        ],
+  
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def doubleHashing(n, arr):\n    # TODO: Implement double hashing insertion\n    return []\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = doubleHashing(n, arr)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Double Hashing for Collision Resolution"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] doubleHashing(int n, long[] arr) {\n        // TODO: Implement double hashing\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] nm = br.readLine().split(\" \");\n        int n = Integer.parseInt(nm[0]);\n        int m = Integer.parseInt(nm[1]);\n\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] ans = Result.doubleHashing(n, arr);\n\n        for(int i = 0; i < n; i++) System.out.print(ans[i] + (i+1<n ? \" \" : \"\"));\n    }\n}",
+            "problemTitle": "Double Hashing for Collision Resolution"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function doubleHashing(n, arr) {\n    // TODO: Implement double hashing\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, m] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(doubleHashing(n, arr).join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+            "problemTitle": "Double Hashing for Collision Resolution"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> doubleHashing(int n, vector<long long> arr) {\n    // TODO: Implement double hashing\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i=0;i<m;i++) cin >> arr[i];\n\n    auto ans = doubleHashing(n, arr);\n    for(int i=0;i<n;i++) cout << ans[i] << (i+1<n ? \" \" : \"\");\n    return 0;\n}",
+            "problemTitle": "Double Hashing for Collision Resolution"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n\nvoid doubleHashing(long long table[], int n, long long arr[], int m) {\n    // TODO: Implement double hashing\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i=0;i<m;i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i=0;i<n;i++) table[i] = -1;\n\n    doubleHashing(table, n, arr, m);\n\n    for(int i=0;i<n;i++) printf(\"%lld%s\", table[i], (i+1<n ? \" \" : \"\"));\n    return 0;\n}",
+            "problemTitle": "Double Hashing for Collision Resolution"
+          }
+        ],
+  
+        "hintsList": [
+          "h1(x) = x % N",
+          "h2(x) = 1 + (x % (N - 1)) — ensures step size is non-zero",
+          "Use index = (h1 + i*h2) % N during probing"
+        ]
+      },
+      {
+        "id": null,
+        "title": "Hashing Large Phone Numbers using Fold Shift",
+        "description": "Problem Statement\nYou are given M large phone numbers (10–15 digits long) and a hash table of size N initialized with -1. You must hash each phone number using the Fold Shift method.\nSteps:\n1. Convert each phone number to a string.\n2. Break it into groups of K digits from right to left. The leftmost group may have fewer digits.\n3. Convert each group to an integer and compute: sum = g1 + g2 + ...\n4. Compute hashIndex = sum % N.\n5. If the position is occupied, use linear probing with wrap-around until an empty slot is found.\n6. Insert the phone number.\nIf the table becomes full before all insertions, ignore the remaining phone numbers.\nFinally, print the hash table.\n\nInput Format\nThe first line contains three integers N (table size), M (count of phone numbers), and K (digit-group size).\nThe second line contains M space-separated phone numbers.\n\nOutput Format\nPrint N space-separated integers representing the hash table.\n\nExample 1\nInput:\n7 3 3\n9876543210 912345678901 99887766\n\nOutput:\n99887766 9876543210 -1 912345678901 -1 -1 -1\n\nExplanation:\n9876543210 groups: [9, 876, 543, 210] → sum = 1638 → 1638%7 = 0\n912345678901 groups: [9, 123, 456, 789, 901] → sum = 2278 → 2278%7 = 3\n99887766 groups: [99, 887, 766] → sum = 1752 → 1752%7 = 1",
+        "examples": "Sample Input\n6 2 2\n9988 123456\n\nSample Output\n88 12 -1 99 34 -1",
+        "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\nK ≥ 1\nPhone numbers may be up to 10^15",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2018,
+        "difficulty": 3,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+  
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "7 3 3\n9876543210 912345678901 99887766",
+            "expectedOutput": "99887766 9876543210 -1 912345678901 -1 -1 -1",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "6 2 2\n9988 123456",
+            "expectedOutput": "88 12 -1 99 34 -1",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "8 3 4\n987654321012 90001234 1234",
+            "expectedOutput": "1234 -1 -1 90001234 -1 987654321012 -1 -1",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "5 4 3\n111222333444 101010 9090 777",
+            "expectedOutput": "9090 777 -1 101010 111222333444",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "7 5 2\n9999 121212 4444 888888 77777777",
+            "expectedOutput": "888888 77777777 -1 9999 4444 121212 -1",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          }
+        ],
+  
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def foldShiftPhoneHash(n, arr, k):\n    # TODO: Implement fold shift hashing for large phone numbers\n    return []\n\ndef solve():\n    n, m, k = map(int, input().split())\n    arr = input().split()\n    result = foldShiftPhoneHash(n, arr, k)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static String[] foldShiftPhoneHash(int n, String[] arr, int k) {\n        // TODO: Implement fold shift hashing for large phone numbers\n        String[] table = new String[n];\n        Arrays.fill(table, \"-1\");\n        return table;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int m = Integer.parseInt(first[1]);\n        int k = Integer.parseInt(first[2]);\n        String[] arr = br.readLine().split(\" \");\n        String[] result = Result.foldShiftPhoneHash(n, arr, k);\n        for (int i = 0; i < n; i++) System.out.print(result[i] + (i+1<n ? \" \" : \"\"));\n    }\n}",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function foldShiftPhoneHash(n, arr, k) {\n    // TODO: Implement fold shift hashing for phone numbers\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, m, k] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \");\n    console.log(foldShiftPhoneHash(n, arr, k).join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<string> foldShiftPhoneHash(int n, vector<string> arr, int k) {\n    // TODO: Implement fold shift hashing for large phone numbers\n    return vector<string>(n, \"-1\");\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m, k;\n    cin >> n >> m >> k;\n    vector<string> arr(m);\n    for(int i=0;i<m;i++) cin >> arr[i];\n\n    auto result = foldShiftPhoneHash(n, arr, k);\n    for(int i=0;i<n;i++) cout << result[i] << (i+1<n?\" \" : \"\");\n    return 0;\n}",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n\nvoid foldShiftPhoneHash(char table[][50], int n, char arr[][50], int m, int k) {\n    // TODO: Implement fold shift hashing for large phone numbers\n}\n\nint main(){\n    int n, m, k;\n    scanf(\"%d %d %d\", &n, &m, &k);\n\n    char arr[100001][50];\n    for(int i=0;i<m;i++) scanf(\"%s\", arr[i]);\n\n    char table[100001][50];\n    for(int i=0;i<n;i++) strcpy(table[i], \"-1\");\n\n    foldShiftPhoneHash(table, n, arr, m, k);\n\n    for(int i=0;i<n;i++) printf(\"%s%s\", table[i], (i+1<n?\" \" : \"\"));\n\n    return 0;\n}",
+            "problemTitle": "Hashing Large Phone Numbers using Fold Shift"
+          }
+        ],
+  
+        "hintsList": [
+          "Use pow(10, K) to extract groups from right.",
+          "Sum all groups, then take modulo with table size.",
+          "Use wrap-around linear probing for collisions."
+        ]
+      }, {
+        "id": null,
+        "title": "Implement Chaining Using Linked List",
+        "description": "Problem Statement\nYou are given a hash table of size N. Instead of open addressing, you must use Chaining with Linked Lists to handle collisions.\nFor each value:\n1. Compute hash index as: index = value % N\n2. Insert the value at the end of the linked list located at table[index]\n(If negative values appear, use (value % N + N) % N)\nFinally, print the hash table. For each index, print all elements in its chain separated by '->'. If a chain is empty, print -1.\n\nInput Format\nThe first line contains integers N (table size) and M (number of keys).\nThe second line contains M integers.\n\nOutput Format\nFor each index i from 0 to N-1:\nPrint the chain: either '-1' for empty or a sequence like 'value1->value2->value3'\nEach index output must appear on a new line.\n\nExample 1\nInput:\n5 4\n12 7 22 17\n\nOutput:\n-1\n12->17\n7\n22\n-1\n\nExplanation:\n12 % 5 = 2 → chain[2] = [12]\n7 % 5 = 2 → chain[2] = [12, 7]\n22 % 5 = 2 → chain[2] = [12, 7, 22]\n17 % 5 = 2 → chain[2] = [12, 7, 22, 17]\nPositions 0, 4 → empty = -1",
+        "examples": "Sample Input\n4 3\n10 6 14\n\nSample Output\n10\n6\n14\n-1",
+        "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\nValues may be negative or positive within ±10^9",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2018,
+        "difficulty": 3,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+  
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "5 4\n12 7 22 17",
+            "expectedOutput": "-1\n12->7->22->17\n-1\n-1\n-1",
+            "problemTitle": "Implement Chaining Using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "4 3\n10 6 14",
+            "expectedOutput": "10\n6\n14\n-1",
+            "problemTitle": "Implement Chaining Using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "6 5\n1 7 13 19 25",
+            "expectedOutput": "1->7->13->19->25\n-1\n-1\n-1\n-1\n-1",
+            "problemTitle": "Implement Chaining Using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "5 5\n-5 0 5 10 15",
+            "expectedOutput": "-5->0->5->10->15\n-1\n-1\n-1\n-1",
+            "problemTitle": "Implement Chaining Using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "5 3\n3 8 13",
+            "expectedOutput": "-1\n-1\n-1\n3->8->13\n-1",
+            "problemTitle": "Implement Chaining Using Linked List"
+          }
+        ],
+  
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def chainingHash(n, arr):\n    # TODO: Implement chaining using list of lists\n    return []\n\ndef solve():\n    n, m = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = chainingHash(n, arr)\n    for chain in result:\n        if not chain:\n            print(-1)\n        else:\n            print('->'.join(map(str, chain)))\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Implement Chaining Using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static ArrayList<ArrayList<Long>> chainingHash(int n, long[] arr) {\n        // TODO: Implement chaining using ArrayList of ArrayLists\n        return new ArrayList<>();\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] nm = br.readLine().split(\" \");\n        int n = Integer.parseInt(nm[0]);\n        int m = Integer.parseInt(nm[1]);\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n\n        ArrayList<ArrayList<Long>> table = Result.chainingHash(n, arr);\n        for (ArrayList<Long> chain : table) {\n            if (chain.isEmpty()) System.out.println(-1);\n            else System.out.println(String.join(\"->\", chain.stream().map(String::valueOf).toArray(String[]::new)));\n        }\n    }\n}",
+            "problemTitle": "Implement Chaining Using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function chainingHash(n, arr) {\n    // TODO: Implement chaining using arrays of arrays\n    return Array.from({length: n}, () => []);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [n, m] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    const result = chainingHash(n, arr);\n\n    for (const chain of result) {\n        if (chain.length === 0) console.log(-1);\n        else console.log(chain.join(\"->\"));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Implement Chaining Using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<vector<long long>> chainingHash(int n, vector<long long> arr) {\n    // TODO: Implement chaining using vector of vectors\n    return vector<vector<long long>>(n);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n, m;\n    cin >> n >> m;\n    vector<long long> arr(m);\n    for(int i=0;i<m;i++) cin >> arr[i];\n\n    auto table = chainingHash(n, arr);\n    for(auto &chain : table) {\n        if(chain.empty()) cout << -1;\n        else {\n            for(int i=0;i<chain.size();i++){\n                cout << chain[i] << (i+1<chain.size() ? \"->\" : \"\");\n            }\n        }\n        cout << \"\\n\";\n    }\n    return 0;\n}",
+            "problemTitle": "Implement Chaining Using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n#include <string.h>\n\nvoid chainingHash(int n, long long arr[], int m, long long table[][100001], int sizes[]) {\n    // TODO: Implement chaining using 2D array and size array\n}\n\nint main(){\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n\n    long long arr[100001];\n    for(int i=0;i<m;i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001][100001];\n    int sizes[100001];\n    memset(sizes, 0, sizeof(sizes));\n\n    chainingHash(n, arr, m, table, sizes);\n\n    for(int i=0;i<n;i++){\n        if(sizes[i] == 0) printf(\"-1\\n\");\n        else{\n            for(int j=0;j<sizes[i];j++) printf(\"%lld%s\", table[i][j], (j+1<sizes[i] ? \"->\" : \"\"));\n            printf(\"\\n\");\n        }\n    }\n    return 0;\n}",
+            "problemTitle": "Implement Chaining Using Linked List"
+          }
+        ],
+  
+        "hintsList": [
+          "Use modulo and positivity fix: idx = (value % N + N) % N",
+          "Append elements to linked list at each index",
+          "Print -1 for empty chains"
+        ]
+      },
+      {
+        "id": null,
+        "title": "Universal Hash Function Implementation",
+        "description": "Problem Statement\nYou are given M integers to store in a hash table using a Universal Hash Function.\nUse the following universal hashing formula:\nh(x) = ((a * x + b) % p) % N\nWhere:\n• N = table size\n• p = prime number > max(x)\n• a, b are constants where: 1 ≤ a < p and 0 ≤ b < p\nThe hash table is initially filled with -1.\nIf a collision occurs at index h(x), use linear probing with wrap-around:\nindex = (index + 1) % N\nInsert all values and print the final hash table.\nIf the table gets full, ignore remaining values.\n\nInput Format\nFirst line: N M p a b\nSecond line: M integers\n\nOutput Format\nPrint N space-separated integers representing the final hash table.\n\nExample 1\nInput:\n7 4 101 3 5\n10 17 24 31\n\nOutput:\n17 10 31 -1 24 -1 -1\n\nExplanation:\nh(10) = (3*10+5)%101 %7 = 35%7 = 0 → table[0] = 10\nh(17) = (3*17+5)%101 %7 = 56%7 = 0 → collision → insert at index1 → 17\nh(24) = (3*24+5)%101 %7 = 77%7 = 0 → collision chain → index2 → 24\nh(31) = (3*31+5)%101 %7 = 98%7 = 0 → collision chain → index3 → 31",
+        "examples": "Sample Input\n5 3 101 7 9\n5 12 19\n\nSample Output\n5 12 19 -1 -1",
+        "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^5\np is a large prime\nx can be up to 10^9\nUse long long for computation",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2018,
+        "difficulty": 3,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+  
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "7 4 101 3 5\n10 17 24 31",
+            "expectedOutput": "17 10 31 -1 24 -1 -1",
+            "problemTitle": "Universal Hash Function Implementation"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "5 3 101 7 9\n5 12 19",
+            "expectedOutput": "5 12 19 -1 -1",
+            "problemTitle": "Universal Hash Function Implementation"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "8 4 131 11 17\n50 200 400 600",
+            "expectedOutput": "400 600 -1 -1 200 50 -1 -1",
+            "problemTitle": "Universal Hash Function Implementation"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "6 5 97 10 3\n1 2 3 4 5",
+            "expectedOutput": "1 2 3 4 5 -1",
+            "problemTitle": "Universal Hash Function Implementation"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "7 6 103 8 15\n10 20 30 40 50 60",
+            "expectedOutput": "10 20 40 60 -1 30 50",
+            "problemTitle": "Universal Hash Function Implementation"
+          }
+        ],
+  
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def universalHash(n, arr, p, a, b):\n    # TODO: Implement universal hashing + linear probing\n    return []\n\ndef solve():\n    n, m, p, a, b = map(int, input().split())\n    arr = list(map(int, input().split()))\n    result = universalHash(n, arr, p, a, b)\n    print(*result)\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Universal Hash Function Implementation"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long[] universalHash(int n, long[] arr, long p, long a, long b) {\n        // TODO: Implement universal hashing + linear probing\n        return new long[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args)throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] vals = br.readLine().split(\" \");\n        int n = Integer.parseInt(vals[0]);\n        int m = Integer.parseInt(vals[1]);\n        long p = Long.parseLong(vals[2]);\n        long a = Long.parseLong(vals[3]);\n        long b = Long.parseLong(vals[4]);\n\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        long[] table = Result.universalHash(n, arr, p, a, b);\n\n        for(int i=0;i<n;i++) System.out.print(table[i] + (i+1<n?\" \":\"\"));\n    }\n}",
+            "problemTitle": "Universal Hash Function Implementation"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function universalHash(n, arr, p, a, b){\n    // TODO: Implement universal hashing + linear probing\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input){\n    const lines = input.trim().split(\"\\n\");\n    const [n,m,p,a,b] = lines[0].split(\" \").map(Number);\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(universalHash(n,arr,p,a,b).join(\" \"));\n}\n\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+            "problemTitle": "Universal Hash Function Implementation"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<long long> universalHash(int n, vector<long long> arr, long long p, long long a, long long b){\n    // TODO: Implement universal hashing + linear probing\n    return vector<long long>(n, -1);\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n,m;\n    long long p,a,b;\n    cin>>n>>m>>p>>a>>b;\n\n    vector<long long> arr(m);\n    for(int i=0;i<m;i++) cin>>arr[i];\n\n    auto ans = universalHash(n, arr, p, a, b);\n    for(int i=0;i<n;i++) cout<<ans[i]<<(i+1<n?\" \":\"\");\n    return 0;\n}",
+            "problemTitle": "Universal Hash Function Implementation"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n\nvoid universalHash(long long table[], int n, long long arr[], int m, long long p, long long a, long long b){\n    // TODO: Implement universal hashing + linear probing\n}\n\nint main(){\n    int n,m;\n    long long p,a,b;\n    scanf(\"%d %d %lld %lld %lld\", &n,&m,&p,&a,&b);\n\n    long long arr[100001];\n    for(int i=0;i<m;i++) scanf(\"%lld\", &arr[i]);\n\n    long long table[100001];\n    for(int i=0;i<n;i++) table[i] = -1;\n\n    universalHash(table, n, arr, m, p, a, b);\n\n    for(int i=0;i<n;i++) printf(\"%lld%s\", table[i], (i+1<n?\" \":\"\"));\n    return 0;\n}",
+            "problemTitle": "Universal Hash Function Implementation"
+          }
+        ],
+  
+        "hintsList": [
+          "Universal hashing helps reduce patterns in collisions.",
+          "h1 = (a*x + b) % p.",
+          "Use (index+1)%N probing on collision."
+        ]
+      }
+  ]
+}

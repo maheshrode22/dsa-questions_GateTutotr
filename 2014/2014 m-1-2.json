@@ -1,0 +1,137 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Frequency of Each Element in an Array",
+      "description": "Problem Statement\nGiven an array of N integers, print the frequency of each distinct element in the order of their first occurrence.\n\nInput Format\nFirst line contains integer N.\nSecond line contains N space-separated integers.\n\nOutput Format\nFor each distinct element in the order of its first appearance, print the element followed by its frequency in separate lines.\n\nExample 1\nInput:\n8\n4 4 2 1 2 4 3 3\n\nOutput:\n4 3\n2 2\n1 1\n3 2\n\nExample 2\nInput:\n6\n1 1 1 1 1 1\n\nOutput:\n1 6",
+      "examples": "Sample Input\n8\n4 4 2 1 2 4 3 3\n\nSample Output\n4 3\n2 2\n1 1\n3 2",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2014,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "8\n4 4 2 1 2 4 3 3", "expectedOutput": "4 3\n2 2\n1 1\n3 2", "problemTitle": "Frequency of Each Element in an Array" },
+        { "id": null, "problemId": null, "input": "6\n1 1 1 1 1 1", "expectedOutput": "1 6", "problemTitle": "Frequency of Each Element in an Array" },
+        { "id": null, "problemId": null, "input": "5\n10 20 10 30 20", "expectedOutput": "10 2\n20 2\n30 1", "problemTitle": "Frequency of Each Element in an Array" },
+        { "id": null, "problemId": null, "input": "1\n999", "expectedOutput": "999 1", "problemTitle": "Frequency of Each Element in an Array" },
+        { "id": null, "problemId": null, "input": "7\n-1 -1 0 0 0 5 5", "expectedOutput": "-1 2\n0 3\n5 2", "problemTitle": "Frequency of Each Element in an Array" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def printFrequency(arr):\n    # TODO: Print element and its frequency in order of first appearance\n    pass\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    printFrequency(arr)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Frequency of Each Element in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static void printFrequency(int[] arr) {\n        // TODO: Print element and frequency in order of first occurrence\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Result.printFrequency(arr);\n    }\n}",
+          "problemTitle": "Frequency of Each Element in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function printFrequency(arr) {\n    // TODO: Print element and frequency in order of first appearance\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    printFrequency(arr);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Frequency of Each Element in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid printFrequency(vector<int>& arr) {\n    // TODO: Print element and frequency in order of first occurrence\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    printFrequency(arr);\n    return 0;\n}",
+          "problemTitle": "Frequency of Each Element in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid printFrequency(int arr[], int n) {\n    // TODO: Print element and frequency in order of first occurrence\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    printFrequency(arr, n);\n    return 0;\n}",
+          "problemTitle": "Frequency of Each Element in an Array"
+        }
+      ],
+
+      "hintsList": [
+        "Use a data structure that maintains insertion order (like LinkedHashMap, OrderedDict, or vector + map)",
+        "First occurrence order matters — not sorted order"
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Count Distinct Elements in an Array",
+      "description": "Problem Statement\nGiven an array of N integers, return the number of distinct (unique) elements present in it.\n\nInput Format\nFirst line contains integer N.\nSecond line contains N space-separated integers.\n\nOutput Format\nPrint a single integer — the count of distinct elements.\n\nExample 1\nInput:\n6\n1 2 2 1 3 3\n\nOutput:\n3\n\nExample 2\nInput:\n5\n7 7 7 7 7\n\nOutput:\n1",
+      "examples": "Sample Input\n6\n1 2 2 1 3 3\n\nSample Output\n3",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2014,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "6\n1 2 2 1 3 3", "expectedOutput": "3", "problemTitle": "Count Distinct Elements in an Array" },
+        { "id": null, "problemId": null, "input": "5\n7 7 7 7 7", "expectedOutput": "1", "problemTitle": "Count Distinct Elements in an Array" },
+        { "id": null, "problemId": null, "input": "7\n1 2 3 4 5 6 7", "expectedOutput": "7", "problemTitle": "Count Distinct Elements in an Array" },
+        { "id": null, "problemId": null, "input": "4\n-5 -5 0 0", "expectedOutput": "2", "problemTitle": "Count Distinct Elements in an Array" },
+        { "id": null, "problemId": null, "input": "1\n1000000000", "expectedOutput": "1", "problemTitle": "Count Distinct Elements in an Array" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def countDistinct(arr):\n    # TODO: Return the count of distinct elements\n    return 0\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    print(countDistinct(arr))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Count Distinct Elements in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int countDistinct(int[] arr) {\n        // TODO: Return count of distinct elements\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        System.out.println(Result.countDistinct(arr));\n    }\n}",
+          "problemTitle": "Count Distinct Elements in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function countDistinct(arr) {\n    // TODO: Return count of distinct elements\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(countDistinct(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Count Distinct Elements in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint countDistinct(vector<int>& arr) {\n    // TODO: Return count of distinct elements\n    return 0;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cout << countDistinct(arr) << endl;\n    return 0;\n}",
+          "problemTitle": "Count Distinct Elements in an Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint countDistinct(int arr[], int n) {\n    // TODO: Return count of distinct elements\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    printf(\"%d\\n\", countDistinct(arr, n));\n    return 0;\n}",
+          "problemTitle": "Count Distinct Elements in an Array"
+        }
+      ],
+
+      "hintsList": [
+        "Use a HashSet (or unordered_set in C++) to store unique elements",
+        "In Python: len(set(arr)) is allowed and efficient"
+      ]
+    }
+  ]
+}

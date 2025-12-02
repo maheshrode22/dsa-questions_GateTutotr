@@ -1,0 +1,138 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Longest Subarray with Sum Equal to K",
+      "description": "Problem Statement\nGiven an array of integers and a target sum K, find the length of the longest subarray whose sum is exactly K. If no such subarray exists, return 0.\n\nInput Format\nFirst line: N\nSecond line: N integers\nThird line: K\n\nOutput Format\nSingle integer: length of longest subarray with sum = K\n\nExample 1\nInput:\n7\n10 5 2 -2 1 4 3\n5\n\nOutput:\n3\n\nExplanation: subarray [5, -2, 2] → sum = 5",
+      "examples": "Sample Input\n7\n10 5 -2 2 1 4 3\n5\n\nSample Output\n3",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^4 ≤ A[i] ≤ 10^4\n-10^9 ≤ K ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2014,
+      "difficulty": 3,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7\n10 5 -2 2 1 4 3\n5", "expectedOutput": "3", "problemTitle": "Longest Subarray with Sum Equal to K" },
+        { "id": null, "problemId": null, "input": "6\n1 -1 1 -1 1 -1\n0", "expectedOutput": "6", "problemTitle": "Longest Subarray with Sum Equal to K" },
+        { "id": null, "problemId": null, "input": "5\n1 2 3 4 7 5\n12", "expectedOutput": "3", "problemTitle": "Longest Subarray with Sum Equal to K" },
+        { "id": null, "problemId": null, "input": "4\n-1 -1 -1 -1\n-3", "expectedOutput": "3", "problemTitle": "Longest Subarray with Sum Equal to K" },
+        { "id": null, "problemId": null, "input": "3\n1 2 3\n10", "expectedOutput": "0", "problemTitle": "Longest Subarray with Sum Equal to K" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def longestSubarrayWithSumK(arr, k):\n    # TODO: Return max length of subarray with sum == k\n    return 0\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    k = int(input().strip())\n    print(longestSubarrayWithSumK(arr, k))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Longest Subarray with Sum Equal to K"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int longestSubarrayWithSumK(int[] arr, long k) {\n        // TODO: Return max length\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        long k = Long.parseLong(br.readLine().trim());\n        System.out.println(Result.longestSubarrayWithSumK(arr, k));\n    }\n}",
+          "problemTitle": "Longest Subarray with Sum Equal to K"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function longestSubarrayWithSumK(arr, k) {\n    // TODO: Return max length\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const k = Number(lines[2]);\n    console.log(longestSubarrayWithSumK(arr, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Longest Subarray with Sum Equal to K"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint longestSubarrayWithSumK(vector<int>& arr, long long k) {\n    // TODO: Return max length\n    return 0;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    long long k;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cin >> k;\n    cout << longestSubarrayWithK(arr, k) << endl;\n    return 0;\n}",
+          "problemTitle": "Longest Subarray with Sum Equal to K"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint longestSubarrayWithK(int arr[], int n, long long k) {\n    // TODO: Return max length\n    return 0;\n}\n\nint main() {\n    int n;\n    long long k;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    scanf(\"%lld\", &k);\n    printf(\"%d\\n\", longestSubarrayWithK(arr, n, k));\n    return 0;\n}",
+          "problemTitle": "Longest Subarray with Sum Equal to K"
+        }
+      ],
+
+      "hintsList": [
+        "Use prefix sum + HashMap to store first occurrence of each sum",
+        "For sum[i..j] = K → prefix[j] - prefix[i-1] = K → prefix[i-1] = prefix[j] - K"
+      
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Find First Non-Repeating Element",
+      "description": "Problem Statement\nGiven an array of integers, find and return the first element that appears only once. If no such element exists, return -1.\n\nInput Format\nFirst line: N\nSecond line: N integers\n\nOutput Format\nSingle integer: first non-repeating element or -1\n\nExample 1\nInput:\n7\n4 5 4 5 2 2 9\n\nOutput:\n9\n\nExample 2\nInput:\n4\n1 1 2 2\n\nOutput:\n-1",
+      "examples": "Sample Input\n7\n4 5 4 5 2 2 9\n\nSample Output\n9",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i] ≤ 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2014,
+      "difficulty": 3,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7\n4 5 4 5 2 2 9", "expectedOutput": "9", "problemTitle": "Find First Non-Repeating Element" },
+        { "id": null, "problemId": null, "input": "4\n1 1 2 2", "expectedOutput": "-1", "problemTitle": "Find First Non-Repeating Element" },
+        { "id": null, "problemId": null, "input": "5\n10 10 5 3 3", "expectedOutput": "5", "problemTitle": "Find First Non-Repeating Element" },
+        { "id": null, "problemId": null, "input": "1\n100", "expectedOutput": "100", "problemTitle": "Find First Non-Repeating Element" },
+        { "id": null, "problemId": null, "input": "6\n-1 -1 -1 -1 -1 -1", "expectedOutput": "-1", "problemTitle": "Find First Non-Repeating Element" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def firstNonRepeating(arr):\n    # TODO: Return first element that appears exactly once, else -1\n    return -1\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    print(firstNonRepeating(arr))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Find First Non-Repeating Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static long firstNonRepeating(int[] arr) {\n        // TODO: Return first non-repeating or -1\n        return -1L;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        System.out.println(Result.firstNonRepeating(arr));\n    }\n}",
+          "problemTitle": "Find First Non-Repeating Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function firstNonRepeating(arr) {\n    // TODO: Return first non-repeating or -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(firstNonRepeating(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Find First Non-Repeating Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nlong long firstNonRepeating(vector<long long>& arr) {\n    // TODO: Return first non-repeating or -1\n    return -1;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cout << firstNonRepeating(arr) << endl;\n    return 0;\n}",
+          "problemTitle": "Find First Non-Repeating Element"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long firstNonRepeating(int arr[], int n) {\n    // TODO: Return first non-repeating or -1\n    return -1;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[100005];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    printf(\"%lld\\n\", firstNonRepeating(arr, n));\n    return 0;\n}",
+          "problemTitle": "Find First Non-Repeating Element"
+        }
+      ],
+
+      "hintsList": [
+        "Use HashMap to store frequency, then scan array again to find first with freq=1",
+        "For better efficiency: use map + vector to track first index"
+      ]
+    }
+  ]
+}

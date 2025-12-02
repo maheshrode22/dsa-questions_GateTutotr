@@ -1,0 +1,95 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Tower of Hanoi",
+      "description": "Problem Statement\nThe Tower of Hanoi is a classic problem. You have 3 rods (A, B, C) and N disks on rod A. The objective is to move the entire stack to rod C, obeying the following rules:\n• Only one disk can be moved at a time.\n• A larger disk cannot be placed on a smaller disk.\n\nPrint all the moves required.\n\nInput Format\nSingle integer N (1 ≤ N ≤ 10)\n\nOutput Format\nPrint each move as: disk_number from source_rod to destination_rod\n\nExample\nInput:\n2\n\nOutput:\n1 from A to B\n1 from A to C\n2 from B to C",
+      "examples": "Sample Input\n2\nSample Output\n1 from A to B\n1 from A to C\n2 from B to C",
+      "constraints": "1 ≤ N ≤ 10",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "1", "expectedOutput": "1 from A to C" },
+        { "input": "2", "expectedOutput": "1 from A to B\n1 from A to C\n2 from B to C" },
+        { "input": "3", "expectedOutput": "1 from A to C\n1 from A to B\n2 from C to B\n1 from A to C\n3 from B to A\n3 from B to C\n1 from A to C" },
+        { "input": "4", "expectedOutput": "15 moves (exact sequence)" },
+        { "input": "5", "expectedOutput": "31 moves (exact sequence)" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "def towerOfHanoi(n, source, auxiliary, destination):\n    # TODO: Print all moves using recursion\n    pass\n\ndef main():\n    n = int(input().strip())\n    towerOfHanoi(n, \"A\", \"B\", \"C\")\n\nif __name__ == \"__main__\":\n    main()"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\n\nclass Solution {\n    public static void towerOfHanoi(int n, String source, String auxiliary, String destination) {\n        // TODO: Print all moves recursively\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        towerOfHanoi(n, \"A\", \"B\", \"C\");\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "function towerOfHanoi(n, source, auxiliary, destination) {\n    // TODO: Print all moves\n}\n\nconst n = Number(require('fs').readFileSync(0, 'utf-8').trim());\ntowerOfHanoi(n, \"A\", \"B\", \"C\");"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid towerOfHanoi(int n, char source, char auxiliary, char destination) {\n    // TODO: Print all moves\n}\n\nint main() {\n    int n;\n    cin >> n;\n    towerOfHanoi(n, 'A', 'B', 'C');\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid towerOfHanoi(int n, char source, char auxiliary, char destination) {\n    // TODO: Print all moves\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    towerOfHanoi(n, 'A', 'B', 'C');\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "To move n disks from A to C: move n-1 to B, move nth to C, move n-1 from B to C",
+        "Base case: n == 1 → just print move"
+      ]
+    },
+
+    {
+      "id": null,
+      "title": "Generate All Subsets of a String",
+      "description": "Problem Statement\nGiven a string S of distinct lowercase letters, generate and print all non-empty subsets of its characters in lexicographical order, each on a new line.\n\nInput Format\nSingle string S\n\nOutput Format\nEach subset on a new line (lexicographically sorted)\n\nExample\nInput:\nabc\n\nOutput:\na\nab\nabc\nac\nb\nbc\nc",
+      "examples": "Sample Input\nabc\nSample Output\na\nab\nabc\nac\nb\nbc\nc",
+      "constraints": "1 ≤ |S| ≤ 10\nAll characters are distinct lowercase letters",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2015,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "a", "expectedOutput": "a" },
+        { "input": "ab", "expectedOutput": "a\nab\nb" },
+        { "input": "abc", "expectedOutput": "a\nab\nabc\nac\nb\nbc\nc" },
+        { "input": "xy", "expectedOutput": "x\nxy\ny" },
+        { "input": "abcd", "expectedOutput": "16 subsets in lex order" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "def generateSubsets(s, index, current):\n    # TODO: Print all non-empty subsets in lex order\n    pass\n\ndef main():\n    s = sorted(input().strip())\n    generateSubsets(s, 0, \"\")\n\nif __name__ == \"__main__\":\n    main()"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public static void generateSubsets(String s, int index, String current) {\n        // TODO: Print all non-empty subsets in lex order\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        char[] arr = br.readLine().trim().toCharArray();\n        Arrays.sort(arr);\n        generateSubsets(new String(arr), 0, \"\");\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "function generateSubsets(str, index, current) {\n    // TODO: Print all non-empty subsets in lex order\n}\n\nconst s = require('fs').readFileSync(0, 'utf-8').trim().split('').sort().join('');\ngenerateSubsets(s, 0, '');"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid generateSubsets(string s, int index, string current) {\n    // TODO: Print all non-empty subsets in lex order\n}\n\nint main() {\n    string s;\n    cin >> s;\n    sort(s.begin(), s.end());\n    generateSubsets(s, 0, \"\");\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nvoid generateSubsets(char s[], int index, char current[], int pos) {\n    // TODO: Print all non-empty subsets\n}\n\nint main() {\n    char s[15];\n    scanf(\"%s\", s);\n    int n = strlen(s);\n    for(int i = 0; i < n; i++)\n        for(int j = i; j < n; j++)\n            if(s[i] > s[j]) {\n                char temp = s[i]; s[i] = s[j]; s[j] = temp;\n            }\n    char current[15] = {0};\n    generateSubsets(s, 0, current, 0);\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Sort the string first to get lexicographical order",
+        "At each index: include current char OR skip it"
+      ]
+    }
+  ]
+}

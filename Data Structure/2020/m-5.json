@@ -1,0 +1,299 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Insert Node at Specific Position in SLL",
+      "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) by inserting elements at the end. Your task is to insert a new node with value X at position P (1-based index). After insertion, display the final list. If P is greater than the list length + 1, ignore the operation. If the list is empty after operations, print -1.\n\nTime Complexity\nBuilding the list takes O(N), and insertion at a specific position takes O(N) due to traversal.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\nThe third line contains two integers P (position) and X (value to insert).\n\nOutput Format\nPrint the elements of the updated linked list separated by spaces. If list becomes empty, print -1.\n\nExample\nInput:\n5\n10 20 30 40 50\n3 99\nOutput:\n10 20 99 30 40 50",
+      "examples": "Sample Input\n5\n10 20 30 40 50\n3 99\n\nSample Output\n10 20 99 30 40 50",
+      "constraints": "1 ≤ N ≤ 100000\nValues may be negative or positive\nExpected Time Complexity: O(N)",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "difficulty": 2,
+      "subdomainId": 2020,
+      "streamId": null,
+    
+      "testCases": [
+        { "input": "5\n10 20 30 40 50\n3 99", "expectedOutput": "10 20 99 30 40 50", "problemTitle": "Insert Node at Specific Position in SLL" },
+        { "input": "4\n1 2 3 4\n1 9", "expectedOutput": "9 1 2 3 4", "problemTitle": "Insert Node at Specific Position in SLL" },
+        { "input": "1\n100\n1 200", "expectedOutput": "200 100", "problemTitle": "Insert Node at Specific Position in SLL" },
+        { "input": "3\n5 10 15\n5 99", "expectedOutput": "5 10 15", "problemTitle": "Insert Node at Specific Position in SLL" },
+        { "input": "0\n\n1 10", "expectedOutput": "-1", "problemTitle": "Insert Node at Specific Position in SLL" }
+      ],
+    
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef insertAtPosition(head, p, x):\n    # TODO: Insert node with value x at position p and return head\n    return head\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    n = int(input())\n    arr = []\n    if n > 0:\n        arr = list(map(int, input().split()))\n    p, x = map(int, input().split())\n    head = insertAtEnd(arr, n)\n    head = insertAtPosition(head, p, x)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Insert Node at Specific Position in SLL"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nclass Node{ int data; Node next; Node(int d){ data=d; next=null; }}\nclass Result{\n    public static Node insertAtEnd(int[] arr,int n){ Node head=null,tail=null; for(int x:arr){ Node t=new Node(x); if(head==null){ head=tail=t;} else{ tail.next=t; tail=t; }} return head; }\n    public static Node insertAtPosition(Node head,int p,int x){\n        // TODO: Insert at position p\n        return head;\n    }\n}\npublic class Solution{\n    public static void display(Node head){ if(head==null){ System.out.print(-1); return; } while(head!=null){ System.out.print(head.data+\" \"); head=head.next; }}\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); int[] arr=new int[n]; for(int i=0;i<n;i++) arr[i]=sc.nextInt(); int p=sc.nextInt(),x=sc.nextInt(); Node head=Result.insertAtEnd(arr,n); head=Result.insertAtPosition(head,p,x); display(head);} }",
+          "problemTitle": "Insert Node at Specific Position in SLL"
+        },
+        {
+          "language": 3,
+          "code": "class Node{ constructor(data){ this.data=data; this.next=null; }}\nfunction insertAtEnd(arr){ let head=null,tail=null; arr.forEach(x=>{ let t=new Node(x); if(!head){ head=tail=t;} else{ tail.next=t; tail=t; }}); return head; }\nfunction insertAtPosition(head,p,x){ // TODO: insert new node at position p\n    return head;\n}\nfunction display(head){ if(!head) return console.log(-1); let res=[]; while(head){ res.push(head.data); head=head.next;} console.log(res.join(\" \")); }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); const n=Number(lines[0]); let arr=[]; if(n>0) arr=lines[1].split(\" \").map(Number); const [p,x]=lines[n>0?2:1].split(\" \").map(Number); let head=insertAtEnd(arr); head=insertAtPosition(head,p,x); display(head);} const fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Insert Node at Specific Position in SLL"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std; struct Node{ long long data; Node* next; Node(long long x):data(x),next(NULL){} };\nNode* insertAtEnd(vector<long long> arr,int n){ Node *head=NULL,*tail=NULL; for(long long x:arr){ Node* t=new Node(x); if(!head){ head=tail=t;} else{ tail->next=t; tail=t; }} return head; }\nNode* insertAtPosition(Node* head,int p,long long x){ // TODO insert at pos p\n    return head;\n}\nvoid display(Node* head){ if(!head){ cout<<-1; return;} while(head){ cout<<head->data<<\" \"; head=head->next; }}\nint main(){ int n; cin>>n; vector<long long> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; int p; long long x; cin>>p>>x; Node* head=insertAtEnd(arr,n); head=insertAtPosition(head,p,x); display(head);} ",
+          "problemTitle": "Insert Node at Specific Position in SLL"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\ntypedef long long ll; typedef struct Node{ ll data; struct Node* next;} Node;\nNode* insertAtEnd(ll arr[], int n){ Node *head=NULL,*tail=NULL,*t; for(int i=0;i<n;i++){ t=(Node*)malloc(sizeof(Node)); t->data=arr[i]; t->next=NULL; if(!head){ head=tail=t;} else{ tail->next=t; tail=t; }} return head; }\nNode* insertAtPosition(Node* head,int p,ll x){ // TODO insert at pos p\n    return head;\n}\nvoid display(Node* head){ if(!head){ printf(\"-1\"); return;} while(head){ printf(\"%lld \", head->data); head=head->next; }}\nint main(){ int n; scanf(\"%d\",&n); ll arr[100001]; for(int i=0;i<n;i++) scanf(\"%lld\",&arr[i]); int p; ll x; scanf(\"%d %lld\",&p,&x); Node* head=insertAtEnd(arr,n); head=insertAtPosition(head,p,x); display(head); return 0;}",
+          "problemTitle": "Insert Node at Specific Position in SLL"
+        }
+      ],
+    
+      "hintsList": [
+        "Traverse to (P-1)th node, then link new node in between.",
+        "If P equals 1, new node becomes new head."
+      ]
+    }
+,
+{
+  "id": null,
+  "title": "Delete Node at Specific Position in SLL",
+  "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) by inserting elements at the end. Your task is to delete the node at position P (1-based index) and then display the remaining list. If P is greater than the length of the list, ignore the deletion. If the list becomes empty, print -1.\n\nTime Complexity\nDeleting a node at a specific position requires traversal, resulting in O(N) complexity.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\nThe third line contains an integer P (position to delete).\n\nOutput Format\nPrint the updated linked list elements separated by space. If list becomes empty, print -1.\n\nExample\nInput:\n5\n10 20 30 40 50\n3\nOutput:\n10 20 40 50\nExplanation: Delete node at position 3 and display the updated list.",
+  "examples": "Sample Input\n5\n10 20 30 40 50\n3\n\nSample Output\n10 20 40 50",
+  "constraints": "1 ≤ N ≤ 100000\nPosition P is >= 1\nValues may be negative or positive\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "difficulty": 2,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n10 20 30 40 50\n3", "expectedOutput": "10 20 40 50", "problemTitle": "Delete Node at Specific Position in SLL" },
+    { "input": "4\n1 2 3 4\n1", "expectedOutput": "2 3 4", "problemTitle": "Delete Node at Specific Position in SLL" },
+    { "input": "1\n99\n1", "expectedOutput": "-1", "problemTitle": "Delete Node at Specific Position in SLL" },
+    { "input": "3\n5 10 15\n5", "expectedOutput": "5 10 15", "problemTitle": "Delete Node at Specific Position in SLL" },
+    { "input": "3\n-1 0 1\n2", "expectedOutput": "-1 1", "problemTitle": "Delete Node at Specific Position in SLL" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef deletePosition(head, p):\n    # TODO: Delete node at position p and return new head\n    return head\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split())) if n > 0 else []\n    p = int(input())\n    head = insertAtEnd(arr, n)\n    head = deletePosition(head, p)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Delete Node at Specific Position in SLL"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node next; Node(int d){ data=d; next=null; }}\nclass Result{\n    public static Node insertAtEnd(int[] arr,int n){ Node head=null,tail=null; for(int x:arr){ Node t=new Node(x); if(head==null){ head=tail=t;} else{ tail.next=t; tail=t; }} return head; }\n    public static Node deletePosition(Node head,int p){\n        // TODO delete node at position p\n        return head;\n    }\n}\npublic class Solution{\n    public static void display(Node head){ if(head==null){ System.out.print(-1); return;} while(head!=null){ System.out.print(head.data+\" \"); head=head.next; }}\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); int[] arr=new int[n]; for(int i=0;i<n;i++) arr[i]=sc.nextInt(); int p=sc.nextInt(); Node head=Result.insertAtEnd(arr,n); head=Result.deletePosition(head,p); display(head);} }",
+      "problemTitle": "Delete Node at Specific Position in SLL"
+    },
+    {
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.next=null; }}\nfunction insertAtEnd(arr){ let head=null,tail=null; arr.forEach(x=>{ let t=new Node(x); if(!head){ head=tail=t;} else{ tail.next=t; tail=t; }}); return head; }\nfunction deletePosition(head,p){ // TODO delete node at pos p\n    return head;\n}\nfunction display(head){ if(!head) return console.log(-1); let res=[]; while(head){ res.push(head.data); head=head.next;} console.log(res.join(\" \")); }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); const n=Number(lines[0]); let arr=[]; if(n>0) arr=lines[1].split(\" \").map(Number); const p=Number(lines[n>0?2:1]); let head=insertAtEnd(arr,n); head=deletePosition(head,p); display(head);} const fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Delete Node at Specific Position in SLL"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std; struct Node{ long long data; Node* next; Node(long long x):data(x),next(NULL){} };\nNode* insertAtEnd(vector<long long> arr,int n){ Node *head=NULL,*tail=NULL; for(long long x:arr){ Node* t=new Node(x); if(!head){ head=tail=t;} else{ tail->next=t; tail=t; }} return head; }\nNode* deletePosition(Node* head,int p){ // TODO delete at pos p\n    return head;\n}\nvoid display(Node* head){ if(!head){ cout<<-1; return;} while(head){ cout<<head->data<<\" \"; head=head->next; }}\nint main(){ int n; cin>>n; vector<long long> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; int p; cin>>p; Node* head=insertAtEnd(arr,n); head=deletePosition(head,p); display(head);} ",
+      "problemTitle": "Delete Node at Specific Position in SLL"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\ntypedef long long ll; typedef struct Node{ ll data; struct Node* next;} Node;\nNode* insertAtEnd(ll arr[], int n){ Node *head=NULL,*tail=NULL,*t; for(int i=0;i<n;i++){ t=(Node*)malloc(sizeof(Node)); t->data=arr[i]; t->next=NULL; if(!head){ head=tail=t;} else{ tail->next=t; tail=t; }} return head; }\nNode* deletePosition(Node* head,int p){ // TODO delete at pos p\n    return head;\n}\nvoid display(Node* head){ if(!head){ printf(\"-1\"); return;} while(head){ printf(\"%lld \", head->data); head=head->next; }}\nint main(){ int n; scanf(\"%d\",&n); ll arr[100001]; for(int i=0;i<n;i++) scanf(\"%lld\",&arr[i]); int p; scanf(\"%d\",&p); Node* head=insertAtEnd(arr,n); head=deletePosition(head,p); display(head); return 0;}",
+      "problemTitle": "Delete Node at Specific Position in SLL"
+    }
+  ],
+
+  "hintsList": [
+    "Delete position 1 by moving head -> head.next",
+    "Traverse until (P-1)th node and unlink the target node"
+  ]
+}
+,
+{
+  "id": null,
+  "title": "Convert SLL to CLL and Display",
+  "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) by inserting elements at the end. Your task is to convert the SLL into a Circular Linked List (CLL) by connecting the last node to the head node. After conversion, display the list elements starting from head and stopping when head is reached again. If the list is empty, print -1.\n\nTime Complexity\nBuilding the list takes O(N), converting to CLL takes O(1), and displaying takes O(N).\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the circular linked list elements separated by space. If the list is empty, print -1.\n\nExample\nInput:\n5\n10 20 30 40 50\nOutput:\n10 20 30 40 50",
+  "examples": "Sample Input\n5\n10 20 30 40 50\n\nSample Output\n10 20 30 40 50",
+  "constraints": "1 ≤ N ≤ 100000\nValues may be negative or positive\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "difficulty": 2,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n10 20 30 40 50", "expectedOutput": "10 20 30 40 50", "problemTitle": "Convert SLL to CLL and Display" },
+    { "input": "4\n1 2 3 4", "expectedOutput": "1 2 3 4", "problemTitle": "Convert SLL to CLL and Display" },
+    { "input": "1\n99", "expectedOutput": "99", "problemTitle": "Convert SLL to CLL and Display" },
+    { "input": "3\n-1 0 1", "expectedOutput": "-1 0 1", "problemTitle": "Convert SLL to CLL and Display" },
+    { "input": "0\n", "expectedOutput": "-1", "problemTitle": "Convert SLL to CLL and Display" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef convertToCLL(head):\n    # TODO: Convert SLL to CLL\n    return head\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    temp = head\n    while True:\n        print(temp.data, end=\" \")\n        temp = temp.next\n        if temp == head:\n            break\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split())) if n > 0 else []\n    head = insertAtEnd(arr, n)\n    head = convertToCLL(head)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Convert SLL to CLL and Display"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node next; Node(int d){ data=d; next=null; }}\nclass Result{\n    public static Node insertAtEnd(int[] arr,int n){ Node head=null,tail=null; for(int x:arr){ Node t=new Node(x); if(head==null){ head=tail=t;} else{ tail.next=t; tail=t; }} return head; }\n    public static Node convertToCLL(Node head){\n        // TODO convert sll to cll\n        return head;\n    }\n}\npublic class Solution{\n    public static void display(Node head){ if(head==null){ System.out.print(-1); return;} Node temp=head; do{ System.out.print(temp.data+\" \"); temp=temp.next;}while(temp!=head); }\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); int[] arr=new int[n]; for(int i=0;i<n;i++) arr[i]=sc.nextInt(); Node head=Result.insertAtEnd(arr,n); head=Result.convertToCLL(head); display(head);} }",
+      "problemTitle": "Convert SLL to CLL and Display"
+    },
+    {
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.next=null; }}\nfunction insertAtEnd(arr){ let head=null,tail=null; arr.forEach(x=>{ let t=new Node(x); if(!head){ head=tail=t;} else{ tail.next=t; tail=t; }}); return head; }\nfunction convertToCLL(head){ // TODO convert\n    return head;\n}\nfunction display(head){ if(!head) return console.log(-1); let result=[]; let temp=head; do{ result.push(temp.data); temp=temp.next;}while(temp!==head); console.log(result.join(\" \")); }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); const n=Number(lines[0]); let arr=[]; if(n>0) arr=lines[1].split(\" \").map(Number); let head=insertAtEnd(arr); head=convertToCLL(head); display(head);} const fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Convert SLL to CLL and Display"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std; struct Node{ long long data; Node* next; Node(long long x):data(x),next(NULL){} };\nNode* insertAtEnd(vector<long long> arr,int n){ Node *head=NULL,*tail=NULL; for(long long x:arr){ Node* t=new Node(x); if(!head){ head=tail=t;} else{ tail->next=t; tail=t; }} return head; }\nNode* convertToCLL(Node* head){ // TODO convert return head;\n    return head;\n}\nvoid display(Node* head){ if(!head){ cout<<-1; return;} Node* temp=head; do{ cout<<temp->data<<\" \"; temp=temp->next;}while(temp!=head); }\nint main(){ int n; cin>>n; vector<long long> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; Node* head=insertAtEnd(arr,n); head=convertToCLL(head); display(head);} ",
+      "problemTitle": "Convert SLL to CLL and Display"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\ntypedef long long ll; typedef struct Node{ ll data; struct Node* next;} Node;\nNode* insertAtEnd(ll arr[], int n){ Node *head=NULL,*tail=NULL,*t; for(int i=0;i<n;i++){ t=(Node*)malloc(sizeof(Node)); t->data=arr[i]; t->next=NULL; if(!head){ head=tail=t;} else{ tail->next=t; tail=t; }} return head; }\nNode* convertToCLL(Node* head){ // TODO convert\n    return head;\n}\nvoid display(Node* head){ if(!head){ printf(\"-1\"); return;} Node* temp=head; do{ printf(\"%lld \", temp->data); temp=temp->next;}while(temp!=head); }\nint main(){ int n; scanf(\"%d\",&n); ll arr[100001]; for(int i=0;i<n;i++) scanf(\"%lld\",&arr[i]); Node* head=insertAtEnd(arr,n); head=convertToCLL(head); display(head); return 0;}",
+      "problemTitle": "Convert SLL to CLL and Display"
+    }
+  ],
+
+  "hintsList": [
+    "Traverse to last node and set last.next = head",
+    "Use do-while traversal to avoid infinite loops"
+  ]
+},
+{
+  "id": null,
+  "title": "Insert Node in Doubly Linked List (DLL)",
+  "description": "Problem Statement\nYou are given N integers to create a Doubly Linked List (DLL) by inserting elements at the end. Your task is to insert a new node with value X at position P (1-based index). After insertion, display the updated DLL.\nIf P is greater than length + 1, ignore the insertion.\nIf N = 0 (initial list is empty), do not perform any insertion and print -1.\n\nTime Complexity\nBuilding the list takes O(N). Inserting at a specific position requires O(N) traversal.\n\nInput Format\nThe first line contains an integer N.\nIf N > 0, the second line contains N space-separated integers.\nThe next line contains two integers P (position) and X (value to insert).\n\nOutput Format\nPrint the DLL elements from head to end separated by space.\nIf the list is empty, print -1.\n\nExample\nInput:\n5\n10 20 30 40 50\n3 99\nOutput:\n10 20 99 30 40 50",
+  "examples": "Sample Input\n5\n10 20 30 40 50\n3 99\n\nSample Output\n10 20 99 30 40 50",
+  "constraints": "0 ≤ N ≤ 100000\nValues may be negative or positive\nPosition P ≥ 1\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "difficulty": 2,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    {
+      "input": "5\n10 20 30 40 50\n3 99",
+      "expectedOutput": "10 20 99 30 40 50",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    },
+    {
+      "input": "4\n1 2 3 4\n1 9",
+      "expectedOutput": "9 1 2 3 4",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    },
+    {
+      "input": "1\n100\n2 200",
+      "expectedOutput": "100 200",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    },
+    {
+      "input": "3\n5 10 15\n5 99",
+      "expectedOutput": "5 10 15",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    },
+    {
+      "input": "0\n1 10",
+      "expectedOutput": "-1",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.prev = None\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            newNode.prev = tail\n            tail = newNode\n    return head\n\ndef insertAtPosition(head, p, x):\n    # TODO: Insert x at position p and return updated head\n    return head\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    temp = head\n    while temp:\n        print(temp.data, end=\" \")\n        temp = temp.next\n\ndef solve():\n    n = int(input())\n    arr = []\n    if n > 0:\n        arr = list(map(int, input().split()))\n    p, x = map(int, input().split())\n    head = insertAtEnd(arr, n)\n    if n == 0:\n        display(None)\n        return\n    head = insertAtPosition(head, p, x)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node {\n    int data;\n    Node prev, next;\n    Node(int d){ data = d; }\n}\nclass Result {\n    public static Node insertAtEnd(int[] arr, int n) {\n        Node head = null, tail = null;\n        for (int x : arr) {\n            Node t = new Node(x);\n            if (head == null) {\n                head = tail = t;\n            } else {\n                tail.next = t;\n                t.prev = tail;\n                tail = t;\n            }\n        }\n        return head;\n    }\n    public static Node insertAtPosition(Node head, int p, int x) {\n        // TODO: Insert x at position p and return updated head\n        return head;\n    }\n}\npublic class Solution {\n    public static void display(Node head) {\n        if (head == null) {\n            System.out.print(-1);\n            return;\n        }\n        Node temp = head;\n        while (temp != null) {\n            System.out.print(temp.data + \" \");\n            temp = temp.next;\n        }\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n        int p = sc.nextInt();\n        int x = sc.nextInt();\n        Node head = Result.insertAtEnd(arr, n);\n        if (n == 0) {\n            display(null);\n            return;\n        }\n        head = Result.insertAtPosition(head, p, x);\n        display(head);\n    }\n}",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    },
+    {
+      "language": 3,
+      "code": "class Node {\n  constructor(data){\n    this.data = data;\n    this.prev = null;\n    this.next = null;\n  }\n}\nfunction insertAtEnd(arr, n){\n  let head = null, tail = null;\n  for (const x of arr){\n    const t = new Node(x);\n    if (!head){ head = tail = t; }\n    else {\n      tail.next = t;\n      t.prev = tail;\n      tail = t;\n    }\n  }\n  return head;\n}\nfunction insertAtPosition(head, p, x){\n  // TODO: Insert x at position p and return head\n  return head;\n}\nfunction display(head){\n  if (!head){ console.log(-1); return; }\n  const res = [];\n  let temp = head;\n  while (temp){ res.push(temp.data); temp = temp.next; }\n  console.log(res.join(\" \"));\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = Number(lines[0]);\n  let idx = 1;\n  let arr = [];\n  if (n > 0){\n    arr = lines[idx++].split(\" \").map(Number);\n  }\n  const [p, x] = lines[idx].split(\" \").map(Number);\n  let head = insertAtEnd(arr, n);\n  if (n === 0){ display(null); return; }\n  head = insertAtPosition(head, p, x);\n  display(head);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node {\n    long long data;\n    Node* prev;\n    Node* next;\n    Node(long long x): data(x), prev(NULL), next(NULL) {}\n};\nNode* insertAtEnd(const vector<long long>& arr, int n){\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr){\n        Node* t = new Node(x);\n        if (!head){ head = tail = t; }\n        else {\n            tail->next = t;\n            t->prev = tail;\n            tail = t;\n        }\n    }\n    return head;\n}\nNode* insertAtPosition(Node* head, int p, long long x){\n    // TODO: Insert x at position p and return updated head\n    return head;\n}\nvoid display(Node* head){\n    if (!head){ cout << -1; return; }\n    Node* temp = head;\n    while (temp){ cout << temp->data << \" \"; temp = temp->next; }\n}\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    int p; long long x; cin >> p >> x;\n    Node* head = insertAtEnd(arr, n);\n    if (n == 0){ display(NULL); return 0; }\n    head = insertAtPosition(head, p, x);\n    display(head);\n    return 0;\n}",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef long long ll;\ntypedef struct Node {\n    ll data;\n    struct Node* prev;\n    struct Node* next;\n} Node;\nNode* insertAtEnd(ll arr[], int n){\n    Node *head = NULL, *tail = NULL, *t;\n    for (int i = 0; i < n; i++){\n        t = (Node*)malloc(sizeof(Node));\n        t->data = arr[i];\n        t->prev = t->next = NULL;\n        if (!head){ head = tail = t; }\n        else {\n            tail->next = t;\n            t->prev = tail;\n            tail = t;\n        }\n    }\n    return head;\n}\nNode* insertAtPosition(Node* head, int p, ll x){\n    // TODO: Insert x at position p and return updated head\n    return head;\n}\nvoid display(Node* head){\n    if (!head){ printf(\"-1\"); return; }\n    Node* temp = head;\n    while (temp){ printf(\"%lld \", temp->data); temp = temp->next; }\n}\nint main(){\n    int n; if (scanf(\"%d\", &n) != 1) return 0;\n    ll arr[100001];\n    for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    int p; ll x; scanf(\"%d %lld\", &p, &x);\n    Node* head = insertAtEnd(arr, n);\n    if (n == 0){ display(NULL); return 0; }\n    head = insertAtPosition(head, p, x);\n    display(head);\n    return 0;\n}",
+      "problemTitle": "Insert Node in Doubly Linked List (DLL)"
+    }
+  ],
+
+  "hintsList": [
+    "If P = 1, create a new node, link its next to old head, update head and prev pointers.",
+    "For middle positions, traverse to (P-1)th node and adjust both prev and next links."
+  ]
+}
+,
+
+{
+  "id": null,
+  "title": "Delete Node in Doubly Linked List (DLL)",
+  "description": "Problem Statement\nYou are given N integers to create a Doubly Linked List (DLL) by inserting elements at the end. Your task is to delete the node at position P (1-based index) and then display the updated DLL. If P is greater than the list length, ignore the deletion. If the list becomes empty, print -1.\n\nTime Complexity\nDeleting a node requires traversal, resulting in O(N).\n\nInput Format\nThe first line contains an integer N.\nIf N > 0, the second line contains N space-separated integers.\nThe next line contains P (position to delete).\n\nOutput Format\nPrint the DLL elements from head to tail separated by space. If the list becomes empty, print -1.\n\nExample\nInput:\n5\n10 20 30 40 50\n3\nOutput:\n10 20 40 50",
+  "examples": "Sample Input\n5\n10 20 30 40 50\n3\n\nSample Output\n10 20 40 50",
+  "constraints": "0 ≤ N ≤ 100000\nValues may be negative or positive\nPosition P ≥ 1\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "difficulty": 2,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n10 20 30 40 50\n3", "expectedOutput": "10 20 40 50", "problemTitle": "Delete Node in Doubly Linked List (DLL)" },
+    { "input": "4\n1 2 3 4\n1", "expectedOutput": "2 3 4", "problemTitle": "Delete Node in Doubly Linked List (DLL)" },
+    { "input": "1\n100\n1", "expectedOutput": "-1", "problemTitle": "Delete Node in Doubly Linked List (DLL)" },
+    { "input": "3\n5 10 15\n5", "expectedOutput": "5 10 15", "problemTitle": "Delete Node in Doubly Linked List (DLL)" },
+    { "input": "0\n1", "expectedOutput": "-1", "problemTitle": "Delete Node in Doubly Linked List (DLL)" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.prev = None\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            newNode.prev = tail\n            tail = newNode\n    return head\n\ndef deletePosition(head, p):\n    # TODO: delete node at position p and return head\n    return head\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    temp = head\n    while temp:\n        print(temp.data, end=\" \")\n        temp = temp.next\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split())) if n > 0 else []\n    p = int(input())\n    head = insertAtEnd(arr, n)\n    head = deletePosition(head, p)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Delete Node in Doubly Linked List (DLL)"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node prev, next; Node(int d){ data=d; }}\nclass Result{\n    public static Node insertAtEnd(int[] arr,int n){ Node head=null,tail=null; for(int x:arr){ Node t=new Node(x); if(head==null){ head=tail=t;} else{ tail.next=t; t.prev=tail; tail=t; }} return head; }\n    public static Node deletePosition(Node head,int p){\n        // TODO delete position p\n        return head;\n    }\n}\npublic class Solution{\n    public static void display(Node head){ if(head==null){ System.out.print(-1); return;} Node t=head; while(t!=null){ System.out.print(t.data+\" \"); t=t.next; }}\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); int[] arr=new int[n]; for(int i=0;i<n;i++) arr[i]=sc.nextInt(); int p=sc.nextInt(); Node head=Result.insertAtEnd(arr,n); head=Result.deletePosition(head,p); display(head);} }",
+      "problemTitle": "Delete Node in Doubly Linked List (DLL)"
+    },
+    {
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.prev=null; this.next=null; }}\nfunction insertAtEnd(arr){ let head=null,tail=null; arr.forEach(x=>{ const t=new Node(x); if(!head){ head=tail=t;} else{ tail.next=t; t.prev=tail; tail=t; }}); return head; }\nfunction deletePosition(head,p){ // TODO delete\n  return head;\n}\nfunction display(head){ if(!head) return console.log(-1); let t=head,res=[]; while(t){ res.push(t.data); t=t.next;} console.log(res.join(\" \")); }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); const n=Number(lines[0]); let arr=[]; let idx=1; if(n>0) arr=lines[idx++].split(\" \").map(Number); const p=Number(lines[idx]); let head=insertAtEnd(arr); head=deletePosition(head,p); display(head);} const fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Delete Node in Doubly Linked List (DLL)"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std; struct Node{ long long data; Node* prev; Node* next; Node(long long x):data(x),prev(NULL),next(NULL){} };\nNode* insertAtEnd(vector<long long> arr,int n){ Node *head=NULL,*tail=NULL; for(long long x:arr){ Node* t=new Node(x); if(!head){ head=tail=t;} else{ tail->next=t; t->prev=tail; tail=t; }} return head; }\nNode* deletePosition(Node* head,int p){ // TODO delete\n    return head;\n}\nvoid display(Node* head){ if(!head){ cout<<-1; return;} Node* t=head; while(t){ cout<<t->data<<\" \"; t=t->next;} }\nint main(){ int n; cin>>n; vector<long long> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; int p; cin>>p; Node* head=insertAtEnd(arr,n); head=deletePosition(head,p); display(head);} ",
+      "problemTitle": "Delete Node in Doubly Linked List (DLL)"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef long long ll;\ntypedef struct Node{ ll data; struct Node* prev; struct Node* next;} Node;\nNode* insertAtEnd(ll arr[], int n){ Node *head=NULL,*tail=NULL,*t; for(int i=0;i<n;i++){ t=(Node*)malloc(sizeof(Node)); t->data=arr[i]; t->prev=t->next=NULL; if(!head){ head=tail=t;} else{ tail->next=t; t->prev=tail; tail=t; }} return head; }\nNode* deletePosition(Node* head,int p){ // TODO delete pos\n    return head;\n}\nvoid display(Node* head){ if(!head){ printf(\"-1\"); return;} Node* t=head; while(t){ printf(\"%lld \", t->data); t=t->next;} }\nint main(){ int n; scanf(\"%d\",&n); ll arr[100001]; for(int i=0;i<n;i++) scanf(\"%lld\",&arr[i]); int p; scanf(\"%d\",&p); Node* head=insertAtEnd(arr,n); head=deletePosition(head,p); display(head); return 0;}",
+      "problemTitle": "Delete Node in Doubly Linked List (DLL)"
+    }
+  ],
+
+  "hintsList": [
+    "If P = 1, update head to head.next and clear prev pointer.",
+    "To delete in middle, traverse to (P-1)th and unlink pointers carefully."
+  ]
+}
+
+  ]
+}

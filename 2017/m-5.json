@@ -1,0 +1,332 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Perform Binary Search on Sorted Array",
+      "description": "Problem Statement\nYou are given an integer N and a sorted array A of N integers in non-decreasing order. You are also given an integer X. Your task is to determine whether X exists in the array using the Binary Search algorithm.\nBinary Search works by repeatedly dividing the search interval into halves. If the target value X is equal to the middle element, return its index. If X is smaller, search in the left half; otherwise, search in the right half.\nIf X exists in the array, return its index (0-based). Otherwise, return -1.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N sorted integers representing the array A.\nThe third line contains the integer X to search.\n\nOutput Format\nPrint a single integer: the index of X if found, otherwise -1.\n\nExample 1\nInput:\n7\n1 3 5 7 9 11 13\n7\n\nOutput:\n3\n\nExplanation:\nThe number 7 is found at index 3 using binary search.",
+      "examples": "Sample Input\n6\n2 4 6 8 10 12\n10\n\nSample Output\n4",
+      "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], X ≤ 10^9\nArray is guaranteed to be sorted in non-decreasing order.",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2017,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "7\n1 3 5 7 9 11 13\n7", "expectedOutput": "3", "problemTitle": "Perform Binary Search on Sorted Array" },
+        { "id": null, "problemId": null, "input": "6\n2 4 6 8 10 12\n10", "expectedOutput": "4", "problemTitle": "Perform Binary Search on Sorted Array" },
+        { "id": null, "problemId": null, "input": "5\n10 20 30 40 50\n25", "expectedOutput": "-1", "problemTitle": "Perform Binary Search on Sorted Array" },
+        { "id": null, "problemId": null, "input": "1\n100\n100", "expectedOutput": "0", "problemTitle": "Perform Binary Search on Sorted Array" },
+        { "id": null, "problemId": null, "input": "8\n3 5 5 5 9 12 18 20\n5", "expectedOutput": "1", "problemTitle": "Perform Binary Search on Sorted Array" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def binarySearch(arr, x):\n    # TODO: Implement binary search and return index or -1\n    return -1\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    print(binarySearch(arr, x))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Perform Binary Search on Sorted Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int binarySearch(int[] arr, int x) {\n        // TODO: Implement binary search and return index or -1\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int x = Integer.parseInt(br.readLine().trim());\n        System.out.println(Result.binarySearch(arr, x));\n    }\n}",
+          "problemTitle": "Perform Binary Search on Sorted Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function binarySearch(arr, x) {\n    // TODO: Implement binary search and return index or -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(binarySearch(arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Perform Binary Search on Sorted Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint binarySearch(vector<long long> arr, long long x) {\n    // TODO: Implement binary search and return index or -1\n    return -1;\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    long long x; cin >> x;\n    cout << binarySearch(arr, x);\n    return 0;\n}",
+          "problemTitle": "Perform Binary Search on Sorted Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint binarySearch(long long arr[], int n, long long x) {\n    // TODO: Implement binary search and return index or -1\n    return -1;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    long long x;\n    scanf(\"%lld\", &x);\n    printf(\"%d\", binarySearch(arr, n, x));\n    return 0;\n}",
+          "problemTitle": "Perform Binary Search on Sorted Array"
+        }
+      ],
+
+      "hintsList": [
+        "Maintain two pointers: low and high.",
+        "Use mid = (low + high) // 2. Adjust bounds based on comparison."
+      ]
+    },
+    {
+        "id": null,
+        "title": "Find First Element ≥ X in Sorted Array",
+        "description": "Problem Statement\nYou are given an integer N and a sorted array A of N integers (sorted in non-decreasing order). You are also given an integer X.\nYour task is to find the first element in the array that is greater than or equal to X.\nIf such an element exists, print its value. If no such element exists, print -1.\nThis can be efficiently solved using binary search (lower bound technique).\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated sorted integers representing array A.\nThe third line contains the integer X.\n\nOutput Format\nPrint the first element in A that is ≥ X, otherwise print -1.\n\nExample 1\nInput:\n7\n1 3 5 7 9 11 13\n6\n\nOutput:\n7\n\nExplanation:\nThe first element that is ≥ 6 is 7.",
+        "examples": "Sample Input\n5\n2 4 6 8 10\n7\n\nSample Output\n8",
+        "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], X ≤ 10^9\nArray is sorted in non-decreasing order.",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2017,
+        "difficulty": 2,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+  
+        "testCases": [
+          { "id": null, "problemId": null, "input": "7\n1 3 5 7 9 11 13\n6", "expectedOutput": "7", "problemTitle": "Find First Element ≥ X in Sorted Array" },
+          { "id": null, "problemId": null, "input": "5\n2 4 6 8 10\n7", "expectedOutput": "8", "problemTitle": "Find First Element ≥ X in Sorted Array" },
+          { "id": null, "problemId": null, "input": "6\n2 4 6 8 10 12\n12", "expectedOutput": "12", "problemTitle": "Find First Element ≥ X in Sorted Array" },
+          { "id": null, "problemId": null, "input": "4\n1 2 3 4\n10", "expectedOutput": "-1", "problemTitle": "Find First Element ≥ X in Sorted Array" },
+          { "id": null, "problemId": null, "input": "8\n3 5 5 5 9 12 18 20\n5", "expectedOutput": "5", "problemTitle": "Find First Element ≥ X in Sorted Array" }
+        ],
+  
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def firstGreaterOrEqual(arr, x):\n    # TODO: Implement lower bound binary search and return value or -1\n    return -1\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    print(firstGreaterOrEqual(arr, x))\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Find First Element ≥ X in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int firstGreaterOrEqual(int[] arr, int x) {\n        // TODO: Implement lower bound binary search\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int x = Integer.parseInt(br.readLine().trim());\n        System.out.println(Result.firstGreaterOrEqual(arr, x));\n    }\n}",
+            "problemTitle": "Find First Element ≥ X in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function firstGreaterOrEqual(arr, x) {\n    // TODO: Implement lower bound using binary search\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(firstGreaterOrEqual(arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Find First Element ≥ X in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nlong long firstGreaterOrEqual(vector<long long> arr, long long x) {\n    // TODO: Implement binary search lower bound\n    return -1;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    long long x; cin >> x;\n\n    cout << firstGreaterOrEqual(arr, x);\n    return 0;\n}",
+            "problemTitle": "Find First Element ≥ X in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n\nlong long firstGreaterOrEqual(long long arr[], int n, long long x) {\n    // TODO: Implement lower bound binary search\n    return -1;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n\n    long long x;\n    scanf(\"%lld\", &x);\n\n    printf(\"%lld\", firstGreaterOrEqual(arr, n, x));\n    return 0;\n}",
+            "problemTitle": "Find First Element ≥ X in Sorted Array"
+          }
+        ],
+  
+        "hintsList": [
+          "Use binary search to find the smallest index i such that A[i] ≥ X.",
+          "If low goes out of range (low == N), no such element exists."
+        ]
+      },
+      {
+        "id": null,
+        "title": "Find Last Element ≤ X in Sorted Array",
+        "description": "Problem Statement\nYou are given an integer N and a sorted array A of N integers (sorted in non-decreasing order). You are also given an integer X.\nYour task is to find the last element in the array that is less than or equal to X.\nIf such an element exists, print its value. If no such element exists, print -1.\nThis can be solved efficiently using binary search (upper bound technique).\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated sorted integers representing array A.\nThe third line contains the integer X.\n\nOutput Format\nPrint the last element in A that is ≤ X, otherwise print -1.\n\nExample 1\nInput:\n7\n1 3 5 7 9 11 13\n6\n\nOutput:\n5\n\nExplanation:\nThe last element that is ≤ 6 is 5.",
+        "examples": "Sample Input\n5\n2 4 6 8 10\n9\n\nSample Output\n8",
+        "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], X ≤ 10^9\nArray is sorted in non-decreasing order.",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2017,
+        "difficulty": 2,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+  
+        "testCases": [
+          { "id": null, "problemId": null, "input": "7\n1 3 5 7 9 11 13\n6", "expectedOutput": "5", "problemTitle": "Find Last Element ≤ X in Sorted Array" },
+          { "id": null, "problemId": null, "input": "5\n2 4 6 8 10\n9", "expectedOutput": "8", "problemTitle": "Find Last Element ≤ X in Sorted Array" },
+          { "id": null, "problemId": null, "input": "6\n2 4 6 8 10 12\n12", "expectedOutput": "12", "problemTitle": "Find Last Element ≤ X in Sorted Array" },
+          { "id": null, "problemId": null, "input": "4\n5 10 15 20\n3", "expectedOutput": "-1", "problemTitle": "Find Last Element ≤ X in Sorted Array" },
+          { "id": null, "problemId": null, "input": "8\n3 5 5 5 9 12 18 20\n5", "expectedOutput": "5", "problemTitle": "Find Last Element ≤ X in Sorted Array" }
+        ],
+  
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def lastLessOrEqual(arr, x):\n    # TODO: Implement binary search upper bound logic and return value or -1\n    return -1\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    print(lastLessOrEqual(arr, x))\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Find Last Element ≤ X in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int lastLessOrEqual(int[] arr, int x) {\n        // TODO: Implement upper bound - 1 binary search logic\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int x = Integer.parseInt(br.readLine().trim());\n        System.out.println(Result.lastLessOrEqual(arr, x));\n    }\n}",
+            "problemTitle": "Find Last Element ≤ X in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function lastLessOrEqual(arr, x) {\n    // TODO: Implement binary search to find last element <= x\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(lastLessOrEqual(arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Find Last Element ≤ X in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nlong long lastLessOrEqual(vector<long long> arr, long long x) {\n    // TODO: Implement binary search (upper bound - 1)\n    return -1;\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    long long x; cin >> x;\n\n    cout << lastLessOrEqual(arr, x);\n    return 0;\n}",
+            "problemTitle": "Find Last Element ≤ X in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n\nlong long lastLessOrEqual(long long arr[], int n, long long x) {\n    // TODO: Implement binary search to find last <= x\n    return -1;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n\n    long long x;\n    scanf(\"%lld\", &x);\n\n    printf(\"%lld\", lastLessOrEqual(arr, n, x));\n    return 0;\n}",
+            "problemTitle": "Find Last Element ≤ X in Sorted Array"
+          }
+        ],
+  
+        "hintsList": [
+          "Use binary search to find the largest index i such that A[i] ≤ X.",
+          "If high becomes -1, then no element ≤ X exists."
+        ]
+      },
+      
+      {
+        "id": null,
+        "title": "Check if Perfect Square Exists in Sorted Array",
+        "description": "Problem Statement\nYou are given an integer N and a sorted array A of N integers (sorted in non-decreasing order). Your task is to check whether the array contains at least one perfect square.\nA perfect square is a number whose square root is an integer (e.g., 0, 1, 4, 9, 16...).\nIf any element is a perfect square, print \"YES\". If none of the elements is a perfect square, print \"NO\".\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated sorted integers representing array A.\n\nOutput Format\nPrint \"YES\" if a perfect square exists, otherwise print \"NO\".\n\nExample 1\nInput:\n6\n1 3 5 9 12 15\n\nOutput:\nYES\n\nExplanation:\nThe element 9 is a perfect square (3 × 3).",
+        "examples": "Sample Input\n5\n2 3 6 8 10\n\nSample Output\nNO",
+        "constraints": "1 ≤ N ≤ 10^5\n0 ≤ A[i] ≤ 10^12\nArray is sorted in non-decreasing order.",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2017,
+        "difficulty": 2,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+  
+        "testCases": [
+          { "id": null, "problemId": null, "input": "6\n1 3 5 9 12 15", "expectedOutput": "YES", "problemTitle": "Check if Perfect Square Exists in Sorted Array" },
+          { "id": null, "problemId": null, "input": "5\n2 3 6 8 10", "expectedOutput": "NO", "problemTitle": "Check if Perfect Square Exists in Sorted Array" },
+          { "id": null, "problemId": null, "input": "4\n0 1 2 3", "expectedOutput": "YES", "problemTitle": "Check if Perfect Square Exists in Sorted Array" },
+          { "id": null, "problemId": null, "input": "1\n16", "expectedOutput": "YES", "problemTitle": "Check if Perfect Square Exists in Sorted Array" },
+          { "id": null, "problemId": null, "input": "7\n5 6 7 8 10 12 14", "expectedOutput": "NO", "problemTitle": "Check if Perfect Square Exists in Sorted Array" }
+        ],
+  
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "import math\n\ndef existsPerfectSquare(arr):\n    # TODO: Return \"YES\" if any element is a perfect square, else \"NO\"\n    return \"NO\"\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    print(existsPerfectSquare(arr))\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Check if Perfect Square Exists in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static String existsPerfectSquare(long[] arr) {\n        // TODO: Check if any element is a perfect square\n        return \"NO\";\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        long[] arr = Arrays.stream(br.readLine().split(\" \")).mapToLong(Long::parseLong).toArray();\n        System.out.println(Result.existsPerfectSquare(arr));\n    }\n}",
+            "problemTitle": "Check if Perfect Square Exists in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function existsPerfectSquare(arr) {\n    // TODO: Return \"YES\" if any element is a perfect square\n    return \"NO\";\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    console.log(existsPerfectSquare(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Check if Perfect Square Exists in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nstring existsPerfectSquare(vector<long long> arr) {\n    // TODO: Return \"YES\" if any element is a perfect square\n    return \"NO\";\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    cout << existsPerfectSquare(arr);\n    return 0;\n}",
+            "problemTitle": "Check if Perfect Square Exists in Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n#include <math.h>\n\nconst char* existsPerfectSquare(long long arr[], int n) {\n    // TODO: Return \"YES\" if any value is a perfect square\n    return \"NO\";\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n\n    printf(\"%s\", existsPerfectSquare(arr, n));\n    return 0;\n}",
+            "problemTitle": "Check if Perfect Square Exists in Sorted Array"
+          }
+        ],
+  
+        "hintsList": [
+          "Use sqrt(A[i]) and check if it is an integer.",
+          "Since array is sorted, once A[i] > X² (or grows large), you can stop early — but linear scan is fine too."
+        ]
+      },
+      {
+        "id": null,
+        "title": "Binary Search on Descending Sorted Array",
+        "description": "Problem Statement\nYou are given an integer N and an array A of N integers sorted in strictly descending order. You are also given an integer X. Your task is to find the index of X in this descending sorted array using Binary Search.\nBinary search on descending arrays works with reversed comparisons:\n- If A[mid] == X → return mid\n- If A[mid] < X → search in the left half\n- If A[mid] > X → search in the right half\nIf X does not exist in the array, return -1.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers sorted in descending order.\nThe third line contains the integer X to search.\n\nOutput Format\nPrint the index of X (0-based), or -1 if not found.\n\nExample 1\nInput:\n6\n20 17 15 10 8 3\n10\n\nOutput:\n3\n\nExplanation:\n10 is found at index 3 in the descending array.",
+        "examples": "Sample Input\n5\n50 40 30 20 10\n25\n\nSample Output\n-1",
+        "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], X ≤ 10^9\nArray is strictly sorted in descending order.",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2017,
+        "difficulty": 2,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+        "testCases": [
+          { "id": null, "problemId": null, "input": "6\n20 17 15 10 8 3\n10", "expectedOutput": "3", "problemTitle": "Binary Search on Descending Sorted Array" },
+          { "id": null, "problemId": null, "input": "5\n50 40 30 20 10\n25", "expectedOutput": "-1", "problemTitle": "Binary Search on Descending Sorted Array" },
+          { "id": null, "problemId": null, "input": "1\n100\n100", "expectedOutput": "0", "problemTitle": "Binary Search on Descending Sorted Array" },
+          { "id": null, "problemId": null, "input": "7\n90 80 70 60 50 40 30\n40", "expectedOutput": "5", "problemTitle": "Binary Search on Descending Sorted Array" },
+          { "id": null, "problemId": null, "input": "4\n10 9 8 7\n6", "expectedOutput": "-1", "problemTitle": "Binary Search on Descending Sorted Array" }
+        ],
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def binarySearchDescending(arr, x):\n    # TODO: Implement binary search on descending sorted array\n    return -1\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    x = int(input().strip())\n    print(binarySearchDescending(arr, x))\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Binary Search on Descending Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int binarySearchDescending(int[] arr, int x) {\n        // TODO: Implement binary search for descending sorted array\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int x = Integer.parseInt(br.readLine().trim());\n        System.out.println(Result.binarySearchDescending(arr, x));\n    }\n}",
+            "problemTitle": "Binary Search on Descending Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function binarySearchDescending(arr, x) {\n    // TODO: Implement binary search for descending sorted array\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const arr = lines[1].split(\" \").map(Number);\n    const x = Number(lines[2]);\n    console.log(binarySearchDescending(arr, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Binary Search on Descending Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint binarySearchDescending(vector<long long> arr, long long x) {\n    // TODO: Implement descending order binary search\n    return -1;\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n; cin >> n;\n    vector<long long> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n\n    long long x; cin >> x;\n    cout << binarySearchDescending(arr, x);\n    return 0;\n}",
+            "problemTitle": "Binary Search on Descending Sorted Array"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n\nint binarySearchDescending(long long arr[], int n, long long x) {\n    // TODO: Implement descending order binary search\n    return -1;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n\n    long long arr[100001];\n    for(int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n\n    long long x;\n    scanf(\"%lld\", &x);\n\n    printf(\"%d\", binarySearchDescending(arr, n, x));\n    return 0;\n}",
+            "problemTitle": "Binary Search on Descending Sorted Array"
+          }
+        ],
+        "hintsList": [
+          "In descending order: if A[mid] < X, search left; if A[mid] > X, search right.",
+          "Binary search logic reverses its comparison when the array is sorted backwards."
+        ]
+      }
+  ]
+}

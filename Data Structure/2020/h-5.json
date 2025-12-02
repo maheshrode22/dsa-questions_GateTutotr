@@ -1,0 +1,364 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Polynomial Addition using Linked List",
+      "description": "Problem Statement:\nGiven two polynomials represented using Singly Linked Lists, where each node contains a coefficient and a power (exponent), perform polynomial addition and return the resulting polynomial in decreasing order of powers. Each linked list node is represented as (coefficient, power). If two terms have the same power, add the coefficients. Terms with resulting coefficient 0 should be removed. Display the final polynomial in the format: coeff power_coeff coeff power ...\n\nExample Explanation:\nPolynomial 1: 3x^3 + 2x^1 + 5\nPolynomial 2: 5x^2 + 6x^1 + 8\nAfter addition: 3x^3 + 5x^2 + 8x^1 + 13\nOutput Format: 3 3 5 2 8 1 13 0",
+      "examples": "Input:\n3\n3 3\n2 1\n5 0\n3\n5 2\n6 1\n8 0\n\nOutput:\n3 3 5 2 8 1 13 0",
+      "constraints": "1 <= number of terms <= 10^5\n-10^9 <= coefficient <= 10^9\n0 <= power <= 10^5",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2020,
+      "difficulty": "3",
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n3 3\n2 1\n5 0\n3\n5 2\n6 1\n8 0",
+          "expectedOutput": "3 3 5 2 8 1 13 0",
+          "problemTitle": "Polynomial Addition using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "2\n4 4\n2 2\n2\n5 4\n3 1",
+          "expectedOutput": "9 4 2 2 3 1",
+          "problemTitle": "Polynomial Addition using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n1 3\n2 2\n3 1\n3\n-1 3\n5 2\n7 0",
+          "expectedOutput": "7 2 3 1 7 0",
+          "problemTitle": "Polynomial Addition using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n10 5\n1\n-10 5",
+          "expectedOutput": "-1",
+          "problemTitle": "Polynomial Addition using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n8 6\n5 4\n3 3\n1 0\n3\n2 6\n-5 4\n9 2",
+          "expectedOutput": "10 6 3 3 9 2 1 0",
+          "problemTitle": "Polynomial Addition using Linked List"
+        }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, coeff, power):\n        self.coeff = coeff\n        self.power = power\n        self.next = None\n\n# TODO: Implement polynomial addition using linked list\n",
+          "problemTitle": "Polynomial Addition using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass Node {\n    int coeff, power;\n    Node next;\n    Node(int c, int p){ coeff = c; power = p; next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Implement polynomial addition using linked list\n    }\n}",
+          "problemTitle": "Polynomial Addition using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Node {\n    constructor(coeff, power){\n        this.coeff = coeff;\n        this.power = power;\n        this.next = null;\n    }\n}\n// TODO: Implement polynomial addition using linked list\n",
+          "problemTitle": "Polynomial Addition using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int coeff, power;\n    Node* next;\n};\nint main(){\n    // TODO: Implement polynomial addition using linked list\n    return 0;\n}",
+          "problemTitle": "Polynomial Addition using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\ntypedef struct Node{\n    int coeff, power;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Implement polynomial addition using linked list\n    return 0;\n}",
+          "problemTitle": "Polynomial Addition using Linked List"
+        }
+      ],
+
+      "hintsList": [
+        "Use a merge-like traversal: compare powers and add coefficients when powers match.",
+        "Skip terms where the resulting coefficient becomes zero."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Detect Loop in Linked List",
+      "description": "Problem Statement:\nGiven N integers, create a Singly Linked List (SLL) by inserting nodes at the end. You are also given an additional integer P which represents the position (1-based index) where the last node should link back to create a loop. If P = 0, no loop should be created. Your task is to detect whether a loop exists in the linked list. Print \"YES\" if a loop is detected, otherwise print \"NO\".\nUse Floyd’s Cycle Detection Algorithm (fast and slow pointers) for optimal performance.\n\nExample Explanation:\nInput: N = 5, List = [1 2 3 4 5], P = 2 → last node connects to node with value 2, so loop exists. Output = YES",
+      "examples": "Input:\n5\n1 2 3 4 5\n2\n\nOutput:\nYES",
+      "constraints": "1 <= N <= 10^5\n0 <= P <= N\n-10^9 <= Node value <= 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2020,
+      "difficulty": "2",
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5\n1 2 3 4 5\n2", "expectedOutput": "YES", "problemTitle": "Detect Loop in Linked List" },
+        { "id": null, "problemId": null, "input": "4\n10 20 30 40\n0", "expectedOutput": "NO", "problemTitle": "Detect Loop in Linked List" },
+        { "id": null, "problemId": null, "input": "3\n5 6 7\n3", "expectedOutput": "YES", "problemTitle": "Detect Loop in Linked List" },
+        { "id": null, "problemId": null, "input": "1\n99\n0", "expectedOutput": "NO", "problemTitle": "Detect Loop in Linked List" },
+        { "id": null, "problemId": null, "input": "6\n1 1 1 1 1 1\n1", "expectedOutput": "YES", "problemTitle": "Detect Loop in Linked List" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n# TODO: Detect loop using Floyd's cycle-finding algorithm\n",
+          "problemTitle": "Detect Loop in Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass Node {\n    int data;\n    Node next;\n    Node(int data){ this.data = data; this.next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Detect loop using Floyd's cycle-finding algorithm\n    }\n}",
+          "problemTitle": "Detect Loop in Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Node {\n    constructor(data){\n        this.data = data;\n        this.next = null;\n    }\n}\n// TODO: Detect loop using Floyd's cycle-finding algorithm\n",
+          "problemTitle": "Detect Loop in Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int data;\n    Node* next;\n};\nint main(){\n    // TODO: Detect loop using Floyd's cycle-finding algorithm\n    return 0;\n}",
+          "problemTitle": "Detect Loop in Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\ntypedef struct Node{\n    int data;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Detect loop using Floyd's cycle-finding algorithm\n    return 0;\n}",
+          "problemTitle": "Detect Loop in Linked List"
+        }
+      ],
+
+      "hintsList": [
+        "Use Floyd’s Cycle Detection (slow and fast pointer).",
+        "If fast meets slow, there is a loop."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Remove Loop from Linked List",
+      "description": "Problem Statement:\nGiven N integers, create a Singly Linked List (SLL) by inserting nodes at the end. You are also given an integer P which represents the position (1-based index) where the last node should link back to create a loop. If P = 0, no loop should be created. Your task is to detect the loop and then remove it, restoring the list to a linear linked list. After removing the loop, display the linked list from head to tail. If the list becomes empty, print -1.\nUse Floyd’s Cycle Detection Algorithm to identify the loop and then remove it without losing nodes.\n\nExample Explanation:\nFor input N = 5, List = [1 2 3 4 5], P = 2 → a loop is created from last node back to node with value 2.\nAfter removing the loop, list becomes: 1 2 3 4 5\nSo output: 1 2 3 4 5",
+      "examples": "Input:\n5\n1 2 3 4 5\n2\n\nOutput:\n1 2 3 4 5",
+      "constraints": "1 <= N <= 10^5\n0 <= P <= N\n-10^9 <= Node value <= 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2020,
+      "difficulty": "3",
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5\n1 2 3 4 5\n2", "expectedOutput": "1 2 3 4 5", "problemTitle": "Remove Loop from Linked List" },
+        { "id": null, "problemId": null, "input": "4\n10 20 30 40\n0", "expectedOutput": "10 20 30 40", "problemTitle": "Remove Loop from Linked List" },
+        { "id": null, "problemId": null, "input": "3\n5 6 7\n3", "expectedOutput": "5 6 7", "problemTitle": "Remove Loop from Linked List" },
+        { "id": null, "problemId": null, "input": "1\n99\n1", "expectedOutput": "99", "problemTitle": "Remove Loop from Linked List" },
+        { "id": null, "problemId": null, "input": "6\n7 14 21 28 35 42\n5", "expectedOutput": "7 14 21 28 35 42", "problemTitle": "Remove Loop from Linked List" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n# TODO: Detect loop using Floyd’s algorithm and remove it\n",
+          "problemTitle": "Remove Loop from Linked Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass Node {\n    int data;\n    Node next;\n    Node(int data){ this.data = data; this.next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Detect loop using Floyd’s algorithm and remove it\n    }\n}",
+          "problemTitle": "Remove Loop from Linked Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Node {\n    constructor(data){\n        this.data = data;\n        this.next = null;\n    }\n}\n// TODO: Detect loop using Floyd’s algorithm and remove it\n",
+          "problemTitle": "Remove Loop from Linked Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int data;\n    Node* next;\n};\nint main(){\n    // TODO: Detect loop using Floyd’s algorithm and remove it\n    return 0;\n}",
+          "problemTitle": "Remove Loop from Linked Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\ntypedef struct Node{\n    int data;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Detect loop using Floyd’s algorithm and remove it\n    return 0;\n}",
+          "problemTitle": "Remove Loop from Linked Linked List"
+        }
+      ],
+
+      "hintsList": [
+        "Use Floyd’s cycle detection to find the meeting point.",
+        "To remove loop, move one pointer to head and move both one step until next pointers match."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Merge Two Sorted Linked Lists",
+      "description": "Problem Statement:\nGiven two sorted Singly Linked Lists (SLL), merge them into a single sorted linked list in non-decreasing order. The merged list should reuse existing nodes and should not create new nodes. Display the final merged linked list. If both lists are empty, print -1.\n\nExample Explanation:\nList1 = 1 -> 3 -> 5\nList2 = 2 -> 4 -> 6\nMerged Result = 1 2 3 4 5 6",
+      "examples": "Input:\n3\n1 3 5\n3\n2 4 6\n\nOutput:\n1 2 3 4 5 6",
+      "constraints": "1 <= N, M <= 10^5\n-10^9 <= Node value <= 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2020,
+      "difficulty": "2",
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "3\n1 3 5\n3\n2 4 6", "expectedOutput": "1 2 3 4 5 6", "problemTitle": "Merge Two Sorted Linked Lists" },
+        { "id": null, "problemId": null, "input": "4\n1 2 3 4\n3\n2 3 4", "expectedOutput": "1 2 2 3 3 4 4", "problemTitle": "Merge Two Sorted Linked Lists" },
+        { "id": null, "problemId": null, "input": "1\n100\n1\n50", "expectedOutput": "50 100", "problemTitle": "Merge Two Sorted Linked Lists" },
+        { "id": null, "problemId": null, "input": "3\n-5 -3 -1\n3\n-4 -2 0", "expectedOutput": "-5 -4 -3 -2 -1 0", "problemTitle": "Merge Two Sorted Linked Lists" },
+        { "id": null, "problemId": null, "input": "0\n\n0\n", "expectedOutput": "-1", "problemTitle": "Merge Two Sorted Linked Lists" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n# TODO: Merge two sorted linked lists and display result\n",
+          "problemTitle": "Merge Two Sorted Linked Lists"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass Node {\n    int data;\n    Node next;\n    Node(int data){ this.data = data; this.next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Merge two sorted linked lists and display result\n    }\n}",
+          "problemTitle": "Merge Two Sorted Linked Lists"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Node {\n    constructor(data){\n        this.data = data;\n        this.next = null;\n    }\n}\n// TODO: Merge two sorted linked lists and display result\n",
+          "problemTitle": "Merge Two Sorted Linked Lists"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int data;\n    Node* next;\n};\nint main(){\n    // TODO: Merge two sorted linked lists and display result\n    return 0;\n}",
+          "problemTitle": "Merge Two Sorted Linked Lists"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\ntypedef struct Node{\n    int data;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Merge two sorted linked lists and display result\n    return 0;\n}",
+          "problemTitle": "Merge Two Sorted Linked Lists"
+        }
+      ],
+
+      "hintsList": [
+        "Use two pointers to traverse both lists while linking the smaller node first.",
+        "When one list ends, link the remaining portion of the other list."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Check if Linked List is Palindrome",
+      "description": "Problem Statement:\nGiven N integers, create a Singly Linked List (SLL) by inserting nodes at the end. Determine whether the linked list is a palindrome. A palindrome list reads the same forward and backward. Print \"YES\" if it is a palindrome, otherwise print \"NO\". Use an optimized approach by finding the middle, reversing the second half, and then comparing both halves.\n\nExample Explanation:\nFor input [1 2 3 2 1], the linked list reads the same from both directions, so output is YES.",
+      "examples": "Input:\n5\n1 2 3 2 1\n\nOutput:\nYES",
+      "constraints": "1 <= N <= 10^5\n-10^9 <= Node value <= 10^9",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2020,
+      "difficulty": "2",
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+
+      "testCases": [
+        { "id": null, "problemId": null, "input": "5\n1 2 3 2 1", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" },
+        { "id": null, "problemId": null, "input": "4\n1 2 2 1", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" },
+        { "id": null, "problemId": null, "input": "3\n1 2 3", "expectedOutput": "NO", "problemTitle": "Check if Linked List is Palindrome" },
+        { "id": null, "problemId": null, "input": "1\n7", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" },
+        { "id": null, "problemId": null, "input": "6\n1 2 3 3 2 1", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" }
+      ],
+
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n# TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n",
+          "problemTitle": "Check if Linked List is Palindrome"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass Node {\n    int data;\n    Node next;\n    Node(int data){ this.data = data; this.next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n    }\n}",
+          "problemTitle": "Check if Linked List is Palindrome"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Node {\n    constructor(data){\n        this.data = data;\n        this.next = null;\n    }\n}\n// TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n",
+          "problemTitle": "Check if Linked List is Palindrome"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int data;\n    Node* next;\n};\nint main(){\n    // TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n    return 0;\n}",
+          "problemTitle": "Check if Linked List is Palindrome"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\ntypedef struct Node{\n    int data;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n    return 0;\n}",
+          "problemTitle": "Check if Linked List is Palindrome"
+        }
+      ],
+
+      "hintsList": [
+        "Use fast and slow pointers to find the middle, then reverse the second half.",
+        "Compare the first half with the reversed second half to determine if it is a palindrome."
+      ]
+    }
+  ]
+}
