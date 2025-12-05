@@ -3,9 +3,9 @@
         {
             "id": null,
             "title": "Maximum Coins Collection",
-            "description": "Problem Statement\n\nYou are given N piles of coins. Each pile has a certain number of coins.\nYou can pick exactly one coin from any pile in each turn.\nYou have K turns to collect coins.\n\nUsing the greedy approach, find the maximum number of coins you can collect.\n\nHint: Always pick from the pile with the most coins!\n",
-            "examples": "Sample Input\n3 4\n5 3 2\n\nSample Output\n15\n\nExplanation:\nPiles: [5, 3, 2], K=4 turns\nTurn 1: Pick from pile with 5 coins -> Total: 5, Piles: [4, 3, 2]\nTurn 2: Pick from pile with 4 coins -> Total: 9, Piles: [3, 3, 2]\nTurn 3: Pick from pile with 3 coins -> Total: 12, Piles: [2, 3, 2]\nTurn 4: Pick from pile with 3 coins -> Total: 15, Piles: [2, 2, 2]\nTotal = 5+4+3+3 = 15",
-            "constraints": "1 <= N <= 100\n1 <= K <= 1000\n1 <= coins[i] <= 100",
+            "description": "Problem Statement\n\nYou have N piles of coins. The i-th pile has piles[i] coins.\nIn one move, you can pick any pile and take 1 coin from it.\n\nYou have K moves. Find the maximum number of coins you can collect.\n\nGreedy Insight: Always pick from the pile with the most coins!\n",
+            "examples": "Sample Input\n3 4\n5 3 2\n\nSample Output\n15\n\nExplanation:\nPiles: [5, 3, 2], K = 4 moves\n- Pick from pile 1 (5 coins): total = 5, piles = [4, 3, 2]\n- Pick from pile 1 (4 coins): total = 9, piles = [3, 3, 2]\n- Pick from pile 1 (3 coins): total = 12, piles = [2, 3, 2]\n- Pick from pile 2 (3 coins): total = 15, piles = [2, 2, 2]\n\nMaximum coins = 15",
+            "constraints": "1 <= N <= 1000\n1 <= K <= 10000\n1 <= piles[i] <= 100",
             "hints": 2,
             "timeLimit": 5,
             "memoryLimit": 256,
@@ -36,23 +36,23 @@
             "starterCodes": [
                 {
                     "language": 1,
-                    "code": "import heapq\n\nclass Solution:\n    def maxCoins(self, piles, k):\n        # TODO: Use greedy approach - always pick from pile with most coins\n        # Hint: Use a max heap to efficiently get the maximum pile\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n, k = map(int, data[0].split())\n    piles = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.maxCoins(piles, k))"
+                    "code": "import heapq\n\nclass Solution:\n    def maxCoins(self, piles, k):\n        # TODO: Implement greedy approach\n        # Always pick from pile with most coins\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n, k = map(int, data[0].split())\n    piles = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.maxCoins(piles, k))"
                 },
                 {
                     "language": 2,
-                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxCoins(int[] piles, int k) {\n        // TODO: Use greedy approach - always pick from pile with most coins\n        // Hint: Use a max heap (PriorityQueue with reverseOrder)\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(firstLine[0]);\n        int k = Integer.parseInt(firstLine[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] piles = new int[n];\n        for (int i = 0; i < n; i++) piles[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.maxCoins(piles, k));\n    }\n}"
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxCoins(int[] piles, int k) {\n        // TODO: Implement greedy approach\n        // Always pick from pile with most coins\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(firstLine[0]);\n        int k = Integer.parseInt(firstLine[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] piles = new int[n];\n        for (int i = 0; i < n; i++) piles[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.maxCoins(piles, k));\n    }\n}"
                 },
                 {
                     "language": 3,
-                    "code": "class Solution {\n    maxCoins(piles, k) {\n        // TODO: Use greedy approach - always pick from pile with most coins\n        // Hint: Sort or use a structure to always get the maximum\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [n, k] = lines[0].split(' ').map(Number);\n    const piles = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.maxCoins(piles, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                    "code": "class Solution {\n    maxCoins(piles, k) {\n        // TODO: Implement greedy approach\n        // Always pick from pile with most coins\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [n, k] = lines[0].split(' ').map(Number);\n    const piles = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.maxCoins(piles, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
                 },
                 {
                     "language": 4,
-                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxCoins(vector<int>& piles, int k) {\n        // TODO: Use greedy approach - always pick from pile with most coins\n        // Hint: Use priority_queue (max heap by default)\n        return 0;\n    }\n};\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<int> piles(n);\n    for (int i = 0; i < n; i++) cin >> piles[i];\n    Solution sol;\n    cout << sol.maxCoins(piles, k);\n    return 0;\n}"
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxCoins(vector<int>& piles, int k) {\n        // TODO: Implement greedy approach\n        // Always pick from pile with most coins\n        return 0;\n    }\n};\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<int> piles(n);\n    for (int i = 0; i < n; i++) cin >> piles[i];\n    Solution sol;\n    cout << sol.maxCoins(piles, k);\n    return 0;\n}"
                 },
                 {
                     "language": 5,
-                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint compare(const void* a, const void* b) {\n    return (*(int*)b - *(int*)a);\n}\n\nint maxCoins(int piles[], int n, int k) {\n    // TODO: Use greedy approach - always pick from pile with most coins\n    // Hint: Sort descending and simulate picking\n    return 0;\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    int piles[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &piles[i]);\n    printf(\"%d\", maxCoins(piles, n, k));\n    return 0;\n}"
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint compare(const void* a, const void* b) {\n    return (*(int*)b - *(int*)a);\n}\n\nint maxCoins(int piles[], int n, int k) {\n    // TODO: Implement greedy approach\n    // Always pick from pile with most coins\n    return 0;\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    int piles[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &piles[i]);\n    printf(\"%d\", maxCoins(piles, n, k));\n    return 0;\n}"
                 }
             ],
             "hintsList": [

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Matrix Chain Multiplication",
+            "description": "Problem Statement\n\nYou are given N matrices A1, A2, ..., AN.\nMatrix Ai has dimensions p[i-1] x p[i].\n\nFind the minimum number of scalar multiplications needed to compute the product A1 × A2 × ... × AN.\n\nThe order of multiplication matters!\nMatrix multiplication is associative: (A×B)×C = A×(B×C), but the cost differs.\n\nCost of multiplying matrix (a×b) with (b×c) = a × b × c.\n\nDP State: dp[i][j] = min cost to multiply matrices from i to j.\n",
+            "examples": "Sample Input\n4\n10 30 5 60\n\nSample Output\n4500\n\nExplanation:\nMatrices: A1(10×30), A2(30×5), A3(5×60)\n\nOption 1: ((A1×A2)×A3)\n  A1×A2 = 10×30×5 = 1500, result is 10×5\n  (A1×A2)×A3 = 10×5×60 = 3000\n  Total = 4500\n\nOption 2: (A1×(A2×A3))\n  A2×A3 = 30×5×60 = 9000, result is 30×60\n  A1×(A2×A3) = 10×30×60 = 18000\n  Total = 27000\n\nMinimum = 4500",
+            "constraints": "2 <= N <= 100\n1 <= p[i] <= 500",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4\n10 30 5 60",
+                    "expectedOutput": "4500"
+                },
+                {
+                    "input": "5\n40 20 30 10 30",
+                    "expectedOutput": "26000"
+                },
+                {
+                    "input": "3\n10 20 30",
+                    "expectedOutput": "6000"
+                },
+                {
+                    "input": "4\n1 2 3 4",
+                    "expectedOutput": "18"
+                },
+                {
+                    "input": "5\n5 4 6 2 7",
+                    "expectedOutput": "158"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def matrixChainOrder(self, p):\n        # TODO: dp[i][j] = min cost to multiply matrices i to j\n        # Try all split points k: dp[i][j] = min(dp[i][k] + dp[k+1][j] + p[i-1]*p[k]*p[j])\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    p = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.matrixChainOrder(p))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int matrixChainOrder(int[] p) {\n        // TODO: dp[i][j] = min cost to multiply matrices i to j\n        // Try all split points k\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] p = new int[n];\n        for (int i = 0; i < n; i++) p[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.matrixChainOrder(p));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    matrixChainOrder(p) {\n        // TODO: dp[i][j] = min cost to multiply matrices i to j\n        // Try all split points k\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const p = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.matrixChainOrder(p));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int matrixChainOrder(vector<int>& p) {\n        // TODO: dp[i][j] = min cost to multiply matrices i to j\n        // Try all split points k\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> p(n);\n    for (int i = 0; i < n; i++) cin >> p[i];\n    Solution sol;\n    cout << sol.matrixChainOrder(p);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <limits.h>\n\nint matrixChainOrder(int p[], int n) {\n    // TODO: dp[i][j] = min cost to multiply matrices i to j\n    // Try all split points k\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int p[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &p[i]);\n    printf(\"%d\", matrixChainOrder(p, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate by chain length L from 2 to n-1. For each start i, compute end j = i + L - 1.",
+                "For each pair (i,j), try all split points k from i to j-1: dp[i][j] = min(dp[i][k] + dp[k+1][j] + p[i-1]*p[k]*p[j])."
+            ]
+        }
+    ]
+}

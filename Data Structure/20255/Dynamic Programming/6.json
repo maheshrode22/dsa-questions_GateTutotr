@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "0/1 Knapsack Problem",
+            "description": "Problem Statement\n\nYou are given N items, each with a weight and a value.\nYou have a knapsack with capacity W.\n\nEach item can either be taken completely or not taken at all (0/1 choice).\nFind the maximum value you can put in the knapsack.\n\nThis is the classic 0/1 Knapsack problem!\n\nDP State: dp[i][w] = max value using first i items with capacity w.\n",
+            "examples": "Sample Input\n3 50\n60 10\n100 20\n120 30\n\nSample Output\n220\n\nExplanation:\nItems (value, weight): [(60,10), (100,20), (120,30)]\nCapacity = 50\n\nTake item 2 (value=100, weight=20) and item 3 (value=120, weight=30).\nTotal weight = 50, Total value = 220.",
+            "constraints": "1 <= N <= 100\n1 <= W <= 1000\n1 <= value[i], weight[i] <= 1000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3 50\n60 10\n100 20\n120 30",
+                    "expectedOutput": "220"
+                },
+                {
+                    "input": "4 10\n10 5\n40 4\n30 6\n50 3",
+                    "expectedOutput": "90"
+                },
+                {
+                    "input": "2 3\n4 1\n5 2",
+                    "expectedOutput": "9"
+                },
+                {
+                    "input": "1 5\n10 10",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "5 15\n5 1\n10 5\n15 10\n7 4\n8 3",
+                    "expectedOutput": "30"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def knapsack(self, items, capacity):\n        # TODO: 0/1 Knapsack using 2D DP\n        # dp[i][w] = max value with first i items and capacity w\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n, capacity = map(int, data[0].split())\n    items = []\n    for i in range(1, n + 1):\n        v, w = map(int, data[i].split())\n        items.append((v, w))\n    sol = Solution()\n    print(sol.knapsack(items, capacity))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int knapsack(int[][] items, int capacity) {\n        // TODO: 0/1 Knapsack using 2D DP\n        // dp[i][w] = max value with first i items and capacity w\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(firstLine[0]);\n        int capacity = Integer.parseInt(firstLine[1]);\n        int[][] items = new int[n][2];\n        for (int i = 0; i < n; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            items[i][0] = Integer.parseInt(parts[0]);\n            items[i][1] = Integer.parseInt(parts[1]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.knapsack(items, capacity));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    knapsack(items, capacity) {\n        // TODO: 0/1 Knapsack using 2D DP\n        // dp[i][w] = max value with first i items and capacity w\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [n, capacity] = lines[0].split(' ').map(Number);\n    const items = [];\n    for (let i = 1; i <= n; i++) {\n        const [v, w] = lines[i].split(' ').map(Number);\n        items.push([v, w]);\n    }\n    const sol = new Solution();\n    console.log(sol.knapsack(items, capacity));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int knapsack(vector<pair<int,int>>& items, int capacity) {\n        // TODO: 0/1 Knapsack using 2D DP\n        // dp[i][w] = max value with first i items and capacity w\n        return 0;\n    }\n};\n\nint main() {\n    int n, capacity;\n    cin >> n >> capacity;\n    vector<pair<int,int>> items(n);\n    for (int i = 0; i < n; i++) {\n        cin >> items[i].first >> items[i].second;\n    }\n    Solution sol;\n    cout << sol.knapsack(items, capacity);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint max(int a, int b) { return a > b ? a : b; }\n\nint knapsack(int values[], int weights[], int n, int capacity) {\n    // TODO: 0/1 Knapsack using 2D DP\n    // dp[i][w] = max value with first i items and capacity w\n    return 0;\n}\n\nint main() {\n    int n, capacity;\n    scanf(\"%d %d\", &n, &capacity);\n    int values[n], weights[n];\n    for (int i = 0; i < n; i++) {\n        scanf(\"%d %d\", &values[i], &weights[i]);\n    }\n    printf(\"%d\", knapsack(values, weights, n, capacity));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each item, choose to include it (if weight allows) or exclude it. dp[i][w] = max(dp[i-1][w], dp[i-1][w-wt[i]] + val[i]).",
+                "Can optimize to 1D: iterate w from capacity down to wt[i]. dp[w] = max(dp[w], dp[w-wt[i]] + val[i])."
+            ]
+        }
+    ]
+}

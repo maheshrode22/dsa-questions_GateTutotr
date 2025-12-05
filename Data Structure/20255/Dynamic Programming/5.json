@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Cost Climbing Stairs",
+            "description": "Problem Statement\n\nYou are given an array cost[] where cost[i] is the cost of stepping on the i-th stair.\nOnce you pay the cost, you can climb either 1 or 2 steps.\n\nYou can start from either step 0 or step 1.\nFind the minimum cost to reach the top of the floor (past the last step).\n",
+            "examples": "Sample Input\n3\n10 15 20\n\nSample Output\n15\n\nExplanation:\nStart at step 1, pay 15, jump 2 steps to the top.\nTotal cost = 15",
+            "constraints": "2 <= N <= 1000\n0 <= cost[i] <= 999",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "3\n10 15 20",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "10\n1 100 1 1 1 100 1 1 100 1",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "2\n1 2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4\n0 1 2 3",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "5\n5 5 5 5 5",
+                    "expectedOutput": "10"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minCostClimbingStairs(self, cost):\n        # TODO: dp[i] = min cost to reach step i\n        # dp[i] = cost[i] + min(dp[i-1], dp[i-2])\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    cost = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.minCostClimbingStairs(cost))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minCostClimbingStairs(int[] cost) {\n        // TODO: dp[i] = min cost to reach step i\n        // dp[i] = cost[i] + min(dp[i-1], dp[i-2])\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] cost = new int[n];\n        for (int i = 0; i < n; i++) cost[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.minCostClimbingStairs(cost));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minCostClimbingStairs(cost) {\n        // TODO: dp[i] = min cost to reach step i\n        // dp[i] = cost[i] + min(dp[i-1], dp[i-2])\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const cost = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.minCostClimbingStairs(cost));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minCostClimbingStairs(vector<int>& cost) {\n        // TODO: dp[i] = min cost to reach step i\n        // dp[i] = cost[i] + min(dp[i-1], dp[i-2])\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> cost(n);\n    for (int i = 0; i < n; i++) cin >> cost[i];\n    Solution sol;\n    cout << sol.minCostClimbingStairs(cost);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint min(int a, int b) { return a < b ? a : b; }\n\nint minCostClimbingStairs(int cost[], int n) {\n    // TODO: dp[i] = min cost to reach step i\n    // dp[i] = cost[i] + min(dp[i-1], dp[i-2])\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int cost[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &cost[i]);\n    printf(\"%d\", minCostClimbingStairs(cost, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "To reach step i, you must come from step i-1 or i-2. Choose the minimum cost path.",
+                "dp[i] = cost[i] + min(dp[i-1], dp[i-2]). Final answer is min(dp[n-1], dp[n-2]) to go past the last step."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Common Subsequence (LCS)",
+            "description": "Problem Statement\n\nGiven two strings S1 and S2, find the length of their Longest Common Subsequence.\n\nA subsequence is a sequence derived from another sequence by deleting some or no elements without changing the order of the remaining elements.\n\nThis is a classic DP problem!\n\nDP State: dp[i][j] = length of LCS of S1[0..i-1] and S2[0..j-1].\n",
+            "examples": "Sample Input\nabcde\nace\n\nSample Output\n3\n\nExplanation:\nThe longest common subsequence is \"ace\" with length 3.",
+            "constraints": "1 <= |S1|, |S2| <= 1000\nStrings contain only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abcde\nace",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc\ndef",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "aggtab\ngxtxayb",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abcdgh\naedfhr",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def lcs(self, s1, s2):\n        # TODO: Use 2D DP\n        # If s1[i-1] == s2[j-1]: dp[i][j] = dp[i-1][j-1] + 1\n        # Else: dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    s1 = data[0]\n    s2 = data[1]\n    sol = Solution()\n    print(sol.lcs(s1, s2))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int lcs(String s1, String s2) {\n        // TODO: Use 2D DP\n        // If s1[i-1] == s2[j-1]: dp[i][j] = dp[i-1][j-1] + 1\n        // Else: dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s1 = br.readLine().trim();\n        String s2 = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.lcs(s1, s2));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    lcs(s1, s2) {\n        // TODO: Use 2D DP\n        // If s1[i-1] == s2[j-1]: dp[i][j] = dp[i-1][j-1] + 1\n        // Else: dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s1 = lines[0];\n    const s2 = lines[1];\n    const sol = new Solution();\n    console.log(sol.lcs(s1, s2));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int lcs(string s1, string s2) {\n        // TODO: Use 2D DP\n        // If s1[i-1] == s2[j-1]: dp[i][j] = dp[i-1][j-1] + 1\n        // Else: dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n        return 0;\n    }\n};\n\nint main() {\n    string s1, s2;\n    cin >> s1 >> s2;\n    Solution sol;\n    cout << sol.lcs(s1, s2);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nint max(int a, int b) { return a > b ? a : b; }\n\nint lcs(char* s1, char* s2) {\n    // TODO: Use 2D DP\n    // If s1[i-1] == s2[j-1]: dp[i][j] = dp[i-1][j-1] + 1\n    // Else: dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n    return 0;\n}\n\nint main() {\n    char s1[1005], s2[1005];\n    scanf(\"%s\", s1);\n    scanf(\"%s\", s2);\n    printf(\"%d\", lcs(s1, s2));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Create a 2D table dp[m+1][n+1]. If characters match, extend the LCS. Otherwise, take max of excluding one character.",
+                "dp[i][j] = dp[i-1][j-1] + 1 if s1[i-1] == s2[j-1], else max(dp[i-1][j], dp[i][j-1]). Answer is dp[m][n]."
+            ]
+        }
+    ]
+}

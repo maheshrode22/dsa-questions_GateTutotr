@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Increasing Subsequence (LIS)",
+            "description": "Problem Statement\n\nGiven an array of N integers, find the length of the Longest Increasing Subsequence (LIS).\n\nAn increasing subsequence is a subsequence where each element is strictly greater than the previous one.\n\nThis is a classic DP problem with O(n^2) and O(n log n) solutions.\n\nDP State: dp[i] = length of LIS ending at index i.\n",
+            "examples": "Sample Input\n8\n10 22 9 33 21 50 41 60\n\nSample Output\n5\n\nExplanation:\nOne LIS is [10, 22, 33, 50, 60] with length 5.",
+            "constraints": "1 <= N <= 1000\n1 <= nums[i] <= 10^5",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "8\n10 22 9 33 21 50 41 60",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "6\n3 10 2 1 20 30",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "5\n5 4 3 2 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4\n1 2 3 4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "7\n2 5 3 7 11 8 10",
+                    "expectedOutput": "5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def lengthOfLIS(self, nums):\n        # TODO: dp[i] = length of LIS ending at index i\n        # dp[i] = max(dp[j] + 1) for all j < i where nums[j] < nums[i]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    nums = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.lengthOfLIS(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int lengthOfLIS(int[] nums) {\n        // TODO: dp[i] = length of LIS ending at index i\n        // dp[i] = max(dp[j] + 1) for all j < i where nums[j] < nums[i]\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[n];\n        for (int i = 0; i < n; i++) nums[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.lengthOfLIS(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    lengthOfLIS(nums) {\n        // TODO: dp[i] = length of LIS ending at index i\n        // dp[i] = max(dp[j] + 1) for all j < i where nums[j] < nums[i]\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const nums = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.lengthOfLIS(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int lengthOfLIS(vector<int>& nums) {\n        // TODO: dp[i] = length of LIS ending at index i\n        // dp[i] = max(dp[j] + 1) for all j < i where nums[j] < nums[i]\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    Solution sol;\n    cout << sol.lengthOfLIS(nums);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint lengthOfLIS(int nums[], int n) {\n    // TODO: dp[i] = length of LIS ending at index i\n    // dp[i] = max(dp[j] + 1) for all j < i where nums[j] < nums[i]\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int nums[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &nums[i]);\n    printf(\"%d\", lengthOfLIS(nums, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize all dp[i] = 1 (each element is an LIS of length 1 by itself).",
+                "For each i, look at all j < i. If nums[j] < nums[i], update dp[i] = max(dp[i], dp[j] + 1). Answer = max(dp)."
+            ]
+        }
+    ]
+}

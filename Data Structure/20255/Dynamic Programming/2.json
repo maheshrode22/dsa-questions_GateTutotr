@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Climbing Stairs",
+            "description": "Problem Statement\n\nYou are climbing a staircase with N steps.\nEach time you can climb either 1 or 2 steps.\n\nFind the number of distinct ways to reach the top.\n\nThis is equivalent to the Fibonacci sequence!\nways(n) = ways(n-1) + ways(n-2)\n",
+            "examples": "Sample Input\n5\n\nSample Output\n8\n\nExplanation:\nFor 5 steps, the 8 ways are:\n1+1+1+1+1\n1+1+1+2\n1+1+2+1\n1+2+1+1\n2+1+1+1\n1+2+2\n2+1+2\n2+2+1",
+            "constraints": "1 <= N <= 45",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "89"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "10946"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def climbStairs(self, n):\n        # TODO: Use DP - ways[i] = ways[i-1] + ways[i-2]\n        # Base cases: ways[1] = 1, ways[2] = 2\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    print(sol.climbStairs(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long climbStairs(int n) {\n        // TODO: Use DP - ways[i] = ways[i-1] + ways[i-2]\n        // Base cases: ways[1] = 1, ways[2] = 2\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.climbStairs(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    climbStairs(n) {\n        // TODO: Use DP - ways[i] = ways[i-1] + ways[i-2]\n        // Base cases: ways[1] = 1, ways[2] = 2\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.climbStairs(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long climbStairs(int n) {\n        // TODO: Use DP - ways[i] = ways[i-1] + ways[i-2]\n        // Base cases: ways[1] = 1, ways[2] = 2\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.climbStairs(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long climbStairs(int n) {\n    // TODO: Use DP - ways[i] = ways[i-1] + ways[i-2]\n    // Base cases: ways[1] = 1, ways[2] = 2\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%lld\", climbStairs(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "To reach step n, you can come from step n-1 (1 step) or step n-2 (2 steps).",
+                "Create dp array: dp[1]=1, dp[2]=2. For i from 3 to n: dp[i] = dp[i-1] + dp[i-2]."
+            ]
+        }
+    ]
+}

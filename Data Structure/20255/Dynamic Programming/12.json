@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Palindromic Subsequence",
+            "description": "Problem Statement\n\nGiven a string S, find the length of the Longest Palindromic Subsequence (LPS).\n\nA palindrome reads the same forwards and backwards.\nA subsequence doesn't need to be contiguous.\n\nKey Insight: LPS of S = LCS of S and reverse(S).\n\nAlternatively, use 2D DP directly on the string.\n\nDP State: dp[i][j] = length of LPS in substring S[i..j].\n",
+            "examples": "Sample Input\nbbbab\n\nSample Output\n4\n\nExplanation:\nThe longest palindromic subsequence is \"bbbb\" with length 4.",
+            "constraints": "1 <= |S| <= 1000\nString contains only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "bbbab",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "cbbd",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "character",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "agbcba",
+                    "expectedOutput": "5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestPalindromeSubseq(self, s):\n        # TODO: Method 1: LCS of s and reversed s\n        # Method 2: dp[i][j] = LPS length in s[i..j]\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.longestPalindromeSubseq(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int longestPalindromeSubseq(String s) {\n        // TODO: Method 1: LCS of s and reversed s\n        // Method 2: dp[i][j] = LPS length in s[i..j]\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.longestPalindromeSubseq(s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestPalindromeSubseq(s) {\n        // TODO: Method 1: LCS of s and reversed s\n        // Method 2: dp[i][j] = LPS length in s[i..j]\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.longestPalindromeSubseq(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestPalindromeSubseq(string s) {\n        // TODO: Method 1: LCS of s and reversed s\n        // Method 2: dp[i][j] = LPS length in s[i..j]\n        return 0;\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.longestPalindromeSubseq(s);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nint max(int a, int b) { return a > b ? a : b; }\n\nint longestPalindromeSubseq(char* s) {\n    // TODO: Use LCS approach or 2D DP\n    return 0;\n}\n\nint main() {\n    char s[1005];\n    scanf(\"%s\", s);\n    printf(\"%d\", longestPalindromeSubseq(s));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Reverse the string and find LCS between original and reversed. LCS length = LPS length.",
+                "Alternative: dp[i][j] based on s[i..j]. If s[i]==s[j]: dp[i][j] = dp[i+1][j-1] + 2. Else: max(dp[i+1][j], dp[i][j-1])."
+            ]
+        }
+    ]
+}

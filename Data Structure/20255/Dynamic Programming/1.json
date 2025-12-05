@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Fibonacci Number",
+            "description": "Problem Statement\n\nThe Fibonacci sequence is defined as:\n- F(0) = 0\n- F(1) = 1\n- F(n) = F(n-1) + F(n-2) for n > 1\n\nGiven an integer N, find the Nth Fibonacci number.\n\nThis is a classic introductory Dynamic Programming problem.\nUse memoization or tabulation to avoid redundant calculations.\n",
+            "examples": "Sample Input\n10\n\nSample Output\n55\n\nExplanation:\nFibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...\nF(10) = 55",
+            "constraints": "0 <= N <= 45",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "55"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "6765"
+                },
+                {
+                    "input": "30",
+                    "expectedOutput": "832040"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def fibonacci(self, n):\n        # TODO: Use DP to compute Fibonacci number\n        # Either memoization (top-down) or tabulation (bottom-up)\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    print(sol.fibonacci(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long fibonacci(int n) {\n        // TODO: Use DP to compute Fibonacci number\n        // Either memoization (top-down) or tabulation (bottom-up)\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.fibonacci(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    fibonacci(n) {\n        // TODO: Use DP to compute Fibonacci number\n        // Either memoization (top-down) or tabulation (bottom-up)\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.fibonacci(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long fibonacci(int n) {\n        // TODO: Use DP to compute Fibonacci number\n        // Either memoization (top-down) or tabulation (bottom-up)\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.fibonacci(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long fibonacci(int n) {\n    // TODO: Use DP to compute Fibonacci number\n    // Either memoization (top-down) or tabulation (bottom-up)\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%lld\", fibonacci(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Create a dp array where dp[i] stores F(i). Base cases: dp[0]=0, dp[1]=1.",
+                "For tabulation: iterate from 2 to n, setting dp[i] = dp[i-1] + dp[i-2]. Return dp[n]."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Unique Paths in Grid",
+            "description": "Problem Statement\n\nYou are at the top-left corner of an M x N grid.\nYou can only move right or down at each step.\nFind the number of unique paths to reach the bottom-right corner.\n\nThis is a classic 2D DP problem.\n\nDP State: dp[i][j] = number of ways to reach cell (i, j).\n",
+            "examples": "Sample Input\n3 7\n\nSample Output\n28\n\nExplanation:\nGrid is 3x7. From (0,0) to (2,6), there are 28 unique paths.",
+            "constraints": "1 <= M, N <= 100",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3 7",
+                    "expectedOutput": "28"
+                },
+                {
+                    "input": "3 3",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "1 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5 5",
+                    "expectedOutput": "70"
+                },
+                {
+                    "input": "10 10",
+                    "expectedOutput": "48620"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def uniquePaths(self, m, n):\n        # TODO: dp[i][j] = dp[i-1][j] + dp[i][j-1]\n        # Base: first row and first column are all 1s\n        pass\n\nif __name__ == '__main__':\n    m, n = map(int, input().split())\n    sol = Solution()\n    print(sol.uniquePaths(m, n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long uniquePaths(int m, int n) {\n        // TODO: dp[i][j] = dp[i-1][j] + dp[i][j-1]\n        // Base: first row and first column are all 1s\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int m = Integer.parseInt(parts[0]);\n        int n = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.uniquePaths(m, n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    uniquePaths(m, n) {\n        // TODO: dp[i][j] = dp[i-1][j] + dp[i][j-1]\n        // Base: first row and first column are all 1s\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const [m, n] = input.trim().split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.uniquePaths(m, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long uniquePaths(int m, int n) {\n        // TODO: dp[i][j] = dp[i-1][j] + dp[i][j-1]\n        // Base: first row and first column are all 1s\n        return 0;\n    }\n};\n\nint main() {\n    int m, n;\n    cin >> m >> n;\n    Solution sol;\n    cout << sol.uniquePaths(m, n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long uniquePaths(int m, int n) {\n    // TODO: dp[i][j] = dp[i-1][j] + dp[i][j-1]\n    // Base: first row and first column are all 1s\n    return 0;\n}\n\nint main() {\n    int m, n;\n    scanf(\"%d %d\", &m, &n);\n    printf(\"%lld\", uniquePaths(m, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "You can reach cell (i,j) from above (i-1,j) or from left (i,j-1). Sum the paths.",
+                "dp[i][j] = dp[i-1][j] + dp[i][j-1]. Initialize first row and column to 1. Can optimize to 1D array."
+            ]
+        }
+    ]
+}

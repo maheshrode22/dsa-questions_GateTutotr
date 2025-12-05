@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Shortest Common Supersequence Length",
+            "description": "Problem Statement\n\nGiven two strings S1 and S2, find the length of the shortest string that has both S1 and S2 as subsequences.\n\nThis is called the Shortest Common Supersequence (SCS).\n\nKey Insight: SCS length = len(S1) + len(S2) - LCS(S1, S2).\n\nThe LCS appears only once in the supersequence, while non-LCS characters from both strings are added.\n",
+            "examples": "Sample Input\ngeek\neke\n\nSample Output\n5\n\nExplanation:\nS1 = \"geek\", S2 = \"eke\"\nLCS = \"ek\" (length 2)\n\nSCS length = 4 + 3 - 2 = 5\nOne possible SCS is \"geeke\".",
+            "constraints": "1 <= |S1|, |S2| <= 1000\nStrings contain only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2029,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "geek\neke",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "abcd\nxycd",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc\ndef",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "aggtab\ngxtxayb",
+                    "expectedOutput": "9"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def shortestCommonSupersequence(self, s1, s2):\n        # TODO: Find LCS length first\n        # SCS length = len(s1) + len(s2) - LCS length\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    s1 = data[0]\n    s2 = data[1]\n    sol = Solution()\n    print(sol.shortestCommonSupersequence(s1, s2))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int shortestCommonSupersequence(String s1, String s2) {\n        // TODO: Find LCS length first\n        // SCS length = len(s1) + len(s2) - LCS length\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s1 = br.readLine().trim();\n        String s2 = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.shortestCommonSupersequence(s1, s2));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    shortestCommonSupersequence(s1, s2) {\n        // TODO: Find LCS length first\n        // SCS length = len(s1) + len(s2) - LCS length\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s1 = lines[0];\n    const s2 = lines[1];\n    const sol = new Solution();\n    console.log(sol.shortestCommonSupersequence(s1, s2));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int shortestCommonSupersequence(string s1, string s2) {\n        // TODO: Find LCS length first\n        // SCS length = len(s1) + len(s2) - LCS length\n        return 0;\n    }\n};\n\nint main() {\n    string s1, s2;\n    cin >> s1 >> s2;\n    Solution sol;\n    cout << sol.shortestCommonSupersequence(s1, s2);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nint max(int a, int b) { return a > b ? a : b; }\n\nint shortestCommonSupersequence(char* s1, char* s2) {\n    // TODO: Find LCS length first\n    // SCS length = len(s1) + len(s2) - LCS length\n    return 0;\n}\n\nint main() {\n    char s1[1005], s2[1005];\n    scanf(\"%s\", s1);\n    scanf(\"%s\", s2);\n    printf(\"%d\", shortestCommonSupersequence(s1, s2));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "First compute the LCS of the two strings using the standard LCS DP algorithm.",
+                "SCS length = |S1| + |S2| - LCS_length. The LCS characters are shared, so we don't count them twice."
+            ]
+        }
+    ]
+}
