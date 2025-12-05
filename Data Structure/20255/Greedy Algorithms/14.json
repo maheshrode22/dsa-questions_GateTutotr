@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Meetings in One Room",
+            "description": "Problem Statement\n\nThere is one meeting room available.\nYou are given N meeting requests with their start and end times.\nEach meeting must be scheduled completely (cannot be interrupted).\n\nFind the maximum number of meetings that can be accommodated.\n\nAdditionally, output the indices (1-based) of the selected meetings in the order they are scheduled.\n\nGreedy Strategy: Select meetings that end earliest to maximize room availability.\n",
+            "examples": "Sample Input\n6\n1 2\n3 4\n0 6\n5 7\n8 9\n5 9\n\nSample Output\n4\n1 2 4 5\n\nExplanation:\nMeetings (index, start, end):\n1: (1,2), 2: (3,4), 3: (0,6), 4: (5,7), 5: (8,9), 6: (5,9)\n\nSorted by end time with original index:\n(1,2,idx=1), (3,4,idx=2), (0,6,idx=3), (5,7,idx=4), (8,9,idx=5), (5,9,idx=6)\n\nScheduling:\n- Meeting 1 (1,2): Select ✓, ends at 2\n- Meeting 2 (3,4): 3 >= 2, Select ✓, ends at 4\n- Meeting 3 (0,6): 0 < 4, Skip\n- Meeting 4 (5,7): 5 >= 4, Select ✓, ends at 7\n- Meeting 5 (8,9): 8 >= 7, Select ✓, ends at 9\n- Meeting 6 (5,9): 5 < 9, Skip\n\nSelected meetings: [1, 2, 4, 5] = 4 meetings",
+            "constraints": "1 <= N <= 1000\n0 <= start[i] < end[i] <= 10000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "6\n1 2\n3 4\n0 6\n5 7\n8 9\n5 9",
+                    "expectedOutput": "4\n1 2 4 5"
+                },
+                {
+                    "input": "3\n1 3\n2 4\n3 5",
+                    "expectedOutput": "2\n1 3"
+                },
+                {
+                    "input": "4\n1 2\n2 3\n3 4\n4 5",
+                    "expectedOutput": "4\n1 2 3 4"
+                },
+                {
+                    "input": "3\n0 5\n1 2\n3 4",
+                    "expectedOutput": "2\n2 3"
+                },
+                {
+                    "input": "5\n0 1\n1 2\n2 3\n3 4\n4 5",
+                    "expectedOutput": "5\n1 2 3 4 5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxMeetings(self, meetings):\n        # meetings is a list of (start, end, original_index)\n        # TODO: Sort by end time\n        # Greedily select non-overlapping meetings\n        # Return (count, list of original indices)\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    meetings = []\n    for i in range(1, n + 1):\n        s, e = map(int, data[i].split())\n        meetings.append((s, e, i))  # (start, end, 1-based index)\n    sol = Solution()\n    count, indices = sol.maxMeetings(meetings)\n    print(count)\n    print(' '.join(map(str, indices)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] maxMeetings(int[][] meetings, int n) {\n        // meetings[i] = {start, end, original_index}\n        // TODO: Sort by end time\n        // Greedily select, return selected indices\n        return new int[0];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] meetings = new int[n][3];\n        for (int i = 0; i < n; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            meetings[i][0] = Integer.parseInt(parts[0]);\n            meetings[i][1] = Integer.parseInt(parts[1]);\n            meetings[i][2] = i + 1; // 1-based index\n        }\n        Solution sol = new Solution();\n        int[] result = sol.maxMeetings(meetings, n);\n        System.out.println(result.length);\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < result.length; i++) {\n            if (i > 0) sb.append(\" \");\n            sb.append(result[i]);\n        }\n        System.out.println(sb.toString());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxMeetings(meetings) {\n        // meetings[i] = [start, end, original_index]\n        // TODO: Sort by end time, greedily select\n        return { count: 0, indices: [] };\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const meetings = [];\n    for (let i = 1; i <= n; i++) {\n        const [s, e] = lines[i].split(' ').map(Number);\n        meetings.push([s, e, i]); // 1-based index\n    }\n    const sol = new Solution();\n    const { count, indices } = sol.maxMeetings(meetings);\n    console.log(count);\n    console.log(indices.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    pair<int, vector<int>> maxMeetings(vector<tuple<int,int,int>>& meetings) {\n        // tuple: (start, end, original_index)\n        // TODO: Sort by end time, greedily select\n        return {0, {}};\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<tuple<int,int,int>> meetings(n);\n    for (int i = 0; i < n; i++) {\n        int s, e;\n        cin >> s >> e;\n        meetings[i] = {s, e, i + 1}; // 1-based index\n    }\n    Solution sol;\n    auto [count, indices] = sol.maxMeetings(meetings);\n    cout << count << endl;\n    for (int i = 0; i < indices.size(); i++) {\n        if (i > 0) cout << \" \";\n        cout << indices[i];\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int start, end, index;\n} Meeting;\n\nint compare(const void* a, const void* b) {\n    return ((Meeting*)a)->end - ((Meeting*)b)->end;\n}\n\nint maxMeetings(Meeting meetings[], int n, int selected[]) {\n    // TODO: Sort by end time, greedily select\n    // Store selected indices in selected[], return count\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    Meeting meetings[n];\n    int selected[n];\n    for (int i = 0; i < n; i++) {\n        scanf(\"%d %d\", &meetings[i].start, &meetings[i].end);\n        meetings[i].index = i + 1; // 1-based\n    }\n    int count = maxMeetings(meetings, n, selected);\n    printf(\"%d\\n\", count);\n    for (int i = 0; i < count; i++) {\n        if (i > 0) printf(\" \");\n        printf(\"%d\", selected[i]);\n    }\n    printf(\"\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "This is the activity selection problem. Sort meetings by end time, keeping track of original indices.",
+                "Greedily pick meetings: if current meeting's start >= last selected meeting's end, select it. Store selected indices."
+            ]
+        }
+    ]
+}

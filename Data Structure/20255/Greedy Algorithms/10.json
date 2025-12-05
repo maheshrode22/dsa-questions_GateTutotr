@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Number of Arrows to Burst Balloons",
+            "description": "Problem Statement\n\nThere are N spherical balloons in 2D space. Each balloon i is represented by its horizontal diameter [start[i], end[i]].\n\nAn arrow shot vertically at position x will burst all balloons where start[i] <= x <= end[i].\n\nFind the minimum number of arrows needed to burst all balloons.\n\nGreedy Insight: Similar to interval scheduling - sort by end points and shoot at overlapping regions.\n",
+            "examples": "Sample Input\n4\n10 16\n2 8\n1 6\n7 12\n\nSample Output\n2\n\nExplanation:\nBalloons: [(10,16), (2,8), (1,6), (7,12)]\nSorted by end: [(1,6), (2,8), (7,12), (10,16)]\n\nArrow 1 at x=6: Bursts balloons (1,6) and (2,8)\nArrow 2 at x=12: Bursts balloons (7,12) and (10,16)\n\nMinimum arrows = 2",
+            "constraints": "1 <= N <= 1000\n-10000 <= start[i] <= end[i] <= 10000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4\n10 16\n2 8\n1 6\n7 12",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "2\n1 2\n3 4",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "3\n1 10\n2 5\n6 8",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "5\n1 2\n2 3\n3 4\n4 5\n5 6",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "4\n1 5\n2 6\n3 7\n4 8",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minArrows(self, balloons):\n        # TODO: Sort balloons by end position\n        # Greedily shoot arrow at the end of first unpopped balloon\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    balloons = []\n    for i in range(1, n + 1):\n        s, e = map(int, data[i].split())\n        balloons.append((s, e))\n    sol = Solution()\n    print(sol.minArrows(balloons))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minArrows(int[][] balloons) {\n        // TODO: Sort balloons by end position\n        // Greedily shoot arrow at the end of first unpopped balloon\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] balloons = new int[n][2];\n        for (int i = 0; i < n; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            balloons[i][0] = Integer.parseInt(parts[0]);\n            balloons[i][1] = Integer.parseInt(parts[1]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.minArrows(balloons));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minArrows(balloons) {\n        // TODO: Sort balloons by end position\n        // Greedily shoot arrow at the end of first unpopped balloon\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const balloons = [];\n    for (let i = 1; i <= n; i++) {\n        const [s, e] = lines[i].split(' ').map(Number);\n        balloons.push([s, e]);\n    }\n    const sol = new Solution();\n    console.log(sol.minArrows(balloons));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minArrows(vector<pair<int,int>>& balloons) {\n        // TODO: Sort balloons by end position\n        // Greedily shoot arrow at the end of first unpopped balloon\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<pair<int,int>> balloons(n);\n    for (int i = 0; i < n; i++) {\n        cin >> balloons[i].first >> balloons[i].second;\n    }\n    Solution sol;\n    cout << sol.minArrows(balloons);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int start, end;\n} Balloon;\n\nint compare(const void* a, const void* b) {\n    return ((Balloon*)a)->end - ((Balloon*)b)->end;\n}\n\nint minArrows(Balloon balloons[], int n) {\n    // TODO: Sort balloons by end position\n    // Greedily shoot arrow at the end of first unpopped balloon\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    Balloon balloons[n];\n    for (int i = 0; i < n; i++) {\n        scanf(\"%d %d\", &balloons[i].start, &balloons[i].end);\n    }\n    printf(\"%d\", minArrows(balloons, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Sort balloons by their end position. This helps us find overlapping balloons efficiently.",
+                "Shoot an arrow at the end of the current balloon. All balloons whose start <= arrow position get burst. Move to next unpopped balloon."
+            ]
+        }
+    ]
+}

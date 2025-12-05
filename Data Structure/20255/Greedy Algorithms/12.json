@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Cost to Connect All Ropes",
+            "description": "Problem Statement\n\nYou have N ropes with different lengths.\nYou need to connect all ropes into one rope.\n\nThe cost to connect two ropes of lengths A and B is A + B.\nThis operation produces a new rope of length A + B.\n\nFind the minimum total cost to connect all ropes.\n\nGreedy Insight: Always connect the two shortest ropes first!\nThis minimizes the number of times each original length contributes to future costs.\n",
+            "examples": "Sample Input\n4\n4 3 2 6\n\nSample Output\n29\n\nExplanation:\nRopes: [4, 3, 2, 6]\n\nStep 1: Connect 2 and 3 -> Cost = 5, Ropes: [4, 5, 6]\nStep 2: Connect 4 and 5 -> Cost = 9, Ropes: [9, 6]\nStep 3: Connect 6 and 9 -> Cost = 15, Ropes: [15]\n\nTotal Cost = 5 + 9 + 15 = 29",
+            "constraints": "2 <= N <= 1000\n1 <= length[i] <= 10000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4\n4 3 2 6",
+                    "expectedOutput": "29"
+                },
+                {
+                    "input": "2\n5 10",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "33"
+                },
+                {
+                    "input": "3\n10 10 10",
+                    "expectedOutput": "50"
+                },
+                {
+                    "input": "6\n1 1 1 1 1 1",
+                    "expectedOutput": "16"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import heapq\n\nclass Solution:\n    def minCostToConnectRopes(self, lengths):\n        # TODO: Use a min-heap\n        # Repeatedly extract two smallest, merge, add cost, push back\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    lengths = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.minCostToConnectRopes(lengths))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long minCostToConnectRopes(int[] lengths) {\n        // TODO: Use a min-heap (PriorityQueue)\n        // Repeatedly extract two smallest, merge, add cost, push back\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] lengths = new int[n];\n        for (int i = 0; i < n; i++) lengths[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.minCostToConnectRopes(lengths));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class MinHeap {\n    constructor() { this.heap = []; }\n    push(val) { this.heap.push(val); this.bubbleUp(); }\n    pop() {\n        if (this.heap.length === 0) return null;\n        const min = this.heap[0];\n        const end = this.heap.pop();\n        if (this.heap.length > 0) { this.heap[0] = end; this.sinkDown(); }\n        return min;\n    }\n    bubbleUp() {\n        let idx = this.heap.length - 1;\n        while (idx > 0) {\n            let parent = Math.floor((idx - 1) / 2);\n            if (this.heap[idx] >= this.heap[parent]) break;\n            [this.heap[idx], this.heap[parent]] = [this.heap[parent], this.heap[idx]];\n            idx = parent;\n        }\n    }\n    sinkDown() {\n        let idx = 0, length = this.heap.length;\n        while (true) {\n            let left = 2*idx+1, right = 2*idx+2, smallest = idx;\n            if (left < length && this.heap[left] < this.heap[smallest]) smallest = left;\n            if (right < length && this.heap[right] < this.heap[smallest]) smallest = right;\n            if (smallest === idx) break;\n            [this.heap[idx], this.heap[smallest]] = [this.heap[smallest], this.heap[idx]];\n            idx = smallest;\n        }\n    }\n    size() { return this.heap.length; }\n}\n\nclass Solution {\n    minCostToConnectRopes(lengths) {\n        // TODO: Use min-heap, merge two smallest repeatedly\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const lengths = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.minCostToConnectRopes(lengths));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long minCostToConnectRopes(vector<int>& lengths) {\n        // TODO: Use min-heap (priority_queue with greater<int>)\n        // Merge two smallest repeatedly\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> lengths(n);\n    for (int i = 0; i < n; i++) cin >> lengths[i];\n    Solution sol;\n    cout << sol.minCostToConnectRopes(lengths);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid swap(long long* a, long long* b) { long long t = *a; *a = *b; *b = t; }\n\nvoid heapify(long long heap[], int n, int i) {\n    int smallest = i, left = 2*i+1, right = 2*i+2;\n    if (left < n && heap[left] < heap[smallest]) smallest = left;\n    if (right < n && heap[right] < heap[smallest]) smallest = right;\n    if (smallest != i) { swap(&heap[i], &heap[smallest]); heapify(heap, n, smallest); }\n}\n\nlong long extractMin(long long heap[], int* n) {\n    long long min = heap[0];\n    heap[0] = heap[--(*n)];\n    heapify(heap, *n, 0);\n    return min;\n}\n\nvoid insertHeap(long long heap[], int* n, long long val) {\n    heap[(*n)++] = val;\n    int i = *n - 1;\n    while (i > 0 && heap[(i-1)/2] > heap[i]) {\n        swap(&heap[(i-1)/2], &heap[i]);\n        i = (i-1)/2;\n    }\n}\n\nlong long minCostToConnectRopes(int lengths[], int n) {\n    // TODO: Use min-heap, merge two smallest, track total cost\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int lengths[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &lengths[i]);\n    printf(\"%lld\", minCostToConnectRopes(lengths, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "This is equivalent to Huffman coding! The minimum cost is achieved by always merging the two smallest elements.",
+                "Use a min-heap. Pop two smallest, add their sum to cost, push the sum back. Continue until one element remains."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Activity Selection Problem",
+            "description": "Problem Statement\n\nYou are given N activities, each with a start time and end time.\nTwo activities are compatible if they don't overlap (one ends before the other starts).\n\nFind the maximum number of activities you can perform.\n\nGreedy Strategy: Always select the activity that finishes earliest!\nThis leaves maximum time for remaining activities.\n",
+            "examples": "Sample Input\n6\n1 2\n3 4\n0 6\n5 7\n8 9\n5 9\n\nSample Output\n4\n\nExplanation:\nActivities: [(1,2), (3,4), (0,6), (5,7), (8,9), (5,9)]\nSorted by end time: [(1,2), (3,4), (0,6), (5,7), (8,9), (5,9)]\n\n1. Select (1,2) - ends at 2\n2. Select (3,4) - starts at 3 >= 2, ends at 4\n3. Skip (0,6) - starts at 0 < 4\n4. Select (5,7) - starts at 5 >= 4, ends at 7\n5. Select (8,9) - starts at 8 >= 7, ends at 9\n6. Skip (5,9) - starts at 5 < 9\n\nTotal = 4 activities",
+            "constraints": "1 <= N <= 1000\n0 <= start[i] < end[i] <= 10000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "6\n1 2\n3 4\n0 6\n5 7\n8 9\n5 9",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "3\n1 3\n2 4\n3 5",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "4\n1 2\n2 3\n3 4\n4 5",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "5\n0 10\n1 2\n3 4\n5 6\n7 8",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "3\n1 5\n2 3\n4 6",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxActivities(self, activities):\n        # TODO: Sort activities by end time\n        # Greedily select activities that don't overlap\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    activities = []\n    for i in range(1, n + 1):\n        s, e = map(int, data[i].split())\n        activities.append((s, e))\n    sol = Solution()\n    print(sol.maxActivities(activities))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxActivities(int[][] activities) {\n        // TODO: Sort activities by end time\n        // Greedily select activities that don't overlap\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] activities = new int[n][2];\n        for (int i = 0; i < n; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            activities[i][0] = Integer.parseInt(parts[0]);\n            activities[i][1] = Integer.parseInt(parts[1]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.maxActivities(activities));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxActivities(activities) {\n        // TODO: Sort activities by end time\n        // Greedily select activities that don't overlap\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const activities = [];\n    for (let i = 1; i <= n; i++) {\n        const [s, e] = lines[i].split(' ').map(Number);\n        activities.push([s, e]);\n    }\n    const sol = new Solution();\n    console.log(sol.maxActivities(activities));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxActivities(vector<pair<int,int>>& activities) {\n        // TODO: Sort activities by end time\n        // Greedily select activities that don't overlap\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<pair<int,int>> activities(n);\n    for (int i = 0; i < n; i++) {\n        cin >> activities[i].first >> activities[i].second;\n    }\n    Solution sol;\n    cout << sol.maxActivities(activities);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int start, end;\n} Activity;\n\nint compare(const void* a, const void* b) {\n    return ((Activity*)a)->end - ((Activity*)b)->end;\n}\n\nint maxActivities(Activity activities[], int n) {\n    // TODO: Sort activities by end time\n    // Greedily select activities that don't overlap\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    Activity activities[n];\n    for (int i = 0; i < n; i++) {\n        scanf(\"%d %d\", &activities[i].start, &activities[i].end);\n    }\n    printf(\"%d\", maxActivities(activities, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Sort all activities by their ending time in ascending order.",
+                "Select the first activity. Then, for each subsequent activity, if its start time >= last selected activity's end time, select it."
+            ]
+        }
+    ]
+}

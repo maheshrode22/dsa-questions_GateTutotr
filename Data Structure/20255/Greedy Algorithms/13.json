@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Optimal Merge Pattern",
+            "description": "Problem Statement\n\nYou have N sorted files with given sizes (number of records).\nTo merge two files of sizes A and B, the cost is A + B.\nThe resulting merged file has size A + B.\n\nYou need to merge all files into a single file.\nFind the minimum total cost of merging.\n\nThis is the classic Optimal Merge Pattern problem.\n\nGreedy Strategy: Always merge the two smallest files first!\n",
+            "examples": "Sample Input\n5\n20 30 10 5 30\n\nSample Output\n205\n\nExplanation:\nFiles: [20, 30, 10, 5, 30]\n\nStep 1: Merge 5 and 10 → Cost = 15, Files: [20, 30, 15, 30]\nStep 2: Merge 15 and 20 → Cost = 35, Files: [30, 35, 30]\nStep 3: Merge 30 and 30 → Cost = 60, Files: [35, 60]\nStep 4: Merge 35 and 60 → Cost = 95, Files: [95]\n\nTotal Cost = 15 + 35 + 60 + 95 = 205",
+            "constraints": "2 <= N <= 1000\n1 <= size[i] <= 10000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5\n20 30 10 5 30",
+                    "expectedOutput": "205"
+                },
+                {
+                    "input": "3\n10 20 30",
+                    "expectedOutput": "90"
+                },
+                {
+                    "input": "4\n5 5 5 5",
+                    "expectedOutput": "40"
+                },
+                {
+                    "input": "2\n100 200",
+                    "expectedOutput": "300"
+                },
+                {
+                    "input": "6\n2 3 4 5 6 7",
+                    "expectedOutput": "68"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import heapq\n\nclass Solution:\n    def optimalMergeCost(self, sizes):\n        # TODO: Use min-heap to always merge two smallest files\n        # Track and return total merge cost\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    sizes = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.optimalMergeCost(sizes))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long optimalMergeCost(int[] sizes) {\n        // TODO: Use min-heap (PriorityQueue)\n        // Always merge two smallest, track total cost\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] sizes = new int[n];\n        for (int i = 0; i < n; i++) sizes[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.optimalMergeCost(sizes));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class MinHeap {\n    constructor() { this.heap = []; }\n    push(val) { this.heap.push(val); this.bubbleUp(); }\n    pop() {\n        if (this.heap.length === 0) return null;\n        const min = this.heap[0];\n        const end = this.heap.pop();\n        if (this.heap.length > 0) { this.heap[0] = end; this.sinkDown(); }\n        return min;\n    }\n    bubbleUp() {\n        let idx = this.heap.length - 1;\n        while (idx > 0) {\n            let parent = Math.floor((idx - 1) / 2);\n            if (this.heap[idx] >= this.heap[parent]) break;\n            [this.heap[idx], this.heap[parent]] = [this.heap[parent], this.heap[idx]];\n            idx = parent;\n        }\n    }\n    sinkDown() {\n        let idx = 0, length = this.heap.length;\n        while (true) {\n            let left = 2*idx+1, right = 2*idx+2, smallest = idx;\n            if (left < length && this.heap[left] < this.heap[smallest]) smallest = left;\n            if (right < length && this.heap[right] < this.heap[smallest]) smallest = right;\n            if (smallest === idx) break;\n            [this.heap[idx], this.heap[smallest]] = [this.heap[smallest], this.heap[idx]];\n            idx = smallest;\n        }\n    }\n    size() { return this.heap.length; }\n}\n\nclass Solution {\n    optimalMergeCost(sizes) {\n        // TODO: Use min-heap, merge smallest two repeatedly\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const sizes = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.optimalMergeCost(sizes));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long optimalMergeCost(vector<int>& sizes) {\n        // TODO: Use min-heap, merge smallest two repeatedly\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> sizes(n);\n    for (int i = 0; i < n; i++) cin >> sizes[i];\n    Solution sol;\n    cout << sol.optimalMergeCost(sizes);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid swap(long long* a, long long* b) { long long t = *a; *a = *b; *b = t; }\n\nvoid heapify(long long heap[], int n, int i) {\n    int smallest = i, left = 2*i+1, right = 2*i+2;\n    if (left < n && heap[left] < heap[smallest]) smallest = left;\n    if (right < n && heap[right] < heap[smallest]) smallest = right;\n    if (smallest != i) { swap(&heap[i], &heap[smallest]); heapify(heap, n, smallest); }\n}\n\nlong long extractMin(long long heap[], int* n) {\n    long long min = heap[0];\n    heap[0] = heap[--(*n)];\n    heapify(heap, *n, 0);\n    return min;\n}\n\nvoid insertHeap(long long heap[], int* n, long long val) {\n    heap[(*n)++] = val;\n    int i = *n - 1;\n    while (i > 0 && heap[(i-1)/2] > heap[i]) {\n        swap(&heap[(i-1)/2], &heap[i]);\n        i = (i-1)/2;\n    }\n}\n\nlong long optimalMergeCost(int sizes[], int n) {\n    // TODO: Use min-heap, merge two smallest, track cost\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int sizes[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &sizes[i]);\n    printf(\"%lld\", optimalMergeCost(sizes, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a min-heap to efficiently get the two smallest files. This is identical to the connect ropes problem.",
+                "Pop two smallest, merge (cost = sum), push merged file back. Repeat until one file. Sum of all merge costs is the answer."
+            ]
+        }
+    ]
+}

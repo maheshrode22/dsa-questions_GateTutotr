@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Fractional Knapsack",
+            "description": "Problem Statement\n\nYou have a knapsack with capacity W.\nThere are N items, each with a weight and value.\nYou can take fractions of items (not just whole items).\n\nFind the maximum total value you can put in the knapsack.\n\nGreedy Strategy: Always pick items with the highest value-to-weight ratio first!\nThis maximizes value per unit weight.\n\nOutput the result rounded to 2 decimal places.\n",
+            "examples": "Sample Input\n3 50\n60 10\n100 20\n120 30\n\nSample Output\n240.00\n\nExplanation:\nCapacity = 50\nItems (value, weight): [(60, 10), (100, 20), (120, 30)]\nValue/Weight ratios: [6.0, 5.0, 4.0]\n\nSorted by ratio: [(60, 10), (100, 20), (120, 30)]\n\n1. Take full item 1: Value = 60, Capacity left = 40\n2. Take full item 2: Value = 60 + 100 = 160, Capacity left = 20\n3. Take 20/30 of item 3: Value = 160 + (20/30)*120 = 160 + 80 = 240\n\nTotal Value = 240.00",
+            "constraints": "1 <= N <= 100\n1 <= W <= 10000\n1 <= value[i], weight[i] <= 1000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3 50\n60 10\n100 20\n120 30",
+                    "expectedOutput": "240.00"
+                },
+                {
+                    "input": "2 15\n24 5\n30 10",
+                    "expectedOutput": "54.00"
+                },
+                {
+                    "input": "3 10\n10 5\n20 10\n30 15",
+                    "expectedOutput": "20.00"
+                },
+                {
+                    "input": "4 100\n50 25\n40 20\n60 30\n80 40",
+                    "expectedOutput": "200.00"
+                },
+                {
+                    "input": "2 50\n100 20\n60 10",
+                    "expectedOutput": "160.00"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def fractionalKnapsack(self, items, capacity):\n        # TODO: Calculate value/weight ratio for each item\n        # Sort by ratio in descending order\n        # Take items greedily, taking fractions if needed\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n, capacity = map(int, data[0].split())\n    items = []\n    for i in range(1, n + 1):\n        v, w = map(int, data[i].split())\n        items.append((v, w))\n    sol = Solution()\n    result = sol.fractionalKnapsack(items, capacity)\n    print(f\"{result:.2f}\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public double fractionalKnapsack(int[][] items, int capacity) {\n        // TODO: Calculate value/weight ratio for each item\n        // Sort by ratio in descending order\n        // Take items greedily, taking fractions if needed\n        return 0.0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(firstLine[0]);\n        int capacity = Integer.parseInt(firstLine[1]);\n        int[][] items = new int[n][2];\n        for (int i = 0; i < n; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            items[i][0] = Integer.parseInt(parts[0]);\n            items[i][1] = Integer.parseInt(parts[1]);\n        }\n        Solution sol = new Solution();\n        System.out.printf(\"%.2f\", sol.fractionalKnapsack(items, capacity));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    fractionalKnapsack(items, capacity) {\n        // TODO: Calculate value/weight ratio for each item\n        // Sort by ratio in descending order\n        // Take items greedily, taking fractions if needed\n        return 0.0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [n, capacity] = lines[0].split(' ').map(Number);\n    const items = [];\n    for (let i = 1; i <= n; i++) {\n        const [v, w] = lines[i].split(' ').map(Number);\n        items.push([v, w]);\n    }\n    const sol = new Solution();\n    console.log(sol.fractionalKnapsack(items, capacity).toFixed(2));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    double fractionalKnapsack(vector<pair<int,int>>& items, int capacity) {\n        // TODO: Calculate value/weight ratio for each item\n        // Sort by ratio in descending order\n        // Take items greedily, taking fractions if needed\n        return 0.0;\n    }\n};\n\nint main() {\n    int n, capacity;\n    cin >> n >> capacity;\n    vector<pair<int,int>> items(n);\n    for (int i = 0; i < n; i++) {\n        cin >> items[i].first >> items[i].second;\n    }\n    Solution sol;\n    cout << fixed << setprecision(2) << sol.fractionalKnapsack(items, capacity);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int value, weight;\n    double ratio;\n} Item;\n\nint compare(const void* a, const void* b) {\n    double diff = ((Item*)b)->ratio - ((Item*)a)->ratio;\n    return (diff > 0) - (diff < 0);\n}\n\ndouble fractionalKnapsack(Item items[], int n, int capacity) {\n    // TODO: Sort by ratio, then take items greedily\n    return 0.0;\n}\n\nint main() {\n    int n, capacity;\n    scanf(\"%d %d\", &n, &capacity);\n    Item items[n];\n    for (int i = 0; i < n; i++) {\n        scanf(\"%d %d\", &items[i].value, &items[i].weight);\n        items[i].ratio = (double)items[i].value / items[i].weight;\n    }\n    printf(\"%.2f\", fractionalKnapsack(items, n, capacity));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Calculate value/weight ratio for each item and sort items by this ratio in descending order.",
+                "Iterate through sorted items: if the item fits completely, take it all. Otherwise, take the fraction that fits."
+            ]
+        }
+    ]
+}

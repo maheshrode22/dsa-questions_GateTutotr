@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Buy Maximum Items with Budget",
+            "description": "Problem Statement\n\nYou have a budget of B rupees.\nThere are N items in a shop, each with a certain price.\nFind the maximum number of items you can buy within your budget.\n\nGreedy Insight: To maximize the number of items, always buy the cheapest items first!\n",
+            "examples": "Sample Input\n5 50\n10 20 30 15 5\n\nSample Output\n3\n\nExplanation:\nBudget = 50\nPrices: [10, 20, 30, 15, 5]\nSorted prices: [5, 10, 15, 20, 30]\n\nBuy item with price 5: Budget left = 45 (1 item)\nBuy item with price 10: Budget left = 35 (2 items)\nBuy item with price 15: Budget left = 20 (3 items)\nBuy item with price 20: Budget left = 0 (4 items)? No, 20 <= 20, so yes!\n\nActually: 5 + 10 + 15 + 20 = 50, so we can buy 4 items.\n\nLet me recalculate: Maximum items = 4",
+            "constraints": "1 <= N <= 1000\n1 <= B <= 100000\n1 <= price[i] <= 10000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5 50\n10 20 30 15 5",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "4 100\n25 25 25 25",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "3 10\n15 20 30",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "5 30\n5 5 5 5 5",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "6 55\n10 20 5 15 8 12",
+                    "expectedOutput": "5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxItems(self, prices, budget):\n        # TODO: Sort prices in ascending order\n        # Buy items starting from cheapest until budget runs out\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n, budget = map(int, data[0].split())\n    prices = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.maxItems(prices, budget))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxItems(int[] prices, int budget) {\n        // TODO: Sort prices in ascending order\n        // Buy items starting from cheapest until budget runs out\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(firstLine[0]);\n        int budget = Integer.parseInt(firstLine[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] prices = new int[n];\n        for (int i = 0; i < n; i++) prices[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.maxItems(prices, budget));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxItems(prices, budget) {\n        // TODO: Sort prices in ascending order\n        // Buy items starting from cheapest until budget runs out\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [n, budget] = lines[0].split(' ').map(Number);\n    const prices = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.maxItems(prices, budget));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxItems(vector<int>& prices, int budget) {\n        // TODO: Sort prices in ascending order\n        // Buy items starting from cheapest until budget runs out\n        return 0;\n    }\n};\n\nint main() {\n    int n, budget;\n    cin >> n >> budget;\n    vector<int> prices(n);\n    for (int i = 0; i < n; i++) cin >> prices[i];\n    Solution sol;\n    cout << sol.maxItems(prices, budget);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint compare(const void* a, const void* b) {\n    return (*(int*)a - *(int*)b);\n}\n\nint maxItems(int prices[], int n, int budget) {\n    // TODO: Sort prices in ascending order\n    // Buy items starting from cheapest until budget runs out\n    return 0;\n}\n\nint main() {\n    int n, budget;\n    scanf(\"%d %d\", &n, &budget);\n    int prices[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &prices[i]);\n    printf(\"%d\", maxItems(prices, n, budget));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "To buy maximum items, always buy the cheapest available item first.",
+                "Sort prices, then iterate from smallest to largest, buying while budget allows."
+            ]
+        }
+    ]
+}

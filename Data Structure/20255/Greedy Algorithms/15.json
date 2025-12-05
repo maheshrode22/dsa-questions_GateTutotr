@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Spanning Tree Cost (Prim's Algorithm)",
+            "description": "Problem Statement\n\nYou are given an undirected weighted graph with N vertices and M edges.\nFind the total cost of the Minimum Spanning Tree (MST).\n\nA spanning tree connects all N vertices using exactly N-1 edges.\nThe MST has the minimum possible total edge weight.\n\nPrim's Algorithm (Greedy):\n1. Start from vertex 1\n2. Maintain a set of vertices in the MST\n3. Greedily add the minimum weight edge connecting a vertex inside MST to a vertex outside MST\n4. Repeat until all vertices are included\n\nVertices are numbered 1 to N.\n",
+            "examples": "Sample Input\n4 5\n1 2 10\n1 3 6\n1 4 5\n3 4 4\n2 4 15\n\nSample Output\n19\n\nExplanation:\nEdges: (1-2:10), (1-3:6), (1-4:5), (3-4:4), (2-4:15)\n\nPrim's starting from vertex 1:\n- MST = {1}, add edge (1,4) with weight 5 -> MST = {1,4}\n- MST = {1,4}, add edge (3,4) with weight 4 -> MST = {1,3,4}\n- MST = {1,3,4}, add edge (1,2) with weight 10 -> MST = {1,2,3,4}\n\nMST edges: (1,4), (3,4), (1,2)\nTotal cost = 5 + 4 + 10 = 19",
+            "constraints": "1 <= N <= 100\n1 <= M <= N*(N-1)/2\n1 <= weight <= 1000\nGraph is connected",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4 5\n1 2 10\n1 3 6\n1 4 5\n3 4 4\n2 4 15",
+                    "expectedOutput": "19"
+                },
+                {
+                    "input": "3 3\n1 2 5\n2 3 7\n1 3 10",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "5 7\n1 2 2\n1 3 3\n2 3 1\n2 4 4\n3 4 5\n3 5 6\n4 5 7",
+                    "expectedOutput": "13"
+                },
+                {
+                    "input": "2 1\n1 2 100",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "4 6\n1 2 1\n2 3 2\n3 4 3\n4 1 4\n1 3 5\n2 4 6",
+                    "expectedOutput": "6"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import heapq\n\nclass Solution:\n    def primMST(self, n, edges):\n        # Build adjacency list\n        # TODO: Use min-heap to greedily pick minimum edge\n        # Track visited vertices, sum edge weights in MST\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n, m = map(int, data[0].split())\n    edges = []\n    for i in range(1, m + 1):\n        u, v, w = map(int, data[i].split())\n        edges.append((u, v, w))\n    sol = Solution()\n    print(sol.primMST(n, edges))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int primMST(int n, int[][] edges) {\n        // Build adjacency list\n        // TODO: Use PriorityQueue to greedily pick minimum edge\n        // Track visited vertices, return total MST cost\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(firstLine[0]);\n        int m = Integer.parseInt(firstLine[1]);\n        int[][] edges = new int[m][3];\n        for (int i = 0; i < m; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            edges[i][0] = Integer.parseInt(parts[0]);\n            edges[i][1] = Integer.parseInt(parts[1]);\n            edges[i][2] = Integer.parseInt(parts[2]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.primMST(n, edges));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class MinHeap {\n    constructor() { this.heap = []; }\n    push(val) { this.heap.push(val); this.bubbleUp(); }\n    pop() {\n        if (this.heap.length === 0) return null;\n        const min = this.heap[0];\n        const end = this.heap.pop();\n        if (this.heap.length > 0) { this.heap[0] = end; this.sinkDown(); }\n        return min;\n    }\n    bubbleUp() {\n        let idx = this.heap.length - 1;\n        while (idx > 0) {\n            let parent = Math.floor((idx - 1) / 2);\n            if (this.heap[idx][0] >= this.heap[parent][0]) break;\n            [this.heap[idx], this.heap[parent]] = [this.heap[parent], this.heap[idx]];\n            idx = parent;\n        }\n    }\n    sinkDown() {\n        let idx = 0, length = this.heap.length;\n        while (true) {\n            let left = 2*idx+1, right = 2*idx+2, smallest = idx;\n            if (left < length && this.heap[left][0] < this.heap[smallest][0]) smallest = left;\n            if (right < length && this.heap[right][0] < this.heap[smallest][0]) smallest = right;\n            if (smallest === idx) break;\n            [this.heap[idx], this.heap[smallest]] = [this.heap[smallest], this.heap[idx]];\n            idx = smallest;\n        }\n    }\n    empty() { return this.heap.length === 0; }\n}\n\nclass Solution {\n    primMST(n, edges) {\n        // TODO: Build adjacency list, use min-heap for Prim's\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [n, m] = lines[0].split(' ').map(Number);\n    const edges = [];\n    for (let i = 1; i <= m; i++) {\n        const [u, v, w] = lines[i].split(' ').map(Number);\n        edges.push([u, v, w]);\n    }\n    const sol = new Solution();\n    console.log(sol.primMST(n, edges));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int primMST(int n, vector<tuple<int,int,int>>& edges) {\n        // Build adjacency list: adj[u] = {(weight, v), ...}\n        // TODO: Use min-heap for Prim's algorithm\n        return 0;\n    }\n};\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<tuple<int,int,int>> edges(m);\n    for (int i = 0; i < m; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        edges[i] = {u, v, w};\n    }\n    Solution sol;\n    cout << sol.primMST(n, edges);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n#include <limits.h>\n\n#define MAXN 105\n#define MAXM 5005\n\nint adj[MAXN][MAXN]; // adjacency matrix, 0 if no edge\n\nint primMST(int n) {\n    // TODO: Implement Prim's using adjacency matrix\n    // Track minimum edge weight to each unvisited vertex\n    return 0;\n}\n\nint main() {\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n    \n    // Initialize adjacency matrix\n    for (int i = 0; i <= n; i++)\n        for (int j = 0; j <= n; j++)\n            adj[i][j] = 0;\n    \n    for (int i = 0; i < m; i++) {\n        int u, v, w;\n        scanf(\"%d %d %d\", &u, &v, &w);\n        adj[u][v] = w;\n        adj[v][u] = w;\n    }\n    \n    printf(\"%d\", primMST(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Build an adjacency list. Use a min-heap storing (weight, vertex) pairs. Start from vertex 1.",
+                "Pop minimum weight edge from heap. If the vertex is already visited, skip. Otherwise, add weight to MST cost and push all edges from this vertex to unvisited vertices."
+            ]
+        }
+    ]
+}

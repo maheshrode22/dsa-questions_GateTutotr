@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Coins for Change",
+            "description": "Problem Statement\n\nYou have coins of denominations 1, 2, 5, and 10.\nGiven an amount N, find the minimum number of coins needed to make that amount.\n\nUse Greedy: Always use the largest denomination possible first!\n\nNote: Since the denominations are 1, 2, 5, 10, the greedy approach always gives the optimal solution.\n",
+            "examples": "Sample Input\n28\n\nSample Output\n5\n\nExplanation:\nAmount = 28\n- Use 10: 28 - 10 = 18 (1 coin)\n- Use 10: 18 - 10 = 8 (2 coins)\n- Use 5: 8 - 5 = 3 (3 coins)\n- Use 2: 3 - 2 = 1 (4 coins)\n- Use 1: 1 - 1 = 0 (5 coins)\n\nTotal coins = 5",
+            "constraints": "1 <= N <= 10000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "28",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "99",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "37",
+                    "expectedOutput": "5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minCoins(self, amount):\n        # TODO: Coins available: [10, 5, 2, 1]\n        # Greedy: Use the largest coin possible at each step\n        pass\n\nif __name__ == '__main__':\n    amount = int(input())\n    sol = Solution()\n    print(sol.minCoins(amount))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minCoins(int amount) {\n        // TODO: Coins available: [10, 5, 2, 1]\n        // Greedy: Use the largest coin possible at each step\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int amount = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.minCoins(amount));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minCoins(amount) {\n        // TODO: Coins available: [10, 5, 2, 1]\n        // Greedy: Use the largest coin possible at each step\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const amount = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.minCoins(amount));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minCoins(int amount) {\n        // TODO: Coins available: [10, 5, 2, 1]\n        // Greedy: Use the largest coin possible at each step\n        return 0;\n    }\n};\n\nint main() {\n    int amount;\n    cin >> amount;\n    Solution sol;\n    cout << sol.minCoins(amount);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint minCoins(int amount) {\n    // TODO: Coins available: [10, 5, 2, 1]\n    // Greedy: Use the largest coin possible at each step\n    return 0;\n}\n\nint main() {\n    int amount;\n    scanf(\"%d\", &amount);\n    printf(\"%d\", minCoins(amount));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Start with the largest coin (10) and use as many as possible, then move to the next smaller coin.",
+                "For each coin denomination from largest to smallest: count += amount / coin; amount %= coin;"
+            ]
+        }
+    ]
+}

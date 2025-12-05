@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Product of Two Elements",
+            "description": "Problem Statement\n\nYou are given an array of N positive integers.\nFind the maximum value of (nums[i] - 1) * (nums[j] - 1) where i != j.\n\nUse the greedy observation: To maximize the product, pick the two largest elements!\n",
+            "examples": "Sample Input\n4\n3 4 5 2\n\nSample Output\n12\n\nExplanation:\nArray: [3, 4, 5, 2]\nTwo largest elements are 5 and 4.\nMaximum product = (5-1) * (4-1) = 4 * 3 = 12",
+            "constraints": "2 <= N <= 1000\n1 <= nums[i] <= 1000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "4\n3 4 5 2",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "3\n1 5 4",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "5\n3 7 2 8 4",
+                    "expectedOutput": "42"
+                },
+                {
+                    "input": "2\n10 10",
+                    "expectedOutput": "81"
+                },
+                {
+                    "input": "6\n1 2 3 4 5 6",
+                    "expectedOutput": "20"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxProduct(self, nums):\n        # TODO: Find the two largest elements\n        # Return (largest - 1) * (second_largest - 1)\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    nums = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.maxProduct(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxProduct(int[] nums) {\n        // TODO: Find the two largest elements\n        // Return (largest - 1) * (second_largest - 1)\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[n];\n        for (int i = 0; i < n; i++) nums[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.maxProduct(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxProduct(nums) {\n        // TODO: Find the two largest elements\n        // Return (largest - 1) * (second_largest - 1)\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const nums = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.maxProduct(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxProduct(vector<int>& nums) {\n        // TODO: Find the two largest elements\n        // Return (largest - 1) * (second_largest - 1)\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    Solution sol;\n    cout << sol.maxProduct(nums);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint maxProduct(int nums[], int n) {\n    // TODO: Find the two largest elements\n    // Return (largest - 1) * (second_largest - 1)\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int nums[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &nums[i]);\n    printf(\"%d\", maxProduct(nums, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Think about which two numbers give the maximum product after subtracting 1 from each.",
+                "Track the two largest elements in a single pass, or sort the array and pick the last two."
+            ]
+        }
+    ]
+}

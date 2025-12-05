@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Huffman Encoding - Calculate Weighted Path Length",
+            "description": "Problem Statement\n\nYou are given N characters and their frequencies.\nBuild a Huffman tree and calculate the total weighted path length.\n\nHuffman Tree Construction (Greedy):\n1. Create a leaf node for each character with its frequency\n2. Repeatedly merge the two nodes with smallest frequencies:\n   - Create a new internal node with frequency = sum of the two\n   - The two nodes become children of this new node\n3. Continue until only one node remains (the root)\n\nWeighted Path Length = Sum of (frequency[i] * depth[i]) for all characters\nThis represents the total number of bits needed to encode all characters.\n\nNote: The weighted path length equals the sum of all internal node values.\n",
+            "examples": "Sample Input\n4\n5 9 12 13\n\nSample Output\n78\n\nExplanation:\nFrequencies: [5, 9, 12, 13]\n\nStep 1: Merge 5 and 9 -> Node with frequency 14\nStep 2: Merge 12 and 13 -> Node with frequency 25\nStep 3: Merge 14 and 25 -> Root with frequency 39\n\nTotal cost = 14 + 25 + 39 = 78",
+            "constraints": "2 <= N <= 100\n1 <= frequency[i] <= 1000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2028,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4\n5 9 12 13",
+                    "expectedOutput": "78"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "9"
+                },
+                {
+                    "input": "5\n5 5 5 5 5",
+                    "expectedOutput": "60"
+                },
+                {
+                    "input": "2\n10 20",
+                    "expectedOutput": "30"
+                },
+                {
+                    "input": "6\n4 6 8 10 12 14",
+                    "expectedOutput": "136"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import heapq\n\nclass Solution:\n    def huffmanCost(self, frequencies):\n        # TODO: Use a min-heap to always get two smallest frequencies\n        # Merge them, add (sum) to result, push sum back to heap\n        # Key insight: Total cost = sum of all internal node values\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    frequencies = list(map(int, data[1].split()))\n    sol = Solution()\n    print(sol.huffmanCost(frequencies))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int huffmanCost(int[] frequencies) {\n        // TODO: Use a min-heap (PriorityQueue) to always get two smallest\n        // Merge them, add (sum) to result, push sum back to heap\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] frequencies = new int[n];\n        for (int i = 0; i < n; i++) frequencies[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.huffmanCost(frequencies));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class MinHeap {\n    constructor() {\n        this.heap = [];\n    }\n    push(val) {\n        this.heap.push(val);\n        this.bubbleUp();\n    }\n    pop() {\n        if (this.heap.length === 0) return null;\n        const min = this.heap[0];\n        const end = this.heap.pop();\n        if (this.heap.length > 0) {\n            this.heap[0] = end;\n            this.sinkDown();\n        }\n        return min;\n    }\n    bubbleUp() {\n        let idx = this.heap.length - 1;\n        while (idx > 0) {\n            let parent = Math.floor((idx - 1) / 2);\n            if (this.heap[idx] >= this.heap[parent]) break;\n            [this.heap[idx], this.heap[parent]] = [this.heap[parent], this.heap[idx]];\n            idx = parent;\n        }\n    }\n    sinkDown() {\n        let idx = 0;\n        const length = this.heap.length;\n        while (true) {\n            let left = 2 * idx + 1, right = 2 * idx + 2, smallest = idx;\n            if (left < length && this.heap[left] < this.heap[smallest]) smallest = left;\n            if (right < length && this.heap[right] < this.heap[smallest]) smallest = right;\n            if (smallest === idx) break;\n            [this.heap[idx], this.heap[smallest]] = [this.heap[smallest], this.heap[idx]];\n            idx = smallest;\n        }\n    }\n    size() { return this.heap.length; }\n}\n\nclass Solution {\n    huffmanCost(frequencies) {\n        // TODO: Use min-heap to always get two smallest frequencies\n        // Merge them, add (sum) to result, push sum back\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const frequencies = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.huffmanCost(frequencies));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long huffmanCost(vector<int>& frequencies) {\n        // TODO: Use a min-heap (priority_queue with greater<int>)\n        // Merge two smallest, add sum to result, push sum back\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> frequencies(n);\n    for (int i = 0; i < n; i++) cin >> frequencies[i];\n    Solution sol;\n    cout << sol.huffmanCost(frequencies);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid swap(int* a, int* b) { int t = *a; *a = *b; *b = t; }\n\nvoid heapify(int heap[], int n, int i) {\n    int smallest = i, left = 2*i+1, right = 2*i+2;\n    if (left < n && heap[left] < heap[smallest]) smallest = left;\n    if (right < n && heap[right] < heap[smallest]) smallest = right;\n    if (smallest != i) { swap(&heap[i], &heap[smallest]); heapify(heap, n, smallest); }\n}\n\nint extractMin(int heap[], int* n) {\n    int min = heap[0];\n    heap[0] = heap[--(*n)];\n    heapify(heap, *n, 0);\n    return min;\n}\n\nvoid insertHeap(int heap[], int* n, int val) {\n    heap[(*n)++] = val;\n    int i = *n - 1;\n    while (i > 0 && heap[(i-1)/2] > heap[i]) {\n        swap(&heap[(i-1)/2], &heap[i]);\n        i = (i-1)/2;\n    }\n}\n\nlong long huffmanCost(int frequencies[], int n) {\n    // TODO: Build min-heap, merge two smallest, track total cost\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int frequencies[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &frequencies[i]);\n    printf(\"%lld\", huffmanCost(frequencies, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a min-heap. The total cost equals the sum of all internal node frequencies in the Huffman tree.",
+                "Each time you merge two nodes with frequencies a and b, you add (a+b) to the total cost. Repeat until one node remains."
+            ]
+        }
+    ]
+}
