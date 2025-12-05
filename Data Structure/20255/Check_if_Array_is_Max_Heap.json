@@ -1,0 +1,101 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Check if an Array is a Max Heap",
+      "description": "Problem Statement\n\nGiven an array, check if it represents a valid max heap.\n\nMax Heap Property:\n- Parent node >= its children\n- For index i: left child at 2*i+1, right child at 2*i+2\n\nInput Format\nFirst line: N (size of array)\nSecond line: N space-separated integers\n\nOutput Format\nPrint \"YES\" if array is max heap, else \"NO\".\n\nExample\nInput:\n5\n40 25 30 10 20\n\nOutput:\nYES",
+      "examples": "Sample Input 1\n5\n40 25 30 10 20\n\nSample Output 1\nYES\n\nSample Input 2\n3\n10 20 30\n\nSample Output 2\nNO",
+      "constraints": "1 ≤ N ≤ 1000\n-10^6 ≤ value ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2025,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n40 25 30 10 20",
+          "expectedOutput": "YES",
+          "problemTitle": "Check if an Array is a Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n10 20 30",
+          "expectedOutput": "NO",
+          "problemTitle": "Check if an Array is a Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n42",
+          "expectedOutput": "YES",
+          "problemTitle": "Check if an Array is a Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n15 8 5 2",
+          "expectedOutput": "YES",
+          "problemTitle": "Check if an Array is a Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n15 5 8 2",
+          "expectedOutput": "NO",
+          "problemTitle": "Check if an Array is a Max Heap"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Solution:\n    def isMaxHeap(self, arr):\n        # TODO: Check if array is a max heap\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    result = sol.isMaxHeap(arr)\n    if result:\n        print(\"YES\")\n    else:\n        print(\"NO\")\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Check if an Array is a Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution{\n    boolean isMaxHeap(int[] arr){\n        // TODO: Check if array is a max heap\n        return false;\n    }\n    \n    public static void main(String[] args){\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i = 0; i < n; i++) arr[i] = sc.nextInt();\n        Solution sol = new Solution();\n        boolean result = sol.isMaxHeap(arr);\n        if(result) System.out.println(\"YES\");\n        else System.out.println(\"NO\");\n    }\n}",
+          "problemTitle": "Check if an Array is a Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Solution{\n  isMaxHeap(arr){\n    // TODO: Check if array is a max heap\n    return false;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  const result = sol.isMaxHeap(arr);\n  if(result) console.log(\"YES\");\n  else console.log(\"NO\");\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Check if an Array is a Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution{\npublic:\n    bool isMaxHeap(vector<int>& arr){\n        // TODO: Check if array is a max heap\n        return false;\n    }\n};\n\nint main(){\n    int n; cin >> n;\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    bool result = sol.isMaxHeap(arr);\n    if(result) cout << \"YES\";\n    else cout << \"NO\";\n    return 0;\n}",
+          "problemTitle": "Check if an Array is a Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nbool isMaxHeap(int arr[], int n){\n    // TODO: Check if array is a max heap\n    return false;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int arr[n];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    bool result = isMaxHeap(arr, n);\n    if(result) printf(\"YES\");\n    else printf(\"NO\");\n    return 0;\n}",
+          "problemTitle": "Check if an Array is a Max Heap"
+        }
+      ],
+      "hintsList": [
+        "For each node at index i, check if parent >= left child and parent >= right child.",
+        "Left child at 2*i+1, right child at 2*i+2. Check bounds before comparing."
+      ]
+    }
+  ]
+}
+
+
+
+

@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Find Height of AVL Tree",
+      "description": "Problem Statement\n\nYou are given N values. Insert them one by one into an AVL Tree (self-balancing BST) and print the final height of the AVL Tree.\n\nAVL Tree rules:\n- It is a Binary Search Tree.\n- Balance Factor = height(left) − height(right)\n- After every insertion, AVL Tree must remain balanced (BF must be −1, 0, or +1).\n- If imbalance occurs, perform the required rotation:\n  * LL Rotation\n  * RR Rotation\n  * LR Rotation\n  * RL Rotation\n\nYou must insert all values in the given order and compute the final height of the tree.\n\nHeight Definition:\nHeight of a single node = 1\nEmpty tree height = 0\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint:\nheight: H\n(where H is the final height of the AVL Tree)\n\nExample\nInput:\n3\n10 20 30\n\nOutput:\nheight: 2\n\nExplanation:\nInsert 10 → height = 1\nInsert 20 → height = 2\nInsert 30 → causes RR imbalance → rotate → final height = 2",
+      "examples": "Sample Input 1\n3\n10 20 30\n\nSample Output 1\nheight: 2\n\nSample Input 2\n5\n30 20 40 10 25\n\nSample Output 2\nheight: 3",
+      "constraints": "1 ≤ N ≤ 1000\n1 ≤ values ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n10 20 30",
+          "expectedOutput": "height: 2",
+          "problemTitle": "Find Height of AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n50",
+          "expectedOutput": "height: 1",
+          "problemTitle": "Find Height of AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n30 20 40 10 25",
+          "expectedOutput": "height: 3",
+          "problemTitle": "Find Height of AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n8 5 15 2",
+          "expectedOutput": "height: 3",
+          "problemTitle": "Find Height of AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n50 40 60 30 45 47",
+          "expectedOutput": "height: 3",
+          "problemTitle": "Find Height of AVL Tree"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: Insert key into AVL Tree with rotations\n        pass\n\n    def solveAVL(self, arr):\n        # TODO: Insert all keys and return final height\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(f\"height: {sol.solveAVL(arr)}\")\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Find Height of AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    AVLNode insertNode(AVLNode root, int key){\n        // TODO AVL insert with rotations\n        return null;\n    }\n    int solveAVL(int[] arr){\n        // TODO final height\n        return 0;\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        System.out.println(\"height: \"+sol.solveAVL(arr));\n    }\n}",
+          "problemTitle": "Find Height of AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  solveAVL(arr){\n    // TODO\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  console.log(`height: ${sol.solveAVL(arr)}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Find Height of AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root, int key){\n        // TODO\n        return NULL;\n    }\n    int solveAVL(vector<int>& arr){\n        // TODO\n        return 0;\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    cout<<\"height: \"<<sol.solveAVL(arr)<<endl;\n    return 0;\n}",
+          "problemTitle": "Find Height of AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nAVLNode* insertNode(AVLNode* root, int key){\n    // TODO\n    return NULL;\n}\n\nint solveAVL(int arr[], int n){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    printf(\"height: %d\\n\", solveAVL(arr,n));\n    return 0;\n}",
+          "problemTitle": "Find Height of AVL Tree"
+        }
+      ],
+      "hintsList": [
+        "Use AVL rotations when BF becomes −2 or +2.",
+        "Height = max(height(left), height(right)) + 1."
+      ]
+    }
+  ]
+}

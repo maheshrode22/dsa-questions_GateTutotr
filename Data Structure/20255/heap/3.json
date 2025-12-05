@@ -1,0 +1,60 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find the Maximum Element in a Max Heap",
+            "description": "Problem Statement\n\nYou are given an array representation of a Max Heap. Your task is to find the maximum element in the heap.\nIn a Max Heap, the maximum element is always present at the root index (0).\nIf the heap is empty (N = 0), print \"Heap is Empty\".\n",
+            "examples": "Sample Input\n5\n50 30 20 15 10\n\nSample Output\n50\n\nExplanation:\nThe root of the Max Heap (index 0) contains the largest value.",
+            "constraints": "0 ≤ N ≤ 100\nValues are integers",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2025,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5\n50 30 20 15 10",
+                    "expectedOutput": "50"
+                },
+                {
+                    "input": "6\n80 40 50 10 5 30",
+                    "expectedOutput": "80"
+                },
+                {
+                    "input": "1\n100",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "Heap is Empty"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findMax(self, heap):\n        # TODO: Return maximum element from max heap\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    N = int(data[0])\n    if N == 0:\n        print(\"Heap is Empty\")\n    else:\n        heap = list(map(int, data[1:]))\n        sol = Solution()\n        result = sol.findMax(heap)\n        print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    Integer findMax(int[] heap, int N){\n        // TODO: Return maximum element\n        return null;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int N = Integer.parseInt(br.readLine().trim());\n        if(N == 0){\n            System.out.println(\"Heap is Empty\");\n            return;\n        }\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] heap = new int[N];\n        for(int i=0;i<N;i++) heap[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        Integer result = sol.findMax(heap, N);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  findMax(heap){\n    // TODO: Return maximum element\n    return null;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const N = parseInt(lines[0]);\n  if(N === 0){\n    console.log(\"Heap is Empty\");\n    return;\n  }\n  const heap = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  const result = sol.findMax(heap);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int findMax(vector<int>& heap, int N){\n        // TODO: Return maximum element\n        return 0;\n    }\n};\nint main(){\n    int N; cin >> N;\n    if(N == 0){\n        cout << \"Heap is Empty\";\n        return 0;\n    }\n    vector<int> heap(N);\n    for(int i=0;i<N;i++) cin >> heap[i];\n    Solution sol;\n    cout << sol.findMax(heap, N);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint findMax(int heap[], int N){\n    // TODO: return maximum element\n    return 0;\n}\nint main(){\n    int N; scanf(\"%d\", &N);\n    if(N == 0){\n        printf(\"Heap is Empty\");\n        return 0;\n    }\n    int heap[N];\n    for(int i=0;i<N;i++) scanf(\"%d\", &heap[i]);\n    int result = findMax(heap, N);\n    printf(\"%d\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "In a Max Heap, the root node (index 0) contains the maximum value.",
+                "Just return heap[0] if heap size is greater than zero."
+            ]
+        }
+    ]
+}

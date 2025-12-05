@@ -1,0 +1,56 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Create a Max Heap and Print After Each Insertion",
+      "description": "Problem Statement\n\nYou are given N integers. Create a Max Heap and print the heap after each insertion.\nTo maintain the max heap property, use upward heapify (percolate up) whenever a new element is inserted.\nAfter inserting each element, print the current heap array.\n",
+      "examples": "Sample Input\n5\n10 20 5 6 1\n\nSample Output\n10\n20 10\n20 10 5\n20 10 5 6\n20 10 5 6 1\n",
+      "constraints": "1 ≤ N ≤ 100\nValues are positive integers",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2025,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "5\n10 20 5 6 1",
+          "expectedOutput": "10\n20 10\n20 10 5\n20 10 5 6\n20 10 5 6 1"
+        },
+        {
+          "input": "4\n3 9 2 8",
+          "expectedOutput": "3\n9 3\n9 3 2\n9 8 2 3"
+        },
+        {
+          "input": "6\n4 7 9 1 3 6",
+          "expectedOutput": "4\n7 4\n9 4 7\n9 4 7 1\n9 4 7 1 3\n9 4 7 1 3 6"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def insertHeap(self, heap, value):\n        # TODO: Insert value and apply upward heapify\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    N = int(data[0])\n    values = list(map(int, data[1:]))\n    heap = []\n    sol = Solution()\n    for v in values:\n        sol.insertHeap(heap, v)\n        print(*heap)"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    void insertHeap(ArrayList<Integer> heap, int value){\n        // TODO: Insert and apply upward heapify\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int N = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        ArrayList<Integer> heap = new ArrayList<>();\n        Solution sol = new Solution();\n        for(int i=0;i<N;i++){\n            sol.insertHeap(heap, Integer.parseInt(parts[i]));\n            for(int j=0;j<heap.size();j++){\n                System.out.print(heap.get(j));\n                if(j<heap.size()-1) System.out.print(\" \");\n            }\n            System.out.println();\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution{\n  insertHeap(heap, value){\n    // TODO: Insert and apply upward heapify\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const N = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const heap = [];\n  const sol = new Solution();\n  for(let v of arr){\n    sol.insertHeap(heap, v);\n    console.log(heap.join(\" \"));\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    void insertHeap(vector<int>& heap, int value){\n        // TODO: Insert and apply upward heapify\n    }\n};\nint main(){\n    int N; cin >> N;\n    vector<int> heap;\n    Solution sol;\n    for(int i=0;i<N;i++){\n        int v; cin >> v;\n        sol.insertHeap(heap, v);\n        for(int j=0;j<heap.size();j++){\n            cout << heap[j];\n            if(j<heap.size()-1) cout << \" \";\n        }\n        cout << \"\\n\";\n    }\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\nint heap[200];\nint size = 0;\n\nvoid insertHeap(int value){\n    // TODO: Insert and apply upward heapify\n}\n\nint main(){\n    int N; scanf(\"%d\", &N);\n    for(int i=0;i<N;i++){\n        int v; scanf(\"%d\", &v);\n        insertHeap(v);\n        for(int j=0;j<size;j++){\n            printf(\"%d\", heap[j]);\n            if(j<size-1) printf(\" \");\n        }\n        printf(\"\\n\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Insert at the end, then compare with parent and swap while parent is smaller.",
+        "Parent index = (i - 1) / 2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Convert Sorted Array to Balanced AVL Tree",
+      "description": "Problem Statement\n\nYou are given a sorted array of N integers. Your task is to convert this sorted array into a Balanced AVL Tree.\n\nTo build a balanced AVL tree from a sorted array:\n1. Choose the middle element as the root.\n2. Recursively build the left subtree from the left half.\n3. Recursively build the right subtree from the right half.\n\nThis automatically produces a height-balanced AVL Tree without needing rotations.\n\nAfter constructing the AVL Tree, print its Preorder Traversal.\n\nPreorder Traversal:\nRoot → Left → Right\n\nInput Format\nThe first line contains integer N.\nThe second line contains N sorted integers.\n\nOutput Format\nPrint preorder traversal as space-separated values.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n5\n1 2 3 4 5\n\nOutput:\n3 1 2 4 5\n\nExplanation:\nMiddle = 3 → root\nLeft subtree from [1 2] → root = 1\nRight subtree from [4 5] → root = 4",
+      "examples": "Sample Input 1\n5\n1 2 3 4 5\n\nSample Output 1\n3 1 2 4 5\n\nSample Input 2\n3\n10 20 30\n\nSample Output 2\n20 10 30",
+      "constraints": "1 ≤ N ≤ 1000\nArray is strictly sorted in increasing order\n1 ≤ array[i] ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n1 2 3 4 5",
+          "expectedOutput": "3 1 2 4 5",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n10 20 30",
+          "expectedOutput": "20 10 30",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n50",
+          "expectedOutput": "50",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "7\n2 4 6 8 10 12 14",
+          "expectedOutput": "8 4 2 6 12 10 14",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n5 10 15 20",
+          "expectedOutput": "10 5 15 20",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildAVL(self, arr, l, r):\n        # TODO: Use middle element as root and build recursively\n        pass\n\n    def preorder(self, root, ans):\n        # TODO: Preorder traversal\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildAVL(arr, 0, n-1)\n    ans = []\n    sol.preorder(root, ans)\n\n    if not ans:\n        print(\"Tree is Empty\")\n    else:\n        print(\" \".join(map(str, ans)))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass Node{ int data; Node left,right; Node(int d){ data=d; }}\nclass Solution{\n    Node buildAVL(int[] arr,int l,int r){\n        // TODO\n        return null;\n    }\n    void preorder(Node root,ArrayList<Integer> list){\n        // TODO\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        Node root=sol.buildAVL(arr,0,n-1);\n        ArrayList<Integer> ans=new ArrayList<>();\n        sol.preorder(root,ans);\n        if(ans.size()==0) System.out.println(\"Tree is Empty\");\n        else{\n            for(int i=0;i<ans.size();i++){\n                System.out.print(ans.get(i));\n                if(i<ans.size()-1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Node{ constructor(data){ this.data=data; this.left=null; this.right=null; }}\nclass Solution{\n  buildAVL(arr,l,r){\n    // TODO\n    return null;\n  }\n  preorder(root,ans){\n    // TODO\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildAVL(arr,0,n-1);\n  let ans=[];\n  sol.preorder(root,ans);\n  if(ans.length===0) console.log(\"Tree is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; Node *left,*right; Node(int d){ data=d; left=right=NULL; }};\nclass Solution{\npublic:\n    Node* buildAVL(vector<int>& arr,int l,int r){\n        // TODO\n        return NULL;\n    }\n    void preorder(Node* root, vector<int>& out){\n        // TODO\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildAVL(arr,0,n-1);\n    vector<int> ans;\n    sol.preorder(root,ans);\n    if(ans.empty()) cout<<\"Tree is Empty\";\n    else{\n        for(int i=0;i<ans.size();i++){\n            cout<<ans[i];\n            if(i<ans.size()-1) cout<<\" \";\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; struct Node *left,*right; }Node;\n\nint ans[1000], idx=0;\n\nNode* buildAVL(int arr[],int l,int r){\n    // TODO\n    return NULL;\n}\n\nvoid preorder(Node* root){\n    if(!root) return;\n    ans[idx++]=root->data;\n    preorder(root->left);\n    preorder(root->right);\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    Node* root=buildAVL(arr,0,n-1);\n    idx=0;\n    if(!root) printf(\"Tree is Empty\");\n    else{\n        preorder(root);\n        for(int i=0;i<idx;i++){\n            printf(\"%d\",ans[i]);\n            if(i<idx-1) printf(\" \");\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+        }
+      ],
+      "hintsList": [
+        "Use (l + r) // 2 as the root index.",
+        "Recursively build left and right subtrees to keep tree balanced."
+      ]
+    }
+  ]
+}

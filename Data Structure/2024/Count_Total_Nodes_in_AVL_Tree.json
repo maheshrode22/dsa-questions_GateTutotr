@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Total Nodes in AVL Tree",
+      "description": "Problem Statement\n\nYou are given N integers. Insert them into an AVL Tree one by one.\nAfter inserting all values, print the total number of nodes in the AVL Tree.\n\nAVL Tree Rules:\n- It is a self-balancing Binary Search Tree.\n- After each insertion, the tree may perform rotations (LL, RR, LR, RL) to remain balanced.\n- Duplicates will NOT appear in input, so you do not need to handle them.\n\nThis problem is simple because total nodes = N (since no deletion).\nYour task mainly focuses on AVL insertion understanding.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint:\nnodes: X\n(where X is the total number of nodes inserted).\n\nExample\nInput:\n4\n10 20 30 40\n\nOutput:\nnodes: 4\n\nExplanation:\nAll nodes are inserted, AVL balancing occurs internally but node count = 4.",
+      "examples": "Sample Input 1\n4\n10 20 30 40\n\nSample Output 1\nnodes: 4\n\nSample Input 2\n1\n15\n\nSample Output 2\nnodes: 1",
+      "constraints": "1 ≤ N ≤ 1000\n1 ≤ each value ≤ 10^6\nAll values are distinct.",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n10 20 30 40",
+          "expectedOutput": "nodes: 4",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n15",
+          "expectedOutput": "nodes: 1",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n7 3 9 1 6",
+          "expectedOutput": "nodes: 5",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n50 40 70 30 45 47",
+          "expectedOutput": "nodes: 6",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n100 200 150",
+          "expectedOutput": "nodes: 3",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: AVL insert with balancing\n        pass\n\n    def solveAVL(self, arr):\n        # TODO: Insert all keys and return count of nodes\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(f\"nodes: {sol.solveAVL(arr)}\")\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    AVLNode insertNode(AVLNode root,int key){\n        // TODO\n        return null;\n    }\n    int solveAVL(int[] arr){\n        // TODO\n        return 0;\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        System.out.println(\"nodes: \"+sol.solveAVL(arr));\n    }\n}",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  solveAVL(arr){\n    // TODO\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  console.log(`nodes: ${sol.solveAVL(arr)}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root,int key){\n        // TODO\n        return NULL;\n    }\n    int solveAVL(vector<int>& arr){\n        // TODO\n        return 0;\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    cout<<\"nodes: \"<<sol.solveAVL(arr)<<endl;\n    return 0;\n}",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nAVLNode* insertNode(AVLNode* root,int key){\n    // TODO\n    return NULL;\n}\n\nint solveAVL(int arr[],int n){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\", &arr[i]);\n    printf(\"nodes: %d\\n\", solveAVL(arr,n));\n    return 0;\n}",
+          "problemTitle": "Count Total Nodes in AVL Tree"
+        }
+      ],
+      "hintsList": [
+        "AVL balancing does not change total number of nodes.",
+        "Since there is no delete operation, node count = N."
+      ]
+    }
+  ]
+}

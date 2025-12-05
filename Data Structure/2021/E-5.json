@@ -1,0 +1,469 @@
+{
+    "problems": [
+      {
+        "id": null,
+        "title": "Count Available Spaces in Circular Queue",
+        "description": "Problem Statement\n\nYou are working with a Circular Queue that has a fixed capacity. Your task is to implement operations that help track space usage in the queue.\n\nA Circular Queue is useful in scenarios where you need to know:\n- How much space is still available?\n- How much space is currently being used?\n\nYou need to implement these operations:\n\n1. Insert (Enqueue): Add an element to the queue\n2. Remove (Dequeue): Remove the front element from the queue\n3. Available Space: Print how many empty slots are available\n4. Used Space: Print how many slots are currently occupied\n\nThis is useful in real applications like:\n- Buffer management\n- Task scheduling\n- Memory management\n\nInput Format\n\nThe first line contains two integers: Capacity (maximum size) and N (number of operations).\nNext N lines contain operations:\n- 1 X : Insert element X into the queue\n- 2 : Remove front element from the queue\n- 3 : Print available space count\n- 4 : Print used space count\n\nOutput Format\n\nFor operation 1 (Insert):\n- If queue is full: Print \"Queue is Full\"\n- Otherwise: Print \"Inserted X\"\n\nFor operation 2 (Remove):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Removed X\"\n\nFor operation 3 (Available Space):\n- Print the number of empty slots\n\nFor operation 4 (Used Space):\n- Print the number of occupied slots\n\nExample\n\nInput:\n5 6\n1 10\n3\n1 20\n4\n3\n2\n\nOutput:\nInserted 10\n4\nInserted 20\n2\n3\nRemoved 10\n\nExplanation:\nCapacity = 5, Queue starts empty\n1 10 → Insert 10, Queue size: 1\n3 → Available space = 5 - 1 = 4\n1 20 → Insert 20, Queue size: 2\n4 → Used space = 2\n3 → Available space = 5 - 2 = 3\n2 → Remove 10, Queue size: 1",
+        "examples": "Sample Input 1\n5 6\n1 10\n3\n1 20\n4\n3\n2\n\nSample Output 1\nInserted 10\n4\nInserted 20\n2\n3\nRemoved 10\n\nSample Input 2\n3 3\n3\n4\n1 5\n\nSample Output 2\n3\n0\nInserted 5",
+        "constraints": "1 ≤ Capacity ≤ 1000\n1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6",
+        "hints": 2,
+        "timeLimit": 2,
+        "memoryLimit": 256,
+        "subdomainId": 2022,
+        "difficulty": 2,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "5 6\n1 10\n3\n1 20\n4\n3\n2",
+            "expectedOutput": "Inserted 10\n4\nInserted 20\n2\n3\nRemoved 10",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "3 3\n3\n4\n1 5",
+            "expectedOutput": "3\n0\nInserted 5",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "2 5\n1 100\n1 200\n3\n1 300\n4",
+            "expectedOutput": "Inserted 100\nInserted 200\n0\nQueue is Full\n2",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "4 7\n1 7\n1 14\n2\n3\n1 21\n4\n3",
+            "expectedOutput": "Inserted 7\nInserted 14\nRemoved 7\n3\nInserted 21\n2\n2",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "3 6\n1 50\n1 60\n1 70\n2\n2\n4",
+            "expectedOutput": "Inserted 50\nInserted 60\nInserted 70\nRemoved 50\nRemoved 60\n1",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          }
+        ],
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "def enqueue(queue, capacity, element, size):\n    # TODO: Write your code here\n    # If size >= capacity, print \"Queue is Full\" and return size\n    # Otherwise:\n    # - Add element to queue\n    # - Increment size\n    # - Print \"Inserted {element}\"\n    # Return updated size\n    pass\n\ndef dequeue(queue, size):\n    # TODO: Write your code here\n    # If size == 0, print \"Queue is Empty\" and return size\n    # Otherwise:\n    # - Remove first element from queue\n    # - Decrement size\n    # - Print \"Removed {element}\"\n    # Return updated size\n    pass\n\ndef available_space(capacity, size):\n    # TODO: Write your code here\n    # Calculate available space = capacity - size\n    # Print the available space\n    pass\n\ndef used_space(size):\n    # TODO: Write your code here\n    # Print the current size (used space)\n    pass\n\ndef solve():\n    capacity, n = map(int, input().split())\n    queue = []\n    size = 0\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            size = enqueue(queue, capacity, element, size)\n        elif operation[0] == \"2\":\n            size = dequeue(queue, size)\n        elif operation[0] == \"3\":\n            available_space(capacity, size)\n        elif operation[0] == \"4\":\n            used_space(size)\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static int enqueue(ArrayList<Integer> queue, int capacity, int element, int size) {\n        // TODO: Write your code here\n        // If size >= capacity, print \"Queue is Full\" and return size\n        // Otherwise:\n        // - Add element to queue\n        // - Increment size\n        // - Print \"Inserted \" + element\n        // Return updated size\n        return size;\n    }\n    \n    public static int dequeue(ArrayList<Integer> queue, int size) {\n        // TODO: Write your code here\n        // If size == 0, print \"Queue is Empty\" and return size\n        // Otherwise:\n        // - Remove first element from queue\n        // - Decrement size\n        // - Print \"Removed \" + element\n        // Return updated size\n        return size;\n    }\n    \n    public static void availableSpace(int capacity, int size) {\n        // TODO: Write your code here\n        // Calculate available space = capacity - size\n        // Print the available space\n    }\n    \n    public static void usedSpace(int size) {\n        // TODO: Write your code here\n        // Print the current size (used space)\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().split(\" \");\n        int capacity = Integer.parseInt(first[0]);\n        int n = Integer.parseInt(first[1]);\n        ArrayList<Integer> queue = new ArrayList<>();\n        int size = 0;\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                size = Result.enqueue(queue, capacity, element, size);\n            } else if (operation[0].equals(\"2\")) {\n                size = Result.dequeue(queue, size);\n            } else if (operation[0].equals(\"3\")) {\n                Result.availableSpace(capacity, size);\n            } else if (operation[0].equals(\"4\")) {\n                Result.usedSpace(size);\n            }\n        }\n    }\n}",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "function enqueue(queue, capacity, element, size) {\n    // TODO: Write your code here\n    // If size >= capacity, print \"Queue is Full\" and return size\n    // Otherwise:\n    // - Add element to queue\n    // - Increment size\n    // - Print \"Inserted \" + element\n    // Return updated size\n    return size;\n}\n\nfunction dequeue(queue, size) {\n    // TODO: Write your code here\n    // If size == 0, print \"Queue is Empty\" and return size\n    // Otherwise:\n    // - Remove first element from queue\n    // - Decrement size\n    // - Print \"Removed \" + element\n    // Return updated size\n    return size;\n}\n\nfunction availableSpace(capacity, size) {\n    // TODO: Write your code here\n    // Calculate available space = capacity - size\n    // Print the available space\n}\n\nfunction usedSpace(size) {\n    // TODO: Write your code here\n    // Print the current size (used space)\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [capacity, n] = lines[0].split(\" \").map(Number);\n    const queue = [];\n    let size = 0;\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            size = enqueue(queue, capacity, element, size);\n        } else if (operation[0] === \"2\") {\n            size = dequeue(queue, size);\n        } else if (operation[0] === \"3\") {\n            availableSpace(capacity, size);\n        } else if (operation[0] === \"4\") {\n            usedSpace(size);\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nint enqueue(vector<int>& queue, int capacity, int element, int size) {\n    // TODO: Write your code here\n    // If size >= capacity, print \"Queue is Full\" and return size\n    // Otherwise:\n    // - Add element to queue\n    // - Increment size\n    // - Print \"Inserted \" << element\n    // Return updated size\n    return size;\n}\n\nint dequeue(vector<int>& queue, int size) {\n    // TODO: Write your code here\n    // If size == 0, print \"Queue is Empty\" and return size\n    // Otherwise:\n    // - Remove first element from queue\n    // - Decrement size\n    // - Print \"Removed \" << element\n    // Return updated size\n    return size;\n}\n\nvoid availableSpace(int capacity, int size) {\n    // TODO: Write your code here\n    // Calculate available space = capacity - size\n    // Print the available space\n}\n\nvoid usedSpace(int size) {\n    // TODO: Write your code here\n    // Print the current size (used space)\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int capacity, n;\n    cin >> capacity >> n;\n    vector<int> queue;\n    int size = 0;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            size = enqueue(queue, capacity, element, size);\n        } else if(operation == 2) {\n            size = dequeue(queue, size);\n        } else if(operation == 3) {\n            availableSpace(capacity, size);\n        } else if(operation == 4) {\n            usedSpace(size);\n        }\n    }\n\n    return 0;\n}",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n\nint enqueue(int queue[], int capacity, int element, int size) {\n    // TODO: Write your code here\n    // If size >= capacity, print \"Queue is Full\\n\" and return size\n    // Otherwise:\n    // - Add element to queue[size]\n    // - Increment size\n    // - Print \"Inserted %d\\n\", element\n    // Return updated size\n    return size;\n}\n\nint dequeue(int queue[], int size) {\n    // TODO: Write your code here\n    // If size == 0, print \"Queue is Empty\\n\" and return size\n    // Otherwise:\n    // - Get element from queue[0]\n    // - Shift all elements left\n    // - Decrement size\n    // - Print \"Removed %d\\n\", element\n    // Return updated size\n    return size;\n}\n\nvoid availableSpace(int capacity, int size) {\n    // TODO: Write your code here\n    // Calculate available space = capacity - size\n    // Print the available space\n}\n\nvoid usedSpace(int size) {\n    // TODO: Write your code here\n    // Print the current size (used space)\n}\n\nint main(){\n    int capacity, n;\n    scanf(\"%d %d\", &capacity, &n);\n    \n    int queue[1000];\n    int size = 0;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            size = enqueue(queue, capacity, element, size);\n        } else if(operation == 2) {\n            size = dequeue(queue, size);\n        } else if(operation == 3) {\n            availableSpace(capacity, size);\n        } else if(operation == 4) {\n            usedSpace(size);\n        }\n    }\n    \n    return 0;\n}",
+            "problemTitle": "Count Available Spaces in Circular Queue"
+          }
+        ],
+        "hintsList": [
+          "Available space is simply: capacity - current_size. This tells you how many more elements can fit.",
+          "Used space is the current size of the queue. Track size variable throughout enqueue and dequeue operations."
+        ]
+      },
+      
+      {
+        "id": null,
+        "title": "Implement Priority Queue using Linked List",
+        "description": "Problem Statement\n\nImplement a Priority Queue using a Linked List where elements are ordered by their priority. Higher priority elements are served before lower priority elements.\n\nIn a Priority Queue:\n- Each element has a priority value\n- Higher priority elements are dequeued first\n- Elements with the same priority follow FIFO order\n\nYou need to implement these operations:\n\n1. Insert: Add an element with a given priority\n2. Remove: Remove and return the highest priority element\n3. Peek: View the highest priority element without removing it\n4. Display: Show all elements in priority order\n\nThis is useful in:\n- Operating system task scheduling\n- Emergency room patient management\n- Network packet routing\n- Job scheduling systems\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations:\n- 1 data priority : Insert element 'data' with 'priority'\n- 2 : Remove highest priority element\n- 3 : Peek at highest priority element\n- 4 : Display all elements in priority order\n\nOutput Format\n\nFor operation 1 (Insert):\n- Print \"Inserted {data} with priority {priority}\"\n\nFor operation 2 (Remove):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Removed {data} with priority {priority}\"\n\nFor operation 3 (Peek):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Front element: {data} with priority {priority}\"\n\nFor operation 4 (Display):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print elements as \"data1(priority1) data2(priority2) ...\"\n\nExample\n\nInput:\n6\n1 10 2\n1 20 5\n1 15 3\n4\n2\n3\n\nOutput:\nInserted 10 with priority 2\nInserted 20 with priority 5\nInserted 15 with priority 3\n20(5) 15(3) 10(2)\nRemoved 20 with priority 5\nFront element: 15 with priority 3\n\nExplanation:\n- Insert 10 with priority 2\n- Insert 20 with priority 5 (highest)\n- Insert 15 with priority 3\n- Display: 20(5) comes first, then 15(3), then 10(2)\n- Remove: 20 with priority 5 is removed\n- Peek: 15 with priority 3 is now at front",
+        "examples": "Sample Input 1\n6\n1 10 2\n1 20 5\n1 15 3\n4\n2\n3\n\nSample Output 1\nInserted 10 with priority 2\nInserted 20 with priority 5\nInserted 15 with priority 3\n20(5) 15(3) 10(2)\nRemoved 20 with priority 5\nFront element: 15 with priority 3\n\nSample Input 2\n4\n2\n1 50 1\n3\n4\n\nSample Output 2\nQueue is Empty\nInserted 50 with priority 1\nFront element: 50 with priority 1\n50(1)",
+        "constraints": "1 ≤ N ≤ 1000\n1 ≤ data ≤ 10^6\n1 ≤ priority ≤ 100",
+        "hints": 2,
+        "timeLimit": 2,
+        "memoryLimit": 256,
+        "subdomainId": 2022,
+        "difficulty": 2,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "6\n1 10 2\n1 20 5\n1 15 3\n4\n2\n3",
+            "expectedOutput": "Inserted 10 with priority 2\nInserted 20 with priority 5\nInserted 15 with priority 3\n20(5) 15(3) 10(2)\nRemoved 20 with priority 5\nFront element: 15 with priority 3",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "4\n2\n1 50 1\n3\n4",
+            "expectedOutput": "Queue is Empty\nInserted 50 with priority 1\nFront element: 50 with priority 1\n50(1)",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "8\n1 100 10\n1 200 10\n1 300 15\n4\n2\n2\n2\n2",
+            "expectedOutput": "Inserted 100 with priority 10\nInserted 200 with priority 10\nInserted 300 with priority 15\n300(15) 100(10) 200(10)\nRemoved 300 with priority 15\nRemoved 100 with priority 10\nRemoved 200 with priority 10\nQueue is Empty",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "7\n1 5 1\n1 10 3\n1 15 2\n1 20 3\n4\n2\n4",
+            "expectedOutput": "Inserted 5 with priority 1\nInserted 10 with priority 3\nInserted 15 with priority 2\nInserted 20 with priority 3\n10(3) 20(3) 15(2) 5(1)\nRemoved 10 with priority 3\n20(3) 15(2) 5(1)",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "5\n1 25 5\n1 30 8\n3\n2\n3",
+            "expectedOutput": "Inserted 25 with priority 5\nInserted 30 with priority 8\nFront element: 30 with priority 8\nRemoved 30 with priority 8\nFront element: 25 with priority 5",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          }
+        ],
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "class Node:\n    def __init__(self, data, priority):\n        self.data = data\n        self.priority = priority\n        self.next = None\n\nclass PriorityQueue:\n    def __init__(self):\n        self.head = None\n    \n    def insert(self, data, priority):\n        # TODO: Write your code here\n        pass\n    \n    def remove(self):\n        # TODO: Write your code here\n        pass\n    \n    def peek(self):\n        # TODO: Write your code here\n        pass\n    \n    def display(self):\n        # TODO: Write your code here\n        pass\n\ndef solve():\n    n = int(input())\n    pq = PriorityQueue()\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            data = int(operation[1])\n            priority = int(operation[2])\n            pq.insert(data, priority)\n            print(f\"Inserted {data} with priority {priority}\")\n        elif operation[0] == \"2\":\n            result = pq.remove()\n            if result is None:\n                print(\"Queue is Empty\")\n            else:\n                print(f\"Removed {result[0]} with priority {result[1]}\")\n        elif operation[0] == \"3\":\n            result = pq.peek()\n            if result is None:\n                print(\"Queue is Empty\")\n            else:\n                print(f\"Front element: {result[0]} with priority {result[1]}\")\n        elif operation[0] == \"4\":\n            elements = pq.display()\n            if not elements:\n                print(\"Queue is Empty\")\n            else:\n                print(\" \".join(elements))\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Node {\n    int data;\n    int priority;\n    Node next;\n    \n    Node(int data, int priority) {\n        this.data = data;\n        this.priority = priority;\n        this.next = null;\n    }\n}\n\nclass PriorityQueue {\n    Node head;\n    \n    PriorityQueue() {\n        this.head = null;\n    }\n    \n    void insert(int data, int priority) {\n        // TODO: Write your code here\n    }\n    \n    int[] remove() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    int[] peek() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    String display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        PriorityQueue pq = new PriorityQueue();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int data = Integer.parseInt(operation[1]);\n                int priority = Integer.parseInt(operation[2]);\n                pq.insert(data, priority);\n                System.out.println(\"Inserted \" + data + \" with priority \" + priority);\n            } else if (operation[0].equals(\"2\")) {\n                int[] result = pq.remove();\n                if (result == null) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    System.out.println(\"Removed \" + result[0] + \" with priority \" + result[1]);\n                }\n            } else if (operation[0].equals(\"3\")) {\n                int[] result = pq.peek();\n                if (result == null) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    System.out.println(\"Front element: \" + result[0] + \" with priority \" + result[1]);\n                }\n            } else if (operation[0].equals(\"4\")) {\n                String elements = pq.display();\n                if (elements == null) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    System.out.println(elements);\n                }\n            }\n        }\n    }\n}",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "class Node {\n    constructor(data, priority) {\n        this.data = data;\n        this.priority = priority;\n        this.next = null;\n    }\n}\n\nclass PriorityQueue {\n    constructor() {\n        this.head = null;\n    }\n    \n    insert(data, priority) {\n        // TODO: Write your code here\n    }\n    \n    remove() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    peek() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const pq = new PriorityQueue();\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const data = parseInt(operation[1]);\n            const priority = parseInt(operation[2]);\n            pq.insert(data, priority);\n            console.log(`Inserted ${data} with priority ${priority}`);\n        } else if (operation[0] === \"2\") {\n            const result = pq.remove();\n            if (result === null) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(`Removed ${result[0]} with priority ${result[1]}`);\n            }\n        } else if (operation[0] === \"3\") {\n            const result = pq.peek();\n            if (result === null) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(`Front element: ${result[0]} with priority ${result[1]}`);\n            }\n        } else if (operation[0] === \"4\") {\n            const elements = pq.display();\n            if (elements === null) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(elements);\n            }\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct Node {\n    int data;\n    int priority;\n    Node* next;\n    \n    Node(int d, int p) : data(d), priority(p), next(nullptr) {}\n};\n\nclass PriorityQueue {\npublic:\n    Node* head;\n    \n    PriorityQueue() : head(nullptr) {}\n    \n    void insert(int data, int priority) {\n        // TODO: Write your code here\n    }\n    \n    pair<int, int> remove() {\n        // TODO: Write your code here\n        return {-1, -1};\n    }\n    \n    pair<int, int> peek() {\n        // TODO: Write your code here\n        return {-1, -1};\n    }\n    \n    string display() {\n        // TODO: Write your code here\n        return \"\";\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    PriorityQueue pq;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int data, priority;\n            cin >> data >> priority;\n            pq.insert(data, priority);\n            cout << \"Inserted \" << data << \" with priority \" << priority << endl;\n        } else if(operation == 2) {\n            auto result = pq.remove();\n            if(result.first == -1) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                cout << \"Removed \" << result.first << \" with priority \" << result.second << endl;\n            }\n        } else if(operation == 3) {\n            auto result = pq.peek();\n            if(result.first == -1) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                cout << \"Front element: \" << result.first << \" with priority \" << result.second << endl;\n            }\n        } else if(operation == 4) {\n            string elements = pq.display();\n            if(elements.empty()) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                cout << elements << endl;\n            }\n        }\n    }\n\n    return 0;\n}",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\ntypedef struct Node {\n    int data;\n    int priority;\n    struct Node* next;\n} Node;\n\ntypedef struct {\n    Node* head;\n} PriorityQueue;\n\nvoid init(PriorityQueue* pq) {\n    pq->head = NULL;\n}\n\nvoid insert(PriorityQueue* pq, int data, int priority) {\n    // TODO: Write your code here\n}\n\nint* removeElement(PriorityQueue* pq) {\n    // TODO: Write your code here\n    return NULL;\n}\n\nint* peek(PriorityQueue* pq) {\n    // TODO: Write your code here\n    return NULL;\n}\n\nchar* display(PriorityQueue* pq) {\n    // TODO: Write your code here\n    return NULL;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    PriorityQueue pq;\n    init(&pq);\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int data, priority;\n            scanf(\"%d %d\", &data, &priority);\n            insert(&pq, data, priority);\n            printf(\"Inserted %d with priority %d\\n\", data, priority);\n        } else if(operation == 2) {\n            int* result = removeElement(&pq);\n            if(result == NULL) {\n                printf(\"Queue is Empty\\n\");\n            } else {\n                printf(\"Removed %d with priority %d\\n\", result[0], result[1]);\n                free(result);\n            }\n        } else if(operation == 3) {\n            int* result = peek(&pq);\n            if(result == NULL) {\n                printf(\"Queue is Empty\\n\");\n            } else {\n                printf(\"Front element: %d with priority %d\\n\", result[0], result[1]);\n            }\n        } else if(operation == 4) {\n            char* elements = display(&pq);\n            if(elements == NULL) {\n                printf(\"Queue is Empty\\n\");\n            } else {\n                printf(\"%s\\n\", elements);\n                free(elements);\n            }\n        }\n    }\n    \n    return 0;\n}",
+            "problemTitle": "Implement Priority Queue using Linked List"
+          }
+        ],
+        "hintsList": [
+          "Insert elements in sorted order based on priority. Higher priority elements should come first in the linked list.",
+          "For removal, simply remove the head node as it has the highest priority. For peek, return the head's data without removing it."
+        ]
+      },
+      {
+        "id": null,
+        "title": "Implement Deque (Insert and Delete at Both Ends)",
+        "description": "Problem Statement\n\nImplement a Deque (Double-Ended Queue) that allows insertion and deletion operations at both front and rear ends.\n\nA Deque is a versatile data structure that combines features of both stack and queue:\n- Insert at Front\n- Insert at Rear\n- Delete from Front\n- Delete from Rear\n- View Front element\n- View Rear element\n\nYou need to implement these operations:\n\n1. Insert Front: Add element at the front\n2. Insert Rear: Add element at the rear\n3. Delete Front: Remove element from the front\n4. Delete Rear: Remove element from the rear\n5. Get Front: View front element without removing\n6. Get Rear: View rear element without removing\n7. Display: Show all elements from front to rear\n\nThis is useful in:\n- Browser history (back and forward)\n- Undo/Redo operations\n- Sliding window problems\n- Task scheduling\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations:\n- 1 X : Insert X at front\n- 2 X : Insert X at rear\n- 3 : Delete from front\n- 4 : Delete from rear\n- 5 : Get front element\n- 6 : Get rear element\n- 7 : Display all elements\n\nOutput Format\n\nFor operation 1: Print \"Inserted {X} at front\"\nFor operation 2: Print \"Inserted {X} at rear\"\nFor operation 3:\n- If deque is empty: Print \"Deque is Empty\"\n- Otherwise: Print \"Deleted {X} from front\"\nFor operation 4:\n- If deque is empty: Print \"Deque is Empty\"\n- Otherwise: Print \"Deleted {X} from rear\"\nFor operation 5:\n- If deque is empty: Print \"Deque is Empty\"\n- Otherwise: Print \"Front element: {X}\"\nFor operation 6:\n- If deque is empty: Print \"Deque is Empty\"\n- Otherwise: Print \"Rear element: {X}\"\nFor operation 7:\n- If deque is empty: Print \"Deque is Empty\"\n- Otherwise: Print elements separated by space\n\nExample\n\nInput:\n8\n1 10\n2 20\n1 5\n7\n3\n4\n7\n5\n\nOutput:\nInserted 10 at front\nInserted 20 at rear\nInserted 5 at front\n5 10 20\nDeleted 5 from front\nDeleted 20 from rear\n10\nFront element: 10\n\nExplanation:\n- Insert 10 at front: [10]\n- Insert 20 at rear: [10, 20]\n- Insert 5 at front: [5, 10, 20]\n- Display: 5 10 20\n- Delete from front (5): [10, 20]\n- Delete from rear (20): [10]\n- Display: 10\n- Get front: 10",
+        "examples": "Sample Input 1\n8\n1 10\n2 20\n1 5\n7\n3\n4\n7\n5\n\nSample Output 1\nInserted 10 at front\nInserted 20 at rear\nInserted 5 at front\n5 10 20\nDeleted 5 from front\nDeleted 20 from rear\n10\nFront element: 10\n\nSample Input 2\n4\n3\n1 100\n5\n6\n\nSample Output 2\nDeque is Empty\nInserted 100 at front\nFront element: 100\nRear element: 100",
+        "constraints": "1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6",
+        "hints": 2,
+        "timeLimit": 2,
+        "memoryLimit": 256,
+        "subdomainId": 2022,
+        "difficulty": 2,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "8\n1 10\n2 20\n1 5\n7\n3\n4\n7\n5",
+            "expectedOutput": "Inserted 10 at front\nInserted 20 at rear\nInserted 5 at front\n5 10 20\nDeleted 5 from front\nDeleted 20 from rear\n10\nFront element: 10",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "4\n3\n1 100\n5\n6",
+            "expectedOutput": "Deque is Empty\nInserted 100 at front\nFront element: 100\nRear element: 100",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "6\n2 50\n2 60\n2 70\n4\n4\n7",
+            "expectedOutput": "Inserted 50 at rear\nInserted 60 at rear\nInserted 70 at rear\nDeleted 70 from rear\nDeleted 60 from rear\n50",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "10\n1 1\n1 2\n1 3\n2 4\n2 5\n7\n3\n3\n4\n7",
+            "expectedOutput": "Inserted 1 at front\nInserted 2 at front\nInserted 3 at front\nInserted 4 at rear\nInserted 5 at rear\n3 2 1 4 5\nDeleted 3 from front\nDeleted 2 from front\nDeleted 5 from rear\n1 4",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "7\n2 25\n1 15\n5\n6\n3\n4\n7",
+            "expectedOutput": "Inserted 25 at rear\nInserted 15 at front\nFront element: 15\nRear element: 25\nDeleted 15 from front\nDeleted 25 from rear\nDeque is Empty",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          }
+        ],
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "class Deque:\n    def __init__(self):\n        self.items = []\n    \n    def insert_front(self, element):\n        # TODO: Write your code here\n        pass\n    \n    def insert_rear(self, element):\n        # TODO: Write your code here\n        pass\n    \n    def delete_front(self):\n        # TODO: Write your code here\n        pass\n    \n    def delete_rear(self):\n        # TODO: Write your code here\n        pass\n    \n    def get_front(self):\n        # TODO: Write your code here\n        pass\n    \n    def get_rear(self):\n        # TODO: Write your code here\n        pass\n    \n    def display(self):\n        # TODO: Write your code here\n        pass\n\ndef solve():\n    n = int(input())\n    dq = Deque()\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            dq.insert_front(element)\n            print(f\"Inserted {element} at front\")\n        elif operation[0] == \"2\":\n            element = int(operation[1])\n            dq.insert_rear(element)\n            print(f\"Inserted {element} at rear\")\n        elif operation[0] == \"3\":\n            result = dq.delete_front()\n            if result is None:\n                print(\"Deque is Empty\")\n            else:\n                print(f\"Deleted {result} from front\")\n        elif operation[0] == \"4\":\n            result = dq.delete_rear()\n            if result is None:\n                print(\"Deque is Empty\")\n            else:\n                print(f\"Deleted {result} from rear\")\n        elif operation[0] == \"5\":\n            result = dq.get_front()\n            if result is None:\n                print(\"Deque is Empty\")\n            else:\n                print(f\"Front element: {result}\")\n        elif operation[0] == \"6\":\n            result = dq.get_rear()\n            if result is None:\n                print(\"Deque is Empty\")\n            else:\n                print(f\"Rear element: {result}\")\n        elif operation[0] == \"7\":\n            elements = dq.display()\n            if not elements:\n                print(\"Deque is Empty\")\n            else:\n                print(\" \".join(map(str, elements)))\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Deque {\n    ArrayList<Integer> items;\n    \n    Deque() {\n        items = new ArrayList<>();\n    }\n    \n    void insertFront(int element) {\n        // TODO: Write your code here\n    }\n    \n    void insertRear(int element) {\n        // TODO: Write your code here\n    }\n    \n    Integer deleteFront() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    Integer deleteRear() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    Integer getFront() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    Integer getRear() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    ArrayList<Integer> display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        Deque dq = new Deque();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                dq.insertFront(element);\n                System.out.println(\"Inserted \" + element + \" at front\");\n            } else if (operation[0].equals(\"2\")) {\n                int element = Integer.parseInt(operation[1]);\n                dq.insertRear(element);\n                System.out.println(\"Inserted \" + element + \" at rear\");\n            } else if (operation[0].equals(\"3\")) {\n                Integer result = dq.deleteFront();\n                if (result == null) {\n                    System.out.println(\"Deque is Empty\");\n                } else {\n                    System.out.println(\"Deleted \" + result + \" from front\");\n                }\n            } else if (operation[0].equals(\"4\")) {\n                Integer result = dq.deleteRear();\n                if (result == null) {\n                    System.out.println(\"Deque is Empty\");\n                } else {\n                    System.out.println(\"Deleted \" + result + \" from rear\");\n                }\n            } else if (operation[0].equals(\"5\")) {\n                Integer result = dq.getFront();\n                if (result == null) {\n                    System.out.println(\"Deque is Empty\");\n                } else {\n                    System.out.println(\"Front element: \" + result);\n                }\n            } else if (operation[0].equals(\"6\")) {\n                Integer result = dq.getRear();\n                if (result == null) {\n                    System.out.println(\"Deque is Empty\");\n                } else {\n                    System.out.println(\"Rear element: \" + result);\n                }\n            } else if (operation[0].equals(\"7\")) {\n                ArrayList<Integer> elements = dq.display();\n                if (elements == null || elements.isEmpty()) {\n                    System.out.println(\"Deque is Empty\");\n                } else {\n                    for (int j = 0; j < elements.size(); j++) {\n                        System.out.print(elements.get(j));\n                        if (j < elements.size() - 1) System.out.print(\" \");\n                    }\n                    System.out.println();\n                }\n            }\n        }\n    }\n}",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "class Deque {\n    constructor() {\n        this.items = [];\n    }\n    \n    insertFront(element) {\n        // TODO: Write your code here\n    }\n    \n    insertRear(element) {\n        // TODO: Write your code here\n    }\n    \n    deleteFront() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    deleteRear() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    getFront() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    getRear() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const dq = new Deque();\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            dq.insertFront(element);\n            console.log(`Inserted ${element} at front`);\n        } else if (operation[0] === \"2\") {\n            const element = parseInt(operation[1]);\n            dq.insertRear(element);\n            console.log(`Inserted ${element} at rear`);\n        } else if (operation[0] === \"3\") {\n            const result = dq.deleteFront();\n            if (result === null) {\n                console.log(\"Deque is Empty\");\n            } else {\n                console.log(`Deleted ${result} from front`);\n            }\n        } else if (operation[0] === \"4\") {\n            const result = dq.deleteRear();\n            if (result === null) {\n                console.log(\"Deque is Empty\");\n            } else {\n                console.log(`Deleted ${result} from rear`);\n            }\n        } else if (operation[0] === \"5\") {\n            const result = dq.getFront();\n            if (result === null) {\n                console.log(\"Deque is Empty\");\n            } else {\n                console.log(`Front element: ${result}`);\n            }\n        } else if (operation[0] === \"6\") {\n            const result = dq.getRear();\n            if (result === null) {\n                console.log(\"Deque is Empty\");\n            } else {\n                console.log(`Rear element: ${result}`);\n            }\n        } else if (operation[0] === \"7\") {\n            const elements = dq.display();\n            if (elements === null || elements.length === 0) {\n                console.log(\"Deque is Empty\");\n            } else {\n                console.log(elements.join(\" \"));\n            }\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Deque {\npublic:\n    vector<int> items;\n    \n    Deque() {}\n    \n    void insertFront(int element) {\n        // TODO: Write your code here\n    }\n    \n    void insertRear(int element) {\n        // TODO: Write your code here\n    }\n    \n    int deleteFront() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    int deleteRear() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    int getFront() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    int getRear() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    vector<int> display() {\n        // TODO: Write your code here\n        return {};\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    Deque dq;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            dq.insertFront(element);\n            cout << \"Inserted \" << element << \" at front\" << endl;\n        } else if(operation == 2) {\n            int element;\n            cin >> element;\n            dq.insertRear(element);\n            cout << \"Inserted \" << element << \" at rear\" << endl;\n        } else if(operation == 3) {\n            int result = dq.deleteFront();\n            if(result == -1) {\n                cout << \"Deque is Empty\" << endl;\n            } else {\n                cout << \"Deleted \" << result << \" from front\" << endl;\n            }\n        } else if(operation == 4) {\n            int result = dq.deleteRear();\n            if(result == -1) {\n                cout << \"Deque is Empty\" << endl;\n            } else {\n                cout << \"Deleted \" << result << \" from rear\" << endl;\n            }\n        } else if(operation == 5) {\n            int result = dq.getFront();\n            if(result == -1) {\n                cout << \"Deque is Empty\" << endl;\n            } else {\n                cout << \"Front element: \" << result << endl;\n            }\n        } else if(operation == 6) {\n            int result = dq.getRear();\n            if(result == -1) {\n                cout << \"Deque is Empty\" << endl;\n            } else {\n                cout << \"Rear element: \" << result << endl;\n            }\n        } else if(operation == 7) {\n            vector<int> elements = dq.display();\n            if(elements.empty()) {\n                cout << \"Deque is Empty\" << endl;\n            } else {\n                for(int j = 0; j < elements.size(); j++) {\n                    cout << elements[j];\n                    if(j < elements.size() - 1) cout << \" \";\n                }\n                cout << endl;\n            }\n        }\n    }\n\n    return 0;\n}",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int* items;\n    int front;\n    int rear;\n    int size;\n    int capacity;\n} Deque;\n\nvoid init(Deque* dq) {\n    dq->capacity = 1000;\n    dq->items = (int*)malloc(dq->capacity * sizeof(int));\n    dq->front = -1;\n    dq->rear = -1;\n    dq->size = 0;\n}\n\nvoid insertFront(Deque* dq, int element) {\n    // TODO: Write your code here\n}\n\nvoid insertRear(Deque* dq, int element) {\n    // TODO: Write your code here\n}\n\nint deleteFront(Deque* dq) {\n    // TODO: Write your code here\n    return -1;\n}\n\nint deleteRear(Deque* dq) {\n    // TODO: Write your code here\n    return -1;\n}\n\nint getFront(Deque* dq) {\n    // TODO: Write your code here\n    return -1;\n}\n\nint getRear(Deque* dq) {\n    // TODO: Write your code here\n    return -1;\n}\n\nvoid display(Deque* dq) {\n    // TODO: Write your code here\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    Deque dq;\n    init(&dq);\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            insertFront(&dq, element);\n            printf(\"Inserted %d at front\\n\", element);\n        } else if(operation == 2) {\n            int element;\n            scanf(\"%d\", &element);\n            insertRear(&dq, element);\n            printf(\"Inserted %d at rear\\n\", element);\n        } else if(operation == 3) {\n            int result = deleteFront(&dq);\n            if(result == -1) {\n                printf(\"Deque is Empty\\n\");\n            } else {\n                printf(\"Deleted %d from front\\n\", result);\n            }\n        } else if(operation == 4) {\n            int result = deleteRear(&dq);\n            if(result == -1) {\n                printf(\"Deque is Empty\\n\");\n            } else {\n                printf(\"Deleted %d from rear\\n\", result);\n            }\n        } else if(operation == 5) {\n            int result = getFront(&dq);\n            if(result == -1) {\n                printf(\"Deque is Empty\\n\");\n            } else {\n                printf(\"Front element: %d\\n\", result);\n            }\n        } else if(operation == 6) {\n            int result = getRear(&dq);\n            if(result == -1) {\n                printf(\"Deque is Empty\\n\");\n            } else {\n                printf(\"Rear element: %d\\n\", result);\n            }\n        } else if(operation == 7) {\n            display(&dq);\n        }\n    }\n    \n    free(dq.items);\n    return 0;\n}",
+            "problemTitle": "Implement Deque (Insert and Delete at Both Ends)"
+          }
+        ],
+        "hintsList": [
+          "Use a list/array to store elements. Insert at front means adding at index 0, insert at rear means adding at the end.",
+          "For deletion, remove from index 0 for front deletion and remove from last index for rear deletion. Check if deque is empty before operations."
+        ]
+      },
+      {
+        "id": null,
+        "title": "Reverse a Queue using Stack",
+        "description": "Problem Statement\n\nGiven a queue of integers, reverse the order of elements using a stack.\n\nA Queue follows FIFO (First In First Out) order, while a Stack follows LIFO (Last In First Out) order. By using a stack as an auxiliary data structure, you can reverse the queue.\n\nThe Algorithm:\n1. Dequeue all elements from the queue and push them onto a stack\n2. Pop all elements from the stack and enqueue them back to the queue\n3. The queue is now reversed!\n\nYou need to implement:\n- Enqueue operation (add to queue)\n- Dequeue operation (remove from queue)\n- Reverse operation (using stack)\n- Display operation (show queue elements)\n\nThis concept is useful in:\n- Undo/Redo mechanisms\n- Data processing pipelines\n- Algorithm optimization\n- Interview problems\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations:\n- 1 X : Enqueue element X to the queue\n- 2 : Dequeue element from the queue\n- 3 : Reverse the queue using stack\n- 4 : Display all queue elements from front to rear\n\nOutput Format\n\nFor operation 1 (Enqueue):\n- Print \"Enqueued {X}\"\n\nFor operation 2 (Dequeue):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Dequeued {X}\"\n\nFor operation 3 (Reverse):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Queue Reversed\"\n\nFor operation 4 (Display):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print elements separated by space from front to rear\n\nExample\n\nInput:\n7\n1 10\n1 20\n1 30\n4\n3\n4\n2\n\nOutput:\nEnqueued 10\nEnqueued 20\nEnqueued 30\n10 20 30\nQueue Reversed\n30 20 10\nDequeued 30\n\nExplanation:\n- Enqueue 10: Queue = [10]\n- Enqueue 20: Queue = [10, 20]\n- Enqueue 30: Queue = [10, 20, 30]\n- Display: 10 20 30\n- Reverse using stack: Queue = [30, 20, 10]\n- Display: 30 20 10\n- Dequeue: Remove 30, Queue = [20, 10]",
+        "examples": "Sample Input 1\n7\n1 10\n1 20\n1 30\n4\n3\n4\n2\n\nSample Output 1\nEnqueued 10\nEnqueued 20\nEnqueued 30\n10 20 30\nQueue Reversed\n30 20 10\nDequeued 30\n\nSample Input 2\n3\n3\n1 5\n4\n\nSample Output 2\nQueue is Empty\nEnqueued 5\n5",
+        "constraints": "1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6",
+        "hints": 2,
+        "timeLimit": 2,
+        "memoryLimit": 256,
+        "subdomainId": 2022,
+        "difficulty": 2,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "7\n1 10\n1 20\n1 30\n4\n3\n4\n2",
+            "expectedOutput": "Enqueued 10\nEnqueued 20\nEnqueued 30\n10 20 30\nQueue Reversed\n30 20 10\nDequeued 30",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "3\n3\n1 5\n4",
+            "expectedOutput": "Queue is Empty\nEnqueued 5\n5",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "8\n1 100\n1 200\n1 300\n1 400\n3\n4\n2\n2",
+            "expectedOutput": "Enqueued 100\nEnqueued 200\nEnqueued 300\nEnqueued 400\nQueue Reversed\n400 300 200 100\nDequeued 400\nDequeued 300",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "6\n1 7\n1 14\n3\n1 21\n3\n4",
+            "expectedOutput": "Enqueued 7\nEnqueued 14\nQueue Reversed\nEnqueued 21\nQueue Reversed\n14 7 21",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "9\n1 50\n1 60\n1 70\n4\n2\n3\n4\n1 80\n4",
+            "expectedOutput": "Enqueued 50\nEnqueued 60\nEnqueued 70\n50 60 70\nDequeued 50\nQueue Reversed\n70 60\nEnqueued 80\n70 60 80",
+            "problemTitle": "Reverse a Queue using Stack"
+          }
+        ],
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "class Queue:\n    def __init__(self):\n        self.items = []\n    \n    def enqueue(self, element):\n        # TODO: Write your code here\n        pass\n    \n    def dequeue(self):\n        # TODO: Write your code here\n        pass\n    \n    def reverse(self):\n        # TODO: Write your code here\n        # Use a stack (list) to reverse the queue\n        pass\n    \n    def display(self):\n        # TODO: Write your code here\n        pass\n\ndef solve():\n    n = int(input())\n    queue = Queue()\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            queue.enqueue(element)\n            print(f\"Enqueued {element}\")\n        elif operation[0] == \"2\":\n            result = queue.dequeue()\n            if result is None:\n                print(\"Queue is Empty\")\n            else:\n                print(f\"Dequeued {result}\")\n        elif operation[0] == \"3\":\n            result = queue.reverse()\n            if result is False:\n                print(\"Queue is Empty\")\n            else:\n                print(\"Queue Reversed\")\n        elif operation[0] == \"4\":\n            elements = queue.display()\n            if not elements:\n                print(\"Queue is Empty\")\n            else:\n                print(\" \".join(map(str, elements)))\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Queue {\n    ArrayList<Integer> items;\n    \n    Queue() {\n        items = new ArrayList<>();\n    }\n    \n    void enqueue(int element) {\n        // TODO: Write your code here\n    }\n    \n    Integer dequeue() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    boolean reverse() {\n        // TODO: Write your code here\n        // Use Stack<Integer> to reverse the queue\n        return false;\n    }\n    \n    ArrayList<Integer> display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        Queue queue = new Queue();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                queue.enqueue(element);\n                System.out.println(\"Enqueued \" + element);\n            } else if (operation[0].equals(\"2\")) {\n                Integer result = queue.dequeue();\n                if (result == null) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    System.out.println(\"Dequeued \" + result);\n                }\n            } else if (operation[0].equals(\"3\")) {\n                boolean result = queue.reverse();\n                if (!result) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    System.out.println(\"Queue Reversed\");\n                }\n            } else if (operation[0].equals(\"4\")) {\n                ArrayList<Integer> elements = queue.display();\n                if (elements == null || elements.isEmpty()) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    for (int j = 0; j < elements.size(); j++) {\n                        System.out.print(elements.get(j));\n                        if (j < elements.size() - 1) System.out.print(\" \");\n                    }\n                    System.out.println();\n                }\n            }\n        }\n    }\n}",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "class Queue {\n    constructor() {\n        this.items = [];\n    }\n    \n    enqueue(element) {\n        // TODO: Write your code here\n    }\n    \n    dequeue() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    reverse() {\n        // TODO: Write your code here\n        // Use an array as stack to reverse the queue\n        return false;\n    }\n    \n    display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const queue = new Queue();\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            queue.enqueue(element);\n            console.log(`Enqueued ${element}`);\n        } else if (operation[0] === \"2\") {\n            const result = queue.dequeue();\n            if (result === null) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(`Dequeued ${result}`);\n            }\n        } else if (operation[0] === \"3\") {\n            const result = queue.reverse();\n            if (!result) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(\"Queue Reversed\");\n            }\n        } else if (operation[0] === \"4\") {\n            const elements = queue.display();\n            if (elements === null || elements.length === 0) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(elements.join(\" \"));\n            }\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Queue {\npublic:\n    vector<int> items;\n    \n    Queue() {}\n    \n    void enqueue(int element) {\n        // TODO: Write your code here\n    }\n    \n    int dequeue() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    bool reverse() {\n        // TODO: Write your code here\n        // Use stack<int> to reverse the queue\n        return false;\n    }\n    \n    vector<int> display() {\n        // TODO: Write your code here\n        return {};\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    Queue queue;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            queue.enqueue(element);\n            cout << \"Enqueued \" << element << endl;\n        } else if(operation == 2) {\n            int result = queue.dequeue();\n            if(result == -1) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                cout << \"Dequeued \" << result << endl;\n            }\n        } else if(operation == 3) {\n            bool result = queue.reverse();\n            if(!result) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                cout << \"Queue Reversed\" << endl;\n            }\n        } else if(operation == 4) {\n            vector<int> elements = queue.display();\n            if(elements.empty()) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                for(int j = 0; j < elements.size(); j++) {\n                    cout << elements[j];\n                    if(j < elements.size() - 1) cout << \" \";\n                }\n                cout << endl;\n            }\n        }\n    }\n\n    return 0;\n}",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\ntypedef struct {\n    int* items;\n    int front;\n    int rear;\n    int size;\n    int capacity;\n} Queue;\n\nvoid init(Queue* queue) {\n    queue->capacity = 1000;\n    queue->items = (int*)malloc(queue->capacity * sizeof(int));\n    queue->front = 0;\n    queue->rear = -1;\n    queue->size = 0;\n}\n\nvoid enqueue(Queue* queue, int element) {\n    // TODO: Write your code here\n}\n\nint dequeue(Queue* queue) {\n    // TODO: Write your code here\n    return -1;\n}\n\nbool reverse(Queue* queue) {\n    // TODO: Write your code here\n    // Use a separate array as stack to reverse the queue\n    return false;\n}\n\nvoid display(Queue* queue) {\n    // TODO: Write your code here\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    Queue queue;\n    init(&queue);\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            enqueue(&queue, element);\n            printf(\"Enqueued %d\\n\", element);\n        } else if(operation == 2) {\n            int result = dequeue(&queue);\n            if(result == -1) {\n                printf(\"Queue is Empty\\n\");\n            } else {\n                printf(\"Dequeued %d\\n\", result);\n            }\n        } else if(operation == 3) {\n            bool result = reverse(&queue);\n            if(!result) {\n                printf(\"Queue is Empty\\n\");\n            } else {\n                printf(\"Queue Reversed\\n\");\n            }\n        } else if(operation == 4) {\n            display(&queue);\n        }\n    }\n    \n    free(queue.items);\n    return 0;\n}",
+            "problemTitle": "Reverse a Queue using Stack"
+          }
+        ],
+        "hintsList": [
+          "To reverse a queue using a stack: Dequeue all elements from the queue and push them to a stack, then pop all elements from the stack and enqueue them back to the queue.",
+          "The key insight is that stack reverses the order (LIFO) while queue maintains order (FIFO). By transferring elements through a stack, the queue gets reversed."
+        ]
+      },{
+        "id": null,
+        "title": "Reverse a Queue using Stack",
+        "description": "Problem Statement\n\nGiven a queue of integers, reverse the order of elements using a stack.\n\nA Queue follows FIFO (First In First Out) order, while a Stack follows LIFO (Last In First Out) order. By using a stack as an auxiliary data structure, you can reverse the queue.\n\nThe Algorithm:\n1. Dequeue all elements from the queue and push them onto a stack\n2. Pop all elements from the stack and enqueue them back to the queue\n3. The queue is now reversed!\n\nYou need to implement:\n- Enqueue operation (add to queue)\n- Dequeue operation (remove from queue)\n- Reverse operation (using stack)\n- Display operation (show queue elements)\n\nThis concept is useful in:\n- Undo/Redo mechanisms\n- Data processing pipelines\n- Algorithm optimization\n- Interview problems\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations:\n- 1 X : Enqueue element X to the queue\n- 2 : Dequeue element from the queue\n- 3 : Reverse the queue using stack\n- 4 : Display all queue elements from front to rear\n\nOutput Format\n\nFor operation 1 (Enqueue):\n- Print \"Enqueued {X}\"\n\nFor operation 2 (Dequeue):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Dequeued {X}\"\n\nFor operation 3 (Reverse):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Queue Reversed\"\n\nFor operation 4 (Display):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print elements separated by space from front to rear\n\nExample\n\nInput:\n7\n1 10\n1 20\n1 30\n4\n3\n4\n2\n\nOutput:\nEnqueued 10\nEnqueued 20\nEnqueued 30\n10 20 30\nQueue Reversed\n30 20 10\nDequeued 30\n\nExplanation:\n- Enqueue 10: Queue = [10]\n- Enqueue 20: Queue = [10, 20]\n- Enqueue 30: Queue = [10, 20, 30]\n- Display: 10 20 30\n- Reverse using stack: Queue = [30, 20, 10]\n- Display: 30 20 10\n- Dequeue: Remove 30, Queue = [20, 10]",
+        "examples": "Sample Input 1\n7\n1 10\n1 20\n1 30\n4\n3\n4\n2\n\nSample Output 1\nEnqueued 10\nEnqueued 20\nEnqueued 30\n10 20 30\nQueue Reversed\n30 20 10\nDequeued 30\n\nSample Input 2\n3\n3\n1 5\n4\n\nSample Output 2\nQueue is Empty\nEnqueued 5\n5",
+        "constraints": "1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6",
+        "hints": 2,
+        "timeLimit": 2,
+        "memoryLimit": 256,
+        "subdomainId": 2022,
+        "difficulty": 2,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "7\n1 10\n1 20\n1 30\n4\n3\n4\n2",
+            "expectedOutput": "Enqueued 10\nEnqueued 20\nEnqueued 30\n10 20 30\nQueue Reversed\n30 20 10\nDequeued 30",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "3\n3\n1 5\n4",
+            "expectedOutput": "Queue is Empty\nEnqueued 5\n5",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "8\n1 100\n1 200\n1 300\n1 400\n3\n4\n2\n2",
+            "expectedOutput": "Enqueued 100\nEnqueued 200\nEnqueued 300\nEnqueued 400\nQueue Reversed\n400 300 200 100\nDequeued 400\nDequeued 300",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "6\n1 7\n1 14\n3\n1 21\n3\n4",
+            "expectedOutput": "Enqueued 7\nEnqueued 14\nQueue Reversed\nEnqueued 21\nQueue Reversed\n14 7 21",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "9\n1 50\n1 60\n1 70\n4\n2\n3\n4\n1 80\n4",
+            "expectedOutput": "Enqueued 50\nEnqueued 60\nEnqueued 70\n50 60 70\nDequeued 50\nQueue Reversed\n70 60\nEnqueued 80\n70 60 80",
+            "problemTitle": "Reverse a Queue using Stack"
+          }
+        ],
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "class Queue:\n    def __init__(self):\n        self.items = []\n    \n    def enqueue(self, element):\n        # TODO: Write your code here\n        pass\n    \n    def dequeue(self):\n        # TODO: Write your code here\n        pass\n    \n    def reverse(self):\n        # TODO: Write your code here\n        # Use a stack (list) to reverse the queue\n        pass\n    \n    def display(self):\n        # TODO: Write your code here\n        pass\n\ndef solve():\n    n = int(input())\n    queue = Queue()\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            queue.enqueue(element)\n            print(f\"Enqueued {element}\")\n        elif operation[0] == \"2\":\n            result = queue.dequeue()\n            if result is None:\n                print(\"Queue is Empty\")\n            else:\n                print(f\"Dequeued {result}\")\n        elif operation[0] == \"3\":\n            result = queue.reverse()\n            if result is False:\n                print(\"Queue is Empty\")\n            else:\n                print(\"Queue Reversed\")\n        elif operation[0] == \"4\":\n            elements = queue.display()\n            if not elements:\n                print(\"Queue is Empty\")\n            else:\n                print(\" \".join(map(str, elements)))\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.io.*;\nimport java.util.*;\n\nclass Queue {\n    ArrayList<Integer> items;\n    \n    Queue() {\n        items = new ArrayList<>();\n    }\n    \n    void enqueue(int element) {\n        // TODO: Write your code here\n    }\n    \n    Integer dequeue() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    boolean reverse() {\n        // TODO: Write your code here\n        // Use Stack<Integer> to reverse the queue\n        return false;\n    }\n    \n    ArrayList<Integer> display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        Queue queue = new Queue();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                queue.enqueue(element);\n                System.out.println(\"Enqueued \" + element);\n            } else if (operation[0].equals(\"2\")) {\n                Integer result = queue.dequeue();\n                if (result == null) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    System.out.println(\"Dequeued \" + result);\n                }\n            } else if (operation[0].equals(\"3\")) {\n                boolean result = queue.reverse();\n                if (!result) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    System.out.println(\"Queue Reversed\");\n                }\n            } else if (operation[0].equals(\"4\")) {\n                ArrayList<Integer> elements = queue.display();\n                if (elements == null || elements.isEmpty()) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    for (int j = 0; j < elements.size(); j++) {\n                        System.out.print(elements.get(j));\n                        if (j < elements.size() - 1) System.out.print(\" \");\n                    }\n                    System.out.println();\n                }\n            }\n        }\n    }\n}",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "class Queue {\n    constructor() {\n        this.items = [];\n    }\n    \n    enqueue(element) {\n        // TODO: Write your code here\n    }\n    \n    dequeue() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    reverse() {\n        // TODO: Write your code here\n        // Use an array as stack to reverse the queue\n        return false;\n    }\n    \n    display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const queue = new Queue();\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            queue.enqueue(element);\n            console.log(`Enqueued ${element}`);\n        } else if (operation[0] === \"2\") {\n            const result = queue.dequeue();\n            if (result === null) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(`Dequeued ${result}`);\n            }\n        } else if (operation[0] === \"3\") {\n            const result = queue.reverse();\n            if (!result) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(\"Queue Reversed\");\n            }\n        } else if (operation[0] === \"4\") {\n            const elements = queue.display();\n            if (elements === null || elements.length === 0) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(elements.join(\" \"));\n            }\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Queue {\npublic:\n    vector<int> items;\n    \n    Queue() {}\n    \n    void enqueue(int element) {\n        // TODO: Write your code here\n    }\n    \n    int dequeue() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    bool reverse() {\n        // TODO: Write your code here\n        // Use stack<int> to reverse the queue\n        return false;\n    }\n    \n    vector<int> display() {\n        // TODO: Write your code here\n        return {};\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    Queue queue;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            queue.enqueue(element);\n            cout << \"Enqueued \" << element << endl;\n        } else if(operation == 2) {\n            int result = queue.dequeue();\n            if(result == -1) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                cout << \"Dequeued \" << result << endl;\n            }\n        } else if(operation == 3) {\n            bool result = queue.reverse();\n            if(!result) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                cout << \"Queue Reversed\" << endl;\n            }\n        } else if(operation == 4) {\n            vector<int> elements = queue.display();\n            if(elements.empty()) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                for(int j = 0; j < elements.size(); j++) {\n                    cout << elements[j];\n                    if(j < elements.size() - 1) cout << \" \";\n                }\n                cout << endl;\n            }\n        }\n    }\n\n    return 0;\n}",
+            "problemTitle": "Reverse a Queue using Stack"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\ntypedef struct {\n    int* items;\n    int front;\n    int rear;\n    int size;\n    int capacity;\n} Queue;\n\nvoid init(Queue* queue) {\n    queue->capacity = 1000;\n    queue->items = (int*)malloc(queue->capacity * sizeof(int));\n    queue->front = 0;\n    queue->rear = -1;\n    queue->size = 0;\n}\n\nvoid enqueue(Queue* queue, int element) {\n    // TODO: Write your code here\n}\n\nint dequeue(Queue* queue) {\n    // TODO: Write your code here\n    return -1;\n}\n\nbool reverse(Queue* queue) {\n    // TODO: Write your code here\n    // Use a separate array as stack to reverse the queue\n    return false;\n}\n\nvoid display(Queue* queue) {\n    // TODO: Write your code here\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    Queue queue;\n    init(&queue);\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            enqueue(&queue, element);\n            printf(\"Enqueued %d\\n\", element);\n        } else if(operation == 2) {\n            int result = dequeue(&queue);\n            if(result == -1) {\n                printf(\"Queue is Empty\\n\");\n            } else {\n                printf(\"Dequeued %d\\n\", result);\n            }\n        } else if(operation == 3) {\n            bool result = reverse(&queue);\n            if(!result) {\n                printf(\"Queue is Empty\\n\");\n            } else {\n                printf(\"Queue Reversed\\n\");\n            }\n        } else if(operation == 4) {\n            display(&queue);\n        }\n    }\n    \n    free(queue.items);\n    return 0;\n}",
+            "problemTitle": "Reverse a Queue using Stack"
+          }
+        ],
+        "hintsList": [
+          "To reverse a queue using a stack: Dequeue all elements from the queue and push them to a stack, then pop all elements from the stack and enqueue them back to the queue.",
+          "The key insight is that stack reverses the order (LIFO) while queue maintains order (FIFO). By transferring elements through a stack, the queue gets reversed."
+        ]
+      }
+]
+}

@@ -3,362 +3,276 @@
     {
       "id": null,
       "title": "Polynomial Addition using Linked List",
-      "description": "Problem Statement:\nGiven two polynomials represented using Singly Linked Lists, where each node contains a coefficient and a power (exponent), perform polynomial addition and return the resulting polynomial in decreasing order of powers. Each linked list node is represented as (coefficient, power). If two terms have the same power, add the coefficients. Terms with resulting coefficient 0 should be removed. Display the final polynomial in the format: coeff power_coeff coeff power ...\n\nExample Explanation:\nPolynomial 1: 3x^3 + 2x^1 + 5\nPolynomial 2: 5x^2 + 6x^1 + 8\nAfter addition: 3x^3 + 5x^2 + 8x^1 + 13\nOutput Format: 3 3 5 2 8 1 13 0",
-      "examples": "Input:\n3\n3 3\n2 1\n5 0\n3\n5 2\n6 1\n8 0\n\nOutput:\n3 3 5 2 8 1 13 0",
-      "constraints": "1 <= number of terms <= 10^5\n-10^9 <= coefficient <= 10^9\n0 <= power <= 10^5",
+      "description": "Problem Statement\nYou are given two polynomials represented using a linked list. Each node contains two values: coefficient (coeff) and exponent (pow). The terms are sorted in descending order based on the exponent. Your task is to add the two polynomials and return the resulting polynomial. If coefficients become zero after addition, skip that term. If the resulting polynomial has no terms, print 0.\n\nTime Complexity\nThe polynomial addition requires traversing both lists once, hence O(N + M).\n\nInput Format\nThe first line contains an integer N (number of terms in polynomial 1).\nThe next N lines contain two integers: coefficient and exponent.\nThe following line contains an integer M (number of terms in polynomial 2).\nThe next M lines contain two integers: coefficient and exponent.\n\nOutput Format\nPrint the resulting polynomial in the format coeffx^pow separated by a space. If empty, print 0.\n\nExample\nInput:\n3\n5 2\n4 1\n2 0\n3\n5 1\n5 0\n3 3\nOutput:\n3x^3 5x^2 9x^1 7x^0",
+      "examples": "Sample Input\n3\n5 2\n4 1\n2 0\n3\n5 1\n5 0\n3 3\n\nSample Output\n3x^3 5x^2 9x^1 7x^0",
+      "constraints": "0 ≤ N, M ≤ 100000\nCoefficients may be positive or negative\nExponents are non-negative and sorted in decreasing order\nExpected Time Complexity: O(N + M)",
       "hints": 2,
       "timeLimit": 5,
       "memoryLimit": 256,
+     "difficulty": 3,
       "subdomainId": 2020,
-      "difficulty": "3",
       "streamId": null,
-      "createdByUserId": null,
-      "updatedByUserId": null,
-
+    
       "testCases": [
-        {
-          "id": null,
-          "problemId": null,
-          "input": "3\n3 3\n2 1\n5 0\n3\n5 2\n6 1\n8 0",
-          "expectedOutput": "3 3 5 2 8 1 13 0",
-          "problemTitle": "Polynomial Addition using Linked List"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "input": "2\n4 4\n2 2\n2\n5 4\n3 1",
-          "expectedOutput": "9 4 2 2 3 1",
-          "problemTitle": "Polynomial Addition using Linked List"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "input": "3\n1 3\n2 2\n3 1\n3\n-1 3\n5 2\n7 0",
-          "expectedOutput": "7 2 3 1 7 0",
-          "problemTitle": "Polynomial Addition using Linked List"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "input": "1\n10 5\n1\n-10 5",
-          "expectedOutput": "-1",
-          "problemTitle": "Polynomial Addition using Linked List"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "input": "4\n8 6\n5 4\n3 3\n1 0\n3\n2 6\n-5 4\n9 2",
-          "expectedOutput": "10 6 3 3 9 2 1 0",
-          "problemTitle": "Polynomial Addition using Linked List"
-        }
+        { "input": "3\n5 2\n4 1\n2 0\n3\n5 1\n5 0\n3 3", "expectedOutput": "3x^3 5x^2 9x^1 7x^0", "problemTitle": "Polynomial Addition using Linked List" },
+        { "input": "2\n3 2\n4 1\n2\n5 2\n6 0", "expectedOutput": "8x^2 4x^1 6x^0", "problemTitle": "Polynomial Addition using Linked List" },
+        { "input": "2\n5 3\n2 1\n2\n-5 3\n7 0", "expectedOutput": "2x^1 7x^0", "problemTitle": "Polynomial Addition using Linked List" },
+        { "input": "1\n2 1\n1\n-2 1", "expectedOutput": "0", "problemTitle": "Polynomial Addition using Linked List" },
+        { "input": "0\n\n2\n5 2\n7 1", "expectedOutput": "5x^2 7x^1", "problemTitle": "Polynomial Addition using Linked List" }
       ],
-
+    
       "starterCodes": [
         {
-          "id": null,
-          "problemId": null,
           "language": 1,
-          "code": "class Node:\n    def __init__(self, coeff, power):\n        self.coeff = coeff\n        self.power = power\n        self.next = None\n\n# TODO: Implement polynomial addition using linked list\n",
+          "code": "class Node:\n    def __init__(self, coeff, pow):\n        self.coeff = coeff\n        self.pow = pow\n        self.next = None\n\ndef addPolynomial(p1, p2):\n    # TODO: Implement polynomial addition logic\n    return None\n\ndef solve():\n    n = int(input())\n    p1 = None\n    tail1 = None\n    for _ in range(n):\n        c, p = map(int, input().split())\n        newNode = Node(c, p)\n        if p1 is None:\n            p1 = tail1 = newNode\n        else:\n            tail1.next = newNode\n            tail1 = newNode\n\n    m = int(input())\n    p2 = None\n    tail2 = None\n    for _ in range(m):\n        c, p = map(int, input().split())\n        newNode = Node(c, p)\n        if p2 is None:\n            p2 = tail2 = newNode\n        else:\n            tail2.next = newNode\n            tail2 = newNode\n\n    result = addPolynomial(p1, p2)\n    if not result:\n        print(0)\n        return\n    temp = result\n    while temp:\n        print(f\"{temp.coeff}x^{temp.pow}\", end=\" \")\n        temp = temp.next\n\nif __name__ == \"__main__\":\n    solve()",
           "problemTitle": "Polynomial Addition using Linked List"
         },
         {
-          "id": null,
-          "problemId": null,
           "language": 2,
-          "code": "import java.util.*;\nclass Node {\n    int coeff, power;\n    Node next;\n    Node(int c, int p){ coeff = c; power = p; next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Implement polynomial addition using linked list\n    }\n}",
+          "code": "import java.util.*;\nclass Node{ int coeff, pow; Node next; Node(int c,int p){ coeff=c; pow=p; }}\nclass Result{\n    public static Node addPolynomial(Node p1, Node p2){\n        // TODO: Implement polynomial addition\n        return null;\n    }\n}\npublic class Solution{\n    public static void display(Node head){ if(head==null){ System.out.print(0); return;} while(head!=null){ System.out.print(head.coeff+\"x^\"+head.pow+\" \"); head=head.next; }}\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); Node p1=null,t1=null; for(int i=0;i<n;i++){ Node t=new Node(sc.nextInt(),sc.nextInt()); if(p1==null) p1=t1=t; else{ t1.next=t; t1=t; }} int m=sc.nextInt(); Node p2=null,t2=null; for(int i=0;i<m;i++){ Node t=new Node(sc.nextInt(),sc.nextInt()); if(p2==null) p2=t2=t; else{ t2.next=t; t2=t; }} Node res=Result.addPolynomial(p1,p2); display(res);} }",
           "problemTitle": "Polynomial Addition using Linked List"
         },
         {
-          "id": null,
-          "problemId": null,
           "language": 3,
-          "code": "class Node {\n    constructor(coeff, power){\n        this.coeff = coeff;\n        this.power = power;\n        this.next = null;\n    }\n}\n// TODO: Implement polynomial addition using linked list\n",
+          "code": "class Node{ constructor(coeff,pow){ this.coeff=coeff; this.pow=pow; this.next=null; }}\nfunction addPolynomial(p1,p2){ // TODO\n  return null;\n}\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); let idx=0; const n=Number(lines[idx++]); let p1=null,tail1=null; for(let i=0;i<n;i++){ const [c,p]=lines[idx++].split(\" \").map(Number); const t=new Node(c,p); if(!p1) p1=tail1=t; else{ tail1.next=t; tail1=t; }} const m=Number(lines[idx++]); let p2=null,tail2=null; for(let i=0;i<m;i++){ const [c,p]=lines[idx++].split(\" \").map(Number); const t=new Node(c,p); if(!p2) p2=tail2=t; else{ tail2.next=t; tail2=t; }} let res=addPolynomial(p1,p2); if(!res) return console.log(0); let ans=[]; while(res){ ans.push(`${res.coeff}x^${res.pow}`); res=res.next; } console.log(ans.join(\" \")); }\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
           "problemTitle": "Polynomial Addition using Linked List"
         },
         {
-          "id": null,
-          "problemId": null,
           "language": 4,
-          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int coeff, power;\n    Node* next;\n};\nint main(){\n    // TODO: Implement polynomial addition using linked list\n    return 0;\n}",
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ long long coeff,pow; Node* next; Node(long long c,long long p){ coeff=c; pow=p; next=NULL; }};\nNode* addPolynomial(Node* p1, Node* p2){ // TODO\n    return NULL;\n}\nvoid display(Node* head){ if(!head){ cout<<0; return;} while(head){ cout<<head->coeff<<\"x^\"<<head->pow<<\" \"; head=head->next; }}\nint main(){ int n; cin>>n; Node *p1=NULL,*t1=NULL; for(int i=0;i<n;i++){ long long c,p; cin>>c>>p; Node* t=new Node(c,p); if(!p1) p1=t1=t; else{ t1->next=t; t1=t; }} int m; cin>>m; Node *p2=NULL,*t2=NULL; for(int i=0;i<m;i++){ long long c,p; cin>>c>>p; Node* t=new Node(c,p); if(!p2) p2=t2=t; else{ t2->next=t; t2=t; }} Node* res=addPolynomial(p1,p2); display(res); }",
           "problemTitle": "Polynomial Addition using Linked List"
         },
         {
-          "id": null,
-          "problemId": null,
           "language": 5,
-          "code": "#include <stdio.h>\ntypedef struct Node{\n    int coeff, power;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Implement polynomial addition using linked list\n    return 0;\n}",
+          "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef long long ll;\ntypedef struct Node{ ll coeff,pow; struct Node* next;} Node;\nNode* addPolynomial(Node* p1, Node* p2){ // TODO\n    return NULL;\n}\nvoid display(Node* head){ if(!head){ printf(\"0\"); return;} while(head){ printf(\"%lldx^%lld \", head->coeff, head->pow); head=head->next; }}\nint main(){ int n; scanf(\"%d\",&n); Node *p1=NULL,*t1=NULL; for(int i=0;i<n;i++){ ll c,p; scanf(\"%lld%lld\",&c,&p); Node* t=(Node*)malloc(sizeof(Node)); t->coeff=c; t->pow=p; t->next=NULL; if(!p1) p1=t1=t; else{ t1->next=t; t1=t; }} int m; scanf(\"%d\",&m); Node *p2=NULL,*t2=NULL; for(int i=0;i<m;i++){ ll c,p; scanf(\"%lld%lld\",&c,&p); Node* t=(Node*)malloc(sizeof(Node)); t->coeff=c; t->pow=p; t->next=NULL; if(!p2) p2=t2=t; else{ t2->next=t; t2=t; }} Node* res=addPolynomial(p1,p2); display(res); return 0;}",
           "problemTitle": "Polynomial Addition using Linked List"
         }
       ],
-
+    
       "hintsList": [
-        "Use a merge-like traversal: compare powers and add coefficients when powers match.",
-        "Skip terms where the resulting coefficient becomes zero."
+        "Use merge-like traversal on the two polynomial lists.",
+        "If exponents match, sum coefficients and skip if zero."
       ]
     },
     {
       "id": null,
       "title": "Detect Loop in Linked List",
-      "description": "Problem Statement:\nGiven N integers, create a Singly Linked List (SLL) by inserting nodes at the end. You are also given an additional integer P which represents the position (1-based index) where the last node should link back to create a loop. If P = 0, no loop should be created. Your task is to detect whether a loop exists in the linked list. Print \"YES\" if a loop is detected, otherwise print \"NO\".\nUse Floyd’s Cycle Detection Algorithm (fast and slow pointers) for optimal performance.\n\nExample Explanation:\nInput: N = 5, List = [1 2 3 4 5], P = 2 → last node connects to node with value 2, so loop exists. Output = YES",
-      "examples": "Input:\n5\n1 2 3 4 5\n2\n\nOutput:\nYES",
-      "constraints": "1 <= N <= 10^5\n0 <= P <= N\n-10^9 <= Node value <= 10^9",
+      "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) by inserting elements at the end. After building the list, you are given an integer P. If P > 0, connect the last node to the P-th node (1-based index) to form a loop. Your task is to detect if a loop exists in the linked list.\nPrint YES if a loop is present, otherwise print NO.\n\nTime Complexity\nFloyd's Cycle Detection algorithm works in O(N) time with O(1) extra space.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\nThe third line contains an integer P.\n\nOutput Format\nPrint YES if linked list contains a loop, otherwise print NO.\n\nExample\nInput:\n5\n1 2 3 4 5\n3\nOutput:\nYES",
+      "examples": "Sample Input\n5\n1 2 3 4 5\n3\n\nSample Output\nYES",
+      "constraints": "0 ≤ N ≤ 100000\nValues may be positive or negative\n1 ≤ P ≤ N (if P > 0)\nExpected Time Complexity: O(N)",
       "hints": 2,
       "timeLimit": 5,
       "memoryLimit": 256,
+     "difficulty": 3,
       "subdomainId": 2020,
-      "difficulty": "2",
       "streamId": null,
-      "createdByUserId": null,
-      "updatedByUserId": null,
-
+    
       "testCases": [
-        { "id": null, "problemId": null, "input": "5\n1 2 3 4 5\n2", "expectedOutput": "YES", "problemTitle": "Detect Loop in Linked List" },
-        { "id": null, "problemId": null, "input": "4\n10 20 30 40\n0", "expectedOutput": "NO", "problemTitle": "Detect Loop in Linked List" },
-        { "id": null, "problemId": null, "input": "3\n5 6 7\n3", "expectedOutput": "YES", "problemTitle": "Detect Loop in Linked List" },
-        { "id": null, "problemId": null, "input": "1\n99\n0", "expectedOutput": "NO", "problemTitle": "Detect Loop in Linked List" },
-        { "id": null, "problemId": null, "input": "6\n1 1 1 1 1 1\n1", "expectedOutput": "YES", "problemTitle": "Detect Loop in Linked List" }
+        { "input": "5\n1 2 3 4 5\n3", "expectedOutput": "YES", "problemTitle": "Detect Loop in Linked List" },
+        { "input": "4\n1 2 3 4\n0", "expectedOutput": "NO", "problemTitle": "Detect Loop in Linked List" },
+        { "input": "1\n10\n1", "expectedOutput": "YES", "problemTitle": "Detect Loop in Linked List" },
+        { "input": "3\n5 10 15\n0", "expectedOutput": "NO", "problemTitle": "Detect Loop in Linked List" },
+        { "input": "0\n0", "expectedOutput": "NO", "problemTitle": "Detect Loop in Linked List" }
       ],
-
+    
       "starterCodes": [
         {
-          "id": null,
-          "problemId": null,
           "language": 1,
-          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n# TODO: Detect loop using Floyd's cycle-finding algorithm\n",
+          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head, tail\n\ndef createLoop(head, tail, p):\n    if p == 0 or not head:\n        return\n    temp = head\n    for _ in range(p-1):\n        temp = temp.next\n    tail.next = temp\n\ndef detectLoop(head):\n    # TODO: Implement Floyd's cycle detection\n    return False\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split())) if n > 0 else []\n    p = int(input())\n    head, tail = insertAtEnd(arr, n)\n    createLoop(head, tail, p)\n    print(\"YES\" if detectLoop(head) else \"NO\")\n\nif __name__ == '__main__':\n    solve()",
           "problemTitle": "Detect Loop in Linked List"
         },
         {
-          "id": null,
-          "problemId": null,
           "language": 2,
-          "code": "import java.util.*;\nclass Node {\n    int data;\n    Node next;\n    Node(int data){ this.data = data; this.next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Detect loop using Floyd's cycle-finding algorithm\n    }\n}",
+          "code": "import java.util.*;\nclass Node{ int data; Node next; Node(int d){ data=d; next=null; }}\nclass Result{\n    public static boolean detectLoop(Node head){\n        // TODO: Implement Floyd detection\n        return false;\n    }\n}\npublic class Solution{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        Node head=null,tail=null;\n        for(int i=0;i<n;i++){\n            Node t=new Node(sc.nextInt());\n            if(head==null){ head=tail=t; }\n            else{ tail.next=t; tail=t; }\n        }\n        int p=sc.nextInt();\n        if(p>0){ Node temp=head; for(int i=1;i<p;i++){ temp=temp.next;} tail.next=temp; }\n        System.out.print(Result.detectLoop(head)?\"YES\":\"NO\");\n    }\n}",
           "problemTitle": "Detect Loop in Linked List"
         },
         {
-          "id": null,
-          "problemId": null,
           "language": 3,
-          "code": "class Node {\n    constructor(data){\n        this.data = data;\n        this.next = null;\n    }\n}\n// TODO: Detect loop using Floyd's cycle-finding algorithm\n",
+          "code": "class Node{ constructor(data){ this.data=data; this.next=null; }}\nfunction detectLoop(head){\n  // TODO: Floyd cycle detection\n  return false;\n}\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); let idx=0; const n=Number(lines[idx++]); let head=null,tail=null; if(n>0){ const arr=lines[idx++].split(\" \").map(Number); arr.forEach(x=>{ const t=new Node(x); if(!head){ head=tail=t;} else{ tail.next=t; tail=t; }}); } const p=Number(lines[idx]); if(p>0 && head){ let temp=head; for(let i=1;i<p;i++) temp=temp.next; tail.next=temp;} console.log(detectLoop(head)?\"YES\":\"NO\"); }\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
           "problemTitle": "Detect Loop in Linked List"
         },
         {
-          "id": null,
-          "problemId": null,
           "language": 4,
-          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int data;\n    Node* next;\n};\nint main(){\n    // TODO: Detect loop using Floyd's cycle-finding algorithm\n    return 0;\n}",
+          "code": "#include <bits/stdc++.h>\nusing namespace std; struct Node{ long long data; Node* next; Node(long long x){ data=x; next=NULL; }};\nbool detectLoop(Node* head){\n    // TODO\n    return false;\n}\nint main(){ int n; cin>>n; Node *head=NULL,*tail=NULL; for(int i=0;i<n;i++){ long long x; cin>>x; Node* t=new Node(x); if(!head) head=tail=t; else{ tail->next=t; tail=t; } } int p; cin>>p; if(p>0 && head){ Node* temp=head; for(int i=1;i<p;i++) temp=temp->next; tail->next=temp; } cout<<(detectLoop(head)?\"YES\":\"NO\"); return 0; }",
           "problemTitle": "Detect Loop in Linked List"
         },
         {
-          "id": null,
-          "problemId": null,
           "language": 5,
-          "code": "#include <stdio.h>\ntypedef struct Node{\n    int data;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Detect loop using Floyd's cycle-finding algorithm\n    return 0;\n}",
+          "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef long long ll; typedef struct Node{ ll data; struct Node* next;} Node;\nint detectLoop(Node* head){\n    // TODO return 1 if loop exists else 0\n    return 0;\n}\nint main(){ int n; scanf(\"%d\",&n); Node *head=NULL,*tail=NULL; for(int i=0;i<n;i++){ ll x; scanf(\"%lld\",&x); Node* t=(Node*)malloc(sizeof(Node)); t->data=x; t->next=NULL; if(!head) head=tail=t; else{ tail->next=t; tail=t; }} int p; scanf(\"%d\",&p); if(p>0 && head){ Node* temp=head; for(int i=1;i<p;i++) temp=temp->next; tail->next=temp; } printf(detectLoop(head)?\"YES\":\"NO\"); return 0; }",
           "problemTitle": "Detect Loop in Linked List"
         }
       ],
-
+    
       "hintsList": [
-        "Use Floyd’s Cycle Detection (slow and fast pointer).",
-        "If fast meets slow, there is a loop."
-      ]
-    },
-    {
-      "id": null,
-      "title": "Remove Loop from Linked List",
-      "description": "Problem Statement:\nGiven N integers, create a Singly Linked List (SLL) by inserting nodes at the end. You are also given an integer P which represents the position (1-based index) where the last node should link back to create a loop. If P = 0, no loop should be created. Your task is to detect the loop and then remove it, restoring the list to a linear linked list. After removing the loop, display the linked list from head to tail. If the list becomes empty, print -1.\nUse Floyd’s Cycle Detection Algorithm to identify the loop and then remove it without losing nodes.\n\nExample Explanation:\nFor input N = 5, List = [1 2 3 4 5], P = 2 → a loop is created from last node back to node with value 2.\nAfter removing the loop, list becomes: 1 2 3 4 5\nSo output: 1 2 3 4 5",
-      "examples": "Input:\n5\n1 2 3 4 5\n2\n\nOutput:\n1 2 3 4 5",
-      "constraints": "1 <= N <= 10^5\n0 <= P <= N\n-10^9 <= Node value <= 10^9",
-      "hints": 2,
-      "timeLimit": 5,
-      "memoryLimit": 256,
-      "subdomainId": 2020,
-      "difficulty": "3",
-      "streamId": null,
-      "createdByUserId": null,
-      "updatedByUserId": null,
-
-      "testCases": [
-        { "id": null, "problemId": null, "input": "5\n1 2 3 4 5\n2", "expectedOutput": "1 2 3 4 5", "problemTitle": "Remove Loop from Linked List" },
-        { "id": null, "problemId": null, "input": "4\n10 20 30 40\n0", "expectedOutput": "10 20 30 40", "problemTitle": "Remove Loop from Linked List" },
-        { "id": null, "problemId": null, "input": "3\n5 6 7\n3", "expectedOutput": "5 6 7", "problemTitle": "Remove Loop from Linked List" },
-        { "id": null, "problemId": null, "input": "1\n99\n1", "expectedOutput": "99", "problemTitle": "Remove Loop from Linked List" },
-        { "id": null, "problemId": null, "input": "6\n7 14 21 28 35 42\n5", "expectedOutput": "7 14 21 28 35 42", "problemTitle": "Remove Loop from Linked List" }
-      ],
-
-      "starterCodes": [
-        {
-          "id": null,
-          "problemId": null,
-          "language": 1,
-          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n# TODO: Detect loop using Floyd’s algorithm and remove it\n",
-          "problemTitle": "Remove Loop from Linked Linked List"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 2,
-          "code": "import java.util.*;\nclass Node {\n    int data;\n    Node next;\n    Node(int data){ this.data = data; this.next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Detect loop using Floyd’s algorithm and remove it\n    }\n}",
-          "problemTitle": "Remove Loop from Linked Linked List"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 3,
-          "code": "class Node {\n    constructor(data){\n        this.data = data;\n        this.next = null;\n    }\n}\n// TODO: Detect loop using Floyd’s algorithm and remove it\n",
-          "problemTitle": "Remove Loop from Linked Linked List"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 4,
-          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int data;\n    Node* next;\n};\nint main(){\n    // TODO: Detect loop using Floyd’s algorithm and remove it\n    return 0;\n}",
-          "problemTitle": "Remove Loop from Linked Linked List"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 5,
-          "code": "#include <stdio.h>\ntypedef struct Node{\n    int data;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Detect loop using Floyd’s algorithm and remove it\n    return 0;\n}",
-          "problemTitle": "Remove Loop from Linked Linked List"
-        }
-      ],
-
-      "hintsList": [
-        "Use Floyd’s cycle detection to find the meeting point.",
-        "To remove loop, move one pointer to head and move both one step until next pointers match."
-      ]
-    },
-    {
-      "id": null,
-      "title": "Merge Two Sorted Linked Lists",
-      "description": "Problem Statement:\nGiven two sorted Singly Linked Lists (SLL), merge them into a single sorted linked list in non-decreasing order. The merged list should reuse existing nodes and should not create new nodes. Display the final merged linked list. If both lists are empty, print -1.\n\nExample Explanation:\nList1 = 1 -> 3 -> 5\nList2 = 2 -> 4 -> 6\nMerged Result = 1 2 3 4 5 6",
-      "examples": "Input:\n3\n1 3 5\n3\n2 4 6\n\nOutput:\n1 2 3 4 5 6",
-      "constraints": "1 <= N, M <= 10^5\n-10^9 <= Node value <= 10^9",
-      "hints": 2,
-      "timeLimit": 5,
-      "memoryLimit": 256,
-      "subdomainId": 2020,
-      "difficulty": "2",
-      "streamId": null,
-      "createdByUserId": null,
-      "updatedByUserId": null,
-
-      "testCases": [
-        { "id": null, "problemId": null, "input": "3\n1 3 5\n3\n2 4 6", "expectedOutput": "1 2 3 4 5 6", "problemTitle": "Merge Two Sorted Linked Lists" },
-        { "id": null, "problemId": null, "input": "4\n1 2 3 4\n3\n2 3 4", "expectedOutput": "1 2 2 3 3 4 4", "problemTitle": "Merge Two Sorted Linked Lists" },
-        { "id": null, "problemId": null, "input": "1\n100\n1\n50", "expectedOutput": "50 100", "problemTitle": "Merge Two Sorted Linked Lists" },
-        { "id": null, "problemId": null, "input": "3\n-5 -3 -1\n3\n-4 -2 0", "expectedOutput": "-5 -4 -3 -2 -1 0", "problemTitle": "Merge Two Sorted Linked Lists" },
-        { "id": null, "problemId": null, "input": "0\n\n0\n", "expectedOutput": "-1", "problemTitle": "Merge Two Sorted Linked Lists" }
-      ],
-
-      "starterCodes": [
-        {
-          "id": null,
-          "problemId": null,
-          "language": 1,
-          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n# TODO: Merge two sorted linked lists and display result\n",
-          "problemTitle": "Merge Two Sorted Linked Lists"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 2,
-          "code": "import java.util.*;\nclass Node {\n    int data;\n    Node next;\n    Node(int data){ this.data = data; this.next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Merge two sorted linked lists and display result\n    }\n}",
-          "problemTitle": "Merge Two Sorted Linked Lists"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 3,
-          "code": "class Node {\n    constructor(data){\n        this.data = data;\n        this.next = null;\n    }\n}\n// TODO: Merge two sorted linked lists and display result\n",
-          "problemTitle": "Merge Two Sorted Linked Lists"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 4,
-          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int data;\n    Node* next;\n};\nint main(){\n    // TODO: Merge two sorted linked lists and display result\n    return 0;\n}",
-          "problemTitle": "Merge Two Sorted Linked Lists"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 5,
-          "code": "#include <stdio.h>\ntypedef struct Node{\n    int data;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Merge two sorted linked lists and display result\n    return 0;\n}",
-          "problemTitle": "Merge Two Sorted Linked Lists"
-        }
-      ],
-
-      "hintsList": [
-        "Use two pointers to traverse both lists while linking the smaller node first.",
-        "When one list ends, link the remaining portion of the other list."
-      ]
-    },
-    {
-      "id": null,
-      "title": "Check if Linked List is Palindrome",
-      "description": "Problem Statement:\nGiven N integers, create a Singly Linked List (SLL) by inserting nodes at the end. Determine whether the linked list is a palindrome. A palindrome list reads the same forward and backward. Print \"YES\" if it is a palindrome, otherwise print \"NO\". Use an optimized approach by finding the middle, reversing the second half, and then comparing both halves.\n\nExample Explanation:\nFor input [1 2 3 2 1], the linked list reads the same from both directions, so output is YES.",
-      "examples": "Input:\n5\n1 2 3 2 1\n\nOutput:\nYES",
-      "constraints": "1 <= N <= 10^5\n-10^9 <= Node value <= 10^9",
-      "hints": 2,
-      "timeLimit": 5,
-      "memoryLimit": 256,
-      "subdomainId": 2020,
-      "difficulty": "2",
-      "streamId": null,
-      "createdByUserId": null,
-      "updatedByUserId": null,
-
-      "testCases": [
-        { "id": null, "problemId": null, "input": "5\n1 2 3 2 1", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" },
-        { "id": null, "problemId": null, "input": "4\n1 2 2 1", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" },
-        { "id": null, "problemId": null, "input": "3\n1 2 3", "expectedOutput": "NO", "problemTitle": "Check if Linked List is Palindrome" },
-        { "id": null, "problemId": null, "input": "1\n7", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" },
-        { "id": null, "problemId": null, "input": "6\n1 2 3 3 2 1", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" }
-      ],
-
-      "starterCodes": [
-        {
-          "id": null,
-          "problemId": null,
-          "language": 1,
-          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n# TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n",
-          "problemTitle": "Check if Linked List is Palindrome"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 2,
-          "code": "import java.util.*;\nclass Node {\n    int data;\n    Node next;\n    Node(int data){ this.data = data; this.next = null; }\n}\nclass Main {\n    public static void main(String[] args) {\n        // TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n    }\n}",
-          "problemTitle": "Check if Linked List is Palindrome"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 3,
-          "code": "class Node {\n    constructor(data){\n        this.data = data;\n        this.next = null;\n    }\n}\n// TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n",
-          "problemTitle": "Check if Linked List is Palindrome"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 4,
-          "code": "#include <iostream>\nusing namespace std;\nstruct Node{\n    int data;\n    Node* next;\n};\nint main(){\n    // TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n    return 0;\n}",
-          "problemTitle": "Check if Linked List is Palindrome"
-        },
-        {
-          "id": null,
-          "problemId": null,
-          "language": 5,
-          "code": "#include <stdio.h>\ntypedef struct Node{\n    int data;\n    struct Node* next;\n} Node;\nint main(){\n    // TODO: Check if linked list is palindrome using fast/slow pointers and reverse second half\n    return 0;\n}",
-          "problemTitle": "Check if Linked List is Palindrome"
-        }
-      ],
-
-      "hintsList": [
-        "Use fast and slow pointers to find the middle, then reverse the second half.",
-        "Compare the first half with the reversed second half to determine if it is a palindrome."
+        "Use Floyd's two-pointer algorithm.",
+        "If slow == fast at any point, loop exists."
       ]
     }
+,
+{
+  "id": null,
+  "title": "Remove Loop from Linked List",
+  "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) by inserting elements at the end. After building the list, an integer P is given. If P > 0, connect the last node to the P-th node (1-based index) to form a loop. Your task is to remove the loop if it exists, and then print the updated linked list in normal linear format. If the list is empty, print -1.\n\nTime Complexity\nLoop removal using Floyd's algorithm runs in O(N) time with O(1) extra space.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\nThe third line contains an integer P.\n\nOutput Format\nPrint the linked list elements separated by space. If list is empty, print -1.\n\nExample\nInput:\n5\n1 2 3 4 5\n3\nOutput:\n1 2 3 4 5",
+  "examples": "Sample Input\n5\n1 2 3 4 5\n3\n\nSample Output\n1 2 3 4 5",
+  "constraints": "0 ≤ N ≤ 100000\nValues may be positive or negative\n1 ≤ P ≤ N (if P > 0)\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+ "difficulty": 3,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n1 2 3 4 5\n3", "expectedOutput": "1 2 3 4 5", "problemTitle": "Remove Loop from Linked List" },
+    { "input": "4\n10 20 30 40\n0", "expectedOutput": "10 20 30 40", "problemTitle": "Remove Loop from Linked List" },
+    { "input": "1\n100\n1", "expectedOutput": "100", "problemTitle": "Remove Loop from Linked List" },
+    { "input": "3\n5 10 15\n2", "expectedOutput": "5 10 15", "problemTitle": "Remove Loop from Linked List" },
+    { "input": "0\n0", "expectedOutput": "-1", "problemTitle": "Remove Loop from Linked List" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head, tail\n\ndef createLoop(head, tail, p):\n    if p == 0 or not head:\n        return\n    temp = head\n    for _ in range(p-1): temp = temp.next\n    tail.next = temp\n\ndef removeLoop(head):\n    # TODO: Implement loop removal\n    return head\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    temp = head\n    while temp:\n        print(temp.data, end=\" \")\n        temp = temp.next\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split())) if n > 0 else []\n    p = int(input())\n    head, tail = insertAtEnd(arr, n)\n    createLoop(head, tail, p)\n    head = removeLoop(head)\n    display(head)\n\nif __name__ == '__main__': solve()",
+      "problemTitle": "Remove Loop from Linked List"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node next; Node(int d){ data=d; }}\nclass Result{\n    public static Node removeLoop(Node head){\n        // TODO: Remove loop if exists\n        return head;\n    }\n}\npublic class Solution{\n    public static void display(Node head){ if(head==null){ System.out.print(-1); return;} while(head!=null){ System.out.print(head.data+\" \"); head=head.next; }}\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); Node head=null,tail=null; for(int i=0;i<n;i++){ Node t=new Node(sc.nextInt()); if(head==null){ head=tail=t;} else{ tail.next=t; tail=t; }} int p=sc.nextInt(); if(p>0&&head!=null){ Node temp=head; for(int i=1;i<p;i++) temp=temp.next; tail.next=temp;} head=Result.removeLoop(head); display(head);} }",
+      "problemTitle": "Remove Loop from Linked List"
+    },
+    {
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.next=null; }}\nfunction removeLoop(head){ // TODO\n  return head;\n}\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); let idx=0; const n=Number(lines[idx++]); let head=null,tail=null; let arr=[]; if(n>0) arr=lines[idx++].split(\" \").map(Number); arr.forEach(x=>{ const t=new Node(x); if(!head) head=tail=t; else{ tail.next=t; tail=t; }}); const p=Number(lines[idx]); if(p>0&&head){ let temp=head; for(let i=1;i<p;i++) temp=temp.next; tail.next=temp;} head=removeLoop(head); if(!head) return console.log(-1); let out=[]; let t=head; while(t){ out.push(t.data); t=t.next;} console.log(out.join(\" \")); }\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Remove Loop from Linked List"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std; struct Node{ long long data; Node* next; Node(long long x){ data=x; next=NULL; }};\nNode* removeLoop(Node* head){ // TODO\n    return head;\n}\nvoid display(Node* head){ if(!head){ cout<<-1; return;} while(head){ cout<<head->data<<\" \"; head=head->next;} }\nint main(){ int n; cin>>n; Node *head=NULL,*tail=NULL; for(int i=0;i<n;i++){ long long x; cin>>x; Node* t=new Node(x); if(!head) head=tail=t; else{ tail->next=t; tail=t; }} int p; cin>>p; if(p>0&&head){ Node* temp=head; for(int i=1;i<p;i++) temp=temp->next; tail->next=temp; } head=removeLoop(head); display(head); return 0; }",
+      "problemTitle": "Remove Loop from Linked List"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef long long ll; typedef struct Node{ ll data; struct Node* next;} Node;\nNode* removeLoop(Node* head){ // TODO\n    return head;\n}\nvoid display(Node* head){ if(!head){ printf(\"-1\"); return;} while(head){ printf(\"%lld \",head->data); head=head->next;} }\nint main(){ int n; scanf(\"%d\",&n); Node *head=NULL,*tail=NULL; for(int i=0;i<n;i++){ ll x; scanf(\"%lld\",&x); Node* t=(Node*)malloc(sizeof(Node)); t->data=x; t->next=NULL; if(!head) head=tail=t; else{ tail->next=t; tail=t; }} int p; scanf(\"%d\",&p); if(p>0&&head){ Node* temp=head; for(int i=1;i<p;i++) temp=temp->next; tail->next=temp;} head=removeLoop(head); display(head); return 0; }",
+      "problemTitle": "Remove Loop from Linked List"
+    }
+  ],
+
+  "hintsList": [
+    "Use Floyd's Cycle Detection to find meeting point.",
+    "Move one pointer to head and step both one-by-one until next of both meet."
+  ]
+}
+,
+{
+  "id": null,
+  "title": "Merge Two Sorted Linked Lists",
+  "description": "Problem Statement\nYou are given two sorted Singly Linked Lists (SLL). Your task is to merge them into a single sorted linked list and print the result. Both lists are sorted in non-decreasing order. Merge the lists by rearranging existing nodes and return the final merged list. If both lists are empty, print -1.\n\nTime Complexity\nThe merge operation traverses both lists once, hence O(N + M).\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers (sorted List 1).\nThe third line contains an integer M.\nThe fourth line contains M space-separated integers (sorted List 2).\n\nOutput Format\nPrint the merged sorted linked list elements separated by space. If list is empty, print -1.\n\nExample\nInput:\n3\n1 3 5\n3\n2 4 6\nOutput:\n1 2 3 4 5 6",
+  "examples": "Sample Input\n3\n1 3 5\n3\n2 4 6\n\nSample Output\n1 2 3 4 5 6",
+  "constraints": "0 ≤ N, M ≤ 100000\nValues may be positive or negative\nExpected Time Complexity: O(N + M)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+ "difficulty": 3,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "3\n1 3 5\n3\n2 4 6", "expectedOutput": "1 2 3 4 5 6", "problemTitle": "Merge Two Sorted Linked Lists" },
+    { "input": "4\n1 2 2 4\n3\n1 3 5", "expectedOutput": "1 1 2 2 3 4 5", "problemTitle": "Merge Two Sorted Linked Lists" },
+    { "input": "0\n\n3\n5 10 15", "expectedOutput": "5 10 15", "problemTitle": "Merge Two Sorted Linked Lists" },
+    { "input": "3\n-3 -1 2\n2\n-2 4", "expectedOutput": "-3 -2 -1 2 4", "problemTitle": "Merge Two Sorted Linked Lists" },
+    { "input": "0\n\n0\n", "expectedOutput": "-1", "problemTitle": "Merge Two Sorted Linked Lists" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef mergeLists(head1, head2):\n    # TODO: Implement merging of two sorted linked lists\n    return None\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    temp = head\n    while temp:\n        print(temp.data, end=\" \")\n        temp = temp.next\n\ndef solve():\n    n = int(input())\n    arr1 = list(map(int, input().split())) if n > 0 else []\n    m = int(input())\n    arr2 = list(map(int, input().split())) if m > 0 else []\n    head1 = insertAtEnd(arr1, n)\n    head2 = insertAtEnd(arr2, m)\n    result = mergeLists(head1, head2)\n    display(result)\n\nif __name__ == '__main__': solve()",
+      "problemTitle": "Merge Two Sorted Linked Lists"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node next; Node(int d){ data=d; }}\nclass Result{\n    public static Node mergeLists(Node h1, Node h2){\n        // TODO: merge two sorted lists\n        return null;\n    }\n}\npublic class Solution{\n    public static void display(Node head){ if(head==null){ System.out.print(-1); return;} while(head!=null){ System.out.print(head.data+\" \"); head=head.next; }}\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); Node h1=null,t1=null; for(int i=0;i<n;i++){ Node t=new Node(sc.nextInt()); if(h1==null){ h1=t1=t;} else{ t1.next=t; t1=t; }} int m=sc.nextInt(); Node h2=null,t2=null; for(int i=0;i<m;i++){ Node t=new Node(sc.nextInt()); if(h2==null){ h2=t2=t;} else{ t2.next=t; t2=t; }} Node ans=Result.mergeLists(h1,h2); display(ans);} }",
+      "problemTitle": "Merge Two Sorted Linked Lists"
+    },
+    {
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.next=null; }}\nfunction mergeLists(h1,h2){ // TODO\n  return null;\n}\nfunction insertAtEnd(arr){ let head=null,tail=null; arr.forEach(x=>{ const t=new Node(x); if(!head) head=tail=t; else{ tail.next=t; tail=t; }}); return head; }\nfunction display(head){ if(!head) return console.log(-1); let out=[]; while(head){ out.push(head.data); head=head.next;} console.log(out.join(\" \")); }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); let idx=0; const n=Number(lines[idx++]); const arr1=n>0?lines[idx++].split(\" \").map(Number):[]; const m=Number(lines[idx++]); const arr2=m>0?lines[idx++].split(\" \").map(Number):[]; const h1=insertAtEnd(arr1); const h2=insertAtEnd(arr2); const ans=mergeLists(h1,h2); display(ans);} const fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Merge Two Sorted Linked Lists"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std; struct Node{ long long data; Node* next; Node(long long x){ data=x; next=NULL; }};\nNode* mergeLists(Node* h1, Node* h2){ // TODO\n    return NULL; }\nNode* insertAtEnd(vector<long long> arr){ Node *head=NULL,*tail=NULL; for(long long x:arr){ Node* t=new Node(x); if(!head) head=tail=t; else{ tail->next=t; tail=t;} } return head; }\nvoid display(Node* head){ if(!head){ cout<<-1; return;} while(head){ cout<<head->data<<\" \"; head=head->next;} }\nint main(){ int n; cin>>n; vector<long long> a(n); for(int i=0;i<n;i++) cin>>a[i]; int m; cin>>m; vector<long long> b(m); for(int i=0;i<m;i++) cin>>b[i]; Node* h1=insertAtEnd(a); Node* h2=insertAtEnd(b); Node* ans=mergeLists(h1,h2); display(ans);} ",
+      "problemTitle": "Merge Two Sorted Linked Lists"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef long long ll; typedef struct Node{ ll data; struct Node* next;} Node;\nNode* mergeLists(Node* h1, Node* h2){ // TODO\n    return NULL; }\nNode* insertAtEnd(ll arr[],int n){ Node *head=NULL,*tail=NULL,*t; for(int i=0;i<n;i++){ t=(Node*)malloc(sizeof(Node)); t->data=arr[i]; t->next=NULL; if(!head) head=tail=t; else{ tail->next=t; tail=t;} } return head; }\nvoid display(Node* head){ if(!head){ printf(\"-1\"); return;} while(head){ printf(\"%lld \",head->data); head=head->next; }}\nint main(){ int n,m; scanf(\"%d\",&n); ll a[100001]; for(int i=0;i<n;i++) scanf(\"%lld\",&a[i]); scanf(\"%d\",&m); ll b[100001]; for(int i=0;i<m;i++) scanf(\"%lld\",&b[i]); Node* h1=insertAtEnd(a,n); Node* h2=insertAtEnd(b,m); Node* ans=mergeLists(h1,h2); display(ans); return 0;} ",
+      "problemTitle": "Merge Two Sorted Linked Lists"
+    }
+  ],
+
+  "hintsList": [
+    "Use two pointers technique, compare values, and attach the smaller one.",
+    "Continue appending remaining nodes from non-empty list."
+  ]
+}
+,{
+  "id": null,
+  "title": "Check if Linked List is Palindrome",
+  "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) by inserting elements at the end. Your task is to check whether the linked list represents a palindrome sequence or not. Print YES if the linked list is a palindrome, otherwise print NO.\n\nTime Complexity\nChecking palindrome using the fast and slow pointer approach and reversing second half runs in O(N) time and O(1) extra space.\n\nInput Format\nThe first line contains an integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint YES if the linked list is palindrome, otherwise print NO.\n\nExample\nInput:\n5\n1 2 3 2 1\nOutput:\nYES",
+  "examples": "Sample Input\n5\n1 2 3 2 1\n\nSample Output\nYES",
+  "constraints": "0 ≤ N ≤ 100000\nValues may be positive or negative\nExpected Time Complexity: O(N)",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+ "difficulty": 3,
+  "subdomainId": 2020,
+  "streamId": null,
+
+  "testCases": [
+    { "input": "5\n1 2 3 2 1", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" },
+    { "input": "4\n1 2 2 1", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" },
+    { "input": "5\n1 2 3 4 5", "expectedOutput": "NO", "problemTitle": "Check if Linked List is Palindrome" },
+    { "input": "1\n10", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" },
+    { "input": "0\n", "expectedOutput": "YES", "problemTitle": "Check if Linked List is Palindrome" }
+  ],
+
+  "starterCodes": [
+    {
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef isPalindrome(head):\n    # TODO: Implement palindrome check\n    return False\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split())) if n > 0 else []\n    head = insertAtEnd(arr, n)\n    print(\"YES\" if isPalindrome(head) else \"NO\")\n\nif __name__ == '__main__': solve()",
+      "problemTitle": "Check if Linked List is Palindrome"
+    },
+    {
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node next; Node(int d){ data=d; }}\nclass Result{\n    public static boolean isPalindrome(Node head){\n        // TODO\n        return false;\n    }\n}\npublic class Solution{\n    public static void main(String[] args){ Scanner sc=new Scanner(System.in); int n=sc.nextInt(); Node head=null,tail=null; for(int i=0;i<n;i++){ Node t=new Node(sc.nextInt()); if(head==null) head=tail=t; else{ tail.next=t; tail=t; }} System.out.print(Result.isPalindrome(head)?\"YES\":\"NO\"); }}",
+      "problemTitle": "Check if Linked List is Palindrome"
+    },
+    {
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.next=null; }}\nfunction isPalindrome(head){ // TODO\n  return false;\n}\nfunction insertAtEnd(arr){ let head=null,tail=null; arr.forEach(x=>{ const t=new Node(x); if(!head) head=tail=t; else{ tail.next=t; tail=t; }}); return head; }\nfunction solve(input){ const lines=input.trim().split(\"\\n\"); let idx=0; const n=Number(lines[idx++]); const arr=n>0?lines[idx++].split(\" \").map(Number):[]; const head=insertAtEnd(arr); console.log(isPalindrome(head)?\"YES\":\"NO\"); }\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Check if Linked List is Palindrome"
+    },
+    {
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std; struct Node{ long long data; Node* next; Node(long long x){ data=x; next=NULL; }};\nbool isPalindrome(Node* head){ // TODO\n    return false;\n}\nNode* insertAtEnd(vector<long long> arr){ Node *head=NULL,*tail=NULL; for(long long x:arr){ Node* t=new Node(x); if(!head) head=tail=t; else{ tail->next=t; tail=t;} } return head; }\nint main(){ int n; cin>>n; vector<long long> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; Node* head=insertAtEnd(arr); cout<<(isPalindrome(head)?\"YES\":\"NO\"); }",
+      "problemTitle": "Check if Linked List is Palindrome"
+    },
+    {
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef long long ll; typedef struct Node{ ll data; struct Node* next;} Node;\nint isPalindrome(Node* head){ // TODO return 1 or 0\n    return 0;\n}\nNode* insertAtEnd(ll arr[], int n){ Node *head=NULL,*tail=NULL,*t; for(int i=0;i<n;i++){ t=(Node*)malloc(sizeof(Node)); t->data=arr[i]; t->next=NULL; if(!head) head=tail=t; else{ tail->next=t; tail=t;} } return head; }\nint main(){ int n; scanf(\"%d\",&n); ll arr[100001]; for(int i=0;i<n;i++) scanf(\"%lld\",&arr[i]); Node* head=insertAtEnd(arr,n); printf(isPalindrome(head)?\"YES\":\"NO\"); return 0; }",
+      "problemTitle": "Check if Linked List is Palindrome"
+    }
+  ],
+
+  "hintsList": [
+    "Use fast and slow pointer to reach middle and reverse second half.",
+    "Compare first and second half node by node."
+  ]
+}
+
+    
   ]
 }

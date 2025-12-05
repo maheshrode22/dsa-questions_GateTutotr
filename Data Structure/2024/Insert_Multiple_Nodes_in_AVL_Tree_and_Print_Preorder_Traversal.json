@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal",
+      "description": "Problem Statement\n\nYou are given N integers. Insert all values one by one into an AVL Tree (self-balancing BST).\nAfter all insertions, print the Preorder Traversal of the AVL Tree.\n\nAVL Tree Rules:\n- Height-balanced BST.\n- Balance Factor = height(left) − height(right).\n- If BF becomes ±2, perform required rotations:\n  * LL Rotation\n  * RR Rotation\n  * LR Rotation\n  * RL Rotation\n\nPreorder Traversal:\nRoot → Left → Right\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint preorder traversal as space-separated values.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n5\n30 20 40 10 25\n\nOutput:\n30 20 10 25 40\n\nExplanation:\nValues inserted with AVL balancing, then preorder printed.",
+      "examples": "Sample Input 1\n5\n30 20 40 10 25\n\nSample Output 1\n30 20 10 25 40\n\nSample Input 2\n3\n10 20 30\n\nSample Output 2\n20 10 30",
+      "constraints": "1 ≤ N ≤ 1000\nDistinct values only\n1 ≤ value ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n30 20 40 10 25",
+          "expectedOutput": "30 20 10 25 40",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n10 20 30",
+          "expectedOutput": "20 10 30",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n8 5 15 2",
+          "expectedOutput": "8 5 2 15",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n50 40 70 35 45 47",
+          "expectedOutput": "50 40 35 45 70 47",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n100",
+          "expectedOutput": "100",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: Insert key into AVL with balancing\n        pass\n\n    def preorder(self, root):\n        # TODO: Return preorder list\n        pass\n\n    def solveAVL(self, arr):\n        # TODO: Build AVL from arr, return preorder list\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    result = sol.solveAVL(arr)\n\n    if not result:\n        print(\"Tree is Empty\")\n    else:\n        print(\" \".join(map(str, result)))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    AVLNode insertNode(AVLNode root,int key){\n        // TODO\n        return null;\n    }\n    void preorder(AVLNode root, ArrayList<Integer> list){\n        // TODO\n    }\n    ArrayList<Integer> solveAVL(int[] arr){\n        // TODO\n        return new ArrayList<>();\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        ArrayList<Integer> ans=sol.solveAVL(arr);\n        if(ans.size()==0) System.out.println(\"Tree is Empty\");\n        else{\n            for(int i=0;i<ans.size();i++){\n                System.out.print(ans.get(i));\n                if(i<ans.size()-1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  preorder(root,arr){\n    // TODO\n  }\n  solveAVL(arr){\n    // TODO\n    return [];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const ans=sol.solveAVL(arr);\n  if(ans.length===0) console.log(\"Tree is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root,int key){\n        // TODO\n        return NULL;\n    }\n    void preorder(AVLNode* root, vector<int>& out){\n        // TODO\n    }\n    vector<int> solveAVL(vector<int>& arr){\n        // TODO\n        return {};\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    vector<int> ans=sol.solveAVL(arr);\n    if(ans.empty()) cout<<\"Tree is Empty\";\n    else{\n        for(int i=0;i<ans.size();i++){\n            cout<<ans[i];\n            if(i<ans.size()-1) cout<<\" \";\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nint ans[1000], idx=0;\n\nAVLNode* insertNode(AVLNode* root,int key){\n    // TODO\n    return NULL;\n}\n\nvoid preorder(AVLNode* root){\n    if(!root) return;\n    ans[idx++]=root->key;\n    preorder(root->left);\n    preorder(root->right);\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    AVLNode* root=NULL;\n    for(int i=0;i<n;i++) root=insertNode(root,arr[i]);\n    idx=0;\n    if(!root) printf(\"Tree is Empty\");\n    else{\n        preorder(root);\n        for(int i=0;i<idx;i++){\n            printf(\"%d\",ans[i]);\n            if(i<idx-1) printf(\" \");\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+        }
+      ],
+      "hintsList": [
+        "Preorder traversal is: Root → Left → Right.",
+        "After each insertion, apply AVL rotations when BF becomes ±2."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Binary Search - Find Element in Sorted Array",
+            "description": "Problem Statement\n\nYou are given a sorted array of N integers and a target element X.\nUsing Binary Search (recursive approach), find if X exists in the array.\nIf found, print the index (0-based). If not found, print -1.\n\nBinary Search works by repeatedly dividing the search space in half.\n",
+            "examples": "Sample Input\n5\n1 3 5 7 9\n5\n\nSample Output\n2\n\nExplanation:\nElement 5 is found at index 2.",
+            "constraints": "1 <= N <= 1000\n-10000 <= arr[i] <= 10000\nArray is sorted in ascending order",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2027,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5\n1 3 5 7 9\n5",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "6\n2 4 6 8 10 12\n8",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "4\n10 20 30 40\n25",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "1\n100\n100",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "7\n1 2 3 4 5 6 7\n1",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def binarySearch(self, arr, left, right, target):\n        # TODO: Implement recursive binary search\n        # Return index if found, else -1\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    N = int(data[0])\n    arr = list(map(int, data[1:N+1]))\n    target = int(data[N+1])\n    sol = Solution()\n    print(sol.binarySearch(arr, 0, N-1, target))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int binarySearch(int[] arr, int left, int right, int target){\n        // TODO: Implement recursive binary search\n        // Return index if found, else -1\n        return -1;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int N = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[N];\n        for(int i=0;i<N;i++) arr[i] = Integer.parseInt(parts[i]);\n        int target = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.binarySearch(arr, 0, N-1, target));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  binarySearch(arr, left, right, target){\n    // TODO: Implement recursive binary search\n    // Return index if found, else -1\n    return -1;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const N = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const target = parseInt(lines[2]);\n  const sol = new Solution();\n  console.log(sol.binarySearch(arr, 0, N-1, target));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int binarySearch(vector<int>& arr, int left, int right, int target){\n        // TODO: Implement recursive binary search\n        // Return index if found, else -1\n        return -1;\n    }\n};\nint main(){\n    int N; cin >> N;\n    vector<int> arr(N);\n    for(int i=0;i<N;i++) cin >> arr[i];\n    int target; cin >> target;\n    Solution sol;\n    cout << sol.binarySearch(arr, 0, N-1, target);\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint binarySearch(int arr[], int left, int right, int target){\n    // TODO: Implement recursive binary search\n    // Return index if found, else -1\n    return -1;\n}\nint main(){\n    int N; scanf(\"%d\", &N);\n    int arr[N];\n    for(int i=0;i<N;i++) scanf(\"%d\", &arr[i]);\n    int target; scanf(\"%d\", &target);\n    printf(\"%d\", binarySearch(arr, 0, N-1, target));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare target with middle element. If equal, return mid. If target < mid, search left half. If target > mid, search right half.",
+                "Base case: if left > right, element not found, return -1."
+            ]
+        }
+    ]
+}

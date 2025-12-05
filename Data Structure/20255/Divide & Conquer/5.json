@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Binary Search - Find Square Root",
+            "description": "Problem Statement\n\nGiven a non-negative integer N, find its integer square root using Binary Search.\nThe integer square root of N is the largest integer X such that X*X <= N.\n\nExample: sqrt(8) = 2 (since 2*2=4 <= 8, but 3*3=9 > 8)\n",
+            "examples": "Sample Input\n8\n\nSample Output\n2\n\nExplanation:\n2*2 = 4 <= 8, and 3*3 = 9 > 8. So integer square root is 2.",
+            "constraints": "0 <= N <= 1000000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2027,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "8",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "16",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "99",
+                    "expectedOutput": "9"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def mySqrt(self, n):\n        # TODO: Find integer square root using binary search\n        # Return largest x where x*x <= n\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n = int(sys.stdin.read().strip())\n    sol = Solution()\n    print(sol.mySqrt(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int mySqrt(int n){\n        // TODO: Find integer square root using binary search\n        // Return largest x where x*x <= n\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.mySqrt(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  mySqrt(n){\n    // TODO: Find integer square root using binary search\n    // Return largest x where x*x <= n\n    return 0;\n  }\n}\nfunction solve(input){\n  const n = parseInt(input.trim());\n  const sol = new Solution();\n  console.log(sol.mySqrt(n));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int mySqrt(int n){\n        // TODO: Find integer square root using binary search\n        // Return largest x where x*x <= n\n        return 0;\n    }\n};\nint main(){\n    int n; cin >> n;\n    Solution sol;\n    cout << sol.mySqrt(n);\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint mySqrt(int n){\n    // TODO: Find integer square root using binary search\n    // Return largest x where x*x <= n\n    return 0;\n}\nint main(){\n    int n; scanf(\"%d\", &n);\n    printf(\"%d\", mySqrt(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Binary search from 0 to n. If mid*mid <= n, store mid and search right half for larger answer.",
+                "If mid*mid > n, search left half. Handle overflow by using long for multiplication."
+            ]
+        }
+    ]
+}

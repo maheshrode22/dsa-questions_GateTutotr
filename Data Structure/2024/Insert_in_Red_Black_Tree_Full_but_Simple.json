@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Insert in Red-Black Tree (Full but Simple)",
+      "description": "Problem Statement\n\nYou are given N integers. Insert them one by one into a Red-Black Tree.\nYour task is to perform FULL Red-Black insertion rules:\n1. Insert node as in BST\n2. Color new node RED\n3. Fix violations using:\n   - Recoloring\n   - Left Rotation\n   - Right Rotation\n   - Parent–Uncle cases\n\nThis is a simplified version because:\n- No deletions\n- No printing of node colors\n- Final output is ONLY inorder traversal (sorted order)\n\nYour final task is to print the inorder traversal after all insertions.\n\nInorder Traversal:\nLeft → Root → Right\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint inorder traversal as space-separated values.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n5\n10 20 30 15 5\n\nOutput:\n5 10 15 20 30\n\nExplanation:\nAll values inserted into a Red-Black Tree using full balancing rules, and inorder printed.",
+      "examples": "Sample Input 1\n5\n10 20 30 15 5\n\nSample Output 1\n5 10 15 20 30\n\nSample Input 2\n3\n7 3 9\n\nSample Output 2\n3 7 9",
+      "constraints": "1 ≤ N ≤ 1000\nValues are distinct\n1 ≤ value ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 3,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n10 20 30 15 5",
+          "expectedOutput": "5 10 15 20 30",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n7 3 9",
+          "expectedOutput": "3 7 9",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n50 40 60 55",
+          "expectedOutput": "40 50 55 60",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n15 5 25 2 10 20",
+          "expectedOutput": "2 5 10 15 20 25",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n100",
+          "expectedOutput": "100",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "RED = 0\nBLACK = 1\n\nclass RBNode:\n    def __init__(self, key):\n        self.key = key\n        self.color = RED\n        self.left = None\n        self.right = None\n        self.parent = None\n\nclass Solution:\n    def leftRotate(self, root, x):\n        # TODO: Left rotation logic\n        pass\n\n    def rightRotate(self, root, x):\n        # TODO: Right rotation logic\n        pass\n\n    def fixInsert(self, root, node):\n        # TODO: Fix RBT violations\n        pass\n\n    def insertNode(self, root, key):\n        # TODO: BST insert + fixInsert\n        pass\n\n    def inorder(self, root, arr):\n        # TODO: Inorder traversal\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n\n    sol = Solution()\n    root = None\n    for x in arr:\n        root = sol.insertNode(root, x)\n\n    ans = []\n    sol.inorder(root, ans)\n\n    if not ans:\n        print(\"Tree is Empty\")\n    else:\n        print(\" \".join(map(str, ans)))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass RBNode{ int key,color; RBNode left,right,parent; RBNode(int k){ key=k; color=0; }}\nclass Solution{\n    RBNode leftRotate(RBNode root, RBNode x){\n        // TODO\n        return root;\n    }\n    RBNode rightRotate(RBNode root, RBNode x){\n        // TODO\n        return root;\n    }\n    RBNode fixInsert(RBNode root, RBNode node){\n        // TODO\n        return root;\n    }\n    RBNode insertNode(RBNode root,int key){\n        // TODO\n        return root;\n    }\n    void inorder(RBNode root, ArrayList<Integer> list){\n        // TODO\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        RBNode root=null;\n        for(int x:arr) root=sol.insertNode(root,x);\n        ArrayList<Integer> ans=new ArrayList<>();\n        sol.inorder(root,ans);\n        if(ans.size()==0) System.out.println(\"Tree is Empty\");\n        else{\n            for(int i=0;i<ans.size();i++){\n                System.out.print(ans.get(i));\n                if(i<ans.size()-1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "const RED=0, BLACK=1;\nclass RBNode{ constructor(key){ this.key=key; this.color=RED; this.left=null; this.right=null; this.parent=null; }}\nclass Solution{\n  leftRotate(root,x){ /* TODO */ return root; }\n  rightRotate(root,x){ /* TODO */ return root; }\n  fixInsert(root,node){ /* TODO */ return root; }\n  insertNode(root,key){ /* TODO */ return root; }\n  inorder(root,arr){ /* TODO */ }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  let root=null;\n  for(const x of arr) root=sol.insertNode(root,x);\n  const ans=[]; sol.inorder(root,ans);\n  if(ans.length===0) console.log(\"Tree is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n#define RED 0\n#define BLACK 1\nstruct RBNode{ int key,color; RBNode *left,*right,*parent; RBNode(int k){ key=k; color=RED; left=right=parent=NULL; }};\nclass Solution{\npublic:\n    RBNode* leftRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\n    RBNode* rightRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\n    RBNode* fixInsert(RBNode* root,RBNode* node){ /* TODO */ return root; }\n    RBNode* insertNode(RBNode* root,int key){ /* TODO */ return root; }\n    void inorder(RBNode* root, vector<int>& out){ /* TODO */ }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    RBNode* root=NULL;\n    for(int x:arr) root=sol.insertNode(root,x);\n    vector<int> ans;\n    sol.inorder(root,ans);\n    if(ans.empty()) cout<<\"Tree is Empty\";\n    else{\n        for(int i=0;i<ans.size();i++){\n            cout<<ans[i];\n            if(i<ans.size()-1) cout<<\" \";\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#define RED 0\n#define BLACK 1\n\ntypedef struct RBNode{ int key,color; struct RBNode *left,*right,*parent; }RBNode;\n\nint ans[1000], idx=0;\n\nRBNode* leftRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\nRBNode* rightRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\nRBNode* fixInsert(RBNode* root,RBNode* node){ /* TODO */ return root; }\nRBNode* insertNode(RBNode* root,int key){ /* TODO */ return root; }\nvoid inorder(RBNode* root){\n    if(!root) return;\n    inorder(root->left);\n    ans[idx++]=root->key;\n    inorder(root->right);\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    RBNode* root=NULL;\n    for(int i=0;i<n;i++) root=insertNode(root,arr[i]);\n    idx=0;\n    if(!root) printf(\"Tree is Empty\");\n    else{\n        inorder(root);\n        for(int i=0;i<idx;i++){\n            printf(\"%d\",ans[i]);\n            if(i<idx-1) printf(\" \");\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+        }
+      ],
+      "hintsList": [
+        "Every new node starts as RED.",
+        "Fixing cases depend on parent and uncle colors."
+      ]
+    }
+  ]
+}

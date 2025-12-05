@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Validate Red-Black Tree Properties",
+      "description": "Problem Statement\n\nYou are given a binary tree in level-order form where each node is represented as value:color. Color is either R (Red) or B (Black). -1 represents a NULL child.\n\nYour task is to check whether this binary tree satisfies ALL Red-Black Tree (RBT) properties:\n\n1. Every node is either RED or BLACK.\n2. The root must be BLACK.\n3. No RED node can have a RED parent (no consecutive RED nodes).\n4. All NULL children are considered BLACK.\n5. Every path from the root to any NULL leaf must contain the same number of BLACK nodes (Black-Height property).\n\nIf all properties are satisfied, print YES. Otherwise, print NO.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N entries: value:color or -1.\n\nOutput Format\nPrint YES or NO.\n\nExample\nInput:\n7\n10:B 5:R 15:R -1 -1 -1 -1\n\nOutput:\nNO\n\nExplanation:\nBoth children of root are RED → violates rule 3.",
+      "examples": "Sample Input 1\n7\n10:B 5:B 15:B -1 -1 -1 -1\n\nSample Output 1\nYES\n\nSample Input 2\n7\n10:B 5:R 15:R -1 -1 -1 -1\n\nSample Output 2\nNO",
+      "constraints": "1 ≤ N ≤ 1000\nValues are integers\nColor must be R or B",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 3,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "7\n10:B 5:B 15:B -1 -1 -1 -1",
+          "expectedOutput": "YES",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "7\n10:B 5:R 15:R -1 -1 -1 -1",
+          "expectedOutput": "NO",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n10:R 5:B 15:B",
+          "expectedOutput": "NO",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n50:B",
+          "expectedOutput": "YES",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "7\n20:B 10:B 30:B 5:R 15:R 25:R 35:R",
+          "expectedOutput": "YES",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, data, color):\n        self.data = data\n        self.color = color\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from level-order (value:color or -1)\n        pass\n\n    def validateProperties(self, root):\n        # TODO: Check all Red-Black Tree rules\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = input().split()\n    sol = Solution()\n    root = sol.buildTree(arr)\n    print(\"YES\" if sol.validateProperties(root) else \"NO\")\n\nif __name__ == \"__main__\":\n    solve()",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass Node{ int data; char color; Node left,right; Node(int d,char c){ data=d;color=c; }}\nclass Solution{\n    Node buildTree(String[] arr){\n        // TODO\n        return null;\n    }\n    boolean validateProperties(Node root){\n        // TODO\n        return false;\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt(); sc.nextLine();\n        String[] arr=sc.nextLine().split(\" \");\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        System.out.println(sol.validateProperties(root)?\"YES\":\"NO\");\n    }\n}",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Node{ constructor(data,color){ this.data=data; this.color=color; this.left=null; this.right=null; }}\nclass Solution{\n  buildTree(arr){ /* TODO */ return null; }\n  validateProperties(root){ /* TODO */ return false; }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \");\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  console.log(sol.validateProperties(root)?\"YES\":\"NO\");\n}\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; char color; Node *left,*right; Node(int d,char c){ data=d;color=c;left=right=NULL; }};\nclass Solution{\npublic:\n    Node* buildTree(vector<string>& arr){ /* TODO */ return NULL; }\n    bool validateProperties(Node* root){ /* TODO */ return false; }\n};\nint main(){\n    int n; cin>>n;\n    vector<string> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n    cout<<(sol.validateProperties(root)?\"YES\":\"NO\")<<endl;\n    return 0;\n}",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\ntypedef struct Node{ int data; char color; struct Node *left,*right; }Node;\n\nNode* buildTree(char** arr,int n){ /* TODO */ return NULL; }\nint validateProperties(Node* root){ /* TODO */ return 0; }\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    char* arr[n];\n    for(int i=0;i<n;i++){ arr[i]=(char*)malloc(10); scanf(\"%s\",arr[i]); }\n    Node* root=buildTree(arr,n);\n    printf(validateProperties(root)?\"YES\":\"NO\\n\");\n    for(int i=0;i<n;i++) free(arr[i]);\n    return 0;\n}",
+          "problemTitle": "Validate Red-Black Tree Properties"
+        }
+      ],
+      "hintsList": [
+        "Check if root is Black and no Red parent-child exists.",
+        "Calculate black-height for every path and ensure they are equal."
+      ]
+    }
+  ]
+}

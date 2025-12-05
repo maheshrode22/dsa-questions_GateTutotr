@@ -1,0 +1,1431 @@
+{
+  "problems": [
+
+    {
+        "id": null,
+        "title": "Insert a Node in AVL Tree (Simple Version)",
+        "description": "Problem Statement\n\nYou are given an empty AVL Tree.\nInsert a single integer value into the AVL Tree and print the height of the tree after insertion.\n\nAVL Tree is a self-balancing Binary Search Tree where:\n- Balance Factor (BF) = height(left) − height(right)\n- BF must be −1, 0, or +1 for every node\n- If insertion makes the tree unbalanced, rotations are used (LL, RR, LR, RL)\n\nHowever, in this simple version, you insert ONLY ONE value into an EMPTY AVL Tree.\nSo no rotation is required, and the height will always be 1.\n\nInput Format\nA single integer X: the value to insert.\n\nOutput Format\nPrint:\nheight: H\n(where H is the final height of the AVL Tree)\n\nExample\nInput:\n10\n\nOutput:\nheight: 1\n\nExplanation:\nTree was empty → insert 10 → height becomes 1.\n\nExample 2\nInput:\n25\n\nOutput:\nheight: 1",
+        "examples": "Sample Input 1\n10\n\nSample Output 1\nheight: 1\n\nSample Input 2\n5\n\nSample Output 2\nheight: 1",
+        "constraints": "1 ≤ X ≤ 10^6\nTree is initially empty.",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2024,
+        "difficulty": 1,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+      
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "10",
+            "expectedOutput": "height: 1",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "5",
+            "expectedOutput": "height: 1",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "99",
+            "expectedOutput": "height: 1",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "1",
+            "expectedOutput": "height: 1",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "250",
+            "expectedOutput": "height: 1",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          }
+        ],
+      
+        "starterCodes": [
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: Insert into AVL Tree (simple: only one node)\n        pass\n\n    def solveAVL(self, x):\n        # TODO: Create tree, insert x, return height\n        pass\n\ndef solve():\n    x = int(input().strip())\n    sol = Solution()\n    print(f\"height: {sol.solveAVL(x)}\")\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          },
+      
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; } }\nclass Solution{\n    AVLNode insertNode(AVLNode root, int key){\n        // TODO: Insert single node AVL\n        return null;\n    }\n    int solveAVL(int x){\n        // TODO: Always return height\n        return 0;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        Scanner sc=new Scanner(System.in);\n        int x=sc.nextInt();\n        Solution sol=new Solution();\n        System.out.println(\"height: \"+sol.solveAVL(x));\n    }\n}",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          },
+      
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  solveAVL(x){\n    // TODO\n    return 0;\n  }\n}\nfunction solve(input){\n  const x=parseInt(input.trim());\n  const sol=new Solution();\n  console.log(`height: ${sol.solveAVL(x)}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          },
+      
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; } };\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root, int key){\n        // TODO\n        return NULL;\n    }\n    int solveAVL(int x){\n        // TODO\n        return 0;\n    }\n};\nint main(){\n    int x; cin>>x;\n    Solution sol;\n    cout<<\"height: \"<<sol.solveAVL(x);\n}",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          },
+      
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nAVLNode* insertNode(AVLNode* root, int key){\n    // TODO\n    return NULL;\n}\n\nint solveAVL(int x){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int x; scanf(\"%d\",&x);\n    printf(\"height: %d\", solveAVL(x));\n    return 0;\n}",
+            "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+          }
+        ],
+      
+        "hintsList": [
+          "Since the tree starts empty and only one value is inserted, height will always be 1.",
+          "AVL rotations are not needed here; focus on understanding insertion and height definition."
+        ]
+      }
+,
+{
+    "id": null,
+    "title": "Find Height of AVL Tree",
+    "description": "Problem Statement\n\nYou are given N values. Insert them one by one into an AVL Tree (self-balancing BST) and print the final height of the AVL Tree.\n\nAVL Tree rules:\n- It is a Binary Search Tree.\n- Balance Factor = height(left) − height(right)\n- After every insertion, AVL Tree must remain balanced (BF must be −1, 0, or +1).\n- If imbalance occurs, perform the required rotation:\n  * LL Rotation\n  * RR Rotation\n  * LR Rotation\n  * RL Rotation\n\nYou must insert all values in the given order and compute the final height of the tree.\n\nHeight Definition:\nHeight of a single node = 1\nEmpty tree height = 0\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint:\nheight: H\n(where H is the final height of the AVL Tree)\n\nExample\nInput:\n3\n10 20 30\n\nOutput:\nheight: 2\n\nExplanation:\nInsert 10 → height = 1\nInsert 20 → height = 2\nInsert 30 → causes RR imbalance → rotate → final height = 2",
+    "examples": "Sample Input 1\n3\n10 20 30\n\nSample Output 1\nheight: 2\n\nSample Input 2\n5\n30 20 40 10 25\n\nSample Output 2\nheight: 3",
+    "constraints": "1 ≤ N ≤ 1000\n1 ≤ values ≤ 10^6",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 2,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "3\n10 20 30",
+        "expectedOutput": "height: 2",
+        "problemTitle": "Find Height of AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n50",
+        "expectedOutput": "height: 1",
+        "problemTitle": "Find Height of AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n30 20 40 10 25",
+        "expectedOutput": "height: 3",
+        "problemTitle": "Find Height of AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n8 5 15 2",
+        "expectedOutput": "height: 3",
+        "problemTitle": "Find Height of AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n50 40 60 30 45 47",
+        "expectedOutput": "height: 3",
+        "problemTitle": "Find Height of AVL Tree"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: Insert key into AVL Tree with rotations\n        pass\n\n    def solveAVL(self, arr):\n        # TODO: Insert all keys and return final height\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(f\"height: {sol.solveAVL(arr)}\")\n\nif __name__ == '__main__':\n    solve()",
+        "problemTitle": "Find Height of AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    AVLNode insertNode(AVLNode root, int key){\n        // TODO AVL insert with rotations\n        return null;\n    }\n    int solveAVL(int[] arr){\n        // TODO final height\n        return 0;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        System.out.println(\"height: \"+sol.solveAVL(arr));\n    }\n}",
+        "problemTitle": "Find Height of AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  solveAVL(arr){\n    // TODO\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  console.log(`height: ${sol.solveAVL(arr)}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Find Height of AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root, int key){\n        // TODO\n        return NULL;\n    }\n    int solveAVL(vector<int>& arr){\n        // TODO\n        return 0;\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    cout<<\"height: \"<<sol.solveAVL(arr);\n}",
+        "problemTitle": "Find Height of AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nAVLNode* insertNode(AVLNode* root, int key){\n    // TODO\n    return NULL;\n}\n\nint solveAVL(int arr[], int n){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    printf(\"height: %d\", solveAVL(arr,n));\n}",
+        "problemTitle": "Find Height of AVL Tree"
+      }
+    ],
+  
+    "hintsList": [
+      "Use AVL rotations when BF becomes −2 or +2.",
+      "Height = max(height(left), height(right)) + 1."
+    ]
+  }
+     ,
+     {
+        "id": null,
+        "title": "Left Rotation Operation (Simple Understanding)",
+        "description": "Problem Statement\n\nUnderstand how a LEFT ROTATION works in an AVL Tree.\nYou will be given exactly TWO values.\nInsert both values into a normal BST (no balancing).\nThen perform a LEFT ROTATION on the root and print the new root's value.\n\nLeft Rotation (Simple)\nIf a node X becomes right-heavy:\n\n      X                     Y\n       \\       --->        / \\\n        Y                 X   R\n\nAfter rotation, Y becomes new root.\n\nInput Format\nTwo space-separated integers A and B.\n(They will always be in increasing order so rotation is easy.)\n\nOutput Format\nPrint:\nroot: V\nWhere V is the root value AFTER left rotation.\n\nExample\nInput:\n10 20\n\nBST before rotation:\n   10\n     \\\n      20\n\nAfter left rotation:\n   20\n  /\n10\n\nOutput:\nroot: 20",
+        "examples": "Sample Input 1\n10 20\n\nSample Output 1\nroot: 20\n\nSample Input 2\n5 9\n\nSample Output 2\nroot: 9",
+        "constraints": "Two integers A < B\n1 ≤ A, B ≤ 10^6",
+        "hints": 2,
+        "timeLimit": 5,
+        "memoryLimit": 256,
+        "subdomainId": 2024,
+        "difficulty": 1,
+        "streamId": null,
+        "createdByUserId": null,
+        "updatedByUserId": null,
+      
+        "testCases": [
+          {
+            "id": null,
+            "problemId": null,
+            "input": "10 20",
+            "expectedOutput": "root: 20",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "5 9",
+            "expectedOutput": "root: 9",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "3 8",
+            "expectedOutput": "root: 8",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "15 30",
+            "expectedOutput": "root: 30",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          },
+          {
+            "id": null,
+            "problemId": null,
+            "input": "100 120",
+            "expectedOutput": "root: 120",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          }
+        ],
+      
+        "starterCodes": [
+      
+          {
+            "id": null,
+            "problemId": null,
+            "language": 1,
+            "code": "class Node:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def leftRotate(self, x):\n        # TODO: Perform simple left rotation\n        pass\n\n    def solveAVL(self, a, b):\n        # TODO: Build BST with two nodes, call rotation, return new root key\n        pass\n\ndef solve():\n    a, b = map(int, input().split())\n    sol = Solution()\n    print(f\"root: {sol.solveAVL(a, b)}\")\n\nif __name__ == '__main__':\n    solve()",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          },
+      
+          {
+            "id": null,
+            "problemId": null,
+            "language": 2,
+            "code": "import java.util.*;\nclass Node{ int key; Node left,right; Node(int k){ key=k; }}\nclass Solution{\n    Node leftRotate(Node x){\n        // TODO\n        return null;\n    }\n    int solveAVL(int a,int b){\n        // TODO\n        return 0;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int a=sc.nextInt();\n        int b=sc.nextInt();\n        Solution sol=new Solution();\n        System.out.println(\"root: \"+sol.solveAVL(a,b));\n    }\n}",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          },
+      
+          {
+            "id": null,
+            "problemId": null,
+            "language": 3,
+            "code": "class Node{ constructor(key){ this.key=key; this.left=null; this.right=null; }}\nclass Solution{\n  leftRotate(x){\n    // TODO\n    return null;\n  }\n  solveAVL(a,b){\n    // TODO\n    return 0;\n  }\n}\nfunction solve(input){\n  const [a,b]=input.trim().split(\" \").map(Number);\n  const sol=new Solution();\n  console.log(`root: ${sol.solveAVL(a,b)}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          },
+      
+          {
+            "id": null,
+            "problemId": null,
+            "language": 4,
+            "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int key; Node *left,*right; Node(int k){ key=k; left=right=NULL; }};\nclass Solution{\npublic:\n    Node* leftRotate(Node* x){\n        // TODO\n        return NULL;\n    }\n    int solveAVL(int a,int b){\n        // TODO\n        return 0;\n    }\n};\nint main(){\n    int a,b; cin>>a>>b;\n    Solution sol;\n    cout<<\"root: \"<<sol.solveAVL(a,b);\n}",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          },
+      
+          {
+            "id": null,
+            "problemId": null,
+            "language": 5,
+            "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int key; struct Node *left,*right; }Node;\n\nNode* leftRotate(Node* x){\n    // TODO\n    return NULL;\n}\n\nint solveAVL(int a,int b){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int a,b; scanf(\"%d %d\",&a,&b);\n    printf(\"root: %d\", solveAVL(a,b));\n}",
+            "problemTitle": "Left Rotation Operation (Simple Understanding)"
+          }
+        ],
+      
+        "hintsList": [
+          "Draw the rotation diagram: X becomes left child of Y.",
+          "After rotation, the right child becomes the new root."
+        ]
+      }
+,
+{
+    "id": null,
+    "title": "Count Total Nodes in AVL Tree",
+    "description": "Problem Statement\n\nYou are given N integers. Insert them into an AVL Tree one by one.\nAfter inserting all values, print the total number of nodes in the AVL Tree.\n\nAVL Tree Rules:\n- It is a self-balancing Binary Search Tree.\n- After each insertion, the tree may perform rotations (LL, RR, LR, RL) to remain balanced.\n- Duplicates will NOT appear in input, so you do not need to handle them.\n\nThis problem is simple because total nodes = N (since no deletion).\nYour task mainly focuses on AVL insertion understanding.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint:\nnodes: X\n(where X is the total number of nodes inserted).\n\nExample\nInput:\n4\n10 20 30 40\n\nOutput:\nnodes: 4\n\nExplanation:\nAll nodes are inserted, AVL balancing occurs internally but node count = 4.",
+    "examples": "Sample Input 1\n4\n10 20 30 40\n\nSample Output 1\nnodes: 4\n\nSample Input 2\n1\n15\n\nSample Output 2\nnodes: 1",
+    "constraints": "1 ≤ N ≤ 1000\n1 ≤ each value ≤ 10^6\nAll values are distinct.",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 1,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n10 20 30 40",
+        "expectedOutput": "nodes: 4",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n15",
+        "expectedOutput": "nodes: 1",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n7 3 9 1 6",
+        "expectedOutput": "nodes: 5",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n50 40 70 30 45 47",
+        "expectedOutput": "nodes: 6",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "3\n100 200 150",
+        "expectedOutput": "nodes: 3",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: AVL insert with balancing\n        pass\n\n    def solveAVL(self, arr):\n        # TODO: Insert all keys and return count of nodes\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(f\"nodes: {sol.solveAVL(arr)}\")\n\nif __name__ == '__main__':\n    solve()",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    AVLNode insertNode(AVLNode root,int key){\n        // TODO\n        return null;\n    }\n    int solveAVL(int[] arr){\n        // TODO\n        return 0;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        System.out.println(\"nodes: \"+sol.solveAVL(arr));\n    }\n}",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  solveAVL(arr){\n    // TODO\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  console.log(`nodes: ${sol.solveAVL(arr)}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root,int key){\n        // TODO\n        return NULL;\n    }\n    int solveAVL(vector<int>& arr){\n        // TODO\n        return 0;\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    cout<<\"nodes: \"<<sol.solveAVL(arr);\n}",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nAVLNode* insertNode(AVLNode* root,int key){\n    // TODO\n    return NULL;\n}\n\nint solveAVL(int arr[],int n){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\", &arr[i]);\n    printf(\"nodes: %d\", solveAVL(arr,n));\n}",
+        "problemTitle": "Count Total Nodes in AVL Tree"
+      }
+    ],
+  
+    "hintsList": [
+      "AVL balancing does not change total number of nodes.",
+      "Since there is no delete operation, node count = N."
+    ]
+  }
+,
+{
+    "id": null,
+    "title": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal",
+    "description": "Problem Statement\n\nYou are given N integers. Insert all values one by one into an AVL Tree (self-balancing BST).\nAfter all insertions, print the Preorder Traversal of the AVL Tree.\n\nAVL Tree Rules:\n- Height-balanced BST.\n- Balance Factor = height(left) − height(right).\n- If BF becomes ±2, perform required rotations:\n  * LL Rotation\n  * RR Rotation\n  * LR Rotation\n  * RL Rotation\n\nPreorder Traversal:\nRoot → Left → Right\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint preorder traversal as space-separated values.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n5\n30 20 40 10 25\n\nOutput:\n30 20 10 25 40\n\nExplanation:\nValues inserted with AVL balancing, then preorder printed.",
+    "examples": "Sample Input 1\n5\n30 20 40 10 25\n\nSample Output 1\n30 20 10 25 40\n\nSample Input 2\n3\n10 20 30\n\nSample Output 2\n20 10 30",
+    "constraints": "1 ≤ N ≤ 1000\nDistinct values only\n1 ≤ value ≤ 10^6",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 2,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n30 20 40 10 25",
+        "expectedOutput": "30 20 10 25 40",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "3\n10 20 30",
+        "expectedOutput": "20 10 30",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n8 5 15 2",
+        "expectedOutput": "8 5 2 15",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n50 40 70 35 45 47",
+        "expectedOutput": "50 40 35 45 70 47",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n100",
+        "expectedOutput": "100",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: Insert key into AVL with balancing\n        pass\n\n    def preorder(self, root):\n        # TODO: Return preorder list\n        pass\n\n    def solveAVL(self, arr):\n        # TODO: Build AVL from arr, return preorder list\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    result = sol.solveAVL(arr)\n\n    if not result:\n        print(\"Tree is Empty\")\n    else:\n        print(\" \".join(map(str, result)))\n\nif __name__ == '__main__':\n    solve()",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    AVLNode insertNode(AVLNode root,int key){\n        // TODO\n        return null;\n    }\n    void preorder(AVLNode root, ArrayList<Integer> list){\n        // TODO\n    }\n    ArrayList<Integer> solveAVL(int[] arr){\n        // TODO\n        return new ArrayList<>();\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        ArrayList<Integer> ans=sol.solveAVL(arr);\n        if(ans.size()==0) System.out.println(\"Tree is Empty\");\n        else{\n            for(int i=0;i<ans.size();i++){\n                System.out.print(ans.get(i));\n                if(i<ans.size()-1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  preorder(root,arr){\n    // TODO\n  }\n  solveAVL(arr){\n    // TODO\n    return [];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const ans=sol.solveAVL(arr);\n  if(ans.length===0) console.log(\"Tree is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root,int key){\n        // TODO\n        return NULL;\n    }\n    void preorder(AVLNode* root, vector<int>& out){\n        // TODO\n    }\n    vector<int> solveAVL(vector<int>& arr){\n        // TODO\n        return {};\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    vector<int> ans=sol.solveAVL(arr);\n    if(ans.empty()) cout<<\"Tree is Empty\";\n    else{\n        for(int i=0;i<ans.size();i++){\n            cout<<ans[i];\n            if(i<ans.size()-1) cout<<\" \";\n        }\n    }\n}",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nAVLNode* insertNode(AVLNode* root,int key){\n    // TODO\n    return NULL;\n}\n\nvoid preorder(AVLNode* root){\n    // TODO\n}\n\nvoid solveAVL(int arr[],int n){\n    // TODO\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    solveAVL(arr,n);\n    return 0;\n}",
+        "problemTitle": "Insert Multiple Nodes in AVL Tree and Print Preorder Traversal"
+      }
+    ],
+  
+    "hintsList": [
+      "Preorder traversal is: Root → Left → Right.",
+      "After each insertion, apply AVL rotations when BF becomes ±2."
+    ]
+  }
+,
+{
+    "id": null,
+    "title": "Delete a Node in AVL Tree (Easy Case)",
+    "description": "Problem Statement\n\nYou are given N integers. Insert them one by one into an AVL Tree.\nThen you are given one value X to delete from the AVL Tree.\nThis is an EASY version of AVL deletion.\n\nIn this problem, the deleted node will ALWAYS be:\n1. A leaf node, OR\n2. A node with only one child.\n\nSo you do NOT need to handle the two-children replacement case.\nAfter deletion, AVL balancing may occur.\nFinally, print the Preorder Traversal of the AVL Tree.\n\nPreorder Traversal: Root → Left → Right\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\nThe third line contains integer X (node to delete).\n\nOutput Format\nPrint preorder traversal of the AVL Tree after deletion.\nIf tree becomes empty, print \"Tree is Empty\".\n\nExample\nInput:\n5\n30 20 40 10 25\n20\n\nOutput:\n30 25 10 40\n\nExplanation:\n20 is deleted (one child case). AVL rebalances internally.",
+    "examples": "Sample Input 1\n5\n30 20 40 10 25\n20\n\nSample Output 1\n30 25 10 40\n\nSample Input 2\n4\n10 5 15 2\n2\n\nSample Output 2\n10 5 15",
+    "constraints": "1 ≤ N ≤ 1000\n1 ≤ values ≤ 10^6\nAll values distinct\nDeleted node will never have two children",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 2,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n30 20 40 10 25\n20",
+        "expectedOutput": "30 25 10 40",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n10 5 15 2\n2",
+        "expectedOutput": "10 5 15",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "3\n8 4 12\n4",
+        "expectedOutput": "8 12",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n50 40 70 30 45 47\n45",
+        "expectedOutput": "50 40 30 70 47",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n100\n100",
+        "expectedOutput": "Tree is Empty",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: Insert with AVL balancing\n        pass\n\n    def deleteNode(self, root, key):\n        # TODO: Delete leaf or one-child node only\n        pass\n\n    def preorder(self, root, ans):\n        # TODO: Preorder traversal\n        pass\n\n    def solveAVL(self, arr, x):\n        # TODO: Build AVL, delete x, return preorder\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    x = int(input())\n\n    sol = Solution()\n    result = sol.solveAVL(arr, x)\n\n    if not result:\n        print(\"Tree is Empty\")\n    else:\n        print(\" \".join(map(str, result)))",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    AVLNode insertNode(AVLNode root,int key){\n        // TODO AVL insert\n        return null;\n    }\n    AVLNode deleteNode(AVLNode root,int key){\n        // TODO easy delete (leaf or one child)\n        return null;\n    }\n    void preorder(AVLNode root,ArrayList<Integer> list){\n        // TODO\n    }\n    ArrayList<Integer> solveAVL(int[] arr,int x){\n        // TODO build AVL, delete, return preorder\n        return new ArrayList<>();\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        int x=sc.nextInt();\n        Solution sol=new Solution();\n        ArrayList<Integer> ans=sol.solveAVL(arr,x);\n        if(ans.size()==0) System.out.println(\"Tree is Empty\");\n        else{\n            for(int i=0;i<ans.size();i++){\n                System.out.print(ans.get(i));\n                if(i<ans.size()-1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  deleteNode(root,key){\n    // TODO\n    return null;\n  }\n  preorder(root,arr){\n    // TODO\n  }\n  solveAVL(arr,x){\n    // TODO\n    return [];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const x=parseInt(lines[2]);\n  const sol=new Solution();\n  const ans=sol.solveAVL(arr,x);\n  if(ans.length===0) console.log(\"Tree is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root,int key){\n        // TODO\n        return NULL;\n    }\n    AVLNode* deleteNode(AVLNode* root,int key){\n        // TODO easy delete\n        return NULL;\n    }\n    void preorder(AVLNode* root, vector<int>& out){\n        // TODO\n    }\n    vector<int> solveAVL(vector<int>& arr,int x){\n        // TODO\n        return {};\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    int x; cin>>x;\n    Solution sol;\n    vector<int> ans=sol.solveAVL(arr,x);\n    if(ans.empty()) cout<<\"Tree is Empty\";\n    else{\n        for(int i=0;i<ans.size();i++){\n            cout<<ans[i];\n            if(i<ans.size()-1) cout<<\" \";\n        }\n    }\n}",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nAVLNode* insertNode(AVLNode* root,int key){\n    // TODO\n    return NULL;\n}\nAVLNode* deleteNode(AVLNode* root,int key){\n    // TODO easy delete\n    return NULL;\n}\nvoid preorder(AVLNode* root){\n    // TODO\n}\nvoid solveAVL(int arr[],int n,int x){\n    // TODO\n}\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    int x; scanf(\"%d\",&x);\n    solveAVL(arr,n,x);\n    return 0;\n}",
+        "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+      }
+    ],
+  
+    "hintsList": [
+      "In this EASY version, the deleted node will NEVER have two children.",
+      "After deletion, perform AVL balancing if BF becomes ±2."
+    ]
+  }
+,
+{
+    "id": null,
+    "title": "Check if a Tree is Balanced (AVL Condition)",
+    "description": "Problem Statement\n\nYou are given a binary tree in level order form. Your task is to check whether the tree satisfies the AVL balance condition.\n\nA tree is AVL Balanced if, for every node:\nBalance Factor (BF) = height(left) − height(right)\nAnd BF must be either −1, 0, or +1.\n\nYou only need to:\n1. Build the tree from level order input (−1 means NULL).\n2. Compute height of each subtree.\n3. Check BF for every node.\n4. Print YES if the tree is AVL Balanced; otherwise print NO.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N integers representing level order traversal.\n\nOutput Format\nPrint either:\nYES\nor\nNO\n\nExample\nInput:\n7\n10 5 15 2 7 -1 -1\n\nOutput:\nYES\n\nExplanation:\nAll nodes have BF = −1, 0 or +1, so tree is balanced.",
+    "examples": "Sample Input 1\n7\n10 5 15 2 7 -1 -1\n\nSample Output 1\nYES\n\nSample Input 2\n5\n1 2 3 4 5\n\nSample Output 2\nNO",
+    "constraints": "1 ≤ N ≤ 1000\nValues are integers or −1 for NULL",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 2,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "7\n10 5 15 2 7 -1 -1",
+        "expectedOutput": "YES",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n1 2 3 4 5",
+        "expectedOutput": "NO",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n10",
+        "expectedOutput": "YES",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "7\n8 4 12 2 6 10 14",
+        "expectedOutput": "YES",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n10 5 20 3 -1 -1 -1",
+        "expectedOutput": "YES",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from level-order\n        pass\n\n    def isBalanced(self, root):\n        # TODO: Return True if balanced else False\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    print(\"YES\" if sol.isBalanced(root) else \"NO\")\n\nif __name__ == '__main__':\n    solve()",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass Node{ int data; Node left,right; Node(int d){ data=d; }}\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO: Build level-order tree\n        return null;\n    }\n    boolean isBalanced(Node root){\n        // TODO: Check AVL balance\n        return false;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        System.out.println(sol.isBalanced(root)?\"YES\":\"NO\");\n    }\n}",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class Node{ constructor(data){ this.data=data; this.left=null; this.right=null; }}\nclass Solution{\n  buildTree(arr){\n    // TODO\n    return null;\n  }\n  isBalanced(root){\n    // TODO\n    return false;\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  console.log(sol.isBalanced(root)?\"YES\":\"NO\");\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; Node *left,*right; Node(int d){ data=d; left=right=NULL; }};\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO\n        return NULL;\n    }\n    bool isBalanced(Node* root){\n        // TODO\n        return false;\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n    cout<<(sol.isBalanced(root)?\"YES\":\"NO\");\n}",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; struct Node *left,*right; }Node;\n\nNode* buildTree(int arr[],int n){\n    // TODO\n    return NULL;\n}\n\nint isBalanced(Node* root){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    Node* root=buildTree(arr,n);\n    printf(isBalanced(root)?\"YES\":\"NO\");\n}",
+        "problemTitle": "Check if a Tree is Balanced (AVL Condition)"
+      }
+    ],
+  
+    "hintsList": [
+      "Height of a NULL node is 0.",
+      "If any node has balance factor outside −1 to +1, tree is NOT balanced."
+    ]
+  }
+,
+{
+    "id": null,
+    "title": "Convert Sorted Array to Balanced AVL Tree",
+    "description": "Problem Statement\n\nYou are given a sorted array of N integers. Your task is to convert this sorted array into a Balanced AVL Tree.\n\nTo build a balanced AVL tree from a sorted array:\n1. Choose the middle element as the root.\n2. Recursively build the left subtree from the left half.\n3. Recursively build the right subtree from the right half.\n\nThis automatically produces a height-balanced AVL Tree without needing rotations.\n\nAfter constructing the AVL Tree, print its Preorder Traversal.\n\nPreorder Traversal:\nRoot → Left → Right\n\nInput Format\nThe first line contains integer N.\nThe second line contains N sorted integers.\n\nOutput Format\nPrint preorder traversal as space-separated values.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n5\n1 2 3 4 5\n\nOutput:\n3 1 2 4 5\n\nExplanation:\nMiddle = 3 → root\nLeft subtree from [1 2] → root = 1\nRight subtree from [4 5] → root = 4",
+    "examples": "Sample Input 1\n5\n1 2 3 4 5\n\nSample Output 1\n3 1 2 4 5\n\nSample Input 2\n3\n10 20 30\n\nSample Output 2\n20 10 30",
+    "constraints": "1 ≤ N ≤ 1000\nArray is strictly sorted in increasing order\n1 ≤ array[i] ≤ 10^6",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 1,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n1 2 3 4 5",
+        "expectedOutput": "3 1 2 4 5",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "3\n10 20 30",
+        "expectedOutput": "20 10 30",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n50",
+        "expectedOutput": "50",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "7\n2 4 6 8 10 12 14",
+        "expectedOutput": "8 4 2 6 12 10 14",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n5 10 15 20",
+        "expectedOutput": "10 5 15 20",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildAVL(self, arr, l, r):\n        # TODO: Use middle element as root and build recursively\n        pass\n\n    def preorder(self, root, ans):\n        # TODO: Preorder traversal\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildAVL(arr, 0, n-1)\n    ans = []\n    sol.preorder(root, ans)\n\n    if not ans:\n        print(\"Tree is Empty\")\n    else:\n        print(\" \".join(map(str, ans)))",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass Node{ int data; Node left,right; Node(int d){ data=d; }}\nclass Solution{\n    Node buildAVL(int[] arr,int l,int r){\n        // TODO\n        return null;\n    }\n    void preorder(Node root,ArrayList<Integer> list){\n        // TODO\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        Node root=sol.buildAVL(arr,0,n-1);\n        ArrayList<Integer> ans=new ArrayList<>();\n        sol.preorder(root,ans);\n        if(ans.size()==0) System.out.println(\"Tree is Empty\");\n        else{\n            for(int i=0;i<ans.size();i++){\n                System.out.print(ans.get(i));\n                if(i<ans.size()-1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class Node{ constructor(data){ this.data=data; this.left=null; this.right=null; }}\nclass Solution{\n  buildAVL(arr,l,r){\n    // TODO\n    return null;\n  }\n  preorder(root,ans){\n    // TODO\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildAVL(arr,0,n-1);\n  let ans=[];\n  sol.preorder(root,ans);\n  if(ans.length===0) console.log(\"Tree is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; Node *left,*right; Node(int d){ data=d; left=right=NULL; }};\nclass Solution{\npublic:\n    Node* buildAVL(vector<int>& arr,int l,int r){\n        // TODO\n        return NULL;\n    }\n    void preorder(Node* root, vector<int>& out){\n        // TODO\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildAVL(arr,0,n-1);\n    vector<int> ans;\n    sol.preorder(root,ans);\n    if(ans.empty()) cout<<\"Tree is Empty\";\n    else{\n        for(int i=0;i<ans.size();i++){\n            cout<<ans[i];\n            if(i<ans.size()-1) cout<<\" \";\n        }\n    }\n}",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; struct Node *left,*right; }Node;\n\nNode* buildAVL(int arr[],int l,int r){\n    // TODO\n    return NULL;\n}\n\nvoid preorder(Node* root){\n    // TODO\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    Node* root=buildAVL(arr,0,n-1);\n    preorder(root);\n    return 0;\n}",
+        "problemTitle": "Convert Sorted Array to Balanced AVL Tree"
+      }
+    ],
+  
+    "hintsList": [
+      "Use (l + r) // 2 as the root index.",
+      "Recursively build left and right subtrees to keep tree balanced."
+    ]
+  }
+  
+,
+{
+    "id": null,
+    "title": "Count Rotations During AVL Insertions",
+    "description": "Problem Statement\n\nYou are given N integers. Insert them one by one into an AVL Tree.\nDuring each insertion, AVL balancing may require rotations.\nYour task is to count how many times each rotation type occurs.\n\nRotation Types:\n1. LL Rotation\n2. RR Rotation\n3. LR Rotation\n4. RL Rotation\n\nAt the end, print the count for each rotation type.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint four lines:\nLL: X\nRR: Y\nLR: Z\nRL: W\n\nExample\nInput:\n3\n10 20 30\n\nOutput:\nLL: 0\nRR: 1\nLR: 0\nRL: 0\n\nExplanation:\nInsertion of 30 causes RR rotation at node 10.",
+    "examples": "Sample Input 1\n3\n10 20 30\n\nSample Output 1\nLL: 0\nRR: 1\nLR: 0\nRL: 0\n\nSample Input 2\n5\n30 20 40 10 25\n\nSample Output 2\nLL: 1\nRR: 0\nLR: 0\nRL: 0",
+    "constraints": "1 ≤ N ≤ 1000\nValues are distinct\n1 ≤ value ≤ 10^6",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 3,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "3\n10 20 30",
+        "expectedOutput": "LL: 0\nRR: 1\nLR: 0\nRL: 0",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n30 20 40 10 25",
+        "expectedOutput": "LL: 1\nRR: 0\nLR: 0\nRL: 0",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n20 10 15 8",
+        "expectedOutput": "LL: 0\nRR: 0\nLR: 1\nRL: 0",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n10 5 7 3",
+        "expectedOutput": "LL: 1\nRR: 0\nLR: 0\nRL: 0",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n50 30 70 60 65 80",
+        "expectedOutput": "LL: 0\nRR: 0\nLR: 0\nRL: 1",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def __init__(self):\n        self.LL = 0\n        self.RR = 0\n        self.LR = 0\n        self.RL = 0\n\n    def insertNode(self, root, key):\n        # TODO: Implement AVL insert with rotation counting\n        pass\n\n    def solveAVL(self, arr):\n        root = None\n        for x in arr:\n            root = self.insertNode(root, x)\n        return self.LL, self.RR, self.LR, self.RL\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    LL, RR, LR, RL = sol.solveAVL(arr)\n    print(f\"LL: {LL}\")\n    print(f\"RR: {RR}\")\n    print(f\"LR: {LR}\")\n    print(f\"RL: {RL}\")",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    int LL=0,RR=0,LR=0,RL=0;\n\n    AVLNode insertNode(AVLNode root,int key){\n        // TODO\n        return null;\n    }\n\n    int[] solveAVL(int[] arr){\n        AVLNode root=null;\n        for(int x:arr) root=insertNode(root,x);\n        return new int[]{LL,RR,LR,RL};\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        int[] ans=sol.solveAVL(arr);\n        System.out.println(\"LL: \"+ans[0]);\n        System.out.println(\"RR: \"+ans[1]);\n        System.out.println(\"LR: \"+ans[2]);\n        System.out.println(\"RL: \"+ans[3]);\n    }\n}",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  constructor(){ this.LL=0; this.RR=0; this.LR=0; this.RL=0; }\n\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n\n  solveAVL(arr){\n    let root=null;\n    for(const x of arr) root=this.insertNode(root,x);\n    return [this.LL,this.RR,this.LR,this.RL];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const ans=sol.solveAVL(arr);\n  console.log(`LL: ${ans[0]}`);\n  console.log(`RR: ${ans[1]}`);\n  console.log(`LR: ${ans[2]}`);\n  console.log(`RL: ${ans[3]}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    int LL=0,RR=0,LR=0,RL=0;\n\n    AVLNode* insertNode(AVLNode* root,int key){\n        // TODO\n        return NULL;\n    }\n\n    vector<int> solveAVL(vector<int>& arr){\n        AVLNode* root=NULL;\n        for(int x:arr) root=insertNode(root,x);\n        return {LL,RR,LR,RL};\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    vector<int> ans=sol.solveAVL(arr);\n    cout<<\"LL: \"<<ans[0]<<\"\\n\";\n    cout<<\"RR: \"<<ans[1]<<\"\\n\";\n    cout<<\"LR: \"<<ans[2]<<\"\\n\";\n    cout<<\"RL: \"<<ans[3];\n}",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nint LL=0,RR=0,LR=0,RL=0;\n\nAVLNode* insertNode(AVLNode* root,int key){\n    // TODO\n    return NULL;\n}\n\nvoid solveAVL(int arr[],int n){\n    AVLNode* root=NULL;\n    for(int i=0;i<n;i++) root=insertNode(root,arr[i]);\n    printf(\"LL: %d\\nRR: %d\\nLR: %d\\nRL: %d\",LL,RR,LR,RL);\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    solveAVL(arr,n);\n    return 0;\n}",
+        "problemTitle": "Count Rotations During AVL Insertions"
+      }
+    ],
+  
+    "hintsList": [
+      "Rotation type depends on imbalance + inserted value direction.",
+      "LL: left-left heavy, RR: right-right heavy, LR: left-right heavy, RL: right-left heavy."
+    ]
+  }
+  ,
+  {
+    "id": null,
+    "title": "Insert in Red-Black Tree (Full but Simple)",
+    "description": "Problem Statement\n\nYou are given N integers. Insert them one by one into a Red-Black Tree.\nYour task is to perform FULL Red-Black insertion rules:\n1. Insert node as in BST\n2. Color new node RED\n3. Fix violations using:\n   - Recoloring\n   - Left Rotation\n   - Right Rotation\n   - Parent–Uncle cases\n\nThis is a simplified version because:\n- No deletions\n- No printing of node colors\n- Final output is ONLY inorder traversal (sorted order)\n\nYour final task is to print the inorder traversal after all insertions.\n\nInorder Traversal:\nLeft → Root → Right\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint inorder traversal as space-separated values.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n5\n10 20 30 15 5\n\nOutput:\n5 10 15 20 30\n\nExplanation:\nAll values inserted into a Red-Black Tree using full balancing rules, and inorder printed.",
+    "examples": "Sample Input 1\n5\n10 20 30 15 5\n\nSample Output 1\n5 10 15 20 30\n\nSample Input 2\n3\n7 3 9\n\nSample Output 2\n3 7 9",
+    "constraints": "1 ≤ N ≤ 1000\nValues are distinct\n1 ≤ value ≤ 10^6",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 3,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n10 20 30 15 5",
+        "expectedOutput": "5 10 15 20 30",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "3\n7 3 9",
+        "expectedOutput": "3 7 9",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n50 40 60 55",
+        "expectedOutput": "40 50 55 60",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n15 5 25 2 10 20",
+        "expectedOutput": "2 5 10 15 20 25",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n100",
+        "expectedOutput": "100",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "RED = 0\nBLACK = 1\n\nclass RBNode:\n    def __init__(self, key):\n        self.key = key\n        self.color = RED\n        self.left = None\n        self.right = None\n        self.parent = None\n\nclass Solution:\n    def leftRotate(self, root, x):\n        # TODO: Left rotation logic\n        pass\n\n    def rightRotate(self, root, x):\n        # TODO: Right rotation logic\n        pass\n\n    def fixInsert(self, root, node):\n        # TODO: Fix RBT violations\n        pass\n\n    def insertNode(self, root, key):\n        # TODO: BST insert + fixInsert\n        pass\n\n    def inorder(self, root, arr):\n        # TODO: Inorder traversal\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n\n    sol = Solution()\n    root = None\n    for x in arr:\n        root = sol.insertNode(root, x)\n\n    ans = []\n    sol.inorder(root, ans)\n\n    if not ans:\n        print(\"Tree is Empty\")\n    else:\n        print(\" \".join(map(str, ans)))",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass RBNode{ int key,color; RBNode left,right,parent; RBNode(int k){ key=k; color=0; }}\nclass Solution{\n    RBNode leftRotate(RBNode root, RBNode x){\n        // TODO\n        return root;\n    }\n    RBNode rightRotate(RBNode root, RBNode x){\n        // TODO\n        return root;\n    }\n    RBNode fixInsert(RBNode root, RBNode node){\n        // TODO\n        return root;\n    }\n    RBNode insertNode(RBNode root,int key){\n        // TODO\n        return root;\n    }\n    void inorder(RBNode root, ArrayList<Integer> list){\n        // TODO\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        RBNode root=null;\n        for(int x:arr) root=sol.insertNode(root,x);\n        ArrayList<Integer> ans=new ArrayList<>();\n        sol.inorder(root,ans);\n        if(ans.size()==0) System.out.println(\"Tree is Empty\");\n        else{\n            for(int i=0;i<ans.size();i++){\n                System.out.print(ans.get(i));\n                if(i<ans.size()-1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "const RED=0, BLACK=1;\nclass RBNode{ constructor(key){ this.key=key; this.color=RED; this.left=null; this.right=null; this.parent=null; }}\nclass Solution{\n  leftRotate(root,x){ /* TODO */ return root; }\n  rightRotate(root,x){ /* TODO */ return root; }\n  fixInsert(root,node){ /* TODO */ return root; }\n  insertNode(root,key){ /* TODO */ return root; }\n  inorder(root,arr){ /* TODO */ }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  let root=null;\n  for(const x of arr) root=sol.insertNode(root,x);\n  const ans=[]; sol.inorder(root,ans);\n  if(ans.length===0) console.log(\"Tree is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\n#define RED 0\n#define BLACK 1\nstruct RBNode{ int key,color; RBNode *left,*right,*parent; RBNode(int k){ key=k; color=RED; left=right=parent=NULL; }};\nclass Solution{\npublic:\n    RBNode* leftRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\n    RBNode* rightRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\n    RBNode* fixInsert(RBNode* root,RBNode* node){ /* TODO */ return root; }\n    RBNode* insertNode(RBNode* root,int key){ /* TODO */ return root; }\n    void inorder(RBNode* root, vector<int>& out){ /* TODO */ }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    RBNode* root=NULL;\n    for(int x:arr) root=sol.insertNode(root,x);\n    vector<int> ans;\n    sol.inorder(root,ans);\n    if(ans.empty()) cout<<\"Tree is Empty\";\n    else{\n        for(int i=0;i<ans.size();i++){\n            cout<<ans[i];\n            if(i<ans.size()-1) cout<<\" \";\n        }\n    }\n}",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n#define RED 0\n#define BLACK 1\n\ntypedef struct RBNode{ int key,color; struct RBNode *left,*right,*parent; }RBNode;\n\nRBNode* leftRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\nRBNode* rightRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\nRBNode* fixInsert(RBNode* root,RBNode* node){ /* TODO */ return root; }\nRBNode* insertNode(RBNode* root,int key){ /* TODO */ return root; }\nvoid inorder(RBNode* root){ /* TODO */ }\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    RBNode* root=NULL;\n    for(int i=0;i<n;i++) root=insertNode(root,arr[i]);\n    inorder(root);\n    return 0;\n}",
+        "problemTitle": "Insert in Red-Black Tree (Full but Simple)"
+      }
+    ],
+  
+    "hintsList": [
+      "Every new node starts as RED.",
+      "Fixing cases depend on parent and uncle colors."
+    ]
+  }
+,{
+    "id": null,
+    "title": "Delete Node from AVL Tree (Full Case but Simplified)",
+    "description": "Problem Statement\n\nYou are given N integers. Insert them one by one into an AVL Tree. Then you are given a value X to delete.\nYou must perform FULL AVL deletion, including:\n1. Deleting a leaf node\n2. Deleting a node with one child\n3. Deleting a node with two children (use inorder successor)\n\nAfter deletion, you must rebalance the AVL Tree using:\n- LL Rotation\n- RR Rotation\n- LR Rotation\n- RL Rotation\n\nFinally, print the Preorder Traversal of the AVL Tree.\n\nPreorder Traversal:\nRoot → Left → Right\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\nThe third line contains integer X (node to delete).\n\nOutput Format\nPrint preorder traversal as space-separated values.\nIf the tree becomes empty, print \"Tree is Empty\".\n\nExample\nInput:\n6\n30 20 40 10 25 35\n20\n\nOutput:\n30 25 10 40 35\n\nExplanation:\n20 has two children → replaced by inorder successor 25 → tree balanced → preorder printed.",
+    "examples": "Sample Input 1\n6\n30 20 40 10 25 35\n20\n\nSample Output 1\n30 25 10 40 35\n\nSample Input 2\n4\n10 5 15 2\n10\n\nSample Output 2\n15 5 2\n\nSample Input 3\n1\n50\n50\n\nSample Output 3\nTree is Empty",
+    "constraints": "1 ≤ N ≤ 1000\nAll values are distinct\n1 ≤ value ≤ 10^6",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 3,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n30 20 40 10 25 35\n20",
+        "expectedOutput": "30 25 10 40 35",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n10 5 15 2\n10",
+        "expectedOutput": "15 5 2",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "7\n50 30 70 20 40 60 80\n30",
+        "expectedOutput": "50 40 20 70 60 80",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n8 5 15 3 7\n5",
+        "expectedOutput": "8 7 3 15",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n50\n50",
+        "expectedOutput": "Tree is Empty",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: Insert key into AVL with balancing\n        pass\n\n    def deleteNode(self, root, key):\n        # TODO: Full delete (leaf, one child, two children)\n        # TODO: Rebalance using LL, RR, LR, RL\n        pass\n\n    def preorder(self, root, ans):\n        # TODO: Preorder traversal\n        pass\n\n    def solveAVL(self, arr, x):\n        root = None\n        for v in arr:\n            root = self.insertNode(root, v)\n        root = self.deleteNode(root, x)\n        ans = []\n        self.preorder(root, ans)\n        return ans\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    x = int(input())\n    sol = Solution()\n    result = sol.solveAVL(arr, x)\n    if not result:\n        print(\"Tree is Empty\")\n    else:\n        print(\" \".join(map(str, result)))",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    AVLNode insertNode(AVLNode root,int key){\n        // TODO\n        return null;\n    }\n    AVLNode deleteNode(AVLNode root,int key){\n        // TODO full delete + rebalance\n        return null;\n    }\n    void preorder(AVLNode root,ArrayList<Integer> list){\n        // TODO\n    }\n    ArrayList<Integer> solveAVL(int[] arr,int x){\n        AVLNode root=null;\n        for(int v:arr) root=insertNode(root,v);\n        root=deleteNode(root,x);\n        ArrayList<Integer> ans=new ArrayList<>();\n        preorder(root,ans);\n        return ans;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        int x=sc.nextInt();\n        Solution sol=new Solution();\n        ArrayList<Integer> ans=sol.solveAVL(arr,x);\n        if(ans.size()==0) System.out.println(\"Tree is Empty\");\n        else{\n            for(int i=0;i<ans.size();i++){\n                System.out.print(ans.get(i));\n                if(i<ans.size()-1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  deleteNode(root,key){\n    // TODO full delete\n    return null;\n  }\n  preorder(root,arr){\n    // TODO\n  }\n  solveAVL(arr,x){\n    let root=null;\n    for(const v of arr) root=this.insertNode(root,v);\n    root=this.deleteNode(root,x);\n    const ans=[];\n    this.preorder(root,ans);\n    return ans;\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const x=parseInt(lines[2]);\n  const sol=new Solution();\n  const ans=sol.solveAVL(arr,x);\n  if(ans.length===0) console.log(\"Tree is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root,int key){\n        // TODO\n        return NULL;\n    }\n    AVLNode* deleteNode(AVLNode* root,int key){\n        // TODO full delete + rebalance\n        return NULL;\n    }\n    void preorder(AVLNode* root,vector<int>& out){\n        // TODO\n    }\n    vector<int> solveAVL(vector<int>& arr,int x){\n        AVLNode* root=NULL;\n        for(int v:arr) root=insertNode(root,v);\n        root=deleteNode(root,x);\n        vector<int> ans;\n        preorder(root,ans);\n        return ans;\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    int x; cin>>x;\n    Solution sol;\n    vector<int> ans=sol.solveAVL(arr,x);\n    if(ans.empty()) cout<<\"Tree is Empty\";\n    else{\n        for(int i=0;i<ans.size();i++){\n            cout<<ans[i];\n            if(i<ans.size()-1) cout<<\" \";\n        }\n    }\n}",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nAVLNode* insertNode(AVLNode* root,int key){\n    // TODO\n    return NULL;\n}\n\nAVLNode* deleteNode(AVLNode* root,int key){\n    // TODO full delete\n    return NULL;\n}\n\nvoid preorder(AVLNode* root){\n    // TODO\n}\n\nvoid solveAVL(int arr[],int n,int x){\n    AVLNode* root=NULL;\n    for(int i=0;i<n;i++) root=insertNode(root,arr[i]);\n    root=deleteNode(root,x);\n    if(!root){ printf(\"Tree is Empty\"); return; }\n    preorder(root);\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    int x; scanf(\"%d\",&x);\n    solveAVL(arr,n,x);\n    return 0;\n}",
+        "problemTitle": "Delete Node from AVL Tree (Full Case but Simplified)"
+      }
+    ],
+  
+    "hintsList": [
+      "For two-child deletion, use the inorder successor.",
+      "After deletion, check balance factor and apply LL, RR, LR, or RL rotation."
+    ]
+  }
+,
+{
+    "id": null,
+    "title": "Validate AVL Tree",
+    "description": "Problem Statement\n\nYou are given a binary tree in level-order form. Your task is to check whether the given tree is a valid AVL Tree.\n\nA valid AVL Tree must satisfy TWO conditions:\n1. BST Property:\n   - For every node, all left subtree values < node value < all right subtree values.\n2. AVL Balance Property:\n   - Balance Factor (BF) = height(left) − height(right)\n   - BF must be −1, 0 or +1 for every node.\n\nIf both conditions are satisfied, print YES. Otherwise, print NO.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N integers representing level-order traversal (−1 means NULL).\n\nOutput Format\nPrint YES or NO.\n\nExample\nInput:\n7\n10 5 15 2 7 -1 -1\n\nOutput:\nYES\n\nExplanation:\nTree follows BST rules and all balance factors are within the valid AVL range.",
+    "examples": "Sample Input 1\n7\n10 5 15 2 7 -1 -1\n\nSample Output 1\nYES\n\nSample Input 2\n5\n10 20 30 -1 -1\n\nSample Output 2\nNO",
+    "constraints": "1 ≤ N ≤ 1000\nValues are integers or −1 for NULL",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 2,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "7\n10 5 15 2 7 -1 -1",
+        "expectedOutput": "YES",
+        "problemTitle": "Validate AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n10 20 30 -1 -1",
+        "expectedOutput": "NO",
+        "problemTitle": "Validate AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n50",
+        "expectedOutput": "YES",
+        "problemTitle": "Validate AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "7\n8 4 12 2 6 10 14",
+        "expectedOutput": "YES",
+        "problemTitle": "Validate AVL Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n10 5 20 3 -1 -1 -1",
+        "expectedOutput": "YES",
+        "problemTitle": "Validate AVL Tree"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from level-order\n        pass\n\n    def isBST(self, root, mn, mx):\n        # TODO: Check BST property\n        pass\n\n    def checkHeight(self, root):\n        # TODO: Return height, or -inf if unbalanced\n        pass\n\n    def validateAVL(self, root):\n        # TODO: Check both BST and AVL conditions\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    print(\"YES\" if sol.validateAVL(root) else \"NO\")",
+        "problemTitle": "Validate AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass Node{ int data; Node left,right; Node(int d){ data=d; }}\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO\n        return null;\n    }\n    boolean isBST(Node root,int mn,int mx){\n        // TODO\n        return false;\n    }\n    int checkHeight(Node root){\n        // TODO\n        return 0;\n    }\n    boolean validateAVL(Node root){\n        // TODO\n        return false;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        System.out.println(sol.validateAVL(root)?\"YES\":\"NO\");\n    }\n}",
+        "problemTitle": "Validate AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class Node{ constructor(data){ this.data=data; this.left=null; this.right=null; }}\nclass Solution{\n  buildTree(arr){ /* TODO */ return null; }\n  isBST(root,mn,mx){ /* TODO */ return false; }\n  checkHeight(root){ /* TODO */ return 0; }\n  validateAVL(root){ /* TODO */ return false; }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  console.log(sol.validateAVL(root)?\"YES\":\"NO\");\n}\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Validate AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; Node *left,*right; Node(int d){ data=d; left=right=NULL; }};\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){ /* TODO */ return NULL; }\n    bool isBST(Node* root,int mn,int mx){ /* TODO */ return false; }\n    int checkHeight(Node* root){ /* TODO */ return 0; }\n    bool validateAVL(Node* root){ /* TODO */ return false; }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n    cout<<(sol.validateAVL(root)?\"YES\":\"NO\");\n}",
+        "problemTitle": "Validate AVL Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; struct Node *left,*right; }Node;\n\nNode* buildTree(int arr[],int n){ /* TODO */ return NULL; }\nint isBST(Node* root,int mn,int mx){ /* TODO */ return 0; }\nint checkHeight(Node* root){ /* TODO */ return 0; }\nint validateAVL(Node* root){ /* TODO */ return 0; }\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    Node* root=buildTree(arr,n);\n    printf(validateAVL(root)?\"YES\":\"NO\");\n}",
+        "problemTitle": "Validate AVL Tree"
+      }
+    ],
+  
+    "hintsList": [
+      "First check BST property using min/max ranges.",
+      "Then ensure every node's balance factor is between −1 and +1."
+    ]
+  }
+,{
+    "id": null,
+    "title": "Validate Red-Black Tree Properties",
+    "description": "Problem Statement\n\nYou are given a binary tree in level-order form where each node is represented as value:color. Color is either R (Red) or B (Black). -1 represents a NULL child.\n\nYour task is to check whether this binary tree satisfies ALL Red-Black Tree (RBT) properties:\n\n1. Every node is either RED or BLACK.\n2. The root must be BLACK.\n3. No RED node can have a RED parent (no consecutive RED nodes).\n4. All NULL children are considered BLACK.\n5. Every path from the root to any NULL leaf must contain the same number of BLACK nodes (Black-Height property).\n\nIf all properties are satisfied, print YES. Otherwise, print NO.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N entries: value:color or -1.\n\nOutput Format\nPrint YES or NO.\n\nExample\nInput:\n7\n10:B 5:R 15:R -1 -1 -1 -1\n\nOutput:\nNO\n\nExplanation:\nBoth children of root are RED → violates rule 3.",
+    "examples": "Sample Input 1\n7\n10:B 5:B 15:B -1 -1 -1 -1\n\nSample Output 1\nYES\n\nSample Input 2\n7\n10:B 5:R 15:R -1 -1 -1 -1\n\nSample Output 2\nNO",
+    "constraints": "1 ≤ N ≤ 1000\nValues are integers\nColor must be R or B",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 3,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "7\n10:B 5:B 15:B -1 -1 -1 -1",
+        "expectedOutput": "YES",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "7\n10:B 5:R 15:R -1 -1 -1 -1",
+        "expectedOutput": "NO",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "3\n10:R 5:B 15:B",
+        "expectedOutput": "NO",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "1\n50:B",
+        "expectedOutput": "YES",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "7\n20:B 10:B 30:B 5:R 15:R 25:R 35:R",
+        "expectedOutput": "YES",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "class Node:\n    def __init__(self, data, color):\n        self.data = data\n        self.color = color\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from level-order (value:color or -1)\n        pass\n\n    def validateProperties(self, root):\n        # TODO: Check all Red-Black Tree rules\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = input().split()\n    sol = Solution()\n    root = sol.buildTree(arr)\n    print(\"YES\" if sol.validateProperties(root) else \"NO\")",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass Node{ int data; char color; Node left,right; Node(int d,char c){ data=d;color=c; }}\nclass Solution{\n    Node buildTree(String[] arr){\n        // TODO\n        return null;\n    }\n    boolean validateProperties(Node root){\n        // TODO\n        return false;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt(); sc.nextLine();\n        String[] arr=sc.nextLine().split(\" \");\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        System.out.println(sol.validateProperties(root)?\"YES\":\"NO\");\n    }\n}",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "class Node{ constructor(data,color){ this.data=data; this.color=color; this.left=null; this.right=null; }}\nclass Solution{\n  buildTree(arr){ /* TODO */ return null; }\n  validateProperties(root){ /* TODO */ return false; }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \");\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  console.log(sol.validateProperties(root)?\"YES\":\"NO\");\n}\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; char color; Node *left,*right; Node(int d,char c){ data=d;color=c;left=right=NULL; }};\nclass Solution{\npublic:\n    Node* buildTree(vector<string>& arr){ /* TODO */ return NULL; }\n    bool validateProperties(Node* root){ /* TODO */ return false; }\n};\nint main(){\n    int n; cin>>n;\n    vector<string> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n    cout<<(sol.validateProperties(root)?\"YES\":\"NO\");\n}",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; char color; struct Node *left,*right; }Node;\n\nNode* buildTree(char** arr,int n){ /* TODO */ return NULL; }\nint validateProperties(Node* root){ /* TODO */ return 0; }\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    char* arr[n];\n    for(int i=0;i<n;i++){ arr[i]=(char*)malloc(10); scanf(\"%s\",arr[i]); }\n    Node* root=buildTree(arr,n);\n    printf(validateProperties(root)?\"YES\":\"NO\");\n    return 0;\n}",
+        "problemTitle": "Validate Red-Black Tree Properties"
+      }
+    ],
+  
+    "hintsList": [
+      "Check if root is Black and no Red parent-child exists.",
+      "Calculate black-height for every path and ensure they are equal."
+    ]
+  }
+,{
+    "id": null,
+    "title": "Count Rotations in Red-Black Tree",
+    "description": "Problem Statement\n\nYou are given N integers to insert one by one into a Red-Black Tree. During RBT insertion, violations may occur and are fixed using:\n1. Recoloring\n2. Left Rotation\n3. Right Rotation\n\nYour task is to count how many times each rotation happens:\n- Left Rotation  (LROT)\n- Right Rotation (RROT)\n\nRecoloring does not affect counts.\n\nAfter inserting all values, print the rotation counts.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint two lines:\nLROT: X\nRROT: Y\n\nExample\nInput:\n3\n10 20 30\n\nOutput:\nLROT: 1\nRROT: 0\n\nExplanation:\nInserting 30 triggers a LEFT rotation at node 10.",
+    "examples": "Sample Input 1\n3\n10 20 30\n\nSample Output 1\nLROT: 1\nRROT: 0\n\nSample Input 2\n5\n30 20 40 10 25\n\nSample Output 2\nLROT: 0\nRROT: 1",
+    "constraints": "1 ≤ N ≤ 1000\nValues are distinct\n1 ≤ value ≤ 10^6",
+    "hints": 2,
+    "timeLimit": 5,
+    "memoryLimit": 256,
+    "subdomainId": 2024,
+    "difficulty": 3,
+    "streamId": null,
+    "createdByUserId": null,
+    "updatedByUserId": null,
+  
+    "testCases": [
+      {
+        "id": null,
+        "problemId": null,
+        "input": "3\n10 20 30",
+        "expectedOutput": "LROT: 1\nRROT: 0",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "5\n30 20 40 10 25",
+        "expectedOutput": "LROT: 0\nRROT: 1",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n20 10 15 8",
+        "expectedOutput": "LROT: 1\nRROT: 1",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "4\n10 5 7 3",
+        "expectedOutput": "LROT: 0\nRROT: 1",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      },
+      {
+        "id": null,
+        "problemId": null,
+        "input": "6\n50 30 70 60 65 80",
+        "expectedOutput": "LROT: 2\nRROT: 0",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      }
+    ],
+  
+    "starterCodes": [
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 1,
+        "code": "RED = 0\nBLACK = 1\n\nclass RBNode:\n    def __init__(self, key):\n        self.key = key\n        self.color = RED\n        self.left = None\n        self.right = None\n        self.parent = None\n\nclass Solution:\n    def __init__(self):\n        self.LROT = 0\n        self.RROT = 0\n\n    def leftRotate(self, root, x):\n        # TODO: perform left rotation and increment self.LROT\n        pass\n\n    def rightRotate(self, root, x):\n        # TODO: perform right rotation and increment self.RROT\n        pass\n\n    def fixInsert(self, root, node):\n        # TODO: fix RBT insert violations\n        pass\n\n    def insertNode(self, root, key):\n        # TODO: BST insert + fixInsert\n        pass\n\n    def solveRBT(self, arr):\n        root = None\n        for x in arr:\n            root = self.insertNode(root, x)\n        return self.LROT, self.RROT\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    L, R = sol.solveRBT(arr)\n    print(f\"LROT: {L}\")\n    print(f\"RROT: {R}\")",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 2,
+        "code": "import java.util.*;\nclass RBNode{ int key,color; RBNode left,right,parent; RBNode(int k){ key=k;color=0; }}\nclass Solution{\n    int LROT=0, RROT=0;\n\n    RBNode leftRotate(RBNode root, RBNode x){\n        // TODO increment LROT\n        return root;\n    }\n\n    RBNode rightRotate(RBNode root, RBNode x){\n        // TODO increment RROT\n        return root;\n    }\n\n    RBNode fixInsert(RBNode root, RBNode node){\n        // TODO\n        return root;\n    }\n\n    RBNode insertNode(RBNode root, int key){\n        // TODO\n        return root;\n    }\n\n    int[] solveRBT(int[] arr){\n        RBNode root = null;\n        for(int x : arr) root = insertNode(root, x);\n        return new int[]{LROT, RROT};\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        int[] ans=sol.solveRBT(arr);\n        System.out.println(\"LROT: \"+ans[0]);\n        System.out.println(\"RROT: \"+ans[1]);\n    }\n}",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 3,
+        "code": "const RED=0, BLACK=1;\nclass RBNode{ constructor(k){ this.key=k; this.color=RED; this.left=null; this.right=null; this.parent=null; }}\nclass Solution{\n  constructor(){ this.LROT=0; this.RROT=0; }\n  leftRotate(root,x){ /* TODO */ return root; }\n  rightRotate(root,x){ /* TODO */ return root; }\n  fixInsert(root,node){ /* TODO */ return root; }\n  insertNode(root,key){ /* TODO */ return root; }\n  solveRBT(arr){ let root=null; for(const x of arr) root=this.insertNode(root,x); return [this.LROT,this.RROT]; }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const ans=sol.solveRBT(arr);\n  console.log(`LROT: ${ans[0]}`);\n  console.log(`RROT: ${ans[1]}`);\n}\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 4,
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\n#define RED 0\n#define BLACK 1\nstruct RBNode{ int key,color; RBNode *left,*right,*parent; RBNode(int k){ key=k;color=RED;left=right=parent=NULL; }};\nclass Solution{\npublic:\n    int LROT=0, RROT=0;\n    RBNode* leftRotate(RBNode* root, RBNode* x){ /* TODO */ return root; }\n    RBNode* rightRotate(RBNode* root, RBNode* x){ /* TODO */ return root; }\n    RBNode* fixInsert(RBNode* root, RBNode* node){ /* TODO */ return root; }\n    RBNode* insertNode(RBNode* root,int key){ /* TODO */ return root; }\n    vector<int> solveRBT(vector<int>& arr){ RBNode* root=NULL; for(int x:arr) root=insertNode(root,x); return {LROT,RROT}; }\n};\nint main(){ int n; cin>>n; vector<int> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; Solution sol; auto ans=sol.solveRBT(arr); cout<<\"LROT: \"<<ans[0]<<\"\\n\"; cout<<\"RROT: \"<<ans[1]; }",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      },
+  
+      {
+        "id": null,
+        "problemId": null,
+        "language": 5,
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n#define RED 0\n#define BLACK 1\n\ntypedef struct RBNode{ int key,color; struct RBNode *left,*right,*parent; }RBNode;\n\nint LROT=0, RROT=0;\n\nRBNode* leftRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\nRBNode* rightRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\nRBNode* fixInsert(RBNode* root,RBNode* node){ /* TODO */ return root; }\nRBNode* insertNode(RBNode* root,int key){ /* TODO */ return root; }\n\nint main(){ int n; scanf(\"%d\",&n); int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]); RBNode* root=NULL; for(int i=0;i<n;i++) root=insertNode(root,arr[i]); printf(\"LROT: %d\\nRROT: %d\",LROT,RROT); return 0; }",
+        "problemTitle": "Count Rotations in Red-Black Tree"
+      }
+    ],
+  
+    "hintsList": [
+      "Left and Right rotations occur only in imbalance cases during fix-up.",
+      "Do not count recolor operations; count only structural rotations."
+    ]
+  }
+      
+    
+  ]
+}

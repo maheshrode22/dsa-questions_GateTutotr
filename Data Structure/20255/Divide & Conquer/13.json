@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Power Function using Divide and Conquer",
+            "description": "Problem Statement\n\nImplement pow(x, n) - calculate x raised to the power n using Divide and Conquer.\nUse the property: x^n = x^(n/2) * x^(n/2) if n is even, x * x^(n-1) if n is odd.\nThis gives O(log n) time complexity instead of O(n).\n\nHandle negative powers: x^(-n) = 1 / x^n\n",
+            "examples": "Sample Input\n2.0 10\n\nSample Output\n1024.0\n\nExplanation:\n2^10 = 1024",
+            "constraints": "-100.0 < x < 100.0\n-30 <= n <= 30\nResult will fit in a double",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2027,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2.0 10",
+                    "expectedOutput": "1024.0"
+                },
+                {
+                    "input": "2.0 -2",
+                    "expectedOutput": "0.25"
+                },
+                {
+                    "input": "3.0 3",
+                    "expectedOutput": "27.0"
+                },
+                {
+                    "input": "2.0 0",
+                    "expectedOutput": "1.0"
+                },
+                {
+                    "input": "5.0 2",
+                    "expectedOutput": "25.0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def myPow(self, x, n):\n        # TODO: Implement power using divide and conquer\n        # x^n = (x^(n/2))^2 if n even\n        # x^n = x * x^(n-1) if n odd\n        # Handle negative n: return 1/pow(x, -n)\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    x = float(data[0])\n    n = int(data[1])\n    sol = Solution()\n    print(sol.myPow(x, n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    double myPow(double x, int n){\n        // TODO: Implement power using divide and conquer\n        // x^n = (x^(n/2))^2 if n even\n        // x^n = x * x^(n-1) if n odd\n        // Handle negative n: return 1/pow(x, -n)\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        double x = Double.parseDouble(parts[0]);\n        int n = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.myPow(x, n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  myPow(x, n){\n    // TODO: Implement power using divide and conquer\n    // x^n = (x^(n/2))^2 if n even\n    // x^n = x * x^(n-1) if n odd\n    // Handle negative n: return 1/pow(x, -n)\n    return 0;\n  }\n}\nfunction solve(input){\n  const parts = input.trim().split(\" \");\n  const x = parseFloat(parts[0]);\n  const n = parseInt(parts[1]);\n  const sol = new Solution();\n  console.log(sol.myPow(x, n));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    double myPow(double x, int n){\n        // TODO: Implement power using divide and conquer\n        // x^n = (x^(n/2))^2 if n even\n        // x^n = x * x^(n-1) if n odd\n        // Handle negative n: return 1/pow(x, -n)\n        return 0;\n    }\n};\nint main(){\n    double x; int n;\n    cin >> x >> n;\n    Solution sol;\n    cout << fixed << setprecision(1) << sol.myPow(x, n);\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\ndouble myPow(double x, int n){\n    // TODO: Implement power using divide and conquer\n    // x^n = (x^(n/2))^2 if n even\n    // x^n = x * x^(n-1) if n odd\n    // Handle negative n: return 1/pow(x, -n)\n    return 0;\n}\nint main(){\n    double x; int n;\n    scanf(\"%lf %d\", &x, &n);\n    printf(\"%.1lf\", myPow(x, n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Base case: n=0 returns 1. If n<0, compute pow(x, -n) and return 1/result.",
+                "Recursive: half = pow(x, n/2). If n is even, return half*half. If odd, return x*half*half."
+            ]
+        }
+    ]
+}

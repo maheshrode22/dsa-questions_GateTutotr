@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Frequency of Elements using Hash Map",
+            "description": "Problem Statement\n\nYou are given an array of N integers. Using a hash map, count the frequency of each element.\nPrint each unique element and its frequency in the order of their first occurrence.\n",
+            "examples": "Sample Input\n7\n1 2 1 3 2 1 4\n\nSample Output\n1 3\n2 2\n3 1\n4 1\n\nExplanation:\n1 appears 3 times, 2 appears 2 times, 3 appears 1 time, 4 appears 1 time.",
+            "constraints": "1 ≤ N ≤ 100\n0 ≤ arr[i] ≤ 1000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "7\n1 2 1 3 2 1 4",
+                    "expectedOutput": "1 3\n2 2\n3 1\n4 1"
+                },
+                {
+                    "input": "5\n5 5 5 5 5",
+                    "expectedOutput": "5 5"
+                },
+                {
+                    "input": "6\n10 20 30 10 20 10",
+                    "expectedOutput": "10 3\n20 2\n30 1"
+                },
+                {
+                    "input": "4\n1 2 3 4",
+                    "expectedOutput": "1 1\n2 1\n3 1\n4 1"
+                },
+                {
+                    "input": "8\n7 7 8 8 9 9 7 8",
+                    "expectedOutput": "7 3\n8 3\n9 2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countFrequency(self, arr):\n        # TODO: Count frequency using hash map\n        # Return list of [element, frequency] in order of first occurrence\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    N = int(data[0])\n    arr = list(map(int, data[1:]))\n    sol = Solution()\n    result = sol.countFrequency(arr)\n    for item in result:\n        print(item[0], item[1])"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    ArrayList<int[]> countFrequency(int[] arr){\n        // TODO: Count frequency using hash map\n        // Return list of [element, frequency] in order of first occurrence\n        return new ArrayList<>();\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int N = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[N];\n        for(int i=0;i<N;i++) arr[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        ArrayList<int[]> result = sol.countFrequency(arr);\n        for(int[] item : result){\n            System.out.println(item[0] + \" \" + item[1]);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  countFrequency(arr){\n    // TODO: Count frequency using hash map\n    // Return array of [element, frequency] in order of first occurrence\n    return [];\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const N = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  const result = sol.countFrequency(arr);\n  for(const item of result){\n    console.log(item[0] + \" \" + item[1]);\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    vector<pair<int,int>> countFrequency(vector<int>& arr){\n        // TODO: Count frequency using hash map\n        // Return vector of {element, frequency} in order of first occurrence\n        return {};\n    }\n};\nint main(){\n    int N; cin >> N;\n    vector<int> arr(N);\n    for(int i=0;i<N;i++) cin >> arr[i];\n    Solution sol;\n    vector<pair<int,int>> result = sol.countFrequency(arr);\n    for(auto& p : result){\n        cout << p.first << \" \" << p.second << \"\\n\";\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint freq[1001] = {0};\nint order[100], orderSize = 0;\nint seen[1001] = {0};\n\nvoid countFrequency(int arr[], int n){\n    // TODO: Count frequency using arrays as hash map\n}\n\nint main(){\n    int N; scanf(\"%d\", &N);\n    int arr[N];\n    for(int i=0;i<N;i++) scanf(\"%d\", &arr[i]);\n    countFrequency(arr, N);\n    for(int i=0;i<orderSize;i++){\n        printf(\"%d %d\\n\", order[i], freq[order[i]]);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash map to count occurrences. Keep track of insertion order.",
+                "In languages without ordered maps, maintain a separate list for first occurrence order."
+            ]
+        }
+    ]
+}

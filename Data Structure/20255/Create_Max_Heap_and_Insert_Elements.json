@@ -1,0 +1,98 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Create a Max Heap and Insert Elements",
+      "description": "Problem Statement\n\nYou are given N integers. Create a Max Heap and insert all values one by one.\nAfter all insertions, print the heap array.\n\nMax Heap Properties:\n- Complete binary tree stored as an array\n- Parent node is always greater than or equal to its children\n- For node at index i:\n  * Left child at index 2*i + 1\n  * Right child at index 2*i + 2\n  * Parent at index (i-1)/2\n\nInsertion Process:\n1. Add element at the end of the array\n2. Heapify up: Compare with parent and swap if needed\n3. Repeat until heap property is satisfied\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the heap array as space-separated values.\nIf the heap is empty, print \"Heap is Empty\".\n\nExample\nInput:\n5\n30 20 40 10 25\n\nOutput:\n40 25 30 10 20\n\nExplanation:\nAfter inserting all elements, the max heap array representation is [40, 25, 30, 10, 20].",
+      "examples": "Sample Input 1\n5\n30 20 40 10 25\n\nSample Output 1\n40 25 30 10 20\n\nSample Input 2\n3\n10 20 30\n\nSample Output 2\n30 10 20",
+      "constraints": "1 ≤ N ≤ 1000\n-10^6 ≤ value ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 2,
+      "memoryLimit": 256,
+      "subdomainId": 2025,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n30 20 40 10 25",
+          "expectedOutput": "40 25 30 10 20",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n10 20 30",
+          "expectedOutput": "30 10 20",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n42",
+          "expectedOutput": "42",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n8 5 15 2",
+          "expectedOutput": "15 5 8 2",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n50 40 70 35 45 47",
+          "expectedOutput": "70 45 50 35 40 47",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class MaxHeap:\n    def __init__(self):\n        self.heap = []\n    \n    def insert(self, val):\n        # TODO: Add value to heap and heapify up\n        pass\n    \n    def _heapify_up(self, idx):\n        # TODO: Heapify up from given index\n        pass\n    \n    def getHeap(self):\n        return self.heap\n\nclass Solution:\n    def createMaxHeap(self, arr):\n        heap = MaxHeap()\n        for num in arr:\n            heap.insert(num)\n        return heap.getHeap()\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    result = sol.createMaxHeap(arr)\n    \n    if not result:\n        print(\"Heap is Empty\")\n    else:\n        print(\" \".join(map(str, result)))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\n\nclass MaxHeap{\n    private ArrayList<Integer> heap;\n    \n    public MaxHeap(){\n        heap = new ArrayList<>();\n    }\n    \n    public void insert(int val){\n        // TODO: Add value to heap and heapify up\n    }\n    \n    private void heapifyUp(int idx){\n        // TODO: Heapify up from given index\n    }\n    \n    public ArrayList<Integer> getHeap(){\n        return heap;\n    }\n}\n\nclass Solution{\n    ArrayList<Integer> createMaxHeap(int[] arr){\n        MaxHeap heap = new MaxHeap();\n        for(int num : arr){\n            heap.insert(num);\n        }\n        return heap.getHeap();\n    }\n    public static void main(String[] args){\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i = 0; i < n; i++) arr[i] = sc.nextInt();\n        Solution sol = new Solution();\n        ArrayList<Integer> ans = sol.createMaxHeap(arr);\n        if(ans.isEmpty()) System.out.println(\"Heap is Empty\");\n        else{\n            for(int i = 0; i < ans.size(); i++){\n                System.out.print(ans.get(i));\n                if(i < ans.size() - 1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class MaxHeap{\n  constructor(){\n    this.heap = [];\n  }\n  \n  insert(val){\n    // TODO: Add value to heap and heapify up\n  }\n  \n  heapifyUp(idx){\n    // TODO: Heapify up from given index\n  }\n  \n  getHeap(){\n    return this.heap;\n  }\n}\n\nclass Solution{\n  createMaxHeap(arr){\n    const heap = new MaxHeap();\n    for(let num of arr){\n      heap.insert(num);\n    }\n    return heap.getHeap();\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  const ans = sol.createMaxHeap(arr);\n  if(ans.length === 0) console.log(\"Heap is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass MaxHeap{\nprivate:\n    vector<int> heap;\n    \n    void heapifyUp(int idx){\n        // TODO: Heapify up from given index\n    }\n    \npublic:\n    void insert(int val){\n        // TODO: Add value to heap and heapify up\n    }\n    \n    vector<int> getHeap(){\n        return heap;\n    }\n};\n\nclass Solution{\npublic:\n    vector<int> createMaxHeap(vector<int>& arr){\n        MaxHeap heap;\n        for(int num : arr){\n            heap.insert(num);\n        }\n        return heap.getHeap();\n    }\n};\nint main(){\n    int n; cin >> n;\n    if(n == 0){\n        cout << \"Heap is Empty\";\n        return 0;\n    }\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    vector<int> ans = sol.createMaxHeap(arr);\n    if(ans.empty()) cout << \"Heap is Empty\";\n    else{\n        for(int i = 0; i < ans.size(); i++){\n            cout << ans[i];\n            if(i < ans.size() - 1) cout << \" \";\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint heap[1000], heapSize = 0;\n\nvoid heapifyUp(int idx){\n    // TODO: Heapify up from given index\n}\n\nvoid insert(int val){\n    // TODO: Add value to heap and heapify up\n}\n\nvoid createMaxHeap(int arr[], int n){\n    heapSize = 0;\n    for(int i = 0; i < n; i++){\n        insert(arr[i]);\n    }\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    if(n == 0){\n        printf(\"Heap is Empty\");\n        return 0;\n    }\n    int arr[n];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    createMaxHeap(arr, n);\n    if(heapSize == 0) printf(\"Heap is Empty\");\n    else{\n        for(int i = 0; i < heapSize; i++){\n            printf(\"%d\", heap[i]);\n            if(i < heapSize - 1) printf(\" \");\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Create a Max Heap and Insert Elements"
+        }
+      ],
+      "hintsList": [
+        "Use array-based representation: parent at (i-1)/2, left child at 2*i+1, right child at 2*i+2.",
+        "After inserting at the end, heapify up by comparing with parent and swapping if parent is smaller."
+      ]
+    }
+  ]
+}
+

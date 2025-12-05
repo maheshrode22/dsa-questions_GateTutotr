@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Insert a Node in AVL Tree (Simple Version)",
+      "description": "Problem Statement\n\nYou are given an empty AVL Tree.\nInsert a single integer value into the AVL Tree and print the height of the tree after insertion.\n\nAVL Tree is a self-balancing Binary Search Tree where:\n- Balance Factor (BF) = height(left) − height(right)\n- BF must be −1, 0, or +1 for every node\n- If insertion makes the tree unbalanced, rotations are used (LL, RR, LR, RL)\n\nHowever, in this simple version, you insert ONLY ONE value into an EMPTY AVL Tree.\nSo no rotation is required, and the height will always be 1.\n\nInput Format\nA single integer X: the value to insert.\n\nOutput Format\nPrint:\nheight: H\n(where H is the final height of the AVL Tree)\n\nExample\nInput:\n10\n\nOutput:\nheight: 1\n\nExplanation:\nTree was empty → insert 10 → height becomes 1.\n\nExample 2\nInput:\n25\n\nOutput:\nheight: 1",
+      "examples": "Sample Input 1\n10\n\nSample Output 1\nheight: 1\n\nSample Input 2\n5\n\nSample Output 2\nheight: 1",
+      "constraints": "1 ≤ X ≤ 10^6\nTree is initially empty.",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "10",
+          "expectedOutput": "height: 1",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5",
+          "expectedOutput": "height: 1",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "99",
+          "expectedOutput": "height: 1",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1",
+          "expectedOutput": "height: 1",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "250",
+          "expectedOutput": "height: 1",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: Insert into AVL Tree (simple: only one node)\n        pass\n\n    def solveAVL(self, x):\n        # TODO: Create tree, insert x, return height\n        pass\n\ndef solve():\n    x = int(input().strip())\n    sol = Solution()\n    print(f\"height: {sol.solveAVL(x)}\")\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; } }\nclass Solution{\n    AVLNode insertNode(AVLNode root, int key){\n        // TODO: Insert single node AVL\n        return null;\n    }\n    int solveAVL(int x){\n        // TODO: Always return height\n        return 0;\n    }\n    public static void main(String[] args)throws Exception{\n        Scanner sc=new Scanner(System.in);\n        int x=sc.nextInt();\n        Solution sol=new Solution();\n        System.out.println(\"height: \"+sol.solveAVL(x));\n    }\n}",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  solveAVL(x){\n    // TODO\n    return 0;\n  }\n}\nfunction solve(input){\n  const x=parseInt(input.trim());\n  const sol=new Solution();\n  console.log(`height: ${sol.solveAVL(x)}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; } };\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root, int key){\n        // TODO\n        return NULL;\n    }\n    int solveAVL(int x){\n        // TODO\n        return 0;\n    }\n};\nint main(){\n    int x; cin>>x;\n    Solution sol;\n    cout<<\"height: \"<<sol.solveAVL(x)<<endl;\n    return 0;\n}",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nAVLNode* insertNode(AVLNode* root, int key){\n    // TODO\n    return NULL;\n}\n\nint solveAVL(int x){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int x; scanf(\"%d\",&x);\n    printf(\"height: %d\\n\", solveAVL(x));\n    return 0;\n}",
+          "problemTitle": "Insert a Node in AVL Tree (Simple Version)"
+        }
+      ],
+      "hintsList": [
+        "Since the tree starts empty and only one value is inserted, height will always be 1.",
+        "AVL rotations are not needed here; focus on understanding insertion and height definition."
+      ]
+    }
+  ]
+}

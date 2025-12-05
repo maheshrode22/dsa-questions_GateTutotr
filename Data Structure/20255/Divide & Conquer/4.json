@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Binary Search - Count Occurrences",
+            "description": "Problem Statement\n\nYou are given a sorted array of N integers (may contain duplicates) and a target X.\nUsing Binary Search, count how many times X appears in the array.\nIf X is not present, print 0.\n",
+            "examples": "Sample Input\n8\n1 2 2 2 3 4 5 5\n2\n\nSample Output\n3\n\nExplanation:\nElement 2 appears at indices 1, 2, 3. Count = 3.",
+            "constraints": "1 <= N <= 1000\n-10000 <= arr[i] <= 10000\nArray is sorted in ascending order",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2027,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "8\n1 2 2 2 3 4 5 5\n2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "5\n5 5 5 5 5\n5",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "6\n1 2 3 4 5 6\n4",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4\n10 20 30 40\n25",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "7\n1 1 1 2 2 3 3\n1",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countOccurrences(self, arr, target):\n        # TODO: Count occurrences using binary search\n        # Find first and last occurrence, then calculate count\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    N = int(data[0])\n    arr = list(map(int, data[1:N+1]))\n    target = int(data[N+1])\n    sol = Solution()\n    print(sol.countOccurrences(arr, target))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int countOccurrences(int[] arr, int target){\n        // TODO: Count occurrences using binary search\n        // Find first and last occurrence, then calculate count\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int N = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[N];\n        for(int i=0;i<N;i++) arr[i] = Integer.parseInt(parts[i]);\n        int target = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.countOccurrences(arr, target));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  countOccurrences(arr, target){\n    // TODO: Count occurrences using binary search\n    // Find first and last occurrence, then calculate count\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const N = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const target = parseInt(lines[2]);\n  const sol = new Solution();\n  console.log(sol.countOccurrences(arr, target));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int countOccurrences(vector<int>& arr, int target){\n        // TODO: Count occurrences using binary search\n        // Find first and last occurrence, then calculate count\n        return 0;\n    }\n};\nint main(){\n    int N; cin >> N;\n    vector<int> arr(N);\n    for(int i=0;i<N;i++) cin >> arr[i];\n    int target; cin >> target;\n    Solution sol;\n    cout << sol.countOccurrences(arr, target);\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint countOccurrences(int arr[], int n, int target){\n    // TODO: Count occurrences using binary search\n    // Find first and last occurrence, then calculate count\n    return 0;\n}\nint main(){\n    int N; scanf(\"%d\", &N);\n    int arr[N];\n    for(int i=0;i<N;i++) scanf(\"%d\", &arr[i]);\n    int target; scanf(\"%d\", &target);\n    printf(\"%d\", countOccurrences(arr, N, target));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find first occurrence (index1) and last occurrence (index2). Count = index2 - index1 + 1.",
+                "If element not found (first = -1), count is 0."
+            ]
+        }
+    ]
+}

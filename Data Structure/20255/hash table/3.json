@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Handle Collision using Linear Probing",
+            "description": "Problem Statement\n\nYou are given a hash table of size M and N keys to insert.\nUse the Division Method for hashing: hash(key) = key % M\nHandle collisions using Linear Probing: if slot is occupied, try next slot (index + 1) % M.\nAfter all insertions, print the final hash table. Print -1 for empty slots.\n",
+            "examples": "Sample Input\n7\n5\n50 700 85 92 73\n\nSample Output\n700 50 85 73 92 -1 -1\n\nExplanation:\nhash(50)=1, hash(700)=0, hash(85)=1(occupied)->2, hash(92)=1->2->3->4, hash(73)=3",
+            "constraints": "1 ≤ M ≤ 20\n1 ≤ N ≤ M\n0 ≤ key ≤ 1000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "7\n5\n50 700 85 92 73",
+                    "expectedOutput": "700 50 85 92 73 -1 -1"
+                },
+                {
+                    "input": "5\n4\n5 10 15 20",
+                    "expectedOutput": "5 10 15 20 -1"
+                },
+                {
+                    "input": "10\n6\n12 22 32 42 52 62",
+                    "expectedOutput": "-1 -1 12 22 32 42 52 62 -1 -1"
+                },
+                {
+                    "input": "5\n3\n0 5 10",
+                    "expectedOutput": "0 5 10 -1 -1"
+                },
+                {
+                    "input": "6\n4\n6 12 18 24",
+                    "expectedOutput": "6 12 18 24 -1 -1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def __init__(self, size):\n        self.size = size\n        self.table = [-1] * size\n    \n    def insert(self, key):\n        # TODO: Insert key using linear probing\n        pass\n    \n    def getTable(self):\n        return self.table\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    M = int(data[0])\n    N = int(data[1])\n    keys = list(map(int, data[2:2+N]))\n    sol = Solution(M)\n    for key in keys:\n        sol.insert(key)\n    print(*sol.getTable())"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int size;\n    int[] table;\n    \n    Solution(int size){\n        this.size = size;\n        table = new int[size];\n        Arrays.fill(table, -1);\n    }\n    \n    void insert(int key){\n        // TODO: Insert key using linear probing\n    }\n    \n    int[] getTable(){\n        return table;\n    }\n    \n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int M = Integer.parseInt(br.readLine().trim());\n        int N = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        Solution sol = new Solution(M);\n        for(int i=0;i<N;i++){\n            sol.insert(Integer.parseInt(parts[i]));\n        }\n        int[] table = sol.getTable();\n        for(int i=0;i<table.length;i++){\n            System.out.print(table[i]);\n            if(i < table.length-1) System.out.print(\" \");\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  constructor(size){\n    this.size = size;\n    this.table = new Array(size).fill(-1);\n  }\n  insert(key){\n    // TODO: Insert key using linear probing\n  }\n  getTable(){\n    return this.table;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const M = parseInt(lines[0]);\n  const N = parseInt(lines[1]);\n  const keys = lines[2].split(\" \").map(Number);\n  const sol = new Solution(M);\n  for(const key of keys) sol.insert(key);\n  console.log(sol.getTable().join(\" \"));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int size;\n    vector<int> table;\n    \n    Solution(int size){\n        this->size = size;\n        table.assign(size, -1);\n    }\n    \n    void insert(int key){\n        // TODO: Insert key using linear probing\n    }\n    \n    vector<int> getTable(){\n        return table;\n    }\n};\nint main(){\n    int M, N; cin >> M >> N;\n    Solution sol(M);\n    for(int i=0;i<N;i++){\n        int key; cin >> key;\n        sol.insert(key);\n    }\n    vector<int> table = sol.getTable();\n    for(int i=0;i<table.size();i++){\n        cout << table[i];\n        if(i < table.size()-1) cout << \" \";\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint table[100];\nint size;\n\nvoid insert(int key){\n    // TODO: Insert key using linear probing\n}\n\nint main(){\n    int M, N; scanf(\"%d %d\", &M, &N);\n    size = M;\n    for(int i=0;i<M;i++) table[i] = -1;\n    for(int i=0;i<N;i++){\n        int key; scanf(\"%d\", &key);\n        insert(key);\n    }\n    for(int i=0;i<M;i++){\n        printf(\"%d\", table[i]);\n        if(i < M-1) printf(\" \");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "If hash(key) slot is occupied, try (hash(key) + 1) % M, then (hash(key) + 2) % M, and so on.",
+                "Keep probing until an empty slot (-1) is found or table is full."
+            ]
+        }
+    ]
+}

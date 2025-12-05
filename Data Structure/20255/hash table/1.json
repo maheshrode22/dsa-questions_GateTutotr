@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Insert and Search in Hash Table using Division Method",
+            "description": "Problem Statement\n\nYou are given a hash table of size M and N key-value pairs to insert.\nUse the Division Method for hashing: hash(key) = key % M\nHandle collisions using Separate Chaining (linked list at each slot).\nAfter all insertions, answer Q queries - for each query key, print the value if found, otherwise print -1.\n",
+            "examples": "Sample Input\n5\n3\n10 100\n15 150\n20 200\n2\n10\n25\n\nSample Output\n100\n-1\n\nExplanation:\nhash(10) = 10%5 = 0, hash(15) = 15%5 = 0, hash(20) = 20%5 = 0\nAll go to slot 0. Query 10 finds value 100, query 25 not found.",
+            "constraints": "1 ≤ M ≤ 100\n1 ≤ N ≤ 50\n0 ≤ key ≤ 1000\n1 ≤ Q ≤ 20",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5\n3\n10 100\n15 150\n20 200\n2\n10\n25",
+                    "expectedOutput": "100\n-1"
+                },
+                {
+                    "input": "7\n4\n14 140\n21 210\n7 70\n28 280\n3\n14\n7\n35",
+                    "expectedOutput": "140\n70\n-1"
+                },
+                {
+                    "input": "10\n5\n5 50\n15 150\n25 250\n35 350\n45 450\n3\n25\n45\n100",
+                    "expectedOutput": "250\n450\n-1"
+                },
+                {
+                    "input": "3\n3\n1 10\n4 40\n7 70\n2\n4\n1",
+                    "expectedOutput": "40\n10"
+                },
+                {
+                    "input": "10\n2\n50 500\n60 600\n4\n50\n60\n70\n80",
+                    "expectedOutput": "500\n600\n-1\n-1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def __init__(self, size):\n        self.size = size\n        self.table = [[] for _ in range(size)]\n    \n    def insert(self, key, value):\n        # TODO: Insert key-value using division method\n        pass\n    \n    def search(self, key):\n        # TODO: Search and return value, or -1 if not found\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    M = int(data[0])\n    N = int(data[1])\n    sol = Solution(M)\n    idx = 2\n    for i in range(N):\n        parts = data[idx].split()\n        sol.insert(int(parts[0]), int(parts[1]))\n        idx += 1\n    Q = int(data[idx])\n    idx += 1\n    for i in range(Q):\n        key = int(data[idx])\n        print(sol.search(key))\n        idx += 1"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int size;\n    ArrayList<int[]>[] table;\n    \n    Solution(int size){\n        this.size = size;\n        table = new ArrayList[size];\n        for(int i=0;i<size;i++) table[i] = new ArrayList<>();\n    }\n    \n    void insert(int key, int value){\n        // TODO: Insert key-value using division method\n    }\n    \n    int search(int key){\n        // TODO: Search and return value, or -1 if not found\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int M = Integer.parseInt(br.readLine().trim());\n        int N = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution(M);\n        for(int i=0;i<N;i++){\n            String[] parts = br.readLine().trim().split(\" \");\n            sol.insert(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]));\n        }\n        int Q = Integer.parseInt(br.readLine().trim());\n        for(int i=0;i<Q;i++){\n            int key = Integer.parseInt(br.readLine().trim());\n            System.out.println(sol.search(key));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  constructor(size){\n    this.size = size;\n    this.table = Array.from({length: size}, () => []);\n  }\n  insert(key, value){\n    // TODO: Insert key-value using division method\n  }\n  search(key){\n    // TODO: Search and return value, or -1 if not found\n    return -1;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  let idx = 0;\n  const M = parseInt(lines[idx++]);\n  const N = parseInt(lines[idx++]);\n  const sol = new Solution(M);\n  for(let i=0;i<N;i++){\n    const [k,v] = lines[idx++].split(\" \").map(Number);\n    sol.insert(k, v);\n  }\n  const Q = parseInt(lines[idx++]);\n  for(let i=0;i<Q;i++){\n    console.log(sol.search(parseInt(lines[idx++])));\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int size;\n    vector<vector<pair<int,int>>> table;\n    \n    Solution(int size){\n        this->size = size;\n        table.resize(size);\n    }\n    \n    void insert(int key, int value){\n        // TODO: Insert key-value using division method\n    }\n    \n    int search(int key){\n        // TODO: Search and return value, or -1 if not found\n        return -1;\n    }\n};\nint main(){\n    int M, N; cin >> M >> N;\n    Solution sol(M);\n    for(int i=0;i<N;i++){\n        int k, v; cin >> k >> v;\n        sol.insert(k, v);\n    }\n    int Q; cin >> Q;\n    while(Q--){\n        int key; cin >> key;\n        cout << sol.search(key) << \"\\n\";\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct Node{\n    int key, value;\n    struct Node* next;\n} Node;\nNode* table[100];\nint size;\n\nvoid insert(int key, int value){\n    // TODO: Insert key-value using division method\n}\n\nint search(int key){\n    // TODO: Search and return value, or -1 if not found\n    return -1;\n}\n\nint main(){\n    int M, N; scanf(\"%d %d\", &M, &N);\n    size = M;\n    for(int i=0;i<M;i++) table[i] = NULL;\n    for(int i=0;i<N;i++){\n        int k, v; scanf(\"%d %d\", &k, &v);\n        insert(k, v);\n    }\n    int Q; scanf(\"%d\", &Q);\n    while(Q--){\n        int key; scanf(\"%d\", &key);\n        printf(\"%d\\n\", search(key));\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use hash(key) = key % M to find the slot index.",
+                "For chaining, store a list of (key, value) pairs at each slot and search linearly in that list."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,470 @@
+
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Implement Queue using Array",
+      "description": "Problem Statement\n\nA Queue is a linear data structure that follows the FIFO (First In First Out) principle. The element inserted first will be removed first.\n\nYou need to implement a Queue using an array with the following operations:\n\n1. Enqueue (Insert): Add an element to the rear of the queue\n2. Dequeue (Delete): Remove an element from the front of the queue\n3. Display: Show all elements in the queue from front to rear\n\nYou will be given N operations to perform on the queue.\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations in one of the following formats:\n- 1 X : Enqueue element X into the queue\n- 2 : Dequeue (remove front element)\n- 3 : Display all elements in the queue\n\nOutput Format\n\nFor operation 3 (Display):\n- If queue is not empty: Print all elements separated by space\n- If queue is empty: Print \"Queue is Empty\"\n\nFor operations 1 and 2: No output required\n\nExample\n\nInput:\n5\n1 10\n1 20\n3\n2\n3\n\nOutput:\n10 20\n20\n\nExplanation:\n1 10 → Enqueue 10, Queue: [10]\n1 20 → Enqueue 20, Queue: [10, 20]\n3 → Display: 10 20\n2 → Dequeue (remove 10), Queue: [20]\n3 → Display: 20",
+      "examples": "Sample Input 1\n5\n1 10\n1 20\n3\n2\n3\n\nSample Output 1\n10 20\n20\n\nSample Input 2\n3\n1 5\n2\n3\n\nSample Output 2\nQueue is Empty",
+      "constraints": "1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6\nMaximum queue size will not exceed 1000",
+      "hints": 2,
+      "timeLimit": 2,
+      "memoryLimit": 256,
+      "subdomainId": 2022,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n1 10\n1 20\n3\n2\n3",
+          "expectedOutput": "10 20\n20",
+          "problemTitle": "Implement Queue using Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n1 5\n2\n3",
+          "expectedOutput": "Queue is Empty",
+          "problemTitle": "Implement Queue using Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n3",
+          "expectedOutput": "Queue is Empty",
+          "problemTitle": "Implement Queue using Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "7\n1 100\n1 200\n1 300\n3\n2\n2\n3",
+          "expectedOutput": "100 200 300\n300",
+          "problemTitle": "Implement Queue using Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n1 15\n1 25\n1 35\n2\n3\n2",
+          "expectedOutput": "25 35",
+          "problemTitle": "Implement Queue using Array"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def enqueue(queue, element):\n    # TODO: Write your code here to add element to the queue\n    pass\n\ndef dequeue(queue):\n    # TODO: Write your code here to remove element from front of queue\n    pass\n\ndef display(queue):\n    # TODO: Write your code here to display queue elements\n    # Print \"Queue is Empty\" if queue is empty\n    # Otherwise print all elements separated by space\n    pass\n\ndef solve():\n    n = int(input())\n    queue = []\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            enqueue(queue, element)\n        elif operation[0] == \"2\":\n            dequeue(queue)\n        elif operation[0] == \"3\":\n            display(queue)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Implement Queue using Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static void enqueue(ArrayList<Integer> queue, int element) {\n        // TODO: Write your code here to add element to the queue\n    }\n    \n    public static void dequeue(ArrayList<Integer> queue) {\n        // TODO: Write your code here to remove element from front of queue\n    }\n    \n    public static void display(ArrayList<Integer> queue) {\n        // TODO: Write your code here to display queue elements\n        // Print \"Queue is Empty\" if queue is empty\n        // Otherwise print all elements separated by space\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        ArrayList<Integer> queue = new ArrayList<>();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                Result.enqueue(queue, element);\n            } else if (operation[0].equals(\"2\")) {\n                Result.dequeue(queue);\n            } else if (operation[0].equals(\"3\")) {\n                Result.display(queue);\n            }\n        }\n    }\n}",
+          "problemTitle": "Implement Queue using Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function enqueue(queue, element) {\n    // TODO: Write your code here to add element to the queue\n}\n\nfunction dequeue(queue) {\n    // TODO: Write your code here to remove element from front of queue\n}\n\nfunction display(queue) {\n    // TODO: Write your code here to display queue elements\n    // Print \"Queue is Empty\" if queue is empty\n    // Otherwise print all elements separated by space\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const queue = [];\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            enqueue(queue, element);\n        } else if (operation[0] === \"2\") {\n            dequeue(queue);\n        } else if (operation[0] === \"3\") {\n            display(queue);\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Implement Queue using Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid enqueue(vector<int>& queue, int element) {\n    // TODO: Write your code here to add element to the queue\n}\n\nvoid dequeue(vector<int>& queue) {\n    // TODO: Write your code here to remove element from front of queue\n}\n\nvoid display(vector<int>& queue) {\n    // TODO: Write your code here to display queue elements\n    // Print \"Queue is Empty\" if queue is empty\n    // Otherwise print all elements separated by space\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    vector<int> queue;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            enqueue(queue, element);\n        } else if(operation == 2) {\n            dequeue(queue);\n        } else if(operation == 3) {\n            display(queue);\n        }\n    }\n\n    return 0;\n}",
+          "problemTitle": "Implement Queue using Array"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nvoid enqueue(int queue[], int* rear, int element) {\n    // TODO: Write your code here to add element to the queue\n}\n\nvoid dequeue(int* front, int rear) {\n    // TODO: Write your code here to remove element from front of queue\n}\n\nvoid display(int queue[], int front, int rear) {\n    // TODO: Write your code here to display queue elements\n    // Print \"Queue is Empty\" if queue is empty\n    // Otherwise print all elements separated by space\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    int queue[1000];\n    int front = 0, rear = 0;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            enqueue(queue, &rear, element);\n        } else if(operation == 2) {\n            dequeue(&front, rear);\n        } else if(operation == 3) {\n            display(queue, front, rear);\n        }\n    }\n    \n    return 0;\n}",
+          "problemTitle": "Implement Queue using Array"
+        }
+      ],
+      "hintsList": [
+        "Queue follows FIFO (First In First Out) principle - the first element added is the first to be removed.",
+        "For array-based queue: use append/push_back to add at rear and remove from index 0 for dequeue operation."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Perform Enqueue & Dequeue Operations",
+      "description": "Problem Statement\n\nA Queue is a linear data structure that follows FIFO (First In First Out) principle. In this problem, you need to perform basic queue operations:\n\n1. Enqueue (E): Add an element to the rear of the queue\n2. Dequeue (D): Remove an element from the front of the queue\n\nYou will be given N operations to perform on an initially empty queue.\n\nFor each operation:\n- If Enqueue: Print \"Enqueued X\" where X is the element added\n- If Dequeue: Print \"Dequeued X\" where X is the element removed\n- If Dequeue on empty queue: Print \"Queue is Empty\"\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations in one of the following formats:\n- E X : Enqueue element X into the queue\n- D : Dequeue (remove front element)\n\nOutput Format\n\nFor each operation, print the result:\n- \"Enqueued X\" when element X is added\n- \"Dequeued X\" when element X is removed\n- \"Queue is Empty\" when trying to dequeue from empty queue\n\nExample\n\nInput:\n4\nE 10\nE 20\nD\nD\n\nOutput:\nEnqueued 10\nEnqueued 20\nDequeued 10\nDequeued 20\n\nExplanation:\nE 10 → Add 10 to queue, output: \"Enqueued 10\"\nE 20 → Add 20 to queue, output: \"Enqueued 20\"\nD → Remove 10 (front element), output: \"Dequeued 10\"\nD → Remove 20 (front element), output: \"Dequeued 20\"",
+      "examples": "Sample Input 1\n4\nE 10\nE 20\nD\nD\n\nSample Output 1\nEnqueued 10\nEnqueued 20\nDequeued 10\nDequeued 20\n\nSample Input 2\n2\nD\nE 5\n\nSample Output 2\nQueue is Empty\nEnqueued 5",
+      "constraints": "1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6\nMaximum queue size will not exceed 1000",
+      "hints": 2,
+      "timeLimit": 2,
+      "memoryLimit": 256,
+      "subdomainId": 2022,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\nE 10\nE 20\nD\nD",
+          "expectedOutput": "Enqueued 10\nEnqueued 20\nDequeued 10\nDequeued 20",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "2\nD\nE 5",
+          "expectedOutput": "Queue is Empty\nEnqueued 5",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\nE 100\nE 200\nE 300\nD\nD",
+          "expectedOutput": "Enqueued 100\nEnqueued 200\nEnqueued 300\nDequeued 100\nDequeued 200",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\nE 50\nD\nD",
+          "expectedOutput": "Enqueued 50\nDequeued 50\nQueue is Empty",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\nE 1\nE 2\nE 3\nD\nE 4\nD",
+          "expectedOutput": "Enqueued 1\nEnqueued 2\nEnqueued 3\nDequeued 1\nEnqueued 4\nDequeued 2",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def enqueue(queue, element):\n    # TODO: Write your code here to add element to queue\n    # Print \"Enqueued {element}\"\n    pass\n\ndef dequeue(queue):\n    # TODO: Write your code here to remove element from front\n    # If queue is empty, print \"Queue is Empty\"\n    # Otherwise print \"Dequeued {element}\"\n    pass\n\ndef solve():\n    n = int(input())\n    queue = []\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"E\":\n            element = int(operation[1])\n            enqueue(queue, element)\n        elif operation[0] == \"D\":\n            dequeue(queue)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static void enqueue(ArrayList<Integer> queue, int element) {\n        // TODO: Write your code here to add element to queue\n        // Print \"Enqueued \" + element\n    }\n    \n    public static void dequeue(ArrayList<Integer> queue) {\n        // TODO: Write your code here to remove element from front\n        // If queue is empty, print \"Queue is Empty\"\n        // Otherwise print \"Dequeued \" + element\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        ArrayList<Integer> queue = new ArrayList<>();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"E\")) {\n                int element = Integer.parseInt(operation[1]);\n                Result.enqueue(queue, element);\n            } else if (operation[0].equals(\"D\")) {\n                Result.dequeue(queue);\n            }\n        }\n    }\n}",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function enqueue(queue, element) {\n    // TODO: Write your code here to add element to queue\n    // Print \"Enqueued \" + element\n}\n\nfunction dequeue(queue) {\n    // TODO: Write your code here to remove element from front\n    // If queue is empty, print \"Queue is Empty\"\n    // Otherwise print \"Dequeued \" + element\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const queue = [];\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"E\") {\n            const element = parseInt(operation[1]);\n            enqueue(queue, element);\n        } else if (operation[0] === \"D\") {\n            dequeue(queue);\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid enqueue(vector<int>& queue, int element) {\n    // TODO: Write your code here to add element to queue\n    // Print \"Enqueued \" << element\n}\n\nvoid dequeue(vector<int>& queue) {\n    // TODO: Write your code here to remove element from front\n    // If queue is empty, print \"Queue is Empty\"\n    // Otherwise print \"Dequeued \" << element\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    vector<int> queue;\n    \n    for(int i = 0; i < n; i++) {\n        char operation;\n        cin >> operation;\n        \n        if(operation == 'E') {\n            int element;\n            cin >> element;\n            enqueue(queue, element);\n        } else if(operation == 'D') {\n            dequeue(queue);\n        }\n    }\n\n    return 0;\n}",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nvoid enqueue(int queue[], int* rear, int element) {\n    // TODO: Write your code here to add element to queue\n    // Print \"Enqueued %d\", element\n}\n\nvoid dequeue(int queue[], int* front, int rear) {\n    // TODO: Write your code here to remove element from front\n    // If queue is empty, print \"Queue is Empty\"\n    // Otherwise print \"Dequeued %d\", element\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    int queue[1000];\n    int front = 0, rear = 0;\n    \n    for(int i = 0; i < n; i++) {\n        char operation;\n        scanf(\" %c\", &operation);\n        \n        if(operation == 'E') {\n            int element;\n            scanf(\"%d\", &element);\n            enqueue(queue, &rear, element);\n        } else if(operation == 'D') {\n            dequeue(queue, &front, rear);\n        }\n    }\n    \n    return 0;\n}",
+          "problemTitle": "Perform Enqueue & Dequeue Operations"
+        }
+      ],
+      "hintsList": [
+        "Use append/push to add elements at the rear of the queue for enqueue operation.",
+        "Use remove from index 0/pop_front for dequeue operation. Always check if queue is empty before dequeuing."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Display Elements in Queue",
+      "description": "Problem Statement\n\nA Queue is a linear data structure that follows FIFO (First In First Out) principle. In this problem, you need to:\n\n1. Add elements to the queue (Enqueue)\n2. Display all elements present in the queue from front to rear\n\nYou will be given N operations to perform on an initially empty queue.\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations in one of the following formats:\n- 1 X : Add element X to the queue\n- 2 : Display all elements in the queue\n\nOutput Format\n\nFor operation 2 (Display):\n- If queue is not empty: Print all elements separated by space (from front to rear)\n- If queue is empty: Print \"Queue is Empty\"\n\nFor operation 1: No output required\n\nExample\n\nInput:\n3\n1 10\n1 20\n2\n\nOutput:\n10 20\n\nExplanation:\n1 10 → Add 10 to queue, Queue: [10]\n1 20 → Add 20 to queue, Queue: [10, 20]\n2 → Display queue elements: 10 20",
+      "examples": "Sample Input 1\n3\n1 10\n1 20\n2\n\nSample Output 1\n10 20\n\nSample Input 2\n1\n2\n\nSample Output 2\nQueue is Empty",
+      "constraints": "1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6\nMaximum queue size will not exceed 1000",
+      "hints": 2,
+      "timeLimit": 2,
+      "memoryLimit": 256,
+      "subdomainId": 2022,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n1 10\n1 20\n2",
+          "expectedOutput": "10 20",
+          "problemTitle": "Display Elements in Queue"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n2",
+          "expectedOutput": "Queue is Empty",
+          "problemTitle": "Display Elements in Queue"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n1 5\n1 15\n1 25\n1 35\n2",
+          "expectedOutput": "5 15 25 35",
+          "problemTitle": "Display Elements in Queue"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "2\n1 100\n2",
+          "expectedOutput": "100",
+          "problemTitle": "Display Elements in Queue"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n1 7\n1 14\n2\n1 21\n1 28\n2",
+          "expectedOutput": "7 14\n7 14 21 28",
+          "problemTitle": "Display Elements in Queue"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def enqueue(queue, element):\n    # TODO: Write your code here to add element to the queue\n    pass\n\ndef display(queue):\n    # TODO: Write your code here to display all elements\n    # Print \"Queue is Empty\" if queue is empty\n    # Otherwise print all elements separated by space\n    pass\n\ndef solve():\n    n = int(input())\n    queue = []\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            enqueue(queue, element)\n        elif operation[0] == \"2\":\n            display(queue)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Display Elements in Queue"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static void enqueue(ArrayList<Integer> queue, int element) {\n        // TODO: Write your code here to add element to the queue\n    }\n    \n    public static void display(ArrayList<Integer> queue) {\n        // TODO: Write your code here to display all elements\n        // Print \"Queue is Empty\" if queue is empty\n        // Otherwise print all elements separated by space\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        ArrayList<Integer> queue = new ArrayList<>();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                Result.enqueue(queue, element);\n            } else if (operation[0].equals(\"2\")) {\n                Result.display(queue);\n            }\n        }\n    }\n}",
+          "problemTitle": "Display Elements in Queue"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function enqueue(queue, element) {\n    // TODO: Write your code here to add element to the queue\n}\n\nfunction display(queue) {\n    // TODO: Write your code here to display all elements\n    // Print \"Queue is Empty\" if queue is empty\n    // Otherwise print all elements separated by space\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const queue = [];\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            enqueue(queue, element);\n        } else if (operation[0] === \"2\") {\n            display(queue);\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Display Elements in Queue"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid enqueue(vector<int>& queue, int element) {\n    // TODO: Write your code here to add element to the queue\n}\n\nvoid display(vector<int>& queue) {\n    // TODO: Write your code here to display all elements\n    // Print \"Queue is Empty\" if queue is empty\n    // Otherwise print all elements separated by space\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    vector<int> queue;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            enqueue(queue, element);\n        } else if(operation == 2) {\n            display(queue);\n        }\n    }\n\n    return 0;\n}",
+          "problemTitle": "Display Elements in Queue"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid enqueue(int queue[], int* rear, int element) {\n    // TODO: Write your code here to add element to the queue\n}\n\nvoid display(int queue[], int front, int rear) {\n    // TODO: Write your code here to display all elements\n    // Print \"Queue is Empty\" if queue is empty\n    // Otherwise print all elements separated by space\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    int queue[1000];\n    int front = 0, rear = 0;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            enqueue(queue, &rear, element);\n        } else if(operation == 2) {\n            display(queue, front, rear);\n        }\n    }\n    \n    return 0;\n}",
+          "problemTitle": "Display Elements in Queue"
+        }
+      ],
+      "hintsList": [
+        "To add an element to queue, simply append it to the end of the array/list.",
+        "To display, iterate through all elements from index 0 to end and print them with spaces. Check if queue is empty first."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Check if Queue is Empty or Full",
+      "description": "Problem Statement\n\nA Queue is a linear data structure with a fixed capacity. In this problem, you need to:\n\n1. Add elements to the queue (if not full)\n2. Check if the queue is empty\n3. Check if the queue is full\n\nThe queue has a maximum capacity. When you try to add an element to a full queue, it should print \"Queue is Full\" and not add the element.\n\nYou will be given the capacity of the queue and N operations to perform.\n\nInput Format\n\nThe first line contains two integers: Capacity (maximum size) and N (number of operations).\nNext N lines contain operations in one of the following formats:\n- 1 X : Add element X to the queue\n- 2 : Check if queue is empty\n- 3 : Check if queue is full\n\nOutput Format\n\nFor operation 1 (Add element):\n- If queue is full: Print \"Queue is Full\"\n- Otherwise: No output (element is added)\n\nFor operation 2 (IsEmpty):\n- Print \"True\" if queue is empty\n- Print \"False\" if queue is not empty\n\nFor operation 3 (IsFull):\n- Print \"True\" if queue is full\n- Print \"False\" if queue is not full\n\nExample\n\nInput:\n3 5\n1 10\n2\n1 20\n1 30\n3\n\nOutput:\nFalse\nTrue\n\nExplanation:\nCapacity = 3, Queue starts empty\n1 10 → Add 10, Queue: [10]\n2 → IsEmpty? No, output: False\n1 20 → Add 20, Queue: [10, 20]\n1 30 → Add 30, Queue: [10, 20, 30] (now full)\n3 → IsFull? Yes, output: True",
+      "examples": "Sample Input 1\n3 5\n1 10\n2\n1 20\n1 30\n3\n\nSample Output 1\nFalse\nTrue\n\nSample Input 2\n2 3\n2\n1 5\n3\n\nSample Output 2\nTrue\nFalse",
+      "constraints": "1 ≤ Capacity ≤ 1000\n1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 2,
+      "memoryLimit": 256,
+      "subdomainId": 2022,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3 5\n1 10\n2\n1 20\n1 30\n3",
+          "expectedOutput": "False\nTrue",
+          "problemTitle": "Check if Queue is Empty or Full"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "2 3\n2\n1 5\n3",
+          "expectedOutput": "True\nFalse",
+          "problemTitle": "Check if Queue is Empty or Full"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "2 4\n1 100\n1 200\n1 300\n3",
+          "expectedOutput": "Queue is Full\nTrue",
+          "problemTitle": "Check if Queue is Empty or Full"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5 6\n1 1\n1 2\n1 3\n2\n3\n1 4",
+          "expectedOutput": "False\nFalse",
+          "problemTitle": "Check if Queue is Empty or Full"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1 5\n1 50\n3\n1 60\n2\n3",
+          "expectedOutput": "True\nQueue is Full\nFalse\nTrue",
+          "problemTitle": "Check if Queue is Empty or Full"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def enqueue(queue, capacity, element):\n    # TODO: Write your code here\n    # If queue size >= capacity, print \"Queue is Full\"\n    # Otherwise add element to queue\n    pass\n\ndef is_empty(queue):\n    # TODO: Write your code here\n    # Print \"True\" if queue is empty, otherwise print \"False\"\n    pass\n\ndef is_full(queue, capacity):\n    # TODO: Write your code here\n    # Print \"True\" if queue size >= capacity, otherwise print \"False\"\n    pass\n\ndef solve():\n    capacity, n = map(int, input().split())\n    queue = []\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            enqueue(queue, capacity, element)\n        elif operation[0] == \"2\":\n            is_empty(queue)\n        elif operation[0] == \"3\":\n            is_full(queue, capacity)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Check if Queue is Empty or Full"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static void enqueue(ArrayList<Integer> queue, int capacity, int element) {\n        // TODO: Write your code here\n        // If queue size >= capacity, print \"Queue is Full\"\n        // Otherwise add element to queue\n    }\n    \n    public static void isEmpty(ArrayList<Integer> queue) {\n        // TODO: Write your code here\n        // Print \"True\" if queue is empty, otherwise print \"False\"\n    }\n    \n    public static void isFull(ArrayList<Integer> queue, int capacity) {\n        // TODO: Write your code here\n        // Print \"True\" if queue size >= capacity, otherwise print \"False\"\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().split(\" \");\n        int capacity = Integer.parseInt(first[0]);\n        int n = Integer.parseInt(first[1]);\n        ArrayList<Integer> queue = new ArrayList<>();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                Result.enqueue(queue, capacity, element);\n            } else if (operation[0].equals(\"2\")) {\n                Result.isEmpty(queue);\n            } else if (operation[0].equals(\"3\")) {\n                Result.isFull(queue, capacity);\n            }\n        }\n    }\n}",
+          "problemTitle": "Check if Queue is Empty or Full"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function enqueue(queue, capacity, element) {\n    // TODO: Write your code here\n    // If queue length >= capacity, print \"Queue is Full\"\n    // Otherwise add element to queue\n}\n\nfunction isEmpty(queue) {\n    // TODO: Write your code here\n    // Print \"True\" if queue is empty, otherwise print \"False\"\n}\n\nfunction isFull(queue, capacity) {\n    // TODO: Write your code here\n    // Print \"True\" if queue length >= capacity, otherwise print \"False\"\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const [capacity, n] = lines[0].split(\" \").map(Number);\n    const queue = [];\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            enqueue(queue, capacity, element);\n        } else if (operation[0] === \"2\") {\n            isEmpty(queue);\n        } else if (operation[0] === \"3\") {\n            isFull(queue, capacity);\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Check if Queue is Empty or Full"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid enqueue(vector<int>& queue, int capacity, int element) {\n    // TODO: Write your code here\n    // If queue size >= capacity, print \"Queue is Full\"\n    // Otherwise add element to queue\n}\n\nvoid isEmpty(vector<int>& queue) {\n    // TODO: Write your code here\n    // Print \"True\" if queue is empty, otherwise print \"False\"\n}\n\nvoid isFull(vector<int>& queue, int capacity) {\n    // TODO: Write your code here\n    // Print \"True\" if queue size >= capacity, otherwise print \"False\"\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int capacity, n;\n    cin >> capacity >> n;\n    vector<int> queue;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            enqueue(queue, capacity, element);\n        } else if(operation == 2) {\n            isEmpty(queue);\n        } else if(operation == 3) {\n            isFull(queue, capacity);\n        }\n    }\n\n    return 0;\n}",
+          "problemTitle": "Check if Queue is Empty or Full"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid enqueue(int queue[], int* rear, int capacity, int element) {\n    // TODO: Write your code here\n    // If rear >= capacity, print \"Queue is Full\"\n    // Otherwise add element to queue and increment rear\n}\n\nvoid isEmpty(int front, int rear) {\n    // TODO: Write your code here\n    // Print \"True\" if front >= rear (empty), otherwise print \"False\"\n}\n\nvoid isFull(int rear, int capacity) {\n    // TODO: Write your code here\n    // Print \"True\" if rear >= capacity, otherwise print \"False\"\n}\n\nint main(){\n    int capacity, n;\n    scanf(\"%d %d\", &capacity, &n);\n    \n    int queue[1000];\n    int front = 0, rear = 0;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            enqueue(queue, &rear, capacity, element);\n        } else if(operation == 2) {\n            isEmpty(front, rear);\n        } else if(operation == 3) {\n            isFull(rear, capacity);\n        }\n    }\n    \n    return 0;\n}",
+          "problemTitle": "Check if Queue is Empty or Full"
+        }
+      ],
+      "hintsList": [
+        "Queue is empty when its size is 0, and full when its size equals the capacity.",
+        "Before adding an element, check if current size is less than capacity. If not, the queue is full."
+      ]
+    },
+    {
+      "id": null,
+      "title": "Implement Queue using Linked List",
+      "description": "Problem Statement\n\nA Queue is a linear data structure that follows FIFO (First In First Out) principle. In this problem, you need to implement a Queue using a Linked List approach (dynamic size, no capacity limit).\n\nYou need to perform the following operations:\n\n1. Enqueue: Add an element to the rear of the queue\n2. Dequeue: Remove an element from the front of the queue\n3. Display: Show all elements in the queue from front to rear\n\nYou will be given N operations to perform on an initially empty queue.\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations in one of the following formats:\n- 1 X : Enqueue element X into the queue\n- 2 : Dequeue (remove front element)\n- 3 : Display all elements in the queue\n\nOutput Format\n\nFor operation 1 (Enqueue):\n- Print \"Enqueued X\" where X is the element added\n\nFor operation 2 (Dequeue):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Dequeued X\" where X is the element removed\n\nFor operation 3 (Display):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print all elements separated by space\n\nExample\n\nInput:\n6\n1 10\n1 20\n3\n2\n3\n2\n\nOutput:\nEnqueued 10\nEnqueued 20\n10 20\nDequeued 10\n20\nDequeued 20\n\nExplanation:\n1 10 → Enqueue 10, Queue: [10]\n1 20 → Enqueue 20, Queue: [10, 20]\n3 → Display: 10 20\n2 → Dequeue 10, Queue: [20]\n3 → Display: 20\n2 → Dequeue 20, Queue: []",
+      "examples": "Sample Input 1\n6\n1 10\n1 20\n3\n2\n3\n2\n\nSample Output 1\nEnqueued 10\nEnqueued 20\n10 20\nDequeued 10\n20\nDequeued 20\n\nSample Input 2\n2\n2\n3\n\nSample Output 2\nQueue is Empty\nQueue is Empty",
+      "constraints": "1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6\nNo capacity limit (dynamic size)",
+      "hints": 2,
+      "timeLimit": 2,
+      "memoryLimit": 256,
+      "subdomainId": 2022,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n1 10\n1 20\n3\n2\n3\n2",
+          "expectedOutput": "Enqueued 10\nEnqueued 20\n10 20\nDequeued 10\n20\nDequeued 20",
+          "problemTitle": "Implement Queue using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "2\n2\n3",
+          "expectedOutput": "Queue is Empty\nQueue is Empty",
+          "problemTitle": "Implement Queue using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n1 100\n1 200\n1 300\n2\n3",
+          "expectedOutput": "Enqueued 100\nEnqueued 200\nEnqueued 300\nDequeued 100\n200 300",
+          "problemTitle": "Implement Queue using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n1 5\n3\n2\n3",
+          "expectedOutput": "Enqueued 5\n5\nDequeued 5\nQueue is Empty",
+          "problemTitle": "Implement Queue using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "7\n1 7\n1 14\n1 21\n3\n2\n2\n3",
+          "expectedOutput": "Enqueued 7\nEnqueued 14\nEnqueued 21\n7 14 21\nDequeued 7\nDequeued 14\n21",
+          "problemTitle": "Implement Queue using Linked List"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "def enqueue(queue, element):\n    # TODO: Write your code here to add element to queue\n    # Print \"Enqueued {element}\"\n    pass\n\ndef dequeue(queue):\n    # TODO: Write your code here to remove element from front\n    # If queue is empty, print \"Queue is Empty\"\n    # Otherwise print \"Dequeued {element}\"\n    pass\n\ndef display(queue):\n    # TODO: Write your code here to display all elements\n    # If queue is empty, print \"Queue is Empty\"\n    # Otherwise print all elements separated by space\n    pass\n\ndef solve():\n    n = int(input())\n    queue = []\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            enqueue(queue, element)\n        elif operation[0] == \"2\":\n            dequeue(queue)\n        elif operation[0] == \"3\":\n            display(queue)\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Implement Queue using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Result {\n    public static void enqueue(ArrayList<Integer> queue, int element) {\n        // TODO: Write your code here to add element to queue\n        // Print \"Enqueued \" + element\n    }\n    \n    public static void dequeue(ArrayList<Integer> queue) {\n        // TODO: Write your code here to remove element from front\n        // If queue is empty, print \"Queue is Empty\"\n        // Otherwise print \"Dequeued \" + element\n    }\n    \n    public static void display(ArrayList<Integer> queue) {\n        // TODO: Write your code here to display all elements\n        // If queue is empty, print \"Queue is Empty\"\n        // Otherwise print all elements separated by space\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        ArrayList<Integer> queue = new ArrayList<>();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                Result.enqueue(queue, element);\n            } else if (operation[0].equals(\"2\")) {\n                Result.dequeue(queue);\n            } else if (operation[0].equals(\"3\")) {\n                Result.display(queue);\n            }\n        }\n    }\n}",
+          "problemTitle": "Implement Queue using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "function enqueue(queue, element) {\n    // TODO: Write your code here to add element to queue\n    // Print \"Enqueued \" + element\n}\n\nfunction dequeue(queue) {\n    // TODO: Write your code here to remove element from front\n    // If queue is empty, print \"Queue is Empty\"\n    // Otherwise print \"Dequeued \" + element\n}\n\nfunction display(queue) {\n    // TODO: Write your code here to display all elements\n    // If queue is empty, print \"Queue is Empty\"\n    // Otherwise print all elements separated by space\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const queue = [];\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            enqueue(queue, element);\n        } else if (operation[0] === \"2\") {\n            dequeue(queue);\n        } else if (operation[0] === \"3\") {\n            display(queue);\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Implement Queue using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid enqueue(vector<int>& queue, int element) {\n    // TODO: Write your code here to add element to queue\n    // Print \"Enqueued \" << element\n}\n\nvoid dequeue(vector<int>& queue) {\n    // TODO: Write your code here to remove element from front\n    // If queue is empty, print \"Queue is Empty\"\n    // Otherwise print \"Dequeued \" << element\n}\n\nvoid display(vector<int>& queue) {\n    // TODO: Write your code here to display all elements\n    // If queue is empty, print \"Queue is Empty\"\n    // Otherwise print all elements separated by space\n}\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    vector<int> queue;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            enqueue(queue, element);\n        } else if(operation == 2) {\n            dequeue(queue);\n        } else if(operation == 3) {\n            display(queue);\n        }\n    }\n\n    return 0;\n}",
+          "problemTitle": "Implement Queue using Linked List"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid enqueue(int queue[], int* rear, int element) {\n    // TODO: Write your code here to add element to queue\n    // Print \"Enqueued %d\\n\", element\n}\n\nvoid dequeue(int queue[], int* front, int rear) {\n    // TODO: Write your code here to remove element from front\n    // If front >= rear (empty), print \"Queue is Empty\"\n    // Otherwise print \"Dequeued %d\\n\", element and increment front\n}\n\nvoid display(int queue[], int front, int rear) {\n    // TODO: Write your code here to display all elements\n    // If front >= rear (empty), print \"Queue is Empty\"\n    // Otherwise print all elements from front to rear-1 separated by space\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    int queue[1000];\n    int front = 0, rear = 0;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            enqueue(queue, &rear, element);\n        } else if(operation == 2) {\n            dequeue(queue, &front, rear);\n        } else if(operation == 3) {\n            display(queue, front, rear);\n        }\n    }\n    \n    return 0;\n}",
+          "problemTitle": "Implement Queue using Linked List"
+        }
+      ],
+      "hintsList": [
+        "Linked List approach means dynamic size with no capacity limit. Add elements at rear and remove from front.",
+        "Use a list/array to simulate linked list behavior: append for enqueue, remove first element for dequeue."
+      ]
+    }
+]
+}

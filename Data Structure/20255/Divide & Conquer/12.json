@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Peak Element using Binary Search",
+            "description": "Problem Statement\n\nYou are given an array of N integers where arr[i] != arr[i+1] for all valid i.\nA peak element is an element that is strictly greater than its neighbors.\nFind ANY peak element and return its index using Binary Search.\n\nNote: arr[-1] = arr[n] = negative infinity (boundary elements can be peaks).\n",
+            "examples": "Sample Input\n5\n1 2 3 1 0\n\nSample Output\n2\n\nExplanation:\nElement at index 2 is 3, which is greater than neighbors 2 and 1. So 3 is a peak.",
+            "constraints": "1 <= N <= 1000\n-10000 <= arr[i] <= 10000\narr[i] != arr[i+1] for all valid i",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2027,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 1 0",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "4\n1 2 1 3",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3\n3 2 1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "6\n1 3 2 4 1 0",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findPeak(self, arr, n):\n        # TODO: Use binary search to find peak element\n        # If mid > neighbors, return mid\n        # If mid < right neighbor, peak is in right half\n        # Else peak is in left half\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    N = int(data[0])\n    arr = list(map(int, data[1:]))\n    sol = Solution()\n    print(sol.findPeak(arr, N))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int findPeak(int[] arr, int n){\n        // TODO: Use binary search to find peak element\n        // If mid > neighbors, return mid\n        // If mid < right neighbor, peak is in right half\n        // Else peak is in left half\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int N = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[N];\n        for(int i=0;i<N;i++) arr[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.findPeak(arr, N));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  findPeak(arr, n){\n    // TODO: Use binary search to find peak element\n    // If mid > neighbors, return mid\n    // If mid < right neighbor, peak is in right half\n    // Else peak is in left half\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const N = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  console.log(sol.findPeak(arr, N));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int findPeak(vector<int>& arr, int n){\n        // TODO: Use binary search to find peak element\n        // If mid > neighbors, return mid\n        // If mid < right neighbor, peak is in right half\n        // Else peak is in left half\n        return 0;\n    }\n};\nint main(){\n    int N; cin >> N;\n    vector<int> arr(N);\n    for(int i=0;i<N;i++) cin >> arr[i];\n    Solution sol;\n    cout << sol.findPeak(arr, N);\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint findPeak(int arr[], int n){\n    // TODO: Use binary search to find peak element\n    // If mid > neighbors, return mid\n    // If mid < right neighbor, peak is in right half\n    // Else peak is in left half\n    return 0;\n}\nint main(){\n    int N; scanf(\"%d\", &N);\n    int arr[N];\n    for(int i=0;i<N;i++) scanf(\"%d\", &arr[i]);\n    printf(\"%d\", findPeak(arr, N));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Binary search: If arr[mid] < arr[mid+1], peak exists in right half. Else in left half.",
+                "Handle boundary cases: arr[-1] and arr[n] are considered negative infinity."
+            ]
+        }
+    ]
+}

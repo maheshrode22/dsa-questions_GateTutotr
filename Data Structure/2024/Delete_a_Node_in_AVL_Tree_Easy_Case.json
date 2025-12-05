@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Delete a Node in AVL Tree (Easy Case)",
+      "description": "Problem Statement\n\nYou are given N integers. Insert them one by one into an AVL Tree.\nThen you are given one value X to delete from the AVL Tree.\nThis is an EASY version of AVL deletion.\n\nIn this problem, the deleted node will ALWAYS be:\n1. A leaf node, OR\n2. A node with only one child.\n\nSo you do NOT need to handle the two-children replacement case.\nAfter deletion, AVL balancing may occur.\nFinally, print the Preorder Traversal of the AVL Tree.\n\nPreorder Traversal: Root → Left → Right\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\nThe third line contains integer X (node to delete).\n\nOutput Format\nPrint preorder traversal of the AVL Tree after deletion.\nIf tree becomes empty, print \"Tree is Empty\".\n\nExample\nInput:\n5\n30 20 40 10 25\n20\n\nOutput:\n30 25 10 40\n\nExplanation:\n20 is deleted (one child case). AVL rebalances internally.",
+      "examples": "Sample Input 1\n5\n30 20 40 10 25\n20\n\nSample Output 1\n30 25 10 40\n\nSample Input 2\n4\n10 5 15 2\n2\n\nSample Output 2\n10 5 15",
+      "constraints": "1 ≤ N ≤ 1000\n1 ≤ values ≤ 10^6\nAll values distinct\nDeleted node will never have two children",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n30 20 40 10 25\n20",
+          "expectedOutput": "30 25 10 40",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n10 5 15 2\n2",
+          "expectedOutput": "10 5 15",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n8 4 12\n4",
+          "expectedOutput": "8 12",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n50 40 70 30 45 47\n45",
+          "expectedOutput": "47 40 30 50 70",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n100\n100",
+          "expectedOutput": "Tree is Empty",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def insertNode(self, root, key):\n        # TODO: Insert with AVL balancing\n        pass\n\n    def deleteNode(self, root, key):\n        # TODO: Delete leaf or one-child node only\n        pass\n\n    def preorder(self, root, ans):\n        # TODO: Preorder traversal\n        pass\n\n    def solveAVL(self, arr, x):\n        # TODO: Build AVL, delete x, return preorder\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    x = int(input())\n\n    sol = Solution()\n    result = sol.solveAVL(arr, x)\n\n    if not result:\n        print(\"Tree is Empty\")\n    else:\n        print(\" \".join(map(str, result)))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    AVLNode insertNode(AVLNode root,int key){\n        // TODO AVL insert\n        return null;\n    }\n    AVLNode deleteNode(AVLNode root,int key){\n        // TODO easy delete (leaf or one child)\n        return null;\n    }\n    void preorder(AVLNode root,ArrayList<Integer> list){\n        // TODO\n    }\n    ArrayList<Integer> solveAVL(int[] arr,int x){\n        // TODO build AVL, delete, return preorder\n        return new ArrayList<>();\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        int x=sc.nextInt();\n        Solution sol=new Solution();\n        ArrayList<Integer> ans=sol.solveAVL(arr,x);\n        if(ans.size()==0) System.out.println(\"Tree is Empty\");\n        else{\n            for(int i=0;i<ans.size();i++){\n                System.out.print(ans.get(i));\n                if(i<ans.size()-1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n  deleteNode(root,key){\n    // TODO\n    return null;\n  }\n  preorder(root,arr){\n    // TODO\n  }\n  solveAVL(arr,x){\n    // TODO\n    return [];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const x=parseInt(lines[2]);\n  const sol=new Solution();\n  const ans=sol.solveAVL(arr,x);\n  if(ans.length===0) console.log(\"Tree is Empty\");\n  else console.log(ans.join(\" \"));\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    AVLNode* insertNode(AVLNode* root,int key){\n        // TODO\n        return NULL;\n    }\n    AVLNode* deleteNode(AVLNode* root,int key){\n        // TODO easy delete\n        return NULL;\n    }\n    void preorder(AVLNode* root, vector<int>& out){\n        // TODO\n    }\n    vector<int> solveAVL(vector<int>& arr,int x){\n        // TODO\n        return {};\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    int x; cin>>x;\n    Solution sol;\n    vector<int> ans=sol.solveAVL(arr,x);\n    if(ans.empty()) cout<<\"Tree is Empty\";\n    else{\n        for(int i=0;i<ans.size();i++){\n            cout<<ans[i];\n            if(i<ans.size()-1) cout<<\" \";\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nint ans[1000], idx=0;\n\nAVLNode* insertNode(AVLNode* root,int key){\n    // TODO\n    return NULL;\n}\nAVLNode* deleteNode(AVLNode* root,int key){\n    // TODO easy delete\n    return NULL;\n}\nvoid preorder(AVLNode* root){\n    if(!root) return;\n    ans[idx++]=root->key;\n    preorder(root->left);\n    preorder(root->right);\n}\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    int x; scanf(\"%d\",&x);\n    AVLNode* root=NULL;\n    for(int i=0;i<n;i++) root=insertNode(root,arr[i]);\n    root=deleteNode(root,x);\n    idx=0;\n    if(!root) printf(\"Tree is Empty\");\n    else{\n        preorder(root);\n        for(int i=0;i<idx;i++){\n            printf(\"%d\",ans[i]);\n            if(i<idx-1) printf(\" \");\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Delete a Node in AVL Tree (Easy Case)"
+        }
+      ],
+      "hintsList": [
+        "In this EASY version, the deleted node will NEVER have two children.",
+        "After deletion, perform AVL balancing if BF becomes ±2."
+      ]
+    }
+  ]
+}

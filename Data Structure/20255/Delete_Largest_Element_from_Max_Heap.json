@@ -1,0 +1,98 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Delete the Largest Element from Max Heap",
+      "description": "Problem Statement\n\nYou are given N integers. Create a max heap by inserting all values.\nThen delete the largest element from the heap.\nPrint the deleted value and the remaining heap.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nFirst line: Print the deleted value.\nSecond line: Print the remaining heap as space-separated values, or \"Heap is Empty\" if heap becomes empty.\n\nExample\nInput:\n5\n30 20 40 10 25\n\nOutput:\n40\n30 25 20 10\n\nExplanation:\nAfter inserting all elements, max heap is [40, 25, 30, 10, 20]. Delete 40. Remaining heap is [30, 25, 20, 10].",
+      "examples": "Sample Input 1\n5\n30 20 40 10 25\n\nSample Output 1\n40\n30 25 20 10\n\nSample Input 2\n3\n10 20 30\n\nSample Output 2\n30\n20 10",
+      "constraints": "1 ≤ N ≤ 1000\n-10^6 ≤ value ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 2,
+      "memoryLimit": 256,
+      "subdomainId": 2025,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n30 20 40 10 25",
+          "expectedOutput": "40\n30 25 20 10",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n10 20 30",
+          "expectedOutput": "30\n20 10",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n42",
+          "expectedOutput": "42\nHeap is Empty",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n8 5 15 2",
+          "expectedOutput": "15\n8 5 2",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n50 40 70 35 45 47",
+          "expectedOutput": "70\n50 45 47 35 40",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class MaxHeap:\n    def __init__(self):\n        self.heap = []\n    \n    def insert(self, val):\n        self.heap.append(val)\n        self._heapify_up(len(self.heap) - 1)\n    \n    def _heapify_up(self, idx):\n        parent = (idx - 1) // 2\n        if idx > 0 and self.heap[idx] > self.heap[parent]:\n            self.heap[idx], self.heap[parent] = self.heap[parent], self.heap[idx]\n            self._heapify_up(parent)\n    \n    def deleteMax(self):\n        # TODO: Delete and return the maximum element, then heapify down\n        pass\n    \n    def getHeap(self):\n        return self.heap\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    heap = MaxHeap()\n    for num in arr:\n        heap.insert(num)\n    deleted = heap.deleteMax()\n    remaining = heap.getHeap()\n    print(deleted)\n    if not remaining:\n        print(\"Heap is Empty\")\n    else:\n        print(\" \".join(map(str, remaining)))\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\n\nclass MaxHeap{\n    private ArrayList<Integer> heap;\n    \n    public MaxHeap(){\n        heap = new ArrayList<>();\n    }\n    \n    public void insert(int val){\n        heap.add(val);\n        heapifyUp(heap.size() - 1);\n    }\n    \n    private void heapifyUp(int idx){\n        if(idx == 0) return;\n        int parent = (idx - 1) / 2;\n        if(heap.get(idx) > heap.get(parent)){\n            Collections.swap(heap, idx, parent);\n            heapifyUp(parent);\n        }\n    }\n    \n    public Integer deleteMax(){\n        // TODO: Delete and return the maximum element, then heapify down\n        return null;\n    }\n    \n    public ArrayList<Integer> getHeap(){\n        return heap;\n    }\n}\n\npublic class Main{\n    public static void main(String[] args){\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i = 0; i < n; i++) arr[i] = sc.nextInt();\n        MaxHeap heap = new MaxHeap();\n        for(int num : arr) heap.insert(num);\n        Integer deleted = heap.deleteMax();\n        ArrayList<Integer> remaining = heap.getHeap();\n        System.out.println(deleted);\n        if(remaining.isEmpty()) System.out.println(\"Heap is Empty\");\n        else{\n            for(int i = 0; i < remaining.size(); i++){\n                System.out.print(remaining.get(i));\n                if(i < remaining.size() - 1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class MaxHeap{\n  constructor(){\n    this.heap = [];\n  }\n  \n  insert(val){\n    this.heap.push(val);\n    this.heapifyUp(this.heap.length - 1);\n  }\n  \n  heapifyUp(idx){\n    if(idx === 0) return;\n    const parent = Math.floor((idx - 1) / 2);\n    if(this.heap[idx] > this.heap[parent]){\n      [this.heap[idx], this.heap[parent]] = [this.heap[parent], this.heap[idx]];\n      this.heapifyUp(parent);\n    }\n  }\n  \n  deleteMax(){\n    // TODO: Delete and return the maximum element, then heapify down\n    return null;\n  }\n  \n  getHeap(){\n    return this.heap;\n  }\n}\n\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const heap = new MaxHeap();\n  for(let num of arr) heap.insert(num);\n  const deleted = heap.deleteMax();\n  const remaining = heap.getHeap();\n  console.log(deleted);\n  if(remaining.length === 0) console.log(\"Heap is Empty\");\n  else console.log(remaining.join(\" \"));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass MaxHeap{\nprivate:\n    vector<int> heap;\n    \n    void heapifyUp(int idx){\n        if(idx == 0) return;\n        int parent = (idx - 1) / 2;\n        if(heap[idx] > heap[parent]){\n            swap(heap[idx], heap[parent]);\n            heapifyUp(parent);\n        }\n    }\n    \npublic:\n    void insert(int val){\n        heap.push_back(val);\n        heapifyUp(heap.size() - 1);\n    }\n    \n    int deleteMax(){\n        // TODO: Delete and return the maximum element, then heapify down\n        return 0;\n    }\n    \n    vector<int> getHeap(){\n        return heap;\n    }\n};\n\nint main(){\n    int n; cin >> n;\n    vector<int> arr(n);\n    for(int i = 0; i < n; i++) cin >> arr[i];\n    MaxHeap heap;\n    for(int num : arr) heap.insert(num);\n    int deleted = heap.deleteMax();\n    vector<int> remaining = heap.getHeap();\n    cout << deleted << endl;\n    if(remaining.empty()) cout << \"Heap is Empty\";\n    else{\n        for(int i = 0; i < remaining.size(); i++){\n            cout << remaining[i];\n            if(i < remaining.size() - 1) cout << \" \";\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint heap[1000], heapSize = 0;\n\nvoid heapifyUp(int idx){\n    if(idx == 0) return;\n    int parent = (idx - 1) / 2;\n    if(heap[idx] > heap[parent]){\n        int temp = heap[idx];\n        heap[idx] = heap[parent];\n        heap[parent] = temp;\n        heapifyUp(parent);\n    }\n}\n\nvoid insert(int val){\n    heap[heapSize] = val;\n    heapifyUp(heapSize);\n    heapSize++;\n}\n\nint deleteMax(){\n    // TODO: Delete and return the maximum element, then heapify down\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int arr[n];\n    for(int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    heapSize = 0;\n    for(int i = 0; i < n; i++) insert(arr[i]);\n    int deleted = deleteMax();\n    printf(\"%d\\n\", deleted);\n    if(heapSize == 0) printf(\"Heap is Empty\");\n    else{\n        for(int i = 0; i < heapSize; i++){\n            printf(\"%d\", heap[i]);\n            if(i < heapSize - 1) printf(\" \");\n        }\n    }\n    return 0;\n}",
+          "problemTitle": "Delete the Largest Element from Max Heap"
+        }
+      ],
+      "hintsList": [
+        "To delete max: remove root, move last element to root, then heapify down.",
+        "Compare with children and swap with larger child if needed."
+      ]
+    }
+  ]
+}
+

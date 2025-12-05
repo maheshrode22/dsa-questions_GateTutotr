@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Quick Sort - Sort an Array",
+            "description": "Problem Statement\n\nYou are given an array of N integers.\nSort the array using Quick Sort algorithm (Divide and Conquer approach).\nPrint the sorted array.\n\nQuick Sort picks a pivot element, partitions array around it, then recursively sorts partitions.\n",
+            "examples": "Sample Input\n5\n10 7 8 9 1\n\nSample Output\n1 7 8 9 10\n\nExplanation:\nArray is sorted in ascending order using quick sort.",
+            "constraints": "1 <= N <= 1000\n-10000 <= arr[i] <= 10000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2027,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5\n10 7 8 9 1",
+                    "expectedOutput": "1 7 8 9 10"
+                },
+                {
+                    "input": "6\n64 34 25 12 22 11",
+                    "expectedOutput": "11 12 22 25 34 64"
+                },
+                {
+                    "input": "4\n4 3 2 1",
+                    "expectedOutput": "1 2 3 4"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "1 2 3"
+                },
+                {
+                    "input": "7\n38 27 43 3 9 82 10",
+                    "expectedOutput": "3 9 10 27 38 43 82"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def partition(self, arr, low, high):\n        # TODO: Partition array around pivot (last element)\n        # Return partition index\n        pass\n    \n    def quickSort(self, arr, low, high):\n        # TODO: Implement quick sort recursively\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    N = int(data[0])\n    arr = list(map(int, data[1:]))\n    sol = Solution()\n    sol.quickSort(arr, 0, N-1)\n    print(*arr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int partition(int[] arr, int low, int high){\n        // TODO: Partition array around pivot (last element)\n        // Return partition index\n        return low;\n    }\n    void quickSort(int[] arr, int low, int high){\n        // TODO: Implement quick sort recursively\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int N = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[N];\n        for(int i=0;i<N;i++) arr[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        sol.quickSort(arr, 0, N-1);\n        for(int i=0;i<N;i++){\n            System.out.print(arr[i]);\n            if(i<N-1) System.out.print(\" \");\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  partition(arr, low, high){\n    // TODO: Partition array around pivot (last element)\n    // Return partition index\n    return low;\n  }\n  quickSort(arr, low, high){\n    // TODO: Implement quick sort recursively\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const N = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  sol.quickSort(arr, 0, N-1);\n  console.log(arr.join(\" \"));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int partition(vector<int>& arr, int low, int high){\n        // TODO: Partition array around pivot (last element)\n        // Return partition index\n        return low;\n    }\n    void quickSort(vector<int>& arr, int low, int high){\n        // TODO: Implement quick sort recursively\n    }\n};\nint main(){\n    int N; cin >> N;\n    vector<int> arr(N);\n    for(int i=0;i<N;i++) cin >> arr[i];\n    Solution sol;\n    sol.quickSort(arr, 0, N-1);\n    for(int i=0;i<N;i++){\n        cout << arr[i];\n        if(i<N-1) cout << \" \";\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nvoid swap(int* a, int* b){ int t = *a; *a = *b; *b = t; }\n\nint partition(int arr[], int low, int high){\n    // TODO: Partition array around pivot (last element)\n    // Return partition index\n    return low;\n}\nvoid quickSort(int arr[], int low, int high){\n    // TODO: Implement quick sort recursively\n}\nint main(){\n    int N; scanf(\"%d\", &N);\n    int arr[N];\n    for(int i=0;i<N;i++) scanf(\"%d\", &arr[i]);\n    quickSort(arr, 0, N-1);\n    for(int i=0;i<N;i++){\n        printf(\"%d\", arr[i]);\n        if(i<N-1) printf(\" \");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Choose last element as pivot. Move all smaller elements to left, larger to right.",
+                "After partition, pivot is at correct position. Recursively sort left and right parts."
+            ]
+        }
+    ]
+}

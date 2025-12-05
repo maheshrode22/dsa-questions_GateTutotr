@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Sum of Array using Divide and Conquer",
+            "description": "Problem Statement\n\nYou are given an array of N integers.\nFind the sum of all elements using Divide and Conquer approach.\nDivide array into two halves, find sum of each half recursively, return total sum.\n",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\n15\n\nExplanation:\nSum = 1 + 2 + 3 + 4 + 5 = 15",
+            "constraints": "1 <= N <= 1000\n-10000 <= arr[i] <= 10000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2027,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "4\n10 20 30 40",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "6\n-1 -2 -3 1 2 3",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1\n100",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "7\n5 5 5 5 5 5 5",
+                    "expectedOutput": "35"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findSum(self, arr, left, right):\n        # TODO: Find sum using divide and conquer\n        # Base case: single element\n        # Divide, find sum of both halves, return total\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    N = int(data[0])\n    arr = list(map(int, data[1:]))\n    sol = Solution()\n    print(sol.findSum(arr, 0, N-1))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int findSum(int[] arr, int left, int right){\n        // TODO: Find sum using divide and conquer\n        // Base case: single element\n        // Divide, find sum of both halves, return total\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int N = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[N];\n        for(int i=0;i<N;i++) arr[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.findSum(arr, 0, N-1));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  findSum(arr, left, right){\n    // TODO: Find sum using divide and conquer\n    // Base case: single element\n    // Divide, find sum of both halves, return total\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const N = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  console.log(sol.findSum(arr, 0, N-1));\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int findSum(vector<int>& arr, int left, int right){\n        // TODO: Find sum using divide and conquer\n        // Base case: single element\n        // Divide, find sum of both halves, return total\n        return 0;\n    }\n};\nint main(){\n    int N; cin >> N;\n    vector<int> arr(N);\n    for(int i=0;i<N;i++) cin >> arr[i];\n    Solution sol;\n    cout << sol.findSum(arr, 0, N-1);\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint findSum(int arr[], int left, int right){\n    // TODO: Find sum using divide and conquer\n    // Base case: single element\n    // Divide, find sum of both halves, return total\n    return 0;\n}\nint main(){\n    int N; scanf(\"%d\", &N);\n    int arr[N];\n    for(int i=0;i<N;i++) scanf(\"%d\", &arr[i]);\n    printf(\"%d\", findSum(arr, 0, N-1));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Base case: if left == right, return arr[left].",
+                "Find mid, get sum of left half and right half, return leftSum + rightSum."
+            ]
+        }
+    ]
+}

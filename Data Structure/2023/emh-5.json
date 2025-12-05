@@ -1,0 +1,864 @@
+
+
+{
+  "problems": [
+{
+  "id": null,
+  "title": "Level Order Traversal of Binary Tree (BFS)",
+  "description": "Problem Statement\n\nGiven a binary tree, print its Level Order Traversal using Breadth First Search (BFS).\n\nLevel Order Traversal visits nodes level-by-level from left to right.\n\nYou are given the binary tree as a level-order array where -1 represents a NULL node.\nYou must build the binary tree level-wise and then perform BFS traversal.\n\nYou need to implement:\n- A function to construct the binary tree from array\n- A function to perform Level Order Traversal (BFS)\n\nInput Format\nThe first line contains integer N.\nThe second line contains N integers representing the tree in level order (-1 = NULL).\n\nOutput Format\nPrint BFS traversal elements separated by a space.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\n1 2 3 4 5\n\nExplanation:\nBFS visits level-by-level:\nLevel 1: 1\nLevel 2: 2 3\nLevel 3: 4 5\nFinal output: 1 2 3 4 5",
+  "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\n1 2 3 4 5\n\nSample Input 2\n1\n10\n\nSample Output 2\n10",
+  "constraints": "1 ≤ N ≤ 1000\nNode value: 1 ≤ value ≤ 10^6 or -1 for NULL",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "subdomainId": 2023,
+        "difficulty": 2,
+  "streamId": null,
+  "createdByUserId": null,
+  "updatedByUserId": null,
+  "testCases": [
+    {
+      "id": null,
+      "problemId": null,
+      "input": "7\n1 2 3 4 5 -1 -1",
+      "expectedOutput": "1 2 3 4 5",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "1\n10",
+      "expectedOutput": "10",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "5\n1 -1 3 -1 4",
+      "expectedOutput": "1 3 4",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "3\n5 -1 7",
+      "expectedOutput": "5 7",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "9\n1 2 3 4 -1 6 7 -1 -1",
+      "expectedOutput": "1 2 3 4 6 7",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    }
+  ],
+  "starterCodes": [
+    {
+      "id": null,
+      "problemId": null,
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build binary tree from array (level order)\n        pass\n\n    def levelOrderTraversal(self, root):\n        # TODO: BFS traversal and return list\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    result = sol.levelOrderTraversal(root)\n    print(\" \".join(map(str, result)))\n\nif __name__ == \"__main__\":\n    solve()",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{\n    int data; Node left,right;\n    Node(int d){ data=d; }\n}\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO: Build tree\n        return null;\n    }\n    ArrayList<Integer> levelOrderTraversal(Node root){\n        // TODO: BFS\n        return new ArrayList<>();\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));\n        int n=Integer.parseInt(br.readLine());\n        int[] arr=Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        if(root==null){ System.out.println(\"Tree is Empty\"); return; }\n        ArrayList<Integer> res=sol.levelOrderTraversal(root);\n        System.out.println(res.toString().replaceAll(\"[\\\\[\\\\],]\", \"\"));\n    }\n}",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 3,
+      "code": "class Node{\n  constructor(data){ this.data=data; this.left=null; this.right=null; }\n}\nclass Solution{\n  buildTree(arr){\n    // TODO: Build tree\n    return null;\n  }\n  levelOrderTraversal(root){\n    // TODO: BFS\n    return [];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  if(!root){ console.log(\"Tree is Empty\"); return; }\n  const res=sol.levelOrderTraversal(root);\n  console.log(res.join(\" \"));\n}\nconst fs=require(\"fs\");\nsolve(fs.readFileSync(0,\"utf-8\"));",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{\n    int data; Node* left; Node* right;\n    Node(int d){ data=d; left=right=NULL; }\n};\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO: Build tree\n        return NULL;\n    }\n    vector<int> levelOrderTraversal(Node* root){\n        // TODO: BFS\n        return {};\n    }\n};\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n    if(!root){ cout<<\"Tree is Empty\"; return 0; }\n    vector<int> res=sol.levelOrderTraversal(root);\n    for(int i=0;i<res.size();i++){\n        cout<<res[i]; if(i<res.size()-1) cout<<\" \";\n    }\n}",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{\n    int data;\n    struct Node* left;\n    struct Node* right;\n}Node;\n\nNode* buildTree(int arr[], int n){\n    // TODO: Build tree\n    return NULL;\n}\n\nvoid levelOrderTraversal(Node* root){\n    // TODO: BFS\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\", &arr[i]);\n    Node* root=buildTree(arr,n);\n    if(!root){ printf(\"Tree is Empty\"); return 0; }\n    levelOrderTraversal(root);\n    return 0;\n}",
+      "problemTitle": "Level Order Traversal of Binary Tree (BFS)"
+    }
+  ],
+  "hintsList": [
+    "Use a queue to perform BFS: push root, then push children.",
+    "Process nodes level-by-level: pop from queue → print → push children."
+  ]
+}
+,{
+  "id": null,
+  "title": "Count Non-Leaf (Internal) Nodes in a Binary Tree",
+  "description": "Problem Statement\n\nGiven a binary tree, count all non-leaf (internal) nodes.\n\nA non-leaf or internal node is a node that has:\n- At least one child (left or right)\n\nThe tree is given as a level-order array where -1 represents a NULL node.\nYou must construct the tree level-wise and then count all internal nodes.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers representing the tree in level order.\n\nOutput Format\nPrint the number of internal nodes.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\n3\n\nExplanation:\nInternal nodes: 1, 2, 3 → total = 3",
+  "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\n3\n\nSample Input 2\n1\n10\n\nSample Output 2\n0",
+  "constraints": "1 ≤ N ≤ 1000\nNode value: 1 ≤ value ≤ 10^6 or -1 for NULL",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "subdomainId": 2023,
+        "difficulty": 2,
+  "streamId": null,
+  "createdByUserId": null,
+  "updatedByUserId": null,
+  "testCases": [
+    {
+      "id": null,
+      "problemId": null,
+      "input": "7\n1 2 3 4 5 -1 -1",
+      "expectedOutput": "3",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "1\n10",
+      "expectedOutput": "0",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "5\n1 -1 3 -1 -1",
+      "expectedOutput": "1",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "3\n5 -1 7",
+      "expectedOutput": "1",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "9\n1 2 3 4 -1 6 7 -1 -1",
+      "expectedOutput": "3",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    }
+  ],
+  "starterCodes": [
+    {
+      "id": null,
+      "problemId": null,
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build binary tree from level order array\n        pass\n\n    def countInternalNodes(self, root):\n        # TODO: Count nodes with at least 1 child\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    print(sol.countInternalNodes(root))\n\nif __name__ == \"__main__\":\n    solve()",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{\n    int data; Node left,right;\n    Node(int d){ data=d; }\n}\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO: Build tree\n        return null;\n    }\n    int countInternalNodes(Node root){\n        // TODO: Count internal nodes\n        return 0;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));\n        int n=Integer.parseInt(br.readLine());\n        int[] arr=Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        if(root==null){ System.out.println(\"Tree is Empty\"); return; }\n        System.out.println(sol.countInternalNodes(root));\n    }\n}",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 3,
+      "code": "class Node{\n  constructor(data){ this.data=data; this.left=null; this.right=null; }\n}\nclass Solution{\n  buildTree(arr){\n    // TODO: Build tree\n    return null;\n  }\n  countInternalNodes(root){\n    // TODO: Count internal nodes\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  if(!root){ console.log(\"Tree is Empty\"); return; }\n  console.log(sol.countInternalNodes(root));\n}\nconst fs=require(\"fs\");\nsolve(fs.readFileSync(0,\"utf-8\"));",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{\n    int data; Node* left; Node* right;\n    Node(int d){ data=d; left=right=NULL; }\n};\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO: Build tree\n        return NULL;\n    }\n    int countInternalNodes(Node* root){\n        // TODO: Count internal nodes\n        return 0;\n    }\n};\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n    if(!root){ cout<<\"Tree is Empty\"; return 0; }\n    cout<<sol.countInternalNodes(root);\n}",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{\n    int data;\n    struct Node* left;\n    struct Node* right;\n}Node;\n\nNode* buildTree(int arr[], int n){\n    // TODO: Build tree\n    return NULL;\n}\n\nint countInternalNodes(Node* root){\n    // TODO: Count internal nodes\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    Node* root=buildTree(arr,n);\n    if(!root){ printf(\"Tree is Empty\"); return 0; }\n    printf(\"%d\", countInternalNodes(root));\n    return 0;\n}",
+      "problemTitle": "Count Non-Leaf (Internal) Nodes in a Binary Tree"
+    }
+  ],
+  "hintsList": [
+    "A node is internal if it has at least one child.",
+    "Use recursion: if node has any child, count it, then count children."
+  ]
+}
+,{
+  "id": null,
+  "title": "Print Left View of Binary Tree",
+  "description": "Problem Statement\n\nGiven a binary tree, print its Left View.\n\nThe Left View of a binary tree contains all nodes that are visible when the tree is viewed from the left side. For each level, only the first node encountered from the left is added to the left view.\n\nYou are given the binary tree as a level-order array where -1 represents a NULL node. You must construct the tree level-wise and then print the left view.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers representing the tree in level order.\n\nOutput Format\nPrint the left view elements separated by space.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\n1 2 4\n\nExplanation:\nLeft view nodes: 1 (level 1), 2 (level 2), 4 (level 3)",
+  "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\n1 2 4\n\nSample Input 2\n1\n10\n\nSample Output 2\n10",
+  "constraints": "1 ≤ N ≤ 1000\nNode value: 1 ≤ value ≤ 10^6 or -1 for NULL",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "subdomainId": 2023,
+      "difficulty": 2,
+  "streamId": null,
+  "createdByUserId": null,
+  "updatedByUserId": null,
+  "testCases": [
+    {
+      "id": null,
+      "problemId": null,
+      "input": "7\n1 2 3 4 5 -1 -1",
+      "expectedOutput": "1 2 4",
+      "problemTitle": "Print Left View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "1\n10",
+      "expectedOutput": "10",
+      "problemTitle": "Print Left View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "5\n1 -1 3 -1 4",
+      "expectedOutput": "1 3 4",
+      "problemTitle": "Print Left View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "3\n5 -1 7",
+      "expectedOutput": "5 7",
+      "problemTitle": "Print Left View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "9\n1 2 3 4 5 6 7 -1 -1",
+      "expectedOutput": "1 2 4",
+      "problemTitle": "Print Left View of Binary Tree"
+    }
+  ],
+  "starterCodes": [
+    {
+      "id": null,
+      "problemId": null,
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build binary tree from array (level order)\n        pass\n\n    def leftView(self, root):\n        # TODO: Return list of first nodes visible from left side\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    result = sol.leftView(root)\n    print(\" \".join(map(str, result)))\n\nif __name__ == \"__main__\":\n    solve()",
+      "problemTitle": "Print Left View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{\n    int data; Node left,right;\n    Node(int d){ data=d; }\n}\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO: Build tree\n        return null;\n    }\n    ArrayList<Integer> leftView(Node root){\n        // TODO: Compute left view\n        return new ArrayList<>();\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));\n        int n=Integer.parseInt(br.readLine());\n        int[] arr=Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        if(root==null){ System.out.println(\"Tree is Empty\"); return; }\n        ArrayList<Integer> res=sol.leftView(root);\n        System.out.println(res.toString().replaceAll(\"[\\\\[\\\\],]\",\"\"));\n    }\n}",
+      "problemTitle": "Print Left View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 3,
+      "code": "class Node{\n  constructor(data){ this.data=data; this.left=null; this.right=null; }\n}\nclass Solution{\n  buildTree(arr){\n    // TODO: Build tree\n    return null;\n  }\n  leftView(root){\n    // TODO: Left view logic\n    return [];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  if(!root){ console.log(\"Tree is Empty\"); return; }\n  const res=sol.leftView(root);\n  console.log(res.join(\" \"));\n}\nconst fs=require(\"fs\");\nsolve(fs.readFileSync(0,\"utf-8\"));",
+      "problemTitle": "Print Left View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{\n    int data; Node* left; Node* right;\n    Node(int d){ data=d; left=right=NULL; }\n};\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO: Build tree\n        return NULL;\n    }\n    vector<int> leftView(Node* root){\n        // TODO: Left view\n        return {};\n    }\n};\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n    if(!root){ cout<<\"Tree is Empty\"; return 0; }\n    vector<int> res=sol.leftView(root);\n    for(int i=0;i<res.size();i++){\n        cout<<res[i]; if(i<res.size()-1) cout<<\" \";\n    }\n}",
+      "problemTitle": "Print Left View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{\n    int data;\n    struct Node* left;\n    struct Node* right;\n}Node;\n\nNode* buildTree(int arr[], int n){\n    // TODO: Build tree\n    return NULL;\n}\n\nvoid leftView(Node* root){\n    // TODO: Print left view\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\", &arr[i]);\n    Node* root = buildTree(arr, n);\n    if(!root){ printf(\"Tree is Empty\"); return 0; }\n    leftView(root);\n    return 0;\n}",
+      "problemTitle": "Print Left View of Binary Tree"
+    }
+  ],
+  "hintsList": [
+    "Use BFS: push nodes level-wise and take the first node of each level.",
+    "Or use DFS: track maximum level visited and record first node at that level."
+  ]
+}
+,{
+  "id": null,
+  "title": "Print Right View of Binary Tree",
+  "description": "Problem Statement\n\nGiven a binary tree, print its Right View.\n\nThe Right View of a binary tree contains all nodes visible when the tree is viewed from the right side. For each level, the last node encountered from left to right is included.\n\nYou are given the binary tree as a level-order array where -1 represents a NULL node. You must construct the tree level-wise and then print the right view.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N integers representing the tree in level order.\n\nOutput Format\nPrint the right view elements separated by space.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\n1 3 5\n\nExplanation:\nRight view nodes: 1 (level 1), 3 (level 2), 5 (level 3)",
+  "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\n1 3 5\n\nSample Input 2\n1\n10\n\nSample Output 2\n10",
+  "constraints": "1 ≤ N ≤ 1000\nNode value: 1 ≤ value ≤ 10^6 or -1 for NULL",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "subdomainId": 2023,
+      "difficulty": 3,
+  "streamId": null,
+  "createdByUserId": null,
+  "updatedByUserId": null,
+  "testCases": [
+    {
+      "id": null,
+      "problemId": null,
+      "input": "7\n1 2 3 4 5 -1 -1",
+      "expectedOutput": "1 3 5",
+      "problemTitle": "Print Right View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "1\n10",
+      "expectedOutput": "10",
+      "problemTitle": "Print Right View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "5\n1 -1 3 -1 4",
+      "expectedOutput": "1 3 4",
+      "problemTitle": "Print Right View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "3\n5 -1 7",
+      "expectedOutput": "5 7",
+      "problemTitle": "Print Right View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "9\n1 2 3 4 5 6 7 -1 -1",
+      "expectedOutput": "1 3 7",
+      "problemTitle": "Print Right View of Binary Tree"
+    }
+  ],
+  "starterCodes": [
+    {
+      "id": null,
+      "problemId": null,
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build binary tree from array (level order)\n        pass\n\n    def rightView(self, root):\n        # TODO: Return list of first visible nodes from right\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    result = sol.rightView(root)\n    print(\" \".join(map(str, result)))\n\nif __name__ == \"__main__\":\n    solve()",
+      "problemTitle": "Print Right View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{\n    int data; Node left,right;\n    Node(int d){ data=d; }\n}\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO: Build tree\n        return null;\n    }\n    ArrayList<Integer> rightView(Node root){\n        // TODO: right view\n        return new ArrayList<>();\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));\n        int n=Integer.parseInt(br.readLine());\n        int[] arr=Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        if(root==null){ System.out.println(\"Tree is Empty\"); return; }\n        ArrayList<Integer> res=sol.rightView(root);\n        System.out.println(res.toString().replaceAll(\"[\\\\[\\\\],]\", \"\"));\n    }\n}",
+      "problemTitle": "Print Right View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 3,
+      "code": "class Node{\n  constructor(data){ this.data=data; this.left=null; this.right=null; }\n}\nclass Solution{\n  buildTree(arr){\n    // TODO: Build tree\n    return null;\n  }\n  rightView(root){\n    // TODO: right view\n    return [];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  if(!root){ console.log(\"Tree is Empty\"); return; }\n  const res=sol.rightView(root);\n  console.log(res.join(\" \"));\n}\nconst fs=require(\"fs\");\nsolve(fs.readFileSync(0,\"utf-8\"));",
+      "problemTitle": "Print Right View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{\n    int data; Node* left; Node* right;\n    Node(int d){ data=d; left=right=NULL; }\n};\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO: Build tree\n        return NULL;\n    }\n    vector<int> rightView(Node* root){\n        // TODO: right view\n        return {};\n    }\n};\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n    if(!root){ cout<<\"Tree is Empty\"; return 0; }\n    vector<int> res=sol.rightView(root);\n    for(int i=0;i<res.size();i++){\n        cout<<res[i]; if(i<res.size()-1) cout<<\" \";\n    }\n}",
+      "problemTitle": "Print Right View of Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{\n    int data;\n    struct Node* left;\n    struct Node* right;\n}Node;\n\nNode* buildTree(int arr[], int n){\n    // TODO: Build tree\n    return NULL;\n}\n\nvoid rightView(Node* root){\n    // TODO: right view\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    Node* root=buildTree(arr,n);\n    if(!root){ printf(\"Tree is Empty\"); return 0; }\n    rightView(root);\n    return 0;\n}",
+      "problemTitle": "Print Right View of Binary Tree"
+    }
+  ],
+  "hintsList": [
+    "Use BFS: process level-by-level, store the last node of each level.",
+    "Or use DFS (right-first) and track max level visited."
+  ]
+}
+,{
+  "id": null,
+  "title": "Count Nodes at a Given Level K in a Binary Tree",
+  "description": "Problem Statement\n\nGiven a binary tree, return how many nodes exist on level K.\n\nLevel numbering starts from 1:\n- Level 1 → root\n- Level 2 → children of root\n- Level 3 → grandchildren\nand so on.\n\nYou are given the binary tree in level-order form (-1 represents NULL). Build the tree level-wise and count nodes present at level K.\n\nInput Format\nThe first line contains integer N (size of array).\nThe second line contains N space-separated integers (tree level order).\nThe third line contains integer K.\n\nOutput Format\nPrint the number of nodes on level K.\nIf the tree is empty, print \"Tree is Empty\".\nIf level K does not exist, print 0.\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n3\n\nOutput:\n2\n\nExplanation:\nLevel 3 nodes are 4 and 5 → count = 2",
+  "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n3\n\nSample Output 1\n2\n\nSample Input 2\n1\n10\n1\n\nSample Output 2\n1",
+  "constraints": "1 ≤ N ≤ 1000\n1 ≤ K ≤ 1000\nNode value: 1 ≤ value ≤ 10^6 or -1 for NULL",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "subdomainId": 2023,
+      "difficulty": 3,
+  "streamId": null,
+  "createdByUserId": null,
+  "updatedByUserId": null,
+  "testCases": [
+    {
+      "id": null,
+      "problemId": null,
+      "input": "7\n1 2 3 4 5 -1 -1\n3",
+      "expectedOutput": "2",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "1\n10\n1",
+      "expectedOutput": "1",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "5\n1 -1 3 -1 4\n3",
+      "expectedOutput": "1",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "3\n5 -1 7\n2",
+      "expectedOutput": "1",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "9\n1 2 3 4 -1 6 7 -1 -1\n4",
+      "expectedOutput": "0",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    }
+  ],
+  "starterCodes": [
+    {
+      "id": null,
+      "problemId": null,
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from level order\n        pass\n\n    def countNodesAtLevel(self, root, K):\n        # TODO: Return number of nodes on level K\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    K = int(input())\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    print(sol.countNodesAtLevel(root, K))\n\nif __name__ == \"__main__\":\n    solve()",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{\n    int data; Node left,right;\n    Node(int d){ data=d; }\n}\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO: Build tree\n        return null;\n    }\n    int countNodesAtLevel(Node root, int K){\n        // TODO: count BFS level K\n        return 0;\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        int K = Integer.parseInt(br.readLine());\n        Solution sol = new Solution();\n        Node root = sol.buildTree(arr);\n        if(root == null){ System.out.println(\"Tree is Empty\"); return; }\n        System.out.println(sol.countNodesAtLevel(root, K));\n    }\n}",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 3,
+      "code": "class Node{\n  constructor(data){ this.data=data; this.left=null; this.right=null; }\n}\nclass Solution{\n  buildTree(arr){\n    // TODO: Build tree\n    return null;\n  }\n  countNodesAtLevel(root, K){\n    // TODO: BFS count\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const K = parseInt(lines[2]);\n  const sol = new Solution();\n  const root = sol.buildTree(arr);\n  if(!root){ console.log(\"Tree is Empty\"); return; }\n  console.log(sol.countNodesAtLevel(root, K));\n}\nconst fs = require(\"fs\");\nsolve(fs.readFileSync(0, \"utf-8\"));",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{\n    int data; Node* left; Node* right;\n    Node(int d){ data=d; left=right=NULL; }\n};\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO: Build tree\n        return NULL;\n    }\n    int countNodesAtLevel(Node* root, int K){\n        // TODO: BFS count level K\n        return 0;\n    }\n};\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    int K; cin>>K;\n    Solution sol; Node* root = sol.buildTree(arr);\n    if(!root){ cout<<\"Tree is Empty\"; return 0; }\n    cout << sol.countNodesAtLevel(root, K);\n}",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{\n    int data;\n    struct Node* left;\n    struct Node* right;\n}Node;\n\nNode* buildTree(int arr[], int n){\n    // TODO: Build tree\n    return NULL;\n}\n\nint countNodesAtLevel(Node* root, int K){\n    // TODO: BFS level count\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\", &arr[i]);\n    int K; scanf(\"%d\", &K);\n    Node* root = buildTree(arr, n);\n    if(!root){ printf(\"Tree is Empty\"); return 0; }\n    printf(\"%d\", countNodesAtLevel(root, K));\n    return 0;\n}",
+      "problemTitle": "Count Nodes at a Given Level K in a Binary Tree"
+    }
+  ],
+  "hintsList": [
+    "Use BFS: process levels and stop at level K.",
+    "Each BFS iteration processes exactly one level using queue size."
+  ]
+}
+,
+{
+  "id": null,
+  "title": "Zigzag Level Order Traversal of Binary Tree (Simple)",
+  "description": "Problem Statement\n\nGiven a binary tree, print its Zigzag (Spiral) Level Order Traversal.\nZigzag traversal alternates directions at each level:\n- Level 1: left to right\n- Level 2: right to left\n- Level 3: left to right\n- and so on.\n\nYou are given the binary tree in level-order array form where -1 represents NULL. Build the tree and perform zigzag level order traversal.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N integers representing the tree in level order.\n\nOutput Format\nPrint the zigzag traversal elements separated by space.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\n1 3 2 4 5\n\nExplanation:\nLevel 1: 1 (L→R)\nLevel 2: 3 2 (R→L)\nLevel 3: 4 5 (L→R)",
+  "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\n1 3 2 4 5\n\nSample Input 2\n1\n10\n\nSample Output 2\n10",
+  "constraints": "1 ≤ N ≤ 1000\nNode value: 1 ≤ value ≤ 10^6 or -1 for NULL",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "subdomainId": 2023,
+      "difficulty": 3,
+  "streamId": null,
+  "createdByUserId": null,
+  "updatedByUserId": null,
+  "testCases": [
+    {
+      "id": null,
+      "problemId": null,
+      "input": "7\n1 2 3 4 5 -1 -1",
+      "expectedOutput": "1 3 2 4 5",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "1\n10",
+      "expectedOutput": "10",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "5\n1 -1 3 -1 4",
+      "expectedOutput": "1 3 4",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "3\n5 -1 7",
+      "expectedOutput": "5 7",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "9\n1 2 3 4 5 6 7 -1 -1",
+      "expectedOutput": "1 3 2 4 5 6 7",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    }
+  ],
+  "starterCodes": [
+    {
+      "id": null,
+      "problemId": null,
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from array\n        pass\n\n    def zigzagTraversal(self, root):\n        # TODO: Return zigzag traversal as list\n        pass\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    result = sol.zigzagTraversal(root)\n    print(\" \".join(map(str, result)))\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node left,right; Node(int d){ data=d; } }\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO: Build tree\n        return null;\n    }\n    ArrayList<Integer> zigzagTraversal(Node root){\n        // TODO: zigzag traversal\n        return new ArrayList<>();\n    }\n}\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));\n        int n=Integer.parseInt(br.readLine());\n        int[] arr=Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        if(root==null){ System.out.println(\"Tree is Empty\"); return; }\n        ArrayList<Integer> res=sol.zigzagTraversal(root);\n        System.out.println(res.toString().replaceAll(\"[\\\\[\\\\],]\",\"\"));\n    }\n}",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.left=null; this.right=null; } }\nclass Solution{\n  buildTree(arr){\n    // TODO\n    return null;\n  }\n  zigzagTraversal(root){\n    // TODO\n    return [];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  if(!root){ console.log(\"Tree is Empty\"); return; }\n  const res=sol.zigzagTraversal(root);\n  console.log(res.join(\" \"));\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; Node *left,*right; Node(int d){ data=d; left=right=NULL;} };\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO\n        return NULL;\n    }\n    vector<int> zigzagTraversal(Node* root){\n        // TODO\n        return {};\n    }\n};\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol; Node* root=sol.buildTree(arr);\n    if(!root){ cout<<\"Tree is Empty\"; return 0; }\n    vector<int> res=sol.zigzagTraversal(root);\n    for(int i=0;i<res.size();i++){\n        cout<<res[i]; if(i<res.size()-1) cout<<\" \";\n    }\n}",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; struct Node* left; struct Node* right; }Node;\n\nNode* buildTree(int arr[], int n){\n    // TODO\n    return NULL;\n}\n\nvoid zigzagTraversal(Node* root){\n    // TODO\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\", &arr[i]);\n    Node* root=buildTree(arr,n);\n    if(!root){ printf(\"Tree is Empty\"); return 0; }\n    zigzagTraversal(root);\n}",
+      "problemTitle": "Zigzag Level Order Traversal of Binary Tree (Simple)"
+    }
+  ],
+  "hintsList": [
+    "Use BFS but reverse the order of nodes at every alternate level.",
+    "A simple trick: use a boolean flag to switch direction each level."
+  ]
+}
+,{
+  "id": null,
+  "title": "Sum of Leaf Nodes in a Binary Tree",
+  "description": "Problem Statement\n\nGiven a binary tree, find the sum of all leaf nodes.\nA leaf node is a node with no left and no right child.\n\nYou are given the tree in level-order format where -1 represents NULL. Build the tree and calculate the sum of all leaf nodes.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N integers (level order of tree).\n\nOutput Format\nPrint the sum of all leaf node values.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\n9\n\nExplanation:\nLeaf nodes are 4 and 5 → sum = 4 + 5 = 9",
+  "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\n9\n\nSample Input 2\n1\n10\n\nSample Output 2\n10",
+  "constraints": "1 ≤ N ≤ 1000\nNode values: 1 ≤ value ≤ 10^6 or -1 for NULL",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "subdomainId": 2023,
+        "difficulty": 3,
+  "streamId": null,
+  "createdByUserId": null,
+  "updatedByUserId": null,
+
+  "testCases": [
+    {
+      "id": null,
+      "problemId": null,
+      "input": "7\n1 2 3 4 5 -1 -1",
+      "expectedOutput": "9",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "1\n10",
+      "expectedOutput": "10",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "5\n1 -1 3 -1 4",
+      "expectedOutput": "4",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "3\n5 -1 7",
+      "expectedOutput": "12",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "9\n1 2 3 4 5 6 7 -1 -1",
+      "expectedOutput": "22",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    }
+  ],
+
+  "starterCodes": [
+    {
+      "id": null,
+      "problemId": null,
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from level order\n        pass\n\n    def sumOfLeafNodes(self, root):\n        # TODO: Return sum of leaf nodes\n        pass\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n\n    sol = Solution()\n    root = sol.buildTree(arr)\n\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n\n    print(sol.sumOfLeafNodes(root))\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node left,right; Node(int d){ data=d; } }\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO: Build tree\n        return null;\n    }\n\n    int sumOfLeafNodes(Node root){\n        // TODO: sum leaf nodes\n        return 0;\n    }\n}\n\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));\n        int n=Integer.parseInt(br.readLine());\n        int[] arr=Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n\n        if(root==null){ System.out.println(\"Tree is Empty\"); return; }\n\n        System.out.println(sol.sumOfLeafNodes(root));\n    }\n}",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.left=null; this.right=null; } }\nclass Solution{\n  buildTree(arr){\n    // TODO: Build tree\n    return null;\n  }\n\n  sumOfLeafNodes(root){\n    // TODO: sum leaves\n    return 0;\n  }\n}\n\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n\n  if(!root){ console.log(\"Tree is Empty\"); return; }\n\n  console.log(sol.sumOfLeafNodes(root));\n}\n\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; Node *left,*right; Node(int d){ data=d; left=right=NULL;} };\n\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO\n        return NULL;\n    }\n\n    int sumOfLeafNodes(Node* root){\n        // TODO\n        return 0;\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n\n    if(!root){ cout<<\"Tree is Empty\"; return 0; }\n\n    cout<<sol.sumOfLeafNodes(root);\n}",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; struct Node* left; struct Node* right; }Node;\n\nNode* buildTree(int arr[], int n){\n    // TODO\n    return NULL;\n}\n\nint sumOfLeafNodes(Node* root){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\", &arr[i]);\n\n    Node* root=buildTree(arr,n);\n\n    if(!root){ printf(\"Tree is Empty\"); return 0; }\n\n    printf(\"%d\", sumOfLeafNodes(root));\n}",
+      "problemTitle": "Sum of Leaf Nodes in a Binary Tree"
+    }
+  ],
+
+  "hintsList": [
+    "A leaf node is a node with no left and no right child.",
+    "Use DFS or BFS to collect leaf nodes and add their values."
+  ]
+}
+,{
+  "id": null,
+  "title": "Sum of Left Leaf Nodes in a Binary Tree",
+  "description": "Problem Statement\n\nGiven a binary tree, find the sum of all LEFT leaf nodes.\nA left leaf is a node that:\n1. Is a left child of its parent, AND\n2. Has no left or right child.\n\nYou are given the tree in level-order format where -1 represents NULL. Build the tree and compute the sum of all left leaf nodes.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N integers (level order of tree).\n\nOutput Format\nPrint the sum of all left leaf node values.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\n4\n\nExplanation:\nLeft leaves → 4\n(5 is not a left leaf because it's a RIGHT child of 2)",
+  "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\n4\n\nSample Input 2\n1\n10\n\nSample Output 2\n0",
+  "constraints": "1 ≤ N ≤ 1000\nNode values: 1 ≤ value ≤ 10^6 or -1 for NULL",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "subdomainId": 2023,
+      "difficulty": 3,
+  "streamId": null,
+  "createdByUserId": null,
+  "updatedByUserId": null,
+
+  "testCases": [
+    {
+      "id": null,
+      "problemId": null,
+      "input": "7\n1 2 3 4 5 -1 -1",
+      "expectedOutput": "4",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "1\n10",
+      "expectedOutput": "0",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "5\n1 -1 3 -1 4",
+      "expectedOutput": "0",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "3\n5 -1 7",
+      "expectedOutput": "0",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "9\n1 2 3 4 5 6 7 -1 -1",
+      "expectedOutput": "4",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    }
+  ],
+
+  "starterCodes": [
+    {
+      "id": null,
+      "problemId": null,
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from level order\n        pass\n\n    def sumOfLeftLeafNodes(self, root):\n        # TODO: Return sum of left leaf nodes\n        pass\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n\n    sol = Solution()\n    root = sol.buildTree(arr)\n\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n\n    print(sol.sumOfLeftLeafNodes(root))\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node left,right; Node(int d){ data=d; } }\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO\n        return null;\n    }\n\n    int sumOfLeftLeafNodes(Node root){\n        // TODO\n        return 0;\n    }\n}\n\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));\n        int n=Integer.parseInt(br.readLine());\n        int[] arr=Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n\n        int K;\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n\n        if(root==null){ System.out.println(\"Tree is Empty\"); return; }\n\n        System.out.println(sol.sumOfLeftLeafNodes(root));\n    }\n}",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.left=null; this.right=null; } }\nclass Solution{\n  buildTree(arr){\n    // TODO\n    return null;\n  }\n\n  sumOfLeftLeafNodes(root){\n    // TODO\n    return 0;\n  }\n}\n\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n\n  if(!root){ console.log(\"Tree is Empty\"); return; }\n\n  console.log(sol.sumOfLeftLeafNodes(root));\n}\n\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; Node *left,*right; Node(int d){ data=d; left=right=NULL;} };\n\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO\n        return NULL;\n    }\n\n    int sumOfLeftLeafNodes(Node* root){\n        // TODO\n        return 0;\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n\n    if(!root){ cout<<\"Tree is Empty\"; return 0; }\n\n    cout<<sol.sumOfLeftLeafNodes(root);\n}",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; struct Node* left; struct Node* right; }Node;\n\nNode* buildTree(int arr[], int n){\n    // TODO\n    return NULL;\n}\n\nint sumOfLeftLeafNodes(Node* root){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\", &arr[i]);\n\n    Node* root=buildTree(arr,n);\n\n    if(!root){ printf(\"Tree is Empty\"); return 0; }\n\n    printf(\"%d\", sumOfLeftLeafNodes(root));\n}",
+      "problemTitle": "Sum of Left Leaf Nodes in a Binary Tree"
+    }
+  ],
+
+  "hintsList": [
+    "A left leaf is a leaf node that appears as the left child of its parent.",
+    "Perform DFS and check if current node is left child and is leaf."
+  ]
+},
+{
+  "id": null,
+  "title": "Count Nodes with Only Left Child in a Binary Tree",
+  "description": "Problem Statement\n\nGiven a binary tree, count how many nodes have ONLY a left child.\nA node is counted if:\n1. It has a left child\n2. It does NOT have a right child\n\nYou are given the tree in level-order format where -1 represents NULL. Build the tree and return the count of such nodes.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N integers representing level-order traversal of the tree.\n\nOutput Format\nPrint the number of nodes that have only a left child.\nIf the tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 -1 -1 -1\n\nOutput:\n2\n\nExplanation:\nNode 1 → has left child (2) but has right child → NOT counted\nNode 2 → has left child (4) but no right → COUNT\nNode 3 → has no left → NOT counted\nNode 4 → leaf → NOT counted\nTotal = 1",
+  "examples": "Sample Input 1\n7\n1 2 3 4 -1 -1 -1\n\nSample Output 1\n1\n\nSample Input 2\n1\n10\n\nSample Output 2\n0",
+  "constraints": "1 ≤ N ≤ 1000\nNode value: 1 ≤ value ≤ 10^6 or -1 for NULL",
+  "hints": 2,
+  "timeLimit": 5,
+  "memoryLimit": 256,
+  "subdomainId": 2023,
+      "difficulty": 3,
+  "streamId": null,
+  "createdByUserId": null,
+  "updatedByUserId": null,
+
+  "testCases": [
+    {
+      "id": null,
+      "problemId": null,
+      "input": "7\n1 2 3 4 -1 -1 -1",
+      "expectedOutput": "1",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "1\n10",
+      "expectedOutput": "0",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "5\n1 2 -1 3 -1",
+      "expectedOutput": "2",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "3\n5 -1 7",
+      "expectedOutput": "0",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    },
+    {
+      "id": null,
+      "problemId": null,
+      "input": "9\n1 2 3 4 5 -1 7 -1 -1",
+      "expectedOutput": "2",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    }
+  ],
+
+  "starterCodes": [
+    {
+      "id": null,
+      "problemId": null,
+      "language": 1,
+      "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from level order array\n        pass\n\n    def countOnlyLeftChild(self, root):\n        # TODO: Count nodes having only left child\n        pass\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n\n    sol = Solution()\n    root = sol.buildTree(arr)\n\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n\n    print(sol.countOnlyLeftChild(root))\n\nif __name__ == '__main__':\n    solve()",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 2,
+      "code": "import java.util.*;\nclass Node{ int data; Node left,right; Node(int d){ data=d; } }\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO\n        return null;\n    }\n\n    int countOnlyLeftChild(Node root){\n        // TODO\n        return 0;\n    }\n}\n\npublic class SolutionMain{\n    public static void main(String[] args)throws Exception{\n        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));\n        int n=Integer.parseInt(br.readLine());\n        int[] arr=Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n\n        if(root==null){ System.out.println(\"Tree is Empty\"); return; }\n\n        System.out.println(sol.countOnlyLeftChild(root));\n    }\n}",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 3,
+      "code": "class Node{ constructor(data){ this.data=data; this.left=null; this.right=null; } }\nclass Solution{\n  buildTree(arr){\n    // TODO\n    return null;\n  }\n\n  countOnlyLeftChild(root){\n    // TODO\n    return 0;\n  }\n}\n\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n\n  if(!root){ console.log(\"Tree is Empty\"); return; }\n\n  console.log(sol.countOnlyLeftChild(root));\n}\n\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 4,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; Node *left,*right; Node(int d){ data=d; left=right=NULL;} };\n\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){\n        // TODO\n        return NULL;\n    }\n\n    int countOnlyLeftChild(Node* root){\n        // TODO\n        return 0;\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n\n    if(!root){ cout<<\"Tree is Empty\"; return 0; }\n\n    cout<<sol.countOnlyLeftChild(root);\n}",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    },
+
+    {
+      "id": null,
+      "problemId": null,
+      "language": 5,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; struct Node* left; struct Node* right; }Node;\n\nNode* buildTree(int arr[], int n){\n    // TODO\n    return NULL;\n}\n\nint countOnlyLeftChild(Node* root){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0;i<n;i++) scanf(\"%d\", &arr[i]);\n\n    Node* root=buildTree(arr,n);\n    if(!root){ printf(\"Tree is Empty\"); return 0; }\n\n    printf(\"%d\", countOnlyLeftChild(root));\n}",
+      "problemTitle": "Count Nodes with Only Left Child in a Binary Tree"
+    }
+  ],
+
+  "hintsList": [
+    "Traverse entire tree and check: node.left != NULL AND node.right == NULL.",
+    "Use DFS or BFS; count such nodes."
+  ]
+}
+]}

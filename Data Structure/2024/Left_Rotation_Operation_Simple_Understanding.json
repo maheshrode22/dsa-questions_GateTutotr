@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Left Rotation Operation (Simple Understanding)",
+      "description": "Problem Statement\n\nUnderstand how a LEFT ROTATION works in an AVL Tree.\nYou will be given exactly TWO values.\nInsert both values into a normal BST (no balancing).\nThen perform a LEFT ROTATION on the root and print the new root's value.\n\nLeft Rotation (Simple)\nIf a node X becomes right-heavy:\n\n      X                     Y\n       \\       --->        / \\\n        Y                 X   R\n\nAfter rotation, Y becomes new root.\n\nInput Format\nTwo space-separated integers A and B.\n(They will always be in increasing order so rotation is easy.)\n\nOutput Format\nPrint:\nroot: V\nWhere V is the root value AFTER left rotation.\n\nExample\nInput:\n10 20\n\nBST before rotation:\n   10\n     \\\n      20\n\nAfter left rotation:\n   20\n  /\n10\n\nOutput:\nroot: 20",
+      "examples": "Sample Input 1\n10 20\n\nSample Output 1\nroot: 20\n\nSample Input 2\n5 9\n\nSample Output 2\nroot: 9",
+      "constraints": "Two integers A < B\n1 ≤ A, B ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 1,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "10 20",
+          "expectedOutput": "root: 20",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5 9",
+          "expectedOutput": "root: 9",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3 8",
+          "expectedOutput": "root: 8",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "15 30",
+          "expectedOutput": "root: 30",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "100 120",
+          "expectedOutput": "root: 120",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def leftRotate(self, x):\n        # TODO: Perform simple left rotation\n        pass\n\n    def solveAVL(self, a, b):\n        # TODO: Build BST with two nodes, call rotation, return new root key\n        pass\n\ndef solve():\n    a, b = map(int, input().split())\n    sol = Solution()\n    print(f\"root: {sol.solveAVL(a, b)}\")\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass Node{ int key; Node left,right; Node(int k){ key=k; }}\nclass Solution{\n    Node leftRotate(Node x){\n        // TODO\n        return null;\n    }\n    int solveAVL(int a,int b){\n        // TODO\n        return 0;\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int a=sc.nextInt();\n        int b=sc.nextInt();\n        Solution sol=new Solution();\n        System.out.println(\"root: \"+sol.solveAVL(a,b));\n    }\n}",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Node{ constructor(key){ this.key=key; this.left=null; this.right=null; }}\nclass Solution{\n  leftRotate(x){\n    // TODO\n    return null;\n  }\n  solveAVL(a,b){\n    // TODO\n    return 0;\n  }\n}\nfunction solve(input){\n  const [a,b]=input.trim().split(\" \").map(Number);\n  const sol=new Solution();\n  console.log(`root: ${sol.solveAVL(a,b)}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int key; Node *left,*right; Node(int k){ key=k; left=right=NULL; }};\nclass Solution{\npublic:\n    Node* leftRotate(Node* x){\n        // TODO\n        return NULL;\n    }\n    int solveAVL(int a,int b){\n        // TODO\n        return 0;\n    }\n};\nint main(){\n    int a,b; cin>>a>>b;\n    Solution sol;\n    cout<<\"root: \"<<sol.solveAVL(a,b)<<endl;\n    return 0;\n}",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int key; struct Node *left,*right; }Node;\n\nNode* leftRotate(Node* x){\n    // TODO\n    return NULL;\n}\n\nint solveAVL(int a,int b){\n    // TODO\n    return 0;\n}\n\nint main(){\n    int a,b; scanf(\"%d %d\",&a,&b);\n    printf(\"root: %d\\n\", solveAVL(a,b));\n    return 0;\n}",
+          "problemTitle": "Left Rotation Operation (Simple Understanding)"
+        }
+      ],
+      "hintsList": [
+        "Draw the rotation diagram: X becomes left child of Y.",
+        "After rotation, the right child becomes the new root."
+      ]
+    }
+  ]
+}

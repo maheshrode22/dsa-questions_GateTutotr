@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Rotations During AVL Insertions",
+      "description": "Problem Statement\n\nYou are given N integers. Insert them one by one into an AVL Tree.\nDuring each insertion, AVL balancing may require rotations.\nYour task is to count how many times each rotation type occurs.\n\nRotation Types:\n1. LL Rotation\n2. RR Rotation\n3. LR Rotation\n4. RL Rotation\n\nAt the end, print the count for each rotation type.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint four lines:\nLL: X\nRR: Y\nLR: Z\nRL: W\n\nExample\nInput:\n3\n10 20 30\n\nOutput:\nLL: 0\nRR: 1\nLR: 0\nRL: 0\n\nExplanation:\nInsertion of 30 causes RR rotation at node 10.",
+      "examples": "Sample Input 1\n3\n10 20 30\n\nSample Output 1\nLL: 0\nRR: 1\nLR: 0\nRL: 0\n\nSample Input 2\n5\n30 20 40 10 25\n\nSample Output 2\nLL: 1\nRR: 0\nLR: 0\nRL: 0",
+      "constraints": "1 ≤ N ≤ 1000\nValues are distinct\n1 ≤ value ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 3,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n10 20 30",
+          "expectedOutput": "LL: 0\nRR: 1\nLR: 0\nRL: 0",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n30 20 40 10 25",
+          "expectedOutput": "LL: 1\nRR: 0\nLR: 0\nRL: 0",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n20 10 15 8",
+          "expectedOutput": "LL: 0\nRR: 0\nLR: 1\nRL: 0",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n10 5 7 3",
+          "expectedOutput": "LL: 1\nRR: 0\nLR: 0\nRL: 0",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n50 30 70 60 65 80",
+          "expectedOutput": "LL: 0\nRR: 0\nLR: 0\nRL: 1",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class AVLNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n        self.height = 1\n\nclass Solution:\n    def __init__(self):\n        self.LL = 0\n        self.RR = 0\n        self.LR = 0\n        self.RL = 0\n\n    def insertNode(self, root, key):\n        # TODO: Implement AVL insert with rotation counting\n        pass\n\n    def solveAVL(self, arr):\n        root = None\n        for x in arr:\n            root = self.insertNode(root, x)\n        return self.LL, self.RR, self.LR, self.RL\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    LL, RR, LR, RL = sol.solveAVL(arr)\n    print(f\"LL: {LL}\")\n    print(f\"RR: {RR}\")\n    print(f\"LR: {LR}\")\n    print(f\"RL: {RL}\")\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass AVLNode{ int key,height; AVLNode left,right; AVLNode(int k){ key=k; height=1; }}\nclass Solution{\n    int LL=0,RR=0,LR=0,RL=0;\n\n    AVLNode insertNode(AVLNode root,int key){\n        // TODO\n        return null;\n    }\n\n    int[] solveAVL(int[] arr){\n        AVLNode root=null;\n        for(int x:arr) root=insertNode(root,x);\n        return new int[]{LL,RR,LR,RL};\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        int[] ans=sol.solveAVL(arr);\n        System.out.println(\"LL: \"+ans[0]);\n        System.out.println(\"RR: \"+ans[1]);\n        System.out.println(\"LR: \"+ans[2]);\n        System.out.println(\"RL: \"+ans[3]);\n    }\n}",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class AVLNode{ constructor(key){ this.key=key; this.height=1; this.left=null; this.right=null; }}\nclass Solution{\n  constructor(){ this.LL=0; this.RR=0; this.LR=0; this.RL=0; }\n\n  insertNode(root,key){\n    // TODO\n    return null;\n  }\n\n  solveAVL(arr){\n    let root=null;\n    for(const x of arr) root=this.insertNode(root,x);\n    return [this.LL,this.RR,this.LR,this.RL];\n  }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const ans=sol.solveAVL(arr);\n  console.log(`LL: ${ans[0]}`);\n  console.log(`RR: ${ans[1]}`);\n  console.log(`LR: ${ans[2]}`);\n  console.log(`RL: ${ans[3]}`);\n}\nconst fs=require('fs');\nsolve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct AVLNode{ int key,height; AVLNode *left,*right; AVLNode(int k){ key=k; height=1; left=right=NULL; }};\nclass Solution{\npublic:\n    int LL=0,RR=0,LR=0,RL=0;\n\n    AVLNode* insertNode(AVLNode* root,int key){\n        // TODO\n        return NULL;\n    }\n\n    vector<int> solveAVL(vector<int>& arr){\n        AVLNode* root=NULL;\n        for(int x:arr) root=insertNode(root,x);\n        return {LL,RR,LR,RL};\n    }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    vector<int> ans=sol.solveAVL(arr);\n    cout<<\"LL: \"<<ans[0]<<\"\\n\";\n    cout<<\"RR: \"<<ans[1]<<\"\\n\";\n    cout<<\"LR: \"<<ans[2]<<\"\\n\";\n    cout<<\"RL: \"<<ans[3]<<endl;\n    return 0;\n}",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct AVLNode{ int key,height; struct AVLNode *left,*right; }AVLNode;\n\nint LL=0,RR=0,LR=0,RL=0;\n\nAVLNode* insertNode(AVLNode* root,int key){\n    // TODO\n    return NULL;\n}\n\nvoid solveAVL(int arr[],int n){\n    AVLNode* root=NULL;\n    for(int i=0;i<n;i++) root=insertNode(root,arr[i]);\n    printf(\"LL: %d\\nRR: %d\\nLR: %d\\nRL: %d\",LL,RR,LR,RL);\n}\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    solveAVL(arr,n);\n    return 0;\n}",
+          "problemTitle": "Count Rotations During AVL Insertions"
+        }
+      ],
+      "hintsList": [
+        "Rotation type depends on imbalance + inserted value direction.",
+        "LL: left-left heavy, RR: right-right heavy, LR: left-right heavy, RL: right-left heavy."
+      ]
+    }
+  ]
+}

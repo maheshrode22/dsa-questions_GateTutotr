@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Validate AVL Tree",
+      "description": "Problem Statement\n\nYou are given a binary tree in level-order form. Your task is to check whether the given tree is a valid AVL Tree.\n\nA valid AVL Tree must satisfy TWO conditions:\n1. BST Property:\n   - For every node, all left subtree values < node value < all right subtree values.\n2. AVL Balance Property:\n   - Balance Factor (BF) = height(left) − height(right)\n   - BF must be −1, 0 or +1 for every node.\n\nIf both conditions are satisfied, print YES. Otherwise, print NO.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N integers representing level-order traversal (−1 means NULL).\n\nOutput Format\nPrint YES or NO.\n\nExample\nInput:\n7\n10 5 15 2 7 -1 -1\n\nOutput:\nYES\n\nExplanation:\nTree follows BST rules and all balance factors are within the valid AVL range.",
+      "examples": "Sample Input 1\n7\n10 5 15 2 7 -1 -1\n\nSample Output 1\nYES\n\nSample Input 2\n5\n10 20 30 -1 -1\n\nSample Output 2\nNO",
+      "constraints": "1 ≤ N ≤ 1000\nValues are integers or −1 for NULL",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 2,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "7\n10 5 15 2 7 -1 -1",
+          "expectedOutput": "YES",
+          "problemTitle": "Validate AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n10 20 30 -1 -1",
+          "expectedOutput": "NO",
+          "problemTitle": "Validate AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "1\n50",
+          "expectedOutput": "YES",
+          "problemTitle": "Validate AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "7\n8 4 12 2 6 10 14",
+          "expectedOutput": "YES",
+          "problemTitle": "Validate AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n10 5 20 3 -1 -1 -1",
+          "expectedOutput": "YES",
+          "problemTitle": "Validate AVL Tree"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree from level-order\n        pass\n\n    def isBST(self, root, mn, mx):\n        # TODO: Check BST property\n        pass\n\n    def checkHeight(self, root):\n        # TODO: Return height, or -inf if unbalanced\n        pass\n\n    def validateAVL(self, root):\n        # TODO: Check both BST and AVL conditions\n        pass\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    print(\"YES\" if sol.validateAVL(root) else \"NO\")\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Validate AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass Node{ int data; Node left,right; Node(int d){ data=d; }}\nclass Solution{\n    Node buildTree(int[] arr){\n        // TODO\n        return null;\n    }\n    boolean isBST(Node root,int mn,int mx){\n        // TODO\n        return false;\n    }\n    int checkHeight(Node root){\n        // TODO\n        return 0;\n    }\n    boolean validateAVL(Node root){\n        // TODO\n        return false;\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        Node root=sol.buildTree(arr);\n        System.out.println(sol.validateAVL(root)?\"YES\":\"NO\");\n    }\n}",
+          "problemTitle": "Validate AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "class Node{ constructor(data){ this.data=data; this.left=null; this.right=null; }}\nclass Solution{\n  buildTree(arr){ /* TODO */ return null; }\n  isBST(root,mn,mx){ /* TODO */ return false; }\n  checkHeight(root){ /* TODO */ return 0; }\n  validateAVL(root){ /* TODO */ return false; }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const root=sol.buildTree(arr);\n  console.log(sol.validateAVL(root)?\"YES\":\"NO\");\n}\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Validate AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node{ int data; Node *left,*right; Node(int d){ data=d; left=right=NULL; }};\nclass Solution{\npublic:\n    Node* buildTree(vector<int>& arr){ /* TODO */ return NULL; }\n    bool isBST(Node* root,int mn,int mx){ /* TODO */ return false; }\n    int checkHeight(Node* root){ /* TODO */ return 0; }\n    bool validateAVL(Node* root){ /* TODO */ return false; }\n};\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int i=0;i<n;i++) cin>>arr[i];\n    Solution sol;\n    Node* root=sol.buildTree(arr);\n    cout<<(sol.validateAVL(root)?\"YES\":\"NO\")<<endl;\n    return 0;\n}",
+          "problemTitle": "Validate AVL Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node{ int data; struct Node *left,*right; }Node;\n\nNode* buildTree(int arr[],int n){ /* TODO */ return NULL; }\nint isBST(Node* root,int mn,int mx){ /* TODO */ return 0; }\nint checkHeight(Node* root){ /* TODO */ return 0; }\nint validateAVL(Node* root){ /* TODO */ return 0; }\n\nint main(){\n    int n; scanf(\"%d\",&n);\n    int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]);\n    Node* root=buildTree(arr,n);\n    printf(validateAVL(root)?\"YES\\n\":\"NO\\n\");\n    return 0;\n}",
+          "problemTitle": "Validate AVL Tree"
+        }
+      ],
+      "hintsList": [
+        "First check BST property using min/max ranges.",
+        "Then ensure every node's balance factor is between −1 and +1."
+      ]
+    }
+  ]
+}

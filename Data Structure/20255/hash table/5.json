@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Two Sum Problem using Hash Map",
+            "description": "Problem Statement\n\nYou are given an array of N integers and a target sum K.\nUsing a hash map, find two numbers in the array that add up to K.\nPrint the indices (0-based) of the two numbers. If multiple pairs exist, print the first valid pair found.\nIf no such pair exists, print \"-1 -1\".\n",
+            "examples": "Sample Input\n5\n2 7 11 15 1\n9\n\nSample Output\n0 1\n\nExplanation:\narr[0] + arr[1] = 2 + 7 = 9 = target",
+            "constraints": "2 ≤ N ≤ 100\n-1000 ≤ arr[i] ≤ 1000\n-2000 ≤ K ≤ 2000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2027,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5\n2 7 11 15 1\n9",
+                    "expectedOutput": "0 1"
+                },
+                {
+                    "input": "4\n3 2 4 6\n6",
+                    "expectedOutput": "1 2"
+                },
+                {
+                    "input": "3\n1 2 3\n10",
+                    "expectedOutput": "-1 -1"
+                },
+                {
+                    "input": "6\n1 5 3 7 2 8\n10",
+                    "expectedOutput": "2 3"
+                },
+                {
+                    "input": "4\n5 5 10 15\n10",
+                    "expectedOutput": "0 1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def twoSum(self, arr, target):\n        # TODO: Find two indices using hash map\n        # Return [i, j] where arr[i] + arr[j] = target, or [-1, -1] if not found\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    N = int(data[0])\n    arr = list(map(int, data[1:N+1]))\n    target = int(data[N+1])\n    sol = Solution()\n    result = sol.twoSum(arr, target)\n    print(result[0], result[1])"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int[] twoSum(int[] arr, int target){\n        // TODO: Find two indices using hash map\n        // Return [i, j] where arr[i] + arr[j] = target, or [-1, -1] if not found\n        return new int[]{-1, -1};\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int N = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[N];\n        for(int i=0;i<N;i++) arr[i] = Integer.parseInt(parts[i]);\n        int target = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        int[] result = sol.twoSum(arr, target);\n        System.out.println(result[0] + \" \" + result[1]);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  twoSum(arr, target){\n    // TODO: Find two indices using hash map\n    // Return [i, j] where arr[i] + arr[j] = target, or [-1, -1] if not found\n    return [-1, -1];\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const N = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const target = parseInt(lines[2]);\n  const sol = new Solution();\n  const result = sol.twoSum(arr, target);\n  console.log(result[0] + \" \" + result[1]);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    pair<int,int> twoSum(vector<int>& arr, int target){\n        // TODO: Find two indices using hash map\n        // Return {i, j} where arr[i] + arr[j] = target, or {-1, -1} if not found\n        return {-1, -1};\n    }\n};\nint main(){\n    int N; cin >> N;\n    vector<int> arr(N);\n    for(int i=0;i<N;i++) cin >> arr[i];\n    int target; cin >> target;\n    Solution sol;\n    auto result = sol.twoSum(arr, target);\n    cout << result.first << \" \" << result.second;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint indexMap[2001];\nint hasValue[2001] = {0};\n\nvoid twoSum(int arr[], int n, int target, int* result){\n    // TODO: Find two indices using hash map\n    // Store result in result[0] and result[1]\n    result[0] = -1;\n    result[1] = -1;\n}\n\nint main(){\n    int N; scanf(\"%d\", &N);\n    int arr[N];\n    for(int i=0;i<N;i++) scanf(\"%d\", &arr[i]);\n    int target; scanf(\"%d\", &target);\n    int result[2];\n    twoSum(arr, N, target, result);\n    printf(\"%d %d\", result[0], result[1]);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each element, check if (target - element) exists in the hash map.",
+                "Store each element's index in the hash map as you iterate."
+            ]
+        }
+    ]
+}

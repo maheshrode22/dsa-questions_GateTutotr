@@ -1,0 +1,97 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Rotations in Red-Black Tree",
+      "description": "Problem Statement\n\nYou are given N integers to insert one by one into a Red-Black Tree. During RBT insertion, violations may occur and are fixed using:\n1. Recoloring\n2. Left Rotation\n3. Right Rotation\n\nYour task is to count how many times each rotation happens:\n- Left Rotation  (LROT)\n- Right Rotation (RROT)\n\nRecoloring does not affect counts.\n\nAfter inserting all values, print the rotation counts.\n\nInput Format\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint two lines:\nLROT: X\nRROT: Y\n\nExample\nInput:\n3\n10 20 30\n\nOutput:\nLROT: 1\nRROT: 0\n\nExplanation:\nInserting 30 triggers a LEFT rotation at node 10.",
+      "examples": "Sample Input 1\n3\n10 20 30\n\nSample Output 1\nLROT: 1\nRROT: 0\n\nSample Input 2\n5\n30 20 40 10 25\n\nSample Output 2\nLROT: 0\nRROT: 1",
+      "constraints": "1 ≤ N ≤ 1000\nValues are distinct\n1 ≤ value ≤ 10^6",
+      "hints": 2,
+      "timeLimit": 5,
+      "memoryLimit": 256,
+      "subdomainId": 2024,
+      "difficulty": 3,
+      "streamId": null,
+      "createdByUserId": null,
+      "updatedByUserId": null,
+      "testCases": [
+        {
+          "id": null,
+          "problemId": null,
+          "input": "3\n10 20 30",
+          "expectedOutput": "LROT: 1\nRROT: 0",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "5\n30 20 40 10 25",
+          "expectedOutput": "LROT: 0\nRROT: 1",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n20 10 15 8",
+          "expectedOutput": "LROT: 1\nRROT: 1",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "4\n10 5 7 3",
+          "expectedOutput": "LROT: 0\nRROT: 1",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "input": "6\n50 30 70 60 65 80",
+          "expectedOutput": "LROT: 2\nRROT: 0",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        }
+      ],
+      "starterCodes": [
+        {
+          "id": null,
+          "problemId": null,
+          "language": 1,
+          "code": "RED = 0\nBLACK = 1\n\nclass RBNode:\n    def __init__(self, key):\n        self.key = key\n        self.color = RED\n        self.left = None\n        self.right = None\n        self.parent = None\n\nclass Solution:\n    def __init__(self):\n        self.LROT = 0\n        self.RROT = 0\n\n    def leftRotate(self, root, x):\n        # TODO: perform left rotation and increment self.LROT\n        pass\n\n    def rightRotate(self, root, x):\n        # TODO: perform right rotation and increment self.RROT\n        pass\n\n    def fixInsert(self, root, node):\n        # TODO: fix RBT insert violations\n        pass\n\n    def insertNode(self, root, key):\n        # TODO: BST insert + fixInsert\n        pass\n\n    def solveRBT(self, arr):\n        root = None\n        for x in arr:\n            root = self.insertNode(root, x)\n        return self.LROT, self.RROT\n\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    L, R = sol.solveRBT(arr)\n    print(f\"LROT: {L}\")\n    print(f\"RROT: {R}\")\n\nif __name__ == '__main__':\n    solve()",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 2,
+          "code": "import java.util.*;\nclass RBNode{ int key,color; RBNode left,right,parent; RBNode(int k){ key=k;color=0; }}\nclass Solution{\n    int LROT=0, RROT=0;\n\n    RBNode leftRotate(RBNode root, RBNode x){\n        // TODO increment LROT\n        return root;\n    }\n\n    RBNode rightRotate(RBNode root, RBNode x){\n        // TODO increment RROT\n        return root;\n    }\n\n    RBNode fixInsert(RBNode root, RBNode node){\n        // TODO\n        return root;\n    }\n\n    RBNode insertNode(RBNode root, int key){\n        // TODO\n        return root;\n    }\n\n    int[] solveRBT(int[] arr){\n        RBNode root = null;\n        for(int x : arr) root = insertNode(root, x);\n        return new int[]{LROT, RROT};\n    }\n    public static void main(String[] args){\n        Scanner sc=new Scanner(System.in);\n        int n=sc.nextInt();\n        int[] arr=new int[n];\n        for(int i=0;i<n;i++) arr[i]=sc.nextInt();\n        Solution sol=new Solution();\n        int[] ans=sol.solveRBT(arr);\n        System.out.println(\"LROT: \"+ans[0]);\n        System.out.println(\"RROT: \"+ans[1]);\n    }\n}",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 3,
+          "code": "const RED=0, BLACK=1;\nclass RBNode{ constructor(k){ this.key=k; this.color=RED; this.left=null; this.right=null; this.parent=null; }}\nclass Solution{\n  constructor(){ this.LROT=0; this.RROT=0; }\n  leftRotate(root,x){ /* TODO */ return root; }\n  rightRotate(root,x){ /* TODO */ return root; }\n  fixInsert(root,node){ /* TODO */ return root; }\n  insertNode(root,key){ /* TODO */ return root; }\n  solveRBT(arr){ let root=null; for(const x of arr) root=this.insertNode(root,x); return [this.LROT,this.RROT]; }\n}\nfunction solve(input){\n  const lines=input.trim().split(\"\\n\");\n  const n=parseInt(lines[0]);\n  const arr=lines[1].split(\" \").map(Number);\n  const sol=new Solution();\n  const ans=sol.solveRBT(arr);\n  console.log(`LROT: ${ans[0]}`);\n  console.log(`RROT: ${ans[1]}`);\n}\nconst fs=require('fs'); solve(fs.readFileSync(0,'utf-8'));",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n#define RED 0\n#define BLACK 1\nstruct RBNode{ int key,color; RBNode *left,*right,*parent; RBNode(int k){ key=k;color=RED;left=right=parent=NULL; }};\nclass Solution{\npublic:\n    int LROT=0, RROT=0;\n    RBNode* leftRotate(RBNode* root, RBNode* x){ /* TODO */ return root; }\n    RBNode* rightRotate(RBNode* root, RBNode* x){ /* TODO */ return root; }\n    RBNode* fixInsert(RBNode* root, RBNode* node){ /* TODO */ return root; }\n    RBNode* insertNode(RBNode* root,int key){ /* TODO */ return root; }\n    vector<int> solveRBT(vector<int>& arr){ RBNode* root=NULL; for(int x:arr) root=insertNode(root,x); return {LROT,RROT}; }\n};\nint main(){ int n; cin>>n; vector<int> arr(n); for(int i=0;i<n;i++) cin>>arr[i]; Solution sol; auto ans=sol.solveRBT(arr); cout<<\"LROT: \"<<ans[0]<<\"\\n\"; cout<<\"RROT: \"<<ans[1]<<endl; return 0; }",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        },
+        {
+          "id": null,
+          "problemId": null,
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#define RED 0\n#define BLACK 1\n\ntypedef struct RBNode{ int key,color; struct RBNode *left,*right,*parent; }RBNode;\n\nint LROT=0, RROT=0;\n\nRBNode* leftRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\nRBNode* rightRotate(RBNode* root,RBNode* x){ /* TODO */ return root; }\nRBNode* fixInsert(RBNode* root,RBNode* node){ /* TODO */ return root; }\nRBNode* insertNode(RBNode* root,int key){ /* TODO */ return root; }\n\nint main(){ int n; scanf(\"%d\",&n); int arr[n]; for(int i=0;i<n;i++) scanf(\"%d\",&arr[i]); RBNode* root=NULL; for(int i=0;i<n;i++) root=insertNode(root,arr[i]); printf(\"LROT: %d\\nRROT: %d\",LROT,RROT); return 0; }",
+          "problemTitle": "Count Rotations in Red-Black Tree"
+        }
+      ],
+      "hintsList": [
+        "Left and Right rotations occur only in imbalance cases during fix-up.",
+        "Do not count recolor operations; count only structural rotations."
+      ]
+    }
+  ]
+}
