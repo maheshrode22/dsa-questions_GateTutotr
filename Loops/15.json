@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Print ASCII Values",
+            "description": "Write a program to print all ASCII characters with their values from start to end.\n\nInput Format:\nTwo integers start and end separated by space.\n\nOutput Format:\nPrint 'char = value', each on a new line.",
+            "examples": "Sample Input\n65 67\n\nSample Output\nA = 65\nB = 66\nC = 67\n\nExplanation:\nASCII values from 65 to 67 are printed.",
+            "constraints": "32 <= start <= end <= 126",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "65 67",
+                    "expectedOutput": "A = 65\nB = 66\nC = 67"
+                },
+                {
+                    "input": "97 99",
+                    "expectedOutput": "a = 97\nb = 98\nc = 99"
+                },
+                {
+                    "input": "48 50",
+                    "expectedOutput": "0 = 48\n1 = 49\n2 = 50"
+                },
+                {
+                    "input": "35 36",
+                    "expectedOutput": "# = 35\n$ = 36"
+                },
+                {
+                    "input": "125 126",
+                    "expectedOutput": "} = 125\n~ = 126"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printASCII(self, start, end):\n        # TODO: Print ASCII characters with values from start to end\n        pass\n\nif __name__ == '__main__':\n    parts = input().split()\n    start = int(parts[0])\n    end = int(parts[1])\n    sol = Solution()\n    sol.printASCII(start, end)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printASCII(int start, int end) {\n        # TODO: Print ASCII characters with values from start to end\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int start = sc.nextInt();\n        int end = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printASCII(start, end);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printASCII(start, end) {\n        // TODO: Print ASCII characters with values from start to end\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const start = parseInt(parts[0]);\n    const end = parseInt(parts[1]);\n    const sol = new Solution();\n    sol.printASCII(start, end);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printASCII(int start, int end) {\n        // TODO: Print ASCII characters with values from start to end\n    }\n};\n\nint main() {\n    int start, end;\n    cin >> start >> end;\n    Solution sol;\n    sol.printASCII(start, end);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printASCII(int start, int end) {\n    // TODO: Print ASCII characters with values from start to end\n}\n\nint main() {\n    int start, end;\n    scanf(\"%d %d\", &start, &end);\n    printASCII(start, end);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a loop from start to end.",
+                "Cast the integer to character to print the symbol."
+            ]
+        }
+    ]
+}

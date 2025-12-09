@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check Palindrome",
+            "description": "Problem Statement\n\nGiven a string S, check if it is a palindrome.\nA string is a palindrome if it reads the same backward as forward.\n\nReturn \"True\" if it is a palindrome, else \"False\".\n",
+            "examples": "Sample Input\nmadam\n\nSample Output\nTrue\n\nExplanation:\nmadam read backwards is madam.\n\nSample Input\nhello\n\nSample Output\nFalse",
+            "constraints": "1 <= |S| <= 10^5\nS consists of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "madam",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "racecar",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "ab",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isPalindrome(self, S):\n        # TODO: Return \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    S = input().strip()\n    sol = Solution()\n    print(sol.isPalindrome(S))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String isPalindrome(String S) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String S = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.isPalindrome(S));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isPalindrome(S) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const S = input.trim();\n    const sol = new Solution();\n    console.log(sol.isPalindrome(S));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string isPalindrome(string S) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n};\n\nint main() {\n    string S;\n    cin >> S;\n    Solution sol;\n    cout << sol.isPalindrome(S) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid isPalindrome(char* S) {\n    // TODO: Print \"True\" or \"False\"\n}\n\nint main() {\n    char S[100005];\n    scanf(\"%s\", S);\n    isPalindrome(S);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare characters from the start and end moving inwards.",
+                "If any mismatch found, it's not a palindrome."
+            ]
+        }
+    ]
+}

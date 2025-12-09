@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Path Exists",
+            "description": "Problem Statement\n\nGiven a directed graph and two vertices Source and Destination. Determine if there is a path from Source to Destination.\nReturn true if path exists, false otherwise.\n",
+            "examples": "Sample Input\n4 3\n0 1\n1 2\n2 3\n0 3\n\nSample Output\ntrue\n\nExplanation:\nPath 0->1->2->3 exists.",
+            "constraints": "1 <= V <= 100\n0 <= E <= V*(V-1)",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2031,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "4 3\n0 1\n1 2\n2 3\n0 3",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "4 2\n0 1\n2 3\n0 3",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "3 3\n0 1\n1 2\n2 0\n0 2",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2 1\n0 1\n1 0",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "5 4\n0 1\n1 2\n2 3\n3 4\n0 4",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def validPath(self, V, adj, source, destination):\n        # TODO: Return True if path exists, else False\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    V, E = map(int, data[0].split())\n    adj = [[] for _ in range(V)]\n    for i in range(E):\n        u, v = map(int, data[i+1].split())\n        adj[u].append(v)\n    source, destination = map(int, data[E+1].split())\n    sol = Solution()\n    print('true' if sol.validPath(V, adj, source, destination) else 'false')"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean validPath(int V, ArrayList<ArrayList<Integer>> adj, int source, int destination) {\n        # TODO: Return true if path exists\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int V = Integer.parseInt(firstLine[0]);\n        int E = Integer.parseInt(firstLine[1]);\n        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i < V; i++) adj.add(new ArrayList<>());\n        for (int i = 0; i < E; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            int u = Integer.parseInt(parts[0]);\n            int v = Integer.parseInt(parts[1]);\n            adj.get(u).add(v);\n        }\n        String[] lastLine = br.readLine().trim().split(\" \");\n        int source = Integer.parseInt(lastLine[0]);\n        int destination = Integer.parseInt(lastLine[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.validPath(V, adj, source, destination) ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    validPath(V, adj, source, destination) {\n        # TODO: Return true if path exists\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [V, E] = lines[0].split(' ').map(Number);\n    const adj = Array.from({length: V}, () => []);\n    for (let i = 0; i < E; i++) {\n        const [u, v] = lines[i+1].split(' ').map(Number);\n        adj[u].push(v);\n    }\n    const [source, destination] = lines[E+1].split(' ').map(Number);\n    const sol = new Solution();\n    console.log(sol.validPath(V, adj, source, destination) ? 'true' : 'false');\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool validPath(int V, vector<int> adj[], int source, int destination) {\n        # TODO: Return true if path exists\n        return false;\n    }\n};\n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<int> adj[V];\n    for (int i = 0; i < E; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n    }\n    int source, destination;\n    cin >> source >> destination;\n    Solution sol;\n    cout << (sol.validPath(V, adj, source, destination) ? \"true\" : \"false\");\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nbool validPath(int V, int E, int edges[][2], int source, int destination) {\n    # TODO: Return true if path exists\n    return false;\n}\n\nint main() {\n    int V, E;\n    scanf(\"%d %d\", &V, &E);\n    int edges[E][2];\n    for (int i = 0; i < E; i++) {\n        scanf(\"%d %d\", &edges[i][0], &edges[i][1]);\n    }\n    int source, destination;\n    scanf(\"%d %d\", &source, &destination);\n    printf(\"%s\", validPath(V, E, edges, source, destination) ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use BFS or DFS starting from source.",
+                "If you reach destination, return true."
+            ]
+        }
+    ]
+}

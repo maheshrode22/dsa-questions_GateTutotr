@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Substring Without Repeating Characters",
+            "description": "Problem Statement\n\nGiven a string S, find the length of the longest substring without repeating characters.\n\nReturn the length of the longest substring.\n",
+            "examples": "Sample Input\nabcabcbb\n\nSample Output\n3\n\nExplanation:\nThe answer is \"abc\", with the length of 3.\n\nSample Input\nbbbbb\n\nSample Output\n1\n\nExplanation:\nThe answer is \"b\", with the length of 1.",
+            "constraints": "0 <= |S| <= 5 * 10^4\nS consists of English letters, digits, symbols and spaces.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abcabcbb",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "bbbbb",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "pwwkew",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "au",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def lengthOfLongestSubstring(self, S):\n        # TODO: Return the length\n        pass\n\nif __name__ == '__main__':\n    import sys\n    S = sys.stdin.read().strip()\n    sol = Solution()\n    print(sol.lengthOfLongestSubstring(S))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int lengthOfLongestSubstring(String S) {\n        // TODO: Return the length\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String S = br.readLine();\n        if (S == null) S = \"\";\n        Solution sol = new Solution();\n        System.out.println(sol.lengthOfLongestSubstring(S));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    lengthOfLongestSubstring(S) {\n        // TODO: Return the length\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const S = input.replace(/\\r?\\n|\\r/g, \"\");\n    const sol = new Solution();\n    console.log(sol.lengthOfLongestSubstring(S));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int lengthOfLongestSubstring(string S) {\n        // TODO: Return the length\n        return 0;\n    }\n};\n\nint main() {\n    string S;\n    getline(cin, S);\n    Solution sol;\n    cout << sol.lengthOfLongestSubstring(S) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid lengthOfLongestSubstring(char* S) {\n    // TODO: Print the length\n}\n\nint main() {\n    char S[50005];\n    if (fgets(S, 50005, stdin) == NULL) S[0] = '\\0';\n    // Remove newline if present\n    S[strcspn(S, \"\\n\")] = 0;\n    lengthOfLongestSubstring(S);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a sliding window approach.",
+                "Keep track of the last seen index of each character."
+            ]
+        }
+    ]
+}

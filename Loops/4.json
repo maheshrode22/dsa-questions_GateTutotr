@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Print Even Numbers",
+            "description": "Write a program to print all even numbers between 1 to n using a while loop.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nPrint even numbers from 1 to n, each on a new line.",
+            "examples": "Sample Input\n10\n\nSample Output\n2\n4\n6\n8\n10\n\nExplanation:\nEven numbers between 1 and 10 are printed.",
+            "constraints": "1 <= n <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "2\n4\n6\n8\n10"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "2\n4"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "8",
+                    "expectedOutput": "2\n4\n6\n8"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printEvenNumbers(self, n):\n        # TODO: Print even numbers from 1 to n using while loop\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printEvenNumbers(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printEvenNumbers(int n) {\n        // TODO: Print even numbers from 1 to n using while loop\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printEvenNumbers(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printEvenNumbers(n) {\n        // TODO: Print even numbers from 1 to n using while loop\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printEvenNumbers(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printEvenNumbers(int n) {\n        // TODO: Print even numbers from 1 to n using while loop\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printEvenNumbers(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printEvenNumbers(int n) {\n    // TODO: Print even numbers from 1 to n using while loop\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printEvenNumbers(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a counter to 1.",
+                "Check if the counter is divisible by 2.",
+                "Increment the counter in a loop."
+            ]
+        }
+    ]
+}

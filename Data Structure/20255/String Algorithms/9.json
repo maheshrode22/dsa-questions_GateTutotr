@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Z Algorithm",
+            "description": "Problem Statement\n\nGiven a text string T and a pattern string P, find all occurrences of P in T using the Z Algorithm.\nReturn the starting indices (0-based) of all occurrences in increasing order.\nIf no occurrence is found, return -1.\n",
+            "examples": "Sample Input\nababcabcabababd abababd\n\nSample Output\n8\n\nSample Input\naaaaa aa\n\nSample Output\n0 1 2 3",
+            "constraints": "1 <= |P| <= |T| <= 10^5\nT and P consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "ababcabcabababd abababd",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "aaaaa aa",
+                    "expectedOutput": "0 1 2 3"
+                },
+                {
+                    "input": "hello world",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "ababab ab",
+                    "expectedOutput": "0 2 4"
+                },
+                {
+                    "input": "mississippi issip",
+                    "expectedOutput": "4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def zAlgorithm(self, T, P):\n        # TODO: Return list of indices or [-1]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        T, P = input_data[0], input_data[1]\n        sol = Solution()\n        res = sol.zAlgorithm(T, P)\n        print(' '.join(map(str, res)))\n    else:\n        print(\"-1\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public ArrayList<Integer> zAlgorithm(String T, String P) {\n        // TODO: Return list of indices or [-1]\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"-1\");\n            return;\n        }\n        String T = parts[0];\n        String P = parts[1];\n        Solution sol = new Solution();\n        ArrayList<Integer> res = sol.zAlgorithm(T, P);\n        for (int i = 0; i < res.size(); i++) {\n            System.out.print(res.get(i) + (i == res.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    zAlgorithm(T, P) {\n        // TODO: Return list of indices or [-1]\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"-1\");\n        return;\n    }\n    const T = parts[0];\n    const P = parts[1];\n    const sol = new Solution();\n    const res = sol.zAlgorithm(T, P);\n    console.log(res.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> zAlgorithm(string T, string P) {\n        // TODO: Return vector of indices or {-1}\n        return {};\n    }\n};\n\nint main() {\n    string T, P;\n    if (cin >> T >> P) {\n        Solution sol;\n        vector<int> res = sol.zAlgorithm(T, P);\n        for (int i = 0; i < res.size(); i++) {\n            cout << res[i] << (i == res.size() - 1 ? \"\" : \" \");\n        }\n    } else {\n        cout << \"-1\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid zAlgorithm(char* T, char* P) {\n    // TODO: Print indices or -1\n}\n\nint main() {\n    char T[100005], P[100005];\n    if (scanf(\"%s %s\", T, P) == 2) {\n        zAlgorithm(T, P);\n    } else {\n        printf(\"-1\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Concatenate P + '$' + T.",
+                "Compute the Z-array for the concatenated string."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,306 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Print Natural Numbers",
+            "description": "Write a program to print all natural numbers from 1 to n using a while loop.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nPrint numbers from 1 to n, each on a new line.",
+            "examples": "Sample Input\n5\n\nSample Output\n1\n2\n3\n4\n5\n\nExplanation:\nNumbers from 1 to 5 are printed.",
+            "constraints": "1 <= n <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "1\n2\n3\n4\n5"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1\n2\n3"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "1\n2\n3\n4\n5\n6\n7"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printNaturalNumbers(self, n):\n        # TODO: Print numbers from 1 to n using while loop\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printNaturalNumbers(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printNaturalNumbers(int n) {\n        // TODO: Print numbers from 1 to n using while loop\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printNaturalNumbers(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printNaturalNumbers(n) {\n        // TODO: Print numbers from 1 to n using while loop\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printNaturalNumbers(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printNaturalNumbers(int n) {\n        // TODO: Print numbers from 1 to n using while loop\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printNaturalNumbers(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printNaturalNumbers(int n) {\n    // TODO: Print numbers from 1 to n using while loop\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printNaturalNumbers(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a counter variable to 1.",
+                "Use a while loop to print the counter and increment it until it reaches n."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Print Natural Numbers Reverse",
+            "description": "Write a program to print all natural numbers in reverse from n to 1 using a while loop.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nPrint numbers from n to 1, each on a new line.",
+            "examples": "Sample Input\n5\n\nSample Output\n5\n4\n3\n2\n1\n\nExplanation:\nNumbers from 5 to 1 are printed.",
+            "constraints": "1 <= n <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "5\n4\n3\n2\n1"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "3\n2\n1"
+                },
+                {
+                    "input": "6",
+                    "expectedOutput": "6\n5\n4\n3\n2\n1"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "10\n9\n8\n7\n6\n5\n4\n3\n2\n1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printReverse(self, n):\n        # TODO: Print numbers from n to 1 using while loop\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printReverse(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printReverse(int n) {\n        // TODO: Print numbers from n to 1 using while loop\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printReverse(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printReverse(n) {\n        // TODO: Print numbers from n to 1 using while loop\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printReverse(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printReverse(int n) {\n        // TODO: Print numbers from n to 1 using while loop\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printReverse(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printReverse(int n) {\n    // TODO: Print numbers from n to 1 using while loop\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printReverse(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a counter variable to n.",
+                "Use a while loop to print the counter and decrement it until it reaches 1."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Print Alphabets",
+            "description": "Write a program to print all alphabets from a given starting character to an ending character using a while loop.\n\nInput Format:\nTwo characters separated by a space.\n\nOutput Format:\nPrint characters from start to end, each on a new line.",
+            "examples": "Sample Input\na e\n\nSample Output\na\nb\nc\nd\ne\n\nExplanation:\nAlphabets from a to e are printed.",
+            "constraints": "start <= end",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "a e",
+                    "expectedOutput": "a\nb\nc\nd\ne"
+                },
+                {
+                    "input": "a z",
+                    "expectedOutput": "a\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl\nm\nn\no\np\nq\nr\ns\nt\nu\nv\nw\nx\ny\nz"
+                },
+                {
+                    "input": "A E",
+                    "expectedOutput": "A\nB\nC\nD\nE"
+                },
+                {
+                    "input": "x z",
+                    "expectedOutput": "x\ny\nz"
+                },
+                {
+                    "input": "m p",
+                    "expectedOutput": "m\nn\no\np"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printAlphabets(self, start, end):\n        # TODO: Print alphabets from start to end using while loop\n        pass\n\nif __name__ == '__main__':\n    parts = input().split()\n    start = parts[0]\n    end = parts[1]\n    sol = Solution()\n    sol.printAlphabets(start, end)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printAlphabets(char start, char end) {\n        // TODO: Print alphabets from start to end using while loop\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        char start = sc.next().charAt(0);\n        char end = sc.next().charAt(0);\n        Solution sol = new Solution();\n        sol.printAlphabets(start, end);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printAlphabets(start, end) {\n        // TODO: Print alphabets from start to end using while loop\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const start = parts[0];\n    const end = parts[1];\n    const sol = new Solution();\n    sol.printAlphabets(start, end);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printAlphabets(char start, char end) {\n        // TODO: Print alphabets from start to end using while loop\n    }\n};\n\nint main() {\n    char start, end;\n    cin >> start >> end;\n    Solution sol;\n    sol.printAlphabets(start, end);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printAlphabets(char start, char end) {\n    // TODO: Print alphabets from start to end using while loop\n}\n\nint main() {\n    char start, end;\n    scanf(\" %c %c\", &start, &end);\n    printAlphabets(start, end);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a char variable to start.",
+                "Use a while loop to print and increment the char until it reaches end."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Print Even Numbers",
+            "description": "Write a program to print all even numbers between 1 to n using a while loop.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nPrint even numbers from 1 to n, each on a new line.",
+            "examples": "Sample Input\n10\n\nSample Output\n2\n4\n6\n8\n10\n\nExplanation:\nEven numbers between 1 and 10 are printed.",
+            "constraints": "1 <= n <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "2\n4\n6\n8\n10"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "2\n4"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "8",
+                    "expectedOutput": "2\n4\n6\n8"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printEvenNumbers(self, n):\n        # TODO: Print even numbers from 1 to n using while loop\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printEvenNumbers(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printEvenNumbers(int n) {\n        // TODO: Print even numbers from 1 to n using while loop\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printEvenNumbers(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printEvenNumbers(n) {\n        // TODO: Print even numbers from 1 to n using while loop\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printEvenNumbers(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printEvenNumbers(int n) {\n        // TODO: Print even numbers from 1 to n using while loop\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printEvenNumbers(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printEvenNumbers(int n) {\n    // TODO: Print even numbers from 1 to n using while loop\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printEvenNumbers(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a counter to 1.",
+                "Check if the counter is divisible by 2.",
+                "Increment the counter in a loop."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Print Odd Numbers",
+            "description": "Write a program to print all odd numbers between 1 to n using a while loop.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nPrint odd numbers from 1 to n, each on a new line.",
+            "examples": "Sample Input\n10\n\nSample Output\n1\n3\n5\n7\n9\n\nExplanation:\nOdd numbers between 1 and 10 are printed.",
+            "constraints": "1 <= n <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "1\n3\n5\n7\n9"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1\n3\n5"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "8",
+                    "expectedOutput": "1\n3\n5\n7"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printOddNumbers(self, n):\n        # TODO: Print odd numbers from 1 to n using while loop\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printOddNumbers(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printOddNumbers(int n) {\n        // TODO: Print odd numbers from 1 to n using while loop\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printOddNumbers(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printOddNumbers(n) {\n        // TODO: Print odd numbers from 1 to n using while loop\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printOddNumbers(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printOddNumbers(int n) {\n        // TODO: Print odd numbers from 1 to n using while loop\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printOddNumbers(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printOddNumbers(int n) {\n    // TODO: Print odd numbers from 1 to n using while loop\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printOddNumbers(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a counter to 1.",
+                "Check if the counter is not divisible by 2.",
+                "Increment the counter in a loop."
+            ]
+        }
+    ]
+}

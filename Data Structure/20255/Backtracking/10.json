@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Word Search",
+            "description": "Problem Statement\n\nGiven an m x n grid of characters and a string word, return true if word exists in the grid.\n\nThe word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.\n",
+            "examples": "Sample Input\n3 4\nABCE\nSFCS\nADEE\nABCCED\n\nSample Output\ntrue\n\nExplanation:\nGrid:\nA B C E\nS F C S\nA D E E\nWord \"ABCCED\" exists.",
+            "constraints": "1 <= m, n <= 6\n1 <= word.length <= 15",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2030,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3 4\nABCE\nSFCS\nADEE\nABCCED",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "3 4\nABCE\nSFCS\nADEE\nSEE",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "3 4\nABCE\nSFCS\nADEE\nABCB",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1 1\na\na",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2 2\nAB\nCD\nACDB",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def exist(self, board, word):\n        # TODO: Check if word exists in grid\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    m, n = map(int, data[0].split())\n    board = []\n    for i in range(m):\n        board.append(list(data[i+1]))\n    word = data[m+1]\n    sol = Solution()\n    print('true' if sol.exist(board, word) else 'false')"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean exist(char[][] board, String word) {\n        # TODO: Check if word exists in grid\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] dims = br.readLine().trim().split(\" \");\n        int m = Integer.parseInt(dims[0]);\n        int n = Integer.parseInt(dims[1]);\n        char[][] board = new char[m][n];\n        for (int i = 0; i < m; i++) {\n            board[i] = br.readLine().trim().toCharArray();\n        }\n        String word = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.exist(board, word) ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    exist(board, word) {\n        # TODO: Check if word exists in grid\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [m, n] = lines[0].split(' ').map(Number);\n    const board = [];\n    for (let i = 0; i < m; i++) {\n        board.push(lines[i+1].split(''));\n    }\n    const word = lines[m+1];\n    const sol = new Solution();\n    console.log(sol.exist(board, word) ? 'true' : 'false');\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool exist(vector<vector<char>>& board, string word) {\n        # TODO: Check if word exists in grid\n        return false;\n    }\n};\n\nint main() {\n    int m, n;\n    cin >> m >> n;\n    vector<vector<char>> board(m, vector<char>(n));\n    for (int i = 0; i < m; i++) {\n        for (int j = 0; j < n; j++) cin >> board[i][j];\n    }\n    string word;\n    cin >> word;\n    Solution sol;\n    cout << (sol.exist(board, word) ? \"true\" : \"false\");\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nbool exist(char** board, int m, int n, char* word) {\n    # TODO: Check if word exists in grid\n    return false;\n}\n\nint main() {\n    int m, n;\n    scanf(\"%d %d\", &m, &n);\n    char** board = (char**)malloc(m * sizeof(char*));\n    for (int i = 0; i < m; i++) {\n        board[i] = (char*)malloc((n + 1) * sizeof(char));\n        scanf(\"%s\", board[i]);\n    }\n    char word[20];\n    scanf(\"%s\", word);\n    printf(\"%s\", exist(board, m, n, word) ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "DFS from each cell. If cell matches word[0], continue to neighbors.",
+                "Mark visited cells to avoid reuse in same path."
+            ]
+        }
+    ]
+}

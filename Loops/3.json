@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Print Alphabets",
+            "description": "Write a program to print all alphabets from a given starting character to an ending character using a while loop.\n\nInput Format:\nTwo characters separated by a space.\n\nOutput Format:\nPrint characters from start to end, each on a new line.",
+            "examples": "Sample Input\na e\n\nSample Output\na\nb\nc\nd\ne\n\nExplanation:\nAlphabets from a to e are printed.",
+            "constraints": "start <= end",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "a e",
+                    "expectedOutput": "a\nb\nc\nd\ne"
+                },
+                {
+                    "input": "a z",
+                    "expectedOutput": "a\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl\nm\nn\no\np\nq\nr\ns\nt\nu\nv\nw\nx\ny\nz"
+                },
+                {
+                    "input": "A E",
+                    "expectedOutput": "A\nB\nC\nD\nE"
+                },
+                {
+                    "input": "x z",
+                    "expectedOutput": "x\ny\nz"
+                },
+                {
+                    "input": "m p",
+                    "expectedOutput": "m\nn\no\np"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printAlphabets(self, start, end):\n        # TODO: Print alphabets from start to end using while loop\n        pass\n\nif __name__ == '__main__':\n    parts = input().split()\n    start = parts[0]\n    end = parts[1]\n    sol = Solution()\n    sol.printAlphabets(start, end)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printAlphabets(char start, char end) {\n        // TODO: Print alphabets from start to end using while loop\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        char start = sc.next().charAt(0);\n        char end = sc.next().charAt(0);\n        Solution sol = new Solution();\n        sol.printAlphabets(start, end);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printAlphabets(start, end) {\n        // TODO: Print alphabets from start to end using while loop\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const start = parts[0];\n    const end = parts[1];\n    const sol = new Solution();\n    sol.printAlphabets(start, end);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printAlphabets(char start, char end) {\n        // TODO: Print alphabets from start to end using while loop\n    }\n};\n\nint main() {\n    char start, end;\n    cin >> start >> end;\n    Solution sol;\n    sol.printAlphabets(start, end);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printAlphabets(char start, char end) {\n    // TODO: Print alphabets from start to end using while loop\n}\n\nint main() {\n    char start, end;\n    scanf(\" %c %c\", &start, &end);\n    printAlphabets(start, end);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a char variable to start.",
+                "Use a while loop to print and increment the char until it reaches end."
+            ]
+        }
+    ]
+}

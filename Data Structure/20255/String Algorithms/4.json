@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Common Prefix",
+            "description": "Problem Statement\n\nGiven an array of strings, find the longest common prefix string amongst them.\nIf there is no common prefix, return an empty string \"\".\n\nReturn the longest common prefix.\n",
+            "examples": "Sample Input\n3\nflower flow flight\n\nSample Output\nfl\n\nExplanation:\n\"fl\" is the longest common prefix.\n\nSample Input\n3\ndog racecar car\n\nSample Output\n\n\nExplanation:\nThere is no common prefix.",
+            "constraints": "1 <= N <= 200\n0 <= |S| <= 200\nStrings consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "3\nflower flow flight",
+                    "expectedOutput": "fl"
+                },
+                {
+                    "input": "3\ndog racecar car",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "2\napple ape",
+                    "expectedOutput": "ap"
+                },
+                {
+                    "input": "1\nalone",
+                    "expectedOutput": "alone"
+                },
+                {
+                    "input": "2\na b",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestCommonPrefix(self, strs):\n        # TODO: Return the longest common prefix\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        print(\"\")\n    else:\n        N = int(input_data[0])\n        strs = input_data[1:]\n        sol = Solution()\n        print(sol.longestCommonPrefix(strs))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String longestCommonPrefix(String[] strs) {\n        // TODO: Return the longest common prefix\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String line = br.readLine();\n        if (line == null || line.trim().isEmpty()) return;\n        int N = Integer.parseInt(line.trim());\n        String[] strs = new String[N];\n        if (N > 0) {\n            String[] parts = br.readLine().trim().split(\" \");\n            for(int i=0; i<N; i++) strs[i] = parts[i];\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.longestCommonPrefix(strs));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestCommonPrefix(strs) {\n        // TODO: Return the longest common prefix\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length === 0) return;\n    const N = parseInt(parts[0]);\n    const strs = parts.slice(1);\n    const sol = new Solution();\n    console.log(sol.longestCommonPrefix(strs));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string longestCommonPrefix(vector<string>& strs) {\n        // TODO: Return the longest common prefix\n        return \"\";\n    }\n};\n\nint main() {\n    int N;\n    if (cin >> N) {\n        vector<string> strs(N);\n        for(int i=0; i<N; i++) cin >> strs[i];\n        Solution sol;\n        cout << sol.longestCommonPrefix(strs) << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid longestCommonPrefix(int N, char** strs) {\n    // TODO: Print the longest common prefix\n}\n\nint main() {\n    int N;\n    if (scanf(\"%d\", &N) == 1) {\n        char** strs = (char**)malloc(N * sizeof(char*));\n        for(int i=0; i<N; i++) {\n            strs[i] = (char*)malloc(205 * sizeof(char));\n            scanf(\"%s\", strs[i]);\n        }\n        longestCommonPrefix(N, strs);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Sort the array of strings.",
+                "Compare the first and last strings after sorting."
+            ]
+        }
+    ]
+}

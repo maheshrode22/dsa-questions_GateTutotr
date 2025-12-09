@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Rat in a Maze",
+            "description": "Problem Statement\n\nConsider a rat placed at (0, 0) in a square matrix of order N * N. It has to reach the destination at (N - 1, N - 1).\nFound all possible paths that the rat can take to reach the destination.\nThe directions in which the rat can move are 'U'(up), 'D'(down), 'L'(left), 'R'(right).\nValue 0 implies the cell is blocked and 1 implies it is open.\n\nReturn the paths in lexicographical order.\n",
+            "examples": "Sample Input\n4\n1 0 0 0\n1 1 0 1\n1 1 0 0\n0 1 1 1\n\nSample Output\nDDRDRR DRDDRR\n\nExplanation:\nTwo paths to reach (3,3).",
+            "constraints": "2 <= N <= 5\n0 <= grid[i][j] <= 1",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2030,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4\n1 0 0 0\n1 1 0 1\n1 1 0 0\n0 1 1 1",
+                    "expectedOutput": "DDRDRR DRDDRR"
+                },
+                {
+                    "input": "2\n1 0\n1 0",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "2\n1 1\n1 1",
+                    "expectedOutput": "DR RD"
+                },
+                {
+                    "input": "3\n1 1 1\n1 1 1\n1 1 1",
+                    "expectedOutput": "DDRR DDRURD DDRUURDD DRDR DRRD DRURDD RDDR RDLDRR RDRD RRDD RRDLDR RRDLLDRR"
+                },
+                {
+                    "input": "4\n1 1 1 1\n1 1 0 1\n0 1 1 1\n1 1 1 1",
+                    "expectedOutput": "DRDDRR DRDDRURD DRDRDR DRDRRD DRURRDDD DRURRDDLDR DRURRDDLLDRR RDDDRR RDDDRURD RDDRDR RDDRRD RRRDDD RRRDDLDR RRRDDLLDRR"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findPath(self, m, n):\n        # TODO: Return list of path strings\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    m = []\n    for i in range(n):\n        m.append(list(map(int, data[i+1].split())))\n    sol = Solution()\n    result = sol.findPath(m, n)\n    if not result:\n        print(\"\")\n    else:\n        print(' '.join(sorted(result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public ArrayList<String> findPath(int[][] m, int n) {\n        # TODO: Return list of path strings\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] m = new int[n][n];\n        for (int i = 0; i < n; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            for (int j = 0; j < n; j++) m[i][j] = Integer.parseInt(parts[j]);\n        }\n        Solution sol = new Solution();\n        ArrayList<String> result = sol.findPath(m, n);\n        Collections.sort(result);\n        System.out.println(String.join(\" \", result));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findPath(m, n) {\n        # TODO: Return list of path strings\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const m = [];\n    for (let i = 0; i < n; i++) {\n        m.push(lines[i+1].split(' ').map(Number));\n    }\n    const sol = new Solution();\n    const result = sol.findPath(m, n);\n    result.sort();\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> findPath(vector<vector<int>> &m, int n) {\n        # TODO: Return list of path strings\n        return {};\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<vector<int>> m(n, vector<int>(n));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) cin >> m[i][j];\n    }\n    Solution sol;\n    vector<string> result = sol.findPath(m, n);\n    sort(result.begin(), result.end());\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid findPath(int** m, int n) {\n    # TODO: Generate and print paths\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int** m = (int**)malloc(n * sizeof(int*));\n    for (int i = 0; i < n; i++) {\n        m[i] = (int*)malloc(n * sizeof(int));\n        for (int j = 0; j < n; j++) scanf(\"%d\", &m[i][j]);\n    }\n    findPath(m, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "DFS with visited array.",
+                "Try D, L, R, U. Unmark visited when backtracking."
+            ]
+        }
+    ]
+}

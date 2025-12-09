@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Subsets",
+            "description": "Problem Statement\n\nGiven an integer array nums of unique elements, return all possible subsets (the power set).\nThe solution set must not contain duplicate subsets.\nReturn the solution in lexicographical order.\n\nBacktracking Approach:\nFor each element, we have two choices: include it or exclude it.\n",
+            "examples": "Sample Input\n3\n1 2 3\n\nSample Output\n 1 1,2 1,2,3 1,3 2 2,3 3\n\nExplanation:\nEmpty subset is first (printed as empty space or nothing before first separator).",
+            "constraints": "1 <= N <= 10\n-10 <= nums[i] <= 10",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2030,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": " 1 1,2 1,2,3 1,3 2 2,3 3"
+                },
+                {
+                    "input": "1\n0",
+                    "expectedOutput": " 0"
+                },
+                {
+                    "input": "2\n1 2",
+                    "expectedOutput": " 1 1,2 2"
+                },
+                {
+                    "input": "3\n3 2 1",
+                    "expectedOutput": " 1 1,2 1,2,3 1,3 2 2,3 3"
+                },
+                {
+                    "input": "0\n",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def subsets(self, nums):\n        # TODO: Generate all subsets\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    if not data: n = 0; nums = []\n    else:\n        n = int(data[0])\n        nums = list(map(int, data[1].split())) if n > 0 else []\n    sol = Solution()\n    result = sol.subsets(nums)\n    # Sort subsets\n    result = [sorted(s) for s in result]\n    result.sort()\n    print(' '.join([','.join(map(str, s)) for s in result]))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<Integer>> subsets(int[] nums) {\n        // TODO: Generate all subsets\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String line = br.readLine();\n        if (line == null) return;\n        int n = Integer.parseInt(line.trim());\n        int[] nums = new int[n];\n        if (n > 0) {\n            String[] parts = br.readLine().trim().split(\" \");\n            for (int i = 0; i < n; i++) nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        List<List<Integer>> result = sol.subsets(nums);\n        for (List<Integer> s : result) Collections.sort(s);\n        result.sort((a, b) -> {\n            int len = Math.min(a.size(), b.size());\n            for (int i = 0; i < len; i++) {\n                if (!a.get(i).equals(b.get(i))) return a.get(i) - b.get(i);\n            }\n            return a.size() - b.size();\n        });\n        List<String> output = new ArrayList<>();\n        for (List<Integer> s : result) {\n            List<String> str = new ArrayList<>();\n            for (int num : s) str.add(String.valueOf(num));\n            output.add(String.join(\",\", str));\n        }\n        System.out.println(String.join(\" \", output));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    subsets(nums) {\n        // TODO: Generate all subsets\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    if (lines.length === 0) return;\n    const n = parseInt(lines[0]);\n    const nums = n > 0 ? lines[1].split(' ').map(Number) : [];\n    const sol = new Solution();\n    let result = sol.subsets(nums);\n    result = result.map(s => s.sort((a,b) => a-b));\n    result.sort((a, b) => {\n        const len = Math.min(a.length, b.length);\n        for (let i = 0; i < len; i++) {\n            if (a[i] !== b[i]) return a[i] - b[i];\n        }\n        return a.length - b.length;\n    });\n    console.log(result.map(s => s.join(',')).join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> subsets(vector<int>& nums) {\n        // TODO: Generate all subsets\n        return {};\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    Solution sol;\n    vector<vector<int>> result = sol.subsets(nums);\n    for (auto& s : result) sort(s.begin(), s.end());\n    sort(result.begin(), result.end());\n    for (int i = 0; i < result.size(); i++) {\n        for (int j = 0; j < result[i].size(); j++) {\n            cout << result[i][j] << (j == result[i].size() - 1 ? \"\" : \",\");\n        }\n        cout << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid subsets(int nums[], int n) {\n    // TODO: Generate and print subsets\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    int nums[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &nums[i]);\n    subsets(nums, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Include current element and recurse, then exclude current element and recurse.",
+                "Or iterate from 0 to 2^N - 1 and use bitmask."
+            ]
+        }
+    ]
+}

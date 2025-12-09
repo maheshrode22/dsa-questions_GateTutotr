@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Alien Dictionary",
+            "description": "Problem Statement\n\nGiven a sorted dictionary of an alien language having N words and k starting alphabets of standard dictionary. Find the order of characters in the alien language.\nNote: Many orders may be possible for the same test case, thus you may return any valid order.\n\nReturn the string of characters in order.\n",
+            "examples": "Sample Input\n5 4\nbaa\nabcd\nabca\ncab\ncad\n\nSample Output\nb d a c\n\nExplanation:\nFrom baa and abcd, we get b < a.\nFrom abcd and abca, we get d < a.\nFrom abca and cab, we get a < c.\nFrom cab and cad, we get b < d.\nSo b < d < a < c.",
+            "constraints": "1 <= N <= 300\n1 <= k <= 26",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2031,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5 4\nbaa\nabcd\nabca\ncab\ncad",
+                    "expectedOutput": "b d a c"
+                },
+                {
+                    "input": "3 3\ncaa\naaa\naab",
+                    "expectedOutput": "c a b"
+                },
+                {
+                    "input": "2 2\na\nb",
+                    "expectedOutput": "a b"
+                },
+                {
+                    "input": "2 2\nb\na",
+                    "expectedOutput": "b a"
+                },
+                {
+                    "input": "3 3\nabc\nbcd\ncde",
+                    "expectedOutput": "a b c"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findOrder(self, dict, N, K):\n        # TODO: Return string of ordered characters\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    N, K = map(int, data[0].split())\n    dict = []\n    for i in range(N):\n        dict.append(data[i+1].strip())\n    sol = Solution()\n    print(sol.findOrder(dict, N, K))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String findOrder(String[] dict, int N, int K) {\n        # TODO: Return order string\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int N = Integer.parseInt(firstLine[0]);\n        int K = Integer.parseInt(firstLine[1]);\n        String[] dict = new String[N];\n        for (int i = 0; i < N; i++) {\n            dict[i] = br.readLine().trim();\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.findOrder(dict, N, K));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findOrder(dict, N, K) {\n        # TODO: Return order string\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [N, K] = lines[0].split(' ').map(Number);\n    const dict = [];\n    for (let i = 0; i < N; i++) {\n        dict.push(lines[i+1].trim());\n    }\n    const sol = new Solution();\n    console.log(sol.findOrder(dict, N, K));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string findOrder(string dict[], int N, int K) {\n        # TODO: Return order string\n        return \"\";\n    }\n};\n\nint main() {\n    int N, K;\n    cin >> N >> K;\n    string dict[N];\n    for (int i = 0; i < N; i++) cin >> dict[i];\n    Solution sol;\n    cout << sol.findOrder(dict, N, K);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\n// Return a dynamically allocated string\nchar* findOrder(char** dict, int N, int K) {\n    # TODO: Return order string\n    return \"\";\n}\n\nint main() {\n    int N, K;\n    scanf(\"%d %d\", &N, &K);\n    char** dict = (char**)malloc(N * sizeof(char*));\n    for (int i = 0; i < N; i++) {\n        dict[i] = (char*)malloc(100 * sizeof(char));\n        scanf(\"%s\", dict[i]);\n    }\n    printf(\"%s\", findOrder(dict, N, K));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Build a graph where edge u->v means u comes before v.",
+                "Use Topological Sort."
+            ]
+        }
+    ]
+}

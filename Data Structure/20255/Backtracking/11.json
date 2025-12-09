@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "N-Queens",
+            "description": "Problem Statement\n\nThe n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.\n\nGiven an integer n, return all distinct solutions to the n-queens puzzle.\n\nEach solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' indicate a queen and an empty space, respectively.\n",
+            "examples": "Sample Input\n4\n\nSample Output\n.Q.. ...Q Q... ..Q.\n..Q. Q... ...Q .Q..\n\nExplanation:\nTwo distinct solutions for 4-queens.",
+            "constraints": "1 <= n <= 9",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2030,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4",
+                    "expectedOutput": "..Q. Q... ...Q .Q.. .Q.. ...Q Q... ..Q."
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "Q"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "....Q ..Q.. Q.... ...Q. .Q... ....Q .Q... ...Q. Q.... ..Q.. ...Q. .Q... ....Q ..Q.. Q.... ...Q. Q.... ..Q.. ....Q .Q... ..Q.. ....Q .Q... ...Q. Q.... ..Q.. Q.... ...Q. .Q... ....Q .Q... ....Q ..Q.. Q.... ...Q. .Q... ...Q. Q.... ..Q.. ....Q Q.... ...Q. .Q... ....Q ..Q.. Q.... ..Q.. ....Q .Q... ...Q."
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solveNQueens(self, n):\n        # TODO: Return list of boards (each board is list of strings)\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    result = sol.solveNQueens(n)\n    # Format: Flatten each board to a single line, join boards with space\n    output = []\n    for board in result:\n        output.append(' '.join(board))\n    output.sort()\n    print(' '.join(output))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<String>> solveNQueens(int n) {\n        # TODO: Return list of boards\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        List<List<String>> result = sol.solveNQueens(n);\n        List<String> output = new ArrayList<>();\n        for (List<String> board : result) {\n            output.add(String.join(\" \", board));\n        }\n        Collections.sort(output);\n        System.out.println(String.join(\" \", output));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solveNQueens(n) {\n        # TODO: Return list of boards\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.solveNQueens(n);\n    const output = result.map(board => board.join(' '));\n    output.sort();\n    console.log(output.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<string>> solveNQueens(int n) {\n        # TODO: Return list of boards\n        return {};\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<vector<string>> result = sol.solveNQueens(n);\n    vector<string> output;\n    for (auto& board : result) {\n        string s = \"\";\n        for (int i = 0; i < board.size(); i++) {\n            s += board[i] + (i == board.size() - 1 ? \"\" : \" \");\n        }\n        output.push_back(s);\n    }\n    sort(output.begin(), output.end());\n    for (int i = 0; i < output.size(); i++) {\n        cout << output[i] << (i == output.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid solveNQueens(int n) {\n    # TODO: Generate and print solutions\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    solveNQueens(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use arrays to track columns, diagonals, and anti-diagonals.",
+                "Place queen row by row."
+            ]
+        }
+    ]
+}

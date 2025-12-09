@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Palindromic Substring",
+            "description": "Problem Statement\n\nGiven a string S, find the longest palindromic substring in S.\n\nReturn the longest palindromic substring.\n",
+            "examples": "Sample Input\nbabad\n\nSample Output\nbab\n\nExplanation:\n\"aba\" is also a valid answer.\n\nSample Input\ncbbd\n\nSample Output\nbb",
+            "constraints": "1 <= |S| <= 1000\nS consists of digits and English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "racecar",
+                    "expectedOutput": "racecar"
+                },
+                {
+                    "input": "cbbd",
+                    "expectedOutput": "bb"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "aba",
+                    "expectedOutput": "aba"
+                },
+                {
+                    "input": "bb",
+                    "expectedOutput": "bb"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestPalindrome(self, S):\n        # TODO: Return the longest palindromic substring\n        pass\n\nif __name__ == '__main__':\n    import sys\n    S = sys.stdin.read().strip()\n    sol = Solution()\n    print(sol.longestPalindrome(S))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String longestPalindrome(String S) {\n        // TODO: Return the longest palindromic substring\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String S = br.readLine();\n        if (S == null) S = \"\";\n        Solution sol = new Solution();\n        System.out.println(sol.longestPalindrome(S));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestPalindrome(S) {\n        // TODO: Return the longest palindromic substring\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const S = input.trim();\n    const sol = new Solution();\n    console.log(sol.longestPalindrome(S));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string longestPalindrome(string S) {\n        // TODO: Return the longest palindromic substring\n        return \"\";\n    }\n};\n\nint main() {\n    string S;\n    cin >> S;\n    Solution sol;\n    cout << sol.longestPalindrome(S) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid longestPalindrome(char* S) {\n    // TODO: Print the longest palindromic substring\n}\n\nint main() {\n    char S[1005];\n    if (scanf(\"%s\", S) == 1) {\n        longestPalindrome(S);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Expand around the center for each character.",
+                "Consider both odd and even length centers."
+            ]
+        }
+    ]
+}

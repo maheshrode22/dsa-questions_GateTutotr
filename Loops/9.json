@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Multiplication Table",
+            "description": "Write a program to print the multiplication table of a given number n up to 10.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nPrint the table in the format 'n * i = result', each on a new line.",
+            "examples": "Sample Input\n5\n\nSample Output\n5 * 1 = 5\n5 * 2 = 10\n5 * 3 = 15\n5 * 4 = 20\n5 * 5 = 25\n5 * 6 = 30\n5 * 7 = 35\n5 * 8 = 40\n5 * 9 = 45\n5 * 10 = 50\n\nExplanation:\nMultiplication table of 5 is printed.",
+            "constraints": "1 <= n <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "5 * 1 = 5\n5 * 2 = 10\n5 * 3 = 15\n5 * 4 = 20\n5 * 5 = 25\n5 * 6 = 30\n5 * 7 = 35\n5 * 8 = 40\n5 * 9 = 45\n5 * 10 = 50"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "2 * 1 = 2\n2 * 2 = 4\n2 * 3 = 6\n2 * 4 = 8\n2 * 5 = 10\n2 * 6 = 12\n2 * 7 = 14\n2 * 8 = 16\n2 * 9 = 18\n2 * 10 = 20"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1 * 1 = 1\n1 * 2 = 2\n1 * 3 = 3\n1 * 4 = 4\n1 * 5 = 5\n1 * 6 = 6\n1 * 7 = 7\n1 * 8 = 8\n1 * 9 = 9\n1 * 10 = 10"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = 70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "3 * 1 = 3\n3 * 2 = 6\n3 * 3 = 9\n3 * 4 = 12\n3 * 5 = 15\n3 * 6 = 18\n3 * 7 = 21\n3 * 8 = 24\n3 * 9 = 27\n3 * 10 = 30"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printTable(self, n):\n        # TODO: Print multiplication table of n\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printTable(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printTable(int n) {\n        // TODO: Print multiplication table of n\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printTable(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printTable(n) {\n        // TODO: Print multiplication table of n\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printTable(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printTable(int n) {\n        // TODO: Print multiplication table of n\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printTable(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printTable(int n) {\n    // TODO: Print multiplication table of n\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printTable(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a loop from 1 to 10.",
+                "In each iteration, print n * i = result."
+            ]
+        }
+    ]
+}

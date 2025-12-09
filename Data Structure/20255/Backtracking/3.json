@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Generate Parentheses",
+            "description": "Problem Statement\n\nGiven N pairs of parentheses, write a function to generate all combinations of well-formed parentheses.\n\nBacktracking Approach:\nKeep track of open and close brackets count.\n- Add '(' if open < N\n- Add ')' if close < open\n",
+            "examples": "Sample Input\n3\n\nSample Output\n((())) (()()) ()(()) ()()() ()\n\nExplanation:\nAll valid combinations of 3 pairs of parentheses.",
+            "constraints": "1 <= N <= 8",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2030,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "((())) (()()) (())() ()(()) ()()()"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "()"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "(()) ()()"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "(((()))) ((()())) ((())()) ((()))() (()(())) (()()()) (()())() (())(()) (())()() ()((())) ()(()()) ()(())() ()()(()) ()()()()"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def generateParenthesis(self, n):\n        # TODO: Generate all valid parentheses combinations\n        # Return list of strings\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    result = sol.generateParenthesis(n)\n    print(' '.join(sorted(result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> generateParenthesis(int n) {\n        # TODO: Generate all valid parentheses combinations\n        # Return list of strings\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        List<String> result = sol.generateParenthesis(n);\n        Collections.sort(result);\n        System.out.println(String.join(\" \", result));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    generateParenthesis(n) {\n        # TODO: Generate all valid parentheses combinations\n        # Return list of strings\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.generateParenthesis(n);\n    result.sort();\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> generateParenthesis(int n) {\n        # TODO: Generate all valid parentheses combinations\n        # Return list of strings\n        return {};\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<string> result = sol.generateParenthesis(n);\n    sort(result.begin(), result.end());\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid generateParenthesis(int n) {\n    # TODO: Generate all valid parentheses combinations\n    # Print strings separated by space\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    generateParenthesis(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Maintain count of open and closed brackets.",
+                "Can add '(' if open < n. Can add ')' if closed < open."
+            ]
+        }
+    ]
+}

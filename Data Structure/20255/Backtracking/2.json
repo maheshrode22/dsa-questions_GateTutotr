@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Permutations of a String",
+            "description": "Problem Statement\n\nGiven a string S containing distinct characters, generate all possible permutations of S.\nThe permutations should be printed in lexicographical (alphabetical) order.\n\nBacktracking Approach:\nFor each position, try every available character that hasn't been used yet.\n",
+            "examples": "Sample Input\nabc\n\nSample Output\nabc acb bac bca cab cba\n\nExplanation:\nAll 6 permutations of \"abc\" in order.",
+            "constraints": "1 <= |S| <= 8\nCharacters are distinct lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2030,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "abc",
+                    "expectedOutput": "abc acb bac bca cab cba"
+                },
+                {
+                    "input": "ab",
+                    "expectedOutput": "ab ba"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "xy",
+                    "expectedOutput": "xy yx"
+                },
+                {
+                    "input": "abcd",
+                    "expectedOutput": "abcd abdc acbd acdb adbc adcb bacd badc bcad bcda bdac bdca cabd cadb cbad cbda cdab cdba dabc dacb dbac dbca dcab dcba"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def permuteString(self, s):\n        # TODO: Generate all permutations of string s\n        # Return list of strings sorted lexicographically\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    result = sol.permuteString(s)\n    print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> permuteString(String s) {\n        // TODO: Generate all permutations of string s\n        // Return list of strings sorted lexicographically\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        List<String> result = sol.permuteString(s);\n        System.out.println(String.join(\" \", result));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    permuteString(s) {\n        // TODO: Generate all permutations of string s\n        // Return list of strings sorted lexicographically\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    const result = sol.permuteString(s);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> permuteString(string s) {\n        // TODO: Generate all permutations of string s\n        // Return list of strings sorted lexicographically\n        return {};\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    vector<string> result = sol.permuteString(s);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid permuteString(char* s) {\n    // TODO: Generate all permutations of string s\n    // Print strings separated by space\n}\n\nint main() {\n    char s[10];\n    scanf(\"%s\", s);\n    permuteString(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking with a 'visited' array to keep track of used characters.",
+                "Sort the string first to ensure lexicographical order."
+            ]
+        }
+    ]
+}

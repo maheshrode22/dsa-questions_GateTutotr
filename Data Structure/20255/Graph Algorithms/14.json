@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Floyd Warshall",
+            "description": "Problem Statement\n\nThe problem is to find the shortest distances between every pair of vertices in a given edge-weighted directed Graph.\nThe Graph is represented as an adjacency matrix, and the value matrix[i][j] denotes the weight of the edge from i to j.\nIf no edge exists, the value is -1 (except diagonal which is 0).\n\nReturn the matrix with shortest distances. If no path exists, keep it as -1.\n",
+            "examples": "Sample Input\n2\n0 25\n-1 0\n\nSample Output\n0 25\n-1 0\n\nExplanation:\nShortest distance from 0 to 1 is 25.",
+            "constraints": "1 <= V <= 100\n-1 <= matrix[i][j] <= 1000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2031,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2\n0 25\n-1 0",
+                    "expectedOutput": "0 25\n-1 0"
+                },
+                {
+                    "input": "3\n0 1 43\n1 0 6\n-1 -1 0",
+                    "expectedOutput": "0 1 7\n1 0 6\n-1 -1 0"
+                },
+                {
+                    "input": "2\n0 5\n5 0",
+                    "expectedOutput": "0 5\n5 0"
+                },
+                {
+                    "input": "1\n0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "3\n0 -1 -1\n-1 0 -1\n-1 -1 0",
+                    "expectedOutput": "0 -1 -1\n-1 0 -1\n-1 -1 0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def shortest_distance(self, matrix):\n        # TODO: Update matrix in-place with shortest distances\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    matrix = []\n    for i in range(n):\n        matrix.append(list(map(int, data[i+1].split())))\n    sol = Solution()\n    sol.shortest_distance(matrix)\n    for row in matrix:\n        print(' '.join(map(str, row)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void shortest_distance(int[][] matrix) {\n        # TODO: Update matrix in-place\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] matrix = new int[n][n];\n        for (int i = 0; i < n; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            for (int j = 0; j < n; j++) matrix[i][j] = Integer.parseInt(parts[j]);\n        }\n        Solution sol = new Solution();\n        sol.shortest_distance(matrix);\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                System.out.print(matrix[i][j] + (j == n - 1 ? \"\" : \" \"));\n            }\n            System.out.println();\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    shortest_distance(matrix) {\n        # TODO: Update matrix in-place\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const matrix = [];\n    for (let i = 0; i < n; i++) {\n        matrix.push(lines[i+1].split(' ').map(Number));\n    }\n    const sol = new Solution();\n    sol.shortest_distance(matrix);\n    for (let i = 0; i < n; i++) {\n        console.log(matrix[i].join(' '));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void shortest_distance(vector<vector<int>>& matrix) {\n        # TODO: Update matrix in-place\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<vector<int>> matrix(n, vector<int>(n));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) cin >> matrix[i][j];\n    }\n    Solution sol;\n    sol.shortest_distance(matrix);\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            cout << matrix[i][j] << (j == n - 1 ? \"\" : \" \");\n        }\n        cout << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid shortest_distance(int** matrix, int n) {\n    # TODO: Update matrix in-place\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int** matrix = (int**)malloc(n * sizeof(int*));\n    for (int i = 0; i < n; i++) {\n        matrix[i] = (int*)malloc(n * sizeof(int));\n        for (int j = 0; j < n; j++) scanf(\"%d\", &matrix[i][j]);\n    }\n    shortest_distance(matrix, n);\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            printf(\"%d%s\", matrix[i][j], (j == n - 1 ? \"\" : \" \"));\n        }\n        printf(\"\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops.",
+                "matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j])."
+            ]
+        }
+    ]
+}

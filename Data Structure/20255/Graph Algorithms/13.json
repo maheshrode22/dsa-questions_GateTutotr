@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Spanning Tree",
+            "description": "Problem Statement\n\nGiven a weighted, undirected and connected graph of V vertices and E edges. The task is to find the sum of weights of the edges of the Minimum Spanning Tree.\n\nReturn the sum of weights.\n",
+            "examples": "Sample Input\n3 3\n0 1 5\n1 2 3\n0 2 1\n\nSample Output\n4\n\nExplanation:\nEdges (0,2) weight 1 and (1,2) weight 3 form MST. Sum = 4.",
+            "constraints": "2 <= V <= 1000\n1 <= E <= V*(V-1)/2\n1 <= Weight <= 1000",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2031,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "3 3\n0 1 5\n1 2 3\n0 2 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "2 1\n0 1 5",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "4 5\n0 1 10\n0 2 6\n0 3 5\n1 3 15\n2 3 4",
+                    "expectedOutput": "19"
+                },
+                {
+                    "input": "3 3\n0 1 1\n1 2 2\n2 0 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "5 4\n0 1 1\n1 2 1\n2 3 1\n3 4 1",
+                    "expectedOutput": "4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def spanningTree(self, V, adj):\n        # TODO: Return sum of weights of MST\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    V, E = map(int, data[0].split())\n    adj = [[] for _ in range(V)]\n    for i in range(E):\n        u, v, w = map(int, data[i+1].split())\n        adj[u].append([v, w])\n        adj[v].append([u, w])\n    sol = Solution()\n    print(sol.spanningTree(V, adj))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int spanningTree(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj) {\n        # TODO: Return sum of weights\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int V = Integer.parseInt(firstLine[0]);\n        int E = Integer.parseInt(firstLine[1]);\n        ArrayList<ArrayList<ArrayList<Integer>>> adj = new ArrayList<>();\n        for (int i = 0; i < V; i++) adj.add(new ArrayList<>());\n        for (int i = 0; i < E; i++) {\n            String[] parts = br.readLine().trim().split(\" \");\n            int u = Integer.parseInt(parts[0]);\n            int v = Integer.parseInt(parts[1]);\n            int w = Integer.parseInt(parts[2]);\n            ArrayList<Integer> t1 = new ArrayList<>(Arrays.asList(v, w));\n            adj.get(u).add(t1);\n            ArrayList<Integer> t2 = new ArrayList<>(Arrays.asList(u, w));\n            adj.get(v).add(t2);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.spanningTree(V, adj));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    spanningTree(V, adj) {\n        # TODO: Return sum of weights\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [V, E] = lines[0].split(' ').map(Number);\n    const adj = Array.from({length: V}, () => []);\n    for (let i = 0; i < E; i++) {\n        const [u, v, w] = lines[i+1].split(' ').map(Number);\n        adj[u].push([v, w]);\n        adj[v].push([u, w]);\n    }\n    const sol = new Solution();\n    console.log(sol.spanningTree(V, adj));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int spanningTree(int V, vector<vector<int>> adj[]) {\n        # TODO: Return sum of weights\n        return 0;\n    }\n};\n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> adj[V];\n    for (int i = 0; i < E; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        adj[u].push_back({v, w});\n        adj[v].push_back({u, w});\n    }\n    Solution sol;\n    cout << sol.spanningTree(V, adj);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint spanningTree(int V, int E, int edges[][3]) {\n    # TODO: Return sum of weights\n    return 0;\n}\n\nint main() {\n    int V, E;\n    scanf(\"%d %d\", &V, &E);\n    int edges[E][3];\n    for (int i = 0; i < E; i++) {\n        scanf(\"%d %d %d\", &edges[i][0], &edges[i][1], &edges[i][2]);\n    }\n    printf(\"%d\", spanningTree(V, E, edges));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Prim's Algorithm with a Priority Queue.",
+                "Or use Kruskal's Algorithm with Union-Find."
+            ]
+        }
+    ]
+}

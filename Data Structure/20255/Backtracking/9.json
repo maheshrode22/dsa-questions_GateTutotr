@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Palindrome Partitioning",
+            "description": "Problem Statement\n\nGiven a string s, partition s such that every substring of the partition is a palindrome.\nReturn all possible palindrome partitioning of s.\n\nBacktracking Approach:\nTry to cut the string at every possible position. If the prefix is a palindrome, recurse on the suffix.\n",
+            "examples": "Sample Input\naab\n\nSample Output\na,a,b aa,b\n\nExplanation:\n\"a\", \"a\", \"b\" are all palindromes.\n\"aa\", \"b\" are all palindromes.",
+            "constraints": "1 <= |s| <= 16",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2030,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "aab",
+                    "expectedOutput": "a,a,b aa,b"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "ab",
+                    "expectedOutput": "a,b"
+                },
+                {
+                    "input": "aaa",
+                    "expectedOutput": "a,a,a a,aa aa,a aaa"
+                },
+                {
+                    "input": "efe",
+                    "expectedOutput": "e,f,e efe"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def partition(self, s):\n        # TODO: Return all palindrome partitions\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    result = sol.partition(s)\n    result.sort()\n    print(' '.join([','.join(p) for p in result]))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<String>> partition(String s) {\n        # TODO: Return all palindrome partitions\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        List<List<String>> result = sol.partition(s);\n        result.sort((a, b) -> {\n            int len = Math.min(a.size(), b.size());\n            for (int i = 0; i < len; i++) {\n                if (!a.get(i).equals(b.get(i))) return a.get(i).compareTo(b.get(i));\n            }\n            return a.size() - b.size();\n        });\n        List<String> output = new ArrayList<>();\n        for (List<String> p : result) {\n            output.add(String.join(\",\", p));\n        }\n        System.out.println(String.join(\" \", output));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    partition(s) {\n        # TODO: Return all palindrome partitions\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    let result = sol.partition(s);\n    result.sort((a, b) => {\n        const len = Math.min(a.length, b.length);\n        for (let i = 0; i < len; i++) {\n            if (a[i] !== b[i]) return a[i].localeCompare(b[i]);\n        }\n        return a.length - b.length;\n    });\n    console.log(result.map(p => p.join(',')).join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<string>> partition(string s) {\n        # TODO: Return all palindrome partitions\n        return {};\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    vector<vector<string>> result = sol.partition(s);\n    sort(result.begin(), result.end());\n    for (int i = 0; i < result.size(); i++) {\n        for (int j = 0; j < result[i].size(); j++) {\n            cout << result[i][j] << (j == result[i].size() - 1 ? \"\" : \",\");\n        }\n        cout << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid partition(char* s) {\n    # TODO: Generate and print partitions\n}\n\nint main() {\n    char s[20];\n    scanf(\"%s\", s);\n    partition(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Helper function isPalindrome(sub).",
+                "Iterate i from 1 to length. If s[0:i] is palindrome, recurse on s[i:]."
+            ]
+        }
+    ]
+}

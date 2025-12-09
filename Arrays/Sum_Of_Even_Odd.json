@@ -1,0 +1,63 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Sum Of Even Or Odd",
+            "description": "Write a Java program to calculate the sum of even and odd numbers in a given array. Print \"Sum of Even: X\" and \"Sum of Odd: Y\" on separate lines.",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\nSum of Even: 6\nSum of Odd: 9",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2034,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "Sum of Even: 6\nSum of Odd: 9"
+                },
+                {
+                    "input": "3\n2 4 6",
+                    "expectedOutput": "Sum of Even: 12\nSum of Odd: 0"
+                },
+                {
+                    "input": "3\n1 3 5",
+                    "expectedOutput": "Sum of Even: 0\nSum of Odd: 9"
+                },
+                {
+                    "input": "4\n-2 -1 0 1",
+                    "expectedOutput": "Sum of Even: -2\nSum of Odd: 0"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "Sum of Even: 10\nSum of Odd: 0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def sumEvenOdd(self, arr):\n        # TODO: Implement logic\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    if n > 0:\n        arr = list(map(int, input().split()))\n        Solution().sumEvenOdd(arr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void sumEvenOdd(int[] arr) {\n        // TODO: Implement logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n            new Solution().sumEvenOdd(arr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    sumEvenOdd(arr) {\n        // TODO: Implement logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    let arr = [];\n    if (n > 0) {\n        arr = lines[1].trim().split(/\\s+/).map(Number);\n    }\n    const sol = new Solution();\n    sol.sumEvenOdd(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void sumEvenOdd(vector<int>& arr) {\n        // TODO: Implement logic\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for(int i=0; i<n; i++) cin >> arr[i];\n        Solution().sumEvenOdd(arr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid sumEvenOdd(int arr[], int n) {\n    // TODO: Implement logic\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[n];\n        for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n        sumEvenOdd(arr, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Maintain two sum variables."
+            ]
+        }
+    ]
+}

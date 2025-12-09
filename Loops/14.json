@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check Palindrome Number",
+            "description": "Write a program to check whether a number is palindrome or not.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nPrint 'True' if the number is a palindrome, else 'False'.",
+            "examples": "Sample Input\n121\n\nSample Output\nTrue\n\nExplanation:\n121 read backwards is 121.\n\nSample Input\n123\n\nSample Output\nFalse",
+            "constraints": "0 <= n <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "121",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "123",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "1221",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isPalindrome(self, n):\n        # TODO: Return \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    print(sol.isPalindrome(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String isPalindrome(int n) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.isPalindrome(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isPalindrome(n) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.isPalindrome(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string isPalindrome(int n) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.isPalindrome(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid isPalindrome(int n) {\n    // TODO: Print \"True\" or \"False\"\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    isPalindrome(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Reverse the number and compare it with the original number.",
+                "Store the original number in a temporary variable before reversing."
+            ]
+        }
+    ]
+}

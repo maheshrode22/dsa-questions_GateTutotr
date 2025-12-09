@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Diamond Pattern",
+            "description": "Write a program to print a diamond pattern of stars of height 2n-1.\n\nInput Format:\nA single integer n (half height).\n\nOutput Format:\nPrint the pattern as shown in the examples.",
+            "examples": "Sample Input\n3\n\nSample Output\n  *\n ***\n*****\n ***\n  *\n\nExplanation:\nA diamond with max width 5 is printed.",
+            "constraints": "1 <= n <= 50",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "  *\n ***\n*****\n ***\n  *"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "*"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": " *\n***\n *"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "   *\n  ***\n *****\n*******\n *****\n  ***\n   *"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "    *\n   ***\n  *****\n *******\n*********\n *******\n  *****\n   ***\n    *"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printDiamond(self, n):\n        # TODO: Print the pattern\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printDiamond(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printDiamond(int n) {\n        // TODO: Print the pattern\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printDiamond(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printDiamond(n) {\n        // TODO: Print the pattern\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printDiamond(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printDiamond(int n) {\n        // TODO: Print the pattern\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printDiamond(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printDiamond(int n) {\n    // TODO: Print the pattern\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printDiamond(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Combine a pyramid and an inverted pyramid.",
+                "Handle the middle row carefully to avoid duplication."
+            ]
+        }
+    ]
+}

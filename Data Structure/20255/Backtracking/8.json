@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Combination Sum",
+            "description": "Problem Statement\n\nGiven an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target.\n\nThe same number may be chosen from candidates an unlimited number of times.\n\nBacktracking Approach:\nAt each step, choose a candidate. If sum < target, recurse (allowing same candidate again).\n",
+            "examples": "Sample Input\n4 7\n2 3 6 7\n\nSample Output\n2,2,3 7\n\nExplanation:\n2+2+3 = 7\n7 = 7",
+            "constraints": "1 <= N <= 30\n1 <= candidates[i] <= 200\n1 <= target <= 500",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2030,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 7\n2 3 6 7",
+                    "expectedOutput": "2,2,3 7"
+                },
+                {
+                    "input": "3 8\n2 3 5",
+                    "expectedOutput": "2,2,2,2 2,3,3 3,5"
+                },
+                {
+                    "input": "1 1\n2",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "1 2\n1",
+                    "expectedOutput": "1,1"
+                },
+                {
+                    "input": "2 1\n1 2",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def combinationSum(self, candidates, target):\n        # TODO: Find combinations summing to target\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n, target = map(int, data[0].split())\n    candidates = list(map(int, data[1].split()))\n    sol = Solution()\n    result = sol.combinationSum(candidates, target)\n    result = [sorted(c) for c in result]\n    result.sort()\n    print(' '.join([','.join(map(str, c)) for c in result]))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<Integer>> combinationSum(int[] candidates, int target) {\n        // TODO: Find combinations summing to target\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] firstLine = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(firstLine[0]);\n        int target = Integer.parseInt(firstLine[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] candidates = new int[n];\n        for (int i = 0; i < n; i++) candidates[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        List<List<Integer>> result = sol.combinationSum(candidates, target);\n        for (List<Integer> c : result) Collections.sort(c);\n        result.sort((a, b) -> {\n            int len = Math.min(a.size(), b.size());\n            for (int i = 0; i < len; i++) {\n                if (!a.get(i).equals(b.get(i))) return a.get(i) - b.get(i);\n            }\n            return a.size() - b.size();\n        });\n        List<String> output = new ArrayList<>();\n        for (List<Integer> c : result) {\n            List<String> s = new ArrayList<>();\n            for (int num : c) s.add(String.valueOf(num));\n            output.add(String.join(\",\", s));\n        }\n        System.out.println(String.join(\" \", output));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    combinationSum(candidates, target) {\n        // TODO: Find combinations summing to target\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const [n, target] = lines[0].split(' ').map(Number);\n    const candidates = lines[1].split(' ').map(Number);\n    const sol = new Solution();\n    let result = sol.combinationSum(candidates, target);\n    result = result.map(c => c.sort((a,b) => a-b));\n    result.sort((a, b) => {\n        const len = Math.min(a.length, b.length);\n        for (let i = 0; i < len; i++) {\n            if (a[i] !== b[i]) return a[i] - b[i];\n        }\n        return a.length - b.length;\n    });\n    console.log(result.map(c => c.join(',')).join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {\n        // TODO: Find combinations summing to target\n        return {};\n    }\n};\n\nint main() {\n    int n, target;\n    cin >> n >> target;\n    vector<int> candidates(n);\n    for (int i = 0; i < n; i++) cin >> candidates[i];\n    Solution sol;\n    vector<vector<int>> result = sol.combinationSum(candidates, target);\n    for (auto& c : result) sort(c.begin(), c.end());\n    sort(result.begin(), result.end());\n    for (int i = 0; i < result.size(); i++) {\n        for (int j = 0; j < result[i].size(); j++) {\n            cout << result[i][j] << (j == result[i].size() - 1 ? \"\" : \",\");\n        }\n        cout << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid combinationSum(int candidates[], int n, int target) {\n    // TODO: Find and print combinations\n}\n\nint main() {\n    int n, target;\n    scanf(\"%d %d\", &n, &target);\n    int candidates[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &candidates[i]);\n    combinationSum(candidates, n, target);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Sort candidates first.",
+                "Pass 'start' index to recursion to avoid duplicates (since we can reuse same element)."
+            ]
+        }
+    ]
+}

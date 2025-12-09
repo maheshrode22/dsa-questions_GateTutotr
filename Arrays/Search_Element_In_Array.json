@@ -1,0 +1,63 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Search Element In Array",
+            "description": "Write a Java program to search for a given element `x` in an array of `n` integers. If the element is found, print \"Found\". If not found, print \"Not Found\".",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n3\n\nSample Output\nFound\n\nSample Input\n5\n1 2 3 4 5\n6\n\nSample Output\nNot Found",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i], x <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2034,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 4 5\n3",
+                    "expectedOutput": "Found"
+                },
+                {
+                    "input": "5\n1 2 3 4 5\n6",
+                    "expectedOutput": "Not Found"
+                },
+                {
+                    "input": "1\n10\n10",
+                    "expectedOutput": "Found"
+                },
+                {
+                    "input": "1\n10\n5",
+                    "expectedOutput": "Not Found"
+                },
+                {
+                    "input": "3\n-1 -2 -3\n-2",
+                    "expectedOutput": "Found"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def searchElement(self, arr, x):\n        # TODO: Implement logic\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    if n > 0:\n        arr = list(map(int, input().split()))\n    else:\n        arr = []\n    try:\n        x = int(input())\n    except:\n        x = 0\n    Solution().searchElement(arr, x)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void searchElement(int[] arr, int x) {\n        // TODO: Implement logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n            int x = sc.nextInt();\n            new Solution().searchElement(arr, x);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    searchElement(arr, x) {\n        // TODO: Implement logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    let arr = [];\n    if (n > 0) {\n        arr = lines[1].trim().split(/\\s+/).map(Number);\n    }\n    const x = parseInt(lines[lines.length - 1]);\n    const sol = new Solution();\n    sol.searchElement(arr, x);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void searchElement(vector<int>& arr, int x) {\n        // TODO: Implement logic\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for(int i=0; i<n; i++) cin >> arr[i];\n        int x;\n        cin >> x;\n        Solution().searchElement(arr, x);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid searchElement(int arr[], int n, int x) {\n    // TODO: Implement logic\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[n];\n        for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n        int x;\n        scanf(\"%d\", &x);\n        searchElement(arr, n, x);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the array and compare each element with x."
+            ]
+        }
+    ]
+}

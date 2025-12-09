@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Window Substring",
+            "description": "Problem Statement\n\nGiven two strings S and T, return the minimum window substring of S such that every character in T (including duplicates) is included in the window.\nIf there is no such substring, return the empty string \"\".\n\nReturn the minimum window substring.\n",
+            "examples": "Sample Input\nADOBECODEBANC ABC\n\nSample Output\nBANC\n\nExplanation:\nThe minimum window substring \"BANC\" includes 'A', 'B', and 'C' from string T.\n\nSample Input\na a\n\nSample Output\na",
+            "constraints": "1 <= |S|, |T| <= 10^5\nS and T consist of uppercase and lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "ADOBECODEBANC ABC",
+                    "expectedOutput": "BANC"
+                },
+                {
+                    "input": "a a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "a aa",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "aa aa",
+                    "expectedOutput": "aa"
+                },
+                {
+                    "input": "ab b",
+                    "expectedOutput": "b"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minWindow(self, S, T):\n        # TODO: Return the minimum window substring\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        S, T = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.minWindow(S, T))\n    else:\n        print(\"\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String minWindow(String S, String T) {\n        // TODO: Return the minimum window substring\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"\");\n            return;\n        }\n        String S = parts[0];\n        String T = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.minWindow(S, T));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minWindow(S, T) {\n        // TODO: Return the minimum window substring\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"\");\n        return;\n    }\n    const S = parts[0];\n    const T = parts[1];\n    const sol = new Solution();\n    console.log(sol.minWindow(S, T));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string minWindow(string S, string T) {\n        // TODO: Return the minimum window substring\n        return \"\";\n    }\n};\n\nint main() {\n    string S, T;\n    if (cin >> S >> T) {\n        Solution sol;\n        cout << sol.minWindow(S, T) << endl;\n    } else {\n        cout << \"\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid minWindow(char* S, char* T) {\n    // TODO: Print the minimum window substring\n}\n\nint main() {\n    char S[100005], T[100005];\n    if (scanf(\"%s %s\", S, T) == 2) {\n        minWindow(S, T);\n    } else {\n        printf(\"\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers to create a window.",
+                "Expand the window until it contains all characters of T, then contract it."
+            ]
+        }
+    ]
+}

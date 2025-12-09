@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Sum of Even Numbers",
+            "description": "Write a program to find the sum of all even numbers between 1 to n using a while loop.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nA single integer representing the sum.",
+            "examples": "Sample Input\n5\n\nSample Output\n6\n\nExplanation:\nEven numbers are 2 and 4. Sum = 2 + 4 = 6.",
+            "constraints": "1 <= n <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "30"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "6",
+                    "expectedOutput": "12"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def sumEvenNumbers(self, n):\n        # TODO: Return the sum of even numbers from 1 to n using while loop\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    print(sol.sumEvenNumbers(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int sumEvenNumbers(int n) {\n        // TODO: Return the sum of even numbers from 1 to n using while loop\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.sumEvenNumbers(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    sumEvenNumbers(n) {\n        // TODO: Return the sum of even numbers from 1 to n using while loop\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.sumEvenNumbers(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int sumEvenNumbers(int n) {\n        // TODO: Return the sum of even numbers from 1 to n using while loop\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.sumEvenNumbers(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint sumEvenNumbers(int n) {\n    // TODO: Return the sum of even numbers from 1 to n using while loop\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%d\", sumEvenNumbers(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a sum variable to 0 and a counter to 1.",
+                "Check if counter is even, if so add to sum.",
+                "Increment counter in a loop."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Number Triangle Pattern 1",
+            "description": "Write a program to print a number triangle pattern of height n.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nPrint the pattern as shown in the examples.",
+            "examples": "Sample Input\n3\n\nSample Output\n1\n12\n123\n\nExplanation:\nNumbers from 1 to row number are printed.",
+            "constraints": "1 <= n <= 50",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "1\n12\n123"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1\n12\n123\n1234\n12345"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "1\n12"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "1\n12\n123\n1234"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printNumberTriangle(self, n):\n        # TODO: Print the pattern\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printNumberTriangle(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printNumberTriangle(int n) {\n        // TODO: Print the pattern\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printNumberTriangle(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printNumberTriangle(n) {\n        // TODO: Print the pattern\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printNumberTriangle(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printNumberTriangle(int n) {\n        // TODO: Print the pattern\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printNumberTriangle(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printNumberTriangle(int n) {\n    // TODO: Print the pattern\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printNumberTriangle(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use nested loops.",
+                "Inner loop prints numbers from 1 to current row index."
+            ]
+        }
+    ]
+}

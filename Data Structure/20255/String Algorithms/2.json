@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check Anagram",
+            "description": "Problem Statement\n\nGiven two strings S1 and S2, check if they are anagrams of each other.\nTwo strings are anagrams if they contain the same characters with the same frequencies.\n\nReturn \"True\" if they are anagrams, else \"False\".\n",
+            "examples": "Sample Input\nlisten silent\n\nSample Output\nTrue\n\nExplanation:\nBoth strings contain the same characters.\n\nSample Input\nhello world\n\nSample Output\nFalse",
+            "constraints": "1 <= |S1|, |S2| <= 10^5\nS1 and S2 consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "listen silent",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "triangle integral",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "apple pale",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "a a",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "rat car",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isAnagram(self, S1, S2):\n        # TODO: Return \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        S1, S2 = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.isAnagram(S1, S2))\n    else:\n        print(\"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String isAnagram(String S1, String S2) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"False\");\n            return;\n        }\n        String S1 = parts[0];\n        String S2 = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.isAnagram(S1, S2));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isAnagram(S1, S2) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"False\");\n        return;\n    }\n    const S1 = parts[0];\n    const S2 = parts[1];\n    const sol = new Solution();\n    console.log(sol.isAnagram(S1, S2));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string isAnagram(string S1, string S2) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n};\n\nint main() {\n    string S1, S2;\n    if (cin >> S1 >> S2) {\n        Solution sol;\n        cout << sol.isAnagram(S1, S2) << endl;\n    } else {\n        cout << \"False\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid isAnagram(char* S1, char* S2) {\n    // TODO: Print \"True\" or \"False\"\n}\n\nint main() {\n    char S1[100005], S2[100005];\n    if (scanf(\"%s %s\", S1, S2) == 2) {\n        isAnagram(S1, S2);\n    } else {\n        printf(\"False\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Sort both strings and compare.",
+                "Or use a frequency array/hash map to count characters."
+            ]
+        }
+    ]
+}

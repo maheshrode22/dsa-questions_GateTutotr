@@ -1,0 +1,63 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Missing Elements In Array",
+            "description": "Write a Java program to find missing elements in an array. Given an array of size `n` containing integers in the range `[1, n]`, find all the numbers in the range `[1, n]` that are not present in the array. Print them in increasing order separated by space.",
+            "examples": "Sample Input\n5\n1 1 2 3 5\n\nSample Output\n4\n\nSample Input\n5\n4 3 2 7 8 2 3 1\n\nSample Output\n5 6",
+            "constraints": "1 <= n <= 1000\n1 <= arr[i] <= n",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2034,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5\n1 1 2 3 5",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "8\n4 3 2 7 8 2 3 1",
+                    "expectedOutput": "5 6"
+                },
+                {
+                    "input": "3\n1 1 1",
+                    "expectedOutput": "2 3"
+                },
+                {
+                    "input": "4\n1 2 3 4",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "2\n2 2",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findMissingElements(self, arr):\n        # TODO: Implement logic\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    if n > 0:\n        arr = list(map(int, input().split()))\n        Solution().findMissingElements(arr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findMissingElements(int[] arr) {\n        // TODO: Implement logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n            new Solution().findMissingElements(arr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findMissingElements(arr) {\n        // TODO: Implement logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    let arr = [];\n    if (n > 0) {\n        arr = lines[1].trim().split(/\\s+/).map(Number);\n    }\n    const sol = new Solution();\n    sol.findMissingElements(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findMissingElements(vector<int>& arr) {\n        // TODO: Implement logic\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for(int i=0; i<n; i++) cin >> arr[i];\n        Solution().findMissingElements(arr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findMissingElements(int arr[], int n) {\n    // TODO: Implement logic\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[n];\n        for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n        findMissingElements(arr, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a frequency array or a set to track present elements."
+            ]
+        }
+    ]
+}

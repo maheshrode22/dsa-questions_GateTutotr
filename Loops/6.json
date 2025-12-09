@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Sum of Natural Numbers",
+            "description": "Write a program to find the sum of all natural numbers between 1 to n using a while loop.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nA single integer representing the sum.",
+            "examples": "Sample Input\n5\n\nSample Output\n15\n\nExplanation:\n1 + 2 + 3 + 4 + 5 = 15.",
+            "constraints": "1 <= n <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "55"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "5050"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "6"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def sumNaturalNumbers(self, n):\n        # TODO: Return the sum of numbers from 1 to n using while loop\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    print(sol.sumNaturalNumbers(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int sumNaturalNumbers(int n) {\n        // TODO: Return the sum of numbers from 1 to n using while loop\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.sumNaturalNumbers(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    sumNaturalNumbers(n) {\n        // TODO: Return the sum of numbers from 1 to n using while loop\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.sumNaturalNumbers(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int sumNaturalNumbers(int n) {\n        // TODO: Return the sum of numbers from 1 to n using while loop\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.sumNaturalNumbers(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint sumNaturalNumbers(int n) {\n    // TODO: Return the sum of numbers from 1 to n using while loop\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%d\", sumNaturalNumbers(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a sum variable to 0 and a counter to 1.",
+                "Add the counter to sum and increment counter in a loop."
+            ]
+        }
+    ]
+}

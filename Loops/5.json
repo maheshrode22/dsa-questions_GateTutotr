@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Print Odd Numbers",
+            "description": "Write a program to print all odd numbers between 1 to n using a while loop.\n\nInput Format:\nA single integer n.\n\nOutput Format:\nPrint odd numbers from 1 to n, each on a new line.",
+            "examples": "Sample Input\n10\n\nSample Output\n1\n3\n5\n7\n9\n\nExplanation:\nOdd numbers between 1 and 10 are printed.",
+            "constraints": "1 <= n <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "1\n3\n5\n7\n9"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1\n3\n5"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "8",
+                    "expectedOutput": "1\n3\n5\n7"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printOddNumbers(self, n):\n        # TODO: Print odd numbers from 1 to n using while loop\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printOddNumbers(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printOddNumbers(int n) {\n        // TODO: Print odd numbers from 1 to n using while loop\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printOddNumbers(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printOddNumbers(n) {\n        // TODO: Print odd numbers from 1 to n using while loop\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printOddNumbers(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printOddNumbers(int n) {\n        // TODO: Print odd numbers from 1 to n using while loop\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printOddNumbers(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printOddNumbers(int n) {\n    // TODO: Print odd numbers from 1 to n using while loop\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printOddNumbers(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Initialize a counter to 1.",
+                "Check if the counter is not divisible by 2.",
+                "Increment the counter in a loop."
+            ]
+        }
+    ]
+}

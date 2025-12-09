@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Group Anagrams",
+            "description": "Problem Statement\n\nGiven an array of strings, group the anagrams together.\nYou can return the answer in any order.\n\nReturn a list of groups, where each group is a list of strings.\n",
+            "examples": "Sample Input\n6\neat tea tan ate nat bat\n\nSample Output\nbat\nnat tan\nate eat tea\n\nExplanation:\nThe groups are [\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"].\n\nSample Input\n1\n\n\nSample Output\n\n",
+            "constraints": "1 <= strs.length <= 10^4\n0 <= strs[i].length <= 100\nstrs[i] consists of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "6\neat tea tan ate nat bat",
+                    "expectedOutput": "bat\nnat tan\nate eat tea"
+                },
+                {
+                    "input": "1\na",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "2\na b",
+                    "expectedOutput": "a\nb"
+                },
+                {
+                    "input": "3\nab ba abc",
+                    "expectedOutput": "abc\nab ba"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def groupAnagrams(self, strs):\n        # TODO: Return list of lists of strings\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        print(\"\")\n    else:\n        N = int(input_data[0])\n        strs = input_data[1:]\n        sol = Solution()\n        res = sol.groupAnagrams(strs)\n        # Sort for consistent output verification\n        for group in res:\n            group.sort()\n        res.sort(key=lambda x: (len(x), x[0]))\n        for group in res:\n            print(' '.join(group))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<String>> groupAnagrams(String[] strs) {\n        // TODO: Return list of groups\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String line = br.readLine();\n        if (line == null || line.trim().isEmpty()) return;\n        int N = Integer.parseInt(line.trim());\n        String[] strs = new String[N];\n        if (N > 0) {\n            String[] parts = br.readLine().trim().split(\" \");\n            for(int i=0; i<N; i++) strs[i] = parts[i];\n        }\n        Solution sol = new Solution();\n        List<List<String>> res = sol.groupAnagrams(strs);\n        // Sort for output verification\n        for (List<String> group : res) {\n            Collections.sort(group);\n        }\n        res.sort((a, b) -> {\n            if (a.size() != b.size()) return a.size() - b.size();\n            return a.get(0).compareTo(b.get(0));\n        });\n        for (List<String> group : res) {\n            System.out.println(String.join(\" \", group));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    groupAnagrams(strs) {\n        // TODO: Return list of groups\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length === 0) return;\n    const N = parseInt(parts[0]);\n    const strs = parts.slice(1);\n    const sol = new Solution();\n    const res = sol.groupAnagrams(strs);\n    // Sort for output verification\n    res.forEach(group => group.sort());\n    res.sort((a, b) => {\n        if (a.length !== b.length) return a.length - b.length;\n        return a[0].localeCompare(b[0]);\n    });\n    res.forEach(group => console.log(group.join(' ')));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<string>> groupAnagrams(vector<string>& strs) {\n        // TODO: Return groups\n        return {};\n    }\n};\n\nint main() {\n    int N;\n    if (cin >> N) {\n        vector<string> strs(N);\n        for(int i=0; i<N; i++) cin >> strs[i];\n        Solution sol;\n        vector<vector<string>> res = sol.groupAnagrams(strs);\n        // Sort for output verification\n        for(auto& group : res) sort(group.begin(), group.end());\n        sort(res.begin(), res.end(), [](const vector<string>& a, const vector<string>& b) {\n            if (a.size() != b.size()) return a.size() < b.size();\n            return a[0] < b[0];\n        });\n        for(const auto& group : res) {\n            for(int i=0; i<group.size(); i++) {\n                cout << group[i] << (i == group.size()-1 ? \"\" : \" \");\n            }\n            cout << endl;\n        }\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\n// Helper to print result, implement logic inside\nvoid groupAnagrams(int N, char** strs) {\n    // TODO: Print groups\n}\n\nint main() {\n    int N;\n    if (scanf(\"%d\", &N) == 1) {\n        char** strs = (char**)malloc(N * sizeof(char*));\n        for(int i=0; i<N; i++) {\n            strs[i] = (char*)malloc(105 * sizeof(char));\n            scanf(\"%s\", strs[i]);\n        }\n        groupAnagrams(N, strs);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Map each string to a key representing its character count.",
+                "Strings with the same key are anagrams."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Letter Case Permutation",
+            "description": "Problem Statement\n\nGiven a string S, you can transform every letter individually to be lowercase or uppercase to create another string.\n\nReturn a list of all possible strings we could create.\n\nBacktracking Approach:\nFor each character:\n- If it's a digit, just append it.\n- If it's a letter, branch into two paths: lowercase and uppercase.\n",
+            "examples": "Sample Input\na1b2\n\nSample Output\na1b2 a1B2 A1b2 A1B2\n\nExplanation:\n'a' can be 'a' or 'A'. 'b' can be 'b' or 'B'. Digits remain same.",
+            "constraints": "1 <= |S| <= 12",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2030,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "a1b2",
+                    "expectedOutput": "A1B2 A1b2 a1B2 a1b2"
+                },
+                {
+                    "input": "3z4",
+                    "expectedOutput": "3Z4 3z4"
+                },
+                {
+                    "input": "12345",
+                    "expectedOutput": "12345"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "ABC ABc AbC Abc aBC aBc abC abc"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def letterCasePermutation(self, s):\n        # TODO: Generate all letter case permutations\n        # Return list of strings\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    result = sol.letterCasePermutation(s)\n    print(' '.join(sorted(result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> letterCasePermutation(String s) {\n        // TODO: Generate all letter case permutations\n        // Return list of strings\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        List<String> result = sol.letterCasePermutation(s);\n        Collections.sort(result);\n        System.out.println(String.join(\" \", result));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    letterCasePermutation(s) {\n        // TODO: Generate all letter case permutations\n        // Return list of strings\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    const result = sol.letterCasePermutation(s);\n    result.sort();\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> letterCasePermutation(string s) {\n        // TODO: Generate all letter case permutations\n        // Return list of strings\n        return {};\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    vector<string> result = sol.letterCasePermutation(s);\n    sort(result.begin(), result.end());\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid letterCasePermutation(char* s) {\n    // TODO: Generate all letter case permutations\n    // Print strings separated by space\n}\n\nint main() {\n    char s[15];\n    scanf(\"%s\", s);\n    letterCasePermutation(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Recursively process each character.",
+                "If char is letter, make two calls: one with lowercase, one with uppercase."
+            ]
+        }
+    ]
+}

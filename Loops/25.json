@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "X Pattern",
+            "description": "Write a program to print an X pattern of stars of height n (where n is odd).\n\nInput Format:\nA single odd integer n.\n\nOutput Format:\nPrint the pattern as shown in the examples. Ensure there are no trailing spaces.",
+            "examples": "Sample Input\n3\n\nSample Output\n* *\n *\n* *\n\nExplanation:\nAn X pattern of height 3 is printed.",
+            "constraints": "1 <= n <= 49, n is odd",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "* *\n *\n* *"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "*"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "*   *\n * *\n  *\n * *\n*   *"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "*     *\n *   *\n  * *\n   *\n  * *\n *   *\n*     *"
+                },
+                {
+                    "input": "9",
+                    "expectedOutput": "*       *\n *     *\n  *   *\n   * *\n    *\n   * *\n  *   *\n *     *\n*       *"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printXPattern(self, n):\n        # TODO: Print the pattern\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    sol = Solution()\n    sol.printXPattern(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printXPattern(int n) {\n        // TODO: Print the pattern\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printXPattern(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printXPattern(n) {\n        // TODO: Print the pattern\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printXPattern(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printXPattern(int n) {\n        // TODO: Print the pattern\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    sol.printXPattern(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printXPattern(int n) {\n    // TODO: Print the pattern\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printXPattern(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use nested loops.",
+                "Print star if row index equals column index or row + col equals n + 1."
+            ]
+        }
+    ]
+}
