@@ -1,0 +1,63 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Smallest Missing Element",
+            "description": "Write a program to find the smallest missing element from a sorted array of non-negative integers starting from 0.",
+            "examples": "Sample Input\n8\n0 1 3 4 5 6 7 9\n\nSample Output\n2",
+            "constraints": "1 <= n <= 1000\n0 <= arr[i] <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "8\n0 1 3 4 5 6 7 9",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "4\n0 1 2 3",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1\n1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "3\n0 1 2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "5\n4 5 6 7 8",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findSmallestMissing(self, arr):\n        # TODO: Implement logic\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        if not line1: exit()\n        n = int(line1[0])\n        arr = list(map(int, input().split()))\n        Solution().findSmallestMissing(arr)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findSmallestMissing(int[] arr) {\n        // TODO: Implement logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n            new Solution().findSmallestMissing(arr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findSmallestMissing(arr) {\n        // TODO: Implement logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    let arr = [];\n    if (n > 0) {\n        arr = lines[1].trim().split(/\\s+/).map(Number);\n    }\n    const sol = new Solution();\n    sol.findSmallestMissing(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findSmallestMissing(vector<int>& arr) {\n        // TODO: Implement logic\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for(int i=0; i<n; i++) cin >> arr[i];\n        Solution().findSmallestMissing(arr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findSmallestMissing(int arr[], int n) {\n    // TODO: Implement logic\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[n];\n        for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n        findSmallestMissing(arr, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Since the array is sorted, check if arr[i] == i. The first mismatch is the answer."
+            ]
+        }
+    ]
+}

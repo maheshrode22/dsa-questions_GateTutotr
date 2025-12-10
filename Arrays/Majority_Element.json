@@ -1,0 +1,63 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Majority Element",
+            "description": "A majority element in an array of size n is an element that appears more than n/2 times. Find the majority element of an array. If no majority element exists, print \"There are no Majority Elements in the given array\".",
+            "examples": "Sample Input\n8\n4 8 4 6 7 4 4 8\n\nSample Output\nThere are no Majority Elements in the given array",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "8\n4 8 4 6 7 4 4 8",
+                    "expectedOutput": "There are no Majority Elements in the given array"
+                },
+                {
+                    "input": "9\n3 3 4 2 4 4 2 4 4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "2\n1 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "2\n1 2",
+                    "expectedOutput": "There are no Majority Elements in the given array"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findMajority(self, arr):\n        # TODO: Implement logic\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        if not line1: exit()\n        n = int(line1[0])\n        arr = list(map(int, input().split()))\n        Solution().findMajority(arr)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findMajority(int[] arr) {\n        // TODO: Implement logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n            new Solution().findMajority(arr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findMajority(arr) {\n        // TODO: Implement logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    let arr = [];\n    if (n > 0) {\n        arr = lines[1].trim().split(/\\s+/).map(Number);\n    }\n    const sol = new Solution();\n    sol.findMajority(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findMajority(vector<int>& arr) {\n        // TODO: Implement logic\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for(int i=0; i<n; i++) cin >> arr[i];\n        Solution().findMajority(arr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findMajority(int arr[], int n) {\n    // TODO: Implement logic\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[n];\n        for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n        findMajority(arr, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash map to count frequencies or use Moore's Voting Algorithm."
+            ]
+        }
+    ]
+}

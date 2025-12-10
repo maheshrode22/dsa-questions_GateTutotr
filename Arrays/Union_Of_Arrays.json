@@ -1,0 +1,63 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Union Of Two Arrays",
+            "description": "Write a program to return the union of two unsorted arrays (unique elements only). The result should be printed in sorted order or as they appear, but unique.",
+            "examples": "Sample Input\n3\n1 2 3\n4\n2 3 4 5\n\nSample Output\n1 2 3 4 5",
+            "constraints": "1 <= n1, n2 <= 1000\n-10^9 <= arr[i] <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3\n1 2 3\n4\n2 3 4 5",
+                    "expectedOutput": "1 2 3 4 5"
+                },
+                {
+                    "input": "3\n1 2 3\n3\n1 2 3",
+                    "expectedOutput": "1 2 3"
+                },
+                {
+                    "input": "2\n10 20\n2\n30 40",
+                    "expectedOutput": "10 20 30 40"
+                },
+                {
+                    "input": "1\n1\n1\n2",
+                    "expectedOutput": "1 2"
+                },
+                {
+                    "input": "0\n\n3\n1 2 3",
+                    "expectedOutput": "1 2 3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findUnion(self, arr1, arr2):\n        # TODO: Implement logic\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        if not line1: \n            n1 = 0\n            arr1 = []\n        else:\n            n1 = int(line1[0])\n            if n1 > 0:\n                arr1 = list(map(int, input().split()))\n            else:\n                arr1 = []\n                input() # Consume empty line if any\n        \n        line2 = input().split()\n        if not line2:\n            n2 = 0\n            arr2 = []\n        else:\n            n2 = int(line2[0])\n            if n2 > 0:\n                arr2 = list(map(int, input().split()))\n            else:\n                arr2 = []\n        \n        Solution().findUnion(arr1, arr2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findUnion(int[] arr1, int[] arr2) {\n        // TODO: Implement logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n1 = sc.nextInt();\n            int[] arr1 = new int[n1];\n            for(int i=0; i<n1; i++) arr1[i] = sc.nextInt();\n            \n            int n2 = sc.nextInt();\n            int[] arr2 = new int[n2];\n            for(int i=0; i<n2; i++) arr2[i] = sc.nextInt();\n            \n            new Solution().findUnion(arr1, arr2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findUnion(arr1, arr2) {\n        // TODO: Implement logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    let lineIdx = 0;\n    const n1 = parseInt(lines[lineIdx++]);\n    let arr1 = [];\n    if (n1 > 0) {\n        arr1 = lines[lineIdx++].trim().split(/\\s+/).map(Number);\n    }\n    \n    const n2 = parseInt(lines[lineIdx++]);\n    let arr2 = [];\n    if (n2 > 0) {\n        arr2 = lines[lineIdx++].trim().split(/\\s+/).map(Number);\n    }\n    \n    const sol = new Solution();\n    sol.findUnion(arr1, arr2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findUnion(vector<int>& arr1, vector<int>& arr2) {\n        // TODO: Implement logic\n    }\n};\n\nint main() {\n    int n1, n2;\n    if (cin >> n1) {\n        vector<int> arr1(n1);\n        for(int i=0; i<n1; i++) cin >> arr1[i];\n        \n        cin >> n2;\n        vector<int> arr2(n2);\n        for(int i=0; i<n2; i++) cin >> arr2[i];\n        \n        Solution().findUnion(arr1, arr2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findUnion(int arr1[], int n1, int arr2[], int n2) {\n    // TODO: Implement logic\n}\n\nint main() {\n    int n1, n2;\n    if (scanf(\"%d\", &n1) == 1) {\n        int arr1[n1];\n        for(int i=0; i<n1; i++) scanf(\"%d\", &arr1[i]);\n        \n        scanf(\"%d\", &n2);\n        int arr2[n2];\n        for(int i=0; i<n2; i++) scanf(\"%d\", &arr2[i]);\n        \n        findUnion(arr1, n1, arr2, n2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a Set to store unique elements from both arrays."
+            ]
+        }
+    ]
+}
