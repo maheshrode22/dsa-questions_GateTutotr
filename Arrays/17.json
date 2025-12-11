@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Ceiling in Sorted Array",
+            "description": "Given a sorted array in ascending order and a value x, find the ceiling of x. The ceiling of x is the smallest element in the array greater than or equal to x. If no such element exists, return -1.\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers (sorted in ascending order).\nThird line contains x, the target value.\n\nOutput Format:\nPrint \"The ceiling of x is: Y\" where Y is the ceiling value, or \"The ceiling of x is: -1\" if not found.",
+            "examples": "Sample Input\n8\n1 3 4 7 8 9 9 10\n5\n\nSample Output\nThe ceiling of 5 is: 7\n\nExplanation:\nThe ceiling of 5 is the smallest element >= 5, which is 7.",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9\n-10^9 <= x <= 10^9\nArray is sorted in ascending order",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "8\n1 3 4 7 8 9 9 10\n5",
+                    "expectedOutput": "The ceiling of 5 is: 7"
+                },
+                {
+                    "input": "6\n1 3 5 7 9 11\n4",
+                    "expectedOutput": "The ceiling of 4 is: 5"
+                },
+                {
+                    "input": "5\n1 2 3 4 5\n6",
+                    "expectedOutput": "The ceiling of 6 is: -1"
+                },
+                {
+                    "input": "4\n2 4 6 8\n2",
+                    "expectedOutput": "The ceiling of 2 is: 2"
+                },
+                {
+                    "input": "3\n1 5 10\n0",
+                    "expectedOutput": "The ceiling of 0 is: 1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findCeiling(self, arr, x):\n        # TODO: Find ceiling of x in sorted array\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    x = int(input())\n    Solution().findCeiling(arr, x)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findCeiling(int[] arr, int x) {\n        // TODO: Find ceiling of x in sorted array\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        int x = sc.nextInt();\n        new Solution().findCeiling(arr, x);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findCeiling(arr, x) {\n        // TODO: Find ceiling of x in sorted array\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const x = parseInt(lines[2]);\n    const sol = new Solution();\n    sol.findCeiling(arr, x);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findCeiling(vector<int>& arr, int x) {\n        // TODO: Find ceiling of x in sorted array\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    int x;\n    cin >> x;\n    Solution().findCeiling(arr, x);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findCeiling(int arr[], int n, int x) {\n    // TODO: Find ceiling of x in sorted array\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    int x;\n    scanf(\"%d\", &x);\n    findCeiling(arr, n, x);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use binary search to find the ceiling efficiently.",
+                "Ceiling is the smallest element >= x. If found, return it; otherwise return -1."
+            ]
+        }
+    ]
+}
+

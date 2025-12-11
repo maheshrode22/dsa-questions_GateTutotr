@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Pair with Given Difference",
+            "description": "Find a pair of elements in a sorted array with a given difference.\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers (sorted in ascending order).\nThird line contains diff, the target difference.\n\nOutput Format:\nPrint \"The pair are: (a, b)\" where |a - b| = diff. If no pair exists, print \"No pair found\".",
+            "examples": "Sample Input\n5\n1 15 39 75 92\n53\n\nSample Output\nThe pair are: (39, 92)\n\nExplanation:\n92 - 39 = 53, which is the given difference.",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9\n1 <= diff <= 10^9\nArray is sorted in ascending order",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5\n1 15 39 75 92\n53",
+                    "expectedOutput": "The pair are: (39, 92)"
+                },
+                {
+                    "input": "4\n1 3 5 7\n2",
+                    "expectedOutput": "The pair are: (1, 3)"
+                },
+                {
+                    "input": "3\n1 2 3\n5",
+                    "expectedOutput": "No pair found"
+                },
+                {
+                    "input": "5\n2 4 6 8 10\n4",
+                    "expectedOutput": "The pair are: (2, 6)"
+                },
+                {
+                    "input": "4\n10 20 30 40\n10",
+                    "expectedOutput": "The pair are: (10, 20)"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findPairWithDiff(self, arr, diff):\n        # TODO: Find pair with given difference\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    diff = int(input())\n    Solution().findPairWithDiff(arr, diff)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findPairWithDiff(int[] arr, int diff) {\n        // TODO: Find pair with given difference\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        int diff = sc.nextInt();\n        new Solution().findPairWithDiff(arr, diff);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findPairWithDiff(arr, diff) {\n        // TODO: Find pair with given difference\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const diff = parseInt(lines[2]);\n    const sol = new Solution();\n    sol.findPairWithDiff(arr, diff);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findPairWithDiff(vector<int>& arr, int diff) {\n        // TODO: Find pair with given difference\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    int diff;\n    cin >> diff;\n    Solution().findPairWithDiff(arr, diff);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findPairWithDiff(int arr[], int n, int diff) {\n    // TODO: Find pair with given difference\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    int diff;\n    scanf(\"%d\", &diff);\n    findPairWithDiff(arr, n, diff);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers technique since array is sorted.",
+                "For each element, check if (element + diff) or (element - diff) exists using binary search."
+            ]
+        }
+    ]
+}
+

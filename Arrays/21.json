@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Inversions in Array",
+            "description": "Count the number of inversions in an array. An inversion is a pair (i, j) such that i < j and arr[i] > arr[j].\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers.\n\nOutput Format:\nPrint all inversions in format \"(arr[i], arr[j])\" separated by spaces, then on the next line print \"The number of inversion can be formed from the array is: X\".",
+            "examples": "Sample Input\n5\n1 9 6 4 5\n\nSample Output\nThe inversions are: (9, 6) (9, 4) (9, 5) (6, 4) (6, 5)\nThe number of inversion can be formed from the array is: 5\n\nExplanation:\nInversions: (9,6), (9,4), (9,5), (6,4), (6,5) - total 5 inversions.",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5\n1 9 6 4 5",
+                    "expectedOutput": "The inversions are: (9, 6) (9, 4) (9, 5) (6, 4) (6, 5)\nThe number of inversion can be formed from the array is: 5"
+                },
+                {
+                    "input": "4\n2 4 1 3",
+                    "expectedOutput": "The inversions are: (2, 1) (4, 1) (4, 3)\nThe number of inversion can be formed from the array is: 3"
+                },
+                {
+                    "input": "3\n3 2 1",
+                    "expectedOutput": "The inversions are: (3, 2) (3, 1) (2, 1)\nThe number of inversion can be formed from the array is: 3"
+                },
+                {
+                    "input": "4\n1 2 3 4",
+                    "expectedOutput": "The inversions are:\nThe number of inversion can be formed from the array is: 0"
+                },
+                {
+                    "input": "3\n1 3 2",
+                    "expectedOutput": "The inversions are: (3, 2)\nThe number of inversion can be formed from the array is: 1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countInversions(self, arr):\n        # TODO: Count inversions in array\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    Solution().countInversions(arr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countInversions(int[] arr) {\n        // TODO: Count inversions in array\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        new Solution().countInversions(arr);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countInversions(arr) {\n        // TODO: Count inversions in array\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.countInversions(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countInversions(vector<int>& arr) {\n        // TODO: Count inversions in array\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    Solution().countInversions(arr);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid countInversions(int arr[], int n) {\n    // TODO: Count inversions in array\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    countInversions(arr, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use nested loops to check all pairs (i, j) where i < j and arr[i] > arr[j].",
+                "For efficiency, use merge sort approach to count inversions in O(n log n) time."
+            ]
+        }
+    ]
+}
+

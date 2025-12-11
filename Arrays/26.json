@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Rearrange Positive and Negative Alternatively",
+            "description": "Rearrange positive and negative numbers alternatively in a given array. If positive numbers are more, they appear at the end. If negative numbers are more, they too appear at the end of the array.\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers.\n\nOutput Format:\nPrint \"The rearranged array is:\" followed by the rearranged array with space-separated values.",
+            "examples": "Sample Input\n11\n-4 8 -5 -6 5 -9 7 1 -21 -11 19\n\nSample Output\nThe rearranged array is:\n-4 8 -5 5 -6 7 -9 1 -21 19 -11\n\nExplanation:\nPositive and negative numbers are arranged alternatively. Remaining numbers (more negatives) appear at the end.",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "11\n-4 8 -5 -6 5 -9 7 1 -21 -11 19",
+                    "expectedOutput": "The rearranged array is:\n-4 8 -5 5 -6 7 -9 1 -21 19 -11"
+                },
+                {
+                    "input": "6\n1 -1 2 -2 3 -3",
+                    "expectedOutput": "The rearranged array is:\n-1 1 -2 2 -3 3"
+                },
+                {
+                    "input": "5\n-1 -2 -3 1 2",
+                    "expectedOutput": "The rearranged array is:\n-1 1 -2 2 -3"
+                },
+                {
+                    "input": "5\n1 2 3 -1 -2",
+                    "expectedOutput": "The rearranged array is:\n-1 1 -2 2 3"
+                },
+                {
+                    "input": "4\n-1 2 -3 4",
+                    "expectedOutput": "The rearranged array is:\n-1 2 -3 4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def rearrangeAlternately(self, arr):\n        # TODO: Rearrange positive and negative alternatively\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    Solution().rearrangeAlternately(arr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void rearrangeAlternately(int[] arr) {\n        // TODO: Rearrange positive and negative alternatively\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        new Solution().rearrangeAlternately(arr);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    rearrangeAlternately(arr) {\n        // TODO: Rearrange positive and negative alternatively\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.rearrangeAlternately(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void rearrangeAlternately(vector<int>& arr) {\n        // TODO: Rearrange positive and negative alternatively\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    Solution().rearrangeAlternately(arr);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid rearrangeAlternately(int arr[], int n) {\n    // TODO: Rearrange positive and negative alternatively\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    rearrangeAlternately(arr, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Separate positive and negative numbers into two arrays.",
+                "Fill positions alternatively starting with negative, then place remaining numbers at the end."
+            ]
+        }
+    ]
+}
+

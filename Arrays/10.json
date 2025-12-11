@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Print Pairs with Sum",
+            "description": "Print all pairs of elements whose sum equals a target number. Each pair should be printed as \"(i, j)\" where i and j are the elements. Print pairs in the order they appear (i from first occurrence, j from later occurrence). Each pair on a new line.\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers.\nThird line contains target, the target sum.\n\nOutput Format:\nPrint pairs in format \"(i, j)\" each on a new line. If no pairs found, print nothing.",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n7\n\nSample Output\n(2, 5)\n(3, 4)\n\nExplanation:\nPairs with sum 7: (2, 5) and (3, 4).",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9\n-10^9 <= target <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 4 5\n7",
+                    "expectedOutput": "(2, 5)\n(3, 4)"
+                },
+                {
+                    "input": "4\n10 20 30 40\n50",
+                    "expectedOutput": "(10, 40)\n(20, 30)"
+                },
+                {
+                    "input": "3\n1 2 3\n10",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "4\n-5 0 5 10\n5",
+                    "expectedOutput": "(-5, 10)\n(0, 5)"
+                },
+                {
+                    "input": "6\n1 1 2 2 3 3\n4",
+                    "expectedOutput": "(1, 3)\n(1, 3)\n(1, 3)\n(1, 3)\n(2, 2)"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printPairsWithSum(self, arr, target):\n        # TODO: Print all pairs (i, j) where arr[i] + arr[j] == target\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    target = int(input())\n    Solution().printPairsWithSum(arr, target)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printPairsWithSum(int[] arr, int target) {\n        // TODO: Print all pairs (i, j) where arr[i] + arr[j] == target\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        int target = sc.nextInt();\n        new Solution().printPairsWithSum(arr, target);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printPairsWithSum(arr, target) {\n        // TODO: Print all pairs (i, j) where arr[i] + arr[j] == target\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const target = parseInt(lines[2]);\n    const sol = new Solution();\n    sol.printPairsWithSum(arr, target);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printPairsWithSum(vector<int>& arr, int target) {\n        // TODO: Print all pairs (i, j) where arr[i] + arr[j] == target\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    int target;\n    cin >> target;\n    Solution().printPairsWithSum(arr, target);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printPairsWithSum(int arr[], int n, int target) {\n    // TODO: Print all pairs (i, j) where arr[i] + arr[j] == target\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    int target;\n    scanf(\"%d\", &target);\n    printPairsWithSum(arr, n, target);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use nested loops and check if arr[i] + arr[j] == target."
+            ]
+        }
+    ]
+}
+

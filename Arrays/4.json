@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Replace Multiples of 5 with 5",
+            "description": "Write a Java program to replace all elements in the array that are multiples of 5 with the number 5 itself.",
+            "examples": "Sample Input\n5\n10 12 15 17 20\n\nSample Output\n5 12 5 17 5",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5\n10 12 15 17 20",
+                    "expectedOutput": "5 12 5 17 5"
+                },
+                {
+                    "input": "4\n1 2 3 4",
+                    "expectedOutput": "1 2 3 4"
+                },
+                {
+                    "input": "3\n5 10 15",
+                    "expectedOutput": "5 5 5"
+                },
+                {
+                    "input": "4\n0 5 25 30",
+                    "expectedOutput": "5 5 5 5"
+                },
+                {
+                    "input": "2\n7 13",
+                    "expectedOutput": "7 13"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def replaceMultiplesOf5(self, arr):\n        # TODO: Implement logic\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        if not line1: exit()\n        n = int(line1[0])\n        arr = list(map(int, input().split()))\n        Solution().replaceMultiplesOf5(arr)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void replaceMultiplesOf5(int[] arr) {\n        // TODO: Implement logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n            new Solution().replaceMultiplesOf5(arr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    replaceMultiplesOf5(arr) {\n        // TODO: Implement logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    let arr = [];\n    if (n > 0) {\n        arr = lines[1].trim().split(/\\s+/).map(Number);\n    }\n    const sol = new Solution();\n    sol.replaceMultiplesOf5(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void replaceMultiplesOf5(vector<int>& arr) {\n        // TODO: Implement logic\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for(int i=0; i<n; i++) cin >> arr[i];\n        Solution().replaceMultiplesOf5(arr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid replaceMultiplesOf5(int arr[], int n) {\n    // TODO: Implement logic\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[n];\n        for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n        replaceMultiplesOf5(arr, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use modulo operator (%) to check if element is divisible by 5."
+            ]
+        }
+    ]
+}
+

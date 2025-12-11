@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Difference",
+            "description": "Write a program to find out the maximum difference between any two elements such that the larger element appears after the smaller number.\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers.\n\nOutput Format:\nPrint the two elements that provide maximum difference, followed by the maximum difference value. Format: \"The elements which provide maximum difference is: X, Y\\nThe Maximum difference between two elements in the array is: Z\"",
+            "examples": "Sample Input\n6\n7 9 5 6 13 2\n\nSample Output\nThe elements which provide maximum difference is: 5, 13\nThe Maximum difference between two elements in the array is: 8\n\nExplanation:\nThe maximum difference is 13 - 5 = 8, where 5 appears before 13.",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "6\n7 9 5 6 13 2",
+                    "expectedOutput": "The elements which provide maximum difference is: 5, 13\nThe Maximum difference between two elements in the array is: 8"
+                },
+                {
+                    "input": "5\n2 3 10 6 4 8 1",
+                    "expectedOutput": "The elements which provide maximum difference is: 2, 10\nThe Maximum difference between two elements in the array is: 8"
+                },
+                {
+                    "input": "4\n7 9 5 6",
+                    "expectedOutput": "The elements which provide maximum difference is: 7, 9\nThe Maximum difference between two elements in the array is: 2"
+                },
+                {
+                    "input": "3\n10 9 8",
+                    "expectedOutput": "The elements which provide maximum difference is: 10, 10\nThe Maximum difference between two elements in the array is: 0"
+                },
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "The elements which provide maximum difference is: 1, 5\nThe Maximum difference between two elements in the array is: 4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxDifference(self, arr):\n        # TODO: Find maximum difference with larger element after smaller\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    Solution().maxDifference(arr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void maxDifference(int[] arr) {\n        // TODO: Find maximum difference with larger element after smaller\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        new Solution().maxDifference(arr);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxDifference(arr) {\n        // TODO: Find maximum difference with larger element after smaller\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.maxDifference(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void maxDifference(vector<int>& arr) {\n        // TODO: Find maximum difference with larger element after smaller\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    Solution().maxDifference(arr);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid maxDifference(int arr[], int n) {\n    // TODO: Find maximum difference with larger element after smaller\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    maxDifference(arr, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Track the minimum element seen so far and calculate difference with current element.",
+                "Maintain minimum value and maximum difference while traversing the array."
+            ]
+        }
+    ]
+}
+

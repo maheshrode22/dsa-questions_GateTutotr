@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Print Elements Greater Than X",
+            "description": "Print all elements in the array that are greater than a given number x. Print elements in the same order as they appear in the array, each on a new line. If no elements are greater than x, print nothing.\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers.\nThird line contains x, the threshold value.\n\nOutput Format:\nPrint elements greater than x, each on a new line.",
+            "examples": "Sample Input\n5\n10 20 30 40 50\n25\n\nSample Output\n30\n40\n50\n\nExplanation:\nElements greater than 25 are 30, 40, and 50.",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9\n-10^9 <= x <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5\n10 20 30 40 50\n25",
+                    "expectedOutput": "30\n40\n50"
+                },
+                {
+                    "input": "4\n1 5 10 15\n10",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "3\n1 2 3\n5",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "4\n-5 -2 0 3\n-3",
+                    "expectedOutput": "-2\n0\n3"
+                },
+                {
+                    "input": "5\n100 200 300 400 500\n150",
+                    "expectedOutput": "200\n300\n400\n500"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printGreaterThanX(self, arr, x):\n        # TODO: Print elements greater than x, each on a new line\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    x = int(input())\n    Solution().printGreaterThanX(arr, x)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printGreaterThanX(int[] arr, int x) {\n        // TODO: Print elements greater than x, each on a new line\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        int x = sc.nextInt();\n        new Solution().printGreaterThanX(arr, x);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printGreaterThanX(arr, x) {\n        // TODO: Print elements greater than x, each on a new line\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const x = parseInt(lines[2]);\n    const sol = new Solution();\n    sol.printGreaterThanX(arr, x);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printGreaterThanX(vector<int>& arr, int x) {\n        // TODO: Print elements greater than x, each on a new line\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    int x;\n    cin >> x;\n    Solution().printGreaterThanX(arr, x);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printGreaterThanX(int arr[], int n, int x) {\n    // TODO: Print elements greater than x, each on a new line\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    int x;\n    scanf(\"%d\", &x);\n    printGreaterThanX(arr, n, x);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use if (arr[i] > x) inside the loop to check each element."
+            ]
+        }
+    ]
+}
+

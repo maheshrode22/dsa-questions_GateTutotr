@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Two Elements Sum Closest to Zero",
+            "description": "Find two elements in an array whose sum is closest to zero (minimum absolute sum).\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers.\n\nOutput Format:\nPrint \"The Pair of elements whose sum is minimum are:\" followed by the pair in format \"[a, b]\" on the next line.",
+            "examples": "Sample Input\n10\n38 44 63 -51 -35 19 84 -69 4 -46\n\nSample Output\nThe Pair of elements whose sum is minimum are:\n[44, -46]\n\nExplanation:\nThe sum of 44 and -46 is -2, which has the minimum absolute value.",
+            "constraints": "2 <= n <= 1000\n-10^9 <= arr[i] <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "10\n38 44 63 -51 -35 19 84 -69 4 -46",
+                    "expectedOutput": "The Pair of elements whose sum is minimum are:\n[44, -46]"
+                },
+                {
+                    "input": "6\n1 60 -10 70 -80 85",
+                    "expectedOutput": "The Pair of elements whose sum is minimum are:\n[-80, 85]"
+                },
+                {
+                    "input": "3\n-5 5 10",
+                    "expectedOutput": "The Pair of elements whose sum is minimum are:\n[-5, 5]"
+                },
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "The Pair of elements whose sum is minimum are:\n[1, 2]"
+                },
+                {
+                    "input": "4\n-10 -5 5 10",
+                    "expectedOutput": "The Pair of elements whose sum is minimum are:\n[-10, 10]"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findMinSumPair(self, arr):\n        # TODO: Find two elements whose sum is closest to zero\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    Solution().findMinSumPair(arr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findMinSumPair(int[] arr) {\n        // TODO: Find two elements whose sum is closest to zero\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        new Solution().findMinSumPair(arr);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findMinSumPair(arr) {\n        // TODO: Find two elements whose sum is closest to zero\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.findMinSumPair(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <climits>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findMinSumPair(vector<int>& arr) {\n        // TODO: Find two elements whose sum is closest to zero\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    Solution().findMinSumPair(arr);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <limits.h>\n\nvoid findMinSumPair(int arr[], int n) {\n    // TODO: Find two elements whose sum is closest to zero\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    findMinSumPair(arr, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Sort the array and use two pointers approach.",
+                "Track the minimum absolute sum and return the pair with minimum absolute sum."
+            ]
+        }
+    ]
+}
+

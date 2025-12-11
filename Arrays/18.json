@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Floor and Ceil for Numbers",
+            "description": "Given a sorted array, find the floor and ceiling for numbers from 0 to 10. The floor of x is the greatest element smaller than or equal to x, and the ceiling is the smallest element greater than or equal to x.\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers (sorted in ascending order).\n\nOutput Format:\nFor each number from 0 to 10, print \"Number: X ceiling is: Y floor is: Z\" on a separate line. Use -1 if floor/ceiling doesn't exist.",
+            "examples": "Sample Input\n6\n1 3 5 7 8 9\n\nSample Output\nNumber: 0 ceiling is: 1 floor is: -1\nNumber: 1 ceiling is: 1 floor is: 1\nNumber: 2 ceiling is: 3 floor is: 1\nNumber: 3 ceiling is: 3 floor is: 3\nNumber: 4 ceiling is: 5 floor is: 3\nNumber: 5 ceiling is: 5 floor is: 5\nNumber: 6 ceiling is: 7 floor is: 5\nNumber: 7 ceiling is: 7 floor is: 7\nNumber: 8 ceiling is: 8 floor is: 8\nNumber: 9 ceiling is: 9 floor is: 9\nNumber: 10 ceiling is: -1 floor is: 9",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9\nArray is sorted in ascending order",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "6\n1 3 5 7 8 9",
+                    "expectedOutput": "Number: 0 ceiling is: 1 floor is: -1\nNumber: 1 ceiling is: 1 floor is: 1\nNumber: 2 ceiling is: 3 floor is: 1\nNumber: 3 ceiling is: 3 floor is: 3\nNumber: 4 ceiling is: 5 floor is: 3\nNumber: 5 ceiling is: 5 floor is: 5\nNumber: 6 ceiling is: 7 floor is: 5\nNumber: 7 ceiling is: 7 floor is: 7\nNumber: 8 ceiling is: 8 floor is: 8\nNumber: 9 ceiling is: 9 floor is: 9\nNumber: 10 ceiling is: -1 floor is: 9"
+                },
+                {
+                    "input": "3\n2 5 8",
+                    "expectedOutput": "Number: 0 ceiling is: 2 floor is: -1\nNumber: 1 ceiling is: 2 floor is: -1\nNumber: 2 ceiling is: 2 floor is: 2\nNumber: 3 ceiling is: 5 floor is: 2\nNumber: 4 ceiling is: 5 floor is: 2\nNumber: 5 ceiling is: 5 floor is: 5\nNumber: 6 ceiling is: 8 floor is: 5\nNumber: 7 ceiling is: 8 floor is: 5\nNumber: 8 ceiling is: 8 floor is: 8\nNumber: 9 ceiling is: -1 floor is: 8\nNumber: 10 ceiling is: -1 floor is: 8"
+                },
+                {
+                    "input": "4\n0 1 2 3",
+                    "expectedOutput": "Number: 0 ceiling is: 0 floor is: 0\nNumber: 1 ceiling is: 1 floor is: 1\nNumber: 2 ceiling is: 2 floor is: 2\nNumber: 3 ceiling is: 3 floor is: 3\nNumber: 4 ceiling is: -1 floor is: 3\nNumber: 5 ceiling is: -1 floor is: 3\nNumber: 6 ceiling is: -1 floor is: 3\nNumber: 7 ceiling is: -1 floor is: 3\nNumber: 8 ceiling is: -1 floor is: 3\nNumber: 9 ceiling is: -1 floor is: 3\nNumber: 10 ceiling is: -1 floor is: 3"
+                },
+                {
+                    "input": "2\n5 10",
+                    "expectedOutput": "Number: 0 ceiling is: 5 floor is: -1\nNumber: 1 ceiling is: 5 floor is: -1\nNumber: 2 ceiling is: 5 floor is: -1\nNumber: 3 ceiling is: 5 floor is: -1\nNumber: 4 ceiling is: 5 floor is: -1\nNumber: 5 ceiling is: 5 floor is: 5\nNumber: 6 ceiling is: 10 floor is: 5\nNumber: 7 ceiling is: 10 floor is: 5\nNumber: 8 ceiling is: 10 floor is: 5\nNumber: 9 ceiling is: 10 floor is: 5\nNumber: 10 ceiling is: 10 floor is: 10"
+                },
+                {
+                    "input": "1\n5",
+                    "expectedOutput": "Number: 0 ceiling is: 5 floor is: -1\nNumber: 1 ceiling is: 5 floor is: -1\nNumber: 2 ceiling is: 5 floor is: -1\nNumber: 3 ceiling is: 5 floor is: -1\nNumber: 4 ceiling is: 5 floor is: -1\nNumber: 5 ceiling is: 5 floor is: 5\nNumber: 6 ceiling is: -1 floor is: 5\nNumber: 7 ceiling is: -1 floor is: 5\nNumber: 8 ceiling is: -1 floor is: 5\nNumber: 9 ceiling is: -1 floor is: 5\nNumber: 10 ceiling is: -1 floor is: 5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findFloorAndCeil(self, arr):\n        # TODO: Find floor and ceil for numbers 0-10\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    Solution().findFloorAndCeil(arr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findFloorAndCeil(int[] arr) {\n        // TODO: Find floor and ceil for numbers 0-10\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        new Solution().findFloorAndCeil(arr);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findFloorAndCeil(arr) {\n        // TODO: Find floor and ceil for numbers 0-10\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.findFloorAndCeil(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findFloorAndCeil(vector<int>& arr) {\n        // TODO: Find floor and ceil for numbers 0-10\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    Solution().findFloorAndCeil(arr);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findFloorAndCeil(int arr[], int n) {\n    // TODO: Find floor and ceil for numbers 0-10\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    findFloorAndCeil(arr, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each number from 0 to 10, find its floor and ceiling in the sorted array.",
+                "Use binary search or linear search to find floor and ceiling for each number."
+            ]
+        }
+    ]
+}
+

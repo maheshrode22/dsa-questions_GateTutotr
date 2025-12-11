@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Distinct Pairs for Specific Difference",
+            "description": "Count all distinct pairs in an array with a specific difference. A pair (a, b) is distinct if a != b and |a - b| = diff.\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers.\nThird line contains diff, the target difference.\n\nOutput Format:\nPrint all distinct pairs in format \"[a, b]\" separated by spaces, then on the next line print \"Number of distinct pairs for difference diff are: X\".",
+            "examples": "Sample Input\n8\n5 2 3 7 6 4 9 8\n5\n\nSample Output\nThe distinct pairs for difference 5 are: [7, 2] [8, 3] [9, 4]\nNumber of distinct pairs for difference 5 are: 3\n\nExplanation:\nPairs with difference 5: (7,2), (8,3), (9,4).",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9\n1 <= diff <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "8\n5 2 3 7 6 4 9 8\n5",
+                    "expectedOutput": "The distinct pairs for difference 5 are: [7, 2] [8, 3] [9, 4]\nNumber of distinct pairs for difference 5 are: 3"
+                },
+                {
+                    "input": "5\n1 5 3 4 2\n2",
+                    "expectedOutput": "The distinct pairs for difference 2 are: [3, 1] [5, 3] [4, 2]\nNumber of distinct pairs for difference 2 are: 3"
+                },
+                {
+                    "input": "4\n1 2 3 4\n1",
+                    "expectedOutput": "The distinct pairs for difference 1 are: [2, 1] [3, 2] [4, 3]\nNumber of distinct pairs for difference 1 are: 3"
+                },
+                {
+                    "input": "3\n10 20 30\n15",
+                    "expectedOutput": "The distinct pairs for difference 15 are:\nNumber of distinct pairs for difference 15 are: 0"
+                },
+                {
+                    "input": "5\n5 10 15 20 25\n5",
+                    "expectedOutput": "The distinct pairs for difference 5 are: [10, 5] [15, 10] [20, 15] [25, 20]\nNumber of distinct pairs for difference 5 are: 4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countDistinctPairs(self, arr, diff):\n        # TODO: Count distinct pairs with specific difference\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    diff = int(input())\n    Solution().countDistinctPairs(arr, diff)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countDistinctPairs(int[] arr, int diff) {\n        // TODO: Count distinct pairs with specific difference\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        int diff = sc.nextInt();\n        new Solution().countDistinctPairs(arr, diff);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countDistinctPairs(arr, diff) {\n        // TODO: Count distinct pairs with specific difference\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const diff = parseInt(lines[2]);\n    const sol = new Solution();\n    sol.countDistinctPairs(arr, diff);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countDistinctPairs(vector<int>& arr, int diff) {\n        // TODO: Count distinct pairs with specific difference\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    int diff;\n    cin >> diff;\n    Solution().countDistinctPairs(arr, diff);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid countDistinctPairs(int arr[], int n, int diff) {\n    // TODO: Count distinct pairs with specific difference\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    int diff;\n    scanf(\"%d\", &diff);\n    countDistinctPairs(arr, n, diff);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set or sort the array and use two pointers.",
+                "For each element, check if (element + diff) or (element - diff) exists in the array."
+            ]
+        }
+    ]
+}
+

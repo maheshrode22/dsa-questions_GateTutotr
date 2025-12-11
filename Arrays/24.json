@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "All Combinations of R Elements",
+            "description": "Print all possible combinations of r elements from a given array. Combinations should be printed in lexicographical order.\n\nInput Format:\nFirst line contains n, the size of array.\nSecond line contains n space-separated integers.\nThird line contains r, the number of elements in each combination.\n\nOutput Format:\nPrint \"The combinations are:\" followed by all combinations, each on a new line, with elements space-separated.",
+            "examples": "Sample Input\n5\n1 5 4 6 8\n4\n\nSample Output\nThe combinations are:\n1 5 4 6\n1 5 4 8\n1 5 6 8\n1 4 6 8\n5 4 6 8\n\nExplanation:\nAll combinations of 4 elements from the array of 5 elements.",
+            "constraints": "1 <= n <= 20\n1 <= r <= n\n-10^9 <= arr[i] <= 10^9",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5\n1 5 4 6 8\n4",
+                    "expectedOutput": "The combinations are:\n1 5 4 6\n1 5 4 8\n1 5 6 8\n1 4 6 8\n5 4 6 8"
+                },
+                {
+                    "input": "4\n1 2 3 4\n2",
+                    "expectedOutput": "The combinations are:\n1 2\n1 3\n1 4\n2 3\n2 4\n3 4"
+                },
+                {
+                    "input": "3\n1 2 3\n3",
+                    "expectedOutput": "The combinations are:\n1 2 3"
+                },
+                {
+                    "input": "4\n10 20 30 40\n1",
+                    "expectedOutput": "The combinations are:\n10\n20\n30\n40"
+                },
+                {
+                    "input": "5\n1 2 3 4 5\n3",
+                    "expectedOutput": "The combinations are:\n1 2 3\n1 2 4\n1 2 5\n1 3 4\n1 3 5\n1 4 5\n2 3 4\n2 3 5\n2 4 5\n3 4 5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printCombinations(self, arr, r):\n        # TODO: Print all combinations of r elements\n        pass\n\nif __name__ == '__main__':\n    n = int(input())\n    arr = list(map(int, input().split()))\n    r = int(input())\n    Solution().printCombinations(arr, r)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printCombinations(int[] arr, int r) {\n        // TODO: Print all combinations of r elements\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        int r = sc.nextInt();\n        new Solution().printCombinations(arr, r);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printCombinations(arr, r) {\n        // TODO: Print all combinations of r elements\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const r = parseInt(lines[2]);\n    const sol = new Solution();\n    sol.printCombinations(arr, r);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printCombinations(vector<int>& arr, int r) {\n        // TODO: Print all combinations of r elements\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    int r;\n    cin >> r;\n    Solution().printCombinations(arr, r);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printCombinations(int arr[], int n, int r) {\n    // TODO: Print all combinations of r elements\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    int r;\n    scanf(\"%d\", &r);\n    printCombinations(arr, n, r);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking or recursion to generate all combinations.",
+                "Sort the array first to ensure lexicographical order in output."
+            ]
+        }
+    ]
+}
+
