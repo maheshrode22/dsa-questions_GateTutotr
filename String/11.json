@@ -1,0 +1,594 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if Two Strings are Anagrams",
+            "description": "Check if two given strings are anagrams of each other. Two strings are anagrams if they contain the same characters in the same frequency (ignoring case). Print \"true\" if anagrams, otherwise print \"false\".\n\nInput Format:\nFirst line contains first string.\nSecond line contains second string.\n\nOutput Format:\nPrint \"true\" if anagrams, otherwise print \"false\".",
+            "examples": "Sample Input\nlisten\nsilent\n\nSample Output\ntrue\n\nSample Input\nhello\nworld\n\nSample Output\nfalse\n\nExplanation:\n\"listen\" and \"silent\" contain same letters (l, i, s, t, e, n), so they are anagrams.",
+            "constraints": "1 <= length of each string <= 1000",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "listen\nsilent",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "hello\nworld",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "aabbcc\nccbbaa",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "abc\nabcd",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "Listen\nSilent",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def areAnagrams(self, s1, s2):\n        # TODO: Check if two strings are anagrams (case-insensitive)\n        pass\n\nif __name__ == '__main__':\n    try:\n        s1 = input().strip()\n        s2 = input().strip()\n        Solution().areAnagrams(s1, s2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void areAnagrams(String s1, String s2) {\n        // TODO: Check if two strings are anagrams (case-insensitive)\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s1 = sc.nextLine();\n            String s2 = sc.nextLine();\n            new Solution().areAnagrams(s1, s2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    areAnagrams(s1, s2) {\n        // TODO: Check if two strings are anagrams (case-insensitive)\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s1 = lines[0];\n    const s2 = lines[1];\n    const sol = new Solution();\n    sol.areAnagrams(s1, s2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void areAnagrams(string s1, string s2) {\n        // TODO: Check if two strings are anagrams (case-insensitive)\n    }\n};\n\nint main() {\n    string s1, s2;\n    if (getline(cin, s1) && getline(cin, s2)) {\n        Solution().areAnagrams(s1, s2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid areAnagrams(char s1[], char s2[]) {\n    // TODO: Check if two strings are anagrams (case-insensitive)\n}\n\nint main() {\n    char s1[1001], s2[1001];\n    if (fgets(s1, sizeof(s1), stdin) && fgets(s2, sizeof(s2), stdin)) {\n        s1[strcspn(s1, \"\\n\")] = 0;\n        s2[strcspn(s2, \"\\n\")] = 0;\n        areAnagrams(s1, s2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Count frequency of each character in both strings. If frequencies match (ignoring case), they are anagrams."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find First Non-Repeating Character",
+            "description": "Find and print the first non-repeating character in a string. If all characters repeat, print \"No non-repeating character\".\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the first non-repeating character, or \"No non-repeating character\" if none exists.",
+            "examples": "Sample Input\nprogramming\n\nSample Output\np\n\nSample Input\naabbcc\n\nSample Output\nNo non-repeating character\n\nExplanation:\nIn \"programming\", 'p' is the first character that appears only once.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "programming",
+                    "expectedOutput": "p"
+                },
+                {
+                    "input": "aabbcc",
+                    "expectedOutput": "No non-repeating character"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "aab",
+                    "expectedOutput": "b"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "h"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def firstNonRepeating(self, s):\n        # TODO: Find first non-repeating character\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().firstNonRepeating(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void firstNonRepeating(String s) {\n        // TODO: Find first non-repeating character\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().firstNonRepeating(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    firstNonRepeating(s) {\n        // TODO: Find first non-repeating character\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.firstNonRepeating(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    void firstNonRepeating(string s) {\n        // TODO: Find first non-repeating character\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().firstNonRepeating(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid firstNonRepeating(char s[]) {\n    // TODO: Find first non-repeating character\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        firstNonRepeating(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Count frequency of each character. Then iterate through string and find first character with frequency 1."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Remove All Duplicates from String",
+            "description": "Remove all duplicate characters from the string, keeping only the first occurrence of each character. Print the resulting string.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string with all duplicates removed, keeping first occurrence.",
+            "examples": "Sample Input\nprogramming\n\nSample Output\nprogamin\n\nSample Input\naabbcc\n\nSample Output\nabc\n\nExplanation:\nIn \"programming\", after removing duplicates: p-r-o-g-a-m-i-n (removed second 'r', 'm', 'g').",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "programming",
+                    "expectedOutput": "progamin"
+                },
+                {
+                    "input": "aabbcc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "helo"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "java",
+                    "expectedOutput": "jav"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def removeDuplicates(self, s):\n        # TODO: Remove all duplicates, keeping first occurrence\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().removeDuplicates(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void removeDuplicates(String s) {\n        // TODO: Remove all duplicates, keeping first occurrence\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().removeDuplicates(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    removeDuplicates(s) {\n        // TODO: Remove all duplicates, keeping first occurrence\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.removeDuplicates(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_set>\nusing namespace std;\n\nclass Solution {\npublic:\n    void removeDuplicates(string s) {\n        // TODO: Remove all duplicates, keeping first occurrence\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().removeDuplicates(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid removeDuplicates(char s[]) {\n    // TODO: Remove all duplicates, keeping first occurrence\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        removeDuplicates(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a set or boolean array to track seen characters. Iterate through string and only add characters not seen before."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Count Frequency of Each Character",
+            "description": "Count and print the frequency of each character in the string. Print characters in the order they first appear, with their frequencies.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint each character and its frequency in the format \"character: frequency\", one per line, in order of first appearance.",
+            "examples": "Sample Input\nprogramming\n\nSample Output\np: 1\nr: 2\no: 1\ng: 2\na: 1\nm: 2\ni: 1\nn: 1\n\nExplanation:\nCharacters appear in order: p, r, o, g, a, m, i, n with their respective frequencies.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "programming",
+                    "expectedOutput": "p: 1\nr: 2\no: 1\ng: 2\na: 1\nm: 2\ni: 1\nn: 1"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "h: 1\ne: 1\nl: 2\no: 1"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "a: 1\nb: 1\nc: 1"
+                },
+                {
+                    "input": "aabbcc",
+                    "expectedOutput": "a: 2\nb: 2\nc: 2"
+                },
+                {
+                    "input": "java",
+                    "expectedOutput": "j: 1\na: 2\nv: 1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countFrequency(self, s):\n        # TODO: Count frequency of each character in order of first appearance\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().countFrequency(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countFrequency(String s) {\n        // TODO: Count frequency of each character in order of first appearance\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().countFrequency(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countFrequency(s) {\n        // TODO: Count frequency of each character in order of first appearance\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.countFrequency(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countFrequency(string s) {\n        // TODO: Count frequency of each character in order of first appearance\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().countFrequency(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid countFrequency(char s[]) {\n    // TODO: Count frequency of each character in order of first appearance\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        countFrequency(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Count frequency of all characters. Then iterate through string in original order and print only when you see character for first time."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if String Has All Unique Characters",
+            "description": "Check if the given string has all unique characters (no character repeats). Print \"true\" if all characters are unique, otherwise print \"false\".\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint \"true\" if all characters are unique, otherwise print \"false\".",
+            "examples": "Sample Input\nabc\n\nSample Output\ntrue\n\nSample Input\nhello\n\nSample Output\nfalse\n\nExplanation:\n\"abc\" has all unique characters. \"hello\" has 'l' repeated, so it's false.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abc",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "programming",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "abcdef",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def hasAllUnique(self, s):\n        # TODO: Check if all characters are unique\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().hasAllUnique(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void hasAllUnique(String s) {\n        // TODO: Check if all characters are unique\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().hasAllUnique(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    hasAllUnique(s) {\n        // TODO: Check if all characters are unique\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.hasAllUnique(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_set>\nusing namespace std;\n\nclass Solution {\npublic:\n    void hasAllUnique(string s) {\n        // TODO: Check if all characters are unique\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().hasAllUnique(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid hasAllUnique(char s[]) {\n    // TODO: Check if all characters are unique\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        hasAllUnique(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a set to track seen characters. If a character is already in set, return false. Otherwise, add it to set."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Reverse Words in a String",
+            "description": "Reverse the order of words in a given string. Words are separated by spaces. Print the string with words reversed.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string with words in reverse order.",
+            "examples": "Sample Input\nHello World Java\n\nSample Output\nJava World Hello\n\nSample Input\nthe sky is blue\n\nSample Output\nblue is sky the\n\nExplanation:\nReverse the order of words while keeping each word intact.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "Hello World Java",
+                    "expectedOutput": "Java World Hello"
+                },
+                {
+                    "input": "the sky is blue",
+                    "expectedOutput": "blue is sky the"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "one two three",
+                    "expectedOutput": "three two one"
+                },
+                {
+                    "input": "programming is fun",
+                    "expectedOutput": "fun is programming"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def reverseWords(self, s):\n        # TODO: Reverse the order of words\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().reverseWords(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void reverseWords(String s) {\n        // TODO: Reverse the order of words\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().reverseWords(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    reverseWords(s) {\n        // TODO: Reverse the order of words\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.reverseWords(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <sstream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void reverseWords(string s) {\n        // TODO: Reverse the order of words\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().reverseWords(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid reverseWords(char s[]) {\n    // TODO: Reverse the order of words\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        reverseWords(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Split string into words, reverse the array of words, then join them back with spaces."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if One String is Rotation of Another",
+            "description": "Check if string s2 is a rotation of string s1. A rotation means shifting characters circularly. For example, \"rotation\" is a rotation of \"tionrota\". Print \"true\" if s2 is a rotation of s1, otherwise print \"false\".\n\nInput Format:\nFirst line contains first string s1.\nSecond line contains second string s2.\n\nOutput Format:\nPrint \"true\" if s2 is rotation of s1, otherwise print \"false\".",
+            "examples": "Sample Input\nrotation\ntionrota\n\nSample Output\ntrue\n\nSample Input\nhello\nworld\n\nSample Output\nfalse\n\nExplanation:\n\"tionrota\" is obtained by rotating \"rotation\" - shifting characters circularly.",
+            "constraints": "1 <= length of each string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "rotation\ntionrota",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "hello\nworld",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "abc\ncab",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "abc\nbca",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "java\navaj",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isRotation(self, s1, s2):\n        # TODO: Check if s2 is rotation of s1\n        pass\n\nif __name__ == '__main__':\n    try:\n        s1 = input().strip()\n        s2 = input().strip()\n        Solution().isRotation(s1, s2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void isRotation(String s1, String s2) {\n        // TODO: Check if s2 is rotation of s1\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s1 = sc.nextLine();\n            String s2 = sc.nextLine();\n            new Solution().isRotation(s1, s2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isRotation(s1, s2) {\n        // TODO: Check if s2 is rotation of s1\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s1 = lines[0];\n    const s2 = lines[1];\n    const sol = new Solution();\n    sol.isRotation(s1, s2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void isRotation(string s1, string s2) {\n        // TODO: Check if s2 is rotation of s1\n    }\n};\n\nint main() {\n    string s1, s2;\n    if (getline(cin, s1) && getline(cin, s2)) {\n        Solution().isRotation(s1, s2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid isRotation(char s1[], char s2[]) {\n    // TODO: Check if s2 is rotation of s1\n}\n\nint main() {\n    char s1[1001], s2[1001];\n    if (fgets(s1, sizeof(s1), stdin) && fgets(s2, sizeof(s2), stdin)) {\n        s1[strcspn(s1, \"\\n\")] = 0;\n        s2[strcspn(s2, \"\\n\")] = 0;\n        isRotation(s1, s2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Concatenate s1 with itself. If s2 is a substring of this concatenated string and lengths match, it's a rotation."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Count Substrings with Same First and Last Character",
+            "description": "Count the number of substrings in a given string that have the same first and last character. Print the count.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the count of substrings with same first and last character.",
+            "examples": "Sample Input\naba\n\nSample Output\n4\n\nSample Input\nabc\n\nSample Output\n3\n\nExplanation:\nFor \"aba\": substrings are \"a\", \"b\", \"a\", \"ab\", \"ba\", \"aba\". Those with same first and last: \"a\", \"a\", \"aba\", \"aba\" = 4 (note: substring \"aba\" appears in multiple positions). Actually, for \"aba\": \"a\"(0-0), \"b\"(1-1), \"a\"(2-2), \"aba\"(0-2) = 4.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "aba",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "aaa",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "ababa",
+                    "expectedOutput": "9"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countSubstrings(self, s):\n        # TODO: Count substrings with same first and last character\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().countSubstrings(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countSubstrings(String s) {\n        // TODO: Count substrings with same first and last character\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().countSubstrings(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countSubstrings(s) {\n        // TODO: Count substrings with same first and last character\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.countSubstrings(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countSubstrings(string s) {\n        // TODO: Count substrings with same first and last character\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().countSubstrings(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid countSubstrings(char s[]) {\n    // TODO: Count substrings with same first and last character\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        countSubstrings(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each starting position, check all substrings starting from that position. Count those where first and last characters match."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Longest Common Prefix",
+            "description": "Given an array of strings, find the longest common prefix string. If there is no common prefix, print an empty string. For this problem, the input will be a single string containing space-separated words.\n\nInput Format:\nFirst line contains space-separated strings.\n\nOutput Format:\nPrint the longest common prefix.",
+            "examples": "Sample Input\nflower flow flight\n\nSample Output\nfl\n\nSample Input\ndog racecar car\n\nSample Output\n\n\nExplanation:\nFor \"flower flow flight\", common prefix is \"fl\". For \"dog racecar car\", there is no common prefix.",
+            "constraints": "1 <= number of strings <= 100\n1 <= length of each string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "flower flow flight",
+                    "expectedOutput": "fl"
+                },
+                {
+                    "input": "dog racecar car",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "abc abcd abcde",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "java javascript",
+                    "expectedOutput": "java"
+                },
+                {
+                    "input": "hello hell help",
+                    "expectedOutput": "hel"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestCommonPrefix(self, words):\n        # TODO: Find longest common prefix among all words\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        words = s.split()\n        Solution().longestCommonPrefix(words)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void longestCommonPrefix(String[] words) {\n        // TODO: Find longest common prefix among all words\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String line = sc.nextLine();\n            String[] words = line.split(\" \");\n            new Solution().longestCommonPrefix(words);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestCommonPrefix(words) {\n        // TODO: Find longest common prefix among all words\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const words = s.split(/\\s+/);\n    const sol = new Solution();\n    sol.longestCommonPrefix(words);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <sstream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void longestCommonPrefix(vector<string>& words) {\n        // TODO: Find longest common prefix among all words\n    }\n};\n\nint main() {\n    string line;\n    if (getline(cin, line)) {\n        stringstream ss(line);\n        vector<string> words;\n        string word;\n        while (ss >> word) {\n            words.push_back(word);\n        }\n        Solution().longestCommonPrefix(words);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid longestCommonPrefix(char words[][1001], int n) {\n    // TODO: Find longest common prefix among all words\n}\n\nint main() {\n    char line[10001];\n    if (fgets(line, sizeof(line), stdin)) {\n        line[strcspn(line, \"\\n\")] = 0;\n        char words[101][1001];\n        int n = 0;\n        char* token = strtok(line, \" \");\n        while (token && n < 100) {\n            strcpy(words[n++], token);\n            token = strtok(NULL, \" \");\n        }\n        longestCommonPrefix(words, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare characters position by position. Start with first character of all strings, then second, etc. Stop when characters don't match."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Longest Palindrome Substring",
+            "description": "Find and print the longest palindrome substring in the given string. If multiple palindromes have the same maximum length, print the first one.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the longest palindrome substring.",
+            "examples": "Sample Input\nbabad\n\nSample Output\nbab\n\nSample Input\ncbbd\n\nSample Output\nbb\n\nExplanation:\nFor \"babad\", palindromes include \"bab\", \"aba\", etc. Longest is \"bab\" (or \"aba\", print first one).",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "babad",
+                    "expectedOutput": "bab"
+                },
+                {
+                    "input": "cbbd",
+                    "expectedOutput": "bb"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "racecar",
+                    "expectedOutput": "racecar"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "a"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestPalindrome(self, s):\n        # TODO: Find longest palindrome substring\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().longestPalindrome(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void longestPalindrome(String s) {\n        // TODO: Find longest palindrome substring\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().longestPalindrome(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestPalindrome(s) {\n        // TODO: Find longest palindrome substring\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.longestPalindrome(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void longestPalindrome(string s) {\n        // TODO: Find longest palindrome substring\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().longestPalindrome(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid longestPalindrome(char s[]) {\n    // TODO: Find longest palindrome substring\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        longestPalindrome(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each position, expand around center (both odd and even length palindromes). Keep track of longest palindrome found."
+            ]
+        }
+    ]
+}

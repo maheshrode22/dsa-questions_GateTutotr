@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check Profit or Loss",
+            "description": "Given the cost price (CP) and selling price (SP) of an item, determine if there is a profit, loss, or no profit no loss.\n- If SP > CP: Print \"Profit\"\n- If SP < CP: Print \"Loss\"\n- If SP == CP: Print \"No Profit No Loss\"\n\nInput Format:\nTwo integers separated by space representing cost price and selling price.\n\nOutput Format:\nPrint \"Profit\", \"Loss\", or \"No Profit No Loss\".",
+            "examples": "Sample Input\n100 120\n\nSample Output\nProfit\n\nSample Input\n100 80\n\nSample Output\nLoss\n\nSample Input\n100 100\n\nSample Output\nNo Profit No Loss\n\nExplanation:\nCompare selling price with cost price using if-else conditions.",
+            "constraints": "1 <= CP, SP <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "100 120",
+                    "expectedOutput": "Profit"
+                },
+                {
+                    "input": "100 80",
+                    "expectedOutput": "Loss"
+                },
+                {
+                    "input": "100 100",
+                    "expectedOutput": "No Profit No Loss"
+                },
+                {
+                    "input": "500 600",
+                    "expectedOutput": "Profit"
+                },
+                {
+                    "input": "200 150",
+                    "expectedOutput": "Loss"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkProfitLoss(self, cp, sp):\n        # TODO: Check profit or loss using conditional statements\n        pass\n\nif __name__ == '__main__':\n    try:\n        cp, sp = map(int, input().split())\n        Solution().checkProfitLoss(cp, sp)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkProfitLoss(int cp, int sp) {\n        // TODO: Check profit or loss using conditional statements\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int cp = sc.nextInt();\n            int sp = sc.nextInt();\n            new Solution().checkProfitLoss(cp, sp);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkProfitLoss(cp, sp) {\n        // TODO: Check profit or loss using conditional statements\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.checkProfitLoss(nums[0], nums[1]);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkProfitLoss(int cp, int sp) {\n        // TODO: Check profit or loss using conditional statements\n    }\n};\n\nint main() {\n    int cp, sp;\n    if (cin >> cp >> sp) {\n        Solution().checkProfitLoss(cp, sp);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid checkProfitLoss(int cp, int sp) {\n    // TODO: Check profit or loss using conditional statements\n}\n\nint main() {\n    int cp, sp;\n    if (scanf(\"%d %d\", &cp, &sp) == 2) {\n        checkProfitLoss(cp, sp);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare SP with CP: if SP > CP then Profit, else if SP < CP then Loss, else No Profit No Loss."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find All Occurrences of Substring",
+            "description": "Find and print the starting indices of all occurrences of a substring in a string. Print indices separated by spaces. If no occurrences found, print -1.\n\nInput Format:\nFirst line contains the main string.\nSecond line contains the substring to search for.\n\nOutput Format:\nPrint starting indices of all occurrences separated by spaces, or -1 if not found.",
+            "examples": "Sample Input\nabababab\nabab\n\nSample Output\n0 2 4\n\nSample Input\nhello world\nworld\n\nSample Output\n6\n\nSample Input\nabc\ndef\n\nSample Output\n-1\n\nExplanation:\n\"abab\" occurs at indices 0, 2, and 4 in \"abababab\".",
+            "constraints": "1 <= length of main string <= 1000\n1 <= length of substring <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abababab\nabab",
+                    "expectedOutput": "0 2 4"
+                },
+                {
+                    "input": "hello world\nworld",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "abc\ndef",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "aaaaa\naa",
+                    "expectedOutput": "0 1 2 3"
+                },
+                {
+                    "input": "test\ntest",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findAllOccurrences(self, s, substr):\n        # TODO: Find all starting indices of substr in s\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        substr = input().strip()\n        Solution().findAllOccurrences(s, substr)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findAllOccurrences(String s, String substr) {\n        // TODO: Find all starting indices of substr in s\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String substr = sc.nextLine();\n            new Solution().findAllOccurrences(s, substr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findAllOccurrences(s, substr) {\n        // TODO: Find all starting indices of substr in s\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const substr = lines[1];\n    const sol = new Solution();\n    sol.findAllOccurrences(s, substr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findAllOccurrences(string s, string substr) {\n        // TODO: Find all starting indices of substr in s\n    }\n};\n\nint main() {\n    string s, substr;\n    if (getline(cin, s) && getline(cin, substr)) {\n        Solution().findAllOccurrences(s, substr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid findAllOccurrences(char s[], char substr[]) {\n    // TODO: Find all starting indices of substr in s\n}\n\nint main() {\n    char s[1001], substr[1001];\n    if (fgets(s, sizeof(s), stdin) && fgets(substr, sizeof(substr), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        substr[strcspn(substr, \"\\n\")] = 0;\n        findAllOccurrences(s, substr);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use sliding window to check each position. For each starting position, check if substring matches."
+            ]
+        }
+    ]
+}
+

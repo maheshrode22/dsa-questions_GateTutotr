@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Maximum of Four Numbers",
+            "description": "Given four numbers, find and print the maximum among them using nested conditional statements.\n\nInput Format:\nFour integers separated by space.\n\nOutput Format:\nPrint the maximum number.",
+            "examples": "Sample Input\n10 25 15 30\n\nSample Output\n30\n\nSample Input\n-5 -2 -8 -1\n\nSample Output\n-1\n\nSample Input\n100 100 100 100\n\nSample Output\n100\n\nExplanation:\nUse nested if-else statements to compare all four numbers.",
+            "constraints": "-10^9 <= numbers <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "10 25 15 30",
+                    "expectedOutput": "30"
+                },
+                {
+                    "input": "-5 -2 -8 -1",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "100 100 100 100",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "5 10 15 8",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "0 -1 1 -2",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findMaxFour(self, a, b, c, d):\n        # TODO: Find maximum of four numbers using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        a, b, c, d = map(int, input().split())\n        Solution().findMaxFour(a, b, c, d)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findMaxFour(int a, int b, int c, int d) {\n        // TODO: Find maximum of four numbers using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int a = sc.nextInt();\n            int b = sc.nextInt();\n            int c = sc.nextInt();\n            int d = sc.nextInt();\n            new Solution().findMaxFour(a, b, c, d);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findMaxFour(a, b, c, d) {\n        // TODO: Find maximum of four numbers using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.findMaxFour(nums[0], nums[1], nums[2], nums[3]);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findMaxFour(int a, int b, int c, int d) {\n        // TODO: Find maximum of four numbers using nested conditions\n    }\n};\n\nint main() {\n    int a, b, c, d;\n    if (cin >> a >> b >> c >> d) {\n        Solution().findMaxFour(a, b, c, d);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findMaxFour(int a, int b, int c, int d) {\n    // TODO: Find maximum of four numbers using nested conditions\n}\n\nint main() {\n    int a, b, c, d;\n    if (scanf(\"%d %d %d %d\", &a, &b, &c, &d) == 4) {\n        findMaxFour(a, b, c, d);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare first two to get max1, compare next two to get max2, then compare max1 and max2."
+            ]
+        }
+    ]
+}
+

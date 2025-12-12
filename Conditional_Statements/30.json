@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Determine Zodiac Sign and Compatibility",
+            "description": "Given birth dates of two people, determine their zodiac signs and compatibility.\n\nZodiac signs (by month and day):\n- Aries: March 21 - April 19\n- Taurus: April 20 - May 20\n- Gemini: May 21 - June 20\n- Cancer: June 21 - July 22\n- Leo: July 23 - August 22\n- Virgo: August 23 - September 22\n- Libra: September 23 - October 22\n- Scorpio: October 23 - November 21\n- Sagittarius: November 22 - December 21\n- Capricorn: December 22 - January 19\n- Aquarius: January 20 - February 18\n- Pisces: February 19 - March 20\n\nCompatibility:\n- Fire signs (Aries, Leo, Sagittarius) compatible with Air (Gemini, Libra, Aquarius)\n- Water signs (Cancer, Scorpio, Pisces) compatible with Earth (Taurus, Virgo, Capricorn)\n- Same element: \"Very Compatible\"\n- Compatible element: \"Compatible\"\n- Otherwise: \"Not Compatible\"\n\nPrint:\n- First person's sign\n- Second person's sign\n- Compatibility\n\nInput Format:\nFirst line: day1 month1\nSecond line: day2 month2\n\nOutput Format:\nPrint three lines: sign1, sign2, compatibility",
+            "examples": "Sample Input\n15 3\n20 4\n\nSample Output\nPisces\nAries\nNot Compatible\n\nSample Input\n5 8\n10 11\n\nSample Output\nLeo\nScorpio\nNot Compatible\n\nSample Input\n1 6\n15 9\n\nSample Output\nGemini\nVirgo\nCompatible\n\nExplanation:\nDetermine signs using date ranges with careful boundary handling, then check element compatibility using nested conditions.",
+            "constraints": "Valid dates (accounting for month lengths)",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "15 3\n20 4",
+                    "expectedOutput": "Pisces\nTaurus\nCompatible"
+                },
+                {
+                    "input": "5 8\n10 11",
+                    "expectedOutput": "Leo\nScorpio\nNot Compatible"
+                },
+                {
+                    "input": "1 6\n15 9",
+                    "expectedOutput": "Gemini\nVirgo\nNot Compatible"
+                },
+                {
+                    "input": "25 7\n12 2",
+                    "expectedOutput": "Leo\nAquarius\nVery Compatible"
+                },
+                {
+                    "input": "15 4\n22 10",
+                    "expectedOutput": "Aries\nLibra\nVery Compatible"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def determineZodiacCompatibility(self, d1, m1, d2, m2):\n        # TODO: Determine zodiac signs and compatibility using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        d1, m1 = map(int, input().split())\n        d2, m2 = map(int, input().split())\n        Solution().determineZodiacCompatibility(d1, m1, d2, m2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void determineZodiacCompatibility(int d1, int m1, int d2, int m2) {\n        // TODO: Determine zodiac signs and compatibility using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int d1 = sc.nextInt();\n            int m1 = sc.nextInt();\n            int d2 = sc.nextInt();\n            int m2 = sc.nextInt();\n            new Solution().determineZodiacCompatibility(d1, m1, d2, m2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    determineZodiacCompatibility(d1, m1, d2, m2) {\n        // TODO: Determine zodiac signs and compatibility using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const date1 = lines[0].trim().split(/\\s+/).map(Number);\n    const date2 = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.determineZodiacCompatibility(date1[0], date1[1], date2[0], date2[1]);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void determineZodiacCompatibility(int d1, int m1, int d2, int m2) {\n        // TODO: Determine zodiac signs and compatibility using nested conditions\n    }\n};\n\nint main() {\n    int d1, m1, d2, m2;\n    if (cin >> d1 >> m1 >> d2 >> m2) {\n        Solution().determineZodiacCompatibility(d1, m1, d2, m2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid determineZodiacCompatibility(int d1, int m1, int d2, int m2) {\n    // TODO: Determine zodiac signs and compatibility using nested conditions\n}\n\nint main() {\n    int d1, m1, d2, m2;\n    if (scanf(\"%d %d %d %d\", &d1, &m1, &d2, &m2) == 4) {\n        determineZodiacCompatibility(d1, m1, d2, m2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use nested if-else to determine sign based on month and day ranges. Then map signs to elements (Fire/Water/Earth/Air), and check compatibility using element matching."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Calculate Insurance Premium with Multiple Factors",
+            "description": "Calculate insurance premium based on age, gender, health status, and coverage amount.\n\nBase rates:\n- Age < 25: base = 1000\n- Age 25-40: base = 800\n- Age 41-60: base = 1200\n- Age > 60: base = 2000\n\nModifiers:\n- Gender \"Male\": +10%\n- Gender \"Female\": -5%\n- Health \"Excellent\": -15%\n- Health \"Good\": -5%\n- Health \"Fair\": +10%\n- Health \"Poor\": +30%\n\nCoverage multipliers:\n- < 100000: multiplier = 0.5\n- 100000-500000: multiplier = 1.0\n- 500001-1000000: multiplier = 1.5\n- > 1000000: multiplier = 2.0\n\nPrint final premium (rounded to nearest integer).\n\nInput Format:\nFirst line: age gender health\nSecond line: coverage_amount\n\nOutput Format:\nPrint the premium amount.",
+            "examples": "Sample Input\n30 Male Good\n200000\n\nSample Output\n836\n\nSample Input\n45 Female Excellent\n800000\n\nSample Output\n1454\n\nExplanation:\nCalculate base (800 for age 30), apply gender modifier (+10% = 880), apply health modifier (-5% = 836), then multiply by coverage factor (1.0 for 200000 = 836).",
+            "constraints": "18 <= age <= 100\ncoverage_amount >= 0",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "30 Male Good\n200000",
+                    "expectedOutput": "836"
+                },
+                {
+                    "input": "45 Female Excellent\n800000",
+                    "expectedOutput": "1454"
+                },
+                {
+                    "input": "22 Male Poor\n150000",
+                    "expectedOutput": "1430"
+                },
+                {
+                    "input": "55 Female Fair\n1200000",
+                    "expectedOutput": "2508"
+                },
+                {
+                    "input": "35 Male Excellent\n500000",
+                    "expectedOutput": "748"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculatePremium(self, age, gender, health, coverage):\n        # TODO: Calculate insurance premium using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        age = int(line1[0])\n        gender = line1[1]\n        health = line1[2]\n        coverage = int(input().strip())\n        Solution().calculatePremium(age, gender, health, coverage)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void calculatePremium(int age, String gender, String health, int coverage) {\n        // TODO: Calculate insurance premium using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int age = sc.nextInt();\n            String gender = sc.next();\n            String health = sc.next();\n            int coverage = sc.nextInt();\n            new Solution().calculatePremium(age, gender, health, coverage);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculatePremium(age, gender, health, coverage) {\n        // TODO: Calculate insurance premium using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const line1 = lines[0].trim().split(/\\s+/);\n    const age = parseInt(line1[0]);\n    const gender = line1[1];\n    const health = line1[2];\n    const coverage = parseInt(lines[1].trim());\n    const sol = new Solution();\n    sol.calculatePremium(age, gender, health, coverage);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <cmath>\nusing namespace std;\n\nclass Solution {\npublic:\n    void calculatePremium(int age, string gender, string health, int coverage) {\n        // TODO: Calculate insurance premium using nested conditions\n    }\n};\n\nint main() {\n    int age, coverage;\n    string gender, health;\n    if (cin >> age >> gender >> health >> coverage) {\n        Solution().calculatePremium(age, gender, health, coverage);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <math.h>\n\nvoid calculatePremium(int age, char gender[], char health[], int coverage) {\n    // TODO: Calculate insurance premium using nested conditions\n}\n\nint main() {\n    int age, coverage;\n    char gender[20], health[20];\n    if (scanf(\"%d %s %s %d\", &age, gender, health, &coverage) == 4) {\n        calculatePremium(age, gender, health, coverage);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Calculate base using age ranges. Apply gender modifier (multiply by 1.1 or 0.95). Apply health modifier. Then multiply by coverage multiplier based on coverage amount ranges."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if String is Rotated Palindrome",
+            "description": "Check if any rotation of the given string is a palindrome. Print \"true\" if a rotation is palindrome, otherwise print \"false\".\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint \"true\" if any rotation is palindrome, otherwise print \"false\".",
+            "examples": "Sample Input\nbaabc\n\nSample Output\ntrue\n\nSample Input\nabc\n\nSample Output\nfalse\n\nExplanation:\n\"baabc\" rotated to \"abcba\" is a palindrome, so output is true.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "baabc",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "aaa",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "racecar",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isRotatedPalindrome(self, s):\n        # TODO: Check if any rotation of s is a palindrome\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().isRotatedPalindrome(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void isRotatedPalindrome(String s) {\n        // TODO: Check if any rotation of s is a palindrome\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().isRotatedPalindrome(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isRotatedPalindrome(s) {\n        // TODO: Check if any rotation of s is a palindrome\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.isRotatedPalindrome(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void isRotatedPalindrome(string s) {\n        // TODO: Check if any rotation of s is a palindrome\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().isRotatedPalindrome(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid isRotatedPalindrome(char s[]) {\n    // TODO: Check if any rotation of s is a palindrome\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        isRotatedPalindrome(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Concatenate string with itself. Check if any substring of length n (where n is original length) is a palindrome."
+            ]
+        }
+    ]
+}
+

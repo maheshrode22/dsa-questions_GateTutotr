@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Remove Spaces from String",
+            "description": "Remove all spaces from the given string and print the result.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string without spaces.",
+            "examples": "Sample Input\nHello World Java\n\nSample Output\nHelloWorldJava\n\nExplanation:\nAll spaces are removed from the string.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World Java",
+                    "expectedOutput": "HelloWorldJava"
+                },
+                {
+                    "input": "a b c",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "NoSpaces",
+                    "expectedOutput": "NoSpaces"
+                },
+                {
+                    "input": "   ",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "Hello  World",
+                    "expectedOutput": "HelloWorld"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def removeSpaces(self, s):\n        # TODO: Remove all spaces from string and print\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().removeSpaces(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void removeSpaces(String s) {\n        // TODO: Remove all spaces from string and print\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().removeSpaces(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    removeSpaces(s) {\n        // TODO: Remove all spaces from string and print\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.removeSpaces(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void removeSpaces(string s) {\n        // TODO: Remove all spaces from string and print\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().removeSpaces(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid removeSpaces(char s[]) {\n    // TODO: Remove all spaces from string and print\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        removeSpaces(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the string and only add characters that are not spaces to a new string."
+            ]
+        }
+    ]
+}
+

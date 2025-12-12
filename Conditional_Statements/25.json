@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Determine Season Based on Date and Hemisphere",
+            "description": "Given a date (day, month) and hemisphere (\"Northern\" or \"Southern\"), determine the season.\n\nNorthern Hemisphere:\n- Spring: March 20 - June 20\n- Summer: June 21 - September 22\n- Autumn: September 23 - December 20\n- Winter: December 21 - March 19\n\nSouthern Hemisphere (opposite):\n- Spring: September 23 - December 20\n- Summer: December 21 - March 19\n- Autumn: March 20 - June 20\n- Winter: June 21 - September 22\n\nPrint the season name.\n\nInput Format:\nFirst line: day month\nSecond line: hemisphere (\"Northern\" or \"Southern\")\n\nOutput Format:\nPrint \"Spring\", \"Summer\", \"Autumn\", or \"Winter\".",
+            "examples": "Sample Input\n15 3\nNorthern\n\nSample Output\nWinter\n\nSample Input\n15 3\nSouthern\n\nSample Output\nSummer\n\nSample Input\n25 6\nNorthern\n\nSample Output\nSummer\n\nExplanation:\nUse nested conditions based on hemisphere, then check month and day ranges to determine season.",
+            "constraints": "1 <= day <= 31\n1 <= month <= 12",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "15 3\nNorthern",
+                    "expectedOutput": "Winter"
+                },
+                {
+                    "input": "15 3\nSouthern",
+                    "expectedOutput": "Summer"
+                },
+                {
+                    "input": "25 6\nNorthern",
+                    "expectedOutput": "Summer"
+                },
+                {
+                    "input": "1 12\nNorthern",
+                    "expectedOutput": "Autumn"
+                },
+                {
+                    "input": "22 9\nSouthern",
+                    "expectedOutput": "Spring"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def determineSeason(self, day, month, hemisphere):\n        # TODO: Determine season based on date and hemisphere using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        day, month = map(int, input().split())\n        hemisphere = input().strip()\n        Solution().determineSeason(day, month, hemisphere)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void determineSeason(int day, int month, String hemisphere) {\n        // TODO: Determine season based on date and hemisphere using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int day = sc.nextInt();\n            int month = sc.nextInt();\n            String hemisphere = sc.next();\n            new Solution().determineSeason(day, month, hemisphere);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    determineSeason(day, month, hemisphere) {\n        // TODO: Determine season based on date and hemisphere using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const date = lines[0].trim().split(/\\s+/).map(Number);\n    const hemisphere = lines[1].trim();\n    const sol = new Solution();\n    sol.determineSeason(date[0], date[1], hemisphere);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void determineSeason(int day, int month, string hemisphere) {\n        // TODO: Determine season based on date and hemisphere using nested conditions\n    }\n};\n\nint main() {\n    int day, month;\n    string hemisphere;\n    if (cin >> day >> month >> hemisphere) {\n        Solution().determineSeason(day, month, hemisphere);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid determineSeason(int day, int month, char hemisphere[]) {\n    // TODO: Determine season based on date and hemisphere using nested conditions\n}\n\nint main() {\n    int day, month;\n    char hemisphere[20];\n    if (scanf(\"%d %d %s\", &day, &month, hemisphere) == 3) {\n        determineSeason(day, month, hemisphere);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use nested if-else: first check hemisphere, then check month ranges, and handle boundary dates (20th, 21st, 22nd, 23rd) carefully for season transitions."
+            ]
+        }
+    ]
+}
+

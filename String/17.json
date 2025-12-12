@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if One String is Rotation of Another",
+            "description": "Check if string s2 is a rotation of string s1. A rotation means shifting characters circularly. For example, \"rotation\" is a rotation of \"tionrota\". Print \"true\" if s2 is a rotation of s1, otherwise print \"false\".\n\nInput Format:\nFirst line contains first string s1.\nSecond line contains second string s2.\n\nOutput Format:\nPrint \"true\" if s2 is rotation of s1, otherwise print \"false\".",
+            "examples": "Sample Input\nrotation\ntionrota\n\nSample Output\ntrue\n\nSample Input\nhello\nworld\n\nSample Output\nfalse\n\nExplanation:\n\"tionrota\" is obtained by rotating \"rotation\" - shifting characters circularly.",
+            "constraints": "1 <= length of each string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "rotation\ntionrota",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "hello\nworld",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "abc\ncab",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "abc\nbca",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "java\navaj",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isRotation(self, s1, s2):\n        # TODO: Check if s2 is rotation of s1\n        pass\n\nif __name__ == '__main__':\n    try:\n        s1 = input().strip()\n        s2 = input().strip()\n        Solution().isRotation(s1, s2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void isRotation(String s1, String s2) {\n        // TODO: Check if s2 is rotation of s1\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s1 = sc.nextLine();\n            String s2 = sc.nextLine();\n            new Solution().isRotation(s1, s2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isRotation(s1, s2) {\n        // TODO: Check if s2 is rotation of s1\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s1 = lines[0];\n    const s2 = lines[1];\n    const sol = new Solution();\n    sol.isRotation(s1, s2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void isRotation(string s1, string s2) {\n        // TODO: Check if s2 is rotation of s1\n    }\n};\n\nint main() {\n    string s1, s2;\n    if (getline(cin, s1) && getline(cin, s2)) {\n        Solution().isRotation(s1, s2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid isRotation(char s1[], char s2[]) {\n    // TODO: Check if s2 is rotation of s1\n}\n\nint main() {\n    char s1[1001], s2[1001];\n    if (fgets(s1, sizeof(s1), stdin) && fgets(s2, sizeof(s2), stdin)) {\n        s1[strcspn(s1, \"\\n\")] = 0;\n        s2[strcspn(s2, \"\\n\")] = 0;\n        isRotation(s1, s2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Concatenate s1 with itself. If s2 is a substring of this concatenated string and lengths match, it's a rotation."
+            ]
+        }
+    ]
+}
+

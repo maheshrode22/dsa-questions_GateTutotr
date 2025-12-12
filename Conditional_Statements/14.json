@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check Divisibility by Multiple Numbers",
+            "description": "Given a number, check its divisibility and print:\n- \"Divisible by both\" if divisible by both 3 and 5\n- \"Divisible by 3\" if divisible by 3 only\n- \"Divisible by 5\" if divisible by 5 only\n- \"Not divisible\" if divisible by neither\n\nInput Format:\nSingle integer.\n\nOutput Format:\nPrint the appropriate string based on divisibility.",
+            "examples": "Sample Input\n15\n\nSample Output\nDivisible by both\n\nSample Input\n9\n\nSample Output\nDivisible by 3\n\nSample Input\n25\n\nSample Output\nDivisible by 5\n\nSample Input\n7\n\nSample Output\nNot divisible\n\nExplanation:\nUse nested conditions to check divisibility by 3 and 5.",
+            "constraints": "-10^9 <= number <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "15",
+                    "expectedOutput": "Divisible by both"
+                },
+                {
+                    "input": "9",
+                    "expectedOutput": "Divisible by 3"
+                },
+                {
+                    "input": "25",
+                    "expectedOutput": "Divisible by 5"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "Not divisible"
+                },
+                {
+                    "input": "30",
+                    "expectedOutput": "Divisible by both"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkDivisibility(self, num):\n        # TODO: Check divisibility by 3 and 5 using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        num = int(input().strip())\n        Solution().checkDivisibility(num)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkDivisibility(int num) {\n        // TODO: Check divisibility by 3 and 5 using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int num = sc.nextInt();\n            new Solution().checkDivisibility(num);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkDivisibility(num) {\n        // TODO: Check divisibility by 3 and 5 using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const num = parseInt(input.trim());\n    const sol = new Solution();\n    sol.checkDivisibility(num);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkDivisibility(int num) {\n        // TODO: Check divisibility by 3 and 5 using nested conditions\n    }\n};\n\nint main() {\n    int num;\n    if (cin >> num) {\n        Solution().checkDivisibility(num);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid checkDivisibility(int num) {\n    // TODO: Check divisibility by 3 and 5 using nested conditions\n}\n\nint main() {\n    int num;\n    if (scanf(\"%d\", &num) == 1) {\n        checkDivisibility(num);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if divisible by 3 and 5 both first, then check individually, else not divisible."
+            ]
+        }
+    ]
+}
+

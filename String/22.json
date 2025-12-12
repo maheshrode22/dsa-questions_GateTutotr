@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Window Substring",
+            "description": "Given two strings s and t, find the minimum window substring of s that contains all characters of t. If no such substring exists, print empty string. If multiple minimum windows exist, print the first one.\n\nInput Format:\nFirst line contains string s.\nSecond line contains string t.\n\nOutput Format:\nPrint the minimum window substring, or empty string if not found.",
+            "examples": "Sample Input\nADOBECODEBANC\nABC\n\nSample Output\nBANC\n\nSample Input\na\na\n\nSample Output\na\n\nExplanation:\nThe minimum window in \"ADOBECODEBANC\" containing all characters of \"ABC\" is \"BANC\".",
+            "constraints": "1 <= length of s <= 1000\n1 <= length of t <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "ADOBECODEBANC\nABC",
+                    "expectedOutput": "BANC"
+                },
+                {
+                    "input": "a\na",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "a\naa",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "ab\na",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "bba\nab",
+                    "expectedOutput": "ba"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minWindow(self, s, t):\n        # TODO: Find minimum window substring containing all characters of t\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        t = input().strip()\n        Solution().minWindow(s, t)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void minWindow(String s, String t) {\n        // TODO: Find minimum window substring containing all characters of t\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String t = sc.nextLine();\n            new Solution().minWindow(s, t);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minWindow(s, t) {\n        // TODO: Find minimum window substring containing all characters of t\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const t = lines[1];\n    const sol = new Solution();\n    sol.minWindow(s, t);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    void minWindow(string s, string t) {\n        // TODO: Find minimum window substring containing all characters of t\n    }\n};\n\nint main() {\n    string s, t;\n    if (getline(cin, s) && getline(cin, t)) {\n        Solution().minWindow(s, t);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid minWindow(char s[], char t[]) {\n    // TODO: Find minimum window substring containing all characters of t\n}\n\nint main() {\n    char s[1001], t[1001];\n    if (fgets(s, sizeof(s), stdin) && fgets(t, sizeof(t), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        t[strcspn(t, \"\\n\")] = 0;\n        minWindow(s, t);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use sliding window technique. Expand right until all characters of t are included, then contract left to find minimum window."
+            ]
+        }
+    ]
+}
+

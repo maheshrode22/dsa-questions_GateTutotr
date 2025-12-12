@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Sort Characters in String",
+            "description": "Sort all characters in the string in alphabetical order (case-sensitive) and print the sorted string.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string with characters sorted in alphabetical order.",
+            "examples": "Sample Input\nhello\n\nSample Output\nehllo\n\nSample Input\nProgramming\n\nSample Output\nPaggimmnor\n\nExplanation:\nSort characters: 'h', 'e', 'l', 'l', 'o' becomes 'e', 'h', 'l', 'l', 'o'.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "hello",
+                    "expectedOutput": "ehllo"
+                },
+                {
+                    "input": "Programming",
+                    "expectedOutput": "Paggimmnorr"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "cba",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "Hello",
+                    "expectedOutput": "Hello"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def sortString(self, s):\n        # TODO: Sort characters in string alphabetically\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().sortString(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void sortString(String s) {\n        // TODO: Sort characters in string alphabetically\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().sortString(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    sortString(s) {\n        // TODO: Sort characters in string alphabetically\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.sortString(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void sortString(string s) {\n        // TODO: Sort characters in string alphabetically\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().sortString(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid sortString(char s[]) {\n    // TODO: Sort characters in string alphabetically\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        sortString(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Convert string to character array, sort it, then join back into string."
+            ]
+        }
+    ]
+}
+

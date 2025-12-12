@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Calculate Electricity Bill",
+            "description": "Calculate electricity bill based on units consumed using the following rate:\n- First 50 units: ₹2 per unit\n- Next 100 units (51-150): ₹3 per unit\n- Next 100 units (151-250): ₹4 per unit\n- Above 250 units: ₹5 per unit\n\nPrint the total bill amount.\n\nInput Format:\nSingle integer representing units consumed.\n\nOutput Format:\nPrint the total bill amount.",
+            "examples": "Sample Input\n100\n\nSample Output\n250\n\nSample Input\n200\n\nSample Output\n600\n\nSample Input\n300\n\nSample Output\n1050\n\nExplanation:\nBreak down units into different slabs and calculate bill using if-else if ladder.\nFor 100 units: 50*2 + 50*3 = 100 + 150 = 250\nFor 200 units: 50*2 + 100*3 + 50*4 = 100 + 300 + 200 = 600\nFor 300 units: 50*2 + 100*3 + 100*4 + 50*5 = 100 + 300 + 400 + 250 = 1050",
+            "constraints": "0 <= units <= 10000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "100",
+                    "expectedOutput": "250"
+                },
+                {
+                    "input": "200",
+                    "expectedOutput": "600"
+                },
+                {
+                    "input": "300",
+                    "expectedOutput": "1050"
+                },
+                {
+                    "input": "40",
+                    "expectedOutput": "80"
+                },
+                {
+                    "input": "250",
+                    "expectedOutput": "800"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculateBill(self, units):\n        # TODO: Calculate electricity bill using if-else if ladder\n        pass\n\nif __name__ == '__main__':\n    try:\n        units = int(input().strip())\n        Solution().calculateBill(units)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void calculateBill(int units) {\n        // TODO: Calculate electricity bill using if-else if ladder\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int units = sc.nextInt();\n            new Solution().calculateBill(units);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateBill(units) {\n        // TODO: Calculate electricity bill using if-else if ladder\n    }\n}\n\nfunction solve(input) {\n    const units = parseInt(input.trim());\n    const sol = new Solution();\n    sol.calculateBill(units);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void calculateBill(int units) {\n        // TODO: Calculate electricity bill using if-else if ladder\n    }\n};\n\nint main() {\n    int units;\n    if (cin >> units) {\n        Solution().calculateBill(units);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid calculateBill(int units) {\n    // TODO: Calculate electricity bill using if-else if ladder\n}\n\nint main() {\n    int units;\n    if (scanf(\"%d\", &units) == 1) {\n        calculateBill(units);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use if-else if ladder: if units <= 50, else if <= 150, else if <= 250, else. Calculate bill for each slab separately."
+            ]
+        }
+    ]
+}
+

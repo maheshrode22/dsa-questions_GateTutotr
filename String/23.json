@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Group Anagrams",
+            "description": "Given a string of space-separated words, group words that are anagrams of each other. Print each group on a separate line, with words in each group separated by spaces. Groups should be printed in order of first appearance of the first word in each group.\n\nInput Format:\nFirst line contains space-separated words.\n\nOutput Format:\nPrint each group of anagrams on a separate line, with words separated by spaces.",
+            "examples": "Sample Input\neat tea tan ate nat bat\n\nSample Output\neat tea ate\ntan nat\nbat\n\nExplanation:\n\"eat\", \"tea\", \"ate\" are anagrams. \"tan\", \"nat\" are anagrams. \"bat\" is alone.",
+            "constraints": "1 <= number of words <= 1000\n1 <= length of each word <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "eat tea tan ate nat bat",
+                    "expectedOutput": "eat tea ate\ntan nat\nbat"
+                },
+                {
+                    "input": "",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "abc bca cab",
+                    "expectedOutput": "abc bca cab"
+                },
+                {
+                    "input": "listen silent enlist",
+                    "expectedOutput": "listen silent enlist"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def groupAnagrams(self, words):\n        # TODO: Group anagrams together and print each group on a line\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        words = s.split() if s else []\n        Solution().groupAnagrams(words)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void groupAnagrams(String[] words) {\n        // TODO: Group anagrams together and print each group on a line\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String line = sc.nextLine();\n            String[] words = line.isEmpty() ? new String[0] : line.split(\" \");\n            new Solution().groupAnagrams(words);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    groupAnagrams(words) {\n        // TODO: Group anagrams together and print each group on a line\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const words = s ? s.split(/\\s+/) : [];\n    const sol = new Solution();\n    sol.groupAnagrams(words);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <sstream>\n#include <unordered_map>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void groupAnagrams(vector<string>& words) {\n        // TODO: Group anagrams together and print each group on a line\n    }\n};\n\nint main() {\n    string line;\n    if (getline(cin, line)) {\n        stringstream ss(line);\n        vector<string> words;\n        string word;\n        while (ss >> word) {\n            words.push_back(word);\n        }\n        Solution().groupAnagrams(words);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid groupAnagrams(char words[][1001], int n) {\n    // TODO: Group anagrams together and print each group on a line\n}\n\nint main() {\n    char line[10001];\n    if (fgets(line, sizeof(line), stdin)) {\n        line[strcspn(line, \"\\n\")] = 0;\n        char words[1001][1001];\n        int n = 0;\n        if (strlen(line) > 0) {\n            char* token = strtok(line, \" \");\n            while (token && n < 1000) {\n                strcpy(words[n++], token);\n                token = strtok(NULL, \" \");\n            }\n        }\n        groupAnagrams(words, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Sort each word's characters to get a key. Words with the same sorted key are anagrams. Group them together."
+            ]
+        }
+    ]
+}
+

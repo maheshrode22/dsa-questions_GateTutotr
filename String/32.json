@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Remove All Occurrences of a Character",
+            "description": "Remove all occurrences of a specific character from a string and print the result.\n\nInput Format:\nFirst line contains a string.\nSecond line contains a character to remove.\n\nOutput Format:\nPrint the string after removing all occurrences of the character.",
+            "examples": "Sample Input\nprogramming\ng\n\nSample Output\nproarmin\n\nSample Input\nhello world\no\n\nSample Output\nhell wrld\n\nExplanation:\nRemove all occurrences of 'g' from \"programming\" to get \"proarmin\".",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "programming\ng",
+                    "expectedOutput": "prorammin"
+                },
+                {
+                    "input": "hello world\no",
+                    "expectedOutput": "hell wrld"
+                },
+                {
+                    "input": "abc\na",
+                    "expectedOutput": "bc"
+                },
+                {
+                    "input": "test\nx",
+                    "expectedOutput": "test"
+                },
+                {
+                    "input": "aaaaa\na",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def removeCharacter(self, s, char):\n        # TODO: Remove all occurrences of char from s\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        char = input().strip()\n        Solution().removeCharacter(s, char)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void removeCharacter(String s, String charStr) {\n        // TODO: Remove all occurrences of charStr from s\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String charStr = sc.nextLine();\n            new Solution().removeCharacter(s, charStr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    removeCharacter(s, char) {\n        // TODO: Remove all occurrences of char from s\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const char = lines[1];\n    const sol = new Solution();\n    sol.removeCharacter(s, char);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void removeCharacter(string s, string charStr) {\n        // TODO: Remove all occurrences of charStr from s\n    }\n};\n\nint main() {\n    string s, charStr;\n    if (getline(cin, s) && getline(cin, charStr)) {\n        Solution().removeCharacter(s, charStr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid removeCharacter(char s[], char ch) {\n    // TODO: Remove all occurrences of ch from s\n}\n\nint main() {\n    char s[1001], charStr[2];\n    if (fgets(s, sizeof(s), stdin) && fgets(charStr, sizeof(charStr), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        charStr[strcspn(charStr, \"\\n\")] = 0;\n        char ch = charStr[0];\n        removeCharacter(s, ch);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the string and build a new string excluding the character to remove."
+            ]
+        }
+    ]
+}
+

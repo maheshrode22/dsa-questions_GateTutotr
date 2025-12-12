@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Common Subsequence",
+            "description": "Given two strings text1 and text2, find the length of their longest common subsequence. A subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters. Print the length.\n\nInput Format:\nFirst line contains first string text1.\nSecond line contains second string text2.\n\nOutput Format:\nPrint the length of longest common subsequence.",
+            "examples": "Sample Input\nabcde\nace\n\nSample Output\n3\n\nSample Input\nabc\nabc\n\nSample Output\n3\n\nSample Input\nabc\ndef\n\nSample Output\n0\n\nExplanation:\nThe longest common subsequence of \"abcde\" and \"ace\" is \"ace\" with length 3.",
+            "constraints": "1 <= length of text1 <= 1000\n1 <= length of text2 <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abcde\nace",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc\ndef",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "AGGTAB\nGXTXAYB",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "ABCDGH\nAEDFHR",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestCommonSubsequence(self, text1, text2):\n        # TODO: Find length of longest common subsequence\n        pass\n\nif __name__ == '__main__':\n    try:\n        text1 = input().strip()\n        text2 = input().strip()\n        Solution().longestCommonSubsequence(text1, text2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void longestCommonSubsequence(String text1, String text2) {\n        // TODO: Find length of longest common subsequence\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String text1 = sc.nextLine();\n            String text2 = sc.nextLine();\n            new Solution().longestCommonSubsequence(text1, text2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestCommonSubsequence(text1, text2) {\n        // TODO: Find length of longest common subsequence\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const text1 = lines[0];\n    const text2 = lines[1];\n    const sol = new Solution();\n    sol.longestCommonSubsequence(text1, text2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void longestCommonSubsequence(string text1, string text2) {\n        // TODO: Find length of longest common subsequence\n    }\n};\n\nint main() {\n    string text1, text2;\n    if (getline(cin, text1) && getline(cin, text2)) {\n        Solution().longestCommonSubsequence(text1, text2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid longestCommonSubsequence(char text1[], char text2[]) {\n    // TODO: Find length of longest common subsequence\n}\n\nint main() {\n    char text1[1001], text2[1001];\n    if (fgets(text1, sizeof(text1), stdin) && fgets(text2, sizeof(text2), stdin)) {\n        text1[strcspn(text1, \"\\n\")] = 0;\n        text2[strcspn(text2, \"\\n\")] = 0;\n        longestCommonSubsequence(text1, text2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming. Create a 2D table where dp[i][j] represents the length of LCS of text1[0..i-1] and text2[0..j-1]."
+            ]
+        }
+    ]
+}
+

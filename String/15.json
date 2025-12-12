@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if String Has All Unique Characters",
+            "description": "Check if the given string has all unique characters (no character repeats). Print \"true\" if all characters are unique, otherwise print \"false\".\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint \"true\" if all characters are unique, otherwise print \"false\".",
+            "examples": "Sample Input\nabc\n\nSample Output\ntrue\n\nSample Input\nhello\n\nSample Output\nfalse\n\nExplanation:\n\"abc\" has all unique characters. \"hello\" has 'l' repeated, so it's false.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abc",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "programming",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "abcdef",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def hasAllUnique(self, s):\n        # TODO: Check if all characters are unique\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().hasAllUnique(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void hasAllUnique(String s) {\n        // TODO: Check if all characters are unique\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().hasAllUnique(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    hasAllUnique(s) {\n        // TODO: Check if all characters are unique\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.hasAllUnique(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_set>\nusing namespace std;\n\nclass Solution {\npublic:\n    void hasAllUnique(string s) {\n        // TODO: Check if all characters are unique\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().hasAllUnique(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid hasAllUnique(char s[]) {\n    // TODO: Check if all characters are unique\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        hasAllUnique(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a set to track seen characters. If a character is already in set, return false. Otherwise, add it to set."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Calculate Tax Based on Income",
+            "description": "Calculate tax based on annual income using the following slabs:\n- Income <= 250000: No tax (0%)\n- Income 250001-500000: 5% tax on amount above 250000\n- Income 500001-1000000: ₹12500 + 20% on amount above 500000\n- Income > 1000000: ₹112500 + 30% on amount above 1000000\n\nPrint the tax amount.\n\nInput Format:\nSingle integer representing annual income.\n\nOutput Format:\nPrint the tax amount.",
+            "examples": "Sample Input\n300000\n\nSample Output\n2500\n\nSample Input\n700000\n\nSample Output\n52500\n\nSample Input\n2000000\n\nSample Output\n412500\n\nExplanation:\nUse if-else if ladder to calculate tax for each income slab.\nFor 300000: (300000 - 250000) * 5% = 2500",
+            "constraints": "0 <= income <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "300000",
+                    "expectedOutput": "2500"
+                },
+                {
+                    "input": "700000",
+                    "expectedOutput": "52500"
+                },
+                {
+                    "input": "2000000",
+                    "expectedOutput": "412500"
+                },
+                {
+                    "input": "200000",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "600000",
+                    "expectedOutput": "32500"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculateTax(self, income):\n        # TODO: Calculate tax based on income using if-else if ladder\n        pass\n\nif __name__ == '__main__':\n    try:\n        income = int(input().strip())\n        Solution().calculateTax(income)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void calculateTax(int income) {\n        // TODO: Calculate tax based on income using if-else if ladder\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int income = sc.nextInt();\n            new Solution().calculateTax(income);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateTax(income) {\n        // TODO: Calculate tax based on income using if-else if ladder\n    }\n}\n\nfunction solve(input) {\n    const income = parseInt(input.trim());\n    const sol = new Solution();\n    sol.calculateTax(income);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void calculateTax(int income) {\n        // TODO: Calculate tax based on income using if-else if ladder\n    }\n};\n\nint main() {\n    int income;\n    if (cin >> income) {\n        Solution().calculateTax(income);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid calculateTax(int income) {\n    // TODO: Calculate tax based on income using if-else if ladder\n}\n\nint main() {\n    int income;\n    if (scanf(\"%d\", &income) == 1) {\n        calculateTax(income);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use if-else if ladder: if income <= 250000 (0), else if <= 500000 (5% of excess), else if <= 1000000 (12500 + 20% of excess), else (112500 + 30% of excess)."
+            ]
+        }
+    ]
+}
+

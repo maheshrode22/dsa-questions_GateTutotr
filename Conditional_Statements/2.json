@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check Leap Year",
+            "description": "Determine if a given year is a leap year and print \"Leap Year\" or \"Not a Leap Year\".\n\nA year is a leap year if:\n- It is divisible by 400, OR\n- It is divisible by 4 but NOT divisible by 100\n\nInput Format:\nSingle integer representing the year.\n\nOutput Format:\nPrint \"Leap Year\" or \"Not a Leap Year\".",
+            "examples": "Sample Input\n2024\n\nSample Output\nLeap Year\n\nSample Input\n1900\n\nSample Output\nNot a Leap Year\n\nSample Input\n2000\n\nSample Output\nLeap Year\n\nExplanation:\n2024 is divisible by 4 but not by 100, so it's a leap year. 1900 is divisible by 100 but not by 400, so it's not a leap year.",
+            "constraints": "1 <= year <= 10000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "2024",
+                    "expectedOutput": "Leap Year"
+                },
+                {
+                    "input": "1900",
+                    "expectedOutput": "Not a Leap Year"
+                },
+                {
+                    "input": "2000",
+                    "expectedOutput": "Leap Year"
+                },
+                {
+                    "input": "2021",
+                    "expectedOutput": "Not a Leap Year"
+                },
+                {
+                    "input": "1600",
+                    "expectedOutput": "Leap Year"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkLeapYear(self, year):\n        # TODO: Check if year is leap year using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        year = int(input().strip())\n        Solution().checkLeapYear(year)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkLeapYear(int year) {\n        // TODO: Check if year is leap year using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int year = sc.nextInt();\n            new Solution().checkLeapYear(year);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkLeapYear(year) {\n        // TODO: Check if year is leap year using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const year = parseInt(input.trim());\n    const sol = new Solution();\n    sol.checkLeapYear(year);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkLeapYear(int year) {\n        // TODO: Check if year is leap year using nested conditions\n    }\n};\n\nint main() {\n    int year;\n    if (cin >> year) {\n        Solution().checkLeapYear(year);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid checkLeapYear(int year) {\n    // TODO: Check if year is leap year using nested conditions\n}\n\nint main() {\n    int year;\n    if (scanf(\"%d\", &year) == 1) {\n        checkLeapYear(year);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use nested if-else: first check if divisible by 400, then check if divisible by 4 but not by 100."
+            ]
+        }
+    ]
+}
+

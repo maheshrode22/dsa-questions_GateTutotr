@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if Two Strings are Equal",
+            "description": "Compare two strings and print \"true\" if they are equal (case-sensitive), otherwise print \"false\".\n\nInput Format:\nFirst line contains first string.\nSecond line contains second string.\n\nOutput Format:\nPrint \"true\" if strings are equal, otherwise print \"false\".",
+            "examples": "Sample Input\nHello\nHello\n\nSample Output\ntrue\n\nSample Input\nHello\nhello\n\nSample Output\nfalse\n\nExplanation:\nFirst case: Both strings are identical, so true.\nSecond case: 'H' != 'h', so false.",
+            "constraints": "1 <= length of each string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello\nHello",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "Hello\nhello",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "Java\nPython",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "test\ntest",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def areEqual(self, s1, s2):\n        # TODO: Check if two strings are equal (case-sensitive), print true or false\n        pass\n\nif __name__ == '__main__':\n    try:\n        s1 = input().strip()\n        s2 = input().strip()\n        Solution().areEqual(s1, s2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void areEqual(String s1, String s2) {\n        // TODO: Check if two strings are equal (case-sensitive), print true or false\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s1 = sc.nextLine();\n            String s2 = sc.nextLine();\n            new Solution().areEqual(s1, s2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    areEqual(s1, s2) {\n        // TODO: Check if two strings are equal (case-sensitive), print true or false\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s1 = lines[0];\n    const s2 = lines[1];\n    const sol = new Solution();\n    sol.areEqual(s1, s2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void areEqual(string s1, string s2) {\n        // TODO: Check if two strings are equal (case-sensitive), print true or false\n    }\n};\n\nint main() {\n    string s1, s2;\n    if (getline(cin, s1) && getline(cin, s2)) {\n        Solution().areEqual(s1, s2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid areEqual(char s1[], char s2[]) {\n    // TODO: Check if two strings are equal (case-sensitive), print true or false\n}\n\nint main() {\n    char s1[1001], s2[1001];\n    if (fgets(s1, sizeof(s1), stdin) && fgets(s2, sizeof(s2), stdin)) {\n        s1[strcspn(s1, \"\\n\")] = 0;\n        s2[strcspn(s2, \"\\n\")] = 0;\n        areEqual(s1, s2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare strings character by character, or use built-in string comparison function. Check lengths first - if different, strings are not equal."
+            ]
+        }
+    ]
+}
+

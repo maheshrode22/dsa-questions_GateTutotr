@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Longest Common Prefix",
+            "description": "Given an array of strings, find the longest common prefix string. If there is no common prefix, print an empty string. For this problem, the input will be a single string containing space-separated words.\n\nInput Format:\nFirst line contains space-separated strings.\n\nOutput Format:\nPrint the longest common prefix.",
+            "examples": "Sample Input\nflower flow flight\n\nSample Output\nfl\n\nSample Input\ndog racecar car\n\nSample Output\n\n\nExplanation:\nFor \"flower flow flight\", common prefix is \"fl\". For \"dog racecar car\", there is no common prefix.",
+            "constraints": "1 <= number of strings <= 100\n1 <= length of each string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "flower flow flight",
+                    "expectedOutput": "fl"
+                },
+                {
+                    "input": "dog racecar car",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "abc abcd abcde",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "java javascript",
+                    "expectedOutput": "java"
+                },
+                {
+                    "input": "hello hell help",
+                    "expectedOutput": "hel"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestCommonPrefix(self, words):\n        # TODO: Find longest common prefix among all words\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        words = s.split()\n        Solution().longestCommonPrefix(words)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void longestCommonPrefix(String[] words) {\n        // TODO: Find longest common prefix among all words\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String line = sc.nextLine();\n            String[] words = line.split(\" \");\n            new Solution().longestCommonPrefix(words);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestCommonPrefix(words) {\n        // TODO: Find longest common prefix among all words\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const words = s.split(/\\s+/);\n    const sol = new Solution();\n    sol.longestCommonPrefix(words);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <sstream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void longestCommonPrefix(vector<string>& words) {\n        // TODO: Find longest common prefix among all words\n    }\n};\n\nint main() {\n    string line;\n    if (getline(cin, line)) {\n        stringstream ss(line);\n        vector<string> words;\n        string word;\n        while (ss >> word) {\n            words.push_back(word);\n        }\n        Solution().longestCommonPrefix(words);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid longestCommonPrefix(char words[][1001], int n) {\n    // TODO: Find longest common prefix among all words\n}\n\nint main() {\n    char line[10001];\n    if (fgets(line, sizeof(line), stdin)) {\n        line[strcspn(line, \"\\n\")] = 0;\n        char words[101][1001];\n        int n = 0;\n        char* token = strtok(line, \" \");\n        while (token && n < 100) {\n            strcpy(words[n++], token);\n            token = strtok(NULL, \" \");\n        }\n        longestCommonPrefix(words, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare characters position by position. Start with first character of all strings, then second, etc. Stop when characters don't match."
+            ]
+        }
+    ]
+}
+

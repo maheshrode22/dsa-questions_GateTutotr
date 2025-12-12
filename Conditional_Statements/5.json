@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check Character Type",
+            "description": "Given a character, determine and print its type:\n- Alphabet: Print \"Alphabet\"\n- Digit: Print \"Digit\"\n- Special Character: Print \"Special Character\"\n\nInput Format:\nSingle character.\n\nOutput Format:\nPrint \"Alphabet\", \"Digit\", or \"Special Character\".",
+            "examples": "Sample Input\nA\n\nSample Output\nAlphabet\n\nSample Input\n5\n\nSample Output\nDigit\n\nSample Input\n@\n\nSample Output\nSpecial Character\n\nExplanation:\nUse conditional statements to check if character is alphabet, digit, or special character.",
+            "constraints": "Input is a single printable ASCII character",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "A",
+                    "expectedOutput": "Alphabet"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "Digit"
+                },
+                {
+                    "input": "@",
+                    "expectedOutput": "Special Character"
+                },
+                {
+                    "input": "z",
+                    "expectedOutput": "Alphabet"
+                },
+                {
+                    "input": "9",
+                    "expectedOutput": "Digit"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkCharType(self, ch):\n        # TODO: Check if character is alphabet, digit, or special character\n        pass\n\nif __name__ == '__main__':\n    try:\n        ch = input().strip()\n        Solution().checkCharType(ch)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkCharType(char ch) {\n        // TODO: Check if character is alphabet, digit, or special character\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String input = sc.next();\n            char ch = input.charAt(0);\n            new Solution().checkCharType(ch);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkCharType(ch) {\n        // TODO: Check if character is alphabet, digit, or special character\n    }\n}\n\nfunction solve(input) {\n    const ch = input.trim()[0];\n    const sol = new Solution();\n    sol.checkCharType(ch);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkCharType(char ch) {\n        // TODO: Check if character is alphabet, digit, or special character\n    }\n};\n\nint main() {\n    char ch;\n    if (cin >> ch) {\n        Solution().checkCharType(ch);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <ctype.h>\n\nvoid checkCharType(char ch) {\n    // TODO: Check if character is alphabet, digit, or special character\n}\n\nint main() {\n    char ch;\n    if (scanf(\"%c\", &ch) == 1) {\n        checkCharType(ch);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if character is between 'a'-'z' or 'A'-'Z' (Alphabet), then check if between '0'-'9' (Digit), else it's Special Character."
+            ]
+        }
+    ]
+}
+

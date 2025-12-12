@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Convert String to Lowercase",
+            "description": "Convert all uppercase letters in the string to lowercase and print the result.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string with all letters converted to lowercase.",
+            "examples": "Sample Input\nHello World\n\nSample Output\nhello world\n\nSample Input\nJAVA PROGRAMMING\n\nSample Output\njava programming\n\nExplanation:\nAll uppercase letters are converted to lowercase.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World",
+                    "expectedOutput": "hello world"
+                },
+                {
+                    "input": "JAVA PROGRAMMING",
+                    "expectedOutput": "java programming"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "ABC",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "Hello123",
+                    "expectedOutput": "hello123"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def toLowerCase(self, s):\n        # TODO: Convert all uppercase letters to lowercase and print\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().toLowerCase(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void toLowerCase(String s) {\n        // TODO: Convert all uppercase letters to lowercase and print\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().toLowerCase(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    toLowerCase(s) {\n        // TODO: Convert all uppercase letters to lowercase and print\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.toLowerCase(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\n#include <cctype>\nusing namespace std;\n\nclass Solution {\npublic:\n    void toLowerCase(string s) {\n        // TODO: Convert all uppercase letters to lowercase and print\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().toLowerCase(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid toLowerCase(char s[]) {\n    // TODO: Convert all uppercase letters to lowercase and print\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        toLowerCase(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through each character. If it's an uppercase letter (A-Z), convert it to lowercase by adding 32 or using built-in functions."
+            ]
+        }
+    ]
+}
+

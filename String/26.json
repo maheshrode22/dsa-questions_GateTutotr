@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "String to Integer (atoi)",
+            "description": "Implement the atoi function which converts a string to an integer. The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value. The string can contain additional characters after those that form the integral number, which are ignored. If no valid conversion could be performed, print 0.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the converted integer.",
+            "examples": "Sample Input\n42\n\nSample Output\n42\n\nSample Input\n   -42\n\nSample Output\n-42\n\nSample Input\n4193 with words\n\nSample Output\n4193\n\nExplanation:\nConvert string to integer, handling whitespace, signs, and ignoring invalid trailing characters.",
+            "constraints": "0 <= length of string <= 200",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "42",
+                    "expectedOutput": "42"
+                },
+                {
+                    "input": "   -42",
+                    "expectedOutput": "-42"
+                },
+                {
+                    "input": "4193 with words",
+                    "expectedOutput": "4193"
+                },
+                {
+                    "input": "words and 987",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "-91283472332",
+                    "expectedOutput": "-2147483648"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def myAtoi(self, s):\n        # TODO: Convert string to integer (atoi)\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().myAtoi(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void myAtoi(String s) {\n        // TODO: Convert string to integer (atoi)\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().myAtoi(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    myAtoi(s) {\n        // TODO: Convert string to integer (atoi)\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.myAtoi(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <climits>\nusing namespace std;\n\nclass Solution {\npublic:\n    void myAtoi(string s) {\n        // TODO: Convert string to integer (atoi)\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().myAtoi(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n#include <limits.h>\n\nvoid myAtoi(char s[]) {\n    // TODO: Convert string to integer (atoi)\n}\n\nint main() {\n    char s[201];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        myAtoi(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Skip whitespace, check for sign, then read digits until non-digit character. Handle integer overflow by clamping to INT_MIN or INT_MAX."
+            ]
+        }
+    ]
+}
+

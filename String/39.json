@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Insertions to Make Palindrome",
+            "description": "Find the minimum number of insertions required to make a string a palindrome. Print the minimum number of insertions needed.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the minimum number of insertions required.",
+            "examples": "Sample Input\nab\n\nSample Output\n1\n\nSample Input\naba\n\nSample Output\n0\n\nSample Input\nabc\n\nSample Output\n2\n\nExplanation:\n\"ab\" needs 1 insertion (can become \"aba\" or \"bab\"). \"aba\" is already palindrome, so 0 insertions.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "ab",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "aba",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "race",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minInsertions(self, s):\n        # TODO: Find minimum insertions to make palindrome\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().minInsertions(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void minInsertions(String s) {\n        // TODO: Find minimum insertions to make palindrome\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().minInsertions(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minInsertions(s) {\n        // TODO: Find minimum insertions to make palindrome\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.minInsertions(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void minInsertions(string s) {\n        // TODO: Find minimum insertions to make palindrome\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().minInsertions(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid minInsertions(char s[]) {\n    // TODO: Find minimum insertions to make palindrome\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        minInsertions(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the longest palindromic subsequence (LPS). Minimum insertions = length of string - length of LPS."
+            ]
+        }
+    ]
+}
+

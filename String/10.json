@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Longest Word in String",
+            "description": "Find and print the longest word in a given string. Words are separated by spaces. If there are multiple words with the same maximum length, print the first one.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the longest word.",
+            "examples": "Sample Input\nJava is a programming language\n\nSample Output\nprogramming\n\nExplanation:\nWords: Java(4), is(2), a(1), programming(11), language(8). Longest word is \"programming\".",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "Java is a programming language",
+                    "expectedOutput": "programming"
+                },
+                {
+                    "input": "Hello World",
+                    "expectedOutput": "Hello"
+                },
+                {
+                    "input": "a bc def",
+                    "expectedOutput": "def"
+                },
+                {
+                    "input": "one",
+                    "expectedOutput": "one"
+                },
+                {
+                    "input": "test testing tested",
+                    "expectedOutput": "testing"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findLongestWord(self, s):\n        # TODO: Find and print the longest word (first one if multiple have same length)\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().findLongestWord(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findLongestWord(String s) {\n        // TODO: Find and print the longest word (first one if multiple have same length)\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().findLongestWord(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findLongestWord(s) {\n        // TODO: Find and print the longest word (first one if multiple have same length)\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.findLongestWord(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <sstream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findLongestWord(string s) {\n        // TODO: Find and print the longest word (first one if multiple have same length)\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().findLongestWord(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid findLongestWord(char s[]) {\n    // TODO: Find and print the longest word (first one if multiple have same length)\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        findLongestWord(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Split the string by spaces to get words. Compare lengths of each word and keep track of the longest one. If lengths are equal, keep the first one."
+            ]
+        }
+    ]
+}
+

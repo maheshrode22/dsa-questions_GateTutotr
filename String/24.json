@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Palindromic Substring",
+            "description": "Given a string, find and print the longest palindromic substring. If multiple palindromes have the same maximum length, print the first one.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the longest palindromic substring.",
+            "examples": "Sample Input\nbabad\n\nSample Output\nbab\n\nSample Input\ncbbd\n\nSample Output\nbb\n\nExplanation:\nFor \"babad\", the longest palindromic substrings are \"bab\" or \"aba\". Print the first one: \"bab\".",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "babad",
+                    "expectedOutput": "bab"
+                },
+                {
+                    "input": "cbbd",
+                    "expectedOutput": "bb"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "racecar",
+                    "expectedOutput": "racecar"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "a"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestPalindrome(self, s):\n        # TODO: Find longest palindromic substring\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().longestPalindrome(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void longestPalindrome(String s) {\n        // TODO: Find longest palindromic substring\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().longestPalindrome(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestPalindrome(s) {\n        // TODO: Find longest palindromic substring\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.longestPalindrome(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void longestPalindrome(string s) {\n        // TODO: Find longest palindromic substring\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().longestPalindrome(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid longestPalindrome(char s[]) {\n    // TODO: Find longest palindromic substring\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        longestPalindrome(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use expand around center technique. For each position, expand both odd-length and even-length palindromes. Keep track of the longest one."
+            ]
+        }
+    ]
+}
+

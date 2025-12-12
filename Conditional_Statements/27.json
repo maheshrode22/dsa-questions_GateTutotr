@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check Valid Credit Card Number (Luhn Algorithm)",
+            "description": "Given a credit card number, validate it using Luhn algorithm:\n1. Starting from right, double every second digit\n2. If doubled digit > 9, subtract 9\n3. Sum all digits\n4. If sum % 10 == 0, card is valid\n\nPrint \"Valid\" or \"Invalid\".\n\nInput Format:\nSingle string of digits (credit card number).\n\nOutput Format:\nPrint \"Valid\" or \"Invalid\".",
+            "examples": "Sample Input\n4532015112830366\n\nSample Output\nValid\n\nSample Input\n4532015112830365\n\nSample Output\nInvalid\n\nExplanation:\nImplement Luhn algorithm with careful handling of digit doubling and validation using conditional logic.",
+            "constraints": "Card number length is 13-19 digits",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4532015112830366",
+                    "expectedOutput": "Valid"
+                },
+                {
+                    "input": "4532015112830365",
+                    "expectedOutput": "Invalid"
+                },
+                {
+                    "input": "4111111111111111",
+                    "expectedOutput": "Valid"
+                },
+                {
+                    "input": "4111111111111112",
+                    "expectedOutput": "Invalid"
+                },
+                {
+                    "input": "79927398713",
+                    "expectedOutput": "Valid"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def validateCreditCard(self, card_number):\n        # TODO: Validate credit card using Luhn algorithm with conditional logic\n        pass\n\nif __name__ == '__main__':\n    try:\n        card_number = input().strip()\n        Solution().validateCreditCard(card_number)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void validateCreditCard(String card_number) {\n        // TODO: Validate credit card using Luhn algorithm with conditional logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String card_number = sc.nextLine();\n            new Solution().validateCreditCard(card_number);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    validateCreditCard(card_number) {\n        // TODO: Validate credit card using Luhn algorithm with conditional logic\n    }\n}\n\nfunction solve(input) {\n    const card_number = input.trim();\n    const sol = new Solution();\n    sol.validateCreditCard(card_number);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void validateCreditCard(string card_number) {\n        // TODO: Validate credit card using Luhn algorithm with conditional logic\n    }\n};\n\nint main() {\n    string card_number;\n    if (getline(cin, card_number)) {\n        Solution().validateCreditCard(card_number);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid validateCreditCard(char card_number[]) {\n    // TODO: Validate credit card using Luhn algorithm with conditional logic\n}\n\nint main() {\n    char card_number[20];\n    if (fgets(card_number, sizeof(card_number), stdin)) {\n        card_number[strcspn(card_number, \"\\n\")] = 0;\n        validateCreditCard(card_number);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Process digits from right to left. For every second digit, double it. If result > 9, subtract 9. Sum all digits and check if divisible by 10."
+            ]
+        }
+    ]
+}
+

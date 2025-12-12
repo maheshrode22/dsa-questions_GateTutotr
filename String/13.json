@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Remove All Duplicates from String",
+            "description": "Remove all duplicate characters from the string, keeping only the first occurrence of each character. Print the resulting string.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string with all duplicates removed, keeping first occurrence.",
+            "examples": "Sample Input\nprogramming\n\nSample Output\nprogamin\n\nSample Input\naabbcc\n\nSample Output\nabc\n\nExplanation:\nIn \"programming\", after removing duplicates: p-r-o-g-a-m-i-n (removed second 'r', 'm', 'g').",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "programming",
+                    "expectedOutput": "progamin"
+                },
+                {
+                    "input": "aabbcc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "helo"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "java",
+                    "expectedOutput": "jav"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def removeDuplicates(self, s):\n        # TODO: Remove all duplicates, keeping first occurrence\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().removeDuplicates(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void removeDuplicates(String s) {\n        // TODO: Remove all duplicates, keeping first occurrence\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().removeDuplicates(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    removeDuplicates(s) {\n        // TODO: Remove all duplicates, keeping first occurrence\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.removeDuplicates(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_set>\nusing namespace std;\n\nclass Solution {\npublic:\n    void removeDuplicates(string s) {\n        // TODO: Remove all duplicates, keeping first occurrence\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().removeDuplicates(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid removeDuplicates(char s[]) {\n    // TODO: Remove all duplicates, keeping first occurrence\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        removeDuplicates(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a set or boolean array to track seen characters. Iterate through string and only add characters not seen before."
+            ]
+        }
+    ]
+}
+

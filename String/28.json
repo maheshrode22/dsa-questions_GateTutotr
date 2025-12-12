@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Edit Distance (Levenshtein Distance)",
+            "description": "Given two strings word1 and word2, find the minimum number of operations required to convert word1 to word2. You have the following operations permitted: 1) Insert a character, 2) Delete a character, 3) Replace a character. Print the minimum edit distance.\n\nInput Format:\nFirst line contains first string word1.\nSecond line contains second string word2.\n\nOutput Format:\nPrint the minimum edit distance.",
+            "examples": "Sample Input\nhorse\nros\n\nSample Output\n3\n\nSample Input\nintention\nexecution\n\nSample Output\n5\n\nExplanation:\nTo convert \"horse\" to \"ros\": 1) horse -> rorse (replace 'h' with 'r'), 2) rorse -> rose (remove 'r'), 3) rose -> ros (remove 'e'). Total 3 operations.",
+            "constraints": "0 <= length of word1 <= 500\n0 <= length of word2 <= 500",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "horse\nros",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "intention\nexecution",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "abc\n",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "\nabc",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minDistance(self, word1, word2):\n        # TODO: Find minimum edit distance between two strings\n        pass\n\nif __name__ == '__main__':\n    try:\n        word1 = input().strip()\n        word2 = input().strip()\n        Solution().minDistance(word1, word2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void minDistance(String word1, String word2) {\n        // TODO: Find minimum edit distance between two strings\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String word1 = sc.nextLine();\n            String word2 = sc.nextLine();\n            new Solution().minDistance(word1, word2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minDistance(word1, word2) {\n        // TODO: Find minimum edit distance between two strings\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const word1 = lines[0];\n    const word2 = lines[1];\n    const sol = new Solution();\n    sol.minDistance(word1, word2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void minDistance(string word1, string word2) {\n        // TODO: Find minimum edit distance between two strings\n    }\n};\n\nint main() {\n    string word1, word2;\n    if (getline(cin, word1) && getline(cin, word2)) {\n        Solution().minDistance(word1, word2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid minDistance(char word1[], char word2[]) {\n    // TODO: Find minimum edit distance between two strings\n}\n\nint main() {\n    char word1[501], word2[501];\n    if (fgets(word1, sizeof(word1), stdin) && fgets(word2, sizeof(word2), stdin)) {\n        word1[strcspn(word1, \"\\n\")] = 0;\n        word2[strcspn(word2, \"\\n\")] = 0;\n        minDistance(word1, word2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming. dp[i][j] represents minimum operations to convert word1[0..i-1] to word2[0..j-1]. Consider three operations: insert, delete, replace."
+            ]
+        }
+    ]
+}
+

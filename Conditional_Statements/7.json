@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if Three Sides Form a Valid Triangle",
+            "description": "Given three sides, check if they can form a valid triangle and print \"Valid Triangle\" or \"Invalid Triangle\".\n\nFor three sides to form a valid triangle, the sum of any two sides must be greater than the third side.\n\nInput Format:\nThree integers separated by space representing the three sides.\n\nOutput Format:\nPrint \"Valid Triangle\" or \"Invalid Triangle\".",
+            "examples": "Sample Input\n3 4 5\n\nSample Output\nValid Triangle\n\nSample Input\n1 2 3\n\nSample Output\nInvalid Triangle\n\nSample Input\n5 5 5\n\nSample Output\nValid Triangle\n\nExplanation:\nCheck all three conditions: a+b>c, b+c>a, and c+a>b.",
+            "constraints": "1 <= sides <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "3 4 5",
+                    "expectedOutput": "Valid Triangle"
+                },
+                {
+                    "input": "1 2 3",
+                    "expectedOutput": "Invalid Triangle"
+                },
+                {
+                    "input": "5 5 5",
+                    "expectedOutput": "Valid Triangle"
+                },
+                {
+                    "input": "10 5 4",
+                    "expectedOutput": "Invalid Triangle"
+                },
+                {
+                    "input": "7 8 9",
+                    "expectedOutput": "Valid Triangle"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkValidTriangle(self, a, b, c):\n        # TODO: Check if three sides form a valid triangle\n        pass\n\nif __name__ == '__main__':\n    try:\n        a, b, c = map(int, input().split())\n        Solution().checkValidTriangle(a, b, c)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkValidTriangle(int a, int b, int c) {\n        // TODO: Check if three sides form a valid triangle\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int a = sc.nextInt();\n            int b = sc.nextInt();\n            int c = sc.nextInt();\n            new Solution().checkValidTriangle(a, b, c);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkValidTriangle(a, b, c) {\n        // TODO: Check if three sides form a valid triangle\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.checkValidTriangle(nums[0], nums[1], nums[2]);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkValidTriangle(int a, int b, int c) {\n        // TODO: Check if three sides form a valid triangle\n    }\n};\n\nint main() {\n    int a, b, c;\n    if (cin >> a >> b >> c) {\n        Solution().checkValidTriangle(a, b, c);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid checkValidTriangle(int a, int b, int c) {\n    // TODO: Check if three sides form a valid triangle\n}\n\nint main() {\n    int a, b, c;\n    if (scanf(\"%d %d %d\", &a, &b, &c) == 3) {\n        checkValidTriangle(a, b, c);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "A triangle is valid if (a+b>c) AND (b+c>a) AND (c+a>b). Use AND operator to combine all conditions."
+            ]
+        }
+    ]
+}
+

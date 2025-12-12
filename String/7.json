@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Characters in String",
+            "description": "Count and print the total number of characters in the given string (excluding spaces).\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the count of characters (excluding spaces).",
+            "examples": "Sample Input\nHello World\n\nSample Output\n10\n\nExplanation:\n\"Hello World\" has 10 characters excluding the space: H-e-l-l-o-W-o-r-l-d",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "Java Programming",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "a b c",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "NoSpacesHere",
+                    "expectedOutput": "12"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countCharacters(self, s):\n        # TODO: Count characters excluding spaces\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().countCharacters(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countCharacters(String s) {\n        // TODO: Count characters excluding spaces\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().countCharacters(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countCharacters(s) {\n        // TODO: Count characters excluding spaces\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.countCharacters(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <cctype>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countCharacters(string s) {\n        // TODO: Count characters excluding spaces\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().countCharacters(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid countCharacters(char s[]) {\n    // TODO: Count characters excluding spaces\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        countCharacters(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the string and count only characters that are not spaces."
+            ]
+        }
+    ]
+}
+

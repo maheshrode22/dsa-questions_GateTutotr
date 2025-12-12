@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if Point Lies Inside Polygon (Rectangle/Triangle)",
+            "description": "Given a point (x, y) and shape type (\"Rectangle\" or \"Triangle\") with coordinates, determine if point lies inside the shape.\n\nFor Rectangle: Given bottom-left (x1, y1) and top-right (x2, y2)\n- Point is inside if: x1 <= x <= x2 AND y1 <= y <= y2\n\nFor Triangle: Given three vertices (x1, y1), (x2, y2), (x3, y3)\n- Use barycentric coordinates or area method\n- Calculate areas of three sub-triangles. Point is inside if sum equals main triangle area\n\nPrint \"Inside\" or \"Outside\".\n\nInput Format:\nFirst line: shape type (\"Rectangle\" or \"Triangle\")\nSecond line: point coordinates x y\nNext lines: shape coordinates (Rectangle: x1 y1 x2 y2, Triangle: x1 y1 x2 y2 x3 y3)\n\nOutput Format:\nPrint \"Inside\" or \"Outside\".",
+            "examples": "Sample Input\nRectangle\n3 3\n0 0 5 5\n\nSample Output\nInside\n\nSample Input\nTriangle\n2 2\n0 0 4 0 2 4\n\nSample Output\nInside\n\nExplanation:\nUse different logic based on shape type. For triangle, use area comparison method with careful floating point handling.",
+            "constraints": "-1000 <= all coordinates <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "Rectangle\n3 3\n0 0 5 5",
+                    "expectedOutput": "Inside"
+                },
+                {
+                    "input": "Triangle\n2 2\n0 0 4 0 2 4",
+                    "expectedOutput": "Inside"
+                },
+                {
+                    "input": "Rectangle\n6 6\n0 0 5 5",
+                    "expectedOutput": "Outside"
+                },
+                {
+                    "input": "Triangle\n5 5\n0 0 4 0 2 4",
+                    "expectedOutput": "Outside"
+                },
+                {
+                    "input": "Rectangle\n2 2\n1 1 3 3",
+                    "expectedOutput": "Inside"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkPointInShape(self, shape, px, py, coords):\n        # TODO: Check if point lies inside shape using conditional logic\n        pass\n\nif __name__ == '__main__':\n    try:\n        shape = input().strip()\n        px, py = map(int, input().split())\n        coords = list(map(int, input().split()))\n        Solution().checkPointInShape(shape, px, py, coords)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkPointInShape(String shape, int px, int py, int[] coords) {\n        // TODO: Check if point lies inside shape using conditional logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String shape = sc.nextLine();\n            int px = sc.nextInt();\n            int py = sc.nextInt();\n            int[] coords = new int[6];\n            int i = 0;\n            while (sc.hasNextInt() && i < 6) {\n                coords[i++] = sc.nextInt();\n            }\n            new Solution().checkPointInShape(shape, px, py, coords);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkPointInShape(shape, px, py, coords) {\n        // TODO: Check if point lies inside shape using conditional logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const shape = lines[0].trim();\n    const point = lines[1].trim().split(/\\s+/).map(Number);\n    const coords = lines[2].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.checkPointInShape(shape, point[0], point[1], coords);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <cmath>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkPointInShape(string shape, int px, int py, int coords[]) {\n        // TODO: Check if point lies inside shape using conditional logic\n    }\n};\n\nint main() {\n    string shape;\n    int px, py;\n    int coords[6];\n    if (getline(cin, shape) && cin >> px >> py) {\n        for (int i = 0; i < 6; i++) {\n            if (cin >> coords[i]);\n        }\n        Solution().checkPointInShape(shape, px, py, coords);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <math.h>\n\nvoid checkPointInShape(char shape[], int px, int py, int coords[]) {\n    // TODO: Check if point lies inside shape using conditional logic\n}\n\nint main() {\n    char shape[20];\n    int px, py;\n    int coords[6];\n    if (scanf(\"%s\", shape) == 1 && scanf(\"%d %d\", &px, &py) == 2) {\n        for (int i = 0; i < 6; i++) {\n            scanf(\"%d\", &coords[i]);\n        }\n        checkPointInShape(shape, px, py, coords);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For Rectangle: Check if px >= x1 && px <= x2 && py >= y1 && py <= y2. For Triangle: Calculate area of triangle (x1,y1)(x2,y2)(x3,y3) and three sub-triangles with point. Sum of sub-areas should equal main area."
+            ]
+        }
+    ]
+}
+

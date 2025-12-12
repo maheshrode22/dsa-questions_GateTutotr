@@ -1,0 +1,594 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Vowels in a String",
+            "description": "Count and print the number of vowels (a, e, i, o, u) in a given string. Consider both uppercase and lowercase vowels.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the count of vowels.",
+            "examples": "Sample Input\nHello World\n\nSample Output\n3\n\nExplanation:\nVowels in \"Hello World\" are: e, o, o (total 3)",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "Programming",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "AEIOU",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "xyz",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countVowels(self, s):\n        # TODO: Count vowels (a, e, i, o, u) in both uppercase and lowercase\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().countVowels(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countVowels(String s) {\n        // TODO: Count vowels (a, e, i, o, u) in both uppercase and lowercase\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().countVowels(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countVowels(s) {\n        // TODO: Count vowels (a, e, i, o, u) in both uppercase and lowercase\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.countVowels(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countVowels(string s) {\n        // TODO: Count vowels (a, e, i, o, u) in both uppercase and lowercase\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().countVowels(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid countVowels(char s[]) {\n    // TODO: Count vowels (a, e, i, o, u) in both uppercase and lowercase\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        countVowels(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check each character if it is one of 'a', 'e', 'i', 'o', 'u' (or uppercase). Use a loop to iterate through the string."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Reverse a String",
+            "description": "Reverse the given string and print it.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the reversed string.",
+            "examples": "Sample Input\nHello\n\nSample Output\nolleH\n\nExplanation:\nReversed \"Hello\" becomes \"olleH\"",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello",
+                    "expectedOutput": "olleH"
+                },
+                {
+                    "input": "World",
+                    "expectedOutput": "dlroW"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "123",
+                    "expectedOutput": "321"
+                },
+                {
+                    "input": "Java",
+                    "expectedOutput": "avaJ"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def reverseString(self, s):\n        # TODO: Reverse the string and print it\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().reverseString(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void reverseString(String s) {\n        // TODO: Reverse the string and print it\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().reverseString(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    reverseString(s) {\n        // TODO: Reverse the string and print it\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.reverseString(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void reverseString(string s) {\n        // TODO: Reverse the string and print it\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().reverseString(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid reverseString(char s[]) {\n    // TODO: Reverse the string and print it\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        reverseString(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers: start from the beginning and end, swap characters. Or create a new string by reading characters from the end."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if String is Palindrome",
+            "description": "Check if the given string is a palindrome. A palindrome reads the same forwards and backwards (ignoring case). Print \"true\" if palindrome, otherwise print \"false\".\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint \"true\" or \"false\".",
+            "examples": "Sample Input\nracecar\n\nSample Output\ntrue\n\nSample Input\nHello\n\nSample Output\nfalse\n\nExplanation:\n\"racecar\" reads same forwards and backwards, so it's a palindrome.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "racecar",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "Hello",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "madam",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "level",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isPalindrome(self, s):\n        # TODO: Check if string is palindrome (case-insensitive), print true or false\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().isPalindrome(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void isPalindrome(String s) {\n        // TODO: Check if string is palindrome (case-insensitive), print true or false\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().isPalindrome(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isPalindrome(s) {\n        // TODO: Check if string is palindrome (case-insensitive), print true or false\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.isPalindrome(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void isPalindrome(string s) {\n        // TODO: Check if string is palindrome (case-insensitive), print true or false\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().isPalindrome(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid isPalindrome(char s[]) {\n    // TODO: Check if string is palindrome (case-insensitive), print true or false\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        isPalindrome(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare characters from start and end. Convert to lowercase before comparing if needed. Use two pointers."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Count Words in a String",
+            "description": "Count the number of words in a given string. Words are separated by spaces.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the count of words.",
+            "examples": "Sample Input\nHello World Java\n\nSample Output\n3\n\nExplanation:\nThe string has 3 words: \"Hello\", \"World\", \"Java\"",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World Java",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "Programming is fun",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "One",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "a b c d e",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "Hello",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countWords(self, s):\n        # TODO: Count words separated by spaces\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().countWords(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countWords(String s) {\n        // TODO: Count words separated by spaces\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().countWords(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countWords(s) {\n        // TODO: Count words separated by spaces\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.countWords(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <sstream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countWords(string s) {\n        // TODO: Count words separated by spaces\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().countWords(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid countWords(char s[]) {\n    // TODO: Count words separated by spaces\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        countWords(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Split the string by spaces and count the parts. Or iterate through string and count spaces, then add 1."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Convert String to Uppercase",
+            "description": "Convert all lowercase letters in the string to uppercase and print the result.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string with all letters converted to uppercase.",
+            "examples": "Sample Input\nHello World\n\nSample Output\nHELLO WORLD\n\nExplanation:\nAll lowercase letters are converted to uppercase.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World",
+                    "expectedOutput": "HELLO WORLD"
+                },
+                {
+                    "input": "java programming",
+                    "expectedOutput": "JAVA PROGRAMMING"
+                },
+                {
+                    "input": "ABC",
+                    "expectedOutput": "ABC"
+                },
+                {
+                    "input": "a1b2c3",
+                    "expectedOutput": "A1B2C3"
+                },
+                {
+                    "input": "Hello123",
+                    "expectedOutput": "HELLO123"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def toUpperCase(self, s):\n        # TODO: Convert all lowercase letters to uppercase and print\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().toUpperCase(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void toUpperCase(String s) {\n        // TODO: Convert all lowercase letters to uppercase and print\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().toUpperCase(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    toUpperCase(s) {\n        // TODO: Convert all lowercase letters to uppercase and print\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.toUpperCase(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\n#include <cctype>\nusing namespace std;\n\nclass Solution {\npublic:\n    void toUpperCase(string s) {\n        // TODO: Convert all lowercase letters to uppercase and print\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().toUpperCase(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid toUpperCase(char s[]) {\n    // TODO: Convert all lowercase letters to uppercase and print\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        toUpperCase(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through each character. If it's a lowercase letter (a-z), convert it to uppercase by subtracting 32 or using built-in functions."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Remove Spaces from String",
+            "description": "Remove all spaces from the given string and print the result.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string without spaces.",
+            "examples": "Sample Input\nHello World Java\n\nSample Output\nHelloWorldJava\n\nExplanation:\nAll spaces are removed from the string.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World Java",
+                    "expectedOutput": "HelloWorldJava"
+                },
+                {
+                    "input": "a b c",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "NoSpaces",
+                    "expectedOutput": "NoSpaces"
+                },
+                {
+                    "input": "   ",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "Hello  World",
+                    "expectedOutput": "HelloWorld"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def removeSpaces(self, s):\n        # TODO: Remove all spaces from string and print\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().removeSpaces(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void removeSpaces(String s) {\n        // TODO: Remove all spaces from string and print\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().removeSpaces(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    removeSpaces(s) {\n        // TODO: Remove all spaces from string and print\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.removeSpaces(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void removeSpaces(string s) {\n        // TODO: Remove all spaces from string and print\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().removeSpaces(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid removeSpaces(char s[]) {\n    // TODO: Remove all spaces from string and print\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        removeSpaces(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the string and only add characters that are not spaces to a new string."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Count Characters in String",
+            "description": "Count and print the total number of characters in the given string (excluding spaces).\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the count of characters (excluding spaces).",
+            "examples": "Sample Input\nHello World\n\nSample Output\n10\n\nExplanation:\n\"Hello World\" has 10 characters excluding the space: H-e-l-l-o-W-o-r-l-d",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "Java Programming",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "a b c",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "NoSpacesHere",
+                    "expectedOutput": "12"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countCharacters(self, s):\n        # TODO: Count characters excluding spaces\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().countCharacters(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countCharacters(String s) {\n        // TODO: Count characters excluding spaces\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().countCharacters(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countCharacters(s) {\n        // TODO: Count characters excluding spaces\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.countCharacters(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <cctype>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countCharacters(string s) {\n        // TODO: Count characters excluding spaces\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().countCharacters(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid countCharacters(char s[]) {\n    // TODO: Count characters excluding spaces\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        countCharacters(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the string and count only characters that are not spaces."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Replace Character in String",
+            "description": "Replace all occurrences of a given character 'oldChar' with 'newChar' in the string and print the result.\n\nInput Format:\nFirst line contains a string.\nSecond line contains oldChar (the character to replace).\nThird line contains newChar (the replacement character).\n\nOutput Format:\nPrint the string after replacing all occurrences of oldChar with newChar.",
+            "examples": "Sample Input\nHello World\no\ne\n\nSample Output\nHelle Werld\n\nExplanation:\nAll 'o' characters are replaced with 'e'.",
+            "constraints": "1 <= length of string <= 1000\noldChar and newChar are single characters",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World\no\ne",
+                    "expectedOutput": "Helle Werld"
+                },
+                {
+                    "input": "Java Programming\na\nx",
+                    "expectedOutput": "Jxvx Progrxmming"
+                },
+                {
+                    "input": "abc\na\nz",
+                    "expectedOutput": "zbc"
+                },
+                {
+                    "input": "test\nt\nT",
+                    "expectedOutput": "TesT"
+                },
+                {
+                    "input": "no change\nx\ny",
+                    "expectedOutput": "no change"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def replaceCharacter(self, s, oldChar, newChar):\n        # TODO: Replace all occurrences of oldChar with newChar and print\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        oldChar = input().strip()\n        newChar = input().strip()\n        Solution().replaceCharacter(s, oldChar, newChar)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void replaceCharacter(String s, char oldChar, char newChar) {\n        // TODO: Replace all occurrences of oldChar with newChar and print\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String oldStr = sc.nextLine();\n            String newStr = sc.nextLine();\n            char oldChar = oldStr.charAt(0);\n            char newChar = newStr.charAt(0);\n            new Solution().replaceCharacter(s, oldChar, newChar);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    replaceCharacter(s, oldChar, newChar) {\n        // TODO: Replace all occurrences of oldChar with newChar and print\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const oldChar = lines[1];\n    const newChar = lines[2];\n    const sol = new Solution();\n    sol.replaceCharacter(s, oldChar, newChar);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void replaceCharacter(string s, char oldChar, char newChar) {\n        // TODO: Replace all occurrences of oldChar with newChar and print\n    }\n};\n\nint main() {\n    string s, oldStr, newStr;\n    if (getline(cin, s) && getline(cin, oldStr) && getline(cin, newStr)) {\n        char oldChar = oldStr[0];\n        char newChar = newStr[0];\n        Solution().replaceCharacter(s, oldChar, newChar);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid replaceCharacter(char s[], char oldChar, char newChar) {\n    // TODO: Replace all occurrences of oldChar with newChar and print\n}\n\nint main() {\n    char s[1001], oldStr[2], newStr[2];\n    if (fgets(s, sizeof(s), stdin) && fgets(oldStr, sizeof(oldStr), stdin) && fgets(newStr, sizeof(newStr), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        oldStr[strcspn(oldStr, \"\\n\")] = 0;\n        newStr[strcspn(newStr, \"\\n\")] = 0;\n        char oldChar = oldStr[0];\n        char newChar = newStr[0];\n        replaceCharacter(s, oldChar, newChar);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the string. When you find oldChar, replace it with newChar."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if Two Strings are Equal",
+            "description": "Compare two strings and print \"true\" if they are equal (case-sensitive), otherwise print \"false\".\n\nInput Format:\nFirst line contains first string.\nSecond line contains second string.\n\nOutput Format:\nPrint \"true\" if strings are equal, otherwise print \"false\".",
+            "examples": "Sample Input\nHello\nHello\n\nSample Output\ntrue\n\nSample Input\nHello\nhello\n\nSample Output\nfalse\n\nExplanation:\nFirst case: Both strings are identical, so true.\nSecond case: 'H' != 'h', so false.",
+            "constraints": "1 <= length of each string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello\nHello",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "Hello\nhello",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "Java\nPython",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "test\ntest",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def areEqual(self, s1, s2):\n        # TODO: Check if two strings are equal (case-sensitive), print true or false\n        pass\n\nif __name__ == '__main__':\n    try:\n        s1 = input().strip()\n        s2 = input().strip()\n        Solution().areEqual(s1, s2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void areEqual(String s1, String s2) {\n        // TODO: Check if two strings are equal (case-sensitive), print true or false\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s1 = sc.nextLine();\n            String s2 = sc.nextLine();\n            new Solution().areEqual(s1, s2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    areEqual(s1, s2) {\n        // TODO: Check if two strings are equal (case-sensitive), print true or false\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s1 = lines[0];\n    const s2 = lines[1];\n    const sol = new Solution();\n    sol.areEqual(s1, s2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void areEqual(string s1, string s2) {\n        // TODO: Check if two strings are equal (case-sensitive), print true or false\n    }\n};\n\nint main() {\n    string s1, s2;\n    if (getline(cin, s1) && getline(cin, s2)) {\n        Solution().areEqual(s1, s2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid areEqual(char s1[], char s2[]) {\n    // TODO: Check if two strings are equal (case-sensitive), print true or false\n}\n\nint main() {\n    char s1[1001], s2[1001];\n    if (fgets(s1, sizeof(s1), stdin) && fgets(s2, sizeof(s2), stdin)) {\n        s1[strcspn(s1, \"\\n\")] = 0;\n        s2[strcspn(s2, \"\\n\")] = 0;\n        areEqual(s1, s2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare strings character by character, or use built-in string comparison function. Check lengths first - if different, strings are not equal."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Longest Word in String",
+            "description": "Find and print the longest word in a given string. Words are separated by spaces. If there are multiple words with the same maximum length, print the first one.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the longest word.",
+            "examples": "Sample Input\nJava is a programming language\n\nSample Output\nprogramming\n\nExplanation:\nWords: Java(4), is(2), a(1), programming(11), language(8). Longest word is \"programming\".",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "Java is a programming language",
+                    "expectedOutput": "programming"
+                },
+                {
+                    "input": "Hello World",
+                    "expectedOutput": "Hello"
+                },
+                {
+                    "input": "a bc def",
+                    "expectedOutput": "def"
+                },
+                {
+                    "input": "one",
+                    "expectedOutput": "one"
+                },
+                {
+                    "input": "test testing tested",
+                    "expectedOutput": "testing"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findLongestWord(self, s):\n        # TODO: Find and print the longest word (first one if multiple have same length)\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().findLongestWord(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findLongestWord(String s) {\n        // TODO: Find and print the longest word (first one if multiple have same length)\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().findLongestWord(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findLongestWord(s) {\n        // TODO: Find and print the longest word (first one if multiple have same length)\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.findLongestWord(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <sstream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findLongestWord(string s) {\n        // TODO: Find and print the longest word (first one if multiple have same length)\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().findLongestWord(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid findLongestWord(char s[]) {\n    // TODO: Find and print the longest word (first one if multiple have same length)\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        findLongestWord(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Split the string by spaces to get words. Compare lengths of each word and keep track of the longest one. If lengths are equal, keep the first one."
+            ]
+        }
+    ]
+}

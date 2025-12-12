@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Substrings with Same First and Last Character",
+            "description": "Count the number of substrings in a given string that have the same first and last character. Print the count.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the count of substrings with same first and last character.",
+            "examples": "Sample Input\naba\n\nSample Output\n4\n\nSample Input\nabc\n\nSample Output\n3\n\nExplanation:\nFor \"aba\": substrings are \"a\", \"b\", \"a\", \"ab\", \"ba\", \"aba\". Those with same first and last: \"a\", \"a\", \"aba\", \"aba\" = 4 (note: substring \"aba\" appears in multiple positions). Actually, for \"aba\": \"a\"(0-0), \"b\"(1-1), \"a\"(2-2), \"aba\"(0-2) = 4.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "aba",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "aaa",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "ababa",
+                    "expectedOutput": "9"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countSubstrings(self, s):\n        # TODO: Count substrings with same first and last character\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().countSubstrings(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countSubstrings(String s) {\n        // TODO: Count substrings with same first and last character\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().countSubstrings(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countSubstrings(s) {\n        // TODO: Count substrings with same first and last character\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.countSubstrings(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countSubstrings(string s) {\n        // TODO: Count substrings with same first and last character\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().countSubstrings(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid countSubstrings(char s[]) {\n    // TODO: Count substrings with same first and last character\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        countSubstrings(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each starting position, check all substrings starting from that position. Count those where first and last characters match."
+            ]
+        }
+    ]
+}
+

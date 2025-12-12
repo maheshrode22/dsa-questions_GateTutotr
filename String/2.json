@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Reverse a String",
+            "description": "Reverse the given string and print it.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the reversed string.",
+            "examples": "Sample Input\nHello\n\nSample Output\nolleH\n\nExplanation:\nReversed \"Hello\" becomes \"olleH\"",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello",
+                    "expectedOutput": "olleH"
+                },
+                {
+                    "input": "World",
+                    "expectedOutput": "dlroW"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "123",
+                    "expectedOutput": "321"
+                },
+                {
+                    "input": "Java",
+                    "expectedOutput": "avaJ"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def reverseString(self, s):\n        # TODO: Reverse the string and print it\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().reverseString(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void reverseString(String s) {\n        // TODO: Reverse the string and print it\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().reverseString(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    reverseString(s) {\n        // TODO: Reverse the string and print it\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.reverseString(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void reverseString(string s) {\n        // TODO: Reverse the string and print it\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().reverseString(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid reverseString(char s[]) {\n    // TODO: Reverse the string and print it\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        reverseString(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers: start from the beginning and end, swap characters. Or create a new string by reading characters from the end."
+            ]
+        }
+    ]
+}
+

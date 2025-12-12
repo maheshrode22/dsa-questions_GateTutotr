@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Reverse Words in a String",
+            "description": "Reverse the order of words in a given string. Words are separated by spaces. Print the string with words reversed.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string with words in reverse order.",
+            "examples": "Sample Input\nHello World Java\n\nSample Output\nJava World Hello\n\nSample Input\nthe sky is blue\n\nSample Output\nblue is sky the\n\nExplanation:\nReverse the order of words while keeping each word intact.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "Hello World Java",
+                    "expectedOutput": "Java World Hello"
+                },
+                {
+                    "input": "the sky is blue",
+                    "expectedOutput": "blue is sky the"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "one two three",
+                    "expectedOutput": "three two one"
+                },
+                {
+                    "input": "programming is fun",
+                    "expectedOutput": "fun is programming"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def reverseWords(self, s):\n        # TODO: Reverse the order of words\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().reverseWords(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void reverseWords(String s) {\n        // TODO: Reverse the order of words\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().reverseWords(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    reverseWords(s) {\n        // TODO: Reverse the order of words\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.reverseWords(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <sstream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void reverseWords(string s) {\n        // TODO: Reverse the order of words\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().reverseWords(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid reverseWords(char s[]) {\n    // TODO: Reverse the order of words\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        reverseWords(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Split string into words, reverse the array of words, then join them back with spaces."
+            ]
+        }
+    ]
+}
+

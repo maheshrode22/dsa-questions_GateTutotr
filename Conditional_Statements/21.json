@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Complex Number Comparison and Classification",
+            "description": "Given two complex numbers in the form (a, b) representing a+bi, compare them and classify:\n1. Compare by real part first, then imaginary part\n2. Classify each as: positive real, negative real, positive imaginary, negative imaginary, or zero\n\nPrint:\n- \"First is larger\" if first complex number is larger (by real part, then imaginary)\n- \"Second is larger\" if second is larger\n- \"Equal\" if both are equal\n- Then print classification of first number: \"Positive Real\", \"Negative Real\", \"Positive Imaginary\", \"Negative Imaginary\", or \"Zero\"\n\nInput Format:\nFour integers: a1 b1 a2 b2 (representing two complex numbers a1+b1i and a2+b2i)\n\nOutput Format:\nFirst line: comparison result\nSecond line: classification of first number",
+            "examples": "Sample Input\n5 3 3 4\n\nSample Output\nFirst is larger\nPositive Real\n\nSample Input\n-2 -5 -3 -4\n\nSample Output\nSecond is larger\nNegative Real\n\nExplanation:\nCompare real parts first. If equal, compare imaginary parts. Classify based on real and imaginary components.",
+            "constraints": "-100 <= a1, b1, a2, b2 <= 100",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5 3 3 4",
+                    "expectedOutput": "First is larger\nPositive Real"
+                },
+                {
+                    "input": "-2 -5 -3 -4",
+                    "expectedOutput": "First is larger\nNegative Real"
+                },
+                {
+                    "input": "3 4 3 4",
+                    "expectedOutput": "Equal\nPositive Real"
+                },
+                {
+                    "input": "0 5 0 3",
+                    "expectedOutput": "First is larger\nPositive Imaginary"
+                },
+                {
+                    "input": "-1 0 0 -2",
+                    "expectedOutput": "Second is larger\nNegative Real"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def compareComplexNumbers(self, a1, b1, a2, b2):\n        # TODO: Compare complex numbers and classify using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        a1, b1, a2, b2 = map(int, input().split())\n        Solution().compareComplexNumbers(a1, b1, a2, b2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void compareComplexNumbers(int a1, int b1, int a2, int b2) {\n        // TODO: Compare complex numbers and classify using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int a1 = sc.nextInt();\n            int b1 = sc.nextInt();\n            int a2 = sc.nextInt();\n            int b2 = sc.nextInt();\n            new Solution().compareComplexNumbers(a1, b1, a2, b2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    compareComplexNumbers(a1, b1, a2, b2) {\n        // TODO: Compare complex numbers and classify using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.compareComplexNumbers(nums[0], nums[1], nums[2], nums[3]);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void compareComplexNumbers(int a1, int b1, int a2, int b2) {\n        // TODO: Compare complex numbers and classify using nested conditions\n    }\n};\n\nint main() {\n    int a1, b1, a2, b2;\n    if (cin >> a1 >> b1 >> a2 >> b2) {\n        Solution().compareComplexNumbers(a1, b1, a2, b2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid compareComplexNumbers(int a1, int b1, int a2, int b2) {\n    // TODO: Compare complex numbers and classify using nested conditions\n}\n\nint main() {\n    int a1, b1, a2, b2;\n    if (scanf(\"%d %d %d %d\", &a1, &b1, &a2, &b2) == 4) {\n        compareComplexNumbers(a1, b1, a2, b2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compare a1 with a2 first. If equal, compare b1 with b2. For classification: if a1==0 and b1==0 -> Zero, else if b1==0 -> Real (positive/negative based on a1), else -> Imaginary (positive/negative based on b1)."
+            ]
+        }
+    ]
+}
+

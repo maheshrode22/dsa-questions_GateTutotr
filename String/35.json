@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Substring with At Most K Distinct Characters",
+            "description": "Find the length of the longest substring that contains at most k distinct characters. Print the length.\n\nInput Format:\nFirst line contains a string.\nSecond line contains an integer k.\n\nOutput Format:\nPrint the length of longest substring with at most k distinct characters.",
+            "examples": "Sample Input\nabcabcbb\n3\n\nSample Output\n6\n\nSample Input\neceba\n2\n\nSample Output\n3\n\nExplanation:\nFor \"abcabcbb\" with k=3, longest substring with at most 3 distinct characters is \"abcabc\" with length 6.",
+            "constraints": "1 <= length of string <= 1000\n1 <= k <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abcabcbb\n3",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "eceba\n2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "aa\n1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "ab\n1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "abcde\n3",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def lengthOfLongestSubstringKDistinct(self, s, k):\n        # TODO: Find length of longest substring with at most k distinct characters\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        k = int(input().strip())\n        Solution().lengthOfLongestSubstringKDistinct(s, k)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void lengthOfLongestSubstringKDistinct(String s, int k) {\n        // TODO: Find length of longest substring with at most k distinct characters\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            int k = sc.nextInt();\n            new Solution().lengthOfLongestSubstringKDistinct(s, k);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    lengthOfLongestSubstringKDistinct(s, k) {\n        // TODO: Find length of longest substring with at most k distinct characters\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const k = parseInt(lines[1]);\n    const sol = new Solution();\n    sol.lengthOfLongestSubstringKDistinct(s, k);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    void lengthOfLongestSubstringKDistinct(string s, int k) {\n        // TODO: Find length of longest substring with at most k distinct characters\n    }\n};\n\nint main() {\n    string s;\n    int k;\n    if (getline(cin, s) && cin >> k) {\n        Solution().lengthOfLongestSubstringKDistinct(s, k);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid lengthOfLongestSubstringKDistinct(char s[], int k) {\n    // TODO: Find length of longest substring with at most k distinct characters\n}\n\nint main() {\n    char s[1001];\n    int k;\n    if (fgets(s, sizeof(s), stdin) && scanf(\"%d\", &k) == 1) {\n        s[strcspn(s, \"\\n\")] = 0;\n        lengthOfLongestSubstringKDistinct(s, k);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use sliding window with a hash map to track character frequencies. Expand right and contract left to maintain at most k distinct characters."
+            ]
+        }
+    ]
+}
+

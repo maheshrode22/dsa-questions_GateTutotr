@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if Number is Even or Odd",
+            "description": "Given a number, check if it is even or odd. Also check if it is positive, negative, or zero.\n\nPrint:\n- \"Even Positive\" if number is even and positive\n- \"Even Negative\" if number is even and negative\n- \"Odd Positive\" if number is odd and positive\n- \"Odd Negative\" if number is odd and negative\n- \"Even Zero\" if number is zero\n\nInput Format:\nSingle integer.\n\nOutput Format:\nPrint the appropriate string based on the conditions.",
+            "examples": "Sample Input\n10\n\nSample Output\nEven Positive\n\nSample Input\n-5\n\nSample Output\nOdd Negative\n\nSample Input\n0\n\nSample Output\nEven Zero\n\nExplanation:\nUse nested conditions to check both parity (even/odd) and sign (positive/negative/zero).",
+            "constraints": "-10^9 <= number <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "Even Positive"
+                },
+                {
+                    "input": "-5",
+                    "expectedOutput": "Odd Negative"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "Even Zero"
+                },
+                {
+                    "input": "-8",
+                    "expectedOutput": "Even Negative"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "Odd Positive"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkNumberType(self, num):\n        # TODO: Check if number is even/odd and positive/negative/zero using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        num = int(input().strip())\n        Solution().checkNumberType(num)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkNumberType(int num) {\n        // TODO: Check if number is even/odd and positive/negative/zero using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int num = sc.nextInt();\n            new Solution().checkNumberType(num);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkNumberType(num) {\n        // TODO: Check if number is even/odd and positive/negative/zero using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const num = parseInt(input.trim());\n    const sol = new Solution();\n    sol.checkNumberType(num);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkNumberType(int num) {\n        // TODO: Check if number is even/odd and positive/negative/zero using nested conditions\n    }\n};\n\nint main() {\n    int num;\n    if (cin >> num) {\n        Solution().checkNumberType(num);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid checkNumberType(int num) {\n    // TODO: Check if number is even/odd and positive/negative/zero using nested conditions\n}\n\nint main() {\n    int num;\n    if (scanf(\"%d\", &num) == 1) {\n        checkNumberType(num);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "First check if number is zero. Then check if positive or negative. Within each, check if even or odd."
+            ]
+        }
+    ]
+}
+

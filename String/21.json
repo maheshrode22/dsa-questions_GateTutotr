@@ -1,0 +1,596 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Substring Without Repeating Characters",
+            "description": "Find the length of the longest substring without repeating characters in a given string. Print the length.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the length of the longest substring without repeating characters.",
+            "examples": "Sample Input\nabcabcbb\n\nSample Output\n3\n\nSample Input\nbbbbb\n\nSample Output\n1\n\nExplanation:\nFor \"abcabcbb\", the longest substring without repeating characters is \"abc\" with length 3.",
+            "constraints": "0 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abcabcbb",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "bbbbb",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "pwwkew",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "dvdf",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def lengthOfLongestSubstring(self, s):\n        # TODO: Find length of longest substring without repeating characters\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().lengthOfLongestSubstring(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void lengthOfLongestSubstring(String s) {\n        // TODO: Find length of longest substring without repeating characters\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().lengthOfLongestSubstring(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    lengthOfLongestSubstring(s) {\n        // TODO: Find length of longest substring without repeating characters\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.lengthOfLongestSubstring(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    void lengthOfLongestSubstring(string s) {\n        // TODO: Find length of longest substring without repeating characters\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().lengthOfLongestSubstring(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid lengthOfLongestSubstring(char s[]) {\n    // TODO: Find length of longest substring without repeating characters\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        lengthOfLongestSubstring(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use sliding window technique with a hash map to track characters and their positions."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Minimum Window Substring",
+            "description": "Given two strings s and t, find the minimum window substring of s that contains all characters of t. If no such substring exists, print empty string. If multiple minimum windows exist, print the first one.\n\nInput Format:\nFirst line contains string s.\nSecond line contains string t.\n\nOutput Format:\nPrint the minimum window substring, or empty string if not found.",
+            "examples": "Sample Input\nADOBECODEBANC\nABC\n\nSample Output\nBANC\n\nSample Input\na\na\n\nSample Output\na\n\nExplanation:\nThe minimum window in \"ADOBECODEBANC\" containing all characters of \"ABC\" is \"BANC\".",
+            "constraints": "1 <= length of s <= 1000\n1 <= length of t <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "ADOBECODEBANC\nABC",
+                    "expectedOutput": "BANC"
+                },
+                {
+                    "input": "a\na",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "a\naa",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "ab\na",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "bba\nab",
+                    "expectedOutput": "ba"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minWindow(self, s, t):\n        # TODO: Find minimum window substring containing all characters of t\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        t = input().strip()\n        Solution().minWindow(s, t)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void minWindow(String s, String t) {\n        // TODO: Find minimum window substring containing all characters of t\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String t = sc.nextLine();\n            new Solution().minWindow(s, t);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minWindow(s, t) {\n        // TODO: Find minimum window substring containing all characters of t\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const t = lines[1];\n    const sol = new Solution();\n    sol.minWindow(s, t);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    void minWindow(string s, string t) {\n        // TODO: Find minimum window substring containing all characters of t\n    }\n};\n\nint main() {\n    string s, t;\n    if (getline(cin, s) && getline(cin, t)) {\n        Solution().minWindow(s, t);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid minWindow(char s[], char t[]) {\n    // TODO: Find minimum window substring containing all characters of t\n}\n\nint main() {\n    char s[1001], t[1001];\n    if (fgets(s, sizeof(s), stdin) && fgets(t, sizeof(t), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        t[strcspn(t, \"\\n\")] = 0;\n        minWindow(s, t);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use sliding window technique. Expand right until all characters of t are included, then contract left to find minimum window."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Group Anagrams",
+            "description": "Given a string of space-separated words, group words that are anagrams of each other. Print each group on a separate line, with words in each group separated by spaces. Groups should be printed in order of first appearance of the first word in each group.\n\nInput Format:\nFirst line contains space-separated words.\n\nOutput Format:\nPrint each group of anagrams on a separate line, with words separated by spaces.",
+            "examples": "Sample Input\neat tea tan ate nat bat\n\nSample Output\neat tea ate\ntan nat\nbat\n\nExplanation:\n\"eat\", \"tea\", \"ate\" are anagrams. \"tan\", \"nat\" are anagrams. \"bat\" is alone.",
+            "constraints": "1 <= number of words <= 1000\n1 <= length of each word <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "eat tea tan ate nat bat",
+                    "expectedOutput": "eat tea ate\ntan nat\nbat"
+                },
+                {
+                    "input": "",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "abc bca cab",
+                    "expectedOutput": "abc bca cab"
+                },
+                {
+                    "input": "listen silent enlist",
+                    "expectedOutput": "listen silent enlist"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def groupAnagrams(self, words):\n        # TODO: Group anagrams together and print each group on a line\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        words = s.split() if s else []\n        Solution().groupAnagrams(words)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void groupAnagrams(String[] words) {\n        // TODO: Group anagrams together and print each group on a line\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String line = sc.nextLine();\n            String[] words = line.isEmpty() ? new String[0] : line.split(\" \");\n            new Solution().groupAnagrams(words);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    groupAnagrams(words) {\n        // TODO: Group anagrams together and print each group on a line\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const words = s ? s.split(/\\s+/) : [];\n    const sol = new Solution();\n    sol.groupAnagrams(words);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <sstream>\n#include <unordered_map>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void groupAnagrams(vector<string>& words) {\n        // TODO: Group anagrams together and print each group on a line\n    }\n};\n\nint main() {\n    string line;\n    if (getline(cin, line)) {\n        stringstream ss(line);\n        vector<string> words;\n        string word;\n        while (ss >> word) {\n            words.push_back(word);\n        }\n        Solution().groupAnagrams(words);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid groupAnagrams(char words[][1001], int n) {\n    // TODO: Group anagrams together and print each group on a line\n}\n\nint main() {\n    char line[10001];\n    if (fgets(line, sizeof(line), stdin)) {\n        line[strcspn(line, \"\\n\")] = 0;\n        char words[1001][1001];\n        int n = 0;\n        if (strlen(line) > 0) {\n            char* token = strtok(line, \" \");\n            while (token && n < 1000) {\n                strcpy(words[n++], token);\n                token = strtok(NULL, \" \");\n            }\n        }\n        groupAnagrams(words, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Sort each word's characters to get a key. Words with the same sorted key are anagrams. Group them together."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Longest Palindromic Substring",
+            "description": "Given a string, find and print the longest palindromic substring. If multiple palindromes have the same maximum length, print the first one.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the longest palindromic substring.",
+            "examples": "Sample Input\nbabad\n\nSample Output\nbab\n\nSample Input\ncbbd\n\nSample Output\nbb\n\nExplanation:\nFor \"babad\", the longest palindromic substrings are \"bab\" or \"aba\". Print the first one: \"bab\".",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "babad",
+                    "expectedOutput": "bab"
+                },
+                {
+                    "input": "cbbd",
+                    "expectedOutput": "bb"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "racecar",
+                    "expectedOutput": "racecar"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "a"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestPalindrome(self, s):\n        # TODO: Find longest palindromic substring\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().longestPalindrome(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void longestPalindrome(String s) {\n        // TODO: Find longest palindromic substring\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().longestPalindrome(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestPalindrome(s) {\n        // TODO: Find longest palindromic substring\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.longestPalindrome(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void longestPalindrome(string s) {\n        // TODO: Find longest palindromic substring\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().longestPalindrome(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid longestPalindrome(char s[]) {\n    // TODO: Find longest palindromic substring\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        longestPalindrome(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use expand around center technique. For each position, expand both odd-length and even-length palindromes. Keep track of the longest one."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Valid Parentheses",
+            "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: 1) Open brackets must be closed by the same type of brackets. 2) Open brackets must be closed in the correct order. 3) Every close bracket has a corresponding open bracket of the same type. Print \"true\" if valid, otherwise print \"false\".\n\nInput Format:\nFirst line contains a string of parentheses.\n\nOutput Format:\nPrint \"true\" if valid, otherwise print \"false\".",
+            "examples": "Sample Input\n()\n\nSample Output\ntrue\n\nSample Input\n()[]{}\n\nSample Output\ntrue\n\nSample Input\n(]\n\nSample Output\nfalse\n\nExplanation:\n\"()\" is valid. \"()[]{}\" is valid. \"(]\" is invalid - closing bracket doesn't match opening bracket.",
+            "constraints": "0 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "()",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "()[]{}",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "(]",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "([)]",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "{[]}",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isValid(self, s):\n        # TODO: Check if parentheses are valid\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().isValid(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void isValid(String s) {\n        // TODO: Check if parentheses are valid\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().isValid(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isValid(s) {\n        // TODO: Check if parentheses are valid\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.isValid(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <stack>\nusing namespace std;\n\nclass Solution {\npublic:\n    void isValid(string s) {\n        // TODO: Check if parentheses are valid\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().isValid(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid isValid(char s[]) {\n    // TODO: Check if parentheses are valid\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        isValid(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a stack. When you see an opening bracket, push it. When you see a closing bracket, check if it matches the top of stack."
+            ]
+        },
+        {
+            "id": null,
+            "title": "String to Integer (atoi)",
+            "description": "Implement the atoi function which converts a string to an integer. The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value. The string can contain additional characters after those that form the integral number, which are ignored. If no valid conversion could be performed, print 0.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the converted integer.",
+            "examples": "Sample Input\n42\n\nSample Output\n42\n\nSample Input\n   -42\n\nSample Output\n-42\n\nSample Input\n4193 with words\n\nSample Output\n4193\n\nExplanation:\nConvert string to integer, handling whitespace, signs, and ignoring invalid trailing characters.",
+            "constraints": "0 <= length of string <= 200",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "42",
+                    "expectedOutput": "42"
+                },
+                {
+                    "input": "   -42",
+                    "expectedOutput": "-42"
+                },
+                {
+                    "input": "4193 with words",
+                    "expectedOutput": "4193"
+                },
+                {
+                    "input": "words and 987",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "-91283472332",
+                    "expectedOutput": "-2147483648"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def myAtoi(self, s):\n        # TODO: Convert string to integer (atoi)\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().myAtoi(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void myAtoi(String s) {\n        // TODO: Convert string to integer (atoi)\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().myAtoi(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    myAtoi(s) {\n        // TODO: Convert string to integer (atoi)\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.myAtoi(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <climits>\nusing namespace std;\n\nclass Solution {\npublic:\n    void myAtoi(string s) {\n        // TODO: Convert string to integer (atoi)\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().myAtoi(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n#include <limits.h>\n\nvoid myAtoi(char s[]) {\n    // TODO: Convert string to integer (atoi)\n}\n\nint main() {\n    char s[201];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        myAtoi(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Skip whitespace, check for sign, then read digits until non-digit character. Handle integer overflow by clamping to INT_MIN or INT_MAX."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Longest Common Subsequence",
+            "description": "Given two strings text1 and text2, find the length of their longest common subsequence. A subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters. Print the length.\n\nInput Format:\nFirst line contains first string text1.\nSecond line contains second string text2.\n\nOutput Format:\nPrint the length of longest common subsequence.",
+            "examples": "Sample Input\nabcde\nace\n\nSample Output\n3\n\nSample Input\nabc\nabc\n\nSample Output\n3\n\nSample Input\nabc\ndef\n\nSample Output\n0\n\nExplanation:\nThe longest common subsequence of \"abcde\" and \"ace\" is \"ace\" with length 3.",
+            "constraints": "1 <= length of text1 <= 1000\n1 <= length of text2 <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abcde\nace",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc\ndef",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "AGGTAB\nGXTXAYB",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "ABCDGH\nAEDFHR",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestCommonSubsequence(self, text1, text2):\n        # TODO: Find length of longest common subsequence\n        pass\n\nif __name__ == '__main__':\n    try:\n        text1 = input().strip()\n        text2 = input().strip()\n        Solution().longestCommonSubsequence(text1, text2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void longestCommonSubsequence(String text1, String text2) {\n        // TODO: Find length of longest common subsequence\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String text1 = sc.nextLine();\n            String text2 = sc.nextLine();\n            new Solution().longestCommonSubsequence(text1, text2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestCommonSubsequence(text1, text2) {\n        // TODO: Find length of longest common subsequence\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const text1 = lines[0];\n    const text2 = lines[1];\n    const sol = new Solution();\n    sol.longestCommonSubsequence(text1, text2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void longestCommonSubsequence(string text1, string text2) {\n        // TODO: Find length of longest common subsequence\n    }\n};\n\nint main() {\n    string text1, text2;\n    if (getline(cin, text1) && getline(cin, text2)) {\n        Solution().longestCommonSubsequence(text1, text2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid longestCommonSubsequence(char text1[], char text2[]) {\n    // TODO: Find length of longest common subsequence\n}\n\nint main() {\n    char text1[1001], text2[1001];\n    if (fgets(text1, sizeof(text1), stdin) && fgets(text2, sizeof(text2), stdin)) {\n        text1[strcspn(text1, \"\\n\")] = 0;\n        text2[strcspn(text2, \"\\n\")] = 0;\n        longestCommonSubsequence(text1, text2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming. Create a 2D table where dp[i][j] represents the length of LCS of text1[0..i-1] and text2[0..j-1]."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Edit Distance (Levenshtein Distance)",
+            "description": "Given two strings word1 and word2, find the minimum number of operations required to convert word1 to word2. You have the following operations permitted: 1) Insert a character, 2) Delete a character, 3) Replace a character. Print the minimum edit distance.\n\nInput Format:\nFirst line contains first string word1.\nSecond line contains second string word2.\n\nOutput Format:\nPrint the minimum edit distance.",
+            "examples": "Sample Input\nhorse\nros\n\nSample Output\n3\n\nSample Input\nintention\nexecution\n\nSample Output\n5\n\nExplanation:\nTo convert \"horse\" to \"ros\": 1) horse -> rorse (replace 'h' with 'r'), 2) rorse -> rose (remove 'r'), 3) rose -> ros (remove 'e'). Total 3 operations.",
+            "constraints": "0 <= length of word1 <= 500\n0 <= length of word2 <= 500",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "horse\nros",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "intention\nexecution",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "abc\n",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "\nabc",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minDistance(self, word1, word2):\n        # TODO: Find minimum edit distance between two strings\n        pass\n\nif __name__ == '__main__':\n    try:\n        word1 = input().strip()\n        word2 = input().strip()\n        Solution().minDistance(word1, word2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void minDistance(String word1, String word2) {\n        // TODO: Find minimum edit distance between two strings\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String word1 = sc.nextLine();\n            String word2 = sc.nextLine();\n            new Solution().minDistance(word1, word2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minDistance(word1, word2) {\n        // TODO: Find minimum edit distance between two strings\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const word1 = lines[0];\n    const word2 = lines[1];\n    const sol = new Solution();\n    sol.minDistance(word1, word2);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void minDistance(string word1, string word2) {\n        // TODO: Find minimum edit distance between two strings\n    }\n};\n\nint main() {\n    string word1, word2;\n    if (getline(cin, word1) && getline(cin, word2)) {\n        Solution().minDistance(word1, word2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid minDistance(char word1[], char word2[]) {\n    // TODO: Find minimum edit distance between two strings\n}\n\nint main() {\n    char word1[501], word2[501];\n    if (fgets(word1, sizeof(word1), stdin) && fgets(word2, sizeof(word2), stdin)) {\n        word1[strcspn(word1, \"\\n\")] = 0;\n        word2[strcspn(word2, \"\\n\")] = 0;\n        minDistance(word1, word2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming. dp[i][j] represents minimum operations to convert word1[0..i-1] to word2[0..j-1]. Consider three operations: insert, delete, replace."
+            ]
+        },
+        
+        {
+            "id": null,
+            "title": "Decode String",
+            "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer. You may assume that the input string is always valid; No extra white spaces, square brackets are well-formed, etc.\n\nInput Format:\nFirst line contains an encoded string.\n\nOutput Format:\nPrint the decoded string.",
+            "examples": "Sample Input\n3[a]2[bc]\n\nSample Output\naaabcbc\n\nSample Input\n3[a2[c]]\n\nSample Output\naccaccacc\n\nSample Input\n2[abc]3[cd]ef\n\nSample Output\nabcabccdcdcdef\n\nExplanation:\n\"3[a]2[bc]\" decodes to \"aaabcbc\". \"3[a2[c]]\" decodes to \"accaccacc\".",
+            "constraints": "1 <= length of string <= 30\nk is always a positive integer",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "3[a]2[bc]",
+                    "expectedOutput": "aaabcbc"
+                },
+                {
+                    "input": "3[a2[c]]",
+                    "expectedOutput": "accaccacc"
+                },
+                {
+                    "input": "2[abc]3[cd]ef",
+                    "expectedOutput": "abcabccdcdcdef"
+                },
+                {
+                    "input": "abc3[cd]xyz",
+                    "expectedOutput": "abccdcdcdxyz"
+                },
+                {
+                    "input": "10[a]",
+                    "expectedOutput": "aaaaaaaaaa"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def decodeString(self, s):\n        # TODO: Decode the encoded string\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().decodeString(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void decodeString(String s) {\n        // TODO: Decode the encoded string\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().decodeString(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    decodeString(s) {\n        // TODO: Decode the encoded string\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.decodeString(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <stack>\nusing namespace std;\n\nclass Solution {\npublic:\n    void decodeString(string s) {\n        // TODO: Decode the encoded string\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().decodeString(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid decodeString(char s[]) {\n    // TODO: Decode the encoded string\n}\n\nint main() {\n    char s[31];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        decodeString(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a stack. When you see a number, save it. When you see '[', push current string and number to stack. When you see ']', pop and repeat the string."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Word Break",
+            "description": "Given a string s and a dictionary of words (space-separated), determine if s can be segmented into a space-separated sequence of one or more dictionary words. The same word in the dictionary may be reused multiple times in the segmentation. Print \"true\" if possible, otherwise print \"false\".\n\nInput Format:\nFirst line contains string s.\nSecond line contains space-separated dictionary words.\n\nOutput Format:\nPrint \"true\" if word break is possible, otherwise print \"false\".",
+            "examples": "Sample Input\nleetcode\nleet code\n\nSample Output\ntrue\n\nSample Input\napplepenapple\napple pen\n\nSample Output\ntrue\n\nSample Input\ncatsandog\ncats dog sand and cat\n\nSample Output\nfalse\n\nExplanation:\n\"leetcode\" can be segmented as \"leet code\". \"applepenapple\" can be segmented as \"apple pen apple\".",
+            "constraints": "1 <= length of s <= 300\n1 <= number of words <= 1000\n1 <= length of each word <= 20",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "leetcode\nleet code",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "applepenapple\napple pen",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "catsandog\ncats dog sand and cat",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "a\nb",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "a\na",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def wordBreak(self, s, wordDict):\n        # TODO: Check if string can be segmented using dictionary words\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        wordDictStr = input().strip()\n        wordDict = wordDictStr.split() if wordDictStr else []\n        Solution().wordBreak(s, wordDict)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void wordBreak(String s, List<String> wordDict) {\n        // TODO: Check if string can be segmented using dictionary words\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String dictLine = sc.nextLine();\n            List<String> wordDict = Arrays.asList(dictLine.split(\" \"));\n            new Solution().wordBreak(s, wordDict);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    wordBreak(s, wordDict) {\n        // TODO: Check if string can be segmented using dictionary words\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const wordDict = lines[1] ? lines[1].split(/\\s+/) : [];\n    const sol = new Solution();\n    sol.wordBreak(s, wordDict);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <unordered_set>\n#include <sstream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void wordBreak(string s, vector<string>& wordDict) {\n        // TODO: Check if string can be segmented using dictionary words\n    }\n};\n\nint main() {\n    string s, dictLine;\n    if (getline(cin, s) && getline(cin, dictLine)) {\n        stringstream ss(dictLine);\n        vector<string> wordDict;\n        string word;\n        while (ss >> word) {\n            wordDict.push_back(word);\n        }\n        Solution().wordBreak(s, wordDict);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid wordBreak(char s[], char words[][21], int wordCount) {\n    // TODO: Check if string can be segmented using dictionary words\n}\n\nint main() {\n    char s[301], dictLine[20001];\n    if (fgets(s, sizeof(s), stdin) && fgets(dictLine, sizeof(dictLine), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        dictLine[strcspn(dictLine, \"\\n\")] = 0;\n        char words[1001][21];\n        int wordCount = 0;\n        char* token = strtok(dictLine, \" \");\n        while (token && wordCount < 1000) {\n            strcpy(words[wordCount++], token);\n            token = strtok(NULL, \" \");\n        }\n        wordBreak(s, words, wordCount);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming. dp[i] represents if substring s[0..i-1] can be segmented. For each position, check if any word from dictionary matches and if the remaining part can be segmented."
+            ]
+        }
+        
+    ]
+}

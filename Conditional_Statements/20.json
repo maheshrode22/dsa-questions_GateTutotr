@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Determine Type of Number",
+            "description": "Given a number, determine its type and print:\n- \"Perfect Square\" if it's a perfect square (e.g., 4, 9, 16)\n- \"Even\" if it's even and not a perfect square\n- \"Odd\" if it's odd and not a perfect square\n\nNote: Perfect squares can be even or odd. If a number is a perfect square, print \"Perfect Square\" regardless of parity.\n\nInput Format:\nSingle positive integer.\n\nOutput Format:\nPrint \"Perfect Square\", \"Even\", or \"Odd\".",
+            "examples": "Sample Input\n16\n\nSample Output\nPerfect Square\n\nSample Input\n10\n\nSample Output\nEven\n\nSample Input\n15\n\nSample Output\nOdd\n\nSample Input\n25\n\nSample Output\nPerfect Square\n\nExplanation:\nFirst check if number is a perfect square (by checking if square root is an integer), then check even/odd.",
+            "constraints": "1 <= number <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "16",
+                    "expectedOutput": "Perfect Square"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "Even"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "Odd"
+                },
+                {
+                    "input": "25",
+                    "expectedOutput": "Perfect Square"
+                },
+                {
+                    "input": "36",
+                    "expectedOutput": "Perfect Square"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def determineNumberType(self, num):\n        # TODO: Determine if number is perfect square, even, or odd using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        num = int(input().strip())\n        Solution().determineNumberType(num)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void determineNumberType(int num) {\n        // TODO: Determine if number is perfect square, even, or odd using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int num = sc.nextInt();\n            new Solution().determineNumberType(num);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    determineNumberType(num) {\n        // TODO: Determine if number is perfect square, even, or odd using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const num = parseInt(input.trim());\n    const sol = new Solution();\n    sol.determineNumberType(num);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nclass Solution {\npublic:\n    void determineNumberType(int num) {\n        // TODO: Determine if number is perfect square, even, or odd using nested conditions\n    }\n};\n\nint main() {\n    int num;\n    if (cin >> num) {\n        Solution().determineNumberType(num);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <math.h>\n\nvoid determineNumberType(int num) {\n    // TODO: Determine if number is perfect square, even, or odd using nested conditions\n}\n\nint main() {\n    int num;\n    if (scanf(\"%d\", &num) == 1) {\n        determineNumberType(num);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if number is a perfect square first (sqrt is integer). If yes, print \"Perfect Square\". Else check if even or odd."
+            ]
+        }
+    ]
+}
+

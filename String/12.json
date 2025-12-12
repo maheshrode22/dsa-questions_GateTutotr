@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find First Non-Repeating Character",
+            "description": "Find and print the first non-repeating character in a string. If all characters repeat, print \"No non-repeating character\".\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the first non-repeating character, or \"No non-repeating character\" if none exists.",
+            "examples": "Sample Input\nprogramming\n\nSample Output\np\n\nSample Input\naabbcc\n\nSample Output\nNo non-repeating character\n\nExplanation:\nIn \"programming\", 'p' is the first character that appears only once.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "programming",
+                    "expectedOutput": "p"
+                },
+                {
+                    "input": "aabbcc",
+                    "expectedOutput": "No non-repeating character"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "aab",
+                    "expectedOutput": "b"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "h"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def firstNonRepeating(self, s):\n        # TODO: Find first non-repeating character\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().firstNonRepeating(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void firstNonRepeating(String s) {\n        // TODO: Find first non-repeating character\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().firstNonRepeating(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    firstNonRepeating(s) {\n        // TODO: Find first non-repeating character\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.firstNonRepeating(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    void firstNonRepeating(string s) {\n        // TODO: Find first non-repeating character\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().firstNonRepeating(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid firstNonRepeating(char s[]) {\n    // TODO: Find first non-repeating character\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        firstNonRepeating(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Count frequency of each character. Then iterate through string and find first character with frequency 1."
+            ]
+        }
+    ]
+}
+

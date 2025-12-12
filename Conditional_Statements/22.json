@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Determine Day of Week Using Zeller's Congruence",
+            "description": "Given a date (day, month, year), determine the day of the week using conditional logic.\n\nPrint the day: \"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", or \"Saturday\".\n\nNote: Use Zeller's Congruence algorithm:\n- If month < 3, month += 12, year -= 1\n- h = (day + (13*(month+1)/5) + year + year/4 - year/100 + year/400) mod 7\n- Map h (0-6) to days: 0=Saturday, 1=Sunday, 2=Monday, ..., 6=Friday\n\nInput Format:\nThree integers: day month year\n\nOutput Format:\nPrint the day of the week.",
+            "examples": "Sample Input\n15 3 2024\n\nSample Output\nFriday\n\nSample Input\n1 1 2024\n\nSample Output\nMonday\n\nExplanation:\nImplement Zeller's Congruence with careful handling of month adjustments and modulo operations using nested conditions.",
+            "constraints": "1 <= day <= 31\n1 <= month <= 12\n1900 <= year <= 2100",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "15 3 2024",
+                    "expectedOutput": "Friday"
+                },
+                {
+                    "input": "1 1 2024",
+                    "expectedOutput": "Monday"
+                },
+                {
+                    "input": "25 12 2023",
+                    "expectedOutput": "Monday"
+                },
+                {
+                    "input": "14 2 2024",
+                    "expectedOutput": "Wednesday"
+                },
+                {
+                    "input": "31 12 2023",
+                    "expectedOutput": "Sunday"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findDayOfWeek(self, day, month, year):\n        # TODO: Determine day of week using Zeller's Congruence with nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        day, month, year = map(int, input().split())\n        Solution().findDayOfWeek(day, month, year)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findDayOfWeek(int day, int month, int year) {\n        // TODO: Determine day of week using Zeller's Congruence with nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int day = sc.nextInt();\n            int month = sc.nextInt();\n            int year = sc.nextInt();\n            new Solution().findDayOfWeek(day, month, year);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findDayOfWeek(day, month, year) {\n        // TODO: Determine day of week using Zeller's Congruence with nested conditions\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.findDayOfWeek(nums[0], nums[1], nums[2]);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findDayOfWeek(int day, int month, int year) {\n        // TODO: Determine day of week using Zeller's Congruence with nested conditions\n    }\n};\n\nint main() {\n    int day, month, year;\n    if (cin >> day >> month >> year) {\n        Solution().findDayOfWeek(day, month, year);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findDayOfWeek(int day, int month, int year) {\n    // TODO: Determine day of week using Zeller's Congruence with nested conditions\n}\n\nint main() {\n    int day, month, year;\n    if (scanf(\"%d %d %d\", &day, &month, &year) == 3) {\n        findDayOfWeek(day, month, year);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Adjust month if < 3. Calculate Zeller's formula with integer division. Map result (0-6) to day names using if-else or switch-case."
+            ]
+        }
+    ]
+}
+

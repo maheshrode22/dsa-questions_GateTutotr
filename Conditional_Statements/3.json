@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Grade Calculator",
+            "description": "Calculate and print the grade based on marks using the following criteria:\n- 90-100: Grade A\n- 80-89: Grade B\n- 70-79: Grade C\n- 60-69: Grade D\n- Below 60: Grade F\n\nInput Format:\nSingle integer representing the marks (0-100).\n\nOutput Format:\nPrint the grade (A, B, C, D, or F).",
+            "examples": "Sample Input\n85\n\nSample Output\nGrade B\n\nSample Input\n95\n\nSample Output\nGrade A\n\nSample Input\n45\n\nSample Output\nGrade F\n\nExplanation:\nUse if-else if ladder to check marks in different ranges.",
+            "constraints": "0 <= marks <= 100",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "85",
+                    "expectedOutput": "Grade B"
+                },
+                {
+                    "input": "95",
+                    "expectedOutput": "Grade A"
+                },
+                {
+                    "input": "45",
+                    "expectedOutput": "Grade F"
+                },
+                {
+                    "input": "75",
+                    "expectedOutput": "Grade C"
+                },
+                {
+                    "input": "65",
+                    "expectedOutput": "Grade D"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculateGrade(self, marks):\n        # TODO: Calculate grade using if-else if ladder\n        pass\n\nif __name__ == '__main__':\n    try:\n        marks = int(input().strip())\n        Solution().calculateGrade(marks)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void calculateGrade(int marks) {\n        // TODO: Calculate grade using if-else if ladder\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int marks = sc.nextInt();\n            new Solution().calculateGrade(marks);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateGrade(marks) {\n        // TODO: Calculate grade using if-else if ladder\n    }\n}\n\nfunction solve(input) {\n    const marks = parseInt(input.trim());\n    const sol = new Solution();\n    sol.calculateGrade(marks);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void calculateGrade(int marks) {\n        // TODO: Calculate grade using if-else if ladder\n    }\n};\n\nint main() {\n    int marks;\n    if (cin >> marks) {\n        Solution().calculateGrade(marks);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid calculateGrade(int marks) {\n    // TODO: Calculate grade using if-else if ladder\n}\n\nint main() {\n    int marks;\n    if (scanf(\"%d\", &marks) == 1) {\n        calculateGrade(marks);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use if-else if-else ladder to check marks in descending order (90+, 80+, 70+, 60+, else)."
+            ]
+        }
+    ]
+}
+

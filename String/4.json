@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Words in a String",
+            "description": "Count the number of words in a given string. Words are separated by spaces.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the count of words.",
+            "examples": "Sample Input\nHello World Java\n\nSample Output\n3\n\nExplanation:\nThe string has 3 words: \"Hello\", \"World\", \"Java\"",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World Java",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "Programming is fun",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "One",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "a b c d e",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "Hello",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countWords(self, s):\n        # TODO: Count words separated by spaces\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().countWords(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void countWords(String s) {\n        // TODO: Count words separated by spaces\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().countWords(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countWords(s) {\n        // TODO: Count words separated by spaces\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.countWords(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <sstream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void countWords(string s) {\n        // TODO: Count words separated by spaces\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().countWords(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid countWords(char s[]) {\n    // TODO: Count words separated by spaces\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        countWords(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Split the string by spaces and count the parts. Or iterate through string and count spaces, then add 1."
+            ]
+        }
+    ]
+}
+

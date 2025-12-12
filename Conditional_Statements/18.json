@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if Three Numbers are in Increasing or Decreasing Order",
+            "description": "Given three numbers, check if they are in:\n- Increasing order (a < b < c): Print \"Increasing\"\n- Decreasing order (a > b > c): Print \"Decreasing\"\n- Neither: Print \"Neither\"\n\nInput Format:\nThree integers separated by space.\n\nOutput Format:\nPrint \"Increasing\", \"Decreasing\", or \"Neither\".",
+            "examples": "Sample Input\n1 2 3\n\nSample Output\nIncreasing\n\nSample Input\n3 2 1\n\nSample Output\nDecreasing\n\nSample Input\n1 3 2\n\nSample Output\nNeither\n\nExplanation:\nUse nested conditions to check if numbers are strictly increasing or decreasing.",
+            "constraints": "-10^9 <= numbers <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 2 3",
+                    "expectedOutput": "Increasing"
+                },
+                {
+                    "input": "3 2 1",
+                    "expectedOutput": "Decreasing"
+                },
+                {
+                    "input": "1 3 2",
+                    "expectedOutput": "Neither"
+                },
+                {
+                    "input": "10 20 30",
+                    "expectedOutput": "Increasing"
+                },
+                {
+                    "input": "5 5 5",
+                    "expectedOutput": "Neither"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkOrder(self, a, b, c):\n        # TODO: Check if numbers are in increasing, decreasing, or neither order\n        pass\n\nif __name__ == '__main__':\n    try:\n        a, b, c = map(int, input().split())\n        Solution().checkOrder(a, b, c)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkOrder(int a, int b, int c) {\n        // TODO: Check if numbers are in increasing, decreasing, or neither order\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int a = sc.nextInt();\n            int b = sc.nextInt();\n            int c = sc.nextInt();\n            new Solution().checkOrder(a, b, c);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkOrder(a, b, c) {\n        // TODO: Check if numbers are in increasing, decreasing, or neither order\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.checkOrder(nums[0], nums[1], nums[2]);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkOrder(int a, int b, int c) {\n        // TODO: Check if numbers are in increasing, decreasing, or neither order\n    }\n};\n\nint main() {\n    int a, b, c;\n    if (cin >> a >> b >> c) {\n        Solution().checkOrder(a, b, c);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid checkOrder(int a, int b, int c) {\n    // TODO: Check if numbers are in increasing, decreasing, or neither order\n}\n\nint main() {\n    int a, b, c;\n    if (scanf(\"%d %d %d\", &a, &b, &c) == 3) {\n        checkOrder(a, b, c);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if a < b and b < c (Increasing), or a > b and b > c (Decreasing), else Neither."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Evaluate Boolean Expression with Multiple Operators",
+            "description": "Given three boolean values (0 or 1) representing A, B, C, and an operator string (\"AND\", \"OR\", \"XOR\"), evaluate the expression.\n\nIf operator is:\n- \"AND\": Evaluate A AND B AND C\n- \"OR\": Evaluate A OR B OR C\n- \"XOR\": Evaluate A XOR B XOR C\n\nPrint \"true\" if result is 1, else print \"false\".\n\nInput Format:\nFirst line: three integers (0 or 1) separated by space\nSecond line: operator string (\"AND\", \"OR\", or \"XOR\")\n\nOutput Format:\nPrint \"true\" or \"false\".",
+            "examples": "Sample Input\n1 1 0\nAND\n\nSample Output\nfalse\n\nSample Input\n1 0 1\nOR\n\nSample Output\ntrue\n\nSample Input\n1 0 1\nXOR\n\nSample Output\nfalse\n\nExplanation:\nEvaluate expression based on operator using nested conditions. XOR is true when odd number of 1s.",
+            "constraints": "Each input is 0 or 1\nOperator is one of: AND, OR, XOR",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "1 1 0\nAND",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1 0 1\nOR",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "1 0 1\nXOR",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1 1 1\nAND",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "0 0 0\nOR",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def evaluateBoolean(self, a, b, c, op):\n        # TODO: Evaluate boolean expression based on operator using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        a, b, c = map(int, input().split())\n        op = input().strip()\n        Solution().evaluateBoolean(a, b, c, op)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void evaluateBoolean(int a, int b, int c, String op) {\n        // TODO: Evaluate boolean expression based on operator using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int a = sc.nextInt();\n            int b = sc.nextInt();\n            int c = sc.nextInt();\n            String op = sc.next();\n            new Solution().evaluateBoolean(a, b, c, op);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    evaluateBoolean(a, b, c, op) {\n        // TODO: Evaluate boolean expression based on operator using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const nums = lines[0].split(/\\s+/).map(Number);\n    const op = lines[1].trim();\n    const sol = new Solution();\n    sol.evaluateBoolean(nums[0], nums[1], nums[2], op);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void evaluateBoolean(int a, int b, int c, string op) {\n        // TODO: Evaluate boolean expression based on operator using nested conditions\n    }\n};\n\nint main() {\n    int a, b, c;\n    string op;\n    if (cin >> a >> b >> c >> op) {\n        Solution().evaluateBoolean(a, b, c, op);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid evaluateBoolean(int a, int b, int c, char op[]) {\n    // TODO: Evaluate boolean expression based on operator using nested conditions\n}\n\nint main() {\n    int a, b, c;\n    char op[10];\n    if (scanf(\"%d %d %d %s\", &a, &b, &c, op) == 4) {\n        evaluateBoolean(a, b, c, op);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use nested if-else: if op == \"AND\", check if all are 1. If op == \"OR\", check if any is 1. If op == \"XOR\", check if count of 1s is odd."
+            ]
+        }
+    ]
+}
+

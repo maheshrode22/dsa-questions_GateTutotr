@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Repeated Substring",
+            "description": "Find the longest substring that appears at least twice in the given string (non-overlapping occurrences allowed). Print the substring. If multiple substrings have the same maximum length, print the first one. If no repeated substring exists, print empty string.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the longest repeated substring, or empty string if none exists.",
+            "examples": "Sample Input\nbanana\n\nSample Output\nana\n\nSample Input\nabc\n\nSample Output\n\n\nSample Input\naaaa\n\nSample Output\naaa\n\nExplanation:\nIn \"banana\", \"ana\" appears twice at positions 1-3 and 3-5, so it's the longest repeated substring.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "banana",
+                    "expectedOutput": "ana"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "aaaa",
+                    "expectedOutput": "aaa"
+                },
+                {
+                    "input": "ababa",
+                    "expectedOutput": "aba"
+                },
+                {
+                    "input": "abcabc",
+                    "expectedOutput": "abc"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestRepeatedSubstring(self, s):\n        # TODO: Find longest repeated substring\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().longestRepeatedSubstring(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void longestRepeatedSubstring(String s) {\n        // TODO: Find longest repeated substring\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().longestRepeatedSubstring(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestRepeatedSubstring(s) {\n        // TODO: Find longest repeated substring\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.longestRepeatedSubstring(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    void longestRepeatedSubstring(string s) {\n        // TODO: Find longest repeated substring\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().longestRepeatedSubstring(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid longestRepeatedSubstring(char s[]) {\n    // TODO: Find longest repeated substring\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        longestRepeatedSubstring(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Generate all substrings and check which ones appear at least twice. Keep track of the longest one."
+            ]
+        }
+    ]
+}
+

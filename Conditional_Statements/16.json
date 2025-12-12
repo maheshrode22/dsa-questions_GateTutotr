@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check Vowel or Consonant",
+            "description": "Given a character, determine if it is a vowel or consonant.\n- Vowels: a, e, i, o, u (both uppercase and lowercase)\n- Consonants: All other alphabets\n- If not an alphabet, print \"Not an alphabet\"\n\nInput Format:\nSingle character.\n\nOutput Format:\nPrint \"Vowel\", \"Consonant\", or \"Not an alphabet\".",
+            "examples": "Sample Input\na\n\nSample Output\nVowel\n\nSample Input\nB\n\nSample Output\nConsonant\n\nSample Input\n5\n\nSample Output\nNot an alphabet\n\nExplanation:\nFirst check if it's an alphabet, then check if it's a vowel or consonant using nested conditions.",
+            "constraints": "Input is a single printable ASCII character",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "a",
+                    "expectedOutput": "Vowel"
+                },
+                {
+                    "input": "B",
+                    "expectedOutput": "Consonant"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "Not an alphabet"
+                },
+                {
+                    "input": "E",
+                    "expectedOutput": "Vowel"
+                },
+                {
+                    "input": "z",
+                    "expectedOutput": "Consonant"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkVowelConsonant(self, ch):\n        # TODO: Check if character is vowel, consonant, or not an alphabet\n        pass\n\nif __name__ == '__main__':\n    try:\n        ch = input().strip()\n        Solution().checkVowelConsonant(ch)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkVowelConsonant(char ch) {\n        // TODO: Check if character is vowel, consonant, or not an alphabet\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String input = sc.next();\n            char ch = input.charAt(0);\n            new Solution().checkVowelConsonant(ch);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkVowelConsonant(ch) {\n        // TODO: Check if character is vowel, consonant, or not an alphabet\n    }\n}\n\nfunction solve(input) {\n    const ch = input.trim()[0];\n    const sol = new Solution();\n    sol.checkVowelConsonant(ch);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkVowelConsonant(char ch) {\n        // TODO: Check if character is vowel, consonant, or not an alphabet\n    }\n};\n\nint main() {\n    char ch;\n    if (cin >> ch) {\n        Solution().checkVowelConsonant(ch);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <ctype.h>\n\nvoid checkVowelConsonant(char ch) {\n    // TODO: Check if character is vowel, consonant, or not an alphabet\n}\n\nint main() {\n    char ch;\n    if (scanf(\"%c\", &ch) == 1) {\n        checkVowelConsonant(ch);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "First check if character is an alphabet. If yes, check if it's one of a, e, i, o, u (case-insensitive) for vowel, else consonant."
+            ]
+        }
+    ]
+}
+

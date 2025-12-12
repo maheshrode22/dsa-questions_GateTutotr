@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Determine Type of Triangle by Angles",
+            "description": "Given three angles of a triangle, determine its type:\n- Acute: All angles < 90 degrees\n- Right: One angle = 90 degrees\n- Obtuse: One angle > 90 degrees\n\nAlso validate if the angles form a valid triangle (sum must be 180 degrees).\nIf invalid, print \"Invalid Triangle\".\n\nInput Format:\nThree integers separated by space representing the three angles in degrees.\n\nOutput Format:\nPrint \"Acute\", \"Right\", \"Obtuse\", or \"Invalid Triangle\".",
+            "examples": "Sample Input\n60 60 60\n\nSample Output\nAcute\n\nSample Input\n90 45 45\n\nSample Output\nRight\n\nSample Input\n120 30 30\n\nSample Output\nObtuse\n\nSample Input\n100 50 20\n\nSample Output\nInvalid Triangle\n\nExplanation:\nFirst check if sum equals 180. Then check if any angle is 90 (Right), > 90 (Obtuse), or all < 90 (Acute).",
+            "constraints": "1 <= angles <= 179",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "60 60 60",
+                    "expectedOutput": "Acute"
+                },
+                {
+                    "input": "90 45 45",
+                    "expectedOutput": "Right"
+                },
+                {
+                    "input": "120 30 30",
+                    "expectedOutput": "Obtuse"
+                },
+                {
+                    "input": "100 50 20",
+                    "expectedOutput": "Invalid Triangle"
+                },
+                {
+                    "input": "80 50 50",
+                    "expectedOutput": "Acute"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def determineTriangleType(self, a, b, c):\n        # TODO: Determine triangle type by angles using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        a, b, c = map(int, input().split())\n        Solution().determineTriangleType(a, b, c)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void determineTriangleType(int a, int b, int c) {\n        // TODO: Determine triangle type by angles using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int a = sc.nextInt();\n            int b = sc.nextInt();\n            int c = sc.nextInt();\n            new Solution().determineTriangleType(a, b, c);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    determineTriangleType(a, b, c) {\n        // TODO: Determine triangle type by angles using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.determineTriangleType(nums[0], nums[1], nums[2]);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void determineTriangleType(int a, int b, int c) {\n        // TODO: Determine triangle type by angles using nested conditions\n    }\n};\n\nint main() {\n    int a, b, c;\n    if (cin >> a >> b >> c) {\n        Solution().determineTriangleType(a, b, c);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid determineTriangleType(int a, int b, int c) {\n    // TODO: Determine triangle type by angles using nested conditions\n}\n\nint main() {\n    int a, b, c;\n    if (scanf(\"%d %d %d\", &a, &b, &c) == 3) {\n        determineTriangleType(a, b, c);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "First check if sum equals 180. Then check if any angle is 90 (Right), any angle > 90 (Obtuse), else all < 90 (Acute)."
+            ]
+        }
+    ]
+}
+

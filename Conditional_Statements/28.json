@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Determine Chess Piece Moves Validity",
+            "description": "Given chess piece type, current position, and target position, check if move is valid.\n\nPieces:\n- \"Pawn\": Can move 1 square forward (from row 2, can move 2 squares). Cannot capture forward.\n- \"Rook\": Moves horizontally or vertically\n- \"Bishop\": Moves diagonally\n- \"Queen\": Moves like Rook or Bishop\n- \"King\": Moves 1 square in any direction\n- \"Knight\": Moves in L-shape (2 squares one direction, 1 square perpendicular)\n\nBoard: 8x8, positions as (row, col) where row=1-8, col=1-8 (or a-h)\n\nFor simplicity, use (row, col) format with numbers 1-8.\n\nPrint \"Valid\" or \"Invalid\".\n\nInput Format:\nFirst line: piece type\nSecond line: current_row current_col\nThird line: target_row target_col\n\nOutput Format:\nPrint \"Valid\" or \"Invalid\".",
+            "examples": "Sample Input\nRook\n1 1\n1 5\n\nSample Output\nValid\n\nSample Input\nBishop\n1 1\n3 3\n\nSample Output\nValid\n\nSample Input\nKnight\n1 1\n3 2\n\nSample Output\nValid\n\nExplanation:\nCheck piece type first, then validate move pattern using conditional logic. Handle special cases like pawn first move.",
+            "constraints": "1 <= row, col <= 8",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "Rook\n1 1\n1 5",
+                    "expectedOutput": "Valid"
+                },
+                {
+                    "input": "Bishop\n1 1\n3 3",
+                    "expectedOutput": "Valid"
+                },
+                {
+                    "input": "Knight\n1 1\n3 2",
+                    "expectedOutput": "Valid"
+                },
+                {
+                    "input": "Pawn\n2 1\n3 1",
+                    "expectedOutput": "Valid"
+                },
+                {
+                    "input": "King\n1 1\n2 2",
+                    "expectedOutput": "Valid"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def checkChessMove(self, piece, r1, c1, r2, c2):\n        # TODO: Check if chess move is valid using nested conditions\n        pass\n\nif __name__ == '__main__':\n    try:\n        piece = input().strip()\n        r1, c1 = map(int, input().split())\n        r2, c2 = map(int, input().split())\n        Solution().checkChessMove(piece, r1, c1, r2, c2)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void checkChessMove(String piece, int r1, int c1, int r2, int c2) {\n        // TODO: Check if chess move is valid using nested conditions\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String piece = sc.nextLine();\n            int r1 = sc.nextInt();\n            int c1 = sc.nextInt();\n            int r2 = sc.nextInt();\n            int c2 = sc.nextInt();\n            new Solution().checkChessMove(piece, r1, c1, r2, c2);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    checkChessMove(piece, r1, c1, r2, c2) {\n        // TODO: Check if chess move is valid using nested conditions\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const piece = lines[0].trim();\n    const from = lines[1].trim().split(/\\s+/).map(Number);\n    const to = lines[2].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.checkChessMove(piece, from[0], from[1], to[0], to[1]);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void checkChessMove(string piece, int r1, int c1, int r2, int c2) {\n        // TODO: Check if chess move is valid using nested conditions\n    }\n};\n\nint main() {\n    string piece;\n    int r1, c1, r2, c2;\n    if (getline(cin, piece) && cin >> r1 >> c1 >> r2 >> c2) {\n        Solution().checkChessMove(piece, r1, c1, r2, c2);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid checkChessMove(char piece[], int r1, int c1, int r2, int c2) {\n    // TODO: Check if chess move is valid using nested conditions\n}\n\nint main() {\n    char piece[20];\n    int r1, c1, r2, c2;\n    if (fgets(piece, sizeof(piece), stdin) && scanf(\"%d %d %d %d\", &r1, &c1, &r2, &c2) == 4) {\n        piece[strcspn(piece, \"\\n\")] = 0;\n        checkChessMove(piece, r1, c1, r2, c2);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use nested if-else based on piece type. For each piece: Rook (same row or col), Bishop (|r1-r2| == |c1-c2|), Knight (|r1-r2|==2 && |c1-c2|==1 OR |r1-r2|==1 && |c1-c2|==2), King (max(|r1-r2|, |c1-c2|) == 1), Pawn (forward 1, or 2 from row 2)."
+            ]
+        }
+    ]
+}
+

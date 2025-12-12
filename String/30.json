@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Word Break",
+            "description": "Given a string s and a dictionary of words (space-separated), determine if s can be segmented into a space-separated sequence of one or more dictionary words. The same word in the dictionary may be reused multiple times in the segmentation. Print \"true\" if possible, otherwise print \"false\".\n\nInput Format:\nFirst line contains string s.\nSecond line contains space-separated dictionary words.\n\nOutput Format:\nPrint \"true\" if word break is possible, otherwise print \"false\".",
+            "examples": "Sample Input\nleetcode\nleet code\n\nSample Output\ntrue\n\nSample Input\napplepenapple\napple pen\n\nSample Output\ntrue\n\nSample Input\ncatsandog\ncats dog sand and cat\n\nSample Output\nfalse\n\nExplanation:\n\"leetcode\" can be segmented as \"leet code\". \"applepenapple\" can be segmented as \"apple pen apple\".",
+            "constraints": "1 <= length of s <= 300\n1 <= number of words <= 1000\n1 <= length of each word <= 20",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "leetcode\nleet code",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "applepenapple\napple pen",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "catsandog\ncats dog sand and cat",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "a\nb",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "a\na",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def wordBreak(self, s, wordDict):\n        # TODO: Check if string can be segmented using dictionary words\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        wordDictStr = input().strip()\n        wordDict = wordDictStr.split() if wordDictStr else []\n        Solution().wordBreak(s, wordDict)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void wordBreak(String s, List<String> wordDict) {\n        // TODO: Check if string can be segmented using dictionary words\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String dictLine = sc.nextLine();\n            List<String> wordDict = Arrays.asList(dictLine.split(\" \"));\n            new Solution().wordBreak(s, wordDict);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    wordBreak(s, wordDict) {\n        // TODO: Check if string can be segmented using dictionary words\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const wordDict = lines[1] ? lines[1].split(/\\s+/) : [];\n    const sol = new Solution();\n    sol.wordBreak(s, wordDict);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <unordered_set>\n#include <sstream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void wordBreak(string s, vector<string>& wordDict) {\n        // TODO: Check if string can be segmented using dictionary words\n    }\n};\n\nint main() {\n    string s, dictLine;\n    if (getline(cin, s) && getline(cin, dictLine)) {\n        stringstream ss(dictLine);\n        vector<string> wordDict;\n        string word;\n        while (ss >> word) {\n            wordDict.push_back(word);\n        }\n        Solution().wordBreak(s, wordDict);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid wordBreak(char s[], char words[][21], int wordCount) {\n    // TODO: Check if string can be segmented using dictionary words\n}\n\nint main() {\n    char s[301], dictLine[20001];\n    if (fgets(s, sizeof(s), stdin) && fgets(dictLine, sizeof(dictLine), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        dictLine[strcspn(dictLine, \"\\n\")] = 0;\n        char words[1001][21];\n        int wordCount = 0;\n        char* token = strtok(dictLine, \" \");\n        while (token && wordCount < 1000) {\n            strcpy(words[wordCount++], token);\n            token = strtok(NULL, \" \");\n        }\n        wordBreak(s, words, wordCount);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming. dp[i] represents if substring s[0..i-1] can be segmented. For each position, check if any word from dictionary matches and if the remaining part can be segmented."
+            ]
+        }
+    ]
+}
+

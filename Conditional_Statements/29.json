@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Calculate Loan EMI with Interest and Fees",
+            "description": "Calculate Equated Monthly Installment (EMI) with complex interest calculation.\n\nFormula: EMI = [P × R × (1+R)^N] / [(1+R)^N - 1]\nWhere:\n- P = Principal (loan amount)\n- R = Monthly interest rate (annual_rate / 12 / 100)\n- N = Number of months\n\nAdditional factors:\n- Processing fee: 1% of principal (one-time, added to first EMI)\n- Late payment penalty: 5% of EMI if payment > 5 days late\n\nGiven: principal, annual_interest_rate, years, payment_delay_days\n\nPrint:\n- Regular EMI amount (rounded to 2 decimal places)\n- First EMI (including processing fee)\n- Current month payment (with penalty if delayed)\n\nInput Format:\nFirst line: principal annual_rate years\nSecond line: payment_delay_days\n\nOutput Format:\nPrint three lines: regular_emi, first_emi, current_payment",
+            "examples": "Sample Input\n100000 12 2\n0\n\nSample Output\n4707.35\n5707.35\n4707.35\n\nSample Input\n100000 12 2\n10\n\nSample Output\n4707.35\n5707.35\n4942.72\n\nExplanation:\nCalculate EMI using formula, add processing fee to first EMI, apply penalty if delay > 5 days.",
+            "constraints": "1000 <= principal <= 10000000\n1 <= annual_rate <= 30\n1 <= years <= 30\n0 <= delay_days <= 30",
+            "hints": 1,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "100000 12 2\n0",
+                    "expectedOutput": "4707.35\n5707.35\n4707.35"
+                },
+                {
+                    "input": "100000 12 2\n10",
+                    "expectedOutput": "4707.35\n5707.35\n4942.71"
+                },
+                {
+                    "input": "500000 10 5\n0",
+                    "expectedOutput": "10623.52\n15623.52\n10623.52"
+                },
+                {
+                    "input": "200000 15 3\n7",
+                    "expectedOutput": "6933.07\n8933.07\n7279.72"
+                },
+                {
+                    "input": "1000000 8 10\n3",
+                    "expectedOutput": "12132.76\n22132.76\n12132.76"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import math\n\nclass Solution:\n    def calculateEMI(self, principal, annual_rate, years, delay_days):\n        # TODO: Calculate EMI with fees and penalties using conditional logic\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        principal = float(line1[0])\n        annual_rate = float(line1[1])\n        years = int(line1[2])\n        delay_days = int(input().strip())\n        Solution().calculateEMI(principal, annual_rate, years, delay_days)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nimport java.lang.Math;\n\nclass Solution {\n    public void calculateEMI(double principal, double annual_rate, int years, int delay_days) {\n        // TODO: Calculate EMI with fees and penalties using conditional logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextDouble()) {\n            double principal = sc.nextDouble();\n            double annual_rate = sc.nextDouble();\n            int years = sc.nextInt();\n            int delay_days = sc.nextInt();\n            new Solution().calculateEMI(principal, annual_rate, years, delay_days);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateEMI(principal, annual_rate, years, delay_days) {\n        // TODO: Calculate EMI with fees and penalties using conditional logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const line1 = lines[0].trim().split(/\\s+/);\n    const principal = parseFloat(line1[0]);\n    const annual_rate = parseFloat(line1[1]);\n    const years = parseInt(line1[2]);\n    const delay_days = parseInt(lines[1].trim());\n    const sol = new Solution();\n    sol.calculateEMI(principal, annual_rate, years, delay_days);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <cmath>\n#include <iomanip>\nusing namespace std;\n\nclass Solution {\npublic:\n    void calculateEMI(double principal, double annual_rate, int years, int delay_days) {\n        // TODO: Calculate EMI with fees and penalties using conditional logic\n    }\n};\n\nint main() {\n    double principal, annual_rate;\n    int years, delay_days;\n    if (cin >> principal >> annual_rate >> years >> delay_days) {\n        Solution().calculateEMI(principal, annual_rate, years, delay_days);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <math.h>\n\nvoid calculateEMI(double principal, double annual_rate, int years, int delay_days) {\n    // TODO: Calculate EMI with fees and penalties using conditional logic\n}\n\nint main() {\n    double principal, annual_rate;\n    int years, delay_days;\n    if (scanf(\"%lf %lf %d %d\", &principal, &annual_rate, &years, &delay_days) == 4) {\n        calculateEMI(principal, annual_rate, years, delay_days);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Calculate monthly rate R = annual_rate/12/100. Calculate EMI using formula. Add 1% processing fee to first EMI. If delay > 5, add 5% penalty to current payment."
+            ]
+        }
+    ]
+}
+

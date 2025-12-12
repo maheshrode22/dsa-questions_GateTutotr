@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Calculate Discount Based on Purchase Amount",
+            "description": "Calculate and print the discount percentage based on purchase amount using the following criteria:\n- Amount >= 10000: 20% discount\n- Amount >= 5000: 15% discount\n- Amount >= 2000: 10% discount\n- Amount >= 1000: 5% discount\n- Amount < 1000: No discount (0%)\n\nPrint the discount percentage followed by a space and the final amount after discount.\n\nInput Format:\nSingle integer representing the purchase amount.\n\nOutput Format:\nPrint discount percentage and final amount: \"discount% final_amount\" (e.g., \"20 8000\" for 20% discount on 10000).",
+            "examples": "Sample Input\n10000\n\nSample Output\n20 8000\n\nSample Input\n3000\n\nSample Output\n10 2700\n\nSample Input\n500\n\nSample Output\n0 500\n\nExplanation:\nUse if-else if ladder to determine discount percentage, then calculate final amount.",
+            "constraints": "1 <= amount <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2036,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "10000",
+                    "expectedOutput": "20 8000"
+                },
+                {
+                    "input": "3000",
+                    "expectedOutput": "10 2700"
+                },
+                {
+                    "input": "500",
+                    "expectedOutput": "0 500"
+                },
+                {
+                    "input": "7500",
+                    "expectedOutput": "15 6375"
+                },
+                {
+                    "input": "1500",
+                    "expectedOutput": "5 1425"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculateDiscount(self, amount):\n        # TODO: Calculate discount percentage and final amount using if-else if ladder\n        pass\n\nif __name__ == '__main__':\n    try:\n        amount = int(input().strip())\n        Solution().calculateDiscount(amount)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void calculateDiscount(int amount) {\n        // TODO: Calculate discount percentage and final amount using if-else if ladder\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int amount = sc.nextInt();\n            new Solution().calculateDiscount(amount);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateDiscount(amount) {\n        // TODO: Calculate discount percentage and final amount using if-else if ladder\n    }\n}\n\nfunction solve(input) {\n    const amount = parseInt(input.trim());\n    const sol = new Solution();\n    sol.calculateDiscount(amount);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void calculateDiscount(int amount) {\n        // TODO: Calculate discount percentage and final amount using if-else if ladder\n    }\n};\n\nint main() {\n    int amount;\n    if (cin >> amount) {\n        Solution().calculateDiscount(amount);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid calculateDiscount(int amount) {\n    // TODO: Calculate discount percentage and final amount using if-else if ladder\n}\n\nint main() {\n    int amount;\n    if (scanf(\"%d\", &amount) == 1) {\n        calculateDiscount(amount);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check amount in descending order (>=10000, >=5000, >=2000, >=1000, else) to determine discount percentage. Calculate final amount = amount - (amount * discount / 100)."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Print All Substrings",
+            "description": "Print all unique substrings of the given string. Print each substring on a new line in lexicographical order. If a substring appears multiple times at different positions, print it only once.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint all unique substrings, each on a new line, in lexicographical order.",
+            "examples": "Sample Input\nabc\n\nSample Output\na\nab\nabc\nb\nbc\nc\n\nSample Input\nab\n\nSample Output\na\nab\nb\n\nExplanation:\nSubstrings of \"abc\" are: \"a\", \"ab\", \"abc\", \"b\", \"bc\", \"c\". Sorted lexicographically.",
+            "constraints": "1 <= length of string <= 100",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abc",
+                    "expectedOutput": "a\nab\nabc\nb\nbc\nc"
+                },
+                {
+                    "input": "ab",
+                    "expectedOutput": "a\nab\nb"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "xy",
+                    "expectedOutput": "x\nxy\ny"
+                },
+                {
+                    "input": "test",
+                    "expectedOutput": "e\nes\nest\ns\nst\nt\nte\ntes\ntest"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printAllSubstrings(self, s):\n        # TODO: Print all substrings in lexicographical order\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().printAllSubstrings(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printAllSubstrings(String s) {\n        // TODO: Print all substrings in lexicographical order\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().printAllSubstrings(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printAllSubstrings(s) {\n        // TODO: Print all substrings in lexicographical order\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.printAllSubstrings(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printAllSubstrings(string s) {\n        // TODO: Print all substrings in lexicographical order\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().printAllSubstrings(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid printAllSubstrings(char s[]) {\n    // TODO: Print all substrings in lexicographical order\n}\n\nint main() {\n    char s[101];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        printAllSubstrings(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Generate all substrings using nested loops, store them, sort lexicographically, then print."
+            ]
+        }
+    ]
+}
+

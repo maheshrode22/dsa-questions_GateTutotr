@@ -1,0 +1,595 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if String Contains Substring",
+            "description": "Check if a given string contains a specific substring. Print \"true\" if the substring exists, otherwise print \"false\".\n\nInput Format:\nFirst line contains the main string.\nSecond line contains the substring to search for.\n\nOutput Format:\nPrint \"true\" if substring exists, otherwise print \"false\".",
+            "examples": "Sample Input\nHello World\nWorld\n\nSample Output\ntrue\n\nSample Input\nJava Programming\nPython\n\nSample Output\nfalse\n\nExplanation:\n\"World\" exists in \"Hello World\", so output is true.",
+            "constraints": "1 <= length of main string <= 1000\n1 <= length of substring <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World\nWorld",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "Java Programming\nPython",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "abcabc\nabc",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "test\ntesting",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "a\na",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def containsSubstring(self, s, substr):\n        # TODO: Check if s contains substr\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        substr = input().strip()\n        Solution().containsSubstring(s, substr)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void containsSubstring(String s, String substr) {\n        // TODO: Check if s contains substr\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String substr = sc.nextLine();\n            new Solution().containsSubstring(s, substr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    containsSubstring(s, substr) {\n        // TODO: Check if s contains substr\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const substr = lines[1];\n    const sol = new Solution();\n    sol.containsSubstring(s, substr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void containsSubstring(string s, string substr) {\n        // TODO: Check if s contains substr\n    }\n};\n\nint main() {\n    string s, substr;\n    if (getline(cin, s) && getline(cin, substr)) {\n        Solution().containsSubstring(s, substr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid containsSubstring(char s[], char substr[]) {\n    // TODO: Check if s contains substr\n}\n\nint main() {\n    char s[1001], substr[1001];\n    if (fgets(s, sizeof(s), stdin) && fgets(substr, sizeof(substr), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        substr[strcspn(substr, \"\\n\")] = 0;\n        containsSubstring(s, substr);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use string search functions or iterate through the main string and check for substring match."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Remove All Occurrences of a Character",
+            "description": "Remove all occurrences of a specific character from a string and print the result.\n\nInput Format:\nFirst line contains a string.\nSecond line contains a character to remove.\n\nOutput Format:\nPrint the string after removing all occurrences of the character.",
+            "examples": "Sample Input\nprogramming\ng\n\nSample Output\nproarmin\n\nSample Input\nhello world\no\n\nSample Output\nhell wrld\n\nExplanation:\nRemove all occurrences of 'g' from \"programming\" to get \"proarmin\".",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "programming\ng",
+                    "expectedOutput": "prorammin"
+                },
+                {
+                    "input": "hello world\no",
+                    "expectedOutput": "hell wrld"
+                },
+                {
+                    "input": "abc\na",
+                    "expectedOutput": "bc"
+                },
+                {
+                    "input": "test\nx",
+                    "expectedOutput": "test"
+                },
+                {
+                    "input": "aaaaa\na",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def removeCharacter(self, s, char):\n        # TODO: Remove all occurrences of char from s\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        char = input().strip()\n        Solution().removeCharacter(s, char)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void removeCharacter(String s, String charStr) {\n        // TODO: Remove all occurrences of charStr from s\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String charStr = sc.nextLine();\n            new Solution().removeCharacter(s, charStr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    removeCharacter(s, char) {\n        // TODO: Remove all occurrences of char from s\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const char = lines[1];\n    const sol = new Solution();\n    sol.removeCharacter(s, char);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void removeCharacter(string s, string charStr) {\n        // TODO: Remove all occurrences of charStr from s\n    }\n};\n\nint main() {\n    string s, charStr;\n    if (getline(cin, s) && getline(cin, charStr)) {\n        Solution().removeCharacter(s, charStr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid removeCharacter(char s[], char ch) {\n    // TODO: Remove all occurrences of ch from s\n}\n\nint main() {\n    char s[1001], charStr[2];\n    if (fgets(s, sizeof(s), stdin) && fgets(charStr, sizeof(charStr), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        charStr[strcspn(charStr, \"\\n\")] = 0;\n        char ch = charStr[0];\n        removeCharacter(s, ch);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the string and build a new string excluding the character to remove."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Sort Characters in String",
+            "description": "Sort all characters in the string in alphabetical order (case-sensitive) and print the sorted string.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string with characters sorted in alphabetical order.",
+            "examples": "Sample Input\nhello\n\nSample Output\nehllo\n\nSample Input\nProgramming\n\nSample Output\nPaggimmnor\n\nExplanation:\nSort characters: 'h', 'e', 'l', 'l', 'o' becomes 'e', 'h', 'l', 'l', 'o'.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "hello",
+                    "expectedOutput": "ehllo"
+                },
+                {
+                    "input": "Programming",
+                    "expectedOutput": "Paggimmnorr"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "cba",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "Hello",
+                    "expectedOutput": "Hello"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def sortString(self, s):\n        # TODO: Sort characters in string alphabetically\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().sortString(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void sortString(String s) {\n        // TODO: Sort characters in string alphabetically\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().sortString(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    sortString(s) {\n        // TODO: Sort characters in string alphabetically\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.sortString(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void sortString(string s) {\n        // TODO: Sort characters in string alphabetically\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().sortString(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid sortString(char s[]) {\n    // TODO: Sort characters in string alphabetically\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        sortString(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Convert string to character array, sort it, then join back into string."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find All Occurrences of Substring",
+            "description": "Find and print the starting indices of all occurrences of a substring in a string. Print indices separated by spaces. If no occurrences found, print -1.\n\nInput Format:\nFirst line contains the main string.\nSecond line contains the substring to search for.\n\nOutput Format:\nPrint starting indices of all occurrences separated by spaces, or -1 if not found.",
+            "examples": "Sample Input\nabababab\nabab\n\nSample Output\n0 2 4\n\nSample Input\nhello world\nworld\n\nSample Output\n6\n\nSample Input\nabc\ndef\n\nSample Output\n-1\n\nExplanation:\n\"abab\" occurs at indices 0, 2, and 4 in \"abababab\".",
+            "constraints": "1 <= length of main string <= 1000\n1 <= length of substring <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abababab\nabab",
+                    "expectedOutput": "0 2 4"
+                },
+                {
+                    "input": "hello world\nworld",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "abc\ndef",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "aaaaa\naa",
+                    "expectedOutput": "0 1 2 3"
+                },
+                {
+                    "input": "test\ntest",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findAllOccurrences(self, s, substr):\n        # TODO: Find all starting indices of substr in s\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        substr = input().strip()\n        Solution().findAllOccurrences(s, substr)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void findAllOccurrences(String s, String substr) {\n        // TODO: Find all starting indices of substr in s\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            String substr = sc.nextLine();\n            new Solution().findAllOccurrences(s, substr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findAllOccurrences(s, substr) {\n        // TODO: Find all starting indices of substr in s\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const substr = lines[1];\n    const sol = new Solution();\n    sol.findAllOccurrences(s, substr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void findAllOccurrences(string s, string substr) {\n        // TODO: Find all starting indices of substr in s\n    }\n};\n\nint main() {\n    string s, substr;\n    if (getline(cin, s) && getline(cin, substr)) {\n        Solution().findAllOccurrences(s, substr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid findAllOccurrences(char s[], char substr[]) {\n    // TODO: Find all starting indices of substr in s\n}\n\nint main() {\n    char s[1001], substr[1001];\n    if (fgets(s, sizeof(s), stdin) && fgets(substr, sizeof(substr), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        substr[strcspn(substr, \"\\n\")] = 0;\n        findAllOccurrences(s, substr);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use sliding window to check each position. For each starting position, check if substring matches."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Longest Substring with At Most K Distinct Characters",
+            "description": "Find the length of the longest substring that contains at most k distinct characters. Print the length.\n\nInput Format:\nFirst line contains a string.\nSecond line contains an integer k.\n\nOutput Format:\nPrint the length of longest substring with at most k distinct characters.",
+            "examples": "Sample Input\nabcabcbb\n3\n\nSample Output\n6\n\nSample Input\neceba\n2\n\nSample Output\n3\n\nExplanation:\nFor \"abcabcbb\" with k=3, longest substring with at most 3 distinct characters is \"abcabc\" with length 6.",
+            "constraints": "1 <= length of string <= 1000\n1 <= k <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abcabcbb\n3",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "eceba\n2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "aa\n1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "ab\n1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "abcde\n3",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def lengthOfLongestSubstringKDistinct(self, s, k):\n        # TODO: Find length of longest substring with at most k distinct characters\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        k = int(input().strip())\n        Solution().lengthOfLongestSubstringKDistinct(s, k)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void lengthOfLongestSubstringKDistinct(String s, int k) {\n        // TODO: Find length of longest substring with at most k distinct characters\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            int k = sc.nextInt();\n            new Solution().lengthOfLongestSubstringKDistinct(s, k);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    lengthOfLongestSubstringKDistinct(s, k) {\n        // TODO: Find length of longest substring with at most k distinct characters\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const k = parseInt(lines[1]);\n    const sol = new Solution();\n    sol.lengthOfLongestSubstringKDistinct(s, k);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    void lengthOfLongestSubstringKDistinct(string s, int k) {\n        // TODO: Find length of longest substring with at most k distinct characters\n    }\n};\n\nint main() {\n    string s;\n    int k;\n    if (getline(cin, s) && cin >> k) {\n        Solution().lengthOfLongestSubstringKDistinct(s, k);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid lengthOfLongestSubstringKDistinct(char s[], int k) {\n    // TODO: Find length of longest substring with at most k distinct characters\n}\n\nint main() {\n    char s[1001];\n    int k;\n    if (fgets(s, sizeof(s), stdin) && scanf(\"%d\", &k) == 1) {\n        s[strcspn(s, \"\\n\")] = 0;\n        lengthOfLongestSubstringKDistinct(s, k);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use sliding window with a hash map to track character frequencies. Expand right and contract left to maintain at most k distinct characters."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if String is Rotated Palindrome",
+            "description": "Check if any rotation of the given string is a palindrome. Print \"true\" if a rotation is palindrome, otherwise print \"false\".\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint \"true\" if any rotation is palindrome, otherwise print \"false\".",
+            "examples": "Sample Input\nbaabc\n\nSample Output\ntrue\n\nSample Input\nabc\n\nSample Output\nfalse\n\nExplanation:\n\"baabc\" rotated to \"abcba\" is a palindrome, so output is true.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "baabc",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "aaa",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "racecar",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "hello",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isRotatedPalindrome(self, s):\n        # TODO: Check if any rotation of s is a palindrome\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().isRotatedPalindrome(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void isRotatedPalindrome(String s) {\n        // TODO: Check if any rotation of s is a palindrome\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().isRotatedPalindrome(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isRotatedPalindrome(s) {\n        // TODO: Check if any rotation of s is a palindrome\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.isRotatedPalindrome(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void isRotatedPalindrome(string s) {\n        // TODO: Check if any rotation of s is a palindrome\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().isRotatedPalindrome(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid isRotatedPalindrome(char s[]) {\n    // TODO: Check if any rotation of s is a palindrome\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        isRotatedPalindrome(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Concatenate string with itself. Check if any substring of length n (where n is original length) is a palindrome."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Convert String to Lowercase",
+            "description": "Convert all uppercase letters in the string to lowercase and print the result.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the string with all letters converted to lowercase.",
+            "examples": "Sample Input\nHello World\n\nSample Output\nhello world\n\nSample Input\nJAVA PROGRAMMING\n\nSample Output\njava programming\n\nExplanation:\nAll uppercase letters are converted to lowercase.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "Hello World",
+                    "expectedOutput": "hello world"
+                },
+                {
+                    "input": "JAVA PROGRAMMING",
+                    "expectedOutput": "java programming"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "ABC",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "Hello123",
+                    "expectedOutput": "hello123"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def toLowerCase(self, s):\n        # TODO: Convert all uppercase letters to lowercase and print\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().toLowerCase(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void toLowerCase(String s) {\n        // TODO: Convert all uppercase letters to lowercase and print\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().toLowerCase(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    toLowerCase(s) {\n        // TODO: Convert all uppercase letters to lowercase and print\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.toLowerCase(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <algorithm>\n#include <cctype>\nusing namespace std;\n\nclass Solution {\npublic:\n    void toLowerCase(string s) {\n        // TODO: Convert all uppercase letters to lowercase and print\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().toLowerCase(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nvoid toLowerCase(char s[]) {\n    // TODO: Convert all uppercase letters to lowercase and print\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        toLowerCase(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through each character. If it's an uppercase letter (A-Z), convert it to lowercase by adding 32 or using built-in functions."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Print All Substrings",
+            "description": "Print all unique substrings of the given string. Print each substring on a new line in lexicographical order. If a substring appears multiple times at different positions, print it only once.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint all unique substrings, each on a new line, in lexicographical order.",
+            "examples": "Sample Input\nabc\n\nSample Output\na\nab\nabc\nb\nbc\nc\n\nSample Input\nab\n\nSample Output\na\nab\nb\n\nExplanation:\nSubstrings of \"abc\" are: \"a\", \"ab\", \"abc\", \"b\", \"bc\", \"c\". Sorted lexicographically.",
+            "constraints": "1 <= length of string <= 100",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abc",
+                    "expectedOutput": "a\nab\nabc\nb\nbc\nc"
+                },
+                {
+                    "input": "ab",
+                    "expectedOutput": "a\nab\nb"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "xy",
+                    "expectedOutput": "x\nxy\ny"
+                },
+                {
+                    "input": "test",
+                    "expectedOutput": "e\nes\nest\ns\nst\nt\nte\ntes\ntest"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printAllSubstrings(self, s):\n        # TODO: Print all substrings in lexicographical order\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().printAllSubstrings(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printAllSubstrings(String s) {\n        // TODO: Print all substrings in lexicographical order\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().printAllSubstrings(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printAllSubstrings(s) {\n        // TODO: Print all substrings in lexicographical order\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.printAllSubstrings(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printAllSubstrings(string s) {\n        // TODO: Print all substrings in lexicographical order\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().printAllSubstrings(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid printAllSubstrings(char s[]) {\n    // TODO: Print all substrings in lexicographical order\n}\n\nint main() {\n    char s[101];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        printAllSubstrings(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Generate all substrings using nested loops, store them, sort lexicographically, then print."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Minimum Insertions to Make Palindrome",
+            "description": "Find the minimum number of insertions required to make a string a palindrome. Print the minimum number of insertions needed.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the minimum number of insertions required.",
+            "examples": "Sample Input\nab\n\nSample Output\n1\n\nSample Input\naba\n\nSample Output\n0\n\nSample Input\nabc\n\nSample Output\n2\n\nExplanation:\n\"ab\" needs 1 insertion (can become \"aba\" or \"bab\"). \"aba\" is already palindrome, so 0 insertions.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "ab",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "aba",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "race",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minInsertions(self, s):\n        # TODO: Find minimum insertions to make palindrome\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().minInsertions(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void minInsertions(String s) {\n        // TODO: Find minimum insertions to make palindrome\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().minInsertions(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minInsertions(s) {\n        // TODO: Find minimum insertions to make palindrome\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.minInsertions(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    void minInsertions(string s) {\n        // TODO: Find minimum insertions to make palindrome\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().minInsertions(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid minInsertions(char s[]) {\n    // TODO: Find minimum insertions to make palindrome\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        minInsertions(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the longest palindromic subsequence (LPS). Minimum insertions = length of string - length of LPS."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Longest Repeated Substring",
+            "description": "Find the longest substring that appears at least twice in the given string (non-overlapping occurrences allowed). Print the substring. If multiple substrings have the same maximum length, print the first one. If no repeated substring exists, print empty string.\n\nInput Format:\nFirst line contains a string.\n\nOutput Format:\nPrint the longest repeated substring, or empty string if none exists.",
+            "examples": "Sample Input\nbanana\n\nSample Output\nana\n\nSample Input\nabc\n\nSample Output\n\n\nSample Input\naaaa\n\nSample Output\naaa\n\nExplanation:\nIn \"banana\", \"ana\" appears twice at positions 1-3 and 3-5, so it's the longest repeated substring.",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 3033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "banana",
+                    "expectedOutput": "ana"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "aaaa",
+                    "expectedOutput": "aaa"
+                },
+                {
+                    "input": "ababa",
+                    "expectedOutput": "aba"
+                },
+                {
+                    "input": "abcabc",
+                    "expectedOutput": "abc"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestRepeatedSubstring(self, s):\n        # TODO: Find longest repeated substring\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().longestRepeatedSubstring(s)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void longestRepeatedSubstring(String s) {\n        // TODO: Find longest repeated substring\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            new Solution().longestRepeatedSubstring(s);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestRepeatedSubstring(s) {\n        // TODO: Find longest repeated substring\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.longestRepeatedSubstring(s);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    void longestRepeatedSubstring(string s) {\n        // TODO: Find longest repeated substring\n    }\n};\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        Solution().longestRepeatedSubstring(s);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid longestRepeatedSubstring(char s[]) {\n    // TODO: Find longest repeated substring\n}\n\nint main() {\n    char s[1001];\n    if (fgets(s, sizeof(s), stdin)) {\n        s[strcspn(s, \"\\n\")] = 0;\n        longestRepeatedSubstring(s);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Generate all substrings and check which ones appear at least twice. Keep track of the longest one."
+            ]
+        }
+    ]
+}
+
