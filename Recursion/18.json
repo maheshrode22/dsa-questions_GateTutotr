@@ -1,0 +1,47 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Digital Root Using Recursion",
+      "description": "Given a non-negative integer N, repeatedly sum its digits until a single digit remains, using recursion. Print that single digit (digital root).\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint the digital root of N.",
+      "examples": "Sample Input\n9875\n\nSample Output\n2\nExplanation: 9+8+7+5=29, 2+9=11, 1+1=2",
+      "constraints": "0 <= N <= 10^18",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 2,
+      "testCases": [
+        {"input": "0", "expectedOutput": "0"},
+        {"input": "9", "expectedOutput": "9"},
+        {"input": "99", "expectedOutput": "9"},
+        {"input": "9875", "expectedOutput": "2"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def digitalRoot(self, n):\n        # TODO: compute digital root using recursion\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        print(Solution().digitalRoot(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long digitalRoot(long n) {\n        // TODO: compute digital root using recursion\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            System.out.println(new Solution().digitalRoot(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    digitalRoot(n) {\n        // TODO: compute digital root using recursion\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = BigInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.digitalRoot(n).toString());\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long digitalRoot(long long n) {\n        // TODO: compute digital root using recursion\n        return 0;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.digitalRoot(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long digitalRoot(long long n) {\n    // TODO: compute digital root using recursion\n    return 0;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%lld\", digitalRoot(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Base: if n < 10 return n. Otherwise compute sum of digits and recurse on that sum."
+      ]
+    }
+  ]
+}

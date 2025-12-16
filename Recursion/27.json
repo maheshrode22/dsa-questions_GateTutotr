@@ -1,0 +1,47 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "K-th Symbol in Grammar (Recursive)",
+      "description": "We build a table of rows where row 1 is '0'. To build the next row, replace each '0' with '01' and each '1' with '10'. Given N and K (1-based), find the K-th symbol in row N using recursion.\n\nInput Format:\nTwo integers N and K separated by space.\n\nOutput Format:\nPrint 0 or 1, the K-th symbol.",
+      "examples": "Sample Input\n4 5\n\nSample Output\n1",
+      "constraints": "1 <= N <= 20, 1 <= K <= 2^(N-1)",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 3,
+      "testCases": [
+        {"input": "1 1", "expectedOutput": "0"},
+        {"input": "2 2", "expectedOutput": "1"},
+        {"input": "3 3", "expectedOutput": "1"},
+        {"input": "4 5", "expectedOutput": "1"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def kthSymbol(self, n, k):\n        # TODO: return k-th symbol in n-th row using recursion\n        pass\n\nif __name__ == '__main__':\n    try:\n        n, k = map(int, input().split())\n        print(Solution().kthSymbol(n, k))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int kthSymbol(int n, int k) {\n        // TODO: return k-th symbol in n-th row using recursion\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            System.out.println(new Solution().kthSymbol(n, k));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    kthSymbol(n, k) {\n        // TODO: return k-th symbol in n-th row using recursion\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const [n, k] = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.kthSymbol(n, k));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int kthSymbol(int n, int k) {\n        // TODO: return k-th symbol in n-th row using recursion\n        return 0;\n    }\n};\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        Solution sol;\n        cout << sol.kthSymbol(n, k);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint kthSymbol(int n, int k) {\n    // TODO: return k-th symbol in n-th row using recursion\n    return 0;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) == 2) {\n        printf(\"%d\", kthSymbol(n, k));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Observe recurrence: symbol at (n,k) depends on parent at (n-1, (k+1)/2) and whether k is odd or even (flip or keep)."
+      ]
+    }
+  ]
+}

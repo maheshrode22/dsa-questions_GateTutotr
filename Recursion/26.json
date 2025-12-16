@@ -1,0 +1,46 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Josephus Problem (Recursive)",
+      "description": "In the Josephus problem, N people stand in a circle and every K-th person is eliminated until one remains. Given N and K, find the position (1-based) of the survivor using recursion.\n\nInput Format:\nTwo integers N and K separated by space.\n\nOutput Format:\nPrint the position of the survivor.",
+      "examples": "Sample Input\n7 3\n\nSample Output\n4",
+      "constraints": "1 <= N <= 10^4, 1 <= K <= 10^4",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 3,
+      "testCases": [
+        {"input": "1 1", "expectedOutput": "1"},
+        {"input": "5 2", "expectedOutput": "3"},
+        {"input": "7 3", "expectedOutput": "4"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def josephus(self, n, k):\n        # TODO: recursively compute Josephus position (1-based)\n        pass\n\nif __name__ == '__main__':\n    try:\n        n, k = map(int, input().split())\n        print(Solution().josephus(n, k))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int josephus(int n, int k) {\n        // TODO: recursively compute Josephus position (1-based)\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            System.out.println(new Solution().josephus(n, k));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    josephus(n, k) {\n        // TODO: recursively compute Josephus position (1-based)\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const [n, k] = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.josephus(n, k));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int josephus(int n, int k) {\n        // TODO: recursively compute Josephus position (1-based)\n        return 0;\n    }\n};\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        Solution sol;\n        cout << sol.josephus(n, k);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint josephus(int n, int k) {\n    // TODO: recursively compute Josephus position (1-based)\n    return 0;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) == 2) {\n        printf(\"%d\", josephus(n, k));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use recurrence: J(1,k)=1, J(n,k) = (J(n-1,k) + k-1) % n + 1."
+      ]
+    }
+  ]
+}

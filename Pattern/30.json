@@ -1,0 +1,59 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Number Rhombus Border",
+            "description": "Print a rhombus (tilted square) of side N using digits on the border and spaces inside. The rhombus is centered and has height (2*N-1). On each border cell, print the distance (1-based) from the top vertex along the perimeter, modulo 10 (0-9). Interior cells are spaces.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint a rhombus of height (2*N-1) using digits and spaces only.",
+            "examples": "Sample Input\n3\n\nSample Output (one valid numbering)\n  1\n 2 3\n4   5\n 6 7\n  8",
+            "constraints": "2 <= N <= 20",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2037,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": " 1\n2 3\n 4"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "  1\n 2 3\n4   5\n 6 7\n  8"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "   1\n  2 3\n 4   5\n6     7\n 8   9\n  0 1\n   2"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "    1\n   2 3\n  4   5\n 6     7\n8       9\n 0     1\n  2   3\n   4 5\n    6"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printPattern(self, n):\n        # TODO: Print number rhombus border with perimeter indexing modulo 10\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        Solution().printPattern(n)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printPattern(int n) {\n        // TODO: Print number rhombus border with perimeter indexing modulo 10\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            new Solution().printPattern(n);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printPattern(n) {\n        // TODO: Print number rhombus border with perimeter indexing modulo 10\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printPattern(n);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printPattern(int n) {\n        // TODO: Print number rhombus border with perimeter indexing modulo 10\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution().printPattern(n);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printPattern(int n) {\n    // TODO: Print number rhombus border with perimeter indexing modulo 10\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printPattern(n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Compute the coordinates of the four edges of the rhombus and walk around its perimeter, assigning increasing numbers modulo 10. Use spaces for interior points not on the perimeter."
+            ]
+        }
+    ]
+}

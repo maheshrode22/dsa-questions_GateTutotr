@@ -1,0 +1,45 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Print All Subsets of a String (Recursive)",
+      "description": "Given a string S (without spaces), print all its subsets (the power set) using recursion. The order does not matter, but each subset should be printed on a new line. Print the empty subset as an empty line.\n\nInput Format:\nA single string S.\n\nOutput Format:\nPrint all subsets (including empty) of S, one per line.",
+      "examples": "Sample Input\nab\n\nSample Output\n\na\nb\nab\n(Note: Any order is accepted as long as all 4 subsets appear exactly once.)",
+      "constraints": "1 <= length(S) <= 10",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 2,
+      "testCases": [
+        {"input": "a", "expectedOutput": "\na"},
+        {"input": "ab", "expectedOutput": "\na\nb\nab"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def printSubsets(self, s, idx, curr):\n        # TODO: recursively generate and print all subsets\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        sol = Solution()\n        sol.printSubsets(s, 0, '')\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public void printSubsets(String s, int idx, String curr) {\n        // TODO: recursively generate and print all subsets\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.next();\n            Solution sol = new Solution();\n            sol.printSubsets(s, 0, \"\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    printSubsets(s, idx, curr) {\n        // TODO: recursively generate and print all subsets\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    sol.printSubsets(s, 0, '');\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printSubsets(const string &s, int idx, string curr) {\n        // TODO: recursively generate and print all subsets\n    }\n};\n\nint main() {\n    string s;\n    if (cin >> s) {\n        Solution sol;\n        sol.printSubsets(s, 0, \"\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nvoid printSubsets(const char *s, int idx, char *curr, int len) {\n    // TODO: recursively generate and print all subsets\n}\n\nint main() {\n    char s[16];\n    if (scanf(\"%s\", s) == 1) {\n        char curr[16];\n        printSubsets(s, 0, curr, 0);\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "At each index, choose to include or exclude the character. When idx reaches length, print the accumulated subset."
+      ]
+    }
+  ]
+}

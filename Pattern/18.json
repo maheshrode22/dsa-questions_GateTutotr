@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Number Square Pattern",
+            "description": "Print a square pattern where each row contains the same number repeated. Row 1 has all 1s, row 2 has all 2s, etc.\n\nInput Format:\nA single integer N representing the number of rows and columns.\n\nOutput Format:\nPrint a square pattern with N rows and N columns. Each row contains the same number (row number) repeated N times.",
+            "examples": "Sample Input\n5\n\nSample Output\n11111\n22222\n33333\n44444\n55555\n\nSample Input\n3\n\nSample Output\n111\n222\n333",
+            "constraints": "1 <= N <= 100",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+           "subdomainId": 3034,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "11111\n22222\n33333\n44444\n55555"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "111\n222\n333"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "1111\n2222\n3333\n4444"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "1111111\n2222222\n3333333\n4444444\n5555555\n6666666\n7777777"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printPattern(self, n):\n        # TODO: Print number square pattern\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        Solution().printPattern(n)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printPattern(int n) {\n        // TODO: Print number square pattern\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            new Solution().printPattern(n);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printPattern(n) {\n        // TODO: Print number square pattern\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printPattern(n);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printPattern(int n) {\n        // TODO: Print number square pattern\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution().printPattern(n);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printPattern(int n) {\n    // TODO: Print number square pattern\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printPattern(n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each row i, print the number i repeated N times. Use nested loops - outer for rows, inner for columns."
+            ]
+        }
+    ]
+}
+
+

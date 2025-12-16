@@ -1,0 +1,46 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Print Array in Reverse (Recursive)",
+      "description": "Given an array of N integers, print the elements in reverse order using recursion. Each element should be printed on a new line.\n\nInput Format:\nFirst line: integer N.\nSecond line: N integers separated by space.\n\nOutput Format:\nPrint the elements from index N-1 down to 0, each on a new line.",
+      "examples": "Sample Input\n4\n1 2 3 4\n\nSample Output\n4\n3\n2\n1",
+      "constraints": "1 <= N <= 1000",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 2,
+      "testCases": [
+        {"input": "1\n5", "expectedOutput": "5"},
+        {"input": "3\n1 2 3", "expectedOutput": "3\n2\n1"},
+        {"input": "4\n10 20 30 40", "expectedOutput": "40\n30\n20\n10"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def printReverse(self, arr, n):\n        # TODO: print arr in reverse order recursively\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        arr = list(map(int, input().split()))\n        Solution().printReverse(arr, n)\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public void printReverse(int[] arr, int n) {\n        // TODO: print arr in reverse order recursively\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            new Solution().printReverse(arr, n);\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    printReverse(arr, n) {\n        // TODO: print arr in reverse order recursively\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n+/);\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    sol.printReverse(arr, n);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printReverse(int arr[], int n) {\n        // TODO: print arr in reverse order recursively\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        int arr[1005];\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        Solution sol;\n        sol.printReverse(arr, n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid printReverse(int arr[], int n) {\n    // TODO: print arr in reverse order recursively\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[1005];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printReverse(arr, n);\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Recursive idea: printReverse(arr, n-1) after printing arr[n-1] OR first recurse down then print when unwinding."
+      ]
+    }
+  ]
+}

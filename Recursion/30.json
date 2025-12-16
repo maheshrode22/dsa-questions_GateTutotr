@@ -1,0 +1,45 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Generate All Binary Strings of Length N (No Leading Zero Restriction)",
+      "description": "Given N, generate all binary strings of length N using recursion. Leading zeros are allowed.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint each binary string on a new line. Any order is accepted.",
+      "examples": "Sample Input\n2\n\nSample Output\n00\n01\n10\n11",
+      "constraints": "1 <= N <= 15",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 2,
+      "testCases": [
+        {"input": "1", "expectedOutput": "0\n1"},
+        {"input": "2", "expectedOutput": "00\n01\n10\n11"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def generate(self, n, curr):\n        # TODO: generate all binary strings of length n\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        Solution().generate(n, '')\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public void generate(int n, String curr) {\n        // TODO: generate all binary strings of length n\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            new Solution().generate(n, \"\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    generate(n, curr) {\n        // TODO: generate all binary strings of length n\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.generate(n, '');\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void generate(int n, string curr) {\n        // TODO: generate all binary strings of length n\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        sol.generate(n, \"\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid generate(int n, char *curr, int len) {\n    // TODO: generate all binary strings of length n\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        char curr[20];\n        generate(n, curr, 0);\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "At each step append '0' or '1' and recurse until length == n, then print curr."
+      ]
+    }
+  ]
+}

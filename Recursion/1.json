@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Factorial Using Recursion",
+      "description": "Compute the factorial of a non-negative integer N using recursion. Factorial is defined as: N! = N * (N-1)! with 0! = 1.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint a single integer representing N!.",
+      "examples": "Sample Input\n5\n\nSample Output\n120\n\nSample Input\n0\n\nSample Output\n1",
+      "constraints": "0 <= N <= 12",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {"input": "0", "expectedOutput": "1"},
+        {"input": "1", "expectedOutput": "1"},
+        {"input": "4", "expectedOutput": "24"},
+        {"input": "5", "expectedOutput": "120"},
+        {"input": "7", "expectedOutput": "5040"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def factorial(self, n):\n        # TODO: implement recursive factorial\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        print(Solution().factorial(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int factorial(int n) {\n        // TODO: implement recursive factorial\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            System.out.println(new Solution().factorial(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    factorial(n) {\n        // TODO: implement recursive factorial\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.factorial(n));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long factorial(int n) {\n        // TODO: implement recursive factorial\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.factorial(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long factorial(int n) {\n    // TODO: implement recursive factorial\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printf(\"%lld\", factorial(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Base case: if n == 0 return 1. Recursive case: n * factorial(n-1)."
+      ]
+    }
+  ]
+}

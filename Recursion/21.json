@@ -1,0 +1,45 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Generate Balanced Parentheses",
+      "description": "Given an integer N, generate all combinations of N pairs of balanced parentheses using recursion.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint each valid combination on a new line. Combinations can be in any order.",
+      "examples": "Sample Input\n2\n\nSample Output\n(())\n()()\n(Note: Any order with both strings once is accepted.)",
+      "constraints": "1 <= N <= 10",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 3,
+      "testCases": [
+        {"input": "1", "expectedOutput": "()"},
+        {"input": "2", "expectedOutput": "(())\n()()"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def generate(self, n, open_cnt, close_cnt, curr):\n        # TODO: recursively generate balanced parentheses\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        Solution().generate(n, 0, 0, '')\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public void generate(int n, int open, int close, String curr) {\n        // TODO: recursively generate balanced parentheses\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            new Solution().generate(n, 0, 0, \"\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    generate(n, open, close, curr) {\n        // TODO: recursively generate balanced parentheses\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.generate(n, 0, 0, '');\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void generate(int n, int open, int close, string curr) {\n        // TODO: recursively generate balanced parentheses\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        sol.generate(n, 0, 0, \"\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nvoid generate(int n, int open, int close, char *curr, int len) {\n    // TODO: recursively generate balanced parentheses\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        char curr[32];\n        generate(n, 0, 0, curr, 0);\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "You can add '(' while open < n, and ')' while close < open. When length reaches 2*n, print curr."
+      ]
+    }
+  ]
+}

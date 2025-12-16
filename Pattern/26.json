@@ -1,0 +1,59 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Zigzag Number Pattern (3 Rows)",
+            "description": "Given N, print a zigzag pattern with 3 rows using digits from 1 to N (wrapping to 1 after 9). Characters are placed in 3 rows as if writing in a zigzag: row1 -> row2 -> row3 -> row2 -> row1 -> ... Remaining positions are spaces.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint 3 rows. Place the k-th digit at the appropriate row and column; other positions should be spaces.",
+            "examples": "Sample Input\n7\n\nSample Output\n1     5\n  2 4   6\n    3     7",
+            "constraints": "1 <= N <= 100",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2037,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "1",
+                    "expectedOutput": "1\n \n "
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "1 \n 2\n "
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "1   4\n  2 3\n   "
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "1     5\n  2 4   6\n    3     7"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printPattern(self, n):\n        # TODO: Print 3-row zigzag number pattern\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        Solution().printPattern(n)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printPattern(int n) {\n        // TODO: Print 3-row zigzag number pattern\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            new Solution().printPattern(n);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printPattern(n) {\n        // TODO: Print 3-row zigzag number pattern\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printPattern(n);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printPattern(int n) {\n        // TODO: Print 3-row zigzag number pattern\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution().printPattern(n);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printPattern(int n) {\n    // TODO: Print 3-row zigzag number pattern\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printPattern(n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Simulate the zigzag: maintain current row (0,1,2) and direction (down or up). Use a 2D char grid and fill digits, leaving other cells as spaces."
+            ]
+        }
+    ]
+}

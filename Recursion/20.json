@@ -1,0 +1,45 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Tower of Hanoi (Print Moves)",
+      "description": "Given N disks on peg A, move them to peg C using peg B as auxiliary, following Tower of Hanoi rules: move one disk at a time, never place a larger disk on top of a smaller one. Use recursion to print the sequence of moves.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint each move on a new line in the format \"A C\" meaning move top disk from peg A to peg C.",
+      "examples": "Sample Input\n2\n\nSample Output\nA B\nA C\nB C",
+      "constraints": "1 <= N <= 10",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 2,
+      "testCases": [
+        {"input": "1", "expectedOutput": "A C"},
+        {"input": "2", "expectedOutput": "A B\nA C\nB C"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def hanoi(self, n, fromPeg, auxPeg, toPeg):\n        # TODO: recursively print moves for Tower of Hanoi\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        Solution().hanoi(n, 'A', 'B', 'C')\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public void hanoi(int n, char fromPeg, char auxPeg, char toPeg) {\n        // TODO: recursively print moves for Tower of Hanoi\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            new Solution().hanoi(n, 'A', 'B', 'C');\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    hanoi(n, fromPeg, auxPeg, toPeg) {\n        // TODO: recursively print moves for Tower of Hanoi\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.hanoi(n, 'A', 'B', 'C');\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void hanoi(int n, char fromPeg, char auxPeg, char toPeg) {\n        // TODO: recursively print moves for Tower of Hanoi\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        sol.hanoi(n, 'A', 'B', 'C');\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid hanoi(int n, char fromPeg, char auxPeg, char toPeg) {\n    // TODO: recursively print moves for Tower of Hanoi\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        hanoi(n, 'A', 'B', 'C');\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Classic recursion: move n-1 from A to B, move largest from A to C, then move n-1 from B to C."
+      ]
+    }
+  ]
+}

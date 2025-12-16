@@ -1,0 +1,46 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Reverse String Using Recursion",
+      "description": "Given a string S (without spaces), print its reverse using recursion.\n\nInput Format:\nA single string S.\n\nOutput Format:\nPrint the reversed string.",
+      "examples": "Sample Input\nhello\n\nSample Output\nolleh\n\nSample Input\na\n\nSample Output\na",
+      "constraints": "1 <= length(S) <= 1000",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {"input": "a", "expectedOutput": "a"},
+        {"input": "abc", "expectedOutput": "cba"},
+        {"input": "recursion", "expectedOutput": "noisrucer"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def reverseString(self, s):\n        # TODO: return reverse of s using recursion\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        print(Solution().reverseString(s))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public String reverseString(String s) {\n        // TODO: return reverse of s using recursion\n        return \"\";\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.next();\n            System.out.println(new Solution().reverseString(s));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    reverseString(s) {\n        // TODO: return reverse of s using recursion\n        return '';\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.reverseString(s));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    string reverseString(const string &s) {\n        // TODO: return reverse of s using recursion\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    if (cin >> s) {\n        Solution sol;\n        cout << sol.reverseString(s);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nvoid reverseString(char *s, int l, int r) {\n    // TODO: implement in-place recursive reverse from l to r\n}\n\nint main() {\n    char s[1005];\n    if (scanf(\"%s\", s) == 1) {\n        int len = (int)strlen(s);\n        reverseString(s, 0, len - 1);\n        printf(\"%s\", s);\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Idea: reverseString(s) = last character + reverseString(s without last). Base case: empty or length 1 string."
+      ]
+    }
+  ]
+}

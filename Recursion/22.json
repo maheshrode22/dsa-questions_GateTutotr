@@ -1,0 +1,45 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Permutations of a String",
+      "description": "Given a string S with distinct characters, print all permutations of S using recursion.\n\nInput Format:\nA single string S.\n\nOutput Format:\nPrint each permutation on a new line. Any order is accepted.",
+      "examples": "Sample Input\nabc\n\nSample Output\nabc\nacb\nbac\nbca\ncab\ncba\n(Note: Any order containing all 6 permutations once is accepted.)",
+      "constraints": "1 <= length(S) <= 8",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 3,
+      "testCases": [
+        {"input": "a", "expectedOutput": "a"},
+        {"input": "ab", "expectedOutput": "ab\nba"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def permute(self, s, l):\n        # TODO: recursively generate permutations by swapping\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        Solution().permute(list(s), 0)\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public void permute(char[] s, int l) {\n        // TODO: recursively generate permutations by swapping\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            char[] s = sc.next().toCharArray();\n            new Solution().permute(s, 0);\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    permute(arr, l) {\n        // TODO: recursively generate permutations by swapping\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim().split('');\n    const sol = new Solution();\n    sol.permute(s, 0);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void permute(string &s, int l) {\n        // TODO: recursively generate permutations by swapping\n    }\n};\n\nint main() {\n    string s;\n    if (cin >> s) {\n        Solution sol;\n        sol.permute(s, 0);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nvoid permute(char *s, int l) {\n    // TODO: recursively generate permutations by swapping\n}\n\nint main() {\n    char s[16];\n    if (scanf(\"%s\", s) == 1) {\n        permute(s, 0);\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "At position l, swap each character i>=l into position l, recurse on l+1, then swap back (backtracking)."
+      ]
+    }
+  ]
+}

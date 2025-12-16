@@ -1,0 +1,47 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Power Function Using Recursion",
+      "description": "Given two integers A and B, compute A^B using recursion. Assume B >= 0.\n\nInput Format:\nTwo integers A and B separated by space.\n\nOutput Format:\nPrint a single integer representing A raised to the power B.",
+      "examples": "Sample Input\n2 3\n\nSample Output\n8\n\nSample Input\n5 0\n\nSample Output\n1",
+      "constraints": "0 <= A <= 10, 0 <= B <= 10",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {"input": "2 3", "expectedOutput": "8"},
+        {"input": "5 0", "expectedOutput": "1"},
+        {"input": "3 4", "expectedOutput": "81"},
+        {"input": "0 5", "expectedOutput": "0"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def power(self, a, b):\n        # TODO: implement recursive power a^b\n        pass\n\nif __name__ == '__main__':\n    try:\n        a, b = map(int, input().split())\n        print(Solution().power(a, b))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long power(int a, int b) {\n        // TODO: implement recursive power a^b\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int a = sc.nextInt();\n            int b = sc.nextInt();\n            System.out.println(new Solution().power(a, b));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    power(a, b) {\n        // TODO: implement recursive power a^b\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const [a, b] = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.power(a, b));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long power(int a, int b) {\n        // TODO: implement recursive power a^b\n        return 0;\n    }\n};\n\nint main() {\n    int a, b;\n    if (cin >> a >> b) {\n        Solution sol;\n        cout << sol.power(a, b);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long power(int a, int b) {\n    // TODO: implement recursive power a^b\n    return 0;\n}\n\nint main() {\n    int a, b;\n    if (scanf(\"%d %d\", &a, &b) == 2) {\n        printf(\"%lld\", power(a, b));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Base case: if b == 0 return 1. Recursive case: a * power(a, b-1)."
+      ]
+    }
+  ]
+}

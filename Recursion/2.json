@@ -1,0 +1,47 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Sum of First N Natural Numbers (Recursive)",
+      "description": "Compute the sum of first N natural numbers using recursion. That is, 1 + 2 + ... + N.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint a single integer representing the sum.",
+      "examples": "Sample Input\n5\n\nSample Output\n15\n\nSample Input\n1\n\nSample Output\n1",
+      "constraints": "1 <= N <= 10^4",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {"input": "1", "expectedOutput": "1"},
+        {"input": "3", "expectedOutput": "6"},
+        {"input": "5", "expectedOutput": "15"},
+        {"input": "10", "expectedOutput": "55"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def sumN(self, n):\n        # TODO: implement recursive sum 1..n\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        print(Solution().sumN(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long sumN(int n) {\n        // TODO: implement recursive sum 1..n\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            System.out.println(new Solution().sumN(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    sumN(n) {\n        // TODO: implement recursive sum 1..n\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.sumN(n));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long sumN(int n) {\n        // TODO: implement recursive sum 1..n\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.sumN(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long sumN(int n) {\n    // TODO: implement recursive sum 1..n\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printf(\"%lld\", sumN(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Base case: if n == 1 return 1. Recursive case: n + sumN(n-1)."
+      ]
+    }
+  ]
+}

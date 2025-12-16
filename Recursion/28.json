@@ -1,0 +1,45 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Subsequence Matches",
+      "description": "Given two strings S and T, count how many distinct subsequences of S are equal to T, using recursion.\n\nInput Format:\nTwo lines: S and T.\n\nOutput Format:\nPrint the count of distinct subsequences of S equal to T.",
+      "examples": "Sample Input\nbanana\nban\n\nSample Output\n3",
+      "constraints": "1 <= length(S), length(T) <= 30",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 4,
+      "testCases": [
+        {"input": "aaa\na", "expectedOutput": "3"},
+        {"input": "rabbbit\nrabbit", "expectedOutput": "3"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countSubseq(self, s, t, i, j):\n        # TODO: count subsequences of s[i:] that equal t[j:]\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        t = input().strip()\n        print(Solution().countSubseq(s, t, 0, 0))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long countSubseq(String s, String t, int i, int j) {\n        // TODO: count subsequences of s[i:] that equal t[j:]\n        return 0L;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.next();\n        String t = sc.next();\n        System.out.println(new Solution().countSubseq(s, t, 0, 0));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countSubseq(s, t, i, j) {\n        // TODO: count subsequences of s[i:] that equal t[j:]\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const [s, t] = input.trim().split(/\n+/);\n    const sol = new Solution();\n    console.log(sol.countSubseq(s, t, 0, 0));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long countSubseq(const string &s, const string &t, int i, int j) {\n        // TODO: count subsequences of s[i:] that equal t[j:]\n        return 0;\n    }\n};\n\nint main() {\n    string s, t;\n    if (cin >> s >> t) {\n        Solution sol;\n        cout << sol.countSubseq(s, t, 0, 0);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nlong long countSubseq(const char *s, const char *t, int i, int j) {\n    // TODO: count subsequences of s[i:] that equal t[j:]\n    return 0;\n}\n\nint main() {\n    char s[64], t[64];\n    if (scanf(\"%s %s\", s, t) == 2) {\n        printf(\"%lld\", countSubseq(s, t, 0, 0));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "If s[i]==t[j], you can either use this character or skip it: count(i+1,j+1)+count(i+1,j). If j==len(t) return 1; if i==len(s) return 0."
+      ]
+    }
+  ]
+}

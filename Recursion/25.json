@@ -1,0 +1,47 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Binary Strings Without Consecutive 1s",
+      "description": "Given N, count the number of binary strings of length N which do not contain consecutive 1s, using recursion.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint the count of valid binary strings.",
+      "examples": "Sample Input\n2\n\nSample Output\n3\n(00, 01, 10)\n\nSample Input\n3\n\nSample Output\n5",
+      "constraints": "1 <= N <= 20",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 3,
+      "testCases": [
+        {"input": "1", "expectedOutput": "2"},
+        {"input": "2", "expectedOutput": "3"},
+        {"input": "3", "expectedOutput": "5"},
+        {"input": "4", "expectedOutput": "8"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countBinary(self, n, lastBit):\n        # TODO: count binary strings of length n with no consecutive 1s\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        print(Solution().countBinary(n, 0))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long countBinary(int n, int lastBit) {\n        // TODO: count binary strings of length n with no consecutive 1s\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            System.out.println(new Solution().countBinary(n, 0));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countBinary(n, lastBit) {\n        // TODO: count binary strings of length n with no consecutive 1s\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.countBinary(n, 0));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long countBinary(int n, int lastBit) {\n        // TODO: count binary strings of length n with no consecutive 1s\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.countBinary(n, 0);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long countBinary(int n, int lastBit) {\n    // TODO: count binary strings of length n with no consecutive 1s\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printf(\"%lld\", countBinary(n, 0));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "If last bit is 1, next bit must be 0. If last bit is 0, next bit can be 0 or 1. Base when n==0 -> 1 string."
+      ]
+    }
+  ]
+}

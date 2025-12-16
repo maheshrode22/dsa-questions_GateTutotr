@@ -1,0 +1,46 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "N-Queens (Count Solutions)",
+      "description": "Place N queens on an N x N chessboard so that no two queens attack each other. Using recursion (backtracking), count how many distinct solutions exist.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint the number of valid arrangements.",
+      "examples": "Sample Input\n4\n\nSample Output\n2",
+      "constraints": "1 <= N <= 10",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 4,
+      "testCases": [
+        {"input": "1", "expectedOutput": "1"},
+        {"input": "4", "expectedOutput": "2"},
+        {"input": "5", "expectedOutput": "10"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countNQueens(self, n, row, cols, diag1, diag2):\n        # TODO: use backtracking to count valid N-Queens placements\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        # cols, diag1, diag2 can be sets() initially\n        print(Solution().countNQueens(n, 0, set(), set(), set()))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int countNQueens(int n, int row, boolean[] cols, boolean[] d1, boolean[] d2) {\n        // TODO: use backtracking to count valid N-Queens placements\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            boolean[] cols = new boolean[n];\n            boolean[] d1 = new boolean[2*n];\n            boolean[] d2 = new boolean[2*n];\n            System.out.println(new Solution().countNQueens(n, 0, cols, d1, d2));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countNQueens(n, row, cols, d1, d2) {\n        // TODO: use backtracking to count valid N-Queens placements\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.countNQueens(n, 0, new Set(), new Set(), new Set()));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countNQueens(int n, int row, vector<bool> &cols, vector<bool> &d1, vector<bool> &d2) {\n        // TODO: use backtracking to count valid N-Queens placements\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<bool> cols(n,false), d1(2*n,false), d2(2*n,false);\n        Solution sol;\n        cout << sol.countNQueens(n, 0, cols, d1, d2);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint countNQueens(int n, int row, int cols[], int d1[], int d2[]) {\n    // TODO: use backtracking to count valid N-Queens placements\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int cols[15]={0}, d1[30]={0}, d2[30]={0};\n        printf(\"%d\", countNQueens(n, 0, cols, d1, d2));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Place one queen per row. For each column, check if column and two diagonals are free; mark them when placing, unmark when backtracking."
+      ]
+    }
+  ]
+}

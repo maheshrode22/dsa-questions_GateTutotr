@@ -1,0 +1,47 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Check Palindrome String (Recursive)",
+      "description": "Given a string S (without spaces), check if it is a palindrome using recursion. A palindrome reads the same forwards and backwards.\n\nInput Format:\nA single string S.\n\nOutput Format:\nPrint \"YES\" if S is a palindrome, otherwise \"NO\".",
+      "examples": "Sample Input\nmadam\n\nSample Output\nYES\n\nSample Input\nhello\n\nSample Output\nNO",
+      "constraints": "1 <= length(S) <= 1000",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {"input": "a", "expectedOutput": "YES"},
+        {"input": "aa", "expectedOutput": "YES"},
+        {"input": "ab", "expectedOutput": "NO"},
+        {"input": "racecar", "expectedOutput": "YES"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def isPalindrome(self, s, l, r):\n        # TODO: recursive palindrome check between indices l and r\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        sol = Solution()\n        print('YES' if sol.isPalindrome(s, 0, len(s)-1) else 'NO')\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public boolean isPalindrome(String s, int l, int r) {\n        // TODO: recursive palindrome check between indices l and r\n        return false;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.next();\n            Solution sol = new Solution();\n            System.out.println(sol.isPalindrome(s, 0, s.length()-1) ? \"YES\" : \"NO\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    isPalindrome(s, l, r) {\n        // TODO: recursive palindrome check between indices l and r\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.isPalindrome(s, 0, s.length-1) ? 'YES' : 'NO');\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPalindrome(const string &s, int l, int r) {\n        // TODO: recursive palindrome check between indices l and r\n        return false;\n    }\n};\n\nint main() {\n    string s;\n    if (cin >> s) {\n        Solution sol;\n        cout << (sol.isPalindrome(s, 0, (int)s.length()-1) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint isPalindrome(const char *s, int l, int r) {\n    // TODO: recursive palindrome check between indices l and r\n    return 0;\n}\n\nint main() {\n    char s[1005];\n    if (scanf(\"%s\", s) == 1) {\n        int len = (int)strlen(s);\n        printf(\"%s\", isPalindrome(s, 0, len-1) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Compare characters at l and r. If they differ, return false. Otherwise, recurse on (l+1, r-1) until l >= r."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Print 1 to N Using Recursion",
+      "description": "Print numbers from 1 to N in increasing order using recursion. Each number should be on a new line.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint numbers from 1 to N, each on a new line.",
+      "examples": "Sample Input\n3\n\nSample Output\n1\n2\n3",
+      "constraints": "1 <= N <= 1000",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {"input": "1", "expectedOutput": "1"},
+        {"input": "3", "expectedOutput": "1\n2\n3"},
+        {"input": "5", "expectedOutput": "1\n2\n3\n4\n5"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def print1ToN(self, n):\n        # TODO: print numbers from 1 to n recursively\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        Solution().print1ToN(n)\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public void print1ToN(int n) {\n        // TODO: print numbers from 1 to n recursively\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            new Solution().print1ToN(n);\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    print1ToN(n) {\n        // TODO: print numbers from 1 to n recursively\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.print1ToN(n);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void print1ToN(int n) {\n        // TODO: print numbers from 1 to n recursively\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        sol.print1ToN(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nvoid print1ToN(int n) {\n    // TODO: print numbers from 1 to n recursively\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        print1ToN(n);\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Recursive idea: print1ToN(n-1) then print n when unwinding."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Hourglass Star Pattern with Hollow Center",
+            "description": "Print an hourglass pattern made of '*' of height (2*N-1). The top is an inverted pyramid, the bottom is a regular pyramid. There must be a hollow center column of spaces, except the very top and bottom rows, which are fully filled with stars.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint (2*N-1) rows, each of length (2*N-1).",
+            "examples": "Sample Input\n3\n\nSample Output\n*****\n* * *\n  *  \n* * *\n*****",
+            "constraints": "2 <= N <= 50",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2037,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "***\n * \n***"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "*****\n* * *\n  *  \n* * *\n*****"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "*******\n*   * *\n * *   \n   *   \n * *   \n*   * *\n*******"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "*********\n*     * *\n *   *   \n  * *    \n   *     \n  * *    \n *   *   \n*     * *\n*********"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printPattern(self, n):\n        # TODO: Print hourglass star pattern with hollow center\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        Solution().printPattern(n)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printPattern(int n) {\n        // TODO: Print hourglass star pattern with hollow center\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            new Solution().printPattern(n);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printPattern(n) {\n        // TODO: Print hourglass star pattern with hollow center\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printPattern(n);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printPattern(int n) {\n        // TODO: Print hourglass star pattern with hollow center\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution().printPattern(n);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printPattern(int n) {\n    // TODO: Print hourglass star pattern with hollow center\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printPattern(n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Treat top and bottom halves separately. Use two pointers for left and right star positions that move inward (top) and outward (bottom) while keeping the center column as spaces except first and last rows."
+            ]
+        }
+    ]
+}

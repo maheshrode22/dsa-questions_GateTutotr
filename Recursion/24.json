@@ -1,0 +1,47 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Paths in Grid (Right and Down Only)",
+      "description": "Given an integer N, consider an N x N grid starting at top-left cell (0,0) and ending at bottom-right cell (N-1,N-1). You can only move either right or down at each step. Count the number of distinct paths using recursion.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint the count of paths.",
+      "examples": "Sample Input\n2\n\nSample Output\n2\n(Down,Right) or (Right,Down)\n\nSample Input\n3\n\nSample Output\n6",
+      "constraints": "1 <= N <= 10",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 3,
+      "testCases": [
+        {"input": "1", "expectedOutput": "1"},
+        {"input": "2", "expectedOutput": "2"},
+        {"input": "3", "expectedOutput": "6"},
+        {"input": "4", "expectedOutput": "20"}
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countPaths(self, n, i, j):\n        # TODO: count paths from (i,j) to (n-1,n-1) using recursion\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        print(Solution().countPaths(n, 0, 0))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long countPaths(int n, int i, int j) {\n        // TODO: count paths from (i,j) to (n-1,n-1) using recursion\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            System.out.println(new Solution().countPaths(n, 0, 0));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countPaths(n, i, j) {\n        // TODO: count paths from (i,j) to (n-1,n-1) using recursion\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.countPaths(n, 0, 0));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long countPaths(int n, int i, int j) {\n        // TODO: count paths from (i,j) to (n-1,n-1) using recursion\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.countPaths(n, 0, 0);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long countPaths(int n, int i, int j) {\n    // TODO: count paths from (i,j) to (n-1,n-1) using recursion\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printf(\"%lld\", countPaths(n, 0, 0));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "From (i,j), you can go to (i+1,j) or (i,j+1) if inside grid. Base case when at (n-1,n-1) -> 1 path; if out of bounds -> 0."
+      ]
+    }
+  ]
+}

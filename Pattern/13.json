@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Left-Aligned Pyramid Star Pattern",
+            "description": "Print a left-aligned pyramid pattern using asterisks (*). Stars should be on the left side with spaces on the right.\n\nInput Format:\nA single integer N representing the number of rows.\n\nOutput Format:\nPrint a left-aligned pyramid pattern with N rows. Each row should have increasing stars starting from 1, with spaces filling the rest.",
+            "examples": "Sample Input\n5\n\nSample Output\n*    \n**   \n***  \n**** \n*****\n\nSample Input\n3\n\nSample Output\n*  \n** \n***",
+            "constraints": "1 <= N <= 100",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+           "subdomainId": 3034,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "*    \n**   \n***  \n**** \n*****"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "*  \n** \n***"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "*"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "*   \n**  \n*** \n****"
+                },
+                {
+                    "input": "6",
+                    "expectedOutput": "*     \n**    \n***   \n****  \n***** \n******"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printPattern(self, n):\n        # TODO: Print left-aligned pyramid star pattern\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        Solution().printPattern(n)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void printPattern(int n) {\n        // TODO: Print left-aligned pyramid star pattern\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            new Solution().printPattern(n);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printPattern(n) {\n        // TODO: Print left-aligned pyramid star pattern\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    sol.printPattern(n);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printPattern(int n) {\n        // TODO: Print left-aligned pyramid star pattern\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution().printPattern(n);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printPattern(int n) {\n    // TODO: Print left-aligned pyramid star pattern\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printPattern(n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Print i stars followed by (N-i) spaces for row i. Each row should have exactly N characters."
+            ]
+        }
+    ]
+}
+
+
