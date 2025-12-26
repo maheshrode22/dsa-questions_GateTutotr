@@ -1,0 +1,1 @@
+This folder contains 10 Number Theory programming problems in JSON format (1.json to 10.json), similar to Pattern and Recursion folders.

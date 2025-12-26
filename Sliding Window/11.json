@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Vowels in Substring of Length K",
+            "description": "Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.\nVowel letters in English are 'a', 'e', 'i', 'o', and 'u'.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: integer k.\n\nOutput Format:\nPrint a single integer: the maximum number of vowels in any window of size k.",
+            "examples": "Sample Input\nabciiidef\n3\n\nSample Output\n3\n\nExplanation:\nThe substring \"iii\" contains 3 vowels.",
+            "constraints": "1 <= |s| <= 100000\n1 <= k <= |s|\ns consists of lowercase English letters.",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "abciiidef\n3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "aeiou\n2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "leetcode\n3",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "rhythms\n4",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "tryhard\n1",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxVowels(self, s, k):\n        # TODO: Return the maximum number of vowels in a substring of length k\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    try:\n        k = int(input().strip())\n        sol = Solution()\n        print(sol.maxVowels(s, k))\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxVowels(String s, int k) {\n        // TODO: Return the maximum number of vowels in a substring of length k\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String kStr = br.readLine();\n        if (kStr != null) {\n            int k = Integer.parseInt(kStr.trim());\n            Solution sol = new Solution();\n            System.out.println(sol.maxVowels(s, k));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxVowels(s, k) {\n        // TODO: Return the maximum number of vowels in a substring of length k\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    if (lines.length > 1) {\n        const k = parseInt(lines[1].trim());\n        const sol = new Solution();\n        console.log(sol.maxVowels(s, k));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxVowels(const string& s, int k) {\n        // TODO: Return the maximum number of vowels in a substring of length k\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    int k;\n    if (cin >> s >> k) {\n        Solution sol;\n        cout << sol.maxVowels(s, k);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nint maxVowels(const char* s, int k) {\n    // TODO: Return the maximum number of vowels in a substring of length k\n    return 0;\n}\n\nint main() {\n    char s[100005];\n    int k;\n    if (scanf(\"%s\", s) == 1 && scanf(\"%d\", &k) == 1) {\n        printf(\"%d\", maxVowels(s, k));\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a sliding window of size k.",
+                "Count vowels in the first window, then slide one char at a time, updating the count."
+            ]
+        }
+    ]
+}

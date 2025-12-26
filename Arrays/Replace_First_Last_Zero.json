@@ -1,0 +1,63 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Replace First And Last Element With Zero",
+            "description": "Write a program to replace the first and last element of the array with 0.",
+            "examples": "Sample Input\n4\n5 3 7 2\n\nSample Output\n0 3 7 0",
+            "constraints": "1 <= n <= 1000\n-10^9 <= arr[i] <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "4\n5 3 7 2",
+                    "expectedOutput": "0 3 7 0"
+                },
+                {
+                    "input": "1\n100",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2\n1 2",
+                    "expectedOutput": "0 0"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "0 2 0"
+                },
+                {
+                    "input": "5\n0 0 0 0 0",
+                    "expectedOutput": "0 0 0 0 0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def replaceFirstLast(self, arr):\n        # TODO: Implement logic\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        if not line1: exit()\n        n = int(line1[0])\n        arr = list(map(int, input().split()))\n        Solution().replaceFirstLast(arr)\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public void replaceFirstLast(int[] arr) {\n        // TODO: Implement logic\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n            new Solution().replaceFirstLast(arr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    replaceFirstLast(arr) {\n        // TODO: Implement logic\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    let arr = [];\n    if (n > 0) {\n        arr = lines[1].trim().split(/\\s+/).map(Number);\n    }\n    const sol = new Solution();\n    sol.replaceFirstLast(arr);\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void replaceFirstLast(vector<int>& arr) {\n        // TODO: Implement logic\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for(int i=0; i<n; i++) cin >> arr[i];\n        Solution().replaceFirstLast(arr);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid replaceFirstLast(int arr[], int n) {\n    // TODO: Implement logic\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[n];\n        for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n        replaceFirstLast(arr, n);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Set arr[0] and arr[n-1] to 0."
+            ]
+        }
+    ]
+}

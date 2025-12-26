@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "GCD of an Array",
+      "description": "You are given an array of N positive integers. Your task is to find the greatest common divisor (GCD) of all the numbers in the array.\n\nInput Format:\nThe first line contains a single integer N.\nThe second line contains N space-separated integers a1, a2, ..., aN.\n\nOutput Format:\nPrint a single integer, the GCD of all array elements.",
+      "examples": "Sample Input\n4\n2 4 6 8\n\nSample Output\n2",
+      "constraints": "1 <= N <= 10^5\n1 <= ai <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "4\n2 4 6 8", "expectedOutput": "2" },
+        { "input": "3\n5 10 15", "expectedOutput": "5" },
+        { "input": "1\n7", "expectedOutput": "7" },
+        { "input": "3\n7 11 13", "expectedOutput": "1" },
+        { "input": "5\n4 8 12 16 20", "expectedOutput": "4" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def gcd(self, a, b):\n        # TODO: helper gcd using Euclid's algorithm\n        pass\n\n    def arrayGCD(self, arr):\n        # TODO: Return gcd of all elements in arr\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        arr = list(map(int, input().split()))\n        sol = Solution()\n        print(sol.arrayGCD(arr))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long gcd(long a, long b) {\n        // TODO: helper gcd using Euclid's algorithm\n        return 0L;\n    }\n\n    public long arrayGCD(long[] arr) {\n        // TODO: Return gcd of all elements in arr\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.arrayGCD(arr));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    gcd(a, b) {\n        // TODO: helper gcd using Euclid's algorithm\n        return 0;\n    }\n\n    arrayGCD(arr) {\n        // TODO: Return gcd of all elements in arr\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n+/);\n    const n = parseInt(lines[0].trim());\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.arrayGCD(arr));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long gcd(long long a, long long b) {\n        // TODO: helper gcd using Euclid's algorithm\n        return 0;\n    }\n\n    long long arrayGCD(long long arr[], int n) {\n        // TODO: Return gcd of all elements in arr\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        long long *arr = new long long[n];\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        Solution sol;\n        cout << sol.arrayGCD(arr, n);\n        delete[] arr;\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long gcd_ll(long long a, long long b) {\n    // TODO: helper gcd using Euclid's algorithm\n    return 0;\n}\n\nlong long arrayGCD(long long *arr, int n) {\n    // TODO: Return gcd of all elements in arr\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100000]; // based on constraints\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%lld\", arrayGCD(arr, n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Start with g = a1, then update g = gcd(g, ai) for each element. At the end, g is the GCD of the whole array."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Sum of Divisors of N",
+      "description": "You are given a positive integer N. Let d1, d2, ..., dk be all positive divisors of N. Your task is to compute the sum d1 + d2 + ... + dk.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint a single integer, the sum of all positive divisors of N.",
+      "examples": "Sample Input\n12\n\nSample Output\n28\n\nExplanation:\nDivisors of 12 are 1, 2, 3, 4, 6, 12 and their sum is 28.",
+      "constraints": "1 <= N <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "1", "expectedOutput": "1" },
+        { "input": "6", "expectedOutput": "12" },
+        { "input": "12", "expectedOutput": "28" },
+        { "input": "36", "expectedOutput": "91" },
+        { "input": "97", "expectedOutput": "98" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def sumOfDivisors(self, n):\n        # TODO: Return sum of all positive divisors of n using prime factorization\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input().strip())\n        sol = Solution()\n        print(sol.sumOfDivisors(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long sumOfDivisors(long n) {\n        // TODO: Return sum of all positive divisors of n using prime factorization\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.sumOfDivisors(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    sumOfDivisors(n) {\n        // TODO: Return sum of all positive divisors of n using prime factorization\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.sumOfDivisors(n));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long sumOfDivisors(long long n) {\n        // TODO: Return sum of all positive divisors of n using prime factorization\n        return 0;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.sumOfDivisors(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long sumOfDivisors(long long n) {\n    // TODO: Return sum of all positive divisors of n using prime factorization\n    return 0;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%lld\", sumOfDivisors(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "If n = p1^e1 * p2^e2 * ... then sum of divisors is product over i of (1 + pi + pi^2 + ... + pi^ei). Factorize n up to sqrt(n)."
+      ]
+    }
+  ]
+}

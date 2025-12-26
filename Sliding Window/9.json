@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Minimum Window Substring Containing All Characters",
+      "description": "Given two strings s and t, find the length of the smallest substring of s that contains all the characters of t (including duplicates). If no such substring exists, print -1.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: string t (no spaces).\n\nOutput Format:\nPrint a single integer: the length of the smallest window, or -1 if it does not exist.",
+      "examples": "Sample Input\nADOBECODEBANC\nABC\n\nSample Output\n4\n\nExplanation:\nThe minimum window substring is 'BANC' with length 4.",
+      "constraints": "1 <= |s|, |t| <= 100000",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "ADOBECODEBANC\nABC",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "a\na",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "a\naa",
+          "expectedOutput": "-1"
+        },
+        {
+          "input": "abdbcad\nbda",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "aaaaab\nab",
+          "expectedOutput": "2"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def minWindowLength(self, s, t):\n        # TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    t = input().strip()\n    sol = Solution()\n    print(sol.minWindowLength(s, t))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minWindowLength(String s, String t) {\n        // TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n        return -1;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String t = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.minWindowLength(s, t));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    minWindowLength(s, t) {\n        // TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    const t = lines[1].trim();\n    const sol = new Solution();\n    console.log(sol.minWindowLength(s, t));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minWindowLength(const string& s, const string& t) {\n        // TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n        return -1;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s, t;\n    if (!(cin >> s)) return 0;\n    if (!(cin >> t)) return 0;\n    Solution sol;\n    cout << sol.minWindowLength(s, t);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint minWindowLength(const char* s, const char* t) {\n    // TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n    return -1;\n}\n\nint main() {\n    char s[100005], t[100005];\n    if (scanf(\"%s\", s) != 1) return 0;\n    if (scanf(\"%s\", t) != 1) return 0;\n    printf(\"%d\", minWindowLength(s, t));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use two frequency maps: one for t and one for the current window in s.",
+        "Expand the window to satisfy all characters, then shrink from the left while still satisfying the condition to minimize the window length."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Check Power of a Prime",
+      "description": "You are given a positive integer N. We say that N is a \"power of a prime\" if there exists a prime number p and an integer k >= 1 such that N = p^k. Note that k = 1 is allowed, so any prime number itself is considered a power of a prime.\nYour task is to check whether N is a power of a prime or not.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint \"YES\" if N is a power of a prime, otherwise print \"NO\".",
+      "examples": "Sample Input\n27\n\nSample Output\nYES\n\nExplanation:\n27 = 3^3, where 3 is prime.",
+      "constraints": "1 <= N <= 10^12",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "1", "expectedOutput": "NO" },
+        { "input": "2", "expectedOutput": "YES" },
+        { "input": "4", "expectedOutput": "YES" },
+        { "input": "27", "expectedOutput": "YES" },
+        { "input": "18", "expectedOutput": "NO" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def isPrimePower(self, n):\n        # TODO: Return True if n is a power of a prime, else False\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input().strip())\n        sol = Solution()\n        print(\"YES\" if sol.isPrimePower(n) else \"NO\")\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public boolean isPrimePower(long n) {\n        // TODO: Return true if n is a power of a prime, else false\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.isPrimePower(n) ? \"YES\" : \"NO\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    isPrimePower(n) {\n        // TODO: Return true if n is a power of a prime, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const n = BigInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.isPrimePower(n) ? \"YES\" : \"NO\");\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPrimePower(long long n) {\n        // TODO: Return true if n is a power of a prime, else false\n        return false;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << (sol.isPrimePower(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool isPrimePower(long long n) {\n    // TODO: Return true if n is a power of a prime, else false\n    return false;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%s\", isPrimePower(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Factorize n into primes. If n = 1, answer is NO. Otherwise, check if n = p^k for some single prime p and integer k>=1 (only one distinct prime factor)."
+      ]
+    }
+  ]
+}

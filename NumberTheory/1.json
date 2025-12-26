@@ -1,0 +1,49 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Check Prime Number",
+      "description": "You are given a positive integer N. A prime number is a number greater than 1 that has no positive divisors other than 1 and itself.\n\nYour task is to check whether N is a prime number or not.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint \"YES\" (without quotes) if N is prime, otherwise print \"NO\".",
+      "examples": "Sample Input\n7\n\nSample Output\nYES\n\nSample Input\n10\n\nSample Output\nNO",
+      "constraints": "1 <= N <= 10^7",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 1,
+      "testCases": [
+        { "input": "1", "expectedOutput": "NO" },
+        { "input": "2", "expectedOutput": "YES" },
+        { "input": "3", "expectedOutput": "YES" },
+        { "input": "4", "expectedOutput": "NO" },
+        { "input": "17", "expectedOutput": "YES" },
+        { "input": "1000003", "expectedOutput": "YES" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def isPrime(self, n):\n        # TODO: Return True if n is prime, else False\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        sol = Solution()\n        print(\"YES\" if sol.isPrime(n) else \"NO\")\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public boolean isPrime(int n) {\n        // TODO: Return true if n is prime, else false\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            Solution sol = new Solution();\n            System.out.println(sol.isPrime(n) ? \"YES\" : \"NO\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    isPrime(n) {\n        // TODO: Return true if n is prime, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.isPrime(n) ? \"YES\" : \"NO\");\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPrime(int n) {\n        // TODO: Return true if n is prime, else false\n        return false;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        cout << (sol.isPrime(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool isPrime(int n) {\n    // TODO: Return true if n is prime, else false\n    return false;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printf(\"%s\", isPrime(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "A number n is prime if it is greater than 1 and has no divisor d with 2 <= d <= sqrt(n). Try checking divisibility up to sqrt(n)."
+      ]
+    }
+  ]
+}

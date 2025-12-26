@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Contains Duplicate II",
+            "description": "Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint \"true\" if such indices exist, otherwise \"false\".",
+            "examples": "Sample Input\n4 3\n1 2 3 1\n\nSample Output\ntrue\n\nExplanation:\nnums[0] == 1 and nums[3] == 1, and abs(0 - 3) = 3 <= 3.",
+            "constraints": "1 <= n <= 100000\n0 <= k <= 100000\n-10^9 <= nums[i] <= 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "4 3\n1 2 3 1",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "3 1\n1 0 1",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "6 2\n1 2 3 1 2 3",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1 1\n10",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "2 0\n1 1",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def containsNearbyDuplicate(self, nums, n, k):\n        # TODO: Return True if duplicate exists within distance k, else False\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        n = int(line1[0])\n        k = int(line1[1])\n        nums = list(map(int, input().split()))\n        sol = Solution()\n        if sol.containsNearbyDuplicate(nums, n, k):\n            print(\"true\")\n        else:\n            print(\"false\")\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean containsNearbyDuplicate(int[] nums, int n, int k) {\n        // TODO: Return true if duplicate exists within distance k, else false\n        return false;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int k = Integer.parseInt(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[n];\n        for (int i = 0; i < n; i++) nums[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.containsNearbyDuplicate(nums, n, k) ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    containsNearbyDuplicate(nums, n, k) {\n        // TODO: Return true if duplicate exists within distance k, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const k = parseInt(first[1]);\n    const nums = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.containsNearbyDuplicate(nums, n, k) ? \"true\" : \"false\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool containsNearbyDuplicate(const vector<int>& nums, int n, int k) {\n        // TODO: Return true if duplicate exists within distance k, else false\n        return false;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> nums(n);\n        for (int i = 0; i < n; i++) cin >> nums[i];\n        Solution sol;\n        cout << (sol.containsNearbyDuplicate(nums, n, k) ? \"true\" : \"false\");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool containsNearbyDuplicate(int nums[], int n, int k) {\n    // TODO: Return true if duplicate exists within distance k, else false\n    return false;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) == 2) {\n        int nums[100005];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &nums[i]);\n        if (containsNearbyDuplicate(nums, n, k)) printf(\"true\");\n        else printf(\"false\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a sliding window or a hash set to store elements in the current window of size k.",
+                "If an element is already in the set, return true. If the set size exceeds k, remove the oldest element."
+            ]
+        }
+    ]
+}

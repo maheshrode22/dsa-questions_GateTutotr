@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Multiples in a Range",
+      "description": "You are given three integers L, R, and K. Your task is to count how many integers x in the range [L, R] (inclusive) are divisible by K.\n\nInput Format:\nThree space-separated integers L, R, and K.\n\nOutput Format:\nPrint a single integer, the count of integers x in [L, R] such that x is divisible by K.",
+      "examples": "Sample Input\n1 10 2\n\nSample Output\n5\n\nExplanation:\nThe numbers are 2, 4, 6, 8, 10.",
+      "constraints": "1 <= L <= R <= 10^18\n1 <= K <= 10^18",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 1,
+      "testCases": [
+        { "input": "1 10 2", "expectedOutput": "5" },
+        { "input": "5 5 2", "expectedOutput": "0" },
+        { "input": "5 15 5", "expectedOutput": "3" },
+        { "input": "1 1000000000000000000 1", "expectedOutput": "1000000000000000000" },
+        { "input": "10 20 100", "expectedOutput": "0" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countMultiples(self, L, R, K):\n        # TODO: Return how many integers x in [L, R] are divisible by K\n        pass\n\nif __name__ == '__main__':\n    try:\n        L, R, K = map(int, input().split())\n        sol = Solution()\n        print(sol.countMultiples(L, R, K))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long countMultiples(long L, long R, long K) {\n        // TODO: Return how many integers x in [L, R] are divisible by K\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long L = sc.nextLong();\n            long R = sc.nextLong();\n            long K = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.countMultiples(L, R, K));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countMultiples(L, R, K) {\n        // TODO: Return how many integers x in [L, R] are divisible by K\n        return 0n;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(BigInt);\n    const L = parts[0], R = parts[1], K = parts[2];\n    const sol = new Solution();\n    console.log(String(sol.countMultiples(L, R, K)));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long countMultiples(long long L, long long R, long long K) {\n        // TODO: Return how many integers x in [L, R] are divisible by K\n        return 0;\n    }\n};\n\nint main() {\n    long long L, R, K;\n    if (cin >> L >> R >> K) {\n        Solution sol;\n        cout << sol.countMultiples(L, R, K);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long countMultiples(long long L, long long R, long long K) {\n    // TODO: Return how many integers x in [L, R] are divisible by K\n    return 0;\n}\n\nint main() {\n    long long L, R, K;\n    if (scanf(\"%lld %lld %lld\", &L, &R, &K) == 3) {\n        printf(\"%lld\", countMultiples(L, R, K));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Count multiples of K up to R, then subtract multiples of K up to L-1. Use floor division: count = R/K - (L-1)/K. Be careful with large 64-bit integers."
+      ]
+    }
+  ]
+}

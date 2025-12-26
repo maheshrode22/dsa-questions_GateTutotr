@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Largest Coprime Divisor",
+      "description": "You are given two positive integers A and B. You need to find the largest integer D such that D divides A and gcd(D, B) = 1.\n\nInput Format:\nTwo space-separated integers A and B.\n\nOutput Format:\nPrint a single integer, the largest divisor D of A that is coprime with B.",
+      "examples": "Sample Input\n10 4\n\nSample Output\n5\n\nExplanation:\nDivisors of 10 are 1,2,5,10. Among them, those coprime with 4 are 1 and 5. The largest is 5.",
+      "constraints": "1 <= A, B <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 3,
+      "testCases": [
+        { "input": "10 4", "expectedOutput": "5" },
+        { "input": "12 6", "expectedOutput": "1" },
+        { "input": "30 12", "expectedOutput": "5" },
+        { "input": "17 10", "expectedOutput": "17" },
+        { "input": "100 75", "expectedOutput": "4" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def gcd(self, a, b):\n        # TODO: helper gcd\n        pass\n\n    def largestCoprimeDivisor(self, A, B):\n        # TODO: Return largest divisor D of A such that gcd(D, B) == 1\n        pass\n\nif __name__ == '__main__':\n    try:\n        A, B = map(int, input().split())\n        sol = Solution()\n        print(sol.largestCoprimeDivisor(A, B))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long gcd(long a, long b) {\n        // TODO: helper gcd\n        return 0L;\n    }\n\n    public long largestCoprimeDivisor(long A, long B) {\n        // TODO: Return largest divisor D of A such that gcd(D, B) == 1\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long A = sc.nextLong();\n            long B = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.largestCoprimeDivisor(A, B));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    gcd(a, b) {\n        // TODO: helper gcd\n        return 0;\n    }\n\n    largestCoprimeDivisor(A, B) {\n        // TODO: Return largest divisor D of A such that gcd(D, B) == 1\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    const A = parts[0], B = parts[1];\n    const sol = new Solution();\n    console.log(sol.largestCoprimeDivisor(A, B));\n}\n\nconst fs = require('fs');\ntry { solve(fs.readFileSync(0, 'utf-8')); } catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long gcd(long long a, long long b) {\n        // TODO: helper gcd\n        return 0;\n    }\n\n    long long largestCoprimeDivisor(long long A, long long B) {\n        // TODO: Return largest divisor D of A such that gcd(D, B) == 1\n        return 0;\n    }\n};\n\nint main() {\n    long long A, B;\n    if (cin >> A >> B) {\n        Solution sol;\n        cout << sol.largestCoprimeDivisor(A, B);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long gcd_ll(long long a, long long b) {\n    // TODO: helper gcd\n    return 0;\n}\n\nlong long largestCoprimeDivisor(long long A, long long B) {\n    // TODO: Return largest divisor D of A such that gcd(D, B) == 1\n    return 0;\n}\n\nint main() {\n    long long A, B;\n    if (scanf(\"%lld %lld\", &A, &B) == 2) {\n        printf(\"%lld\", largestCoprimeDivisor(A, B));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Repeatedly divide A by gcd(A, B) while gcd(A, B) > 1. When gcd becomes 1, the current A is the largest divisor of the original A that is coprime with B."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,920 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Max Window Sum",
+      "description": "You are given an array of integers and a window size k. Your task is to find the maximum sum of any contiguous subarray of size k. If k is greater than the array size, print 0.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint a single integer: the maximum sum of any window of size k, or 0 if such window does not exist.",
+      "examples": "Sample Input\n7 3\n2 5 -1 7 3 -1 2\n\nSample Output\n11\n\nExplanation:\nThe maximum sum window is [5, -1, 7] with sum 11.",
+      "constraints": "1 <= n <= 100000\n1 <= k <= 100000\n-10^9 <= a[i] <= 10^9",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "7 3\n2 5 -1 7 3 -1 2",
+          "expectedOutput": "11"
+        },
+        {
+          "input": "5 2\n1 2 3 4 5",
+          "expectedOutput": "9"
+        },
+        {
+          "input": "5 5\n-1 -2 -3 -4 -5",
+          "expectedOutput": "-15"
+        },
+        {
+          "input": "3 4\n1 2 3",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "6 1\n-5 -1 0 2 10 -3",
+          "expectedOutput": "10"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def maxWindowSum(self, arr, n, k):\n        # TODO: Return maximum sum of any window of size k\n        pass\n\nif __name__ == '__main__':\n    n_k = input().split()\n    n = int(n_k[0])\n    k = int(n_k[1])\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.maxWindowSum(arr, n, k))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long maxWindowSum(int[] arr, int n, int k) {\n        // TODO: Return maximum sum of any window of size k\n        return 0L;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int k = Integer.parseInt(parts[1]);\n        String[] arrStr = br.readLine().trim().split(\" \");\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(arrStr[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.maxWindowSum(arr, n, k));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    maxWindowSum(arr, n, k) {\n        // TODO: Return maximum sum of any window of size k\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const k = parseInt(first[1]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.maxWindowSum(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long maxWindowSum(vector<long long>& arr, int n, int k) {\n        // TODO: Return maximum sum of any window of size k\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    if (!(cin >> n >> k)) return 0;\n    vector<long long> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    cout << sol.maxWindowSum(arr, n, k);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long maxWindowSum(long long arr[], int n, int k) {\n    // TODO: Return maximum sum of any window of size k\n    return 0;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != 2) return 0;\n    long long arr[100000];\n    for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    printf(\"%lld\", maxWindowSum(arr, n, k));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Compute the sum of the first window of size k directly.",
+        "Slide the window by one element at a time: subtract the element leaving the window and add the new element entering it."
+      ],
+      "problemNumber": 1
+    },
+    {
+      "id": null,
+      "title": "Count Even Numbers in Each Window",
+      "description": "Given an array of integers and a window size k, print the number of even numbers in every contiguous subarray (window) of size k. If k is greater than n, print nothing.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint the count of even numbers for each window of size k on a single line, separated by spaces.",
+      "examples": "Sample Input\n5 3\n1 2 4 5 6\n\nSample Output\n2 1 2\n\nExplanation:\nWindows: [1,2,4] -> 2 evens, [2,4,5] -> 2 evens, [4,5,6] -> 2 evens. (Your implementation should match the definition of even numbers in the window.)",
+      "constraints": "1 <= n <= 100000\n1 <= k <= 100000\n-10^9 <= a[i] <= 10^9",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "5 3\n1 2 4 5 6",
+          "expectedOutput": "2 2 2"
+        },
+        {
+          "input": "4 2\n2 4 6 8",
+          "expectedOutput": "2 2 2"
+        },
+        {
+          "input": "4 3\n1 3 5 7",
+          "expectedOutput": "0 0"
+        },
+        {
+          "input": "3 4\n1 2 3",
+          "expectedOutput": ""
+        },
+        {
+          "input": "6 3\n0 -2 3 5 8 10",
+          "expectedOutput": "2 1 1 2"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countEvenInWindows(self, arr, n, k):\n        # TODO: Return a list of counts of even numbers for each window of size k\n        pass\n\nif __name__ == '__main__':\n    n_k = input().split()\n    n = int(n_k[0])\n    k = int(n_k[1])\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    res = sol.countEvenInWindows(arr, n, k)\n    print(' '.join(map(str, res))) if res else print('', end='')"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<Integer> countEvenInWindows(int[] arr, int n, int k) {\n        // TODO: Return list of counts of even numbers for each window of size k\n        return new ArrayList<>();\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int k = Integer.parseInt(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        List<Integer> res = sol.countEvenInWindows(arr, n, k);\n        for (int i = 0; i < res.size(); i++) {\n            if (i > 0) System.out.print(\" \");\n            System.out.print(res.get(i));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countEvenInWindows(arr, n, k) {\n        // TODO: Return array of counts of even numbers for each window of size k\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const k = parseInt(first[1]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const res = sol.countEvenInWindows(arr, n, k);\n    if (res.length > 0) {\n        console.log(res.join(' '));\n    } else {\n        console.log('');\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> countEvenInWindows(const vector<long long>& arr, int n, int k) {\n        // TODO: Return counts of even numbers for each window of size k\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    if (!(cin >> n >> k)) return 0;\n    vector<long long> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    vector<int> res = sol.countEvenInWindows(arr, n, k);\n    for (size_t i = 0; i < res.size(); i++) {\n        if (i) cout << ' ';\n        cout << res[i];\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != 2) return 0;\n    long long arr[100000];\n    for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    // TODO: Compute counts of even numbers for each window of size k and print them space-separated.\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Maintain the count of even numbers in the current window instead of recounting each time.",
+        "When you slide the window, update the count by checking the element leaving and the element entering the window."
+      ],
+      "problemNumber": 2
+    },
+    {
+      "id": null,
+      "title": "First Negative Number in Each Window",
+      "description": "Given an array of integers and a window size k, for each window of size k print the first negative number in that window. If a window does not contain any negative number, print 0 for that window.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint the first negative number for each window on a single line, separated by spaces.",
+      "examples": "Sample Input\n8 3\n12 -1 -7 8 -15 30 16 28\n\nSample Output\n-1 -1 -7 -15 -15 0\n\nExplanation:\nFor each window of size 3, we output the first negative element if it exists, else 0.",
+      "constraints": "1 <= n <= 100000\n1 <= k <= 100000\n-10^9 <= a[i] <= 10^9",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "8 3\n12 -1 -7 8 -15 30 16 28",
+          "expectedOutput": "-1 -1 -7 -15 -15 0"
+        },
+        {
+          "input": "5 2\n1 -2 3 -4 5",
+          "expectedOutput": "-2 -2 -4 -4"
+        },
+        {
+          "input": "4 3\n1 2 3 4",
+          "expectedOutput": "0 0"
+        },
+        {
+          "input": "3 1\n-1 0 -3",
+          "expectedOutput": "-1 0 -3"
+        },
+        {
+          "input": "5 5\n1 -1 2 -2 3",
+          "expectedOutput": "-1"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def firstNegativeInWindows(self, arr, n, k):\n        # TODO: Return a list of first negative numbers for each window (0 if none)\n        pass\n\nif __name__ == '__main__':\n    n_k = input().split()\n    n = int(n_k[0])\n    k = int(n_k[1])\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    res = sol.firstNegativeInWindows(arr, n, k)\n    print(' '.join(map(str, res)))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<Long> firstNegativeInWindows(long[] arr, int n, int k) {\n        // TODO: Return list of first negative numbers for each window (0 if none)\n        return new ArrayList<>();\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int k = Integer.parseInt(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        long[] arr = new long[n];\n        for (int i = 0; i < n; i++) arr[i] = Long.parseLong(parts[i]);\n        Solution sol = new Solution();\n        List<Long> res = sol.firstNegativeInWindows(arr, n, k);\n        for (int i = 0; i < res.size(); i++) {\n            if (i > 0) System.out.print(\" \");\n            System.out.print(res.get(i));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    firstNegativeInWindows(arr, n, k) {\n        // TODO: Return array of first negative numbers for each window (0 if none)\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const k = parseInt(first[1]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const res = sol.firstNegativeInWindows(arr, n, k);\n    console.log(res.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<long long> firstNegativeInWindows(const vector<long long>& arr, int n, int k) {\n        // TODO: Return first negative in each window (0 if none)\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    if (!(cin >> n >> k)) return 0;\n    vector<long long> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    vector<long long> res = sol.firstNegativeInWindows(arr, n, k);\n    for (size_t i = 0; i < res.size(); i++) {\n        if (i) cout << ' ';\n        cout << res[i];\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != 2) return 0;\n    long long arr[100000];\n    for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    // TODO: For each window of size k, print the first negative number (or 0 if none), space-separated.\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a queue (or list) to store indices of negative numbers in the current window.",
+        "Remove indices that move out of the window and take the front of the queue as the first negative for each window."
+      ],
+      "problemNumber": 3
+    },
+    {
+      "id": null,
+      "title": "Longest Unique Substring",
+      "description": "Given a string s, find the length of the longest substring without repeating characters.\n\nInput Format:\nA single string s (no spaces).\n\nOutput Format:\nPrint a single integer: the length of the longest substring with all unique characters.",
+      "examples": "Sample Input\nabcabcbb\n\nSample Output\n3\n\nExplanation:\nThe longest substring without repeating characters is 'abc' with length 3.",
+      "constraints": "1 <= |s| <= 100000\nCharacters are visible ASCII characters (no spaces).",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "abcabcbb",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "bbbbb",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "pwwkew",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "abcdef",
+          "expectedOutput": "6"
+        },
+        {
+          "input": "aabccdeaf",
+          "expectedOutput": "5"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def lengthOfLongestUniqueSubstring(self, s):\n        # TODO: Return length of the longest substring without repeating characters\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.lengthOfLongestUniqueSubstring(s))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\n\nclass Solution {\n    public int lengthOfLongestUniqueSubstring(String s) {\n        // TODO: Return length of the longest substring without repeating characters\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.lengthOfLongestUniqueSubstring(s));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    lengthOfLongestUniqueSubstring(s) {\n        // TODO: Return length of the longest substring without repeating characters\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.lengthOfLongestUniqueSubstring(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int lengthOfLongestUniqueSubstring(const string& s) {\n        // TODO: Return length of the longest substring without repeating characters\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    if (!(cin >> s)) return 0;\n    Solution sol;\n    cout << sol.lengthOfLongestUniqueSubstring(s);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint lengthOfLongestUniqueSubstring(const char* s) {\n    // TODO: Return length of the longest substring without repeating characters\n    return 0;\n}\n\nint main() {\n    char s[100005];\n    if (scanf(\"%s\", s) != 1) return 0;\n    printf(\"%d\", lengthOfLongestUniqueSubstring(s));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a sliding window with two pointers and an array/map to track the last seen index of each character.",
+        "When you see a repeated character inside the current window, move the left pointer just after its previous occurrence."
+      ],
+      "problemNumber": 4
+    },
+    {
+      "id": null,
+      "title": "Longest Subarray with Sum At Most K",
+      "description": "Given an array of non-negative integers and an integer K, find the length of the longest contiguous subarray whose sum is less than or equal to K.\n\nInput Format:\nFirst line: two integers n and K.\nSecond line: n space-separated non-negative integers.\n\nOutput Format:\nPrint a single integer: the maximum length of such subarray.",
+      "examples": "Sample Input\n5 7\n2 1 5 1 3\n\nSample Output\n3\n\nExplanation:\nThe longest subarray with sum <= 7 is [1,5,1] with length 3.",
+      "constraints": "1 <= n <= 100000\n0 <= a[i] <= 10^9\n0 <= K <= 10^14",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "5 7\n2 1 5 1 3",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "5 4\n2 2 2 2 2",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "4 3\n4 1 1 1",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "5 0\n0 0 0 0 0",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "3 5\n6 7 8",
+          "expectedOutput": "0"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def longestSubarrayAtMostK(self, arr, n, K):\n        # TODO: Return the length of the longest subarray with sum <= K\n        pass\n\nif __name__ == '__main__':\n    n_K = input().split()\n    n = int(n_K[0])\n    K = int(n_K[1])\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.longestSubarrayAtMostK(arr, n, K))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int longestSubarrayAtMostK(long[] arr, int n, long K) {\n        // TODO: Return the length of the longest subarray with sum <= K\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        long K = Long.parseLong(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        long[] arr = new long[n];\n        for (int i = 0; i < n; i++) arr[i] = Long.parseLong(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.longestSubarrayAtMostK(arr, n, K));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    longestSubarrayAtMostK(arr, n, K) {\n        // TODO: Return the length of the longest subarray with sum <= K\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const K = BigInt(first[1]);\n    const arr = lines[1].trim().split(/\\s+/).map(v => BigInt(v));\n    const sol = new Solution();\n    console.log(sol.longestSubarrayAtMostK(arr, n, K));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestSubarrayAtMostK(const vector<long long>& arr, int n, long long K) {\n        // TODO: Return the length of the longest subarray with sum <= K\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    long long K;\n    if (!(cin >> n >> K)) return 0;\n    vector<long long> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    cout << sol.longestSubarrayAtMostK(arr, n, K);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint longestSubarrayAtMostK(long long arr[], int n, long long K) {\n    // TODO: Return the length of the longest subarray with sum <= K\n    return 0;\n}\n\nint main() {\n    int n;\n    long long K;\n    if (scanf(\"%d %lld\", &n, &K) != 2) return 0;\n    long long arr[100000];\n    for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    printf(\"%d\", longestSubarrayAtMostK(arr, n, K));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use two pointers (sliding window) and maintain the current sum.",
+        "While the sum is greater than K, move the left pointer forward and subtract elements from the sum, updating the maximum window length when the sum is <= K."
+      ],
+      "problemNumber": 5
+    },
+    {
+      "id": null,
+      "title": "Smallest Subarray with Sum At Least K",
+      "description": "Given an array of positive integers and an integer K, find the length of the smallest contiguous subarray whose sum is greater than or equal to K. If no such subarray exists, print 0.\n\nInput Format:\nFirst line: two integers n and K.\nSecond line: n space-separated positive integers.\n\nOutput Format:\nPrint a single integer: the minimum length of such subarray, or 0 if it does not exist.",
+      "examples": "Sample Input\n5 7\n2 3 1 2 4\n\nSample Output\n2\n\nExplanation:\nThe subarray [3,4] has sum 7 and length 2, which is minimal.",
+      "constraints": "1 <= n <= 100000\n1 <= a[i] <= 10^9\n1 <= K <= 10^14",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "5 7\n2 3 1 2 4",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "5 15\n1 2 3 4 5",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "4 100\n1 2 3 4",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "3 3\n3 1 1",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "6 8\n2 2 2 2 2 2",
+          "expectedOutput": "4"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def smallestSubarrayAtLeastK(self, arr, n, K):\n        # TODO: Return the length of the smallest subarray with sum >= K (0 if none)\n        pass\n\nif __name__ == '__main__':\n    n_K = input().split()\n    n = int(n_K[0])\n    K = int(n_K[1])\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.smallestSubarrayAtLeastK(arr, n, K))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int smallestSubarrayAtLeastK(long[] arr, int n, long K) {\n        // TODO: Return the length of the smallest subarray with sum >= K (0 if none)\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        long K = Long.parseLong(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        long[] arr = new long[n];\n        for (int i = 0; i < n; i++) arr[i] = Long.parseLong(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.smallestSubarrayAtLeastK(arr, n, K));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    smallestSubarrayAtLeastK(arr, n, K) {\n        // TODO: Return the length of the smallest subarray with sum >= K (0 if none)\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const K = BigInt(first[1]);\n    const arr = lines[1].trim().split(/\\s+/).map(v => BigInt(v));\n    const sol = new Solution();\n    console.log(sol.smallestSubarrayAtLeastK(arr, n, K));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int smallestSubarrayAtLeastK(const vector<long long>& arr, int n, long long K) {\n        // TODO: Return the length of the smallest subarray with sum >= K (0 if none)\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    long long K;\n    if (!(cin >> n >> K)) return 0;\n    vector<long long> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    cout << sol.smallestSubarrayAtLeastK(arr, n, K);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint smallestSubarrayAtLeastK(long long arr[], int n, long long K) {\n    // TODO: Return the length of the smallest subarray with sum >= K (0 if none)\n    return 0;\n}\n\nint main() {\n    int n;\n    long long K;\n    if (scanf(\"%d %lld\", &n, &K) != 2) return 0;\n    long long arr[100000];\n    for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n    printf(\"%d\", smallestSubarrayAtLeastK(arr, n, K));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use two pointers and maintain the current sum while expanding the right end.",
+        "Whenever the sum is >= K, try shrinking from the left to minimize the window length and update the answer."
+      ],
+      "problemNumber": 6
+    },
+    {
+      "id": null,
+      "title": "Longest Substring with At Most K Distinct Characters",
+      "description": "Given a string s and an integer K, find the length of the longest substring that contains at most K distinct characters.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: integer K.\n\nOutput Format:\nPrint a single integer: the length of the longest valid substring.",
+      "examples": "Sample Input\naraaci\n2\n\nSample Output\n4\n\nExplanation:\nThe longest substring with at most 2 distinct characters is 'araa' with length 4.",
+      "constraints": "1 <= |s| <= 100000\n1 <= K <= 26",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "araaci\n2",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "araaci\n1",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "cbbebi\n3",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "aaaa\n2",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "abc\n1",
+          "expectedOutput": "1"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def longestSubstringAtMostKDistinct(self, s, K):\n        # TODO: Return length of the longest substring with at most K distinct characters\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    K = int(input().strip())\n    sol = Solution()\n    print(sol.longestSubstringAtMostKDistinct(s, K))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int longestSubstringAtMostKDistinct(String s, int K) {\n        // TODO: Return length of the longest substring with at most K distinct characters\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        int K = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.longestSubstringAtMostKDistinct(s, K));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    longestSubstringAtMostKDistinct(s, K) {\n        // TODO: Return length of the longest substring with at most K distinct characters\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    const K = parseInt(lines[1].trim());\n    const sol = new Solution();\n    console.log(sol.longestSubstringAtMostKDistinct(s, K));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestSubstringAtMostKDistinct(const string& s, int K) {\n        // TODO: Return length of the longest substring with at most K distinct characters\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    if (!(cin >> s)) return 0;\n    int K;\n    if (!(cin >> K)) return 0;\n    Solution sol;\n    cout << sol.longestSubstringAtMostKDistinct(s, K);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint longestSubstringAtMostKDistinct(const char* s, int K) {\n    // TODO: Return length of the longest substring with at most K distinct characters\n    return 0;\n}\n\nint main() {\n    char s[100005];\n    if (scanf(\"%s\", s) != 1) return 0;\n    int K;\n    if (scanf(\"%d\", &K) != 1) return 0;\n    printf(\"%d\", longestSubstringAtMostKDistinct(s, K));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a sliding window and a frequency map to track the count of each character.",
+        "If the number of distinct characters exceeds K, move the left pointer and decrease counts until it becomes at most K again."
+      ],
+      "problemNumber": 7
+    },
+    {
+      "id": null,
+      "title": "Max Consecutive Ones After Flipping At Most K Zeros",
+      "description": "Given a binary array (containing only 0s and 1s) and an integer K, you are allowed to flip at most K zeros to ones. Find the maximum number of consecutive ones you can obtain in the array after at most K flips.\n\nInput Format:\nFirst line: two integers n and K.\nSecond line: n space-separated integers (each 0 or 1).\n\nOutput Format:\nPrint a single integer: the maximum number of consecutive ones possible.",
+      "examples": "Sample Input\n7 1\n1 0 1 1 0 1 1\n\nSample Output\n5\n\nExplanation:\nFlipping the zero at index 1 gives: [1,1,1,1,0,1,1] with a maximum run of 4 ones. Flipping index 4 gives [1,0,1,1,1,1,1] with a maximum run of 5 ones, which is optimal.",
+      "constraints": "1 <= n <= 100000\n0 <= K <= n\nEach element is 0 or 1.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "7 1\n1 0 1 1 0 1 1",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "5 2\n0 0 0 1 1",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "5 0\n1 1 0 1 1",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "6 3\n0 0 0 0 0 0",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "4 4\n1 0 1 0",
+          "expectedOutput": "4"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def maxConsecutiveOnesAfterFlips(self, arr, n, K):\n        # TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n        pass\n\nif __name__ == '__main__':\n    n_K = input().split()\n    n = int(n_K[0])\n    K = int(n_K[1])\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.maxConsecutiveOnesAfterFlips(arr, n, K))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxConsecutiveOnesAfterFlips(int[] arr, int n, int K) {\n        // TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int K = Integer.parseInt(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.maxConsecutiveOnesAfterFlips(arr, n, K));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    maxConsecutiveOnesAfterFlips(arr, n, K) {\n        // TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const K = parseInt(first[1]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.maxConsecutiveOnesAfterFlips(arr, n, K));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxConsecutiveOnesAfterFlips(const vector<int>& arr, int n, int K) {\n        // TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, K;\n    if (!(cin >> n >> K)) return 0;\n    vector<int> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    cout << sol.maxConsecutiveOnesAfterFlips(arr, n, K);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint maxConsecutiveOnesAfterFlips(int arr[], int n, int K) {\n    // TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n    return 0;\n}\n\nint main() {\n    int n, K;\n    if (scanf(\"%d %d\", &n, &K) != 2) return 0;\n    int arr[100000];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    printf(\"%d\", maxConsecutiveOnesAfterFlips(arr, n, K));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a sliding window and keep track of how many zeros are in the current window.",
+        "If the number of zeros exceeds K, move the left pointer forward until the count of zeros is at most K again, updating the maximum window size."
+      ],
+      "problemNumber": 8
+    },
+    {
+      "id": null,
+      "title": "Minimum Window Substring Containing All Characters",
+      "description": "Given two strings s and t, find the length of the smallest substring of s that contains all the characters of t (including duplicates). If no such substring exists, print -1.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: string t (no spaces).\n\nOutput Format:\nPrint a single integer: the length of the smallest window, or -1 if it does not exist.",
+      "examples": "Sample Input\nADOBECODEBANC\nABC\n\nSample Output\n4\n\nExplanation:\nThe minimum window substring is 'BANC' with length 4.",
+      "constraints": "1 <= |s|, |t| <= 100000",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "ADOBECODEBANC\nABC",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "a\na",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "a\naa",
+          "expectedOutput": "-1"
+        },
+        {
+          "input": "abdbcad\nbda",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "aaaaab\nab",
+          "expectedOutput": "2"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def minWindowLength(self, s, t):\n        # TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    t = input().strip()\n    sol = Solution()\n    print(sol.minWindowLength(s, t))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minWindowLength(String s, String t) {\n        // TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n        return -1;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String t = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.minWindowLength(s, t));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    minWindowLength(s, t) {\n        // TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    const t = lines[1].trim();\n    const sol = new Solution();\n    console.log(sol.minWindowLength(s, t));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minWindowLength(const string& s, const string& t) {\n        // TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n        return -1;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s, t;\n    if (!(cin >> s)) return 0;\n    if (!(cin >> t)) return 0;\n    Solution sol;\n    cout << sol.minWindowLength(s, t);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint minWindowLength(const char* s, const char* t) {\n    // TODO: Return the length of the smallest substring of s containing all characters of t, or -1 if none exists\n    return -1;\n}\n\nint main() {\n    char s[100005], t[100005];\n    if (scanf(\"%s\", s) != 1) return 0;\n    if (scanf(\"%s\", t) != 1) return 0;\n    printf(\"%d\", minWindowLength(s, t));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use two frequency maps: one for t and one for the current window in s.",
+        "Expand the window to satisfy all characters, then shrink from the left while still satisfying the condition to minimize the window length."
+      ],
+      "problemNumber": 9
+    },
+    {
+      "id": null,
+      "title": "Count Anagram Substrings",
+      "description": "Given two strings s and p, count how many substrings of s are anagrams of p.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: string p (no spaces).\n\nOutput Format:\nPrint a single integer: the count of substrings of s that are anagrams of p.",
+      "examples": "Sample Input\nforxxorfxdofr\nfor\n\nSample Output\n3\n\nExplanation:\nThe anagram substrings are 'for', 'orf', and 'ofr'.",
+      "constraints": "1 <= |s|, |p| <= 100000\n|p| <= |s|",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "forxxorfxdofr\nfor",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "aaaaa\naa",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "abcd\nefgh",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "abcba\nabc",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "abab\nab",
+          "expectedOutput": "3"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countAnagramSubstrings(self, s, p):\n        # TODO: Return the count of substrings of s that are anagrams of p\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    p = input().strip()\n    sol = Solution()\n    print(sol.countAnagramSubstrings(s, p))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countAnagramSubstrings(String s, String p) {\n        // TODO: Return the count of substrings of s that are anagrams of p\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String p = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.countAnagramSubstrings(s, p));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countAnagramSubstrings(s, p) {\n        // TODO: Return the count of substrings of s that are anagrams of p\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    const p = lines[1].trim();\n    const sol = new Solution();\n    console.log(sol.countAnagramSubstrings(s, p));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countAnagramSubstrings(const string& s, const string& p) {\n        // TODO: Return the count of substrings of s that are anagrams of p\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s, p;\n    if (!(cin >> s)) return 0;\n    if (!(cin >> p)) return 0;\n    Solution sol;\n    cout << sol.countAnagramSubstrings(s, p);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint countAnagramSubstrings(const char* s, const char* p) {\n    // TODO: Return the count of substrings of s that are anagrams of p\n    return 0;\n}\n\nint main() {\n    char s[100005], p[100005];\n    if (scanf(\"%s\", s) != 1) return 0;\n    if (scanf(\"%s\", p) != 1) return 0;\n    printf(\"%d\", countAnagramSubstrings(s, p));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a frequency array for p and a sliding window frequency array for the current window in s.",
+        "Slide the window of size |p| over s, updating counts in O(1), and compare the frequency arrays to check for an anagram."
+      ],
+      "problemNumber": 10
+    },
+    {
+      "id": null,
+      "title": "Maximum Vowels in Substring of Length K",
+      "description": "Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.\nVowel letters in English are 'a', 'e', 'i', 'o', and 'u'.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: integer k.\n\nOutput Format:\nPrint a single integer: the maximum number of vowels in any window of size k.",
+      "examples": "Sample Input\nabciiidef\n3\n\nSample Output\n3\n\nExplanation:\nThe substring \"iii\" contains 3 vowels.",
+      "constraints": "1 <= |s| <= 100000\n1 <= k <= |s|\ns consists of lowercase English letters.",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "abciiidef\n3",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "aeiou\n2",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "leetcode\n3",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "rhythms\n4",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "tryhard\n1",
+          "expectedOutput": "1"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def maxVowels(self, s, k):\n        # TODO: Return the maximum number of vowels in a substring of length k\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    try:\n        k = int(input().strip())\n        sol = Solution()\n        print(sol.maxVowels(s, k))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxVowels(String s, int k) {\n        // TODO: Return the maximum number of vowels in a substring of length k\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String kStr = br.readLine();\n        if (kStr != null) {\n            int k = Integer.parseInt(kStr.trim());\n            Solution sol = new Solution();\n            System.out.println(sol.maxVowels(s, k));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    maxVowels(s, k) {\n        // TODO: Return the maximum number of vowels in a substring of length k\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    if (lines.length > 1) {\n        const k = parseInt(lines[1].trim());\n        const sol = new Solution();\n        console.log(sol.maxVowels(s, k));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxVowels(const string& s, int k) {\n        // TODO: Return the maximum number of vowels in a substring of length k\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    int k;\n    if (cin >> s >> k) {\n        Solution sol;\n        cout << sol.maxVowels(s, k);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint maxVowels(const char* s, int k) {\n    // TODO: Return the maximum number of vowels in a substring of length k\n    return 0;\n}\n\nint main() {\n    char s[100005];\n    int k;\n    if (scanf(\"%s\", s) == 1 && scanf(\"%d\", &k) == 1) {\n        printf(\"%d\", maxVowels(s, k));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a sliding window of size k.",
+        "Count vowels in the first window, then slide one char at a time, updating the count."
+      ],
+      "problemNumber": 11
+    },
+    {
+      "id": null,
+      "title": "Subarray Product Less Than K",
+      "description": "Given an array of positive integers and an integer k, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than k.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated positive integers.\n\nOutput Format:\nPrint a single integer: the count of valid subarrays.",
+      "examples": "Sample Input\n4 100\n10 5 2 6\n\nSample Output\n8\n\nExplanation:\nThe 8 subarrays that have product less than 100 are:\n[10], [5], [2], [6], [10, 5], [5, 2], [2, 6], [5, 2, 6].\nNote that [10, 5, 2] has product 100, which is not strictly less than 100.",
+      "constraints": "1 <= n <= 30000\n1 <= arr[i] <= 1000\n0 <= k <= 10^6",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "4 100\n10 5 2 6",
+          "expectedOutput": "8"
+        },
+        {
+          "input": "3 0\n1 2 3",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "5 1\n1 1 1 1 1",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "5 5\n1 2 3 4 5",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "1 10\n5",
+          "expectedOutput": "1"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def numSubarrayProductLessThanK(self, arr, n, k):\n        # TODO: Return the count of subarrays with product less than k\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        n = int(line1[0])\n        k = int(line1[1])\n        arr = list(map(int, input().split()))\n        sol = Solution()\n        print(sol.numSubarrayProductLessThanK(arr, n, k))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int numSubarrayProductLessThanK(int[] arr, int n, int k) {\n        // TODO: Return the count of subarrays with product less than k\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int k = Integer.parseInt(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.numSubarrayProductLessThanK(arr, n, k));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    numSubarrayProductLessThanK(arr, n, k) {\n        // TODO: Return the count of subarrays with product less than k\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const k = parseInt(first[1]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.numSubarrayProductLessThanK(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int numSubarrayProductLessThanK(const vector<int>& arr, int n, int k) {\n        // TODO: Return the count of subarrays with product less than k\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        Solution sol;\n        cout << sol.numSubarrayProductLessThanK(arr, n, k);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint numSubarrayProductLessThanK(int arr[], int n, int k) {\n    // TODO: Return the count of subarrays with product less than k\n    return 0;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) == 2) {\n        int arr[30005];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\", numSubarrayProductLessThanK(arr, n, k));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a sliding window. Expand right and multiply to current product.",
+        "If product >= k, shrink from left by dividing until product < k.",
+        "For each valid window ending at right, add (right - left + 1) to the count."
+      ],
+      "problemNumber": 12
+    },
+    {
+      "id": null,
+      "title": "Longest Repeating Character Replacement",
+      "description": "You are given a string s consisting of uppercase English characters and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.\nReturn the length of the longest substring containing the same letter you can get after performing the above operations.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: integer k.\n\nOutput Format:\nPrint a single integer: the maximum length of such substring.",
+      "examples": "Sample Input\nABAB\n2\n\nSample Output\n4\n\nExplanation:\nReplace the two 'A's with 'B's or vice versa.",
+      "constraints": "1 <= |s| <= 100000\n0 <= k <= |s|\ns consists of uppercase English letters.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "ABAB\n2",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "AABABBA\n1",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "AAAA\n0",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "ABCDE\n1",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "K\n5",
+          "expectedOutput": "1"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def characterReplacement(self, s, k):\n        # TODO: Return the length of the longest substring with same letter after k replacements\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    try:\n        k = int(input().strip())\n        sol = Solution()\n        print(sol.characterReplacement(s, k))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int characterReplacement(String s, int k) {\n        // TODO: Return the length of the longest substring with same letter after k replacements\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String kStr = br.readLine();\n        if (kStr != null) {\n            int k = Integer.parseInt(kStr.trim());\n            Solution sol = new Solution();\n            System.out.println(sol.characterReplacement(s, k));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    characterReplacement(s, k) {\n        // TODO: Return the length of the longest substring with same letter after k replacements\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    if (lines.length > 1) {\n        const k = parseInt(lines[1].trim());\n        const sol = new Solution();\n        console.log(sol.characterReplacement(s, k));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int characterReplacement(const string& s, int k) {\n        // TODO: Return the length of the longest substring with same letter after k replacements\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    int k;\n    if (cin >> s >> k) {\n        Solution sol;\n        cout << sol.characterReplacement(s, k);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint characterReplacement(const char* s, int k) {\n    // TODO: Return the length of the longest substring with same letter after k replacements\n    return 0;\n}\n\nint main() {\n    char s[100005];\n    int k;\n    if (scanf(\"%s\", s) == 1 && scanf(\"%d\", &k) == 1) {\n        printf(\"%d\", characterReplacement(s, k));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a sliding window and track the frequency of the most frequent character in the current window.",
+        "The number of replacements needed is (window length - max frequency). If this > k, shrink window."
+      ],
+      "problemNumber": 13
+    },
+    {
+      "id": null,
+      "title": "Contains Duplicate II",
+      "description": "Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint \"true\" if such indices exist, otherwise \"false\".",
+      "examples": "Sample Input\n4 3\n1 2 3 1\n\nSample Output\ntrue\n\nExplanation:\nnums[0] == 1 and nums[3] == 1, and abs(0 - 3) = 3 <= 3.",
+      "constraints": "1 <= n <= 100000\n0 <= k <= 100000\n-10^9 <= nums[i] <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "4 3\n1 2 3 1",
+          "expectedOutput": "true"
+        },
+        {
+          "input": "3 1\n1 0 1",
+          "expectedOutput": "false"
+        },
+        {
+          "input": "6 2\n1 2 3 1 2 3",
+          "expectedOutput": "false"
+        },
+        {
+          "input": "1 1\n10",
+          "expectedOutput": "false"
+        },
+        {
+          "input": "2 0\n1 1",
+          "expectedOutput": "false"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def containsNearbyDuplicate(self, nums, n, k):\n        # TODO: Return True if duplicate exists within distance k, else False\n        pass\n\nif __name__ == '__main__':\n    try:\n        line1 = input().split()\n        n = int(line1[0])\n        k = int(line1[1])\n        nums = list(map(int, input().split()))\n        sol = Solution()\n        if sol.containsNearbyDuplicate(nums, n, k):\n            print(\"true\")\n        else:\n            print(\"false\")\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean containsNearbyDuplicate(int[] nums, int n, int k) {\n        // TODO: Return true if duplicate exists within distance k, else false\n        return false;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int k = Integer.parseInt(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[n];\n        for (int i = 0; i < n; i++) nums[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.containsNearbyDuplicate(nums, n, k) ? \"true\" : \"false\");\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    containsNearbyDuplicate(nums, n, k) {\n        // TODO: Return true if duplicate exists within distance k, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const k = parseInt(first[1]);\n    const nums = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.containsNearbyDuplicate(nums, n, k) ? \"true\" : \"false\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool containsNearbyDuplicate(const vector<int>& nums, int n, int k) {\n        // TODO: Return true if duplicate exists within distance k, else false\n        return false;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> nums(n);\n        for (int i = 0; i < n; i++) cin >> nums[i];\n        Solution sol;\n        cout << (sol.containsNearbyDuplicate(nums, n, k) ? \"true\" : \"false\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool containsNearbyDuplicate(int nums[], int n, int k) {\n    // TODO: Return true if duplicate exists within distance k, else false\n    return false;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) == 2) {\n        int nums[100005];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &nums[i]);\n        if (containsNearbyDuplicate(nums, n, k)) printf(\"true\");\n        else printf(\"false\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a sliding window or a hash set to store elements in the current window of size k.",
+        "If an element is already in the set, return true. If the set size exceeds k, remove the oldest element."
+      ],
+      "problemNumber": 14
+    },
+    {
+      "id": null,
+      "title": "Get Equal Substrings Within Budget",
+      "description": "You are given two strings s and t of the same length and an integer maxCost.\nYou want to change s to t. Changing the i-th character of s to i-th character of t costs |s[i] - t[i]| (that is, the absolute difference between the ASCII values of the characters).\nYou are also given an integer maxCost.\nReturn the maximum length of a substring of s that can be changed to be the same as the corresponding substring of t with a cost less than or equal to maxCost.\nIf there is no substring from s that can be changed to its corresponding substring from t, return 0.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: string t (no spaces).\nThird line: integer maxCost.\n\nOutput Format:\nPrint a single integer: the maximum length of such substring.",
+      "examples": "Sample Input\nabcd\nbcdf\n3\n\nSample Output\n3\n\nExplanation:\nCosts: |a-b|=1, |b-c|=1, |c-d|=1, |d-f|=2. Costs array: [1, 1, 1, 2].\nSubstrings with cost <= 3:\n[1, 1, 1] sum=3, len=3.\n[1, 1, 2] sum=4 > 3.\nMax length is 3.",
+      "constraints": "1 <= |s| <= 100000\n|t| == |s|\n0 <= maxCost <= 10^6\ns and t consist of lowercase English letters.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 5033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "abcd\nbcdf\n3",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "abcd\ncdef\n3",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "abcd\nacde\n0",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "krrgw\nzjxss\n19",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "equal\nequal\n0",
+          "expectedOutput": "5"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def equalSubstring(self, s, t, maxCost):\n        # TODO: Return the maximum length of substring with cost <= maxCost\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    t = input().strip()\n    try:\n        maxCost = int(input().strip())\n        sol = Solution()\n        print(sol.equalSubstring(s, t, maxCost))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int equalSubstring(String s, String t, int maxCost) {\n        // TODO: Return the maximum length of substring with cost <= maxCost\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String t = br.readLine().trim();\n        String costStr = br.readLine();\n        if (costStr != null) {\n            int maxCost = Integer.parseInt(costStr.trim());\n            Solution sol = new Solution();\n            System.out.println(sol.equalSubstring(s, t, maxCost));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    equalSubstring(s, t, maxCost) {\n        // TODO: Return the maximum length of substring with cost <= maxCost\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    const t = lines[1].trim();\n    if (lines.length > 2) {\n        const maxCost = parseInt(lines[2].trim());\n        const sol = new Solution();\n        console.log(sol.equalSubstring(s, t, maxCost));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int equalSubstring(const string& s, const string& t, int maxCost) {\n        // TODO: Return the maximum length of substring with cost <= maxCost\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s, t;\n    int maxCost;\n    if (cin >> s >> t >> maxCost) {\n        Solution sol;\n        cout << sol.equalSubstring(s, t, maxCost);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint equalSubstring(const char* s, const char* t, int maxCost) {\n    // TODO: Return the maximum length of substring with cost <= maxCost\n    return 0;\n}\n\nint main() {\n    char s[100005], t[100005];\n    int maxCost;\n    if (scanf(\"%s\", s) == 1 && scanf(\"%s\", t) == 1 && scanf(\"%d\", &maxCost) == 1) {\n        printf(\"%d\", equalSubstring(s, t, maxCost));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Calculate the cost for each index: abs(s[i] - t[i]).",
+        "Use a sliding window on the cost array to find the longest subarray with sum <= maxCost."
+      ],
+      "problemNumber": 15
+    }
+  ]
+}

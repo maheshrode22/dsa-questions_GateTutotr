@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Distinct Prime Factors",
+      "description": "You are given a positive integer N. Write a program to count how many distinct prime numbers divide N.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint a single integer, the number of distinct prime factors of N.",
+      "examples": "Sample Input\n12\n\nSample Output\n2\n\nExplanation:\n12 = 2^2 * 3^1, so the distinct primes are 2 and 3.",
+      "constraints": "1 <= N <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "1", "expectedOutput": "0" },
+        { "input": "2", "expectedOutput": "1" },
+        { "input": "12", "expectedOutput": "2" },
+        { "input": "60", "expectedOutput": "3" },
+        { "input": "97", "expectedOutput": "1" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countDistinctPrimes(self, n):\n        # TODO: Return number of distinct prime factors of n\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input().strip())\n        sol = Solution()\n        print(sol.countDistinctPrimes(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int countDistinctPrimes(long n) {\n        // TODO: Return number of distinct prime factors of n\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.countDistinctPrimes(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countDistinctPrimes(n) {\n        // TODO: Return number of distinct prime factors of n\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.countDistinctPrimes(n));\n}\n\nconst fs = require('fs');\ntry { solve(fs.readFileSync(0, 'utf-8')); } catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countDistinctPrimes(long long n) {\n        // TODO: Return number of distinct prime factors of n\n        return 0;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.countDistinctPrimes(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint countDistinctPrimes(long long n) {\n    // TODO: Return number of distinct prime factors of n\n    return 0;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%d\", countDistinctPrimes(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use trial division up to sqrt(n). Each time you find a prime factor p that divides n, increase the count once and divide n by p until it no longer divides."
+      ]
+    }
+  ]
+}

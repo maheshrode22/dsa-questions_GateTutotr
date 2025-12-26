@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Repeating Character Replacement",
+            "description": "You are given a string s consisting of uppercase English characters and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.\nReturn the length of the longest substring containing the same letter you can get after performing the above operations.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: integer k.\n\nOutput Format:\nPrint a single integer: the maximum length of such substring.",
+            "examples": "Sample Input\nABAB\n2\n\nSample Output\n4\n\nExplanation:\nReplace the two 'A's with 'B's or vice versa.",
+            "constraints": "1 <= |s| <= 100000\n0 <= k <= |s|\ns consists of uppercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "ABAB\n2",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "AABABBA\n1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "AAAA\n0",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "ABCDE\n1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "K\n5",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def characterReplacement(self, s, k):\n        # TODO: Return the length of the longest substring with same letter after k replacements\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    try:\n        k = int(input().strip())\n        sol = Solution()\n        print(sol.characterReplacement(s, k))\n    except:\n        pass"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int characterReplacement(String s, int k) {\n        // TODO: Return the length of the longest substring with same letter after k replacements\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String kStr = br.readLine();\n        if (kStr != null) {\n            int k = Integer.parseInt(kStr.trim());\n            Solution sol = new Solution();\n            System.out.println(sol.characterReplacement(s, k));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    characterReplacement(s, k) {\n        // TODO: Return the length of the longest substring with same letter after k replacements\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    if (lines.length > 1) {\n        const k = parseInt(lines[1].trim());\n        const sol = new Solution();\n        console.log(sol.characterReplacement(s, k));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int characterReplacement(const string& s, int k) {\n        // TODO: Return the length of the longest substring with same letter after k replacements\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s;\n    int k;\n    if (cin >> s >> k) {\n        Solution sol;\n        cout << sol.characterReplacement(s, k);\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nint characterReplacement(const char* s, int k) {\n    // TODO: Return the length of the longest substring with same letter after k replacements\n    return 0;\n}\n\nint main() {\n    char s[100005];\n    int k;\n    if (scanf(\"%s\", s) == 1 && scanf(\"%d\", &k) == 1) {\n        printf(\"%d\", characterReplacement(s, k));\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a sliding window and track the frequency of the most frequent character in the current window.",
+                "The number of replacements needed is (window length - max frequency). If this > k, shrink window."
+            ]
+        }
+    ]
+}

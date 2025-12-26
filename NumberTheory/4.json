@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Sum of Numbers Under Modulo",
+      "description": "You are given two integers N and M, followed by N integers a1, a2, ..., aN.\nYour task is to compute the sum a1 + a2 + ... + aN under modulo M.\n\nThat is, compute (a1 + a2 + ... + aN) % M.\n\nInput Format:\nThe first line contains two integers N and M.\nThe second line contains N space-separated integers a1, a2, ..., aN.\n\nOutput Format:\nPrint a single integer, the sum modulo M.",
+      "examples": "Sample Input\n5 7\n1 2 3 4 5\n\nSample Output\n1\n\nExplanation:\nThe sum is 1+2+3+4+5 = 15. 15 % 7 = 1.",
+      "constraints": "1 <= N <= 10^5\n1 <= M <= 10^9\n-10^9 <= ai <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 1,
+      "testCases": [
+        { "input": "5 7\n1 2 3 4 5", "expectedOutput": "1" },
+        { "input": "3 10\n10 20 30", "expectedOutput": "0" },
+        { "input": "1 5\n-1", "expectedOutput": "4" },
+        { "input": "4 100\n100 100 100 100", "expectedOutput": "0" },
+        { "input": "2 1000000000\n1000000000 1000000000", "expectedOutput": "0" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def sumModulo(self, arr, m):\n        # TODO: Return sum of arr under modulo m\n        pass\n\nif __name__ == '__main__':\n    try:\n        n, m = map(int, input().split())\n        arr = list(map(int, input().split()))\n        sol = Solution()\n        print(sol.sumModulo(arr, m))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long sumModulo(long[] arr, long m) {\n        // TODO: Return sum of arr under modulo m\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long m = sc.nextLong();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.sumModulo(arr, m));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    sumModulo(arr, m) {\n        // TODO: Return sum of arr under modulo m\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n+/);\n    const [nStr, mStr] = lines[0].trim().split(/\\s+/);\n    const n = parseInt(nStr), m = parseInt(mStr);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.sumModulo(arr, m));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long sumModulo(long long arr[], int n, long long m) {\n        // TODO: Return sum of arr under modulo m\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    long long m;\n    if (cin >> n >> m) {\n        long long *arr = new long long[n];\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        Solution sol;\n        cout << sol.sumModulo(arr, n, m);\n        delete[] arr;\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long sumModulo(long long *arr, int n, long long m) {\n    // TODO: Return sum of arr under modulo m\n    return 0;\n}\n\nint main() {\n    int n;\n    long long m;\n    if (scanf(\"%d %lld\", &n, &m) == 2) {\n        long long arr[100000]; // assume constraints allow this max\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%lld\", sumModulo(arr, n, m));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Maintain a running sum and apply modulo at each step: sum = (sum + ai) % M. For negative numbers, you can adjust by adding M."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Max Consecutive Ones After Flipping At Most K Zeros",
+      "description": "Given a binary array (containing only 0s and 1s) and an integer K, you are allowed to flip at most K zeros to ones. Find the maximum number of consecutive ones you can obtain in the array after at most K flips.\n\nInput Format:\nFirst line: two integers n and K.\nSecond line: n space-separated integers (each 0 or 1).\n\nOutput Format:\nPrint a single integer: the maximum number of consecutive ones possible.",
+      "examples": "Sample Input\n7 1\n1 0 1 1 0 1 1\n\nSample Output\n5\n\nExplanation:\nFlipping the zero at index 1 gives: [1,1,1,1,0,1,1] with a maximum run of 4 ones. Flipping index 4 gives [1,0,1,1,1,1,1] with a maximum run of 5 ones, which is optimal.",
+      "constraints": "1 <= n <= 100000\n0 <= K <= n\nEach element is 0 or 1.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "7 1\n1 0 1 1 0 1 1",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "5 2\n0 0 0 1 1",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "5 0\n1 1 0 1 1",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "6 3\n0 0 0 0 0 0",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "4 4\n1 0 1 0",
+          "expectedOutput": "4"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def maxConsecutiveOnesAfterFlips(self, arr, n, K):\n        # TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n        pass\n\nif __name__ == '__main__':\n    n_K = input().split()\n    n = int(n_K[0])\n    K = int(n_K[1])\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.maxConsecutiveOnesAfterFlips(arr, n, K))"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxConsecutiveOnesAfterFlips(int[] arr, int n, int K) {\n        // TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int K = Integer.parseInt(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.maxConsecutiveOnesAfterFlips(arr, n, K));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    maxConsecutiveOnesAfterFlips(arr, n, K) {\n        // TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]);\n    const K = parseInt(first[1]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.maxConsecutiveOnesAfterFlips(arr, n, K));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxConsecutiveOnesAfterFlips(const vector<int>& arr, int n, int K) {\n        // TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, K;\n    if (!(cin >> n >> K)) return 0;\n    vector<int> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    cout << sol.maxConsecutiveOnesAfterFlips(arr, n, K);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint maxConsecutiveOnesAfterFlips(int arr[], int n, int K) {\n    // TODO: Return the maximum number of consecutive ones after flipping at most K zeros\n    return 0;\n}\n\nint main() {\n    int n, K;\n    if (scanf(\"%d %d\", &n, &K) != 2) return 0;\n    int arr[100000];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    printf(\"%d\", maxConsecutiveOnesAfterFlips(arr, n, K));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a sliding window and keep track of how many zeros are in the current window.",
+        "If the number of zeros exceeds K, move the left pointer forward until the count of zeros is at most K again, updating the maximum window size."
+      ]
+    }
+  ]
+}

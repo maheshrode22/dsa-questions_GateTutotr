@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Primes in a Range",
+      "description": "You are given two integers L and R.\nYour task is to count how many prime numbers are there between L and R (inclusive).\n\nInput Format:\nTwo space-separated integers L and R.\n\nOutput Format:\nPrint a single integer, the number of primes in [L, R].",
+      "examples": "Sample Input\n2 10\n\nSample Output\n4\n\nExplanation:\nPrimes between 2 and 10 are: 2, 3, 5, 7.",
+      "constraints": "1 <= L <= R <= 10^6\nR - L <= 10^5",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "2 10", "expectedOutput": "4" },
+        { "input": "1 1", "expectedOutput": "0" },
+        { "input": "1 2", "expectedOutput": "1" },
+        { "input": "10 20", "expectedOutput": "4" },
+        { "input": "17 17", "expectedOutput": "1" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countPrimesInRange(self, L, R):\n        # TODO: Return count of primes in [L, R]\n        pass\n\nif __name__ == '__main__':\n    try:\n        L, R = map(int, input().split())\n        print(Solution().countPrimesInRange(L, R))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int countPrimesInRange(int L, int R) {\n        // TODO: Return count of primes in [L, R]\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int L = sc.nextInt();\n            int R = sc.nextInt();\n            System.out.println(new Solution().countPrimesInRange(L, R));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countPrimesInRange(L, R) {\n        // TODO: Return count of primes in [L, R]\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    const L = parts[0], R = parts[1];\n    const sol = new Solution();\n    console.log(sol.countPrimesInRange(L, R));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countPrimesInRange(int L, int R) {\n        // TODO: Return count of primes in [L, R]\n        return 0;\n    }\n};\n\nint main() {\n    int L, R;\n    if (cin >> L >> R) {\n        Solution sol;\n        cout << sol.countPrimesInRange(L, R);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint countPrimesInRange(int L, int R) {\n    // TODO: Return count of primes in [L, R]\n    return 0;\n}\n\nint main() {\n    int L, R;\n    if (scanf(\"%d %d\", &L, &R) == 2) {\n        printf(\"%d\", countPrimesInRange(L, R));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a sieve of Eratosthenes up to R to precompute primes, then count how many primes lie between L and R."
+      ]
+    }
+  ]
+}

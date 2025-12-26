@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Least Common Multiple of Two Numbers",
+      "description": "The least common multiple (LCM) of two integers a and b is the smallest positive integer that is divisible by both a and b.\n\nYou are given two integers a and b. Find their LCM.\n\nInput Format:\nTwo space-separated integers a and b.\n\nOutput Format:\nPrint a single integer, the LCM of a and b.",
+      "examples": "Sample Input\n4 6\n\nSample Output\n12\n\nSample Input\n7 5\n\nSample Output\n35",
+      "constraints": "1 <= a, b <= 10^9\nThe LCM will fit in 64-bit signed integer.",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 1,
+      "testCases": [
+        { "input": "4 6", "expectedOutput": "12" },
+        { "input": "7 5", "expectedOutput": "35" },
+        { "input": "10 10", "expectedOutput": "10" },
+        { "input": "8 12", "expectedOutput": "24" },
+        { "input": "1000000000 1", "expectedOutput": "1000000000" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def gcd(self, a, b):\n        # TODO: helper gcd using Euclid's algorithm\n        pass\n\n    def lcm(self, a, b):\n        # TODO: Return lcm of a and b using gcd\n        pass\n\nif __name__ == '__main__':\n    try:\n        a, b = map(int, input().split())\n        print(Solution().lcm(a, b))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long gcd(long a, long b) {\n        // TODO: helper gcd using Euclid's algorithm\n        return 0L;\n    }\n\n    public long lcm(long a, long b) {\n        // TODO: Return lcm of a and b using gcd\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long a = sc.nextLong();\n            long b = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.lcm(a, b));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    gcd(a, b) {\n        // TODO: helper gcd using Euclid's algorithm\n        return 0;\n    }\n\n    lcm(a, b) {\n        // TODO: Return lcm of a and b using gcd\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    const a = parts[0], b = parts[1];\n    const sol = new Solution();\n    console.log(sol.lcm(a, b));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long gcd(long long a, long long b) {\n        // TODO: helper gcd using Euclid's algorithm\n        return 0;\n    }\n\n    long long lcm(long long a, long long b) {\n        // TODO: Return lcm of a and b using gcd\n        return 0;\n    }\n};\n\nint main() {\n    long long a, b;\n    if (cin >> a >> b) {\n        Solution sol;\n        cout << sol.lcm(a, b);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long gcd_ll(long long a, long long b) {\n    // TODO: helper gcd using Euclid's algorithm\n    return 0;\n}\n\nlong long lcm_ll(long long a, long long b) {\n    // TODO: Return lcm of a and b using gcd\n    return 0;\n}\n\nint main() {\n    long long a, b;\n    if (scanf(\"%lld %lld\", &a, &b) == 2) {\n        printf(\"%lld\", lcm_ll(a, b));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use the formula lcm(a, b) = (a / gcd(a, b)) * b. First compute gcd with Euclid's algorithm."
+      ]
+    }
+  ]
+}

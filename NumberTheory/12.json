@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Check Perfect Square",
+      "description": "You are given a non-negative integer N. A perfect square is an integer that can be written as k^2 for some integer k.\nYour task is to check whether N is a perfect square or not.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint \"YES\" if N is a perfect square, otherwise print \"NO\".",
+      "examples": "Sample Input\n16\n\nSample Output\nYES\n\nSample Input\n20\n\nSample Output\nNO",
+      "constraints": "0 <= N <= 10^12",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 1,
+      "testCases": [
+        { "input": "0", "expectedOutput": "YES" },
+        { "input": "1", "expectedOutput": "YES" },
+        { "input": "16", "expectedOutput": "YES" },
+        { "input": "20", "expectedOutput": "NO" },
+        { "input": "1000000000000", "expectedOutput": "YES" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def isPerfectSquare(self, n):\n        # TODO: Return True if n is a perfect square, else False\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input().strip())\n        sol = Solution()\n        print(\"YES\" if sol.isPerfectSquare(n) else \"NO\")\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public boolean isPerfectSquare(long n) {\n        // TODO: Return true if n is a perfect square, else false\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.isPerfectSquare(n) ? \"YES\" : \"NO\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    isPerfectSquare(n) {\n        // TODO: Return true if n is a perfect square, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const n = BigInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.isPerfectSquare(n) ? \"YES\" : \"NO\");\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPerfectSquare(long long n) {\n        // TODO: Return true if n is a perfect square, else false\n        return false;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << (sol.isPerfectSquare(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool isPerfectSquare(long long n) {\n    // TODO: Return true if n is a perfect square, else false\n    return false;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%s\", isPerfectSquare(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Compute k = floor(sqrt(n)) using integer arithmetic and check if k*k == n or (k+1)*(k+1) == n."
+      ]
+    }
+  ]
+}
