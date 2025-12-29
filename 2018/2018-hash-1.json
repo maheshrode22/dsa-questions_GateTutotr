@@ -1,0 +1,98 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Linear Probing Simulation",
+            "description": "Problem Statement\nImplement a hash table of size M using Linear Probing for collision resolution. \n\nThe hash function is h(k) = k % M. \nIn case of a collision at index h(k), Linear Probing searches for the next available slot using the formula: \nh(k, i) = (h(k) + i) % M, where i = 0, 1, 2, ...\n\nYou are given the table size M and N keys to insert. If a slot is already occupied, move to the next slot linearly. If the table becomes full, stop inserting.\n\nInput Format\n- First line: Two integers M (table size) and N (number of keys).\n- Second line: N space-separated integers (keys to be inserted).\n\nOutput Format\n- Print M space-separated integers representing the final state of the hash table. \n- Use -1 to represent an empty slot.\n\nExample 1\nInput:\n7 5\n10 20 30 40 50\n\nOutput:\n-1 40 50 10 20 30 -1\n\nExplanation:\n- 10 % 7 = 3 (Slot 3)\n- 20 % 7 = 6 (Slot 6)\n- 30 % 7 = 2 (Slot 2)\n- 40 % 7 = 5 (Slot 5)\n- 50 % 7 = 1 (Slot 1)",
+            "examples": "Sample Input\n5 3\n1 6 11\n\nSample Output\n-1 1 6 11 -1",
+            "constraints": "1 \u00e2\u2030\u00a4 M \u00e2\u2030\u00a4 1000\n1 \u00e2\u2030\u00a4 N \u00e2\u2030\u00a4 M\n0 \u00e2\u2030\u00a4 keys \u00e2\u2030\u00a4 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2018,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "7 5\n10 20 30 40 50",
+                    "expectedOutput": "-1 50 30 10 -1 40 20",
+                    "problemTitle": "Linear Probing Simulation"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 3\n1 6 11",
+                    "expectedOutput": "-1 1 6 11 -1",
+                    "problemTitle": "Linear Probing Simulation"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "10 4\n10 20 30 40",
+                    "expectedOutput": "10 20 30 40 -1 -1 -1 -1 -1 -1",
+                    "problemTitle": "Linear Probing Simulation"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "3 3\n1 2 3",
+                    "expectedOutput": "3 1 2",
+                    "problemTitle": "Linear Probing Simulation"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 5\n0 5 10 15 20",
+                    "expectedOutput": "0 5 10 15 20",
+                    "problemTitle": "Linear Probing Simulation"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def linearProbing(m, n, keys):\n    table = [-1] * m\n    # TODO: Implement Linear Probing\n    return table\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        m, n = map(int, line1)\n        keys = list(map(int, input().split()))\n        result = linearProbing(m, n, keys)\n        print(*(result))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Linear Probing Simulation"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int m = sc.nextInt();\n            int n = sc.nextInt();\n            int[] table = new int[m];\n            Arrays.fill(table, -1);\n            \n            for (int i = 0; i < n; i++) {\n                int key = sc.nextInt();\n                // TODO: Implement Linear Probing\n            }\n            \n            for (int i = 0; i < m; i++) {\n                System.out.print(table[i] + (i == m - 1 ? \"\" : \" \"));\n            }\n            System.out.println();\n        }\n    }\n}",
+                    "problemTitle": "Linear Probing Simulation"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const [m, n] = lines[0].trim().split(/\\s+/).map(Number);\n    const keys = lines[1].trim().split(/\\s+/).map(Number);\n    \n    let table = new Array(m).fill(-1);\n    // TODO: Implement Linear Probing\n    \n    console.log(table.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Linear Probing Simulation"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int m, n;\n    if (cin >> m >> n) {\n        vector<int> table(m, -1);\n        for (int i = 0; i < n; i++) {\n            int key;\n            cin >> key;\n            // TODO: Implement Linear Probing\n        }\n        for (int i = 0; i < m; i++) {\n            cout << table[i] << (i == m - 1 ? \"\" : \" \");\n        }\n        cout << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Linear Probing Simulation"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint main() {\n    int m, n;\n    if (scanf(\"%d %d\", &m, &n) != EOF) {\n        int table[m];\n        for (int i = 0; i < m; i++) table[i] = -1;\n        for (int i = 0; i < n; i++) {\n            int key;\n            scanf(\"%d\", &key);\n            // TODO: Implement Linear Probing\n        }\n        for (int i = 0; i < m; i++) {\n            printf(\"%d%s\", table[i], (i == m - 1 ? \"\" : \" \"));\n        }\n        printf(\"\\n\");\n    }\n    return 0;\n}",
+                    "problemTitle": "Linear Probing Simulation"
+                }
+            ],
+            "hintsList": [
+                "Calculate the initial hash index using key % M.",
+                "If the slot is occupied, check (index + 1) % M, (index + 2) % M, and so on.",
+                "Stop when you find an empty slot (-1)."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Shell Sort",
+            "description": "Problem Statement\nImplement the Shell Sort algorithm to sort an array of N integers in non-decreasing order.\n\nShell Sort is an optimization of Insertion Sort. It starts by sorting pairs of elements far apart from each other, then progressively reducing the gap between elements to be compared. By starting with far-apart elements, it can move some out-of-place elements into position faster than a simple nearest-neighbor exchange.\n\nInput Format\n- First line: An integer N, the number of elements.\n- Second line: N space-separated integers.\n\nOutput Format\n- Print the sorted array elements separated by spaces.\n\nExample 1\nInput:\n5\n12 34 54 2 3\n\nOutput:\n2 3 12 34 54\n\nExample 2\nInput:\n6\n9 8 3 7 5 6\n\nOutput:\n3 5 6 7 8 9",
+            "examples": "Sample Input\n5\n12 34 54 2 3\n\nSample Output\n2 3 12 34 54",
+            "constraints": "1 ≤ N ≤ 1000\n-10^5 ≤ A[i] ≤ 10^5",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2016,
+            "difficulty": 2,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5\n12 34 54 2 3",
+                    "expectedOutput": "2 3 12 34 54",
+                    "problemTitle": "Shell Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6\n9 8 3 7 5 6",
+                    "expectedOutput": "3 5 6 7 8 9",
+                    "problemTitle": "Shell Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1\n15",
+                    "expectedOutput": "15",
+                    "problemTitle": "Shell Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4\n4 3 2 1",
+                    "expectedOutput": "1 2 3 4",
+                    "problemTitle": "Shell Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5\n10 -2 5 0 1",
+                    "expectedOutput": "-2 0 1 5 10",
+                    "problemTitle": "Shell Sort"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def shellSort(arr, n):\n    # TODO: Implement Shell Sort\n    pass\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n = int(line1[0])\n        arr = list(map(int, input().split()))\n        shellSort(arr, n)\n        print(*(arr))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Shell Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static void shellSort(int[] arr, int n) {\n        // TODO: Implement Shell Sort\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            shellSort(arr, n);\n            for (int i = 0; i < n; i++) {\n                System.out.print(arr[i] + (i == n - 1 ? \"\" : \" \"));\n            }\n            System.out.println();\n        }\n    }\n}",
+                    "problemTitle": "Shell Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function shellSort(arr, n) {\n    // TODO: Implement Shell Sort\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    shellSort(arr, n);\n    console.log(arr.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Shell Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid shellSort(vector<int>& arr, int n) {\n    // TODO: Implement Shell Sort\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        shellSort(arr, n);\n        for (int i = 0; i < n; i++) {\n            cout << arr[i] << (i == n - 1 ? \"\" : \" \");\n        }\n        cout << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Shell Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid shellSort(int arr[], int n) {\n    // TODO: Implement Shell Sort\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        shellSort(arr, n);\n        for (int i = 0; i < n; i++) {\n            printf(\"%d%s\", arr[i], (i == n - 1 ? \"\" : \" \"));\n        }\n        printf(\"\\n\");\n    }\n    return 0;\n}",
+                    "problemTitle": "Shell Sort"
+                }
+            ],
+            "hintsList": [
+                "Start with a large gap and reduce it in each step (e.g., gap = n/2, gap = gap/2, ...).",
+                "For each gap, perform a 'gapped' insertion sort.",
+                "The final step with gap = 1 is a standard insertion sort, but the array will be mostly sorted by then."
+            ]
+        }
+    ]
+}

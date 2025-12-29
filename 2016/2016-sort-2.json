@@ -1,0 +1,98 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Selection Sort",
+            "description": "Problem Statement\nImplement the Selection Sort algorithm to sort an array of N integers in non-decreasing order.\n\nSelection Sort works by repeatedly finding the minimum element from the unsorted part of the array and putting it at the beginning. The algorithm maintains two subarrays in a given array: the part which is already sorted and the remaining part which is unsorted.\n\nInput Format\n- First line: An integer N, the number of elements.\n- Second line: N space-separated integers.\n\nOutput Format\n- Print the sorted array elements separated by spaces.\n\nExample 1\nInput:\n5\n64 25 12 22 11\n\nOutput:\n11 12 22 25 64\n\nExample 2\nInput:\n4\n5 4 3 2\n\nOutput:\n2 3 4 5",
+            "examples": "Sample Input\n5\n64 25 12 22 11\n\nSample Output\n11 12 22 25 64",
+            "constraints": "1 ≤ N ≤ 1000\n-10^5 ≤ A[i] ≤ 10^5",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2016,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5\n64 25 12 22 11",
+                    "expectedOutput": "11 12 22 25 64",
+                    "problemTitle": "Selection Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4\n5 4 3 2",
+                    "expectedOutput": "2 3 4 5",
+                    "problemTitle": "Selection Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1\n7",
+                    "expectedOutput": "7",
+                    "problemTitle": "Selection Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6\n10 20 30 5 15 25",
+                    "expectedOutput": "5 10 15 20 25 30",
+                    "problemTitle": "Selection Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5\n-1 -5 0 10 5",
+                    "expectedOutput": "-5 -1 0 5 10",
+                    "problemTitle": "Selection Sort"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def selectionSort(arr, n):\n    # TODO: Implement Selection Sort\n    pass\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n = int(line1[0])\n        arr = list(map(int, input().split()))\n        selectionSort(arr, n)\n        print(*(arr))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Selection Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static void selectionSort(int[] arr, int n) {\n        // TODO: Implement Selection Sort\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            selectionSort(arr, n);\n            for (int i = 0; i < n; i++) {\n                System.out.print(arr[i] + (i == n - 1 ? \"\" : \" \"));\n            }\n            System.out.println();\n        }\n    }\n}",
+                    "problemTitle": "Selection Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function selectionSort(arr, n) {\n    // TODO: Implement Selection Sort\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    selectionSort(arr, n);\n    console.log(arr.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Selection Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid selectionSort(vector<int>& arr, int n) {\n    // TODO: Implement Selection Sort\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        selectionSort(arr, n);\n        for (int i = 0; i < n; i++) {\n            cout << arr[i] << (i == n - 1 ? \"\" : \" \");\n        }\n        cout << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Selection Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid selectionSort(int arr[], int n) {\n    // TODO: Implement Selection Sort\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        selectionSort(arr, n);\n        for (int i = 0; i < n; i++) {\n            printf(\"%d%s\", arr[i], (i == n - 1 ? \"\" : \" \"));\n        }\n        printf(\"\\n\");\n    }\n    return 0;\n}",
+                    "problemTitle": "Selection Sort"
+                }
+            ],
+            "hintsList": [
+                "In each iteration, find the index of the minimum element in the unsorted part.",
+                "Swap the found minimum element with the first element of the unsorted part.",
+                "The sorted part grows from left to right."
+            ]
+        }
+    ]
+}

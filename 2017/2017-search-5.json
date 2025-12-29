@@ -1,0 +1,98 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Interpolation Search",
+            "description": "Problem Statement\nImplement the Interpolation Search algorithm to find the index of a target element K in a sorted array of N integers. \n\nInterpolation Search is an improvement over Binary Search for sorted arrays where values are uniformly distributed. It calculates the probable position of the target element using the formula:\npos = low + [ (k - arr[low]) * (high - low) / (arr[high] - arr[low]) ]\n\nInput Format\n- First line: Two space-separated integers N (number of elements) and K (target element).\n- Second line: N space-separated integers (sorted in non-decreasing order).\n\nOutput Format\n- Print the 0-based index of the target element if it is found.\n- If the element is not present, print -1.\n\nExample 1\nInput:\n6 40\n10 20 30 40 50 60\n\nOutput:\n3\n\nExample 2\nInput:\n5 25\n10 20 30 40 50\n\nOutput:\n-1",
+            "examples": "Sample Input\n6 40\n10 20 30 40 50 60\n\nSample Output\n3",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], K ≤ 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2017,
+            "difficulty": 2,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6 40\n10 20 30 40 50 60",
+                    "expectedOutput": "3",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 25\n10 20 30 40 50",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1 10\n10",
+                    "expectedOutput": "0",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 10\n10 20 30 40 50",
+                    "expectedOutput": "0",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 50\n10 20 30 40 50",
+                    "expectedOutput": "4",
+                    "problemTitle": "Interpolation Search"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def interpolationSearch(arr, n, k):\n    # TODO: Implement Interpolation Search\n    return -1\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n, k = map(int, line1)\n        arr = list(map(int, input().split()))\n        print(interpolationSearch(arr, n, k))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int interpolationSearch(int[] arr, int n, int k) {\n        // TODO: Implement Interpolation Search\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            System.out.println(interpolationSearch(arr, n, k));\n        }\n    }\n}",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function interpolationSearch(arr, n, k) {\n    // TODO: Implement Interpolation Search\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    console.log(interpolationSearch(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint interpolationSearch(vector<int>& arr, int n, int k) {\n    // TODO: Implement Interpolation Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << interpolationSearch(arr, n, k) << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint interpolationSearch(int arr[], int n, int k) {\n    // TODO: Implement Interpolation Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\\n\", interpolationSearch(arr, n, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Interpolation Search"
+                }
+            ],
+            "hintsList": [
+                "The formula for position is: pos = low + [ (k - arr[low]) * (high - low) / (arr[high] - arr[low]) ].",
+                "Ensure that K is within the range [arr[low], arr[high]] before calculating pos.",
+                "If arr[pos] == K, return pos. Otherwise, adjust low or high."
+            ]
+        }
+    ]
+}

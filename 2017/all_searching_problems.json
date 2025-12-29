@@ -1,0 +1,568 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Linear Search",
+            "description": "Problem Statement\nImplement the Linear Search algorithm to find the index of a target element K in an array of N integers. \n\nLinear Search works by checking each element of the array one by one until the target element is found or the end of the array is reached.\n\nInput Format\n- First line: Two space-separated integers N (number of elements) and K (target element).\n- Second line: N space-separated integers.\n\nOutput Format\n- Print the 0-based index of the target element if it is found.\n- If the element is not present, print -1.\n\nExample 1\nInput:\n5 30\n10 20 30 40 50\n\nOutput:\n2\n\nExample 2\nInput:\n4 100\n10 20 30 40\n\nOutput:\n-1",
+            "examples": "Sample Input\n5 30\n10 20 30 40 50\n\nSample Output\n2",
+            "constraints": "1 \u2264 N \u2264 10^5\n-10^9 \u2264 A[i], K \u2264 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2017,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 30\n10 20 30 40 50",
+                    "expectedOutput": "2",
+                    "problemTitle": "Linear Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4 100\n10 20 30 40",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Linear Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1 10\n10",
+                    "expectedOutput": "0",
+                    "problemTitle": "Linear Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6 5\n1 2 3 4 5 6",
+                    "expectedOutput": "4",
+                    "problemTitle": "Linear Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 -1\n0 2 -1 3 8",
+                    "expectedOutput": "2",
+                    "problemTitle": "Linear Search"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def linearSearch(arr, n, k):\n    # TODO: Implement Linear Search\n    return -1\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n, k = map(int, line1)\n        arr = list(map(int, input().split()))\n        print(linearSearch(arr, n, k))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Linear Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int linearSearch(int[] arr, int n, int k) {\n        // TODO: Implement Linear Search\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            System.out.println(linearSearch(arr, n, k));\n        }\n    }\n}",
+                    "problemTitle": "Linear Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function linearSearch(arr, n, k) {\n    // TODO: Implement Linear Search\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    console.log(linearSearch(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Linear Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint linearSearch(vector<int>& arr, int n, int k) {\n    // TODO: Implement Linear Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << linearSearch(arr, n, k) << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Linear Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint linearSearch(int arr[], int n, int k) {\n    // TODO: Implement Linear Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\\n\", linearSearch(arr, n, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Linear Search"
+                }
+            ],
+            "hintsList": [
+                "Start from the first element and compare it with K.",
+                "If it matches, return the current index.",
+                "If you reach the end of the array without a match, return -1."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Binary Search (Iterative)",
+            "description": "Problem Statement\nImplement the iterative Binary Search algorithm to find the index of a target element K in a sorted array of N integers. \n\nBinary Search works by repeatedly dividing the search interval in half. If the target value is less than the middle element, the search continues in the lower half; otherwise, it continues in the upper half.\n\nInput Format\n- First line: Two space-separated integers N (number of elements) and K (target element).\n- Second line: N space-separated integers (sorted in non-decreasing order).\n\nOutput Format\n- Print the 0-based index of the target element if it is found.\n- If the element is not present, print -1.\n\nExample 1\nInput:\n5 30\n10 20 30 40 50\n\nOutput:\n2\n\nExample 2\nInput:\n4 100\n10 20 30 40\n\nOutput:\n-1",
+            "examples": "Sample Input\n5 30\n10 20 30 40 50\n\nSample Output\n2",
+            "constraints": "1 \u2264 N \u2264 10^5\n-10^9 \u2264 A[i], K \u2264 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2017,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 30\n10 20 30 40 50",
+                    "expectedOutput": "2",
+                    "problemTitle": "Binary Search (Iterative)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4 100\n10 20 30 40",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Binary Search (Iterative)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1 10\n10",
+                    "expectedOutput": "0",
+                    "problemTitle": "Binary Search (Iterative)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6 1\n1 2 3 4 5 6",
+                    "expectedOutput": "0",
+                    "problemTitle": "Binary Search (Iterative)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 8\n-5 -2 0 3 8",
+                    "expectedOutput": "4",
+                    "problemTitle": "Binary Search (Iterative)"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def binarySearch(arr, n, k):\n    # TODO: Implement iterative Binary Search\n    return -1\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n, k = map(int, line1)\n        arr = list(map(int, input().split()))\n        print(binarySearch(arr, n, k))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Binary Search (Iterative)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int binarySearch(int[] arr, int n, int k) {\n        // TODO: Implement iterative Binary Search\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            System.out.println(binarySearch(arr, n, k));\n        }\n    }\n}",
+                    "problemTitle": "Binary Search (Iterative)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function binarySearch(arr, n, k) {\n    // TODO: Implement iterative Binary Search\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    console.log(binarySearch(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Binary Search (Iterative)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint binarySearch(vector<int>& arr, int n, int k) {\n    // TODO: Implement iterative Binary Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << binarySearch(arr, n, k) << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Binary Search (Iterative)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint binarySearch(int arr[], int n, int k) {\n    // TODO: Implement iterative Binary Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\\n\", binarySearch(arr, n, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Binary Search (Iterative)"
+                }
+            ],
+            "hintsList": [
+                "Initialize two pointers: low = 0 and high = N - 1.",
+                "While low <= high, find the middle index mid = low + (high - low) / 2.",
+                "Compare arr[mid] with K and adjust low or high accordingly."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Binary Search (Recursive)",
+            "description": "Problem Statement\nImplement the recursive Binary Search algorithm to find the index of a target element K in a sorted array of N integers. \n\nBinary Search works by repeatedly dividing the search interval in half. In the recursive version, the function calls itself with updated boundaries (low and high) until the element is found or the search space becomes empty.\n\nInput Format\n- First line: Two space-separated integers N (number of elements) and K (target element).\n- Second line: N space-separated integers (sorted in non-decreasing order).\n\nOutput Format\n- Print the 0-based index of the target element if it is found.\n- If the element is not present, print -1.\n\nExample 1\nInput:\n5 30\n10 20 30 40 50\n\nOutput:\n2\n\nExample 2\nInput:\n4 100\n10 20 30 40\n\nOutput:\n-1",
+            "examples": "Sample Input\n5 30\n10 20 30 40 50\n\nSample Output\n2",
+            "constraints": "1 \u2264 N \u2264 10^5\n-10^9 \u2264 A[i], K \u2264 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2017,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 30\n10 20 30 40 50",
+                    "expectedOutput": "2",
+                    "problemTitle": "Binary Search (Recursive)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4 100\n10 20 30 40",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Binary Search (Recursive)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1 10\n10",
+                    "expectedOutput": "0",
+                    "problemTitle": "Binary Search (Recursive)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6 6\n1 2 3 4 5 6",
+                    "expectedOutput": "5",
+                    "problemTitle": "Binary Search (Recursive)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 0\n-5 -2 0 3 8",
+                    "expectedOutput": "2",
+                    "problemTitle": "Binary Search (Recursive)"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def binarySearchRecursive(arr, low, high, k):\n    # TODO: Implement recursive Binary Search\n    return -1\n\ndef solve():\n    import sys\n    sys.setrecursionlimit(200000)\n    try:\n        line1 = input().split()\n        if not line1: return\n        n, k = map(int, line1)\n        arr = list(map(int, input().split()))\n        print(binarySearchRecursive(arr, 0, n - 1, k))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Binary Search (Recursive)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int binarySearchRecursive(int[] arr, int low, int high, int k) {\n        // TODO: Implement recursive Binary Search\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            System.out.println(binarySearchRecursive(arr, 0, n - 1, k));\n        }\n    }\n}",
+                    "problemTitle": "Binary Search (Recursive)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function binarySearchRecursive(arr, low, high, k) {\n    // TODO: Implement recursive Binary Search\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    console.log(binarySearchRecursive(arr, 0, n - 1, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Binary Search (Recursive)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint binarySearchRecursive(vector<int>& arr, int low, int high, int k) {\n    // TODO: Implement recursive Binary Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << binarySearchRecursive(arr, 0, n - 1, k) << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Binary Search (Recursive)"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint binarySearchRecursive(int arr[], int low, int high, int k) {\n    // TODO: Implement recursive Binary Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\\n\", binarySearchRecursive(arr, 0, n - 1, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Binary Search (Recursive)"
+                }
+            ],
+            "hintsList": [
+                "The base case is when low > high, in which case the element is not found.",
+                "Calculate mid = low + (high - low) / 2.",
+                "If arr[mid] == K, return mid. Otherwise, recursively call the function for the left or right half."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Jump Search",
+            "description": "Problem Statement\nImplement the Jump Search algorithm to find the index of a target element K in a sorted array of N integers. \n\nJump Search works by jumping ahead by a fixed step size (usually \u221aN) to find the block where the element might be located. Once the block is identified, a linear search is performed within that block to find the exact index.\n\nInput Format\n- First line: Two space-separated integers N (number of elements) and K (target element).\n- Second line: N space-separated integers (sorted in non-decreasing order).\n\nOutput Format\n- Print the 0-based index of the target element if it is found.\n- If the element is not present, print -1.\n\nExample 1\nInput:\n9 55\n10 20 30 40 50 55 60 70 80\n\nOutput:\n5\n\nExample 2\nInput:\n4 5\n1 2 3 4\n\nOutput:\n-1",
+            "examples": "Sample Input\n9 55\n10 20 30 40 50 55 60 70 80\n\nSample Output\n5",
+            "constraints": "1 \u2264 N \u2264 10^5\n-10^9 \u2264 A[i], K \u2264 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2017,
+            "difficulty": 2,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "9 55\n10 20 30 40 50 55 60 70 80",
+                    "expectedOutput": "5",
+                    "problemTitle": "Jump Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4 5\n1 2 3 4",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Jump Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1 10\n10",
+                    "expectedOutput": "0",
+                    "problemTitle": "Jump Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 10\n10 20 30 40 50",
+                    "expectedOutput": "0",
+                    "problemTitle": "Jump Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "8 80\n10 20 30 40 50 60 70 80",
+                    "expectedOutput": "7",
+                    "problemTitle": "Jump Search"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "import math\n\ndef jumpSearch(arr, n, k):\n    # TODO: Implement Jump Search\n    return -1\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n, k = map(int, line1)\n        arr = list(map(int, input().split()))\n        print(jumpSearch(arr, n, k))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Jump Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int jumpSearch(int[] arr, int n, int k) {\n        // TODO: Implement Jump Search\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            System.out.println(jumpSearch(arr, n, k));\n        }\n    }\n}",
+                    "problemTitle": "Jump Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function jumpSearch(arr, n, k) {\n    // TODO: Implement Jump Search\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    console.log(jumpSearch(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Jump Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <cmath>\n#include <algorithm>\nusing namespace std;\n\nint jumpSearch(vector<int>& arr, int n, int k) {\n    // TODO: Implement Jump Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << jumpSearch(arr, n, k) << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Jump Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <math.h>\n\nint jumpSearch(int arr[], int n, int k) {\n    // TODO: Implement Jump Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\\n\", jumpSearch(arr, n, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Jump Search"
+                }
+            ],
+            "hintsList": [
+                "The optimal step size is \u221aN.",
+                "Jump ahead by the step size until you find an element greater than or equal to K.",
+                "Perform a linear search backwards from the current position or forwards from the previous jump point."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Interpolation Search",
+            "description": "Problem Statement\nImplement the Interpolation Search algorithm to find the index of a target element K in a sorted array of N integers. \n\nInterpolation Search is an improvement over Binary Search for sorted arrays where values are uniformly distributed. It calculates the probable position of the target element using the formula:\npos = low + [ (k - arr[low]) * (high - low) / (arr[high] - arr[low]) ]\n\nInput Format\n- First line: Two space-separated integers N (number of elements) and K (target element).\n- Second line: N space-separated integers (sorted in non-decreasing order).\n\nOutput Format\n- Print the 0-based index of the target element if it is found.\n- If the element is not present, print -1.\n\nExample 1\nInput:\n6 40\n10 20 30 40 50 60\n\nOutput:\n3\n\nExample 2\nInput:\n5 25\n10 20 30 40 50\n\nOutput:\n-1",
+            "examples": "Sample Input\n6 40\n10 20 30 40 50 60\n\nSample Output\n3",
+            "constraints": "1 \u2264 N \u2264 10^5\n-10^9 \u2264 A[i], K \u2264 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2017,
+            "difficulty": 2,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6 40\n10 20 30 40 50 60",
+                    "expectedOutput": "3",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 25\n10 20 30 40 50",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1 10\n10",
+                    "expectedOutput": "0",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 10\n10 20 30 40 50",
+                    "expectedOutput": "0",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 50\n10 20 30 40 50",
+                    "expectedOutput": "4",
+                    "problemTitle": "Interpolation Search"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def interpolationSearch(arr, n, k):\n    # TODO: Implement Interpolation Search\n    return -1\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n, k = map(int, line1)\n        arr = list(map(int, input().split()))\n        print(interpolationSearch(arr, n, k))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int interpolationSearch(int[] arr, int n, int k) {\n        // TODO: Implement Interpolation Search\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            System.out.println(interpolationSearch(arr, n, k));\n        }\n    }\n}",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function interpolationSearch(arr, n, k) {\n    // TODO: Implement Interpolation Search\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    console.log(interpolationSearch(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint interpolationSearch(vector<int>& arr, int n, int k) {\n    // TODO: Implement Interpolation Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << interpolationSearch(arr, n, k) << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Interpolation Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint interpolationSearch(int arr[], int n, int k) {\n    // TODO: Implement Interpolation Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\\n\", interpolationSearch(arr, n, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Interpolation Search"
+                }
+            ],
+            "hintsList": [
+                "The formula for position is: pos = low + [ (k - arr[low]) * (high - low) / (arr[high] - arr[low]) ].",
+                "Ensure that K is within the range [arr[low], arr[high]] before calculating pos.",
+                "If arr[pos] == K, return pos. Otherwise, adjust low or high."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Exponential Search",
+            "description": "Problem Statement\nImplement the Exponential Search algorithm to find the index of a target element K in a sorted array of N integers. \n\nExponential Search works by finding a range where the element might be located. It starts with a small range (index 1) and repeatedly doubles the index until an element greater than or equal to K is found. Once the range [i/2, min(i, n-1)] is identified, a Binary Search is performed within that range.\n\nInput Format\n- First line: Two space-separated integers N (number of elements) and K (target element).\n- Second line: N space-separated integers (sorted in non-decreasing order).\n\nOutput Format\n- Print the 0-based index of the target element if it is found.\n- If the element is not present, print -1.\n\nExample 1\nInput:\n8 40\n10 20 30 40 50 60 70 80\n\nOutput:\n3\n\nExample 2\nInput:\n5 100\n10 20 30 40 50\n\nOutput:\n-1",
+            "examples": "Sample Input\n8 40\n10 20 30 40 50 60 70 80\n\nSample Output\n3",
+            "constraints": "1 \u2264 N \u2264 10^5\n-10^9 \u2264 A[i], K \u2264 10^9",
+            "hints": 3,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2017,
+            "difficulty": 3,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "8 40\n10 20 30 40 50 60 70 80",
+                    "expectedOutput": "3",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 100\n10 20 30 40 50",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1 10\n10",
+                    "expectedOutput": "0",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6 10\n10 20 30 40 50 60",
+                    "expectedOutput": "0",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "7 70\n10 20 30 40 50 60 70",
+                    "expectedOutput": "6",
+                    "problemTitle": "Exponential Search"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def binarySearch(arr, low, high, k):\n    # Helper for Exponential Search\n    while low <= high:\n        mid = low + (high - low) // 2\n        if arr[mid] == k: return mid\n        if arr[mid] < k: low = mid + 1\n        else: high = mid - 1\n    return -1\n\ndef exponentialSearch(arr, n, k):\n    # TODO: Implement Exponential Search\n    return -1\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n, k = map(int, line1)\n        arr = list(map(int, input().split()))\n        print(exponentialSearch(arr, n, k))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int binarySearch(int[] arr, int low, int high, int k) {\n        while (low <= high) {\n            int mid = low + (high - low) / 2;\n            if (arr[mid] == k) return mid;\n            if (arr[mid] < k) low = mid + 1;\n            else high = mid - 1;\n        }\n        return -1;\n    }\n\n    public static int exponentialSearch(int[] arr, int n, int k) {\n        // TODO: Implement Exponential Search\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            System.out.println(exponentialSearch(arr, n, k));\n        }\n    }\n}",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function binarySearch(arr, low, high, k) {\n    while (low <= high) {\n        let mid = Math.floor(low + (high - low) / 2);\n        if (arr[mid] === k) return mid;\n        if (arr[mid] < k) low = mid + 1;\n        else high = mid - 1;\n    }\n    return -1;\n}\n\nfunction exponentialSearch(arr, n, k) {\n    // TODO: Implement Exponential Search\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    console.log(exponentialSearch(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint binarySearch(vector<int>& arr, int low, int high, int k) {\n    while (low <= high) {\n        int mid = low + (high - low) / 2;\n        if (arr[mid] == k) return mid;\n        if (arr[mid] < k) low = mid + 1;\n        else high = mid - 1;\n    }\n    return -1;\n}\n\nint exponentialSearch(vector<int>& arr, int n, int k) {\n    // TODO: Implement Exponential Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << exponentialSearch(arr, n, k) << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint binarySearch(int arr[], int low, int high, int k) {\n    while (low <= high) {\n        int mid = low + (high - low) / 2;\n        if (arr[mid] == k) return mid;\n        if (arr[mid] < k) low = mid + 1;\n        else high = mid - 1;\n    }\n    return -1;\n}\n\nint exponentialSearch(int arr[], int n, int k) {\n    // TODO: Implement Exponential Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\\n\", exponentialSearch(arr, n, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Exponential Search"
+                }
+            ],
+            "hintsList": [
+                "If the target is at index 0, return 0.",
+                "Find the range for binary search by doubling the index: i = 1, 2, 4, 8, ... until arr[i] >= K or i >= N.",
+                "Perform binary search in the range [i/2, min(i, n-1)]."
+            ]
+        }
+    ]
+}

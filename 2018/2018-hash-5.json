@@ -1,0 +1,98 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Distinct Elements",
+            "description": "Problem Statement\nYou are given an array of N integers. Your task is to count the number of distinct (unique) elements in the array using a hashing-based approach.\n\nInput Format\n- First line: An integer N (number of elements).\n- Second line: N space-separated integers.\n\nOutput Format\n- Print a single integer representing the count of distinct elements.\n\nExample 1\nInput:\n6\n10 20 10 30 20 40\n\nOutput:\n4\n\nExplanation:\nThe distinct elements are 10, 20, 30, and 40.",
+            "examples": "Sample Input\n5\n1 1 1 1 1\n\nSample Output\n1",
+            "constraints": "1 \u00e2\u2030\u00a4 N \u00e2\u2030\u00a4 10^5\n-10^9 \u00e2\u2030\u00a4 A[i] \u00e2\u2030\u00a4 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2018,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6\n10 20 10 30 20 40",
+                    "expectedOutput": "4",
+                    "problemTitle": "Count Distinct Elements"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5\n1 1 1 1 1",
+                    "expectedOutput": "1",
+                    "problemTitle": "Count Distinct Elements"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4\n1 2 3 4",
+                    "expectedOutput": "4",
+                    "problemTitle": "Count Distinct Elements"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1\n100",
+                    "expectedOutput": "1",
+                    "problemTitle": "Count Distinct Elements"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "8\n-1 0 -1 2 0 3 2 4",
+                    "expectedOutput": "5",
+                    "problemTitle": "Count Distinct Elements"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def countDistinct(arr, n):\n    # TODO: Use a hash set to count distinct elements\n    return 0\n\ndef solve():\n    try:\n        n = int(input().strip())\n        arr = list(map(int, input().split()))\n        print(countDistinct(arr, n))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Count Distinct Elements"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int countDistinct(int[] arr, int n) {\n        // TODO: Use a HashSet to count distinct elements\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            System.out.println(countDistinct(arr, n));\n        }\n    }\n}",
+                    "problemTitle": "Count Distinct Elements"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function countDistinct(arr, n) {\n    // TODO: Use a Set to count distinct elements\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const n = Number(lines[0].trim());\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    console.log(countDistinct(arr, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Count Distinct Elements"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <unordered_set>\nusing namespace std;\n\nint countDistinct(vector<int>& arr, int n) {\n    // TODO: Use unordered_set to count distinct elements\n    return 0;\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << countDistinct(arr, n) << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Count Distinct Elements"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\n// In C, you might need a simple hash table or sort the array\n// For this problem, assume a simple approach is needed\nint countDistinct(int arr[], int n) {\n    // TODO: Count distinct elements\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\\n\", countDistinct(arr, n));\n    }\n    return 0;\n}",
+                    "problemTitle": "Count Distinct Elements"
+                }
+            ],
+            "hintsList": [
+                "A Hash Set automatically handles duplicate elements.",
+                "Insert all elements into the set and return its size.",
+                "In C++, use unordered_set; in Java, use HashSet; in Python, use set()."
+            ]
+        }
+    ]
+}

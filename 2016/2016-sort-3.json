@@ -1,0 +1,98 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Insertion Sort",
+            "description": "Problem Statement\nImplement the Insertion Sort algorithm to sort an array of N integers in non-decreasing order.\n\nInsertion Sort works similarly to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.\n\nInput Format\n- First line: An integer N, the number of elements.\n- Second line: N space-separated integers.\n\nOutput Format\n- Print the sorted array elements separated by spaces.\n\nExample 1\nInput:\n5\n12 11 13 5 6\n\nOutput:\n5 6 11 12 13\n\nExample 2\nInput:\n4\n4 3 2 1\n\nOutput:\n1 2 3 4",
+            "examples": "Sample Input\n5\n12 11 13 5 6\n\nSample Output\n5 6 11 12 13",
+            "constraints": "1 ≤ N ≤ 1000\n-10^5 ≤ A[i] ≤ 10^5",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2016,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5\n12 11 13 5 6",
+                    "expectedOutput": "5 6 11 12 13",
+                    "problemTitle": "Insertion Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4\n4 3 2 1",
+                    "expectedOutput": "1 2 3 4",
+                    "problemTitle": "Insertion Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1\n42",
+                    "expectedOutput": "42",
+                    "problemTitle": "Insertion Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6\n5 2 9 1 5 6",
+                    "expectedOutput": "1 2 5 5 6 9",
+                    "problemTitle": "Insertion Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5\n-10 0 10 -20 5",
+                    "expectedOutput": "-20 -10 0 5 10",
+                    "problemTitle": "Insertion Sort"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def insertionSort(arr, n):\n    # TODO: Implement Insertion Sort\n    pass\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n = int(line1[0])\n        arr = list(map(int, input().split()))\n        insertionSort(arr, n)\n        print(*(arr))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Insertion Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static void insertionSort(int[] arr, int n) {\n        // TODO: Implement Insertion Sort\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            insertionSort(arr, n);\n            for (int i = 0; i < n; i++) {\n                System.out.print(arr[i] + (i == n - 1 ? \"\" : \" \"));\n            }\n            System.out.println();\n        }\n    }\n}",
+                    "problemTitle": "Insertion Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function insertionSort(arr, n) {\n    // TODO: Implement Insertion Sort\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const n = parseInt(lines[0]);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    insertionSort(arr, n);\n    console.log(arr.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Insertion Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid insertionSort(vector<int>& arr, int n) {\n    // TODO: Implement Insertion Sort\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        insertionSort(arr, n);\n        for (int i = 0; i < n; i++) {\n            cout << arr[i] << (i == n - 1 ? \"\" : \" \");\n        }\n        cout << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Insertion Sort"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid insertionSort(int arr[], int n) {\n    // TODO: Implement Insertion Sort\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        insertionSort(arr, n);\n        for (int i = 0; i < n; i++) {\n            printf(\"%d%s\", arr[i], (i == n - 1 ? \"\" : \" \"));\n        }\n        printf(\"\\n\");\n    }\n    return 0;\n}",
+                    "problemTitle": "Insertion Sort"
+                }
+            ],
+            "hintsList": [
+                "Iterate from the second element to the last.",
+                "Compare the current element (key) with its predecessor.",
+                "If the key element is smaller than its predecessor, compare it to the elements before. Move the greater elements one position up to make space for the swapped element."
+            ]
+        }
+    ]
+}

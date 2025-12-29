@@ -1,0 +1,98 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Exponential Search",
+            "description": "Problem Statement\nImplement the Exponential Search algorithm to find the index of a target element K in a sorted array of N integers. \n\nExponential Search works by finding a range where the element might be located. It starts with a small range (index 1) and repeatedly doubles the index until an element greater than or equal to K is found. Once the range [i/2, min(i, n-1)] is identified, a Binary Search is performed within that range.\n\nInput Format\n- First line: Two space-separated integers N (number of elements) and K (target element).\n- Second line: N space-separated integers (sorted in non-decreasing order).\n\nOutput Format\n- Print the 0-based index of the target element if it is found.\n- If the element is not present, print -1.\n\nExample 1\nInput:\n8 40\n10 20 30 40 50 60 70 80\n\nOutput:\n3\n\nExample 2\nInput:\n5 100\n10 20 30 40 50\n\nOutput:\n-1",
+            "examples": "Sample Input\n8 40\n10 20 30 40 50 60 70 80\n\nSample Output\n3",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ A[i], K ≤ 10^9",
+            "hints": 3,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2017,
+            "difficulty": 3,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "8 40\n10 20 30 40 50 60 70 80",
+                    "expectedOutput": "3",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 100\n10 20 30 40 50",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1 10\n10",
+                    "expectedOutput": "0",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6 10\n10 20 30 40 50 60",
+                    "expectedOutput": "0",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "7 70\n10 20 30 40 50 60 70",
+                    "expectedOutput": "6",
+                    "problemTitle": "Exponential Search"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def binarySearch(arr, low, high, k):\n    # Helper for Exponential Search\n    while low <= high:\n        mid = low + (high - low) // 2\n        if arr[mid] == k: return mid\n        if arr[mid] < k: low = mid + 1\n        else: high = mid - 1\n    return -1\n\ndef exponentialSearch(arr, n, k):\n    # TODO: Implement Exponential Search\n    return -1\n\ndef solve():\n    try:\n        line1 = input().split()\n        if not line1: return\n        n, k = map(int, line1)\n        arr = list(map(int, input().split()))\n        print(exponentialSearch(arr, n, k))\n    except EOFError:\n        pass\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int binarySearch(int[] arr, int low, int high, int k) {\n        while (low <= high) {\n            int mid = low + (high - low) / 2;\n            if (arr[mid] == k) return mid;\n            if (arr[mid] < k) low = mid + 1;\n            else high = mid - 1;\n        }\n        return -1;\n    }\n\n    public static int exponentialSearch(int[] arr, int n, int k) {\n        // TODO: Implement Exponential Search\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int k = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            System.out.println(exponentialSearch(arr, n, k));\n        }\n    }\n}",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function binarySearch(arr, low, high, k) {\n    while (low <= high) {\n        let mid = Math.floor(low + (high - low) / 2);\n        if (arr[mid] === k) return mid;\n        if (arr[mid] < k) low = mid + 1;\n        else high = mid - 1;\n    }\n    return -1;\n}\n\nfunction exponentialSearch(arr, n, k) {\n    // TODO: Implement Exponential Search\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    if (lines.length < 2) return;\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    console.log(exponentialSearch(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint binarySearch(vector<int>& arr, int low, int high, int k) {\n    while (low <= high) {\n        int mid = low + (high - low) / 2;\n        if (arr[mid] == k) return mid;\n        if (arr[mid] < k) low = mid + 1;\n        else high = mid - 1;\n    }\n    return -1;\n}\n\nint exponentialSearch(vector<int>& arr, int n, int k) {\n    // TODO: Implement Exponential Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (cin >> n >> k) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << exponentialSearch(arr, n, k) << endl;\n    }\n    return 0;\n}",
+                    "problemTitle": "Exponential Search"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint binarySearch(int arr[], int low, int high, int k) {\n    while (low <= high) {\n        int mid = low + (high - low) / 2;\n        if (arr[mid] == k) return mid;\n        if (arr[mid] < k) low = mid + 1;\n        else high = mid - 1;\n    }\n    return -1;\n}\n\nint exponentialSearch(int arr[], int n, int k) {\n    // TODO: Implement Exponential Search\n    return -1;\n}\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != EOF) {\n        int arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%d\\n\", exponentialSearch(arr, n, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Exponential Search"
+                }
+            ],
+            "hintsList": [
+                "If the target is at index 0, return 0.",
+                "Find the range for binary search by doubling the index: i = 1, 2, 4, 8, ... until arr[i] >= K or i >= N.",
+                "Perform binary search in the range [i/2, min(i, n-1)]."
+            ]
+        }
+    ]
+}

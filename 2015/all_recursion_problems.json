@@ -1,0 +1,944 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Recursive Factorial",
+            "description": "Problem Statement\nWrite a recursive function to calculate the factorial of a non-negative integer N. The factorial of N (denoted as N!) is the product of all positive integers less than or equal to N.\n\nInput Format\nA single integer N.\n\nOutput Format\nA single integer representing N!.\n\nExample 1\nInput:\n5\n\nOutput:\n120\n\nExplanation: 5! = 5 * 4 * 3 * 2 * 1 = 120.\n\nExample 2\nInput:\n0\n\nOutput:\n1\n\nExplanation: 0! is defined as 1.",
+            "examples": "Sample Input\n5\n\nSample Output\n120",
+            "constraints": "0 \u2264 N \u2264 20",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5",
+                    "expectedOutput": "120",
+                    "problemTitle": "Recursive Factorial"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "0",
+                    "expectedOutput": "1",
+                    "problemTitle": "Recursive Factorial"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1",
+                    "expectedOutput": "1",
+                    "problemTitle": "Recursive Factorial"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "10",
+                    "expectedOutput": "3628800",
+                    "problemTitle": "Recursive Factorial"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "20",
+                    "expectedOutput": "2432902008176640000",
+                    "problemTitle": "Recursive Factorial"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def factorial(n):\n    # TODO: Implement recursive factorial\n    return 1\n\ndef solve():\n    n = int(input().strip())\n    print(factorial(n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Recursive Factorial"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static long factorial(int n) {\n        // TODO: Implement recursive factorial\n        return 1L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        System.out.println(factorial(n));\n    }\n}",
+                    "problemTitle": "Recursive Factorial"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function factorial(n) {\n    // TODO: Implement recursive factorial\n    return 1n;\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    console.log(factorial(n).toString());\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Recursive Factorial"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nlong long factorial(int n) {\n    // TODO: Implement recursive factorial\n    return 1;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    cout << factorial(n) << endl;\n    return 0;\n}",
+                    "problemTitle": "Recursive Factorial"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long factorial(int n) {\n    // TODO: Implement recursive factorial\n    return 1;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%lld\\n\", factorial(n));\n    return 0;\n}",
+                    "problemTitle": "Recursive Factorial"
+                }
+            ],
+            "hintsList": [
+                "Base case: if n is 0 or 1, return 1.",
+                "Recursive step: n! = n * (n-1)!"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Recursive Sum of Digits",
+            "description": "Problem Statement\nGiven a non-negative integer N, write a recursive function to find the sum of its digits.\n\nInput Format\nA single integer N.\n\nOutput Format\nA single integer representing the sum of digits of N.\n\nExample 1\nInput:\n1234\n\nOutput:\n10\n\nExplanation: 1 + 2 + 3 + 4 = 10.\n\nExample 2\nInput:\n0\n\nOutput:\n0",
+            "examples": "Sample Input\n1234\n\nSample Output\n10",
+            "constraints": "0 \u2264 N \u2264 10^18",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1234",
+                    "expectedOutput": "10",
+                    "problemTitle": "Recursive Sum of Digits"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "0",
+                    "expectedOutput": "0",
+                    "problemTitle": "Recursive Sum of Digits"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "999",
+                    "expectedOutput": "27",
+                    "problemTitle": "Recursive Sum of Digits"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1000000000",
+                    "expectedOutput": "1",
+                    "problemTitle": "Recursive Sum of Digits"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "123456789012345678",
+                    "expectedOutput": "81",
+                    "problemTitle": "Recursive Sum of Digits"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def sumOfDigits(n):\n    # TODO: Implement recursive sum of digits\n    return 0\n\ndef solve():\n    n = int(input().strip())\n    print(sumOfDigits(n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Recursive Sum of Digits"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int sumOfDigits(long n) {\n        // TODO: Implement recursive sum of digits\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.nextLong();\n        System.out.println(sumOfDigits(n));\n    }\n}",
+                    "problemTitle": "Recursive Sum of Digits"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function sumOfDigits(n) {\n    // TODO: Implement recursive sum of digits\n    return 0;\n}\n\nfunction solve(input) {\n    const n = BigInt(input.trim());\n    console.log(sumOfDigits(n).toString());\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Recursive Sum of Digits"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nint sumOfDigits(long long n) {\n    // TODO: Implement recursive sum of digits\n    return 0;\n}\n\nint main() {\n    long long n;\n    cin >> n;\n    cout << sumOfDigits(n) << endl;\n    return 0;\n}",
+                    "problemTitle": "Recursive Sum of Digits"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint sumOfDigits(long long n) {\n    // TODO: Implement recursive sum of digits\n    return 0;\n}\n\nint main() {\n    long long n;\n    scanf(\"%lld\", &n);\n    printf(\"%d\\n\", sumOfDigits(n));\n    return 0;\n}",
+                    "problemTitle": "Recursive Sum of Digits"
+                }
+            ],
+            "hintsList": [
+                "Base case: if n is 0, return 0.",
+                "Recursive step: sumOfDigits(n) = (n % 10) + sumOfDigits(n / 10)"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Recursive N-th Fibonacci",
+            "description": "Problem Statement\nThe Fibonacci sequence is defined as: F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1. Write a recursive function to find the N-th Fibonacci number.\n\nInput Format\nA single integer N.\n\nOutput Format\nA single integer representing the N-th Fibonacci number.\n\nExample 1\nInput:\n5\n\nOutput:\n5\n\nExplanation: F(0)=0, F(1)=1, F(2)=1, F(3)=2, F(4)=3, F(5)=5.\n\nExample 2\nInput:\n10\n\nOutput:\n55",
+            "examples": "Sample Input\n5\n\nSample Output\n5",
+            "constraints": "0 \u2264 N \u2264 30",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 1,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5",
+                    "expectedOutput": "5",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "0",
+                    "expectedOutput": "0",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1",
+                    "expectedOutput": "1",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "10",
+                    "expectedOutput": "55",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "30",
+                    "expectedOutput": "832040",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def fibonacci(n):\n    # TODO: Implement recursive fibonacci\n    return 0\n\ndef solve():\n    n = int(input().strip())\n    print(fibonacci(n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int fibonacci(int n) {\n        // TODO: Implement recursive fibonacci\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        System.out.println(fibonacci(n));\n    }\n}",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function fibonacci(n) {\n    // TODO: Implement recursive fibonacci\n    return 0;\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    console.log(fibonacci(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nint fibonacci(int n) {\n    // TODO: Implement recursive fibonacci\n    return 0;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    cout << fibonacci(n) << endl;\n    return 0;\n}",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint fibonacci(int n) {\n    // TODO: Implement recursive fibonacci\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%d\\n\", fibonacci(n));\n    return 0;\n}",
+                    "problemTitle": "Recursive N-th Fibonacci"
+                }
+            ],
+            "hintsList": [
+                "Base cases: F(0) = 0, F(1) = 1.",
+                "Recursive step: F(n) = F(n-1) + F(n-2)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Recursive Power Function",
+            "description": "Problem Statement\nWrite a recursive function to calculate a^b (a raised to the power b). For efficiency, use the binary exponentiation method (also known as exponentiation by squaring) recursively.\n\nInput Format\nTwo space-separated integers a and b.\n\nOutput Format\nA single integer representing a^b.\n\nExample 1\nInput:\n2 10\n\nOutput:\n1024\n\nExample 2\nInput:\n5 3\n\nOutput:\n125",
+            "examples": "Sample Input\n2 10\n\nSample Output\n1024",
+            "constraints": "1 \u2264 a \u2264 10\n0 \u2264 b \u2264 15",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 2,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "2 10",
+                    "expectedOutput": "1024",
+                    "problemTitle": "Recursive Power Function"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5 3",
+                    "expectedOutput": "125",
+                    "problemTitle": "Recursive Power Function"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "3 0",
+                    "expectedOutput": "1",
+                    "problemTitle": "Recursive Power Function"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "7 2",
+                    "expectedOutput": "49",
+                    "problemTitle": "Recursive Power Function"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "10 6",
+                    "expectedOutput": "1000000",
+                    "problemTitle": "Recursive Power Function"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def power(a, b):\n    # TODO: Implement recursive power function\n    return 1\n\ndef solve():\n    a, b = map(int, input().split())\n    print(power(a, b))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Recursive Power Function"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static long power(int a, int b) {\n        // TODO: Implement recursive power function\n        return 1L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int a = sc.nextInt();\n        int b = sc.nextInt();\n        System.out.println(power(a, b));\n    }\n}",
+                    "problemTitle": "Recursive Power Function"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function power(a, b) {\n    // TODO: Implement recursive power function\n    return 1n;\n}\n\nfunction solve(input) {\n    const [a, b] = input.trim().split(\" \").map(Number);\n    console.log(power(a, b).toString());\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Recursive Power Function"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nlong long power(int a, int b) {\n    // TODO: Implement recursive power function\n    return 1;\n}\n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    cout << power(a, b) << endl;\n    return 0;\n}",
+                    "problemTitle": "Recursive Power Function"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long power(int a, int b) {\n    // TODO: Implement recursive power function\n    return 1;\n}\n\nint main() {\n    int a, b;\n    scanf(\"%d %d\", &a, &b);\n    printf(\"%lld\\n\", power(a, b));\n    return 0;\n}",
+                    "problemTitle": "Recursive Power Function"
+                }
+            ],
+            "hintsList": [
+                "Base case: a^0 = 1.",
+                "Recursive step for binary exponentiation: if b is even, a^b = (a^(b/2))^2; if b is odd, a^b = a * (a^(b/2))^2."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Tower of Hanoi",
+            "description": "Problem Statement\nThe Tower of Hanoi is a mathematical puzzle where you have three rods and N disks of different sizes. The objective is to move the entire stack to another rod, obeying the following rules:\n1. Only one disk can be moved at a time.\n2. Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack.\n3. No disk may be placed on top of a smaller disk.\n\nWrite a recursive function to print the sequence of moves to solve the Tower of Hanoi puzzle for N disks from rod 1 to rod 3 using rod 2 as an auxiliary.\n\nInput Format\nA single integer N.\n\nOutput Format\nPrint each move in the format: \"Move disk [disk_number] from rod [source] to rod [destination]\"\n\nExample 1\nInput:\n2\n\nOutput:\nMove disk 1 from rod 1 to rod 2\nMove disk 2 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 3",
+            "examples": "Sample Input\n2\n\nSample Output\nMove disk 1 from rod 1 to rod 2\nMove disk 2 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 3",
+            "constraints": "1 \u2264 N \u2264 10",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 2,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1",
+                    "expectedOutput": "Move disk 1 from rod 1 to rod 3",
+                    "problemTitle": "Tower of Hanoi"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "2",
+                    "expectedOutput": "Move disk 1 from rod 1 to rod 2\nMove disk 2 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 3",
+                    "problemTitle": "Tower of Hanoi"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "3",
+                    "expectedOutput": "Move disk 1 from rod 1 to rod 3\nMove disk 2 from rod 1 to rod 2\nMove disk 1 from rod 3 to rod 2\nMove disk 3 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 1\nMove disk 2 from rod 2 to rod 3\nMove disk 1 from rod 1 to rod 3",
+                    "problemTitle": "Tower of Hanoi"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4",
+                    "expectedOutput": "Move disk 1 from rod 1 to rod 2\nMove disk 2 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 3\nMove disk 3 from rod 1 to rod 2\nMove disk 1 from rod 3 to rod 1\nMove disk 2 from rod 3 to rod 2\nMove disk 1 from rod 1 to rod 2\nMove disk 4 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 3\nMove disk 2 from rod 2 to rod 1\nMove disk 1 from rod 3 to rod 1\nMove disk 3 from rod 2 to rod 3\nMove disk 1 from rod 1 to rod 2\nMove disk 2 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 3",
+                    "problemTitle": "Tower of Hanoi"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5",
+                    "expectedOutput": "Move disk 1 from rod 1 to rod 3\nMove disk 2 from rod 1 to rod 2\nMove disk 1 from rod 3 to rod 2\nMove disk 3 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 1\nMove disk 2 from rod 2 to rod 3\nMove disk 1 from rod 1 to rod 3\nMove disk 4 from rod 1 to rod 2\nMove disk 1 from rod 3 to rod 2\nMove disk 2 from rod 3 to rod 1\nMove disk 1 from rod 2 to rod 1\nMove disk 3 from rod 3 to rod 2\nMove disk 1 from rod 1 to rod 3\nMove disk 2 from rod 1 to rod 2\nMove disk 1 from rod 3 to rod 2\nMove disk 5 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 1\nMove disk 2 from rod 2 to rod 3\nMove disk 1 from rod 1 to rod 3\nMove disk 3 from rod 2 to rod 1\nMove disk 1 from rod 3 to rod 2\nMove disk 2 from rod 3 to rod 1\nMove disk 1 from rod 2 to rod 1\nMove disk 4 from rod 2 to rod 3\nMove disk 1 from rod 1 to rod 3\nMove disk 2 from rod 1 to rod 2\nMove disk 1 from rod 3 to rod 2\nMove disk 3 from rod 1 to rod 3\nMove disk 1 from rod 2 to rod 1\nMove disk 2 from rod 2 to rod 3\nMove disk 1 from rod 1 to rod 3",
+                    "problemTitle": "Tower of Hanoi"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def towerOfHanoi(n, source, destination, auxiliary):\n    # TODO: Implement recursive Tower of Hanoi\n    pass\n\ndef solve():\n    n = int(input().strip())\n    towerOfHanoi(n, 1, 3, 2)\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Tower of Hanoi"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static void towerOfHanoi(int n, int source, int destination, int auxiliary) {\n        // TODO: Implement recursive Tower of Hanoi\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        towerOfHanoi(n, 1, 3, 2);\n    }\n}",
+                    "problemTitle": "Tower of Hanoi"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function towerOfHanoi(n, source, destination, auxiliary) {\n    // TODO: Implement recursive Tower of Hanoi\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    towerOfHanoi(n, 1, 3, 2);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Tower of Hanoi"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nvoid towerOfHanoi(int n, int source, int destination, int auxiliary) {\n    // TODO: Implement recursive Tower of Hanoi\n}\n\nint main() {\n    int n;\n    cin >> n;\n    towerOfHanoi(n, 1, 3, 2);\n    return 0;\n}",
+                    "problemTitle": "Tower of Hanoi"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid towerOfHanoi(int n, int source, int destination, int auxiliary) {\n    // TODO: Implement recursive Tower of Hanoi\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    towerOfHanoi(n, 1, 3, 2);\n    return 0;\n}",
+                    "problemTitle": "Tower of Hanoi"
+                }
+            ],
+            "hintsList": [
+                "To move N disks from source to destination: move N-1 disks to auxiliary, move the N-th disk to destination, then move the N-1 disks from auxiliary to destination.",
+                "Base case: if N is 1, just move the disk."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Recursive String Reversal",
+            "description": "Problem Statement\nWrite a recursive function to reverse a given string.\n\nInput Format\nA single string S.\n\nOutput Format\nThe reversed string.\n\nExample 1\nInput:\nhello\n\nOutput:\nolleh\n\nExample 2\nInput:\nrecursion\n\nOutput:\nnoisrucer",
+            "examples": "Sample Input\nhello\n\nSample Output\nolleh",
+            "constraints": "1 \u2264 length of S \u2264 1000",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 2,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "hello",
+                    "expectedOutput": "olleh",
+                    "problemTitle": "Recursive String Reversal"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "a",
+                    "expectedOutput": "a",
+                    "problemTitle": "Recursive String Reversal"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "recursion",
+                    "expectedOutput": "noisrucer",
+                    "problemTitle": "Recursive String Reversal"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "12345",
+                    "expectedOutput": "54321",
+                    "problemTitle": "Recursive String Reversal"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "racecar",
+                    "expectedOutput": "racecar",
+                    "problemTitle": "Recursive String Reversal"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def reverseString(s):\n    # TODO: Implement recursive string reversal\n    return s\n\ndef solve():\n    s = input().strip()\n    print(reverseString(s))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Recursive String Reversal"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static String reverseString(String s) {\n        // TODO: Implement recursive string reversal\n        return s;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            System.out.println(reverseString(s));\n        }\n    }\n}",
+                    "problemTitle": "Recursive String Reversal"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function reverseString(s) {\n    // TODO: Implement recursive string reversal\n    return s;\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    console.log(reverseString(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Recursive String Reversal"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nstring reverseString(string s) {\n    // TODO: Implement recursive string reversal\n    return s;\n}\n\nint main() {\n    string s;\n    getline(cin, s);\n    cout << reverseString(s) << endl;\n    return 0;\n}",
+                    "problemTitle": "Recursive String Reversal"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid reverseString(char* s, int start, int end) {\n    // TODO: Implement recursive string reversal in-place\n}\n\nint main() {\n    char s[1005];\n    if (scanf(\"%s\", s) != EOF) {\n        reverseString(s, 0, strlen(s) - 1);\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+                    "problemTitle": "Recursive String Reversal"
+                }
+            ],
+            "hintsList": [
+                "Base case: if string is empty or has one character, return it.",
+                "Recursive step: reverseString(s) = reverseString(last part) + first character."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Recursive Check Sorted Array",
+            "description": "Problem Statement\nWrite a recursive function to check if a given array of N integers is sorted in non-decreasing order.\n\nInput Format\nFirst line: N (size of array)\nSecond line: N space-separated integers\n\nOutput Format\nPrint \"Yes\" if the array is sorted, otherwise print \"No\".\n\nExample 1\nInput:\n5\n1 2 3 4 5\n\nOutput:\nYes\n\nExample 2\nInput:\n4\n1 3 2 4\n\nOutput:\nNo",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\nYes",
+            "constraints": "1 \u2264 N \u2264 1000\n-10^9 \u2264 A[i] \u2264 10^9",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 2,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "Yes",
+                    "problemTitle": "Recursive Check Sorted Array"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4\n1 3 2 4",
+                    "expectedOutput": "No",
+                    "problemTitle": "Recursive Check Sorted Array"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1\n100",
+                    "expectedOutput": "Yes",
+                    "problemTitle": "Recursive Check Sorted Array"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "3\n10 10 10",
+                    "expectedOutput": "Yes",
+                    "problemTitle": "Recursive Check Sorted Array"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6\n-5 -2 0 3 8 15",
+                    "expectedOutput": "Yes",
+                    "problemTitle": "Recursive Check Sorted Array"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def isSorted(arr, n):\n    # TODO: Implement recursive check\n    return True\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    if isSorted(arr, n):\n        print(\"Yes\")\n    else:\n        print(\"No\")\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Recursive Check Sorted Array"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static boolean isSorted(int[] arr, int n) {\n        // TODO: Implement recursive check\n        return true;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        if(isSorted(arr, n)) System.out.println(\"Yes\");\n        else System.out.println(\"No\");\n    }\n}",
+                    "problemTitle": "Recursive Check Sorted Array"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function isSorted(arr, n) {\n    // TODO: Implement recursive check\n    return true;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const arr = lines[1].split(\" \").map(Number);\n    if(isSorted(arr, n)) console.log(\"Yes\");\n    else console.log(\"No\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Recursive Check Sorted Array"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nbool isSorted(vector<int>& arr, int n) {\n    // TODO: Implement recursive check\n    return true;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    if(isSorted(arr, n)) cout << \"Yes\" << endl;\n    else cout << \"No\" << endl;\n    return 0;\n}",
+                    "problemTitle": "Recursive Check Sorted Array"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint isSorted(int arr[], int n) {\n    // TODO: Implement recursive check\n    return 1;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[1005];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    if(isSorted(arr, n)) printf(\"Yes\\n\");\n    else printf(\"No\\n\");\n    return 0;\n}",
+                    "problemTitle": "Recursive Check Sorted Array"
+                }
+            ],
+            "hintsList": [
+                "Base case: if N is 1 or 0, return true.",
+                "Recursive step: check if the first element is less than or equal to the second, and then recursively check the rest of the array."
+            ]
+        },
+        {
+            "id": null,
+            "title": "String Permutations",
+            "description": "Problem Statement\nGiven a string S, write a recursive function to generate all its permutations in lexicographical order. The string may contain duplicate characters, but each unique permutation should be printed only once.\n\nInput Format\nA single string S.\n\nOutput Format\nPrint all unique permutations of S, each on a new line, in lexicographical order.\n\nExample 1\nInput:\nABC\n\nOutput:\nABC\nACB\nBAC\nBCA\nCAB\nCBA\n\nExample 2\nInput:\nAAB\n\nOutput:\nAAB\nABA\nBAA",
+            "examples": "Sample Input\nABC\n\nSample Output\nABC\nACB\nBAC\nBCA\nCAB\nCBA",
+            "constraints": "1 \u2264 length of S \u2264 8",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 3,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "ABC",
+                    "expectedOutput": "ABC\nACB\nBAC\nBCA\nCAB\nCBA",
+                    "problemTitle": "String Permutations"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "AAB",
+                    "expectedOutput": "AAB\nABA\nBAA",
+                    "problemTitle": "String Permutations"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "A",
+                    "expectedOutput": "A",
+                    "problemTitle": "String Permutations"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "XY",
+                    "expectedOutput": "XY\nYX",
+                    "problemTitle": "String Permutations"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "AA",
+                    "expectedOutput": "AA",
+                    "problemTitle": "String Permutations"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def generatePermutations(s):\n    # TODO: Implement recursive permutations\n    pass\n\ndef solve():\n    s = input().strip()\n    generatePermutations(s)\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "String Permutations"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static void generatePermutations(String s) {\n        // TODO: Implement recursive permutations\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if(sc.hasNext()) {\n            String s = sc.next();\n            generatePermutations(s);\n        }\n    }\n}",
+                    "problemTitle": "String Permutations"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function generatePermutations(s) {\n    // TODO: Implement recursive permutations\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    generatePermutations(s);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "String Permutations"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nvoid generatePermutations(string s) {\n    // TODO: Implement recursive permutations\n}\n\nint main() {\n    string s;\n    cin >> s;\n    generatePermutations(s);\n    return 0;\n}",
+                    "problemTitle": "String Permutations"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid generatePermutations(char* s) {\n    // TODO: Implement recursive permutations\n}\n\nint main() {\n    char s[10];\n    if(scanf(\"%s\", s) != EOF) {\n        generatePermutations(s);\n    }\n    return 0;\n}",
+                    "problemTitle": "String Permutations"
+                }
+            ],
+            "hintsList": [
+                "Sort the string first to handle lexicographical order and duplicates.",
+                "Use a boolean array to keep track of used characters.",
+                "In each step, pick an unused character and recurse."
+            ]
+        },
+        {
+            "id": null,
+            "title": "N-Queens Count",
+            "description": "Problem Statement\nThe N-Queens puzzle is the problem of placing N chess queens on an N\u00d7N chessboard such that no two queens attack each other. Two queens attack each other if they are in the same row, same column, or on the same diagonal.\n\nGiven N, find the total number of distinct solutions to the N-Queens puzzle.\n\nInput Format\nA single integer N.\n\nOutput Format\nA single integer representing the total number of distinct solutions.\n\nExample 1\nInput:\n4\n\nOutput:\n2\n\nExample 2\nInput:\n1\n\nOutput:\n1",
+            "examples": "Sample Input\n4\n\nSample Output\n2",
+            "constraints": "1 \u2264 N \u2264 12",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 3,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "1",
+                    "expectedOutput": "1",
+                    "problemTitle": "N-Queens Count"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "2",
+                    "expectedOutput": "0",
+                    "problemTitle": "N-Queens Count"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "3",
+                    "expectedOutput": "0",
+                    "problemTitle": "N-Queens Count"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "4",
+                    "expectedOutput": "2",
+                    "problemTitle": "N-Queens Count"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "8",
+                    "expectedOutput": "92",
+                    "problemTitle": "N-Queens Count"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "10",
+                    "expectedOutput": "724",
+                    "problemTitle": "N-Queens Count"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def countNQueens(n):\n    # TODO: Implement recursive backtracking to count solutions\n    return 0\n\ndef solve():\n    n = int(input().strip())\n    print(countNQueens(n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "N-Queens Count"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static int countNQueens(int n) {\n        // TODO: Implement recursive backtracking\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        System.out.println(countNQueens(n));\n    }\n}",
+                    "problemTitle": "N-Queens Count"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function countNQueens(n) {\n    // TODO: Implement recursive backtracking\n    return 0;\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    console.log(countNQueens(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "N-Queens Count"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint countNQueens(int n) {\n    // TODO: Implement recursive backtracking\n    return 0;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    cout << countNQueens(n) << endl;\n    return 0;\n}",
+                    "problemTitle": "N-Queens Count"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countNQueens(int n) {\n    // TODO: Implement recursive backtracking\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%d\\n\", countNQueens(n));\n    return 0;\n}",
+                    "problemTitle": "N-Queens Count"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking to place queens row by row.",
+                "Keep track of columns and diagonals that are already occupied.",
+                "A queen at (r, c) attacks column c, positive diagonal (r+c), and negative diagonal (r-c)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Subset Sum Problem",
+            "description": "Problem Statement\nGiven a set of N non-negative integers and a value K, determine if there is a subset of the given set with sum equal to K.\n\nInput Format\nFirst line: N (number of elements)\nSecond line: N space-separated integers\nThird line: K (target sum)\n\nOutput Format\nPrint \"Yes\" if a subset exists, otherwise print \"No\".\n\nExample 1\nInput:\n6\n3 34 4 12 5 2\n9\n\nOutput:\nYes\n\nExplanation: Subset {4, 5} has sum 9.\n\nExample 2\nInput:\n6\n3 34 4 12 5 2\n30\n\nOutput:\nNo",
+            "examples": "Sample Input\n6\n3 34 4 12 5 2\n9\n\nSample Output\nYes",
+            "constraints": "1 \u2264 N \u2264 20\n0 \u2264 A[i] \u2264 1000\n0 \u2264 K \u2264 5000",
+            "hints": 3,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2015,
+            "difficulty": 3,
+            "streamId": null,
+            "createdByUserId": null,
+            "updatedByUserId": null,
+            "testCases": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6\n3 34 4 12 5 2\n9",
+                    "expectedOutput": "Yes",
+                    "problemTitle": "Subset Sum Problem"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "6\n3 34 4 12 5 2\n30",
+                    "expectedOutput": "No",
+                    "problemTitle": "Subset Sum Problem"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "3\n1 2 3\n6",
+                    "expectedOutput": "Yes",
+                    "problemTitle": "Subset Sum Problem"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "3\n1 2 3\n7",
+                    "expectedOutput": "No",
+                    "problemTitle": "Subset Sum Problem"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "input": "5\n10 20 30 40 50\n0",
+                    "expectedOutput": "Yes",
+                    "problemTitle": "Subset Sum Problem"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 1,
+                    "code": "def isSubsetSum(arr, n, k):\n    # TODO: Implement recursive subset sum\n    return False\n\ndef solve():\n    n = int(input().strip())\n    arr = list(map(int, input().split()))\n    k = int(input().strip())\n    if isSubsetSum(arr, n, k):\n        print(\"Yes\")\n    else:\n        print(\"No\")\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Subset Sum Problem"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 2,
+                    "code": "import java.util.*;\n\npublic class Solution {\n    public static boolean isSubsetSum(int[] arr, int n, int k) {\n        // TODO: Implement recursive subset sum\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        int k = sc.nextInt();\n        if(isSubsetSum(arr, n, k)) System.out.println(\"Yes\");\n        else System.out.println(\"No\");\n    }\n}",
+                    "problemTitle": "Subset Sum Problem"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 3,
+                    "code": "function isSubsetSum(arr, n, k) {\n    // TODO: Implement recursive subset sum\n    return false;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const arr = lines[1].split(\" \").map(Number);\n    const k = parseInt(lines[2]);\n    if(isSubsetSum(arr, n, k)) console.log(\"Yes\");\n    else console.log(\"No\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Subset Sum Problem"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nbool isSubsetSum(vector<int>& arr, int n, int k) {\n    // TODO: Implement recursive subset sum\n    return false;\n}\n\nint main() {\n    int n, k;\n    cin >> n;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    cin >> k;\n    if(isSubsetSum(arr, n, k)) cout << \"Yes\" << endl;\n    else cout << \"No\" << endl;\n    return 0;\n}",
+                    "problemTitle": "Subset Sum Problem"
+                },
+                {
+                    "id": null,
+                    "problemId": null,
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint isSubsetSum(int arr[], int n, int k) {\n    // TODO: Implement recursive subset sum\n    return 0;\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d\", &n);\n    int arr[25];\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    scanf(\"%d\", &k);\n    if(isSubsetSum(arr, n, k)) printf(\"Yes\\n\");\n    else printf(\"No\\n\");\n    return 0;\n}",
+                    "problemTitle": "Subset Sum Problem"
+                }
+            ],
+            "hintsList": [
+                "For each element, you have two choices: include it in the subset or exclude it.",
+                "Recursive step: isSubsetSum(n, k) = isSubsetSum(n-1, k) || isSubsetSum(n-1, k - arr[n-1]).",
+                "Base cases: if k is 0, return true; if n is 0 and k is not 0, return false."
+            ]
+        }
+    ]
+}
