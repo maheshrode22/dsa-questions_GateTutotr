@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Chinese Remainder Theorem",
+      "description": "You are given two pairs of integers: a1, m1 and a2, m2. Assuming m1 and m2 are coprime (gcd(m1, m2) = 1), find the smallest non-negative integer x such that x ≡ a1 (mod m1) and x ≡ a2 (mod m2).\n\nInput Format:\nFour space-separated integers a1, m1, a2, m2.\n\nOutput Format:\nPrint a single integer x, the solution modulo (m1 * m2).",
+      "examples": "Sample Input\n2 3 3 5\n\nSample Output\n8\n\nExplanation:\nx ≡ 2 mod 3 and x ≡ 3 mod 5. The solution is x = 8, since 8 % 3 = 2 and 8 % 5 = 3.",
+      "constraints": "0 <= a1 < m1, 0 <= a2 < m2\n1 <= m1, m2 <= 10^9\nm1 and m2 are coprime",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 3,
+      "testCases": [
+        { "input": "2 3 3 5", "expectedOutput": "8" },
+        { "input": "1 2 0 3", "expectedOutput": "3" },
+        { "input": "0 5 1 7", "expectedOutput": "35" },
+        { "input": "3 11 4 13", "expectedOutput": "81" },
+        { "input": "0 1 0 2", "expectedOutput": "0" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def crt(self, a1, m1, a2, m2):\n        # TODO: Return x such that x ≡ a1 mod m1 and x ≡ a2 mod m2\n        pass\n\nif __name__ == '__main__':\n    try:\n        a1, m1, a2, m2 = map(int, input().split())\n        sol = Solution()\n        print(sol.crt(a1, m1, a2, m2))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long crt(long a1, long m1, long a2, long m2) {\n        // TODO: Return x such that x ≡ a1 mod m1 and x ≡ a2 mod m2\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long a1 = sc.nextLong();\n            long m1 = sc.nextLong();\n            long a2 = sc.nextLong();\n            long m2 = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.crt(a1, m1, a2, m2));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    crt(a1, m1, a2, m2) {\n        // TODO: Return x such that x ≡ a1 mod m1 and x ≡ a2 mod m2\n        return 0n;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(BigInt);\n    const a1 = parts[0], m1 = parts[1], a2 = parts[2], m2 = parts[3];\n    const sol = new Solution();\n    console.log(String(sol.crt(a1, m1, a2, m2)));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long crt(long long a1, long long m1, long long a2, long long m2) {\n        // TODO: Return x such that x ≡ a1 mod m1 and x ≡ a2 mod m2\n        return 0;\n    }\n};\n\nint main() {\n    long long a1, m1, a2, m2;\n    if (cin >> a1 >> m1 >> a2 >> m2) {\n        Solution sol;\n        cout << sol.crt(a1, m1, a2, m2);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long crt(long long a1, long long m1, long long a2, long long m2) {\n    // TODO: Return x such that x ≡ a1 mod m1 and x ≡ a2 mod m2\n    return 0;\n}\n\nint main() {\n    long long a1, m1, a2, m2;\n    if (scanf(\"%lld %lld %lld %lld\", &a1, &m1, &a2, &m2) == 4) {\n        printf(\"%lld\", crt(a1, m1, a2, m2));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Find inverse of m2 mod m1, then x = a1 + m1 * ((a2 - a1) * inv(m2, m1)) % (m1*m2)."
+      ]
+    }
+  ]
+}

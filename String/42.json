@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Valid IP Address",
+            "description": "Given a string IP, return 'IPv4' if IP is a valid IPv4 address, 'IPv6' if IP is a valid IPv6 address or 'Neither' if IP is not a correct IP of any type.\n\nA valid IPv4 address is an IP in the form 'x1.x2.x3.x4' where 0 <= xi <= 255 and xi cannot contain leading zeros.\n\nA valid IPv6 address is an IP in the form 'x1:x2:x3:x4:x5:x6:x7:x8' where 1 <= xi.length <= 4 and xi is a hexadecimal string which may contain digits, lower-case English letters ('a' to 'f') and upper-case English letters ('A' to 'F'). Leading zeros are allowed in xi.",
+            "examples": "Sample Input:\n172.16.254.1\n\nSample Output:\nIPv4\n\nSample Input:\n2001:0db8:85a3:0:0:8a2e:0370:7334\n\nSample Output:\nIPv6",
+            "constraints": "IP consists only of English letters, digits and the characters '.' and ':'.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "172.16.254.1",
+                    "expectedOutput": "IPv4"
+                },
+                {
+                    "input": "2001:0db8:85a3:0:0:8a2e:0370:7334",
+                    "expectedOutput": "IPv6"
+                },
+                {
+                    "input": "256.256.256.256",
+                    "expectedOutput": "Neither"
+                },
+                {
+                    "input": "2001:0db8:85a3::8A2E:0370:7334",
+                    "expectedOutput": "Neither"
+                },
+                {
+                    "input": "02001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                    "expectedOutput": "Neither"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, IP):\n        def isIPv4(s):\n            parts = s.split('.')\n            if len(parts) != 4: return False\n            for p in parts:\n                if not p.isdigit() or not 0 <= int(p) <= 255 or (p[0] == '0' and len(p) > 1):\n                    return False\n            return True\n        def isIPv6(s):\n            parts = s.split(':')\n            if len(parts) != 8: return False\n            for p in parts:\n                if not 1 <= len(p) <= 4 or not all(c in '0123456789abcdefABCDEF' for c in p):\n                    return False\n            return True\n        if isIPv4(IP): return \"IPv4\"\n        if isIPv6(IP): return \"IPv6\"\n        return \"Neither\"\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String IP) {\n        if (isIPv4(IP)) System.out.println(\"IPv4\");\n        else if (isIPv6(IP)) System.out.println(\"IPv6\");\n        else System.out.println(\"Neither\");\n    }\n    private boolean isIPv4(String s) {\n        String[] parts = s.split(\"\\\\.\", -1);\n        if (parts.length != 4) return false;\n        for (String p : parts) {\n            try {\n                if (p.length() == 0 || p.length() > 3) return false;\n                if (p.charAt(0) == '0' && p.length() > 1) return false;\n                int val = Integer.parseInt(p);\n                if (val < 0 || val > 255) return false;\n            } catch (NumberFormatException e) { return false; }\n        }\n        return true;\n    }\n    private boolean isIPv6(String s) {\n        String[] parts = s.split(\":\", -1);\n        if (parts.length != 8) return false;\n        for (String p : parts) {\n            if (p.length() == 0 || p.length() > 4) return false;\n            for (char c : p.toCharArray()) {\n                if (Character.digit(c, 16) == -1) return false;\n            }\n        }\n        return true;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(IP) {\n        const isIPv4 = (s) => {\n            const parts = s.split('.');\n            if (parts.length !== 4) return false;\n            for (const p of parts) {\n                if (!/^\\d+$/.test(p) || parseInt(p) > 255 || (p[0] === '0' && p.length > 1)) return false;\n            }\n            return true;\n        };\n        const isIPv6 = (s) => {\n            const parts = s.split(':');\n            if (parts.length !== 8) return false;\n            for (const p of parts) {\n                if (p.length === 0 || p.length > 4 || !/^[0-9a-fA-F]+$/.test(p)) return false;\n            }\n            return true;\n        };\n        if (isIPv4(IP)) console.log(\"IPv4\");\n        else if (isIPv6(IP)) console.log(\"IPv6\");\n        else console.log(\"Neither\");\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Valid IP Address\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Valid IP Address\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        }
+    ]
+}

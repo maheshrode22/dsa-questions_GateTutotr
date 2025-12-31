@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Binary Exponentiation",
+      "description": "You are given three integers a, b, and m. Your task is to compute (a^b) % m using binary exponentiation.\n\nInput Format:\nThree space-separated integers a, b, and m.\n\nOutput Format:\nPrint a single integer, (a^b) % m.",
+      "examples": "Sample Input\n2 10 1000\n\nSample Output\n24\n\nExplanation:\n2^10 = 1024, 1024 % 1000 = 24.",
+      "constraints": "1 <= a <= 10^9\n0 <= b <= 10^9\n1 <= m <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 3,
+      "testCases": [
+        { "input": "2 10 1000", "expectedOutput": "24" },
+        { "input": "3 0 5", "expectedOutput": "1" },
+        { "input": "5 1 7", "expectedOutput": "5" },
+        { "input": "10 9 6", "expectedOutput": "4" },
+        { "input": "123456789 2 1000000007", "expectedOutput": "643499475" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def modPow(self, a, b, m):\n        # TODO: Compute (a^b) % m using binary exponentiation\n        pass\n\nif __name__ == '__main__':\n    try:\n        a, b, m = map(int, input().split())\n        sol = Solution()\n        print(sol.modPow(a, b, m))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long modPow(long a, long b, long m) {\n        // TODO: Compute (a^b) % m using binary exponentiation\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long a = sc.nextLong();\n            long b = sc.nextLong();\n            long m = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.modPow(a, b, m));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    modPow(a, b, m) {\n        // TODO: Compute (a^b) % m using binary exponentiation\n        return 0n;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(BigInt);\n    const a = parts[0], b = parts[1], m = parts[2];\n    const sol = new Solution();\n    console.log(String(sol.modPow(a, b, m)));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long modPow(long long a, long long b, long long m) {\n        // TODO: Compute (a^b) % m using binary exponentiation\n        return 0;\n    }\n};\n\nint main() {\n    long long a, b, m;\n    if (cin >> a >> b >> m) {\n        Solution sol;\n        cout << sol.modPow(a, b, m);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long modPow(long long a, long long b, long long m) {\n    // TODO: Compute (a^b) % m using binary exponentiation\n    return 0;\n}\n\nint main() {\n    long long a, b, m;\n    if (scanf(\"%lld %lld %lld\", &a, &b, &m) == 3) {\n        printf(\"%lld\", modPow(a, b, m));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Initialize result = 1. While b > 0, if b is odd, multiply result by a and mod m. Then square a and mod m, and divide b by 2."
+      ]
+    }
+  ]
+}

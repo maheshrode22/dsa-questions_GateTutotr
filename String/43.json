@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Multiply Strings",
+            "description": "Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.\nNote: You must not use any built-in BigInteger library or convert the inputs to integer directly.",
+            "examples": "Sample Input:\n2 3\n\nSample Output:\n6\n\nSample Input:\n123 456\n\nSample Output:\n56088",
+            "constraints": "1 <= num1.length, num2.length <= 200\nnum1 and num2 consist of digits only.\nBoth num1 and num2 do not contain any leading zero, except the number 0 itself.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2 3",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "123 456",
+                    "expectedOutput": "56088"
+                },
+                {
+                    "input": "0 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "99 99",
+                    "expectedOutput": "9801"
+                },
+                {
+                    "input": "10 10",
+                    "expectedOutput": "100"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, input_str):\n        parts = input_str.split()\n        if len(parts) < 2: return \"0\"\n        num1, num2 = parts\n        if num1 == \"0\" or num2 == \"0\": return \"0\"\n        res = [0] * (len(num1) + len(num2))\n        for i in range(len(num1)-1, -1, -1):\n            for j in range(len(num2)-1, -1, -1):\n                mul = int(num1[i]) * int(num2[j])\n                p1, p2 = i + j, i + j + 1\n                s = mul + res[p2]\n                res[p2] = s % 10\n                res[p1] += s // 10\n        ans = \"\".join(map(str, res))\n        return ans.lstrip('0') or \"0\"\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String input) {\n        String[] parts = input.split(\"\\\\s+\");\n        if (parts.length < 2) { System.out.println(\"0\"); return; }\n        String num1 = parts[0], num2 = parts[1];\n        if (num1.equals(\"0\") || num2.equals(\"0\")) { System.out.println(\"0\"); return; }\n        int[] res = new int[num1.length() + num2.length()];\n        for (int i = num1.length() - 1; i >= 0; i--) {\n            for (int j = num2.length() - 1; j >= 0; j--) {\n                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');\n                int p1 = i + j, p2 = i + j + 1;\n                int sum = mul + res[p2];\n                res[p2] = sum % 10;\n                res[p1] += sum / 10;\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int p : res) if (!(sb.length() == 0 && p == 0)) sb.append(p);\n        System.out.println(sb.length() == 0 ? \"0\" : sb.toString());\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(input) {\n        const [num1, num2] = input.split(/\\s+/);\n        if (num1 === \"0\" || num2 === \"0\") { console.log(\"0\"); return; }\n        const res = Array(num1.length + num2.length).fill(0);\n        for (let i = num1.length - 1; i >= 0; i--) {\n            for (let j = num2.length - 1; j >= 0; j--) {\n                const mul = parseInt(num1[i]) * parseInt(num2[j]);\n                const p1 = i + j, p2 = i + j + 1;\n                const sum = mul + res[p2];\n                res[p2] = sum % 10;\n                res[p1] += Math.floor(sum / 10);\n            }\n        }\n        let ans = res.join('').replace(/^0+/, '');\n        console.log(ans || \"0\");\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Multiply Strings\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Multiply Strings\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        }
+    ]
+}

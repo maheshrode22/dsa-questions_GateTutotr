@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Roman to Integer",
+            "description": "Given a roman numeral, convert it to an integer.",
+            "examples": "Sample Input:\nIII\n\nSample Output:\n3\n\nSample Input:\nMCMXCIV\n\nSample Output:\n1994",
+            "constraints": "1 <= s.length <= 15\ns contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').\nIt is guaranteed that s is a valid roman numeral in the range [1, 3999].",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "III",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "LVIII",
+                    "expectedOutput": "58"
+                },
+                {
+                    "input": "MCMXCIV",
+                    "expectedOutput": "1994"
+                },
+                {
+                    "input": "IX",
+                    "expectedOutput": "9"
+                },
+                {
+                    "input": "XL",
+                    "expectedOutput": "40"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, s):\n        d = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}\n        res = 0\n        for i in range(len(s)):\n            if i + 1 < len(s) and d[s[i]] < d[s[i+1]]:\n                res -= d[s[i]]\n            else:\n                res += d[s[i]]\n        return res\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String s) {\n        Map<Character, Integer> d = new HashMap<>();\n        d.put('I', 1); d.put('V', 5); d.put('X', 10); d.put('L', 50);\n        d.put('C', 100); d.put('D', 500); d.put('M', 1000);\n        int res = 0;\n        for (int i = 0; i < s.length(); i++) {\n            if (i + 1 < s.length() && d.get(s.charAt(i)) < d.get(s.charAt(i+1))) {\n                res -= d.get(s.charAt(i));\n            } else {\n                res += d.get(s.charAt(i));\n            }\n        }\n        System.out.println(res);\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(s) {\n        const d = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000};\n        let res = 0;\n        for (let i = 0; i < s.length; i++) {\n            if (i + 1 < s.length && d[s[i]] < d[s[i+1]]) {\n                res -= d[s[i]];\n            } else {\n                res += d[s[i]];\n            }\n        }\n        console.log(res);\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Roman to Integer\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Roman to Integer\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        }
+    ]
+}

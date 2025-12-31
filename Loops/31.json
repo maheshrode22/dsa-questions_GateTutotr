@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Triplets with Even Sum",
+            "description": "Count the number of triplets (i, j, k) such that 1 <= i < j < k <= N and (i + j + k) is an even number.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n5\n\nSample Output:\n6\n\nExplanation:\nThe triplets are (1, 2, 3), (1, 2, 5), (1, 3, 4), (1, 4, 5), (2, 3, 5), (3, 4, 5). Sums are 6, 8, 8, 10, 10, 12 respectively.",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "60"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "570"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countEvenSumTriplets(self, n):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(i + 1, n + 1):\n                for k in range(j + 1, n + 1):\n                    if (i + j + k) % 2 == 0:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countEvenSumTriplets(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countEvenSumTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if ((i + j + k) % 2 == 0) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countEvenSumTriplets(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countEvenSumTriplets(n) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = i + 1; j <= n; j++) {\n                for (let k = j + 1; k <= n; k++) {\n                    if ((i + j + k) % 2 === 0) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countEvenSumTriplets(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countEvenSumTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if ((i + j + k) % 2 == 0) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countEvenSumTriplets(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countEvenSumTriplets(int n) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = i + 1; j <= n; j++) {\n            for (int k = j + 1; k <= n; k++) {\n                if ((i + j + k) % 2 == 0) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countEvenSumTriplets(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k with i < j < k.",
+                "Check if (i + j + k) % 2 == 0."
+            ]
+        }
+    ]
+}

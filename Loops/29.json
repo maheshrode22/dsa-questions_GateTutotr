@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "3D Block Pattern",
+            "description": "Write a program to print N blocks of N x N squares. Each block k (from 1 to N) should be filled with the number k.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint N blocks. Each block is an N x N grid. Separate blocks with a blank line.",
+            "examples": "Sample Input:\n2\n\nSample Output:\n1 1\n1 1\n\n2 2\n2 2\n\nExplanation:\nTwo blocks of 2x2 squares are printed. First block contains 1s, second contains 2s.",
+            "constraints": "1 <= N <= 20",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "1 1\n1 1\n\n2 2\n2 2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1 1 1\n1 1 1\n1 1 1\n\n2 2 2\n2 2 2\n2 2 2\n\n3 3 3\n3 3 3\n3 3 3"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "1 1 1 1\n1 1 1 1\n1 1 1 1\n1 1 1 1\n\n2 2 2 2\n2 2 2 2\n2 2 2 2\n2 2 2 2\n\n3 3 3 3\n3 3 3 3\n3 3 3 3\n3 3 3 3\n\n4 4 4 4\n4 4 4 4\n4 4 4 4\n4 4 4 4"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1 1 1 1 1\n1 1 1 1 1\n1 1 1 1 1\n1 1 1 1 1\n1 1 1 1 1\n\n2 2 2 2 2\n2 2 2 2 2\n2 2 2 2 2\n2 2 2 2 2\n2 2 2 2 2\n\n3 3 3 3 3\n3 3 3 3 3\n3 3 3 3 3\n3 3 3 3 3\n3 3 3 3 3\n\n4 4 4 4 4\n4 4 4 4 4\n4 4 4 4 4\n4 4 4 4 4\n4 4 4 4 4\n\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printBlocks(self, n):\n        for k in range(1, n + 1):\n            for i in range(n):\n                row = [str(k)] * n\n                print(\" \".join(row))\n            if k < n:\n                print()\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    sol.printBlocks(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printBlocks(int n) {\n        for (int k = 1; k <= n; k++) {\n            for (int i = 0; i < n; i++) {\n                for (int j = 0; j < n; j++) {\n                    System.out.print(k + (j == n - 1 ? \"\" : \" \"));\n                }\n                System.out.println();\n            }\n            if (k < n) {\n                System.out.println();\n            }\n        }\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printBlocks(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printBlocks(n) {\n        for (let k = 1; k <= n; k++) {\n            for (let i = 0; i < n; i++) {\n                let row = Array(n).fill(k).join(\" \");\n                console.log(row);\n            }\n            if (k < n) {\n                console.log(\"\");\n            }\n        }\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    sol.printBlocks(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printBlocks(int n) {\n        for (int k = 1; k <= n; k++) {\n            for (int i = 0; i < n; i++) {\n                for (int j = 0; j < n; j++) {\n                    cout << k << (j == n - 1 ? \"\" : \" \");\n                }\n                cout << endl;\n            }\n            if (k < n) {\n                cout << endl;\n            }\n        }\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    sol.printBlocks(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printBlocks(int n) {\n    for (int k = 1; k <= n; k++) {\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                printf(\"%d%s\", k, (j == n - 1 ? \"\" : \" \"));\n            }\n            printf(\"\\n\");\n        }\n        if (k < n) {\n            printf(\"\\n\");\n        }\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printBlocks(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops: outer for block number, middle for rows, inner for columns.",
+                "Print a blank line between blocks."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Find Next Prime Number",
+      "description": "You are given a positive integer N. Your task is to find the smallest prime number that is greater than N.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint a single integer, the smallest prime number greater than N.",
+      "examples": "Sample Input\n10\n\nSample Output\n11\n\nExplanation:\n11 is the smallest prime greater than 10.",
+      "constraints": "1 <= N <= 10^7",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "10", "expectedOutput": "11" },
+        { "input": "2", "expectedOutput": "3" },
+        { "input": "17", "expectedOutput": "19" },
+        { "input": "1", "expectedOutput": "2" },
+        { "input": "100", "expectedOutput": "101" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def nextPrime(self, n):\n        # TODO: Return smallest prime greater than n\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        sol = Solution()\n        print(sol.nextPrime(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int nextPrime(int n) {\n        // TODO: Return smallest prime greater than n\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            Solution sol = new Solution();\n            System.out.println(sol.nextPrime(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    nextPrime(n) {\n        // TODO: Return smallest prime greater than n\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.nextPrime(n));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int nextPrime(int n) {\n        // TODO: Return smallest prime greater than n\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.nextPrime(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint nextPrime(int n) {\n    // TODO: Return smallest prime greater than n\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printf(\"%d\", nextPrime(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Start from n+1 and check each number for primality using trial division up to sqrt(number)."
+      ]
+    }
+  ]
+}

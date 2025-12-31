@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Valid Parentheses",
+            "description": "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
+            "examples": "Sample Input:\n(()\n\nSample Output:\n2\n\nSample Input:\n)()())\n\nSample Output:\n4",
+            "constraints": "0 <= s.length <= 3 * 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "(()",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": ")()())",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "()(())",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "((()))",
+                    "expectedOutput": "6"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, s):\n        stack = [-1]\n        max_len = 0\n        for i in range(len(s)):\n            if s[i] == '(':\n                stack.append(i)\n            else:\n                stack.pop()\n                if not stack:\n                    stack.append(i)\n                else:\n                    max_len = max(max_len, i - stack[-1])\n        return max_len\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String s) {\n        Stack<Integer> stack = new Stack<>();\n        stack.push(-1);\n        int maxLen = 0;\n        for (int i = 0; i < s.length(); i++) {\n            if (s.charAt(i) == '(') {\n                stack.push(i);\n            } else {\n                stack.pop();\n                if (stack.isEmpty()) {\n                    stack.push(i);\n                } else {\n                    maxLen = Math.max(maxLen, i - stack.peek());\n                }\n            }\n        }\n        System.out.println(maxLen);\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n        else System.out.println(0);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(s) {\n        let stack = [-1];\n        let maxLen = 0;\n        for (let i = 0; i < s.length; i++) {\n            if (s[i] === '(') {\n                stack.push(i);\n            } else {\n                stack.pop();\n                if (stack.length === 0) {\n                    stack.push(i);\n                } else {\n                    maxLen = Math.max(maxLen, i - stack[stack.length - 1]);\n                }\n            }\n        }\n        console.log(maxLen);\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Longest Valid Parentheses\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Longest Valid Parentheses\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        }
+    ]
+}

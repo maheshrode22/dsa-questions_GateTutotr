@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "String Compression",
+            "description": "Implement a method to perform basic string compression using the counts of repeated characters. For example, the string 'aabcccccaaa' would become 'a2b1c5a3'. If the compressed string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters (a-z).",
+            "examples": "Sample Input:\naabcccccaaa\n\nSample Output:\na2b1c5a3\n\nSample Input:\nabc\n\nSample Output:\nabc",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "aabcccccaaa",
+                    "expectedOutput": "a2b1c5a3"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "aabbcc",
+                    "expectedOutput": "aabbcc"
+                },
+                {
+                    "input": "aaaaaaaaaa",
+                    "expectedOutput": "a10"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, s):\n        if not s: return \"\"\n        res = []\n        count = 0\n        for i in range(len(s)):\n            count += 1\n            if i + 1 >= len(s) or s[i] != s[i+1]:\n                res.append(s[i] + str(count))\n                count = 0\n        compressed = \"\".join(res)\n        return compressed if len(compressed) < len(s) else s\n\nif __name__ == '__main__':\n    import sys\n    input_str = sys.stdin.read().strip()\n    print(Solution().solve(input_str))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String s) {\n        if (s == null || s.isEmpty()) { System.out.println(\"\"); return; }\n        StringBuilder sb = new StringBuilder();\n        int count = 0;\n        for (int i = 0; i < s.length(); i++) {\n            count++;\n            if (i + 1 >= s.length() || s.charAt(i) != s.charAt(i + 1)) {\n                sb.append(s.charAt(i)).append(count);\n                count = 0;\n            }\n        }\n        String res = sb.toString();\n        System.out.println(res.length() < s.length() ? res : s);\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(s) {\n        if (!s) { console.log(\"\"); return; }\n        let res = \"\";\n        let count = 0;\n        for (let i = 0; i < s.length; i++) {\n            count++;\n            if (i + 1 >= s.length() || s[i] !== s[i + 1]) {\n                res += s[i] + count;\n                count = 0;\n            }\n        }\n        console.log(res.length < s.length ? res : s);\n    }\n}\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim();\nnew Solution().solve(input);"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement String Compression\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement String Compression\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        }
+    ]
+}

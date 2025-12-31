@@ -1,0 +1,604 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "String Compression",
+            "description": "Implement a method to perform basic string compression using the counts of repeated characters. For example, the string 'aabcccccaaa' would become 'a2b1c5a3'. If the compressed string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters (a-z).",
+            "examples": "Sample Input:\naabcccccaaa\n\nSample Output:\na2b1c5a3\n\nSample Input:\nabc\n\nSample Output:\nabc",
+            "constraints": "1 <= length of string <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "aabcccccaaa",
+                    "expectedOutput": "a2b1c5a3"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "aabbcc",
+                    "expectedOutput": "aabbcc"
+                },
+                {
+                    "input": "aaaaaaaaaa",
+                    "expectedOutput": "a10"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, s):\n        if not s: return \"\"\n        res = []\n        count = 0\n        for i in range(len(s)):\n            count += 1\n            if i + 1 >= len(s) or s[i] != s[i+1]:\n                res.append(s[i] + str(count))\n                count = 0\n        compressed = \"\".join(res)\n        return compressed if len(compressed) < len(s) else s\n\nif __name__ == '__main__':\n    import sys\n    input_str = sys.stdin.read().strip()\n    print(Solution().solve(input_str))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String s) {\n        if (s == null || s.isEmpty()) { System.out.println(\"\"); return; }\n        StringBuilder sb = new StringBuilder();\n        int count = 0;\n        for (int i = 0; i < s.length(); i++) {\n            count++;\n            if (i + 1 >= s.length() || s.charAt(i) != s.charAt(i + 1)) {\n                sb.append(s.charAt(i)).append(count);\n                count = 0;\n            }\n        }\n        String res = sb.toString();\n        System.out.println(res.length() < s.length() ? res : s);\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(s) {\n        if (!s) { console.log(\"\"); return; }\n        let res = \"\";\n        let count = 0;\n        for (let i = 0; i < s.length; i++) {\n            count++;\n            if (i + 1 >= s.length() || s[i] !== s[i + 1]) {\n                res += s[i] + count;\n                count = 0;\n            }\n        }\n        console.log(res.length < s.length ? res : s);\n    }\n}\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim();\nnew Solution().solve(input);"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement String Compression\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement String Compression\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Valid IP Address",
+            "description": "Given a string IP, return 'IPv4' if IP is a valid IPv4 address, 'IPv6' if IP is a valid IPv6 address or 'Neither' if IP is not a correct IP of any type.\n\nA valid IPv4 address is an IP in the form 'x1.x2.x3.x4' where 0 <= xi <= 255 and xi cannot contain leading zeros.\n\nA valid IPv6 address is an IP in the form 'x1:x2:x3:x4:x5:x6:x7:x8' where 1 <= xi.length <= 4 and xi is a hexadecimal string which may contain digits, lower-case English letters ('a' to 'f') and upper-case English letters ('A' to 'F'). Leading zeros are allowed in xi.",
+            "examples": "Sample Input:\n172.16.254.1\n\nSample Output:\nIPv4\n\nSample Input:\n2001:0db8:85a3:0:0:8a2e:0370:7334\n\nSample Output:\nIPv6",
+            "constraints": "IP consists only of English letters, digits and the characters '.' and ':'.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "172.16.254.1",
+                    "expectedOutput": "IPv4"
+                },
+                {
+                    "input": "2001:0db8:85a3:0:0:8a2e:0370:7334",
+                    "expectedOutput": "IPv6"
+                },
+                {
+                    "input": "256.256.256.256",
+                    "expectedOutput": "Neither"
+                },
+                {
+                    "input": "2001:0db8:85a3::8A2E:0370:7334",
+                    "expectedOutput": "Neither"
+                },
+                {
+                    "input": "02001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                    "expectedOutput": "Neither"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, IP):\n        def isIPv4(s):\n            parts = s.split('.')\n            if len(parts) != 4: return False\n            for p in parts:\n                if not p.isdigit() or not 0 <= int(p) <= 255 or (p[0] == '0' and len(p) > 1):\n                    return False\n            return True\n        def isIPv6(s):\n            parts = s.split(':')\n            if len(parts) != 8: return False\n            for p in parts:\n                if not 1 <= len(p) <= 4 or not all(c in '0123456789abcdefABCDEF' for c in p):\n                    return False\n            return True\n        if isIPv4(IP): return \"IPv4\"\n        if isIPv6(IP): return \"IPv6\"\n        return \"Neither\"\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String IP) {\n        if (isIPv4(IP)) System.out.println(\"IPv4\");\n        else if (isIPv6(IP)) System.out.println(\"IPv6\");\n        else System.out.println(\"Neither\");\n    }\n    private boolean isIPv4(String s) {\n        String[] parts = s.split(\"\\\\.\", -1);\n        if (parts.length != 4) return false;\n        for (String p : parts) {\n            try {\n                if (p.length() == 0 || p.length() > 3) return false;\n                if (p.charAt(0) == '0' && p.length() > 1) return false;\n                int val = Integer.parseInt(p);\n                if (val < 0 || val > 255) return false;\n            } catch (NumberFormatException e) { return false; }\n        }\n        return true;\n    }\n    private boolean isIPv6(String s) {\n        String[] parts = s.split(\":\", -1);\n        if (parts.length != 8) return false;\n        for (String p : parts) {\n            if (p.length() == 0 || p.length() > 4) return false;\n            for (char c : p.toCharArray()) {\n                if (Character.digit(c, 16) == -1) return false;\n            }\n        }\n        return true;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(IP) {\n        const isIPv4 = (s) => {\n            const parts = s.split('.');\n            if (parts.length !== 4) return false;\n            for (const p of parts) {\n                if (!/^\\d+$/.test(p) || parseInt(p) > 255 || (p[0] === '0' && p.length > 1)) return false;\n            }\n            return true;\n        };\n        const isIPv6 = (s) => {\n            const parts = s.split(':');\n            if (parts.length !== 8) return false;\n            for (const p of parts) {\n                if (p.length === 0 || p.length > 4 || !/^[0-9a-fA-F]+$/.test(p)) return false;\n            }\n            return true;\n        };\n        if (isIPv4(IP)) console.log(\"IPv4\");\n        else if (isIPv6(IP)) console.log(\"IPv6\");\n        else console.log(\"Neither\");\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Valid IP Address\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Valid IP Address\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Multiply Strings",
+            "description": "Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.\nNote: You must not use any built-in BigInteger library or convert the inputs to integer directly.",
+            "examples": "Sample Input:\n2 3\n\nSample Output:\n6\n\nSample Input:\n123 456\n\nSample Output:\n56088",
+            "constraints": "1 <= num1.length, num2.length <= 200\nnum1 and num2 consist of digits only.\nBoth num1 and num2 do not contain any leading zero, except the number 0 itself.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2 3",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "123 456",
+                    "expectedOutput": "56088"
+                },
+                {
+                    "input": "0 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "99 99",
+                    "expectedOutput": "9801"
+                },
+                {
+                    "input": "10 10",
+                    "expectedOutput": "100"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, input_str):\n        parts = input_str.split()\n        if len(parts) < 2: return \"0\"\n        num1, num2 = parts\n        if num1 == \"0\" or num2 == \"0\": return \"0\"\n        res = [0] * (len(num1) + len(num2))\n        for i in range(len(num1)-1, -1, -1):\n            for j in range(len(num2)-1, -1, -1):\n                mul = int(num1[i]) * int(num2[j])\n                p1, p2 = i + j, i + j + 1\n                s = mul + res[p2]\n                res[p2] = s % 10\n                res[p1] += s // 10\n        ans = \"\".join(map(str, res))\n        return ans.lstrip('0') or \"0\"\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String input) {\n        String[] parts = input.split(\"\\\\s+\");\n        if (parts.length < 2) { System.out.println(\"0\"); return; }\n        String num1 = parts[0], num2 = parts[1];\n        if (num1.equals(\"0\") || num2.equals(\"0\")) { System.out.println(\"0\"); return; }\n        int[] res = new int[num1.length() + num2.length()];\n        for (int i = num1.length() - 1; i >= 0; i--) {\n            for (int j = num2.length() - 1; j >= 0; j--) {\n                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');\n                int p1 = i + j, p2 = i + j + 1;\n                int sum = mul + res[p2];\n                res[p2] = sum % 10;\n                res[p1] += sum / 10;\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int p : res) if (!(sb.length() == 0 && p == 0)) sb.append(p);\n        System.out.println(sb.length() == 0 ? \"0\" : sb.toString());\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(input) {\n        const [num1, num2] = input.split(/\\s+/);\n        if (num1 === \"0\" || num2 === \"0\") { console.log(\"0\"); return; }\n        const res = Array(num1.length + num2.length).fill(0);\n        for (let i = num1.length - 1; i >= 0; i--) {\n            for (let j = num2.length - 1; j >= 0; j--) {\n                const mul = parseInt(num1[i]) * parseInt(num2[j]);\n                const p1 = i + j, p2 = i + j + 1;\n                const sum = mul + res[p2];\n                res[p2] = sum % 10;\n                res[p1] += Math.floor(sum / 10);\n            }\n        }\n        let ans = res.join('').replace(/^0+/, '');\n        console.log(ans || \"0\");\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Multiply Strings\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Multiply Strings\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Wildcard Matching",
+            "description": "Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*' where:\n'?' Matches any single character.\n'*' Matches any sequence of characters (including the empty sequence).\nThe matching should cover the entire input string (not partial).",
+            "examples": "Sample Input:\naa *\n\nSample Output:\ntrue\n\nSample Input:\ncb ?a\n\nSample Output:\nfalse",
+            "constraints": "0 <= s.length, p.length <= 2000\ns contains only lowercase English letters.\np contains only lowercase English letters, '?' or '*'.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "aa *",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "aa a",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "cb ?a",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "adceb *a*b",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "acdcb a*c?b",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, input_str):\n        parts = input_str.split()\n        s = parts[0] if len(parts) > 0 else \"\"\n        p = parts[1] if len(parts) > 1 else \"\"\n        dp = [[False] * (len(p) + 1) for _ in range(len(s) + 1)]\n        dp[0][0] = True\n        for j in range(1, len(p) + 1):\n            if p[j-1] == '*': dp[0][j] = dp[0][j-1]\n        for i in range(1, len(s) + 1):\n            for j in range(1, len(p) + 1):\n                if p[j-1] == '*':\n                    dp[i][j] = dp[i-1][j] or dp[i][j-1]\n                elif p[j-1] == '?' or s[i-1] == p[j-1]:\n                    dp[i][j] = dp[i-1][j-1]\n        return \"true\" if dp[len(s)][len(p)] else \"false\"\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String input) {\n        String[] parts = input.split(\"\\\\s+\");\n        String s = parts.length > 0 ? parts[0] : \"\";\n        String p = parts.length > 1 ? parts[1] : \"\";\n        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];\n        dp[0][0] = true;\n        for (int j = 1; j <= p.length(); j++) {\n            if (p.charAt(j-1) == '*') dp[0][j] = dp[0][j-1];\n        }\n        for (int i = 1; i <= s.length(); i++) {\n            for (int j = 1; j <= p.length(); j++) {\n                if (p.charAt(j-1) == '*') {\n                    dp[i][j] = dp[i-1][j] || dp[i][j-1];\n                } else if (p.charAt(j-1) == '?' || s.charAt(i-1) == p.charAt(j-1)) {\n                    dp[i][j] = dp[i-1][j-1];\n                }\n            }\n        }\n        System.out.println(dp[s.length()][p.length()] ? \"true\" : \"false\");\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(input) {\n        const parts = input.split(/\\s+/);\n        const s = parts[0] || \"\";\n        const p = parts[1] || \"\";\n        const dp = Array.from({ length: s.length + 1 }, () => Array(p.length + 1).fill(false));\n        dp[0][0] = true;\n        for (let j = 1; j <= p.length; j++) {\n            if (p[j-1] === '*') dp[0][j] = dp[0][j-1];\n        }\n        for (let i = 1; i <= s.length; i++) {\n            for (let j = 1; j <= p.length; j++) {\n                if (p[j-1] === '*') {\n                    dp[i][j] = dp[i-1][j] || dp[i][j-1];\n                } else if (p[j-1] === '?' || s[i-1] === p[j-1]) {\n                    dp[i][j] = dp[i-1][j-1];\n                }\n            }\n        }\n        console.log(dp[s.length][p.length] ? \"true\" : \"false\");\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Wildcard Matching\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Wildcard Matching\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Regular Expression Matching",
+            "description": "Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:\n'.' Matches any single character.\n'*' Matches zero or more of the preceding element.\nThe matching should cover the entire input string (not partial).",
+            "examples": "Sample Input:\naa a*\n\nSample Output:\ntrue\n\nSample Input:\nab .* \n\nSample Output:\ntrue",
+            "constraints": "1 <= s.length <= 20\n1 <= p.length <= 30\ns contains only lowercase English letters.\np contains only lowercase English letters, '.', and '*'.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "aa a",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "aa a*",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "ab .*",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "aab c*a*b",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "mississippi mis*is*p*.",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, input_str):\n        parts = input_str.split()\n        s = parts[0] if len(parts) > 0 else \"\"\n        p = parts[1] if len(parts) > 1 else \"\"\n        dp = [[False] * (len(p) + 1) for _ in range(len(s) + 1)]\n        dp[0][0] = True\n        for j in range(2, len(p) + 1):\n            if p[j-1] == '*': dp[0][j] = dp[0][j-2]\n        for i in range(1, len(s) + 1):\n            for j in range(1, len(p) + 1):\n                if p[j-1] == '*':\n                    dp[i][j] = dp[i][j-2] or (dp[i-1][j] if p[j-2] in (s[i-1], '.') else False)\n                elif p[j-1] in (s[i-1], '.'):\n                    dp[i][j] = dp[i-1][j-1]\n        return \"true\" if dp[len(s)][len(p)] else \"false\"\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String input) {\n        String[] parts = input.split(\"\\\\s+\");\n        String s = parts.length > 0 ? parts[0] : \"\";\n        String p = parts.length > 1 ? parts[1] : \"\";\n        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];\n        dp[0][0] = true;\n        for (int j = 2; j <= p.length(); j++) {\n            if (p.charAt(j-1) == '*') dp[0][j] = dp[0][j-2];\n        }\n        for (int i = 1; i <= s.length(); i++) {\n            for (int j = 1; j <= p.length(); j++) {\n                if (p.charAt(j-1) == '*') {\n                    dp[i][j] = dp[i][j-2] || (dp[i-1][j] && (p.charAt(j-2) == s.charAt(i-1) || p.charAt(j-2) == '.'));\n                } else if (p.charAt(j-1) == '.' || p.charAt(j-1) == s.charAt(i-1)) {\n                    dp[i][j] = dp[i-1][j-1];\n                }\n            }\n        }\n        System.out.println(dp[s.length()][p.length()] ? \"true\" : \"false\");\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(input) {\n        const parts = input.split(/\\s+/);\n        const s = parts[0] || \"\";\n        const p = parts[1] || \"\";\n        const dp = Array.from({ length: s.length + 1 }, () => Array(p.length + 1).fill(false));\n        dp[0][0] = true;\n        for (let j = 2; j <= p.length; j++) {\n            if (p[j-1] === '*') dp[0][j] = dp[0][j-2];\n        }\n        for (let i = 1; i <= s.length; i++) {\n            for (let j = 1; j <= p.length; j++) {\n                if (p[j-1] === '*') {\n                    dp[i][j] = dp[i][j-2] || (dp[i-1][j] && (p[j-2] === s[i-1] || p[j-2] === '.'));\n                } else if (p[j-1] === '.' || p[j-1] === s[i-1]) {\n                    dp[i][j] = dp[i-1][j-1];\n                }\n            }\n        }\n        console.log(dp[s.length][p.length] ? \"true\" : \"false\");\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Regular Expression Matching\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Regular Expression Matching\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Text Justification",
+            "description": "Given an array of strings words and a width maxWidth, format the text such that each line has exactly maxWidth characters and is fully (left and right) justified.\nYou should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces ' ' when necessary so that each line has exactly maxWidth characters.\nExtra spaces between words should be distributed as evenly as possible. If the number of spaces on a line does not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right.\nFor the last line of text, it should be left-justified, and no extra space is inserted between words.",
+            "examples": "Sample Input:\n7 16\nThis is an example of text justification.\n\nSample Output:\nThis    is    an\nexample  of text\njustification.  ",
+            "constraints": "1 <= words.length <= 300\n1 <= words[i].length <= 20\nmaxWidth <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "7 16\nThis is an example of text justification.",
+                    "expectedOutput": "This    is    an\nexample  of text\njustification.  "
+                },
+                {
+                    "input": "6 16\nWhat must be acknowledgment shall be",
+                    "expectedOutput": "What   must   be\nacknowledgment  \nshall be        "
+                },
+                {
+                    "input": "18 20\nScience is what we understand well enough to explain to a computer, art is everything else we do",
+                    "expectedOutput": "Science  is  what we\nunderstand      well\nenough to explain to\na  computer,  art is\neverything  else  we\ndo                  "
+                },
+                {
+                    "input": "1 10\nHello",
+                    "expectedOutput": "Hello     "
+                },
+                {
+                    "input": "2 10\nHi there",
+                    "expectedOutput": "Hi there  "
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, input_str):\n        lines = input_str.split('\\n')\n        if not lines: return \"\"\n        first_line = lines[0].split()\n        n = int(first_line[0])\n        maxWidth = int(first_line[1])\n        words = lines[1].split()\n        \n        res, cur, num_of_letters = [], [], 0\n        for w in words:\n            if num_of_letters + len(w) + len(cur) > maxWidth:\n                for i in range(maxWidth - num_of_letters):\n                    cur[i % (len(cur) - 1 or 1)] += ' '\n                res.append(\"\".join(cur))\n                cur, num_of_letters = [], 0\n            cur += [w]\n            num_of_letters += len(w)\n        res.append(\" \".join(cur).ljust(maxWidth))\n        return \"\\n\".join(res)\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String input) {\n        String[] lines = input.split(\"\\n\");\n        if (lines.length < 2) return;\n        String[] firstLine = lines[0].split(\" \");\n        int maxWidth = Integer.parseInt(firstLine[1]);\n        String[] words = lines[1].split(\" \");\n        \n        List<String> res = new ArrayList<>();\n        int index = 0;\n        while (index < words.length) {\n            int count = words[index].length();\n            int last = index + 1;\n            while (last < words.length) {\n                if (words[last].length() + count + 1 > maxWidth) break;\n                count += words[last].length() + 1;\n                last++;\n            }\n            StringBuilder sb = new StringBuilder();\n            int diff = last - index - 1;\n            if (last == words.length || diff == 0) {\n                for (int i = index; i < last; i++) {\n                    sb.append(words[i]);\n                    if (i < last - 1) sb.append(\" \");\n                }\n                for (int i = sb.length(); i < maxWidth; i++) sb.append(\" \");\n            } else {\n                int spaces = (maxWidth - count) / diff;\n                int r = (maxWidth - count) % diff;\n                for (int i = index; i < last; i++) {\n                    sb.append(words[i]);\n                    if (i < last - 1) {\n                        for (int j = 0; j <= (spaces + (i - index < r ? 1 : 0)); j++) sb.append(\" \");\n                    }\n                }\n            }\n            res.add(sb.toString());\n            index = last;\n        }\n        for (int i = 0; i < res.size(); i++) {\n            System.out.print(res.get(i) + (i == res.size() - 1 ? \"\" : \"\\n\"));\n        }\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        StringBuilder sb = new StringBuilder();\n        while(sc.hasNextLine()) sb.append(sc.nextLine()).append(\"\\n\");\n        new Solution().solve(sb.toString().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(input) {\n        const lines = input.split('\\n');\n        const [n, maxWidth] = lines[0].split(' ').map(Number);\n        const words = lines[1].split(' ');\n        \n        let res = [], cur = [], num_of_letters = 0;\n        for (let w of words) {\n            if (num_of_letters + w.length + cur.length > maxWidth) {\n                for (let i = 0; i < maxWidth - num_of_letters; i++) {\n                    cur[i % (cur.length - 1 || 1)] += ' ';\n                }\n                res.push(cur.join(''));\n                cur = []; num_of_letters = 0;\n            }\n            cur.push(w);\n            num_of_letters += w.length;\n        }\n        res.push(cur.join(' ').padEnd(maxWidth));\n        console.log(res.join('\\n'));\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Text Justification\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Text Justification\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Integer to Roman",
+            "description": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.\nSymbol Value:\nI: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000\nFor example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\nGiven an integer, convert it to a roman numeral.",
+            "examples": "Sample Input:\n3\n\nSample Output:\nIII\n\nSample Input:\n1994\n\nSample Output:\nMCMXCIV",
+            "constraints": "1 <= num <= 3999",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "III"
+                },
+                {
+                    "input": "58",
+                    "expectedOutput": "LVIII"
+                },
+                {
+                    "input": "1994",
+                    "expectedOutput": "MCMXCIV"
+                },
+                {
+                    "input": "9",
+                    "expectedOutput": "IX"
+                },
+                {
+                    "input": "40",
+                    "expectedOutput": "XL"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, num):\n        num = int(num)\n        val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]\n        syb = [\"M\", \"CM\", \"D\", \"CD\", \"C\", \"XC\", \"L\", \"XL\", \"X\", \"IX\", \"V\", \"IV\", \"I\"]\n        roman = \"\"\n        for i in range(len(val)):\n            while num >= val[i]:\n                roman += syb[i]\n                num -= val[i]\n        return roman\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String input) {\n        int num = Integer.parseInt(input);\n        int[] val = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};\n        String[] syb = {\"M\", \"CM\", \"D\", \"CD\", \"C\", \"XC\", \"L\", \"XL\", \"X\", \"IX\", \"V\", \"IV\", \"I\"};\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < val.length; i++) {\n            while (num >= val[i]) {\n                sb.append(syb[i]);\n                num -= val[i];\n            }\n        }\n        System.out.println(sb.toString());\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(input) {\n        let num = parseInt(input);\n        const val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];\n        const syb = [\"M\", \"CM\", \"D\", \"CD\", \"C\", \"XC\", \"L\", \"XL\", \"X\", \"IX\", \"V\", \"IV\", \"I\"];\n        let roman = \"\";\n        for (let i = 0; i < val.length; i++) {\n            while (num >= val[i]) {\n                roman += syb[i];\n                num -= val[i];\n            }\n        }\n        console.log(roman);\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Integer to Roman\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Integer to Roman\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Roman to Integer",
+            "description": "Given a roman numeral, convert it to an integer.",
+            "examples": "Sample Input:\nIII\n\nSample Output:\n3\n\nSample Input:\nMCMXCIV\n\nSample Output:\n1994",
+            "constraints": "1 <= s.length <= 15\ns contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').\nIt is guaranteed that s is a valid roman numeral in the range [1, 3999].",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "III",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "LVIII",
+                    "expectedOutput": "58"
+                },
+                {
+                    "input": "MCMXCIV",
+                    "expectedOutput": "1994"
+                },
+                {
+                    "input": "IX",
+                    "expectedOutput": "9"
+                },
+                {
+                    "input": "XL",
+                    "expectedOutput": "40"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, s):\n        d = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}\n        res = 0\n        for i in range(len(s)):\n            if i + 1 < len(s) and d[s[i]] < d[s[i+1]]:\n                res -= d[s[i]]\n            else:\n                res += d[s[i]]\n        return res\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String s) {\n        Map<Character, Integer> d = new HashMap<>();\n        d.put('I', 1); d.put('V', 5); d.put('X', 10); d.put('L', 50);\n        d.put('C', 100); d.put('D', 500); d.put('M', 1000);\n        int res = 0;\n        for (int i = 0; i < s.length(); i++) {\n            if (i + 1 < s.length() && d.get(s.charAt(i)) < d.get(s.charAt(i+1))) {\n                res -= d.get(s.charAt(i));\n            } else {\n                res += d.get(s.charAt(i));\n            }\n        }\n        System.out.println(res);\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(s) {\n        const d = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000};\n        let res = 0;\n        for (let i = 0; i < s.length; i++) {\n            if (i + 1 < s.length && d[s[i]] < d[s[i+1]]) {\n                res -= d[s[i]];\n            } else {\n                res += d[s[i]];\n            }\n        }\n        console.log(res);\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Roman to Integer\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Roman to Integer\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Longest Valid Parentheses",
+            "description": "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
+            "examples": "Sample Input:\n(()\n\nSample Output:\n2\n\nSample Input:\n)()())\n\nSample Output:\n4",
+            "constraints": "0 <= s.length <= 3 * 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "(()",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": ")()())",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "()(())",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "((()))",
+                    "expectedOutput": "6"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, s):\n        stack = [-1]\n        max_len = 0\n        for i in range(len(s)):\n            if s[i] == '(':\n                stack.append(i)\n            else:\n                stack.pop()\n                if not stack:\n                    stack.append(i)\n                else:\n                    max_len = max(max_len, i - stack[-1])\n        return max_len\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String s) {\n        Stack<Integer> stack = new Stack<>();\n        stack.push(-1);\n        int maxLen = 0;\n        for (int i = 0; i < s.length(); i++) {\n            if (s.charAt(i) == '(') {\n                stack.push(i);\n            } else {\n                stack.pop();\n                if (stack.isEmpty()) {\n                    stack.push(i);\n                } else {\n                    maxLen = Math.max(maxLen, i - stack.peek());\n                }\n            }\n        }\n        System.out.println(maxLen);\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n        else System.out.println(0);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(s) {\n        let stack = [-1];\n        let maxLen = 0;\n        for (let i = 0; i < s.length; i++) {\n            if (s[i] === '(') {\n                stack.push(i);\n            } else {\n                stack.pop();\n                if (stack.length === 0) {\n                    stack.push(i);\n                } else {\n                    maxLen = Math.max(maxLen, i - stack[stack.length - 1]);\n                }\n            }\n        }\n        console.log(maxLen);\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Longest Valid Parentheses\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Longest Valid Parentheses\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        },
+        {
+            "id": null,
+            "title": "Integer to English Words",
+            "description": "Convert a non-negative integer num to its English words representation.",
+            "examples": "Sample Input:\n123\n\nSample Output:\nOne Hundred Twenty Three\n\nSample Input:\n12345\n\nSample Output:\nTwelve Thousand Three Hundred Forty Five",
+            "constraints": "0 <= num <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "123",
+                    "expectedOutput": "One Hundred Twenty Three"
+                },
+                {
+                    "input": "12345",
+                    "expectedOutput": "Twelve Thousand Three Hundred Forty Five"
+                },
+                {
+                    "input": "1234567",
+                    "expectedOutput": "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "Zero"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "One Hundred"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, num):\n        if num == \"0\": return \"Zero\"\n        num = int(num)\n        \n        lessThan20 = [\"\", \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\", \"Ten\", \"Eleven\", \"Twelve\", \"Thirteen\", \"Fourteen\", \"Fifteen\", \"Sixteen\", \"Seventeen\", \"Eighteen\", \"Nineteen\"]\n        tens = [\"\", \"Ten\", \"Twenty\", \"Thirty\", \"Forty\", \"Fifty\", \"Sixty\", \"Seventy\", \"Eighty\", \"Ninety\"]\n        thousands = [\"\", \"Thousand\", \"Million\", \"Billion\"]\n        \n        def helper(n):\n            if n == 0: return \"\"\n            elif n < 20: return lessThan20[n] + \" \"\n            elif n < 100: return tens[n // 10] + \" \" + helper(n % 10)\n            else: return lessThan20[n // 100] + \" Hundred \" + helper(n % 100)\n            \n        res = \"\"\n        for i in range(len(thousands)):\n            if num % 1000 != 0:\n                res = helper(num % 1000) + thousands[i] + \" \" + res\n            num //= 1000\n        return res.strip()\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    print(Solution().solve(line))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    private final String[] lessThan20 = {\"\", \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\", \"Ten\", \"Eleven\", \"Twelve\", \"Thirteen\", \"Fourteen\", \"Fifteen\", \"Sixteen\", \"Seventeen\", \"Eighteen\", \"Nineteen\"};\n    private final String[] tens = {\"\", \"Ten\", \"Twenty\", \"Thirty\", \"Forty\", \"Fifty\", \"Sixty\", \"Seventy\", \"Eighty\", \"Ninety\"};\n    private final String[] thousands = {\"\", \"Thousand\", \"Million\", \"Billion\"};\n\n    public void solve(String input) {\n        long num = Long.parseLong(input);\n        if (num == 0) { System.out.println(\"Zero\"); return; }\n        int i = 0;\n        String words = \"\";\n        while (num > 0) {\n            if (num % 1000 != 0)\n                words = helper((int)(num % 1000)) + thousands[i] + \" \" + words;\n            num /= 1000;\n            i++;\n        }\n        System.out.println(words.trim());\n    }\n\n    private String helper(int num) {\n        if (num == 0) return \"\";\n        else if (num < 20) return lessThan20[num] + \" \";\n        else if (num < 100) return tens[num / 10] + \" \" + helper(num % 10);\n        else return lessThan20[num / 100] + \" Hundred \" + helper(num % 100);\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    constructor() {\n        this.lessThan20 = [\"\", \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\", \"Ten\", \"Eleven\", \"Twelve\", \"Thirteen\", \"Fourteen\", \"Fifteen\", \"Sixteen\", \"Seventeen\", \"Eighteen\", \"Nineteen\"];\n        this.tens = [\"\", \"Ten\", \"Twenty\", \"Thirty\", \"Forty\", \"Fifty\", \"Sixty\", \"Seventy\", \"Eighty\", \"Ninety\"];\n        this.thousands = [\"\", \"Thousand\", \"Million\", \"Billion\"];\n    }\n    helper(num) {\n        if (num === 0) return \"\";\n        else if (num < 20) return this.lessThan20[num] + \" \";\n        else if (num < 100) return this.tens[Math.floor(num / 10)] + \" \" + this.helper(num % 10);\n        else return this.lessThan20[Math.floor(num / 100)] + \" Hundred \" + this.helper(num % 100);\n    }\n    solve(input) {\n        let num = parseInt(input);\n        if (num === 0) { console.log(\"Zero\"); return; }\n        let i = 0;\n        let words = \"\";\n        while (num > 0) {\n            if (num % 1000 !== 0)\n                words = this.helper(num % 1000) + this.thousands[i] + \" \" + words;\n            num = Math.floor(num / 1000);\n            i++;\n        }\n        console.log(words.trim());\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Integer to English Words\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Integer to English Words\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        }
+    ]
+}

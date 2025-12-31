@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Unique Triplets Lexicographical",
+            "description": "Given an integer N, print all unique triplets (i, j, k) such that 1 <= i < j < k <= N in lexicographical order.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint each triplet on a new line, with elements separated by a space.",
+            "examples": "Sample Input:\n4\n\nSample Output:\n1 2 3\n1 2 4\n1 3 4\n2 3 4\n\nExplanation:\nAll unique triplets with elements from 1 to 4 are printed in order.",
+            "constraints": "1 <= N <= 20",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4",
+                    "expectedOutput": "1 2 3\n1 2 4\n1 3 4\n2 3 4"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1 2 3"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1 2 3\n1 2 4\n1 2 5\n1 3 4\n1 3 5\n1 4 5\n2 3 4\n2 3 5\n2 4 5\n3 4 5"
+                },
+                {
+                    "input": "6",
+                    "expectedOutput": "1 2 3\n1 2 4\n1 2 5\n1 2 6\n1 3 4\n1 3 5\n1 3 6\n1 4 5\n1 4 6\n1 5 6\n2 3 4\n2 3 5\n2 3 6\n2 4 5\n2 4 6\n2 5 6\n3 4 5\n3 4 6\n3 5 6\n4 5 6"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printTriplets(self, n):\n        for i in range(1, n + 1):\n            for j in range(i + 1, n + 1):\n                for k in range(j + 1, n + 1):\n                    print(f\"{i} {j} {k}\")\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    sol.printTriplets(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printTriplets(int n) {\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    System.out.println(i + \" \" + j + \" \" + k);\n                }\n            }\n        }\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printTriplets(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printTriplets(n) {\n        for (let i = 1; i <= n; i++) {\n            for (let j = i + 1; j <= n; j++) {\n                for (let k = j + 1; k <= n; k++) {\n                    console.log(`${i} ${j} ${k}`);\n                }\n            }\n        }\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    sol.printTriplets(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printTriplets(int n) {\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    cout << i << \" \" << j << \" \" << k << endl;\n                }\n            }\n        }\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    sol.printTriplets(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printTriplets(int n) {\n    for (int i = 1; i <= n; i++) {\n        for (int j = i + 1; j <= n; j++) {\n            for (int k = j + 1; k <= n; k++) {\n                printf(\"%d %d %d\\n\", i, j, k);\n            }\n        }\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printTriplets(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops: i from 1 to N, j from i+1 to N, k from j+1 to N.",
+                "Print i, j, and k separated by spaces."
+            ]
+        }
+    ]
+}

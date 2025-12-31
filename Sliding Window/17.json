@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Sliding Window Maximum",
+      "description": "You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.\nReturn the max sliding window.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint the maximum value in each window, space-separated.",
+      "examples": "Sample Input\n8 3\n1 3 -1 -3 5 3 6 7\n\nSample Output\n3 3 5 5 6 7\n\nExplanation:\nWindow position -> Max\n[1 3 -1] -> 3\n[3 -1 -3] -> 3\n[-1 -3 5] -> 5\n[-3 5 3] -> 5\n[5 3 6] -> 6\n[3 6 7] -> 7",
+      "constraints": "1 <= n <= 100000\n1 <= k <= n\n-10^4 <= nums[i] <= 10^4",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "8 3\n1 3 -1 -3 5 3 6 7",
+          "expectedOutput": "3 3 5 5 6 7"
+        },
+        {
+          "input": "1 1\n1",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "3 3\n1 2 3",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "4 2\n1 3 1 2",
+          "expectedOutput": "3 3 2"
+        },
+        {
+          "input": "6 1\n1 3 -1 -3 5 3",
+          "expectedOutput": "1 3 -1 -3 5 3"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def maxSlidingWindow(self, nums, k):\n        # TODO: Return list of max values for each window\n        pass\n\nif __name__ == '__main__':\n    try:\n        n_k = input().split()\n        n = int(n_k[0])\n        k = int(n_k[1])\n        nums = list(map(int, input().split()))\n        sol = Solution()\n        res = sol.maxSlidingWindow(nums, k)\n        print(' '.join(map(str, res)))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] maxSlidingWindow(int[] nums, int k) {\n        // TODO: Return array of max values for each window\n        return new int[0];\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int k = Integer.parseInt(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[n];\n        for (int i = 0; i < n; i++) nums[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        int[] res = sol.maxSlidingWindow(nums, k);\n        for (int i = 0; i < res.length; i++) {\n            if (i > 0) System.out.print(\" \");\n            System.out.print(res[i]);\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    maxSlidingWindow(nums, k) {\n        // TODO: Return array of max values for each window\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]), k = parseInt(first[1]);\n    const nums = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const res = sol.maxSlidingWindow(nums, k);\n    console.log(res.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> maxSlidingWindow(vector<int>& nums, int k) {\n        // TODO: Return vector of max values for each window\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, k;\n    if (!(cin >> n >> k)) return 0;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    Solution sol;\n    vector<int> res = sol.maxSlidingWindow(nums, k);\n    for (size_t i = 0; i < res.size(); i++) {\n        if (i) cout << ' ';\n        cout << res[i];\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint main() {\n    int n, k;\n    if (scanf(\"%d %d\", &n, &k) != 2) return 0;\n    int nums[100000];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &nums[i]);\n    // TODO: Print max values for each window, space-separated\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use a deque to maintain indices of useful elements in decreasing order of values.",
+        "Remove elements from back of deque that are smaller than current element, and remove from front if they are out of window."
+      ]
+    }
+  ]
+}

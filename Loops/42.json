@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Matrix Sub-rectangle Sum Count",
+            "description": "Given an N x N matrix of integers and a target sum S, count the number of sub-rectangles whose elements sum up to S.\n\nInput Format:\nFirst line contains two integers N and S.\nNext N lines contain N integers each representing the matrix.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n2 3\n1 2\n2 1\n\nSample Output:\n4\n\nExplanation:\nSub-rectangles with sum 3:\n(0,0) to (0,1) -> 1+2=3\n(0,0) to (1,0) -> 1+2=3\n(0,1) to (1,1) -> 2+1=3\n(1,0) to (1,1) -> 2+1=3\nTotal = 4.",
+            "constraints": "1 <= N <= 20\n-1000 <= Matrix[i][j] <= 1000\n-10^6 <= S <= 10^6",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2 3\n1 2\n2 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "3 6\n1 2 3\n4 5 6\n7 8 9",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "2 10\n5 5\n5 5",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 5\n5",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3 0\n1 -1 0\n-1 1 0\n0 0 0",
+                    "expectedOutput": "27"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countSubRectangles(self, n, s, matrix):\n        count = 0\n        for r1 in range(n):\n            for c1 in range(n):\n                for r2 in range(r1, n):\n                    for c2 in range(c1, n):\n                        current_sum = 0\n                        for i in range(r1, r2 + 1):\n                            for j in range(c1, c2 + 1):\n                                current_sum += matrix[i][j]\n                        if current_sum == s:\n                            count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: exit()\n    n = int(input_data[0])\n    s = int(input_data[1])\n    matrix = []\n    idx = 2\n    for i in range(n):\n        matrix.append([int(x) for x in input_data[idx:idx+n]])\n        idx += n\n    sol = Solution()\n    print(sol.countSubRectangles(n, s, matrix))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countSubRectangles(int n, int s, int[][] matrix) {\n        int count = 0;\n        for (int r1 = 0; r1 < n; r1++) {\n            for (int c1 = 0; c1 < n; c1++) {\n                for (int r2 = r1; r2 < n; r2++) {\n                    for (int c2 = c1; c2 < n; c2++) {\n                        long currentSum = 0;\n                        for (int i = r1; i <= r2; i++) {\n                            for (int j = c1; j <= c2; j++) {\n                                currentSum += matrix[i][j];\n                            }\n                        }\n                        if (currentSum == s) {\n                            count++;\n                        }\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int s = sc.nextInt();\n        int[][] matrix = new int[n][n];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                matrix[i][j] = sc.nextInt();\n            }\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.countSubRectangles(n, s, matrix));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countSubRectangles(n, s, matrix) {\n        let count = 0;\n        for (let r1 = 0; r1 < n; r1++) {\n            for (let c1 = 0; c1 < n; c1++) {\n                for (let r2 = r1; r2 < n; r2++) {\n                    for (let c2 = c1; c2 < n; c2++) {\n                        let currentSum = 0;\n                        for (let i = r1; i <= r2; i++) {\n                            for (let j = c1; j <= c2; j++) {\n                                currentSum += matrix[i][j];\n                            }\n                        }\n                        if (currentSum === s) {\n                            count++;\n                        }\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 2) return;\n    const n = parts[0];\n    const s = parts[1];\n    const matrix = [];\n    let idx = 2;\n    for (let i = 0; i < n; i++) {\n        matrix.push(parts.slice(idx, idx + n));\n        idx += n;\n    }\n    const sol = new Solution();\n    console.log(sol.countSubRectangles(n, s, matrix));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countSubRectangles(int n, int s, vector<vector<int>>& matrix) {\n        int count = 0;\n        for (int r1 = 0; r1 < n; r1++) {\n            for (int c1 = 0; c1 < n; c1++) {\n                for (int r2 = r1; r2 < n; r2++) {\n                    for (int c2 = c1; c2 < n; c2++) {\n                        long long currentSum = 0;\n                        for (int i = r1; i <= r2; i++) {\n                            for (int j = c1; j <= c2; j++) {\n                                currentSum += matrix[i][j];\n                            }\n                        }\n                        if (currentSum == s) {\n                            count++;\n                        }\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n, s;\n    if (!(cin >> n >> s)) return 0;\n    vector<vector<int>> matrix(n, vector<int>(n));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            cin >> matrix[i][j];\n        }\n    }\n    Solution sol;\n    cout << sol.countSubRectangles(n, s, matrix) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countSubRectangles(int n, int s, int matrix[20][20]) {\n    int count = 0;\n    for (int r1 = 0; r1 < n; r1++) {\n        for (int c1 = 0; c1 < n; c1++) {\n            for (int r2 = r1; r2 < n; r2++) {\n                for (int c2 = c1; c2 < n; c2++) {\n                    long long currentSum = 0;\n                    for (int i = r1; i <= r2; i++) {\n                        for (int j = c1; j <= c2; j++) {\n                            currentSum += matrix[i][j];\n                        }\n                    }\n                    if (currentSum == s) {\n                        count++;\n                    }\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n, s;\n    if (scanf(\"%d %d\", &n, &s) != 2) return 0;\n    int matrix[20][20];\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            scanf(\"%d\", &matrix[i][j]);\n        }\n    }\n    printf(\"%d\\n\", countSubRectangles(n, s, matrix));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "A sub-rectangle is defined by its top-left (r1, c1) and bottom-right (r2, c2) corners.",
+                "Use four nested loops to select the corners and two more to calculate the sum (or optimize with prefix sums)."
+            ]
+        }
+    ]
+}

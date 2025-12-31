@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Integer to English Words",
+            "description": "Convert a non-negative integer num to its English words representation.",
+            "examples": "Sample Input:\n123\n\nSample Output:\nOne Hundred Twenty Three\n\nSample Input:\n12345\n\nSample Output:\nTwelve Thousand Three Hundred Forty Five",
+            "constraints": "0 <= num <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "123",
+                    "expectedOutput": "One Hundred Twenty Three"
+                },
+                {
+                    "input": "12345",
+                    "expectedOutput": "Twelve Thousand Three Hundred Forty Five"
+                },
+                {
+                    "input": "1234567",
+                    "expectedOutput": "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "Zero"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "One Hundred"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, num):\n        if num == \"0\": return \"Zero\"\n        num = int(num)\n        \n        lessThan20 = [\"\", \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\", \"Ten\", \"Eleven\", \"Twelve\", \"Thirteen\", \"Fourteen\", \"Fifteen\", \"Sixteen\", \"Seventeen\", \"Eighteen\", \"Nineteen\"]\n        tens = [\"\", \"Ten\", \"Twenty\", \"Thirty\", \"Forty\", \"Fifty\", \"Sixty\", \"Seventy\", \"Eighty\", \"Ninety\"]\n        thousands = [\"\", \"Thousand\", \"Million\", \"Billion\"]\n        \n        def helper(n):\n            if n == 0: return \"\"\n            elif n < 20: return lessThan20[n] + \" \"\n            elif n < 100: return tens[n // 10] + \" \" + helper(n % 10)\n            else: return lessThan20[n // 100] + \" Hundred \" + helper(n % 100)\n            \n        res = \"\"\n        for i in range(len(thousands)):\n            if num % 1000 != 0:\n                res = helper(num % 1000) + thousands[i] + \" \" + res\n            num //= 1000\n        return res.strip()\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    print(Solution().solve(line))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    private final String[] lessThan20 = {\"\", \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\", \"Ten\", \"Eleven\", \"Twelve\", \"Thirteen\", \"Fourteen\", \"Fifteen\", \"Sixteen\", \"Seventeen\", \"Eighteen\", \"Nineteen\"};\n    private final String[] tens = {\"\", \"Ten\", \"Twenty\", \"Thirty\", \"Forty\", \"Fifty\", \"Sixty\", \"Seventy\", \"Eighty\", \"Ninety\"};\n    private final String[] thousands = {\"\", \"Thousand\", \"Million\", \"Billion\"};\n\n    public void solve(String input) {\n        long num = Long.parseLong(input);\n        if (num == 0) { System.out.println(\"Zero\"); return; }\n        int i = 0;\n        String words = \"\";\n        while (num > 0) {\n            if (num % 1000 != 0)\n                words = helper((int)(num % 1000)) + thousands[i] + \" \" + words;\n            num /= 1000;\n            i++;\n        }\n        System.out.println(words.trim());\n    }\n\n    private String helper(int num) {\n        if (num == 0) return \"\";\n        else if (num < 20) return lessThan20[num] + \" \";\n        else if (num < 100) return tens[num / 10] + \" \" + helper(num % 10);\n        else return lessThan20[num / 100] + \" Hundred \" + helper(num % 100);\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    constructor() {\n        this.lessThan20 = [\"\", \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\", \"Ten\", \"Eleven\", \"Twelve\", \"Thirteen\", \"Fourteen\", \"Fifteen\", \"Sixteen\", \"Seventeen\", \"Eighteen\", \"Nineteen\"];\n        this.tens = [\"\", \"Ten\", \"Twenty\", \"Thirty\", \"Forty\", \"Fifty\", \"Sixty\", \"Seventy\", \"Eighty\", \"Ninety\"];\n        this.thousands = [\"\", \"Thousand\", \"Million\", \"Billion\"];\n    }\n    helper(num) {\n        if (num === 0) return \"\";\n        else if (num < 20) return this.lessThan20[num] + \" \";\n        else if (num < 100) return this.tens[Math.floor(num / 10)] + \" \" + this.helper(num % 10);\n        else return this.lessThan20[Math.floor(num / 100)] + \" Hundred \" + this.helper(num % 100);\n    }\n    solve(input) {\n        let num = parseInt(input);\n        if (num === 0) { console.log(\"Zero\"); return; }\n        let i = 0;\n        let words = \"\";\n        while (num > 0) {\n            if (num % 1000 !== 0)\n                words = this.helper(num % 1000) + this.thousands[i] + \" \" + words;\n            num = Math.floor(num / 1000);\n            i++;\n        }\n        console.log(words.trim());\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Integer to English Words\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Integer to English Words\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        }
+    ]
+}

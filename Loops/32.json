@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Layered Number Square",
+            "description": "Print N layers of squares. Layer L (from 1 to N) should be an L x L square filled with the number L.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint N layers. Each layer L is an L x L grid. Separate layers with a blank line.",
+            "examples": "Sample Input:\n3\n\nSample Output:\n1\n\n2 2\n2 2\n\n3 3 3\n3 3 3\n3 3 3\n\nExplanation:\nLayer 1 is 1x1, Layer 2 is 2x2, Layer 3 is 3x3.",
+            "constraints": "1 <= N <= 20",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "1\n\n2 2\n2 2\n\n3 3 3\n3 3 3\n3 3 3"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "1\n\n2 2\n2 2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "1\n\n2 2\n2 2\n\n3 3 3\n3 3 3\n3 3 3\n\n4 4 4 4\n4 4 4 4\n4 4 4 4\n4 4 4 4"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1\n\n2 2\n2 2\n\n3 3 3\n3 3 3\n3 3 3\n\n4 4 4 4\n4 4 4 4\n4 4 4 4\n4 4 4 4\n\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printLayers(self, n):\n        for L in range(1, n + 1):\n            for i in range(L):\n                row = [str(L)] * L\n                print(\" \".join(row))\n            if L < n:\n                print()\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    sol.printLayers(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printLayers(int n) {\n        for (int L = 1; L <= n; L++) {\n            for (int i = 0; i < L; i++) {\n                for (int j = 0; j < L; j++) {\n                    System.out.print(L + (j == L - 1 ? \"\" : \" \"));\n                }\n                System.out.println();\n            }\n            if (L < n) {\n                System.out.println();\n            }\n        }\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printLayers(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printLayers(n) {\n        for (let L = 1; L <= n; L++) {\n            for (let i = 0; i < L; i++) {\n                let row = Array(L).fill(L).join(\" \");\n                console.log(row);\n            }\n            if (L < n) {\n                console.log(\"\");\n            }\n        }\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    sol.printLayers(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printLayers(int n) {\n        for (int L = 1; L <= n; L++) {\n            for (int i = 0; i < L; i++) {\n                for (int j = 0; j < L; j++) {\n                    cout << L << (j == L - 1 ? \"\" : \" \");\n                }\n                cout << endl;\n            }\n            if (L < n) {\n                cout << endl;\n            }\n        }\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    sol.printLayers(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printLayers(int n) {\n    for (int L = 1; L <= n; L++) {\n        for (int i = 0; i < L; i++) {\n            for (int j = 0; j < L; j++) {\n                printf(\"%d%s\", L, (j == L - 1 ? \"\" : \" \"));\n            }\n            printf(\"\\n\");\n        }\n        if (L < n) {\n            printf(\"\\n\");\n        }\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printLayers(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops: outer for layer L, middle for rows (1 to L), inner for columns (1 to L).",
+                "Print a blank line between layers."
+            ]
+        }
+    ]
+}

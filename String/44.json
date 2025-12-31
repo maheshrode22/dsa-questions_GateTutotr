@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Wildcard Matching",
+            "description": "Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*' where:\n'?' Matches any single character.\n'*' Matches any sequence of characters (including the empty sequence).\nThe matching should cover the entire input string (not partial).",
+            "examples": "Sample Input:\naa *\n\nSample Output:\ntrue\n\nSample Input:\ncb ?a\n\nSample Output:\nfalse",
+            "constraints": "0 <= s.length, p.length <= 2000\ns contains only lowercase English letters.\np contains only lowercase English letters, '?' or '*'.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "aa *",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "aa a",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "cb ?a",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "adceb *a*b",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "acdcb a*c?b",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, input_str):\n        parts = input_str.split()\n        s = parts[0] if len(parts) > 0 else \"\"\n        p = parts[1] if len(parts) > 1 else \"\"\n        dp = [[False] * (len(p) + 1) for _ in range(len(s) + 1)]\n        dp[0][0] = True\n        for j in range(1, len(p) + 1):\n            if p[j-1] == '*': dp[0][j] = dp[0][j-1]\n        for i in range(1, len(s) + 1):\n            for j in range(1, len(p) + 1):\n                if p[j-1] == '*':\n                    dp[i][j] = dp[i-1][j] or dp[i][j-1]\n                elif p[j-1] == '?' or s[i-1] == p[j-1]:\n                    dp[i][j] = dp[i-1][j-1]\n        return \"true\" if dp[len(s)][len(p)] else \"false\"\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String input) {\n        String[] parts = input.split(\"\\\\s+\");\n        String s = parts.length > 0 ? parts[0] : \"\";\n        String p = parts.length > 1 ? parts[1] : \"\";\n        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];\n        dp[0][0] = true;\n        for (int j = 1; j <= p.length(); j++) {\n            if (p.charAt(j-1) == '*') dp[0][j] = dp[0][j-1];\n        }\n        for (int i = 1; i <= s.length(); i++) {\n            for (int j = 1; j <= p.length(); j++) {\n                if (p.charAt(j-1) == '*') {\n                    dp[i][j] = dp[i-1][j] || dp[i][j-1];\n                } else if (p.charAt(j-1) == '?' || s.charAt(i-1) == p.charAt(j-1)) {\n                    dp[i][j] = dp[i-1][j-1];\n                }\n            }\n        }\n        System.out.println(dp[s.length()][p.length()] ? \"true\" : \"false\");\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) new Solution().solve(sc.nextLine().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(input) {\n        const parts = input.split(/\\s+/);\n        const s = parts[0] || \"\";\n        const p = parts[1] || \"\";\n        const dp = Array.from({ length: s.length + 1 }, () => Array(p.length + 1).fill(false));\n        dp[0][0] = true;\n        for (let j = 1; j <= p.length; j++) {\n            if (p[j-1] === '*') dp[0][j] = dp[0][j-1];\n        }\n        for (let i = 1; i <= s.length; i++) {\n            for (let j = 1; j <= p.length; j++) {\n                if (p[j-1] === '*') {\n                    dp[i][j] = dp[i-1][j] || dp[i][j-1];\n                } else if (p[j-1] === '?' || s[i-1] === p[j-1]) {\n                    dp[i][j] = dp[i-1][j-1];\n                }\n            }\n        }\n        console.log(dp[s.length][p.length] ? \"true\" : \"false\");\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Wildcard Matching\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Wildcard Matching\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Text Justification",
+            "description": "Given an array of strings words and a width maxWidth, format the text such that each line has exactly maxWidth characters and is fully (left and right) justified.\nYou should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces ' ' when necessary so that each line has exactly maxWidth characters.\nExtra spaces between words should be distributed as evenly as possible. If the number of spaces on a line does not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right.\nFor the last line of text, it should be left-justified, and no extra space is inserted between words.",
+            "examples": "Sample Input:\n7 16\nThis is an example of text justification.\n\nSample Output:\nThis    is    an\nexample  of text\njustification.  ",
+            "constraints": "1 <= words.length <= 300\n1 <= words[i].length <= 20\nmaxWidth <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "7 16\nThis is an example of text justification.",
+                    "expectedOutput": "This    is    an\nexample  of text\njustification.  "
+                },
+                {
+                    "input": "6 16\nWhat must be acknowledgment shall be",
+                    "expectedOutput": "What   must   be\nacknowledgment  \nshall be        "
+                },
+                {
+                    "input": "18 20\nScience is what we understand well enough to explain to a computer, art is everything else we do",
+                    "expectedOutput": "Science  is  what we\nunderstand      well\nenough to explain to\na  computer,  art is\neverything  else  we\ndo                  "
+                },
+                {
+                    "input": "1 10\nHello",
+                    "expectedOutput": "Hello     "
+                },
+                {
+                    "input": "2 10\nHi there",
+                    "expectedOutput": "Hi there  "
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, input_str):\n        lines = input_str.split('\\n')\n        if not lines: return \"\"\n        first_line = lines[0].split()\n        n = int(first_line[0])\n        maxWidth = int(first_line[1])\n        words = lines[1].split()\n        \n        res, cur, num_of_letters = [], [], 0\n        for w in words:\n            if num_of_letters + len(w) + len(cur) > maxWidth:\n                for i in range(maxWidth - num_of_letters):\n                    cur[i % (len(cur) - 1 or 1)] += ' '\n                res.append(\"\".join(cur))\n                cur, num_of_letters = [], 0\n            cur += [w]\n            num_of_letters += len(w)\n        res.append(\" \".join(cur).ljust(maxWidth))\n        return \"\\n\".join(res)\n\nif __name__ == '__main__':\n    import sys\n    print(Solution().solve(sys.stdin.read().strip()))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Solution {\n    public void solve(String input) {\n        String[] lines = input.split(\"\\n\");\n        if (lines.length < 2) return;\n        String[] firstLine = lines[0].split(\" \");\n        int maxWidth = Integer.parseInt(firstLine[1]);\n        String[] words = lines[1].split(\" \");\n        \n        List<String> res = new ArrayList<>();\n        int index = 0;\n        while (index < words.length) {\n            int count = words[index].length();\n            int last = index + 1;\n            while (last < words.length) {\n                if (words[last].length() + count + 1 > maxWidth) break;\n                count += words[last].length() + 1;\n                last++;\n            }\n            StringBuilder sb = new StringBuilder();\n            int diff = last - index - 1;\n            if (last == words.length || diff == 0) {\n                for (int i = index; i < last; i++) {\n                    sb.append(words[i]);\n                    if (i < last - 1) sb.append(\" \");\n                }\n                for (int i = sb.length(); i < maxWidth; i++) sb.append(\" \");\n            } else {\n                int spaces = (maxWidth - count) / diff;\n                int r = (maxWidth - count) % diff;\n                for (int i = index; i < last; i++) {\n                    sb.append(words[i]);\n                    if (i < last - 1) {\n                        for (int j = 0; j <= (spaces + (i - index < r ? 1 : 0)); j++) sb.append(\" \");\n                    }\n                }\n            }\n            res.add(sb.toString());\n            index = last;\n        }\n        for (int i = 0; i < res.size(); i++) {\n            System.out.print(res.get(i) + (i == res.size() - 1 ? \"\" : \"\\n\"));\n        }\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        StringBuilder sb = new StringBuilder();\n        while(sc.hasNextLine()) sb.append(sc.nextLine()).append(\"\\n\");\n        new Solution().solve(sb.toString().trim());\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(input) {\n        const lines = input.split('\\n');\n        const [n, maxWidth] = lines[0].split(' ').map(Number);\n        const words = lines[1].split(' ');\n        \n        let res = [], cur = [], num_of_letters = 0;\n        for (let w of words) {\n            if (num_of_letters + w.length + cur.length > maxWidth) {\n                for (let i = 0; i < maxWidth - num_of_letters; i++) {\n                    cur[i % (cur.length - 1 || 1)] += ' ';\n                }\n                res.push(cur.join(''));\n                cur = []; num_of_letters = 0;\n            }\n            cur.push(w);\n            num_of_letters += w.length;\n        }\n        res.push(cur.join(' ').padEnd(maxWidth));\n        console.log(res.join('\\n'));\n    }\n}\nconst fs = require('fs');\nnew Solution().solve(fs.readFileSync(0, 'utf-8').trim());"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(string input) {\n        // TODO: Implement Text Justification\n    }\n};\n\nint main() {\n    string line, input;\n    while(getline(cin, line)) input += line + \"\\n\";\n    Solution().solve(input);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid solve(char* input) {\n    // TODO: Implement Text Justification\n}\n\nint main() {\n    char input[10000];\n    // Read input logic\n    solve(input);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Hint 1",
+                "Hint 2"
+            ]
+        }
+    ]
+}

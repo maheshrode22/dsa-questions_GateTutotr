@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Sum of All Sub-matrix Sums",
+            "description": "Given an N x N matrix, calculate the sum of the sums of all possible sub-matrices.\n\nInput Format:\nFirst line contains an integer N.\nNext N lines contain N integers each representing the matrix.\n\nOutput Format:\nA single integer representing the total sum.",
+            "examples": "Sample Input:\n2\n1 1\n1 1\n\nSample Output:\n16\n\nExplanation:\nSub-matrices:\n1x1: (1), (1), (1), (1) -> Sum = 4\n1x2: (1,1), (1,1) -> Sum = 2+2 = 4\n2x1: (1/1), (1/1) -> Sum = 2+2 = 4\n2x2: (1,1/1,1) -> Sum = 4\nTotal = 4 + 4 + 4 + 4 = 16.",
+            "constraints": "1 <= N <= 15\n1 <= Matrix[i][j] <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2\n1 1\n1 1",
+                    "expectedOutput": "16"
+                },
+                {
+                    "input": "1\n5",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "3\n1 1 1\n1 1 1\n1 1 1",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "2\n1 2\n3 4",
+                    "expectedOutput": "40"
+                },
+                {
+                    "input": "3\n1 2 3\n4 5 6\n7 8 9",
+                    "expectedOutput": "500"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def sumOfSubMatrixSums(self, n, matrix):\n        total_sum = 0\n        for r1 in range(n):\n            for c1 in range(n):\n                for r2 in range(r1, n):\n                    for c2 in range(c1, n):\n                        for i in range(r1, r2 + 1):\n                            for j in range(c1, c2 + 1):\n                                total_sum += matrix[i][j]\n        return total_sum\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: exit()\n    n = int(input_data[0])\n    matrix = []\n    idx = 1\n    for i in range(n):\n        matrix.append([int(x) for x in input_data[idx:idx+n]])\n        idx += n\n    sol = Solution()\n    print(sol.sumOfSubMatrixSums(n, matrix))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long sumOfSubMatrixSums(int n, int[][] matrix) {\n        long totalSum = 0;\n        for (int r1 = 0; r1 < n; r1++) {\n            for (int c1 = 0; c1 < n; c1++) {\n                for (int r2 = r1; r2 < n; r2++) {\n                    for (int c2 = c1; c2 < n; c2++) {\n                        for (int i = r1; i <= r2; i++) {\n                            for (int j = c1; j <= c2; j++) {\n                                totalSum += matrix[i][j];\n                            }\n                        }\n                    }\n                }\n            }\n        }\n        return totalSum;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int[][] matrix = new int[n][n];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                matrix[i][j] = sc.nextInt();\n            }\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.sumOfSubMatrixSums(n, matrix));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    sumOfSubMatrixSums(n, matrix) {\n        let totalSum = 0;\n        for (let r1 = 0; r1 < n; r1++) {\n            for (let c1 = 0; c1 < n; c1++) {\n                for (let r2 = r1; r2 < n; r2++) {\n                    for (let c2 = c1; c2 < n; c2++) {\n                        for (let i = r1; i <= r2; i++) {\n                            for (let j = c1; j <= c2; j++) {\n                                totalSum += matrix[i][j];\n                            }\n                        }\n                    }\n                }\n            }\n        }\n        return totalSum;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 1) return;\n    const n = parts[0];\n    const matrix = [];\n    let idx = 1;\n    for (let i = 0; i < n; i++) {\n        matrix.push(parts.slice(idx, idx + n));\n        idx += n;\n    }\n    const sol = new Solution();\n    console.log(sol.sumOfSubMatrixSums(n, matrix));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long sumOfSubMatrixSums(int n, vector<vector<int>>& matrix) {\n        long long totalSum = 0;\n        for (int r1 = 0; r1 < n; r1++) {\n            for (int c1 = 0; c1 < n; c1++) {\n                for (int r2 = r1; r2 < n; r2++) {\n                    for (int c2 = c1; c2 < n; c2++) {\n                        for (int i = r1; i <= r2; i++) {\n                            for (int j = c1; j <= c2; j++) {\n                                totalSum += matrix[i][j];\n                            }\n                        }\n                    }\n                }\n            }\n        }\n        return totalSum;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    vector<vector<int>> matrix(n, vector<int>(n));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            cin >> matrix[i][j];\n        }\n    }\n    Solution sol;\n    cout << sol.sumOfSubMatrixSums(n, matrix) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long sumOfSubMatrixSums(int n, int matrix[15][15]) {\n    long long totalSum = 0;\n    for (int r1 = 0; r1 < n; r1++) {\n        for (int c1 = 0; c1 < n; c1++) {\n            for (int r2 = r1; r2 < n; r2++) {\n                for (int c2 = c1; c2 < n; c2++) {\n                    for (int i = r1; i <= r2; i++) {\n                        for (int j = c1; j <= c2; j++) {\n                            totalSum += matrix[i][j];\n                        }\n                    }\n                }\n            }\n        }\n    }\n    return totalSum;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    int matrix[15][15];\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            scanf(\"%d\", &matrix[i][j]);\n        }\n    }\n    printf(\"%lld\\n\", sumOfSubMatrixSums(n, matrix));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use six nested loops to iterate through all sub-matrices and their elements.",
+                "Alternatively, consider how many sub-matrices each element matrix[i][j] belongs to."
+            ]
+        }
+    ]
+}

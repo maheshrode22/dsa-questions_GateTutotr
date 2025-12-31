@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Triplets with Given Product",
+            "description": "Given an integer N and a product P, count the number of triplets (i, j, k) such that 1 <= i, j, k <= N and i * j * k = P.\n\nInput Format:\nTwo integers N and P separated by a space.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n5 12\n\nSample Output:\n9\n\nExplanation:\nThe triplets are (1, 3, 4), (1, 4, 3), (3, 1, 4), (3, 4, 1), (4, 1, 3), (4, 3, 1), (2, 2, 3), (2, 3, 2), (3, 2, 2).",
+            "constraints": "1 <= N <= 100\n1 <= P <= 10^6",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5 12",
+                    "expectedOutput": "9"
+                },
+                {
+                    "input": "10 100",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "2 8",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5 125",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "10 1",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countProductTriplets(self, n, p):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(1, n + 1):\n                for k in range(1, n + 1):\n                    if i * j * k == p:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    parts = sys.stdin.read().split()\n    if not parts: exit()\n    n, p = map(int, parts)\n    sol = Solution()\n    print(sol.countProductTriplets(n, p))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countProductTriplets(int n, int p) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if (i * j * k == p) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int p = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countProductTriplets(n, p));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countProductTriplets(n, p) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = 1; j <= n; j++) {\n                for (let k = 1; k <= n; k++) {\n                    if (i * j * k === p) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 2) return;\n    const [n, p] = parts;\n    const sol = new Solution();\n    console.log(sol.countProductTriplets(n, p));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countProductTriplets(int n, int p) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if ((long long)i * j * k == p) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n, p;\n    if (!(cin >> n >> p)) return 0;\n    Solution sol;\n    cout << sol.countProductTriplets(n, p) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countProductTriplets(int n, int p) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= n; j++) {\n            for (int k = 1; k <= n; k++) {\n                if ((long long)i * j * k == p) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n, p;\n    if (scanf(\"%d %d\", &n, &p) != 2) return 0;\n    printf(\"%d\\n\", countProductTriplets(n, p));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops from 1 to N.",
+                "Check if i * j * k == P."
+            ]
+        }
+    ]
+}

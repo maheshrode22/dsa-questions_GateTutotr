@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Check If Number Is Divisible By Another",
+      "description": "You are given two positive integers a and b. Your task is to check if a is divisible by b.\n\nInput Format:\nTwo space-separated integers a and b.\n\nOutput Format:\nPrint \"YES\" if a is divisible by b (a % b == 0), otherwise print \"NO\".",
+      "examples": "Sample Input\n10 2\n\nSample Output\nYES\n\nSample Input\n7 3\n\nSample Output\nNO",
+      "constraints": "1 <= a, b <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 1,
+      "testCases": [
+        { "input": "10 2", "expectedOutput": "YES" },
+        { "input": "7 3", "expectedOutput": "NO" },
+        { "input": "100 25", "expectedOutput": "YES" },
+        { "input": "123456789 1", "expectedOutput": "YES" },
+        { "input": "999999999 333333333", "expectedOutput": "YES" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def isDivisible(self, a, b):\n        # TODO: Return True if a is divisible by b, else False\n        pass\n\nif __name__ == '__main__':\n    try:\n        a, b = map(int, input().split())\n        sol = Solution()\n        print(\"YES\" if sol.isDivisible(a, b) else \"NO\")\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public boolean isDivisible(long a, long b) {\n        // TODO: Return true if a is divisible by b, else false\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long a = sc.nextLong();\n            long b = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.isDivisible(a, b) ? \"YES\" : \"NO\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    isDivisible(a, b) {\n        // TODO: Return true if a is divisible by b, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(BigInt);\n    const a = parts[0], b = parts[1];\n    const sol = new Solution();\n    console.log(sol.isDivisible(a, b) ? \"YES\" : \"NO\");\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isDivisible(long long a, long long b) {\n        // TODO: Return true if a is divisible by b, else false\n        return false;\n    }\n};\n\nint main() {\n    long long a, b;\n    if (cin >> a >> b) {\n        Solution sol;\n        cout << (sol.isDivisible(a, b) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool isDivisible(long long a, long long b) {\n    // TODO: Return true if a is divisible by b, else false\n    return false;\n}\n\nint main() {\n    long long a, b;\n    if (scanf(\"%lld %lld\", &a, &b) == 2) {\n        printf(\"%s\", isDivisible(a, b) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Check if a % b == 0. Be careful with division by zero (though b >= 1 in constraints)."
+      ]
+    }
+  ]
+}

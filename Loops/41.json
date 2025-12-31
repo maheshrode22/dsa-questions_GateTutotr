@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Perfect Square Triplet Sum",
+            "description": "Given an integer N, count the number of triplets (i, j, k) such that 1 <= i <= j <= k <= N and (i^2 + j^2 + k^2) is a perfect square.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n10\n\nSample Output:\n4\n\nExplanation:\nThe triplets are:\n(1, 2, 2) -> 1+4+4 = 9 (3^2)\n(2, 3, 6) -> 4+9+36 = 49 (7^2)\n(2, 6, 9) -> 4+36+81 = 121 (11^2)\n(6, 6, 7) -> 36+36+49 = 121 (11^2)",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "38"
+                },
+                {
+                    "input": "50",
+                    "expectedOutput": "231"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "890"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import math\nclass Solution:\n    def countPerfectSquareTriplets(self, n):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(i, n + 1):\n                for k in range(j, n + 1):\n                    s = i*i + j*j + k*k\n                    root = int(math.sqrt(s))\n                    if root * root == s:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countPerfectSquareTriplets(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countPerfectSquareTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i; j <= n; j++) {\n                for (int k = j; k <= n; k++) {\n                    long s = (long)i*i + (long)j*j + (long)k*k;\n                    long root = (long)Math.sqrt(s);\n                    if (root * root == s) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countPerfectSquareTriplets(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countPerfectSquareTriplets(n) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = i; j <= n; j++) {\n                for (let k = j; k <= n; k++) {\n                    let s = i*i + j*j + k*k;\n                    let root = Math.floor(Math.sqrt(s));\n                    if (root * root === s) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countPerfectSquareTriplets(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countPerfectSquareTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i; j <= n; j++) {\n                for (int k = j; k <= n; k++) {\n                    long long s = (long long)i*i + (long long)j*j + (long long)k*k;\n                    long long root = sqrt(s);\n                    if (root * root == s) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countPerfectSquareTriplets(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <math.h>\n\nint countPerfectSquareTriplets(int n) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = i; j <= n; j++) {\n            for (int k = j; k <= n; k++) {\n                long long s = (long long)i*i + (long long)j*j + (long long)k*k;\n                long long root = sqrt(s);\n                if (root * root == s) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countPerfectSquareTriplets(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k with i <= j <= k.",
+                "Check if the sum of squares is a perfect square using sqrt function."
+            ]
+        }
+    ]
+}

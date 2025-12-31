@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Wilson's Theorem Check",
+      "description": "Wilson's Theorem states that a natural number p > 1 is a prime number if and only if (p-1)! ≡ -1 (mod p).\n\nYou are given a positive integer N. Your task is to check whether N is prime using Wilson's Theorem.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint \"YES\" if N is prime, otherwise print \"NO\".",
+      "examples": "Sample Input\n5\n\nSample Output\nYES\n\nExplanation:\n(5-1)! = 24, 24 % 5 = 4 ≡ -1 mod 5, so 5 is prime.",
+      "constraints": "2 <= N <= 10^5",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 3,
+      "testCases": [
+        { "input": "5", "expectedOutput": "YES" },
+        { "input": "7", "expectedOutput": "YES" },
+        { "input": "4", "expectedOutput": "NO" },
+        { "input": "11", "expectedOutput": "YES" },
+        { "input": "9", "expectedOutput": "NO" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def isPrimeWilson(self, n):\n        # TODO: Check if n is prime using Wilson's Theorem\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        sol = Solution()\n        print(\"YES\" if sol.isPrimeWilson(n) else \"NO\")\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public boolean isPrimeWilson(long n) {\n        // TODO: Check if n is prime using Wilson's Theorem\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.isPrimeWilson(n) ? \"YES\" : \"NO\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    isPrimeWilson(n) {\n        // TODO: Check if n is prime using Wilson's Theorem\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.isPrimeWilson(n) ? \"YES\" : \"NO\");\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPrimeWilson(long long n) {\n        // TODO: Check if n is prime using Wilson's Theorem\n        return false;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << (sol.isPrimeWilson(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool isPrimeWilson(long long n) {\n    // TODO: Check if n is prime using Wilson's Theorem\n    return false;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%s\", isPrimeWilson(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Compute (n-1)! % n. If it's n-1, then n is prime. But only use for small n due to factorial size."
+      ]
+    }
+  ]
+}

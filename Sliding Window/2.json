@@ -4,7 +4,7 @@
       "id": null,
       "title": "Count Even Numbers in Each Window",
       "description": "Given an array of integers and a window size k, print the number of even numbers in every contiguous subarray (window) of size k. If k is greater than n, print nothing.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint the count of even numbers for each window of size k on a single line, separated by spaces.",
-      "examples": "Sample Input\n5 3\n1 2 4 5 6\n\nSample Output\n2 1 2\n\nExplanation:\nWindows: [1,2,4] -> 2 evens, [2,4,5] -> 2 evens, [4,5,6] -> 2 evens. (Your implementation should match the definition of even numbers in the window.)",
+      "examples": "Sample Input\n5 3\n1 2 4 5 6\n\nSample Output\n2 2 2\n\nExplanation:\nWindows: [1,2,4] -> 2 evens, [2,4,5] -> 2 evens, [4,5,6] -> 2 evens. (Your implementation should match the definition of even numbers in the window.)",
       "constraints": "1 <= n <= 100000\n1 <= k <= 100000\n-10^9 <= a[i] <= 10^9",
       "hints": 2,
       "timeLimit": 1,

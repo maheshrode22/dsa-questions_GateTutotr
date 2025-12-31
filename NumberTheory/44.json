@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Reverse a Number",
+      "description": "You are given a non-negative integer N. Your task is to reverse the digits of N.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint a single integer, the reversed number.",
+      "examples": "Sample Input\n123\n\nSample Output\n321\n\nExplanation:\nReversing 123 gives 321.",
+      "constraints": "0 <= N <= 10^18",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "123", "expectedOutput": "321" },
+        { "input": "120", "expectedOutput": "21" },
+        { "input": "5", "expectedOutput": "5" },
+        { "input": "1000000000000000000", "expectedOutput": "1000000000000000000" },
+        { "input": "0", "expectedOutput": "0" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def reverseNumber(self, n):\n        # TODO: Return reversed number\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        sol = Solution()\n        print(sol.reverseNumber(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long reverseNumber(long n) {\n        // TODO: Return reversed number\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.reverseNumber(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    reverseNumber(n) {\n        // TODO: Return reversed number\n        return 0n;\n    }\n}\n\nfunction solve(input) {\n    const n = BigInt(input.trim());\n    const sol = new Solution();\n    console.log(String(sol.reverseNumber(n)));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long reverseNumber(long long n) {\n        // TODO: Return reversed number\n        return 0;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.reverseNumber(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long reverseNumber(long long n) {\n    // TODO: Return reversed number\n    return 0;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%lld\", reverseNumber(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Extract digits from right using modulo 10, and build the reversed number by multiplying by 10 and adding the digit."
+      ]
+    }
+  ]
+}

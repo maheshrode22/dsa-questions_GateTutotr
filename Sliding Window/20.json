@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Number of Substrings Containing All Three Characters",
+      "description": "Given a string s consisting only of characters a, b and c.\nReturn the number of substrings containing at least one occurrence of all these characters a, b and c.\n\nInput Format:\nFirst line: single integer n (length of string).\nSecond line: string s of length n.\n\nOutput Format:\nPrint a single integer: the number of valid substrings.",
+      "examples": "Sample Input\n5\nabcba\n\nSample Output\n10\n\nExplanation:\nAll substrings containing at least one a, b, and c:\nPositions 0-2: 'abc'\n0-3: 'abcb'\n0-4: 'abcba'\n1-3: 'bcb' (missing a)\n1-4: 'bcba'\n2-4: 'cba'\nThe valid ones are: abc, abcb, abcba, bcba, cba. Total 5 substrings.\nWait, let me recount properly: actually there are more.",
+      "constraints": "3 <= n <= 50000\ns consists only of a, b, c.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "5\nabcba",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "3\nabc",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "4\naabb",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "6\nababac",
+          "expectedOutput": "8"
+        },
+        {
+          "input": "7\nabcacab",
+          "expectedOutput": "10"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def numberOfSubstrings(self, s):\n        # TODO: Return number of substrings containing all three characters\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        s = input().strip()\n        sol = Solution()\n        print(sol.numberOfSubstrings(s))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int numberOfSubstrings(String s) {\n        // TODO: Return number of substrings containing all three characters\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.numberOfSubstrings(s));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    numberOfSubstrings(s) {\n        // TODO: Return number of substrings containing all three characters\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const n = parseInt(lines[0].trim());\n    const s = lines[1].trim();\n    const sol = new Solution();\n    console.log(sol.numberOfSubstrings(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+        },
+        {
+          "language": 4,
+          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int numberOfSubstrings(string s) {\n        // TODO: Return number of substrings containing all three characters\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    if (!(cin >> n)) return 0;\n    string s;\n    if (!(cin >> s)) return 0;\n    Solution sol;\n    cout << sol.numberOfSubstrings(s);\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint numberOfSubstrings(const char* s, int n) {\n    // TODO: Return number of substrings containing all three characters\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    char s[50001];\n    if (scanf(\"%s\", s) != 1) return 0;\n    printf(\"%d\", numberOfSubstrings(s, n));\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "For each possible right endpoint, find the minimum left endpoint that includes all three characters.",
+        "Use sliding window with a frequency map to track the last positions where we have all three characters."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Sum of First N Natural Numbers",
+      "description": "You are given a positive integer N. Your task is to compute the sum of the first N natural numbers (1 + 2 + ... + N).\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint a single integer, the sum of the first N natural numbers.",
+      "examples": "Sample Input\n5\n\nSample Output\n15\n\nExplanation:\n1 + 2 + 3 + 4 + 5 = 15.",
+      "constraints": "1 <= N <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 1,
+      "testCases": [
+        { "input": "1", "expectedOutput": "1" },
+        { "input": "10", "expectedOutput": "55" },
+        { "input": "100", "expectedOutput": "5050" },
+        { "input": "1000000000", "expectedOutput": "500000000500000000" },
+        { "input": "5", "expectedOutput": "15" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def sumOfN(self, n):\n        # TODO: Return sum of first n natural numbers\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        sol = Solution()\n        print(sol.sumOfN(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long sumOfN(long n) {\n        // TODO: Return sum of first n natural numbers\n        return 0L;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.sumOfN(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    sumOfN(n) {\n        // TODO: Return sum of first n natural numbers\n        return 0n;\n    }\n}\n\nfunction solve(input) {\n    const n = BigInt(input.trim());\n    const sol = new Solution();\n    console.log(String(sol.sumOfN(n)));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long sumOfN(long long n) {\n        // TODO: Return sum of first n natural numbers\n        return 0;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.sumOfN(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long sumOfN(long long n) {\n    // TODO: Return sum of first n natural numbers\n    return 0;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%lld\", sumOfN(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Use the formula: sum = n * (n + 1) / 2. Be careful with integer overflow in languages that don't support 64-bit integers."
+      ]
+    }
+  ]
+}

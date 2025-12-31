@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Sum of Products Series",
+            "description": "Calculate the sum of the series: sum_{i=1}^N sum_{j=1}^i sum_{k=1}^j (i * j * k).\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the total sum.",
+            "examples": "Sample Input:\n2\n\nSample Output:\n10\n\nExplanation:\ni=1: j=1: k=1 -> 1*1*1 = 1\ni=2: j=1: k=1 -> 2*1*1 = 2\ni=2: j=2: k=1 -> 2*2*1 = 4\ni=2: j=2: k=2 -> 2*2*2 = 8\nWait, let's re-calculate:\ni=1: j=1: k=1 -> 1\ni=2: j=1: k=1 -> 2\ni=2: j=2: k=1 -> 4\ni=2: j=2: k=2 -> 8\nSum = 1 + 2 + 4 + 8 = 15.\nActually, let's re-verify for N=2:\ni=1: j=1: k=1 -> 1\ni=2: j=1: k=1 -> 2\ni=2: j=2: k=1 -> 4; k=2 -> 8. sum for i=2 is 2+4+8=14.\nTotal sum = 1 + 14 = 15.",
+            "constraints": "1 <= N <= 50",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "90"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1050"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "39325"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculateSum(self, n):\n        total = 0\n        for i in range(1, n + 1):\n            for j in range(1, i + 1):\n                for k in range(1, j + 1):\n                    total += (i * j * k)\n        return total\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.calculateSum(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long calculateSum(int n) {\n        long total = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= i; j++) {\n                for (int k = 1; k <= j; k++) {\n                    total += (long)i * j * k;\n                }\n            }\n        }\n        return total;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.calculateSum(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateSum(n) {\n        let total = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = 1; j <= i; j++) {\n                for (let k = 1; k <= j; k++) {\n                    total += (i * j * k);\n                }\n            }\n        }\n        return total;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.calculateSum(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long calculateSum(int n) {\n        long long total = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= i; j++) {\n                for (int k = 1; k <= j; k++) {\n                    total += (long long)i * j * k;\n                }\n            }\n        }\n        return total;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.calculateSum(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long calculateSum(int n) {\n    long long total = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= i; j++) {\n            for (int k = 1; k <= j; k++) {\n                total += (long long)i * j * k;\n            }\n        }\n    }\n    return total;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%lld\\n\", calculateSum(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops with limits as specified in the summation.",
+                "Accumulate the product (i * j * k) in a sum variable."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1204 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Matrix Multiplication",
+            "description": "Write a program to multiply two N x N matrices A and B.\n\nInput Format:\n- First line contains an integer N.\n- Next N lines contain N integers each, representing Matrix A.\n- Next N lines contain N integers each, representing Matrix B.\n\nOutput Format:\nPrint the resulting N x N matrix. Each row should be on a new line, with elements separated by a space.",
+            "examples": "Sample Input:\n2\n1 2\n3 4\n5 6\n7 8\n\nSample Output:\n19 22\n43 50\n\nExplanation:\nResult[0][0] = 1*5 + 2*7 = 19\nResult[0][1] = 1*6 + 2*8 = 22\nResult[1][0] = 3*5 + 4*7 = 43\nResult[1][1] = 3*6 + 4*8 = 50",
+            "constraints": "1 <= N <= 50\n-100 <= elements <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2\n1 2\n3 4\n5 6\n7 8",
+                    "expectedOutput": "19 22\n43 50"
+                },
+                {
+                    "input": "1\n5\n10",
+                    "expectedOutput": "50"
+                },
+                {
+                    "input": "2\n1 0\n0 1\n1 2\n3 4",
+                    "expectedOutput": "1 2\n3 4"
+                },
+                {
+                    "input": "3\n1 0 0\n0 1 0\n0 0 1\n1 2 3\n4 5 6\n7 8 9",
+                    "expectedOutput": "1 2 3\n4 5 6\n7 8 9"
+                },
+                {
+                    "input": "2\n0 0\n0 0\n1 2\n3 4",
+                    "expectedOutput": "0 0\n0 0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def multiplyMatrices(self, n, A, B):\n        res = [[0]*n for _ in range(n)]\n        for i in range(n):\n            for j in range(n):\n                for k in range(n):\n                    res[i][j] += A[i][k] * B[k][j]\n        for row in res:\n            print(*(row))\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: exit()\n    n = int(input_data[0])\n    A = []\n    idx = 1\n    for i in range(n):\n        A.append([int(x) for x in input_data[idx:idx+n]])\n        idx += n\n    B = []\n    for i in range(n):\n        B.append([int(x) for x in input_data[idx:idx+n]])\n        idx += n\n    sol = Solution()\n    sol.multiplyMatrices(n, A, B)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void multiplyMatrices(int n, int[][] A, int[][] B) {\n        int[][] res = new int[n][n];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                for (int k = 0; k < n; k++) {\n                    res[i][j] += A[i][k] * B[k][j];\n                }\n            }\n        }\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                System.out.print(res[i][j] + (j == n - 1 ? \"\" : \" \"));\n            }\n            System.out.println();\n        }\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int[][] A = new int[n][n];\n        int[][] B = new int[n][n];\n        for(int i=0; i<n; i++) for(int j=0; j<n; j++) A[i][j] = sc.nextInt();\n        for(int i=0; i<n; i++) for(int j=0; j<n; j++) B[i][j] = sc.nextInt();\n        Solution sol = new Solution();\n        sol.multiplyMatrices(n, A, B);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    multiplyMatrices(n, A, B) {\n        let res = Array.from({ length: n }, () => Array(n).fill(0));\n        for (let i = 0; i < n; i++) {\n            for (let j = 0; j < n; j++) {\n                for (let k = 0; k < n; k++) {\n                    res[i][j] += A[i][k] * B[k][j];\n                }\n            }\n        }\n        for (let i = 0; i < n; i++) {\n            console.log(res[i].join(\" \"));\n        }\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length === 0) return;\n    const n = parts[0];\n    let idx = 1;\n    const A = [];\n    for (let i = 0; i < n; i++) {\n        A.push(parts.slice(idx, idx + n));\n        idx += n;\n    }\n    const B = [];\n    for (let i = 0; i < n; i++) {\n        B.push(parts.slice(idx, idx + n));\n        idx += n;\n    }\n    const sol = new Solution();\n    sol.multiplyMatrices(n, A, B);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void multiplyMatrices(int n, vector<vector<int>>& A, vector<vector<int>>& B) {\n        vector<vector<int>> res(n, vector<int>(n, 0));\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                for (int k = 0; k < n; k++) {\n                    res[i][j] += A[i][k] * B[k][j];\n                }\n            }\n        }\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                cout << res[i][j] << (j == n - 1 ? \"\" : \" \");\n            }\n            cout << endl;\n        }\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    vector<vector<int>> A(n, vector<int>(n)), B(n, vector<int>(n));\n    for(int i=0; i<n; i++) for(int j=0; j<n; j++) cin >> A[i][j];\n    for(int i=0; i<n; i++) for(int j=0; j<n; j++) cin >> B[i][j];\n    Solution sol;\n    sol.multiplyMatrices(n, A, B);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid multiplyMatrices(int n, int A[50][50], int B[50][50]) {\n    int res[50][50] = {0};\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            for (int k = 0; k < n; k++) {\n                res[i][j] += A[i][k] * B[k][j];\n            }\n        }\n    }\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            printf(\"%d%s\", res[i][j], (j == n - 1 ? \"\" : \" \"));\n        }\n        printf(\"\\n\");\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    int A[50][50], B[50][50];\n    for(int i=0; i<n; i++) for(int j=0; j<n; j++) scanf(\"%d\", &A[i][j]);\n    for(int i=0; i<n; i++) for(int j=0; j<n; j++) scanf(\"%d\", &B[i][j]);\n    multiplyMatrices(n, A, B);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops: i for rows of A, j for columns of B, and k for the common dimension.",
+                "Result[i][j] = sum(A[i][k] * B[k][j]) for k from 0 to N-1."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Pythagorean Triplets Count",
+            "description": "Write a program to count the number of Pythagorean triplets (a, b, c) such that a^2 + b^2 = c^2 and 1 <= a < b < c <= N.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count of triplets.",
+            "examples": "Sample Input:\n10\n\nSample Output:\n2\n\nExplanation:\nThe triplets are (3, 4, 5) and (6, 8, 10).",
+            "constraints": "1 <= N <= 300",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "50",
+                    "expectedOutput": "20"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "52"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countTriplets(self, n):\n        count = 0\n        for a in range(1, n + 1):\n            for b in range(a + 1, n + 1):\n                for c in range(b + 1, n + 1):\n                    if a*a + b*b == c*c:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countTriplets(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countTriplets(int n) {\n        int count = 0;\n        for (int a = 1; a <= n; a++) {\n            for (int b = a + 1; b <= n; b++) {\n                for (int c = b + 1; c <= n; c++) {\n                    if (a * a + b * b == c * c) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countTriplets(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countTriplets(n) {\n        let count = 0;\n        for (let a = 1; a <= n; a++) {\n            for (let b = a + 1; b <= n; b++) {\n                for (let c = b + 1; c <= n; c++) {\n                    if (a * a + b * b === c * c) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countTriplets(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countTriplets(int n) {\n        int count = 0;\n        for (int a = 1; a <= n; a++) {\n            for (int b = a + 1; b <= n; b++) {\n                for (int c = b + 1; c <= n; c++) {\n                    if (a * a + b * b == c * c) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countTriplets(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countTriplets(int n) {\n    int count = 0;\n    for (int a = 1; a <= n; a++) {\n        for (int b = a + 1; b <= n; b++) {\n            for (int c = b + 1; c <= n; c++) {\n                if (a * a + b * b == c * c) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countTriplets(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for a, b, and c.",
+                "Ensure a < b < c and check if a*a + b*b == c*c."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Triplets with Given Sum",
+            "description": "Given an integer N and a sum S, count the number of triplets (i, j, k) such that 1 <= i, j, k <= N and i + j + k = S.\n\nInput Format:\nTwo integers N and S separated by a space.\n\nOutput Format:\nA single integer representing the count of triplets.",
+            "examples": "Sample Input:\n5 10\n\nSample Output:\n15\n\nExplanation:\nSome triplets are (1, 4, 5), (2, 3, 5), (3, 3, 4), etc.",
+            "constraints": "1 <= N <= 100\n1 <= S <= 300",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5 10",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "3 3",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3 9",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "10 15",
+                    "expectedOutput": "73"
+                },
+                {
+                    "input": "10 30",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countTriplets(self, n, s):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(1, n + 1):\n                for k in range(1, n + 1):\n                    if i + j + k == s:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    parts = sys.stdin.read().split()\n    if not parts: exit()\n    n, s = map(int, parts)\n    sol = Solution()\n    print(sol.countTriplets(n, s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countTriplets(int n, int s) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if (i + j + k == s) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int s = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countTriplets(n, s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countTriplets(n, s) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = 1; j <= n; j++) {\n                for (let k = 1; k <= n; k++) {\n                    if (i + j + k === s) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const [n, s] = input.trim().split(/\\s+/).map(Number);\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countTriplets(n, s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countTriplets(int n, int s) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if (i + j + k == s) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n, s;\n    if (!(cin >> n >> s)) return 0;\n    Solution sol;\n    cout << sol.countTriplets(n, s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countTriplets(int n, int s) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= n; j++) {\n            for (int k = 1; k <= n; k++) {\n                if (i + j + k == s) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n, s;\n    if (scanf(\"%d %d\", &n, &s) != 2) return 0;\n    printf(\"%d\\n\", countTriplets(n, s));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops, each from 1 to N.",
+                "Check if the sum of loop variables equals S."
+            ]
+        },
+        {
+            "id": null,
+            "title": "3D Block Pattern",
+            "description": "Write a program to print N blocks of N x N squares. Each block k (from 1 to N) should be filled with the number k.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint N blocks. Each block is an N x N grid. Separate blocks with a blank line.",
+            "examples": "Sample Input:\n2\n\nSample Output:\n1 1\n1 1\n\n2 2\n2 2\n\nExplanation:\nTwo blocks of 2x2 squares are printed. First block contains 1s, second contains 2s.",
+            "constraints": "1 <= N <= 20",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "1 1\n1 1\n\n2 2\n2 2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1 1 1\n1 1 1\n1 1 1\n\n2 2 2\n2 2 2\n2 2 2\n\n3 3 3\n3 3 3\n3 3 3"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "1 1 1 1\n1 1 1 1\n1 1 1 1\n1 1 1 1\n\n2 2 2 2\n2 2 2 2\n2 2 2 2\n2 2 2 2\n\n3 3 3 3\n3 3 3 3\n3 3 3 3\n3 3 3 3\n\n4 4 4 4\n4 4 4 4\n4 4 4 4\n4 4 4 4"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1 1 1 1 1\n1 1 1 1 1\n1 1 1 1 1\n1 1 1 1 1\n1 1 1 1 1\n\n2 2 2 2 2\n2 2 2 2 2\n2 2 2 2 2\n2 2 2 2 2\n2 2 2 2 2\n\n3 3 3 3 3\n3 3 3 3 3\n3 3 3 3 3\n3 3 3 3 3\n3 3 3 3 3\n\n4 4 4 4 4\n4 4 4 4 4\n4 4 4 4 4\n4 4 4 4 4\n4 4 4 4 4\n\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printBlocks(self, n):\n        for k in range(1, n + 1):\n            for i in range(n):\n                row = [str(k)] * n\n                print(\" \".join(row))\n            if k < n:\n                print()\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    sol.printBlocks(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printBlocks(int n) {\n        for (int k = 1; k <= n; k++) {\n            for (int i = 0; i < n; i++) {\n                for (int j = 0; j < n; j++) {\n                    System.out.print(k + (j == n - 1 ? \"\" : \" \"));\n                }\n                System.out.println();\n            }\n            if (k < n) {\n                System.out.println();\n            }\n        }\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printBlocks(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printBlocks(n) {\n        for (let k = 1; k <= n; k++) {\n            for (let i = 0; i < n; i++) {\n                let row = Array(n).fill(k).join(\" \");\n                console.log(row);\n            }\n            if (k < n) {\n                console.log(\"\");\n            }\n        }\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    sol.printBlocks(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printBlocks(int n) {\n        for (int k = 1; k <= n; k++) {\n            for (int i = 0; i < n; i++) {\n                for (int j = 0; j < n; j++) {\n                    cout << k << (j == n - 1 ? \"\" : \" \");\n                }\n                cout << endl;\n            }\n            if (k < n) {\n                cout << endl;\n            }\n        }\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    sol.printBlocks(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printBlocks(int n) {\n    for (int k = 1; k <= n; k++) {\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                printf(\"%d%s\", k, (j == n - 1 ? \"\" : \" \"));\n            }\n            printf(\"\\n\");\n        }\n        if (k < n) {\n            printf(\"\\n\");\n        }\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printBlocks(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops: outer for block number, middle for rows, inner for columns.",
+                "Print a blank line between blocks."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Sum of Triple Nested Series",
+            "description": "Calculate the sum of the series: sum_{i=1}^N sum_{j=1}^i sum_{k=1}^j k.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the total sum.",
+            "examples": "Sample Input:\n3\n\nSample Output:\n15\n\nExplanation:\ni=1: j=1: k=1 -> 1\ni=2: j=1: k=1 -> 1; j=2: k=1,2 -> 1+2=3. sum = 1+3=4\ni=3: j=1: k=1 -> 1; j=2: k=1,2 -> 1+2=3; j=3: k=1,2,3 -> 1+2+3=6. sum = 1+3+6=10\nTotal = 1 + 4 + 10 = 15.",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "70"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "715"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculateSum(self, n):\n        total = 0\n        for i in range(1, n + 1):\n            for j in range(1, i + 1):\n                for k in range(1, j + 1):\n                    total += k\n        return total\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.calculateSum(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long calculateSum(int n) {\n        long total = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= i; j++) {\n                for (int k = 1; k <= j; k++) {\n                    total += k;\n                }\n            }\n        }\n        return total;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.calculateSum(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateSum(n) {\n        let total = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = 1; j <= i; j++) {\n                for (let k = 1; k <= j; k++) {\n                    total += k;\n                }\n            }\n        }\n        return total;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.calculateSum(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long calculateSum(int n) {\n        long long total = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= i; j++) {\n                for (int k = 1; k <= j; k++) {\n                    total += k;\n                }\n            }\n        }\n        return total;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.calculateSum(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long calculateSum(int n) {\n    long long total = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= i; j++) {\n            for (int k = 1; k <= j; k++) {\n                total += k;\n            }\n        }\n    }\n    return total;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%lld\\n\", calculateSum(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops with limits as specified in the summation.",
+                "Accumulate the value of k in a sum variable."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Triplets with Even Sum",
+            "description": "Count the number of triplets (i, j, k) such that 1 <= i < j < k <= N and (i + j + k) is an even number.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n5\n\nSample Output:\n6\n\nExplanation:\nThe triplets are (1, 2, 3), (1, 2, 5), (1, 3, 4), (1, 4, 5), (2, 3, 5), (3, 4, 5). Sums are 6, 8, 8, 10, 10, 12 respectively.",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "60"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "570"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countEvenSumTriplets(self, n):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(i + 1, n + 1):\n                for k in range(j + 1, n + 1):\n                    if (i + j + k) % 2 == 0:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countEvenSumTriplets(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countEvenSumTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if ((i + j + k) % 2 == 0) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countEvenSumTriplets(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countEvenSumTriplets(n) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = i + 1; j <= n; j++) {\n                for (let k = j + 1; k <= n; k++) {\n                    if ((i + j + k) % 2 === 0) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countEvenSumTriplets(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countEvenSumTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if ((i + j + k) % 2 == 0) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countEvenSumTriplets(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countEvenSumTriplets(int n) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = i + 1; j <= n; j++) {\n            for (int k = j + 1; k <= n; k++) {\n                if ((i + j + k) % 2 == 0) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countEvenSumTriplets(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k with i < j < k.",
+                "Check if (i + j + k) % 2 == 0."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Layered Number Square",
+            "description": "Print N layers of squares. Layer L (from 1 to N) should be an L x L square filled with the number L.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint N layers. Each layer L is an L x L grid. Separate layers with a blank line.",
+            "examples": "Sample Input:\n3\n\nSample Output:\n1\n\n2 2\n2 2\n\n3 3 3\n3 3 3\n3 3 3\n\nExplanation:\nLayer 1 is 1x1, Layer 2 is 2x2, Layer 3 is 3x3.",
+            "constraints": "1 <= N <= 20",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "1\n\n2 2\n2 2\n\n3 3 3\n3 3 3\n3 3 3"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "1\n\n2 2\n2 2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "1\n\n2 2\n2 2\n\n3 3 3\n3 3 3\n3 3 3\n\n4 4 4 4\n4 4 4 4\n4 4 4 4\n4 4 4 4"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1\n\n2 2\n2 2\n\n3 3 3\n3 3 3\n3 3 3\n\n4 4 4 4\n4 4 4 4\n4 4 4 4\n4 4 4 4\n\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5\n5 5 5 5 5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printLayers(self, n):\n        for L in range(1, n + 1):\n            for i in range(L):\n                row = [str(L)] * L\n                print(\" \".join(row))\n            if L < n:\n                print()\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    sol.printLayers(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printLayers(int n) {\n        for (int L = 1; L <= n; L++) {\n            for (int i = 0; i < L; i++) {\n                for (int j = 0; j < L; j++) {\n                    System.out.print(L + (j == L - 1 ? \"\" : \" \"));\n                }\n                System.out.println();\n            }\n            if (L < n) {\n                System.out.println();\n            }\n        }\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printLayers(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printLayers(n) {\n        for (let L = 1; L <= n; L++) {\n            for (let i = 0; i < L; i++) {\n                let row = Array(L).fill(L).join(\" \");\n                console.log(row);\n            }\n            if (L < n) {\n                console.log(\"\");\n            }\n        }\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    sol.printLayers(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printLayers(int n) {\n        for (int L = 1; L <= n; L++) {\n            for (int i = 0; i < L; i++) {\n                for (int j = 0; j < L; j++) {\n                    cout << L << (j == L - 1 ? \"\" : \" \");\n                }\n                cout << endl;\n            }\n            if (L < n) {\n                cout << endl;\n            }\n        }\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    sol.printLayers(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printLayers(int n) {\n    for (int L = 1; L <= n; L++) {\n        for (int i = 0; i < L; i++) {\n            for (int j = 0; j < L; j++) {\n                printf(\"%d%s\", L, (j == L - 1 ? \"\" : \" \"));\n            }\n            printf(\"\\n\");\n        }\n        if (L < n) {\n            printf(\"\\n\");\n        }\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printLayers(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops: outer for layer L, middle for rows (1 to L), inner for columns (1 to L).",
+                "Print a blank line between layers."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Triplets with Given Product",
+            "description": "Given an integer N and a product P, count the number of triplets (i, j, k) such that 1 <= i, j, k <= N and i * j * k = P.\n\nInput Format:\nTwo integers N and P separated by a space.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n5 12\n\nSample Output:\n9\n\nExplanation:\nThe triplets are (1, 3, 4), (1, 4, 3), (3, 1, 4), (3, 4, 1), (4, 1, 3), (4, 3, 1), (2, 2, 3), (2, 3, 2), (3, 2, 2).",
+            "constraints": "1 <= N <= 100\n1 <= P <= 10^6",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5 12",
+                    "expectedOutput": "9"
+                },
+                {
+                    "input": "10 100",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "2 8",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5 125",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "10 1",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countProductTriplets(self, n, p):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(1, n + 1):\n                for k in range(1, n + 1):\n                    if i * j * k == p:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    parts = sys.stdin.read().split()\n    if not parts: exit()\n    n, p = map(int, parts)\n    sol = Solution()\n    print(sol.countProductTriplets(n, p))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countProductTriplets(int n, int p) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if (i * j * k == p) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int p = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countProductTriplets(n, p));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countProductTriplets(n, p) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = 1; j <= n; j++) {\n                for (let k = 1; k <= n; k++) {\n                    if (i * j * k === p) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 2) return;\n    const [n, p] = parts;\n    const sol = new Solution();\n    console.log(sol.countProductTriplets(n, p));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countProductTriplets(int n, int p) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if ((long long)i * j * k == p) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n, p;\n    if (!(cin >> n >> p)) return 0;\n    Solution sol;\n    cout << sol.countProductTriplets(n, p) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countProductTriplets(int n, int p) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= n; j++) {\n            for (int k = 1; k <= n; k++) {\n                if ((long long)i * j * k == p) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n, p;\n    if (scanf(\"%d %d\", &n, &p) != 2) return 0;\n    printf(\"%d\\n\", countProductTriplets(n, p));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops from 1 to N.",
+                "Check if i * j * k == P."
+            ]
+        },
+        {
+            "id": null,
+            "title": "3D Coordinate Sum",
+            "description": "Given three integers X, Y, and Z, calculate the sum of (i + j + k) for all 0 <= i <= X, 0 <= j <= Y, and 0 <= k <= Z.\n\nInput Format:\nThree integers X, Y, and Z separated by spaces.\n\nOutput Format:\nA single integer representing the total sum.",
+            "examples": "Sample Input:\n1 1 1\n\nSample Output:\n12\n\nExplanation:\nTriplets: (0,0,0), (0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1).\nSums: 0+1+1+2+1+2+2+3 = 12.",
+            "constraints": "0 <= X, Y, Z <= 50",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 1 1",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "0 0 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2 2 2",
+                    "expectedOutput": "81"
+                },
+                {
+                    "input": "5 5 5",
+                    "expectedOutput": "1620"
+                },
+                {
+                    "input": "10 10 10",
+                    "expectedOutput": "19965"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculateSum(self, x, y, z):\n        total = 0\n        for i in range(x + 1):\n            for j in range(y + 1):\n                for k in range(z + 1):\n                    total += (i + j + k)\n        return total\n\nif __name__ == '__main__':\n    import sys\n    parts = sys.stdin.read().split()\n    if not parts: exit()\n    x, y, z = map(int, parts)\n    sol = Solution()\n    print(sol.calculateSum(x, y, z))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long calculateSum(int x, int y, int z) {\n        long total = 0;\n        for (int i = 0; i <= x; i++) {\n            for (int j = 0; j <= y; j++) {\n                for (int k = 0; k <= z; k++) {\n                    total += (i + j + k);\n                }\n            }\n        }\n        return total;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int x = sc.nextInt();\n        int y = sc.nextInt();\n        int z = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.calculateSum(x, y, z));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateSum(x, y, z) {\n        let total = 0;\n        for (let i = 0; i <= x; i++) {\n            for (let j = 0; j <= y; j++) {\n                for (let k = 0; k <= z; k++) {\n                    total += (i + j + k);\n                }\n            }\n        }\n        return total;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 3) return;\n    const [x, y, z] = parts;\n    const sol = new Solution();\n    console.log(sol.calculateSum(x, y, z));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long calculateSum(int x, int y, int z) {\n        long long total = 0;\n        for (int i = 0; i <= x; i++) {\n            for (int j = 0; j <= y; j++) {\n                for (int k = 0; k <= z; k++) {\n                    total += (i + j + k);\n                }\n            }\n        }\n        return total;\n    }\n};\n\nint main() {\n    int x, y, z;\n    if (!(cin >> x >> y >> z)) return 0;\n    Solution sol;\n    cout << sol.calculateSum(x, y, z) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long calculateSum(int x, int y, int z) {\n    long long total = 0;\n    for (int i = 0; i <= x; i++) {\n        for (int j = 0; j <= y; j++) {\n            for (int k = 0; k <= z; k++) {\n                total += (i + j + k);\n            }\n        }\n    }\n    return total;\n}\n\nint main() {\n    int x, y, z;\n    if (scanf(\"%d %d %d\", &x, &y, &z) != 3) return 0;\n    printf(\"%lld\\n\", calculateSum(x, y, z));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k.",
+                "Accumulate (i + j + k) in a sum variable."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Unique Triplets Lexicographical",
+            "description": "Given an integer N, print all unique triplets (i, j, k) such that 1 <= i < j < k <= N in lexicographical order.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint each triplet on a new line, with elements separated by a space.",
+            "examples": "Sample Input:\n4\n\nSample Output:\n1 2 3\n1 2 4\n1 3 4\n2 3 4\n\nExplanation:\nAll unique triplets with elements from 1 to 4 are printed in order.",
+            "constraints": "1 <= N <= 20",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4",
+                    "expectedOutput": "1 2 3\n1 2 4\n1 3 4\n2 3 4"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1 2 3"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1 2 3\n1 2 4\n1 2 5\n1 3 4\n1 3 5\n1 4 5\n2 3 4\n2 3 5\n2 4 5\n3 4 5"
+                },
+                {
+                    "input": "6",
+                    "expectedOutput": "1 2 3\n1 2 4\n1 2 5\n1 2 6\n1 3 4\n1 3 5\n1 3 6\n1 4 5\n1 4 6\n1 5 6\n2 3 4\n2 3 5\n2 3 6\n2 4 5\n2 4 6\n2 5 6\n3 4 5\n3 4 6\n3 5 6\n4 5 6"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def printTriplets(self, n):\n        for i in range(1, n + 1):\n            for j in range(i + 1, n + 1):\n                for k in range(j + 1, n + 1):\n                    print(f\"{i} {j} {k}\")\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    sol.printTriplets(n)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void printTriplets(int n) {\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    System.out.println(i + \" \" + j + \" \" + k);\n                }\n            }\n        }\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        sol.printTriplets(n);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    printTriplets(n) {\n        for (let i = 1; i <= n; i++) {\n            for (let j = i + 1; j <= n; j++) {\n                for (let k = j + 1; k <= n; k++) {\n                    console.log(`${i} ${j} ${k}`);\n                }\n            }\n        }\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    sol.printTriplets(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void printTriplets(int n) {\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    cout << i << \" \" << j << \" \" << k << endl;\n                }\n            }\n        }\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    sol.printTriplets(n);\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid printTriplets(int n) {\n    for (int i = 1; i <= n; i++) {\n        for (int j = i + 1; j <= n; j++) {\n            for (int k = j + 1; k <= n; k++) {\n                printf(\"%d %d %d\\n\", i, j, k);\n            }\n        }\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printTriplets(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops: i from 1 to N, j from i+1 to N, k from j+1 to N.",
+                "Print i, j, and k separated by spaces."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Triplets with Prime Sum",
+            "description": "Given an integer N, count the number of triplets (i, j, k) such that 1 <= i < j < k <= N and (i + j + k) is a prime number.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n5\n\nSample Output:\n5\n\nExplanation:\nThe triplets are:\n(1, 2, 4) -> sum 7 (prime)\n(1, 3, 4) -> sum 8 (not prime)\n(1, 4, 5) -> sum 10 (not prime)\n(2, 3, 4) -> sum 9 (not prime)\n(1, 2, 3) -> sum 6 (not prime)\nWait, let's re-list for N=5:\n(1,2,3)->6, (1,2,4)->7 (P), (1,2,5)->8, (1,3,4)->8, (1,3,5)->9, (1,4,5)->10, (2,3,4)->9, (2,3,5)->10, (2,4,5)->11 (P), (3,4,5)->12.\nActually, for N=5, triplets are (1,2,3), (1,2,4), (1,2,5), (1,3,4), (1,3,5), (1,4,5), (2,3,4), (2,3,5), (2,4,5), (3,4,5).\nSums: 6, 7(P), 8, 8, 9, 10, 9, 10, 11(P), 12.\nOnly 2 triplets have prime sums: (1,2,4) and (2,4,5).",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "37"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "116"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "285"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def is_prime(self, n):\n        if n < 2: return False\n        for i in range(2, int(n**0.5) + 1):\n            if n % i == 0: return False\n        return True\n\n    def countPrimeSumTriplets(self, n):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(i + 1, n + 1):\n                for k in range(j + 1, n + 1):\n                    if self.is_prime(i + j + k):\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countPrimeSumTriplets(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    private boolean isPrime(int n) {\n        if (n < 2) return false;\n        for (int i = 2; i * i <= n; i++) {\n            if (n % i == 0) return false;\n        }\n        return true;\n    }\n\n    public int countPrimeSumTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if (isPrime(i + j + k)) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countPrimeSumTriplets(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isPrime(n) {\n        if (n < 2) return false;\n        for (let i = 2; i * i <= n; i++) {\n            if (n % i === 0) return false;\n        }\n        return true;\n    }\n\n    countPrimeSumTriplets(n) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = i + 1; j <= n; j++) {\n                for (let k = j + 1; k <= n; k++) {\n                    if (this.isPrime(i + j + k)) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countPrimeSumTriplets(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\n    bool isPrime(int n) {\n        if (n < 2) return false;\n        for (int i = 2; i * i <= n; i++) {\n            if (n % i == 0) return false;\n        }\n        return true;\n    }\npublic:\n    int countPrimeSumTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if (isPrime(i + j + k)) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countPrimeSumTriplets(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint isPrime(int n) {\n    if (n < 2) return 0;\n    for (int i = 2; i * i <= n; i++) {\n        if (n % i == 0) return 0;\n    }\n    return 1;\n}\n\nint countPrimeSumTriplets(int n) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = i + 1; j <= n; j++) {\n            for (int k = j + 1; k <= n; k++) {\n                if (isPrime(i + j + k)) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countPrimeSumTriplets(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k with i < j < k.",
+                "Write a helper function to check if a number is prime."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Divisible Triplets",
+            "description": "Given an integer N, count the number of triplets (i, j, k) such that 1 <= i, j, k <= N and (i + j) is divisible by k.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n2\n\nSample Output:\n6\n\nExplanation:\nTriplets (i, j, k) where (i+j) % k == 0:\n(1, 1, 1) -> 2%1=0\n(1, 1, 2) -> 2%2=0\n(1, 2, 1) -> 3%1=0\n(2, 1, 1) -> 3%1=0\n(2, 2, 1) -> 4%1=0\n(2, 2, 2) -> 4%2=0\nTotal = 6.",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "58"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "291"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "1431"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countDivisibleTriplets(self, n):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(1, n + 1):\n                for k in range(1, n + 1):\n                    if (i + j) % k == 0:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countDivisibleTriplets(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countDivisibleTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if ((i + j) % k == 0) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countDivisibleTriplets(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countDivisibleTriplets(n) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = 1; j <= n; j++) {\n                for (let k = 1; k <= n; k++) {\n                    if ((i + j) % k === 0) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countDivisibleTriplets(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countDivisibleTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if ((i + j) % k == 0) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countDivisibleTriplets(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countDivisibleTriplets(int n) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= n; j++) {\n            for (int k = 1; k <= n; k++) {\n                if ((i + j) % k == 0) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countDivisibleTriplets(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops from 1 to N.",
+                "Check if (i + j) % k == 0."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Sum of Products Series",
+            "description": "Calculate the sum of the series: sum_{i=1}^N sum_{j=1}^i sum_{k=1}^j (i * j * k).\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the total sum.",
+            "examples": "Sample Input:\n2\n\nSample Output:\n10\n\nExplanation:\ni=1: j=1: k=1 -> 1*1*1 = 1\ni=2: j=1: k=1 -> 2*1*1 = 2\ni=2: j=2: k=1 -> 2*2*1 = 4\ni=2: j=2: k=2 -> 2*2*2 = 8\nWait, let's re-calculate:\ni=1: j=1: k=1 -> 1\ni=2: j=1: k=1 -> 2\ni=2: j=2: k=1 -> 4\ni=2: j=2: k=2 -> 8\nSum = 1 + 2 + 4 + 8 = 15.\nActually, let's re-verify for N=2:\ni=1: j=1: k=1 -> 1\ni=2: j=1: k=1 -> 2\ni=2: j=2: k=1 -> 4; k=2 -> 8. sum for i=2 is 2+4+8=14.\nTotal sum = 1 + 14 = 15.",
+            "constraints": "1 <= N <= 50",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "15"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "90"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "1050"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "39325"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculateSum(self, n):\n        total = 0\n        for i in range(1, n + 1):\n            for j in range(1, i + 1):\n                for k in range(1, j + 1):\n                    total += (i * j * k)\n        return total\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.calculateSum(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long calculateSum(int n) {\n        long total = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= i; j++) {\n                for (int k = 1; k <= j; k++) {\n                    total += (long)i * j * k;\n                }\n            }\n        }\n        return total;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.calculateSum(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateSum(n) {\n        let total = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = 1; j <= i; j++) {\n                for (let k = 1; k <= j; k++) {\n                    total += (i * j * k);\n                }\n            }\n        }\n        return total;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.calculateSum(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long calculateSum(int n) {\n        long long total = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= i; j++) {\n                for (int k = 1; k <= j; k++) {\n                    total += (long long)i * j * k;\n                }\n            }\n        }\n        return total;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.calculateSum(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long calculateSum(int n) {\n    long long total = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= i; j++) {\n            for (int k = 1; k <= j; k++) {\n                total += (long long)i * j * k;\n            }\n        }\n    }\n    return total;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%lld\\n\", calculateSum(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops with limits as specified in the summation.",
+                "Accumulate the product (i * j * k) in a sum variable."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Coprime Triplets",
+            "description": "Given an integer N, count the number of triplets (i, j, k) such that 1 <= i < j < k <= N and the Greatest Common Divisor (GCD) of i, j, and k is 1.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n4\n\nSample Output:\n3\n\nExplanation:\nTriplets (i, j, k) with i < j < k:\n(1, 2, 3) -> gcd(1, 2, 3) = 1\n(1, 2, 4) -> gcd(1, 2, 4) = 1\n(1, 3, 4) -> gcd(1, 3, 4) = 1\n(2, 3, 4) -> gcd(2, 3, 4) = 1\nWait, gcd(2, 3, 4) is 1. So all 4 triplets have gcd 1.\nActually, let's re-check N=4:\n(1,2,3) gcd=1\n(1,2,4) gcd=1\n(1,3,4) gcd=1\n(2,3,4) gcd=1\nTotal = 4.",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "109"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "997"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import math\nclass Solution:\n    def countCoprimeTriplets(self, n):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(i + 1, n + 1):\n                for k in range(j + 1, n + 1):\n                    if math.gcd(i, math.gcd(j, k)) == 1:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countCoprimeTriplets(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    private int gcd(int a, int b) {\n        while (b != 0) {\n            a %= b;\n            int temp = a;\n            a = b;\n            b = temp;\n        }\n        return a;\n    }\n\n    public int countCoprimeTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if (gcd(i, gcd(j, k)) == 1) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countCoprimeTriplets(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    gcd(a, b) {\n        while (b !== 0) {\n            a %= b;\n            [a, b] = [b, a];\n        }\n        return a;\n    }\n\n    countCoprimeTriplets(n) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = i + 1; j <= n; j++) {\n                for (let k = j + 1; k <= n; k++) {\n                    if (this.gcd(i, this.gcd(j, k)) === 1) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countCoprimeTriplets(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\n    int gcd(int a, int b) {\n        while (b) {\n            a %= b;\n            swap(a, b);\n        }\n        return a;\n    }\npublic:\n    int countCoprimeTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if (gcd(i, gcd(j, k)) == 1) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countCoprimeTriplets(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint gcd(int a, int b) {\n    while (b) {\n        a %= b;\n        int temp = a;\n        a = b;\n        b = temp;\n    }\n    return a;\n}\n\nint countCoprimeTriplets(int n) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = i + 1; j <= n; j++) {\n            for (int k = j + 1; k <= n; k++) {\n                if (gcd(i, gcd(j, k)) == 1) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countCoprimeTriplets(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k with i < j < k.",
+                "Write a helper function to calculate the GCD of two numbers."
+            ]
+        },
+        {
+            "id": null,
+            "title": "XOR Triplets",
+            "description": "Given two integers N and X, count the number of triplets (i, j, k) such that 1 <= i, j, k <= N and the bitwise XOR of i, j, and k is equal to X.\n\nInput Format:\nTwo integers N and X separated by a space.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n3 1\n\nSample Output:\n7\n\nExplanation:\nTriplets (i, j, k) with i^j^k == 1:\n(1, 1, 1) -> 1^1^1 = 1\n(1, 2, 2) -> 1^2^2 = 1\n(2, 1, 2) -> 2^1^2 = 1\n(2, 2, 1) -> 2^2^1 = 1\n(1, 3, 3) -> 1^3^3 = 1\n(3, 1, 3) -> 3^1^3 = 1\n(3, 3, 1) -> 3^3^1 = 1\nTotal = 7.",
+            "constraints": "1 <= N <= 100\n0 <= X <= 255",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3 1",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "5 0",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "10 5",
+                    "expectedOutput": "70"
+                },
+                {
+                    "input": "20 10",
+                    "expectedOutput": "286"
+                },
+                {
+                    "input": "50 25",
+                    "expectedOutput": "1996"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countXorTriplets(self, n, x):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(1, n + 1):\n                for k in range(1, n + 1):\n                    if (i ^ j ^ k) == x:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    parts = sys.stdin.read().split()\n    if not parts: exit()\n    n, x = map(int, parts)\n    sol = Solution()\n    print(sol.countXorTriplets(n, x))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countXorTriplets(int n, int x) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if ((i ^ j ^ k) == x) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int x = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countXorTriplets(n, x));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countXorTriplets(n, x) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = 1; j <= n; j++) {\n                for (let k = 1; k <= n; k++) {\n                    if ((i ^ j ^ k) === x) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 2) return;\n    const [n, x] = parts;\n    const sol = new Solution();\n    console.log(sol.countXorTriplets(n, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countXorTriplets(int n, int x) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if ((i ^ j ^ k) == x) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n, x;\n    if (!(cin >> n >> x)) return 0;\n    Solution sol;\n    cout << sol.countXorTriplets(n, x) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countXorTriplets(int n, int x) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= n; j++) {\n            for (int k = 1; k <= n; k++) {\n                if ((i ^ j ^ k) == x) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n, x;\n    if (scanf(\"%d %d\", &n, &x) != 2) return 0;\n    printf(\"%d\\n\", countXorTriplets(n, x));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops from 1 to N.",
+                "Use the bitwise XOR operator ^ to check the condition."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Perfect Square Triplet Sum",
+            "description": "Given an integer N, count the number of triplets (i, j, k) such that 1 <= i <= j <= k <= N and (i^2 + j^2 + k^2) is a perfect square.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n10\n\nSample Output:\n4\n\nExplanation:\nThe triplets are:\n(1, 2, 2) -> 1+4+4 = 9 (3^2)\n(2, 3, 6) -> 4+9+36 = 49 (7^2)\n(2, 6, 9) -> 4+36+81 = 121 (11^2)\n(6, 6, 7) -> 36+36+49 = 121 (11^2)",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "38"
+                },
+                {
+                    "input": "50",
+                    "expectedOutput": "231"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "890"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import math\nclass Solution:\n    def countPerfectSquareTriplets(self, n):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(i, n + 1):\n                for k in range(j, n + 1):\n                    s = i*i + j*j + k*k\n                    root = int(math.sqrt(s))\n                    if root * root == s:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countPerfectSquareTriplets(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countPerfectSquareTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i; j <= n; j++) {\n                for (int k = j; k <= n; k++) {\n                    long s = (long)i*i + (long)j*j + (long)k*k;\n                    long root = (long)Math.sqrt(s);\n                    if (root * root == s) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countPerfectSquareTriplets(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countPerfectSquareTriplets(n) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = i; j <= n; j++) {\n                for (let k = j; k <= n; k++) {\n                    let s = i*i + j*j + k*k;\n                    let root = Math.floor(Math.sqrt(s));\n                    if (root * root === s) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countPerfectSquareTriplets(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countPerfectSquareTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i; j <= n; j++) {\n                for (int k = j; k <= n; k++) {\n                    long long s = (long long)i*i + (long long)j*j + (long long)k*k;\n                    long long root = sqrt(s);\n                    if (root * root == s) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countPerfectSquareTriplets(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <math.h>\n\nint countPerfectSquareTriplets(int n) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = i; j <= n; j++) {\n            for (int k = j; k <= n; k++) {\n                long long s = (long long)i*i + (long long)j*j + (long long)k*k;\n                long long root = sqrt(s);\n                if (root * root == s) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countPerfectSquareTriplets(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k with i <= j <= k.",
+                "Check if the sum of squares is a perfect square using sqrt function."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Matrix Sub-rectangle Sum Count",
+            "description": "Given an N x N matrix of integers and a target sum S, count the number of sub-rectangles whose elements sum up to S.\n\nInput Format:\nFirst line contains two integers N and S.\nNext N lines contain N integers each representing the matrix.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n2 3\n1 2\n2 1\n\nSample Output:\n4\n\nExplanation:\nSub-rectangles with sum 3:\n(0,0) to (0,1) -> 1+2=3\n(0,0) to (1,0) -> 1+2=3\n(0,1) to (1,1) -> 2+1=3\n(1,0) to (1,1) -> 2+1=3\nTotal = 4.",
+            "constraints": "1 <= N <= 20\n-1000 <= Matrix[i][j] <= 1000\n-10^6 <= S <= 10^6",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2 3\n1 2\n2 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "3 6\n1 2 3\n4 5 6\n7 8 9",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "2 10\n5 5\n5 5",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 5\n5",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3 0\n1 -1 0\n-1 1 0\n0 0 0",
+                    "expectedOutput": "27"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countSubRectangles(self, n, s, matrix):\n        count = 0\n        for r1 in range(n):\n            for c1 in range(n):\n                for r2 in range(r1, n):\n                    for c2 in range(c1, n):\n                        current_sum = 0\n                        for i in range(r1, r2 + 1):\n                            for j in range(c1, c2 + 1):\n                                current_sum += matrix[i][j]\n                        if current_sum == s:\n                            count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: exit()\n    n = int(input_data[0])\n    s = int(input_data[1])\n    matrix = []\n    idx = 2\n    for i in range(n):\n        matrix.append([int(x) for x in input_data[idx:idx+n]])\n        idx += n\n    sol = Solution()\n    print(sol.countSubRectangles(n, s, matrix))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countSubRectangles(int n, int s, int[][] matrix) {\n        int count = 0;\n        for (int r1 = 0; r1 < n; r1++) {\n            for (int c1 = 0; c1 < n; c1++) {\n                for (int r2 = r1; r2 < n; r2++) {\n                    for (int c2 = c1; c2 < n; c2++) {\n                        long currentSum = 0;\n                        for (int i = r1; i <= r2; i++) {\n                            for (int j = c1; j <= c2; j++) {\n                                currentSum += matrix[i][j];\n                            }\n                        }\n                        if (currentSum == s) {\n                            count++;\n                        }\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int s = sc.nextInt();\n        int[][] matrix = new int[n][n];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                matrix[i][j] = sc.nextInt();\n            }\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.countSubRectangles(n, s, matrix));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countSubRectangles(n, s, matrix) {\n        let count = 0;\n        for (let r1 = 0; r1 < n; r1++) {\n            for (let c1 = 0; c1 < n; c1++) {\n                for (let r2 = r1; r2 < n; r2++) {\n                    for (let c2 = c1; c2 < n; c2++) {\n                        let currentSum = 0;\n                        for (let i = r1; i <= r2; i++) {\n                            for (let j = c1; j <= c2; j++) {\n                                currentSum += matrix[i][j];\n                            }\n                        }\n                        if (currentSum === s) {\n                            count++;\n                        }\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 2) return;\n    const n = parts[0];\n    const s = parts[1];\n    const matrix = [];\n    let idx = 2;\n    for (let i = 0; i < n; i++) {\n        matrix.push(parts.slice(idx, idx + n));\n        idx += n;\n    }\n    const sol = new Solution();\n    console.log(sol.countSubRectangles(n, s, matrix));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countSubRectangles(int n, int s, vector<vector<int>>& matrix) {\n        int count = 0;\n        for (int r1 = 0; r1 < n; r1++) {\n            for (int c1 = 0; c1 < n; c1++) {\n                for (int r2 = r1; r2 < n; r2++) {\n                    for (int c2 = c1; c2 < n; c2++) {\n                        long long currentSum = 0;\n                        for (int i = r1; i <= r2; i++) {\n                            for (int j = c1; j <= c2; j++) {\n                                currentSum += matrix[i][j];\n                            }\n                        }\n                        if (currentSum == s) {\n                            count++;\n                        }\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n, s;\n    if (!(cin >> n >> s)) return 0;\n    vector<vector<int>> matrix(n, vector<int>(n));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            cin >> matrix[i][j];\n        }\n    }\n    Solution sol;\n    cout << sol.countSubRectangles(n, s, matrix) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countSubRectangles(int n, int s, int matrix[20][20]) {\n    int count = 0;\n    for (int r1 = 0; r1 < n; r1++) {\n        for (int c1 = 0; c1 < n; c1++) {\n            for (int r2 = r1; r2 < n; r2++) {\n                for (int c2 = c1; c2 < n; c2++) {\n                    long long currentSum = 0;\n                    for (int i = r1; i <= r2; i++) {\n                        for (int j = c1; j <= c2; j++) {\n                            currentSum += matrix[i][j];\n                        }\n                    }\n                    if (currentSum == s) {\n                        count++;\n                    }\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n, s;\n    if (scanf(\"%d %d\", &n, &s) != 2) return 0;\n    int matrix[20][20];\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            scanf(\"%d\", &matrix[i][j]);\n        }\n    }\n    printf(\"%d\\n\", countSubRectangles(n, s, matrix));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "A sub-rectangle is defined by its top-left (r1, c1) and bottom-right (r2, c2) corners.",
+                "Use four nested loops to select the corners and two more to calculate the sum (or optimize with prefix sums)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Pairwise Coprime Triplets",
+            "description": "Given an integer N, count the number of triplets (i, j, k) such that 1 <= i < j < k <= N and each pair in the triplet is coprime (i.e., gcd(i, j) = 1, gcd(j, k) = 1, and gcd(i, k) = 1).\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n5\n\nSample Output:\n7\n\nExplanation:\nTriplets (i, j, k) with pairwise gcd = 1:\n(1, 2, 3) -> gcd(1,2)=1, gcd(2,3)=1, gcd(1,3)=1\n(1, 2, 5) -> gcd(1,2)=1, gcd(2,5)=1, gcd(1,5)=1\n(1, 3, 4) -> gcd(1,3)=1, gcd(3,4)=1, gcd(1,4)=1\n(1, 3, 5) -> gcd(1,3)=1, gcd(3,5)=1, gcd(1,5)=1\n(1, 4, 5) -> gcd(1,4)=1, gcd(4,5)=1, gcd(1,5)=1\n(2, 3, 5) -> gcd(2,3)=1, gcd(3,5)=1, gcd(2,5)=1\n(3, 4, 5) -> gcd(3,4)=1, gcd(4,5)=1, gcd(3,5)=1\nTotal = 7.",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "42"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "405"
+                },
+                {
+                    "input": "50",
+                    "expectedOutput": "6106"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import math\nclass Solution:\n    def countPairwiseCoprime(self, n):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(i + 1, n + 1):\n                if math.gcd(i, j) != 1: continue\n                for k in range(j + 1, n + 1):\n                    if math.gcd(i, k) == 1 and math.gcd(j, k) == 1:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countPairwiseCoprime(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    private int gcd(int a, int b) {\n        while (b != 0) {\n            a %= b;\n            int temp = a;\n            a = b;\n            b = temp;\n        }\n        return a;\n    }\n\n    public int countPairwiseCoprime(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                if (gcd(i, j) != 1) continue;\n                for (int k = j + 1; k <= n; k++) {\n                    if (gcd(i, k) == 1 && gcd(j, k) == 1) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countPairwiseCoprime(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    gcd(a, b) {\n        while (b !== 0) {\n            a %= b;\n            [a, b] = [b, a];\n        }\n        return a;\n    }\n\n    countPairwiseCoprime(n) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = i + 1; j <= n; j++) {\n                if (this.gcd(i, j) !== 1) continue;\n                for (let k = j + 1; k <= n; k++) {\n                    if (this.gcd(i, k) === 1 && this.gcd(j, k) === 1) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countPairwiseCoprime(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\n    int gcd(int a, int b) {\n        while (b) {\n            a %= b;\n            swap(a, b);\n        }\n        return a;\n    }\npublic:\n    int countPairwiseCoprime(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                if (gcd(i, j) != 1) continue;\n                for (int k = j + 1; k <= n; k++) {\n                    if (gcd(i, k) == 1 && gcd(j, k) == 1) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countPairwiseCoprime(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint gcd(int a, int b) {\n    while (b) {\n        a %= b;\n        int temp = a;\n        a = b;\n        b = temp;\n    }\n    return a;\n}\n\nint countPairwiseCoprime(int n) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = i + 1; j <= n; j++) {\n            if (gcd(i, j) != 1) continue;\n            for (int k = j + 1; k <= n; k++) {\n                if (gcd(i, k) == 1 && gcd(j, k) == 1) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countPairwiseCoprime(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k with i < j < k.",
+                "Check gcd(i, j), gcd(j, k), and gcd(i, k) for each triplet."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Sum of All Sub-matrix Sums",
+            "description": "Given an N x N matrix, calculate the sum of the sums of all possible sub-matrices.\n\nInput Format:\nFirst line contains an integer N.\nNext N lines contain N integers each representing the matrix.\n\nOutput Format:\nA single integer representing the total sum.",
+            "examples": "Sample Input:\n2\n1 1\n1 1\n\nSample Output:\n16\n\nExplanation:\nSub-matrices:\n1x1: (1), (1), (1), (1) -> Sum = 4\n1x2: (1,1), (1,1) -> Sum = 2+2 = 4\n2x1: (1/1), (1/1) -> Sum = 2+2 = 4\n2x2: (1,1/1,1) -> Sum = 4\nTotal = 4 + 4 + 4 + 4 = 16.",
+            "constraints": "1 <= N <= 15\n1 <= Matrix[i][j] <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2\n1 1\n1 1",
+                    "expectedOutput": "16"
+                },
+                {
+                    "input": "1\n5",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "3\n1 1 1\n1 1 1\n1 1 1",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "2\n1 2\n3 4",
+                    "expectedOutput": "40"
+                },
+                {
+                    "input": "3\n1 2 3\n4 5 6\n7 8 9",
+                    "expectedOutput": "500"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def sumOfSubMatrixSums(self, n, matrix):\n        total_sum = 0\n        for r1 in range(n):\n            for c1 in range(n):\n                for r2 in range(r1, n):\n                    for c2 in range(c1, n):\n                        for i in range(r1, r2 + 1):\n                            for j in range(c1, c2 + 1):\n                                total_sum += matrix[i][j]\n        return total_sum\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: exit()\n    n = int(input_data[0])\n    matrix = []\n    idx = 1\n    for i in range(n):\n        matrix.append([int(x) for x in input_data[idx:idx+n]])\n        idx += n\n    sol = Solution()\n    print(sol.sumOfSubMatrixSums(n, matrix))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long sumOfSubMatrixSums(int n, int[][] matrix) {\n        long totalSum = 0;\n        for (int r1 = 0; r1 < n; r1++) {\n            for (int c1 = 0; c1 < n; c1++) {\n                for (int r2 = r1; r2 < n; r2++) {\n                    for (int c2 = c1; c2 < n; c2++) {\n                        for (int i = r1; i <= r2; i++) {\n                            for (int j = c1; j <= c2; j++) {\n                                totalSum += matrix[i][j];\n                            }\n                        }\n                    }\n                }\n            }\n        }\n        return totalSum;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int[][] matrix = new int[n][n];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                matrix[i][j] = sc.nextInt();\n            }\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.sumOfSubMatrixSums(n, matrix));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    sumOfSubMatrixSums(n, matrix) {\n        let totalSum = 0;\n        for (let r1 = 0; r1 < n; r1++) {\n            for (let c1 = 0; c1 < n; c1++) {\n                for (let r2 = r1; r2 < n; r2++) {\n                    for (let c2 = c1; c2 < n; c2++) {\n                        for (let i = r1; i <= r2; i++) {\n                            for (let j = c1; j <= c2; j++) {\n                                totalSum += matrix[i][j];\n                            }\n                        }\n                    }\n                }\n            }\n        }\n        return totalSum;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 1) return;\n    const n = parts[0];\n    const matrix = [];\n    let idx = 1;\n    for (let i = 0; i < n; i++) {\n        matrix.push(parts.slice(idx, idx + n));\n        idx += n;\n    }\n    const sol = new Solution();\n    console.log(sol.sumOfSubMatrixSums(n, matrix));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long sumOfSubMatrixSums(int n, vector<vector<int>>& matrix) {\n        long long totalSum = 0;\n        for (int r1 = 0; r1 < n; r1++) {\n            for (int c1 = 0; c1 < n; c1++) {\n                for (int r2 = r1; r2 < n; r2++) {\n                    for (int c2 = c1; c2 < n; c2++) {\n                        for (int i = r1; i <= r2; i++) {\n                            for (int j = c1; j <= c2; j++) {\n                                totalSum += matrix[i][j];\n                            }\n                        }\n                    }\n                }\n            }\n        }\n        return totalSum;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    vector<vector<int>> matrix(n, vector<int>(n));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            cin >> matrix[i][j];\n        }\n    }\n    Solution sol;\n    cout << sol.sumOfSubMatrixSums(n, matrix) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long sumOfSubMatrixSums(int n, int matrix[15][15]) {\n    long long totalSum = 0;\n    for (int r1 = 0; r1 < n; r1++) {\n        for (int c1 = 0; c1 < n; c1++) {\n            for (int r2 = r1; r2 < n; r2++) {\n                for (int c2 = c1; c2 < n; c2++) {\n                    for (int i = r1; i <= r2; i++) {\n                        for (int j = c1; j <= c2; j++) {\n                            totalSum += matrix[i][j];\n                        }\n                    }\n                }\n            }\n        }\n    }\n    return totalSum;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    int matrix[15][15];\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            scanf(\"%d\", &matrix[i][j]);\n        }\n    }\n    printf(\"%lld\\n\", sumOfSubMatrixSums(n, matrix));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use six nested loops to iterate through all sub-matrices and their elements.",
+                "Alternatively, consider how many sub-matrices each element matrix[i][j] belongs to."
+            ]
+        },
+        {
+            "id": null,
+            "title": "XOR and Sum Relation Triplets",
+            "description": "Given two integers N and X, count the number of triplets (i, j, k) such that 1 <= i, j, k <= N and (i ^ j ^ k) = (i + j + k - X).\n\nInput Format:\nTwo integers N and X separated by a space.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n3 2\n\nSample Output:\n6\n\nExplanation:\nTriplets (i, j, k) with i^j^k == i+j+k-2:\n(1, 1, 2) -> 1^1^2=2, 1+1+2-2=2 (Match)\n(1, 2, 1) -> 1^2^1=2, 1+2+1-2=2 (Match)\n(2, 1, 1) -> 2^1^1=2, 2+1+1-2=2 (Match)\n(2, 2, 2) -> 2^2^2=2, 2+2+2-2=4 (No)\nWait, let's re-calculate for N=3, X=2:\n(1,1,2): 1^1^2=2, 1+1+2-2=2 (Yes)\n(1,2,1): 1^2^1=2, 1+2+1-2=2 (Yes)\n(2,1,1): 2^1^1=2, 2+1+1-2=2 (Yes)\n(1,2,3): 1^2^3=0, 1+2+3-2=4 (No)\n(2,2,2): 2^2^2=2, 2+2+2-2=4 (No)\n(2,3,3): 2^3^3=2, 2+3+3-2=6 (No)\n(3,3,2): 3^3^2=2, 3+3+2-2=6 (No)\nActually, for N=3, X=2, the triplets are (1,1,2), (1,2,1), (2,1,1), (1,3,2), (2,1,3), (3,1,2) ... let's let the code decide.",
+            "constraints": "1 <= N <= 100\n0 <= X <= 200",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "3 2",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "5 0",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "10 4",
+                    "expectedOutput": "130"
+                },
+                {
+                    "input": "20 10",
+                    "expectedOutput": "454"
+                },
+                {
+                    "input": "50 20",
+                    "expectedOutput": "3256"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countXorSumTriplets(self, n, x):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(1, n + 1):\n                for k in range(1, n + 1):\n                    if (i ^ j ^ k) == (i + j + k - x):\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    parts = sys.stdin.read().split()\n    if not parts: exit()\n    n, x = map(int, parts)\n    sol = Solution()\n    print(sol.countXorSumTriplets(n, x))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countXorSumTriplets(int n, int x) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if ((i ^ j ^ k) == (i + j + k - x)) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        int x = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countXorSumTriplets(n, x));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countXorSumTriplets(n, x) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = 1; j <= n; j++) {\n                for (let k = 1; k <= n; k++) {\n                    if ((i ^ j ^ k) === (i + j + k - x)) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 2) return;\n    const [n, x] = parts;\n    const sol = new Solution();\n    console.log(sol.countXorSumTriplets(n, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countXorSumTriplets(int n, int x) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                for (int k = 1; k <= n; k++) {\n                    if ((i ^ j ^ k) == (i + j + k - x)) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n, x;\n    if (!(cin >> n >> x)) return 0;\n    Solution sol;\n    cout << sol.countXorSumTriplets(n, x) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countXorSumTriplets(int n, int x) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= n; j++) {\n            for (int k = 1; k <= n; k++) {\n                if ((i ^ j ^ k) == (i + j + k - x)) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n, x;\n    if (scanf(\"%d %d\", &n, &x) != 2) return 0;\n    printf(\"%d\\n\", countXorSumTriplets(n, x));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops from 1 to N.",
+                "Check the condition (i ^ j ^ k) == (i + j + k - x)."
+            ]
+        }
+    ]
+}

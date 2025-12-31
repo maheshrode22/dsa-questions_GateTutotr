@@ -1,0 +1,48 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Check Armstrong Number",
+      "description": "You are given a non-negative integer N. An Armstrong number (or narcissistic number) is a number that is equal to the sum of its own digits each raised to the power of the number of digits.\n\nYour task is to check whether N is an Armstrong number or not.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint \"YES\" if N is an Armstrong number, otherwise print \"NO\".",
+      "examples": "Sample Input\n153\n\nSample Output\nYES\n\nExplanation:\n153 = 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153.",
+      "constraints": "0 <= N <= 10^18",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 4033,
+      "difficulty": 2,
+      "testCases": [
+        { "input": "153", "expectedOutput": "YES" },
+        { "input": "9474", "expectedOutput": "YES" },
+        { "input": "123", "expectedOutput": "NO" },
+        { "input": "0", "expectedOutput": "YES" },
+        { "input": "1", "expectedOutput": "YES" }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def isArmstrong(self, n):\n        # TODO: Return True if n is Armstrong number, else False\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        sol = Solution()\n        print(\"YES\" if sol.isArmstrong(n) else \"NO\")\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public boolean isArmstrong(long n) {\n        // TODO: Return true if n is Armstrong number, else false\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            Solution sol = new Solution();\n            System.out.println(sol.isArmstrong(n) ? \"YES\" : \"NO\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    isArmstrong(n) {\n        // TODO: Return true if n is Armstrong number, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const n = BigInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.isArmstrong(n) ? \"YES\" : \"NO\");\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isArmstrong(long long n) {\n        // TODO: Return true if n is Armstrong number, else false\n        return false;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << (sol.isArmstrong(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool isArmstrong(long long n) {\n    // TODO: Return true if n is Armstrong number, else false\n    return false;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%s\", isArmstrong(n) ? \"YES\" : \"NO\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "First find the number of digits d. Then sum each digit^d and check if it equals n."
+      ]
+    }
+  ]
+}

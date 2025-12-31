@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "3D Coordinate Sum",
+            "description": "Given three integers X, Y, and Z, calculate the sum of (i + j + k) for all 0 <= i <= X, 0 <= j <= Y, and 0 <= k <= Z.\n\nInput Format:\nThree integers X, Y, and Z separated by spaces.\n\nOutput Format:\nA single integer representing the total sum.",
+            "examples": "Sample Input:\n1 1 1\n\nSample Output:\n12\n\nExplanation:\nTriplets: (0,0,0), (0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1).\nSums: 0+1+1+2+1+2+2+3 = 12.",
+            "constraints": "0 <= X, Y, Z <= 50",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 1 1",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "0 0 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2 2 2",
+                    "expectedOutput": "81"
+                },
+                {
+                    "input": "5 5 5",
+                    "expectedOutput": "1620"
+                },
+                {
+                    "input": "10 10 10",
+                    "expectedOutput": "19965"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def calculateSum(self, x, y, z):\n        total = 0\n        for i in range(x + 1):\n            for j in range(y + 1):\n                for k in range(z + 1):\n                    total += (i + j + k)\n        return total\n\nif __name__ == '__main__':\n    import sys\n    parts = sys.stdin.read().split()\n    if not parts: exit()\n    x, y, z = map(int, parts)\n    sol = Solution()\n    print(sol.calculateSum(x, y, z))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long calculateSum(int x, int y, int z) {\n        long total = 0;\n        for (int i = 0; i <= x; i++) {\n            for (int j = 0; j <= y; j++) {\n                for (int k = 0; k <= z; k++) {\n                    total += (i + j + k);\n                }\n            }\n        }\n        return total;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int x = sc.nextInt();\n        int y = sc.nextInt();\n        int z = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.calculateSum(x, y, z));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    calculateSum(x, y, z) {\n        let total = 0;\n        for (let i = 0; i <= x; i++) {\n            for (let j = 0; j <= y; j++) {\n                for (let k = 0; k <= z; k++) {\n                    total += (i + j + k);\n                }\n            }\n        }\n        return total;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/).map(Number);\n    if (parts.length < 3) return;\n    const [x, y, z] = parts;\n    const sol = new Solution();\n    console.log(sol.calculateSum(x, y, z));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long calculateSum(int x, int y, int z) {\n        long long total = 0;\n        for (int i = 0; i <= x; i++) {\n            for (int j = 0; j <= y; j++) {\n                for (int k = 0; k <= z; k++) {\n                    total += (i + j + k);\n                }\n            }\n        }\n        return total;\n    }\n};\n\nint main() {\n    int x, y, z;\n    if (!(cin >> x >> y >> z)) return 0;\n    Solution sol;\n    cout << sol.calculateSum(x, y, z) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long calculateSum(int x, int y, int z) {\n    long long total = 0;\n    for (int i = 0; i <= x; i++) {\n        for (int j = 0; j <= y; j++) {\n            for (int k = 0; k <= z; k++) {\n                total += (i + j + k);\n            }\n        }\n    }\n    return total;\n}\n\nint main() {\n    int x, y, z;\n    if (scanf(\"%d %d %d\", &x, &y, &z) != 3) return 0;\n    printf(\"%lld\\n\", calculateSum(x, y, z));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k.",
+                "Accumulate (i + j + k) in a sum variable."
+            ]
+        }
+    ]
+}

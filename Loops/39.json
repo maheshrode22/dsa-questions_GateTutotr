@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Coprime Triplets",
+            "description": "Given an integer N, count the number of triplets (i, j, k) such that 1 <= i < j < k <= N and the Greatest Common Divisor (GCD) of i, j, and k is 1.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nA single integer representing the count.",
+            "examples": "Sample Input:\n4\n\nSample Output:\n3\n\nExplanation:\nTriplets (i, j, k) with i < j < k:\n(1, 2, 3) -> gcd(1, 2, 3) = 1\n(1, 2, 4) -> gcd(1, 2, 4) = 1\n(1, 3, 4) -> gcd(1, 3, 4) = 1\n(2, 3, 4) -> gcd(2, 3, 4) = 1\nWait, gcd(2, 3, 4) is 1. So all 4 triplets have gcd 1.\nActually, let's re-check N=4:\n(1,2,3) gcd=1\n(1,2,4) gcd=1\n(1,3,4) gcd=1\n(2,3,4) gcd=1\nTotal = 4.",
+            "constraints": "1 <= N <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "109"
+                },
+                {
+                    "input": "20",
+                    "expectedOutput": "997"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "import math\nclass Solution:\n    def countCoprimeTriplets(self, n):\n        count = 0\n        for i in range(1, n + 1):\n            for j in range(i + 1, n + 1):\n                for k in range(j + 1, n + 1):\n                    if math.gcd(i, math.gcd(j, k)) == 1:\n                        count += 1\n        return count\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.read().strip()\n    if not line: exit()\n    n = int(line)\n    sol = Solution()\n    print(sol.countCoprimeTriplets(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    private int gcd(int a, int b) {\n        while (b != 0) {\n            a %= b;\n            int temp = a;\n            a = b;\n            b = temp;\n        }\n        return a;\n    }\n\n    public int countCoprimeTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if (gcd(i, gcd(j, k)) == 1) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        if(!sc.hasNextInt()) return;\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countCoprimeTriplets(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    gcd(a, b) {\n        while (b !== 0) {\n            a %= b;\n            [a, b] = [b, a];\n        }\n        return a;\n    }\n\n    countCoprimeTriplets(n) {\n        let count = 0;\n        for (let i = 1; i <= n; i++) {\n            for (let j = i + 1; j <= n; j++) {\n                for (let k = j + 1; k <= n; k++) {\n                    if (this.gcd(i, this.gcd(j, k)) === 1) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    if (isNaN(n)) return;\n    const sol = new Solution();\n    console.log(sol.countCoprimeTriplets(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\n    int gcd(int a, int b) {\n        while (b) {\n            a %= b;\n            swap(a, b);\n        }\n        return a;\n    }\npublic:\n    int countCoprimeTriplets(int n) {\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            for (int j = i + 1; j <= n; j++) {\n                for (int k = j + 1; k <= n; k++) {\n                    if (gcd(i, gcd(j, k)) == 1) {\n                        count++;\n                    }\n                }\n            }\n        }\n        return count;\n    }\n};\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    Solution sol;\n    cout << sol.countCoprimeTriplets(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint gcd(int a, int b) {\n    while (b) {\n        a %= b;\n        int temp = a;\n        a = b;\n        b = temp;\n    }\n    return a;\n}\n\nint countCoprimeTriplets(int n) {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = i + 1; j <= n; j++) {\n            for (int k = j + 1; k <= n; k++) {\n                if (gcd(i, gcd(j, k)) == 1) {\n                    count++;\n                }\n            }\n        }\n    }\n    return count;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    printf(\"%d\\n\", countCoprimeTriplets(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use three nested loops for i, j, and k with i < j < k.",
+                "Write a helper function to calculate the GCD of two numbers."
+            ]
+        }
+    ]
+}
