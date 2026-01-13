@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Number of K Consecutive Bit Flips (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given a binary array nums and an integer k.\nA k-bit flip is choosing a subarray of length k from nums and simultaneously changing every 0 in the subarray to 1, and every 1 in the subarray to 0.\nReturn the minimum number of k-bit flips required so that there is no 0 in the array. If it is not possible, return -1.\nA subarray is a contiguous part of an array.\n",
+            "examples": "Sample Input\n0 1 0\n1\n\nSample Output\n2\n\nExplanation: Flip nums[0], then flip nums[2].\n\nSample Input\n1 1 0\n2\n\nSample Output\n-1\n\nExplanation: No matter how we flip subarrays of size 2, we cannot make the array become [1,1,1].\n\nSample Input\n0 0 0 1 0 1 1 0\n3\n\nSample Output\n3\n\nExplanation: \nFlip nums[0],nums[1],nums[2]: nums becomes [1,1,1,1,0,1,1,0]\nFlip nums[4],nums[5],nums[6]: nums becomes [1,1,1,1,1,0,0,0]\nFlip nums[5],nums[6],nums[7]: nums becomes [1,1,1,1,1,1,1,1]",
+            "constraints": "1 <= nums.length <= 10^5\n1 <= k <= nums.length",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "0 0 1 1 0 1 1 0 1 0\n2",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "0 0 0 0 0 0 0 0 0\n3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 0 1 0 1 0 1 0\n4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 0 0 1 0 0 1\n4",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1\n5",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minKBitFlips(self, nums, k):\n        # TODO: Return minimum number of k-bit flips, or -1 if impossible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    nums = list(map(int, lines[0].strip().split()))\n    k = int(lines[1].strip())\n    sol = Solution()\n    print(sol.minKBitFlips(nums, k))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minKBitFlips(int[] nums, int k) {\n        // TODO: Return minimum number of k-bit flips, or -1 if impossible\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        int k = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.minKBitFlips(nums, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minKBitFlips(nums, k) {\n        // TODO: Return minimum number of k-bit flips, or -1 if impossible\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const nums = lines[0].trim().split(/\\s+/).map(Number);\n    const k = parseInt(lines[1].trim());\n    const sol = new Solution();\n    console.log(sol.minKBitFlips(nums, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minKBitFlips(vector<int>& nums, int k) {\n        // TODO: Return minimum number of k-bit flips, or -1 if impossible\n        return -1;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    int k;\n    cin >> k;\n    Solution sol;\n    cout << sol.minKBitFlips(nums, k) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid minKBitFlips(int* nums, int numsSize, int k) {\n    // TODO: Print minimum number of k-bit flips, or -1 if impossible\n}\n\nint main() {\n    int nums[100005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    int k;\n    scanf(\"%d\", &k);\n    minKBitFlips(nums, numsSize, k);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a greedy approach: flip from left to right whenever you encounter a 0.",
+                "Use a difference array or sliding window to track flip operations efficiently."
+            ]
+        }
+    ]
+}
+

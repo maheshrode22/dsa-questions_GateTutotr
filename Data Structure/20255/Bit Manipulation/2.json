@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Add Binary (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven two binary strings a and b, return their sum as a binary string.\n",
+            "examples": "Sample Input\n11 1\n\nSample Output\n100\n\nExplanation: 11 (binary) + 1 (binary) = 100 (binary).\n\nSample Input\n1010 1011\n\nSample Output\n10101\n\nExplanation: 1010 (binary) + 1011 (binary) = 10101 (binary).",
+            "constraints": "1 <= a.length, b.length <= 10^4\na and b consist only of '0' or '1' characters.\nEach string does not contain leading zeros except for the zero itself.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "11 1",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "1101001 1000111",
+                    "expectedOutput": "10110000"
+                },
+                {
+                    "input": "1101 1001",
+                    "expectedOutput": "10110"
+                },
+                {
+                    "input": "1000 1100",
+                    "expectedOutput": "10100"
+                },
+                {
+                    "input": "1111 1",
+                    "expectedOutput": "10000"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def addBinary(self, a, b):\n        # TODO: Return sum as binary string\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        a, b = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.addBinary(a, b))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String addBinary(String a, String b) {\n        // TODO: Return sum as binary string\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        String a = parts[0];\n        String b = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.addBinary(a, b));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    addBinary(a, b) {\n        // TODO: Return sum as binary string\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const a = parts[0];\n    const b = parts[1];\n    const sol = new Solution();\n    console.log(sol.addBinary(a, b));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string addBinary(string a, string b) {\n        // TODO: Return sum as binary string\n        return \"\";\n    }\n};\n\nint main() {\n    string a, b;\n    if (cin >> a >> b) {\n        Solution sol;\n        cout << sol.addBinary(a, b) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid addBinary(char* a, char* b) {\n    // TODO: Print sum as binary string\n}\n\nint main() {\n    char a[10005], b[10005];\n    if (scanf(\"%s %s\", a, b) == 2) {\n        addBinary(a, b);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Process strings from right to left, adding digits with carry.",
+                "Use bit manipulation or string operations to handle binary addition."
+            ]
+        }
+    ]
+}
+

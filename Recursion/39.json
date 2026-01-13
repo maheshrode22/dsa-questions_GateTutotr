@@ -1,0 +1,63 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count Digits Recursively",
+      "description": "Write a recursive function to count the number of digits in a non-negative integer N.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint the count of digits.",
+      "examples": "Sample Input\n12345\n\nSample Output\n5\n\nSample Input\n7\n\nSample Output\n1",
+      "constraints": "0 <= N <= 10^15",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "12345",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "7",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "0",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "99",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "1000",
+          "expectedOutput": "4"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countDigits(self, n):\n        # TODO: implement recursive count\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        print(Solution().countDigits(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int countDigits(long n) {\n        # TODO: implement recursive count\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            System.out.println(new Solution().countDigits(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countDigits(n) {\n        # TODO: implement recursive count\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.countDigits(n));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countDigits(long long n) {\n        // TODO: implement recursive count\n        return 0;\n    }\n};\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.countDigits(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint countDigits(long long n) {\n    // TODO: implement recursive count\n    return 0;\n}\n\nint main() {\n    long long n;\n    if (scanf(\"%lld\", &n) == 1) {\n        printf(\"%d\", countDigits(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about the base case and the recursive step."
+      ]
+    }
+  ]
+}

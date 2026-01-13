@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Missing Number (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.\n",
+            "examples": "Sample Input\n3 0 1\n\nSample Output\n2\n\nExplanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.\n\nSample Input\n0 1\n\nSample Output\n2\n\nExplanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.\n\nSample Input\n9 6 4 2 3 5 7 0 1\n\nSample Output\n8\n\nExplanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.",
+            "constraints": "n == nums.length\n1 <= n <= 10^4\n0 <= nums[i] <= n\nAll the numbers of nums are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "3 0 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5 2 4 6 3 0 1",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "0 2 3 4",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def missingNumber(self, nums):\n        # TODO: Return the missing number in range [0, n]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.missingNumber(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int missingNumber(int[] nums) {\n        // TODO: Return the missing number in range [0, n]\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.missingNumber(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    missingNumber(nums) {\n        // TODO: Return the missing number in range [0, n]\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.missingNumber(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int missingNumber(vector<int>& nums) {\n        // TODO: Return the missing number in range [0, n]\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.missingNumber(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid missingNumber(int* nums, int numsSize) {\n    // TODO: Print the missing number in range [0, n]\n}\n\nint main() {\n    int nums[10005];\n    int numsSize = 0;\n    char line[50000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    missingNumber(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use XOR: XOR all numbers from 0 to n, then XOR with all numbers in nums.",
+                "The missing number will be the result of the XOR operation."
+            ]
+        }
+    ]
+}
+

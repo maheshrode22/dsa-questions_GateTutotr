@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Number of Vowels in a Substring of Given Length (Sliding Window)",
+            "description": "Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.\nVowel letters in English are 'a', 'e', 'i', 'o', and 'u'.\n\nInput Format:\nFirst line: string s.\nSecond line: integer k.\n\nOutput Format:\nPrint a single integer: the maximum number of vowels.",
+            "examples": "Sample Input\nabciiidef\n3\n\nSample Output\n3\n\nExplanation: \"iii\" contains 3 vowel letters.",
+            "constraints": "1 <= s.length <= 10^5\n1 <= k <= s.length",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abciiidef\n3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "aeiou\n2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "leetcode\n3",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "ataaslkwjwtidnmfkwcepwwgbpxvylfskufoktgwypnjm\n25",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "nnajgmuizibxmssdwehlhugdeujtvquerfonks\n3",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxVowels(self, s, k):\n        # TODO: Return the maximum number of vowels\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    k = int(input().strip())\n    sol = Solution()\n    print(sol.maxVowels(s, k))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int maxVowels(String s, int k) {\n        // TODO: Return the maximum number of vowels\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.next();\n        int k = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.maxVowels(s, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxVowels(s, k) {\n        // TODO: Return the maximum number of vowels\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst s = input[0].trim();\nconst k = Number(input[1].trim());\nconst sol = new Solution();\nconsole.log(sol.maxVowels(s, k));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxVowels(string s, int k) {\n        // TODO: Return the maximum number of vowels\n        return 0;\n    }\n};\n\nint main() {\n    string s;\n    int k;\n    cin >> s >> k;\n    Solution sol;\n    cout << sol.maxVowels(s, k) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint maxVowels(char* s, int k) {\n    // TODO: Return the maximum number of vowels\n    return 0;\n}\n\nint main() {\n    char s[100005];\n    int k;\n    scanf(\"%s\", s);\n    scanf(\"%d\", &k);\n    printf(\"%d\\n\", maxVowels(s, k));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a fixed-size sliding window of length k.",
+                "Count vowels in the first window, then slide one by one updating the count."
+            ]
+        }
+    ]
+}

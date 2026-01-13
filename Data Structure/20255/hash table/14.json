@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Intersection of Two Linked Lists (Hash Table)",
+            "description": "Problem Statement\n\nGiven the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.\nFor this problem, return the value of the intersecting node, or -1 if there is no intersection.\n",
+            "examples": "Example 1:\n\nInput: listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3\nOutput: 8\nExplanation: The intersected node's value is 8.\n\nExample 2:\n\nInput: listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1\nOutput: 2\nExplanation: The intersected node's value is 2.\n\nExample 3:\n\nInput: listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2\nOutput: -1\nExplanation: The two lists do not intersect.",
+            "constraints": "The number of nodes of listA is in the m\nThe number of nodes of listB is in the n\n1 <= m, n <= 3 * 10^4\n1 <= Node.val <= 10^5",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5 6 2 3\n4 1 8 4 5\n5 6 1 8 4 5",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "5 3 3 1\n1 9 1 2 4\n3 2 4",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "3 2 3 2\n2 6 4\n1 5",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "1 1 0 0\n5\n5",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "4 4 1 1\n1 2 3 4\n5 2 3 4",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\nclass Solution:\n    def getIntersectionNode(self, headA, headB):\n        # TODO: Use hash set to find intersection node\n        # Return the intersecting node or None\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    m, n, skipA, skipB = map(int, data[0].split())\n    valsA = list(map(int, data[1].split()))\n    valsB = list(map(int, data[2].split()))\n    nodesA = [ListNode(val) for val in valsA]\n    nodesB = [ListNode(val) for val in valsB]\n    for i in range(m-1):\n        nodesA[i].next = nodesA[i+1]\n    for i in range(n-1):\n        nodesB[i].next = nodesB[i+1]\n    # Create intersection\n    if skipA < m and skipB < n:\n        nodesB[skipB-1].next = nodesA[skipA] if skipB > 0 else nodesA[skipA]\n        if skipB == 0:\n            nodesB[0] = nodesA[skipA]\n    sol = Solution()\n    result = sol.getIntersectionNode(nodesA[0] if m > 0 else None, nodesB[0] if n > 0 else None)\n    print(result.val if result else -1)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass ListNode{\n    int val;\n    ListNode next;\n    ListNode(int val){ this.val = val; }\n}\nclass Solution{\n    ListNode getIntersectionNode(ListNode headA, ListNode headB){\n        // TODO: Use hash set to find intersection node\n        // Return the intersecting node or null\n        return null;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] params = br.readLine().trim().split(\" \");\n        int m = Integer.parseInt(params[0]);\n        int n = Integer.parseInt(params[1]);\n        int skipA = Integer.parseInt(params[2]);\n        int skipB = Integer.parseInt(params[3]);\n        String[] valsA = br.readLine().trim().split(\" \");\n        String[] valsB = br.readLine().trim().split(\" \");\n        ListNode[] nodesA = new ListNode[m];\n        ListNode[] nodesB = new ListNode[n];\n        for(int i=0;i<m;i++) nodesA[i] = new ListNode(Integer.parseInt(valsA[i]));\n        for(int i=0;i<n;i++) nodesB[i] = new ListNode(Integer.parseInt(valsB[i]));\n        for(int i=0;i<m-1;i++) nodesA[i].next = nodesA[i+1];\n        for(int i=0;i<n-1;i++) nodesB[i].next = nodesB[i+1];\n        if(skipA < m && skipB < n && skipB > 0){\n            nodesB[skipB-1].next = nodesA[skipA];\n        }\n        Solution sol = new Solution();\n        ListNode result = sol.getIntersectionNode(m > 0 ? nodesA[0] : null, n > 0 ? nodesB[0] : null);\n        System.out.println(result != null ? result.val : -1);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class ListNode{\n  constructor(val, next=null){\n    this.val = val;\n    this.next = next;\n  }\n}\nclass Solution{\n  getIntersectionNode(headA, headB){\n    // TODO: Use hash set to find intersection node\n    // Return the intersecting node or null\n    return null;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const [m, n, skipA, skipB] = lines[0].split(\" \").map(Number);\n  const valsA = lines[1].split(\" \").map(Number);\n  const valsB = lines[2].split(\" \").map(Number);\n  const nodesA = valsA.map(val => new ListNode(val));\n  const nodesB = valsB.map(val => new ListNode(val));\n  for(let i=0;i<m-1;i++) nodesA[i].next = nodesA[i+1];\n  for(let i=0;i<n-1;i++) nodesB[i].next = nodesB[i+1];\n  if(skipA < m && skipB < n && skipB > 0){\n    nodesB[skipB-1].next = nodesA[skipA];\n  }\n  const sol = new Solution();\n  const result = sol.getIntersectionNode(m > 0 ? nodesA[0] : null, n > 0 ? nodesB[0] : null);\n  console.log(result ? result.val : -1);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{\n    int val;\n    ListNode *next;\n    ListNode(int x) : val(x), next(NULL) {}\n};\nclass Solution{\npublic:\n    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB){\n        // TODO: Use hash set to find intersection node\n        // Return the intersecting node or NULL\n        return NULL;\n    }\n};\nint main(){\n    int m, n, skipA, skipB;\n    cin >> m >> n >> skipA >> skipB;\n    vector<ListNode*> nodesA(m), nodesB(n);\n    for(int i=0;i<m;i++){\n        int val; cin >> val;\n        nodesA[i] = new ListNode(val);\n    }\n    for(int i=0;i<n;i++){\n        int val; cin >> val;\n        nodesB[i] = new ListNode(val);\n    }\n    for(int i=0;i<m-1;i++) nodesA[i]->next = nodesA[i+1];\n    for(int i=0;i<n-1;i++) nodesB[i]->next = nodesB[i+1];\n    if(skipA < m && skipB < n && skipB > 0){\n        nodesB[skipB-1]->next = nodesA[skipA];\n    }\n    Solution sol;\n    ListNode* result = sol.getIntersectionNode(m > 0 ? nodesA[0] : NULL, n > 0 ? nodesB[0] : NULL);\n    cout << (result ? result->val : -1);\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct ListNode{\n    int val;\n    struct ListNode *next;\n} ListNode;\n\nListNode* getIntersectionNode(ListNode *headA, ListNode *headB){\n    // TODO: Find intersection node\n    // Return the intersecting node or NULL\n    return NULL;\n}\n\nint main(){\n    int m, n, skipA, skipB;\n    scanf(\"%d %d %d %d\", &m, &n, &skipA, &skipB);\n    ListNode* nodesA[30000];\n    ListNode* nodesB[30000];\n    for(int i=0;i<m;i++){\n        int val; scanf(\"%d\", &val);\n        nodesA[i] = (ListNode*)malloc(sizeof(ListNode));\n        nodesA[i]->val = val;\n        nodesA[i]->next = NULL;\n    }\n    for(int i=0;i<n;i++){\n        int val; scanf(\"%d\", &val);\n        nodesB[i] = (ListNode*)malloc(sizeof(ListNode));\n        nodesB[i]->val = val;\n        nodesB[i]->next = NULL;\n    }\n    for(int i=0;i<m-1;i++) nodesA[i]->next = nodesA[i+1];\n    for(int i=0;i<n-1;i++) nodesB[i]->next = nodesB[i+1];\n    if(skipA < m && skipB < n && skipB > 0){\n        nodesB[skipB-1]->next = nodesA[skipA];\n    }\n    ListNode* result = getIntersectionNode(m > 0 ? nodesA[0] : NULL, n > 0 ? nodesB[0] : NULL);\n    printf(\"%d\", result ? result->val : -1);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to store all nodes from listA. Then traverse listB and check if any node is in the set.",
+                "Alternative O(1) space solution: Calculate lengths of both lists and align them before traversing together."
+            ]
+        }
+    ]
+}

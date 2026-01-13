@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Binary Subarrays With Sum (Sliding Window)",
+      "description": "Given a binary array nums and an integer goal, return the number of non-empty subarrays with a sum equal to goal.\n\nInput Format:\nFirst line: two integers n and goal.\nSecond line: n space-separated integers (0s and 1s).\n\nOutput Format:\nPrint the number of subarrays.",
+      "examples": "Sample Input\n5 2\n1 0 1 0 1\n\nSample Output\n4",
+      "constraints": "See problem description.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "5 2\n1 0 1 0 1",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "5 0\n0 0 0 0 0",
+          "expectedOutput": "15"
+        },
+        {
+          "input": "3 1\n1 1 1",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "4 3\n1 0 1 1",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "1 1\n1",
+          "expectedOutput": "1"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def numSubarraysWithSum(self, nums, goal):\n        # TODO: Return the number of non-empty subarrays with sum equal to goal\n        pass\n\nif __name__ == '__main__':\n    n, goal = map(int, input().split())\n    nums = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.numSubarraysWithSum(nums, goal))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int numSubarraysWithSum(int[] nums, int goal) {\n        // TODO: Return the number of non-empty subarrays with sum equal to goal\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int goal = sc.nextInt();\n        int[] nums = new int[n];\n        for(int i=0; i<n; i++) nums[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.numSubarraysWithSum(nums, goal));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    numSubarraysWithSum(nums, goal) {\n        // TODO: Return the number of non-empty subarrays with sum equal to goal\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const [n, goal] = lines[0].trim().split(/\\s+/).map(Number);\n    const nums = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.numSubarraysWithSum(nums, goal));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int numSubarraysWithSum(vector<int>& nums, int goal) {\n        // TODO: Return the number of non-empty subarrays with sum equal to goal\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, goal;\n    cin >> n >> goal;\n    vector<int> nums(n);\n    for(int i=0; i<n; i++) cin >> nums[i];\n    Solution sol;\n    cout << sol.numSubarraysWithSum(nums, goal) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    int n, goal;\n    scanf(\"%d %d\", &n, &goal);\n    int *nums = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &nums[i]);\n    // TODO: Return the number of non-empty subarrays with sum equal to goal\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

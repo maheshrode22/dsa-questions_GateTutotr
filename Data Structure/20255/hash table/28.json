@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Substring with At Least K Repeating Characters (Hash Table)",
+            "description": "Problem Statement\n\nGiven a string s and an integer k, return the length of the longest substring of s such that the frequency of each character in this substring is greater than or equal to k.\nif no such substring exists, return 0.\n",
+            "examples": "Example 1:\n\nInput: s = \"aaabb\", k = 3\nOutput: 3\nExplanation: The longest substring is \"aaa\", as 'a' is repeated 3 times.\n\nExample 2:\n\nInput: s = \"ababbc\", k = 2\nOutput: 5\nExplanation: The longest substring is \"ababb\", as 'a' is repeated 2 times and 'b' is repeated 3 times.",
+            "constraints": "1 <= s.length <= 10^4\ns consists of only lowercase English letters.\n1 <= k <= 10^5",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "aaabb\n3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "ababbc\n2",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "abcde\n1",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "abcde\n2",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "aaabbb\n3",
+                    "expectedOutput": "6"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestSubstring(self, s, k):\n        # TODO: Find longest substring with each char frequency >= k using divide and conquer\n        # Return length\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    s = data[0].strip()\n    k = int(data[1].strip())\n    sol = Solution()\n    result = sol.longestSubstring(s, k)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int longestSubstring(String s, int k){\n        // TODO: Find longest substring with each char frequency >= k using divide and conquer\n        // Return length\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        int k = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        int result = sol.longestSubstring(s, k);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  longestSubstring(s, k){\n    // TODO: Find longest substring with each char frequency >= k using divide and conquer\n    // Return length\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const s = lines[0].trim();\n  const k = parseInt(lines[1].trim());\n  const sol = new Solution();\n  const result = sol.longestSubstring(s, k);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int longestSubstring(string s, int k){\n        // TODO: Find longest substring with each char frequency >= k using divide and conquer\n        // Return length\n        return 0;\n    }\n};\nint main(){\n    string s;\n    int k;\n    cin >> s >> k;\n    Solution sol;\n    int result = sol.longestSubstring(s, k);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nint longestSubstring(char* s, int k){\n    // TODO: Find longest substring\n    // Return length\n    return 0;\n}\n\nint main(){\n    char s[10005];\n    int k;\n    scanf(\"%s\", s);\n    scanf(\"%d\", &k);\n    int result = longestSubstring(s, k);\n    printf(\"%d\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use divide and conquer. If a character appears fewer than k times, it cannot be part of the answer.",
+                "Split the string at such characters and solve recursively for the substrings."
+            ]
+        }
+    ]
+}

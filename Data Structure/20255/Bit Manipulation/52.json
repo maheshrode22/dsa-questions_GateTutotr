@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Chalkboard XOR Game (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an array of integers nums represents the numbers written on a chalkboard.\nAlice and Bob take turns erasing exactly one number from the chalkboard, with Alice starting first. If erasing a number causes the bitwise XOR of all the elements of the chalkboard to become 0, then that player loses. The bitwise XOR of one element is that element itself, and the bitwise XOR of no elements is 0.\nAlso, if any player starts their turn with the bitwise XOR of all the elements of the chalkboard equal to 0, then that player wins.\nReturn true if and only if Alice wins the game, assuming both players play optimally.\n",
+            "examples": "Sample Input\n1 1 2\n\nSample Output\nFalse\n\nExplanation: \nAlice has two choices: erase 1 or erase 2. \nIf she erases 1, the nums array becomes [1, 2]. The bitwise XOR of all the elements of the chalkboard is 1 XOR 2 = 3. Now Bob can remove any element he wants, because Alice will be the one to erase the last element and she will lose. \nIf Alice erases 2 first, now nums become [1, 1]. The bitwise XOR of all the elements of the chalkboard is 1 XOR 1 = 0. Alice will lose.\n\nSample Input\n0 1\n\nSample Output\nTrue\n\nExplanation: Alice wins.\n\nSample Input\n1 2 3\n\nSample Output\nTrue\n\nExplanation: Alice wins.",
+            "constraints": "1 <= nums.length <= 1000\n0 <= nums[i] < 2^16",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "1 1 2",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "0 1",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1 2 3",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1 2 2 3",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def xorGame(self, nums):\n        # TODO: Return True if Alice wins, else False\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.xorGame(nums)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean xorGame(int[] nums) {\n        // TODO: Return true if Alice wins, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.xorGame(nums) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    xorGame(nums) {\n        // TODO: Return true if Alice wins, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.xorGame(nums);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool xorGame(vector<int>& nums) {\n        // TODO: Return true if Alice wins, else false\n        return false;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << (sol.xorGame(nums) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <stdlib.h>\n\nvoid xorGame(int* nums, int numsSize) {\n    // TODO: Print \"True\" if Alice wins, else \"False\"\n}\n\nint main() {\n    int nums[1005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    xorGame(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "If the XOR of all numbers is 0, Alice wins immediately.",
+                "If the XOR is non-zero and the array length is even, Alice can always force a win."
+            ]
+        }
+    ]
+}
+

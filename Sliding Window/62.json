@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Max Value of Equation (Sliding Window)",
+            "description": "You are given an array points containing the coordinates of points on a 2D plane, sorted by the x-values. You are also given an integer k.\nReturn the maximum value of the equation yi + yj + |xi - xj| where |xi - xj| <= k and 1 <= i < j <= points.length.\n\nInput Format:\nFirst line: two integers n and k.\nNext n lines: two integers xi, yi.\n\nOutput Format:\nPrint a single integer: the maximum value.",
+            "examples": "Sample Input\n4 1\n1 3\n2 0\n5 10\n6 -10\n\nSample Output\n4\n\nExplanation: First two points: 3 + 0 + |1-2| = 4.",
+            "constraints": "2 <= points.length <= 10^5\n-10^8 <= xi, yi <= 10^8\n0 <= k <= 2 * 10^8",
+            "hints": 3,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 1\n1 3\n2 0\n5 10\n6 -10",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "3 3\n0 0\n3 0\n9 2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "20 2\n5 9\n6 -8\n9 5\n11 -6\n16 -7\n17 0\n18 8\n22 -4\n24 9\n25 2\n26 -9\n27 -8\n32 9\n36 9\n40 7\n41 7\n42 1\n43 7\n45 5\n48 7",
+                    "expectedOutput": "16"
+                },
+                {
+                    "input": "8 1\n2 -3\n6 3\n10 -5\n12 4\n13 -8\n16 10\n21 0\n24 5",
+                    "expectedOutput": "-3"
+                },
+                {
+                    "input": "9 4\n2 7\n4 -4\n6 -5\n7 -10\n8 8\n11 10\n15 7\n18 5\n22 4",
+                    "expectedOutput": "21"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findMaxValueOfEquation(self, points, k):\n        # TODO: Return the maximum value of the equation\n        pass\n\nif __name__ == '__main__':\n    n, k = map(int, input().split())\n    points = []\n    for _ in range(n):\n        points.append(list(map(int, input().split())))\n    sol = Solution()\n    print(sol.findMaxValueOfEquation(points, k))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int findMaxValueOfEquation(int[][] points, int k) {\n        // TODO: Return the maximum value of the equation\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int k = sc.nextInt();\n        int[][] points = new int[n][2];\n        for(int i=0; i<n; i++) {\n            points[i][0] = sc.nextInt();\n            points[i][1] = sc.nextInt();\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.findMaxValueOfEquation(points, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findMaxValueOfEquation(points, k) {\n        // TODO: Return the maximum value of the equation\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst [n, k] = input[0].split(' ').map(Number);\nconst points = [];\nfor(let i=1; i<=n; i++) points.push(input[i].split(' ').map(Number));\nconst sol = new Solution();\nconsole.log(sol.findMaxValueOfEquation(points, k));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findMaxValueOfEquation(vector<vector<int>>& points, int k) {\n        // TODO: Return the maximum value of the equation\n        return 0;\n    }\n};\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<vector<int>> points(n, vector<int>(2));\n    for(int i=0; i<n; i++) cin >> points[i][0] >> points[i][1];\n    Solution sol;\n    cout << sol.findMaxValueOfEquation(points, k) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint findMaxValueOfEquation(int** points, int pointsSize, int* pointsColSize, int k) {\n    // TODO: Return the maximum value of the equation\n    return 0;\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    int** points = (int**)malloc(n * sizeof(int*));\n    for(int i=0; i<n; i++) {\n        points[i] = (int*)malloc(2 * sizeof(int));\n        scanf(\"%d %d\", &points[i][0], &points[i][1]);\n    }\n    printf(\"%d\\n\", findMaxValueOfEquation(points, n, NULL, k));\n    for(int i=0; i<n; i++) free(points[i]);\n    free(points);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Equation can be rewritten as (yi - xi) + (yj + xj).",
+                "For a fixed j, we need to maximize (yi - xi) such that xi >= xj - k.",
+                "Use a monotonic queue to store pairs (yi - xi, xi)."
+            ]
+        }
+    ]
+}

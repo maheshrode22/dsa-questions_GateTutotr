@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Add Bold Tag in String (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a string s and an array of strings words.\nYou should add a closed pair of bold tag <b> and </b> to wrap the substrings in s that exist in words.\n\nIf two such substrings overlap, you should wrap them together with only one pair of closed bold-tag.\nIf two substrings wrapped by bold tags are consecutive, you should combine them.\n\nReturn s after adding the bold tags.\n",
+            "examples": "Sample Input\nabcxyz123\nabc 123\n\nSample Output\n<b>abc</b>xyz<b>123</b>\n\nExplanation: The two strings of words are substrings of s.\n\nSample Input\naaabbb\naa b\n\nSample Output\n<b>aaabbb</b>\n\nExplanation: \"aa\" and \"b\" overlap and are consecutive, so they are combined.",
+            "constraints": "1 <= s.length <= 1000\n0 <= words.length <= 100\n1 <= words[i].length <= 1000\ns and words[i] consist of English letters and digits.\nAll the values of words are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abcxyz123\nabc 123",
+                    "expectedOutput": "<b>abc</b>xyz<b>123</b>"
+                },
+                {
+                    "input": "aaabbb\naa b",
+                    "expectedOutput": "<b>aaabbb</b>"
+                },
+                {
+                    "input": "hello\nhe ll",
+                    "expectedOutput": "<b>hell</b>o"
+                },
+                {
+                    "input": "abcdef\nxyz",
+                    "expectedOutput": "abcdef"
+                },
+                {
+                    "input": "aabbcc\naa bb cc",
+                    "expectedOutput": "<b>aabbcc</b>"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def addBoldTag(self, s, words):\n        # TODO: Return s with bold tags added\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    s = lines[0]\n    words = lines[1].split() if len(lines) > 1 else []\n    sol = Solution()\n    print(sol.addBoldTag(s, words))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String addBoldTag(String s, String[] words) {\n        // TODO: Return s with bold tags added\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String[] words = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        System.out.println(sol.addBoldTag(s, words));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    addBoldTag(s, words) {\n        // TODO: Return s with bold tags added\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const words = lines.length > 1 ? lines[1].split(/\\s+/) : [];\n    const sol = new Solution();\n    console.log(sol.addBoldTag(s, words));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string addBoldTag(string s, vector<string>& words) {\n        // TODO: Return s with bold tags added\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    getline(cin, s);\n    string wordsLine;\n    getline(cin, wordsLine);\n    vector<string> words;\n    istringstream iss(wordsLine);\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    Solution sol;\n    cout << sol.addBoldTag(s, words) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid addBoldTag(char* s, char** words, int wordsSize) {\n    // TODO: Print s with bold tags added\n}\n\nint main() {\n    char s[1005], wordsLine[10005];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    fgets(wordsLine, sizeof(wordsLine), stdin);\n    wordsLine[strcspn(wordsLine, \"\\n\")] = 0;\n    char* words[105];\n    int wordsSize = 0;\n    char* token = strtok(wordsLine, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    addBoldTag(s, words, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Mark all positions where words appear in the string.",
+                "Merge overlapping and consecutive marked regions, then add bold tags."
+            ]
+        }
+    ]
+}
+

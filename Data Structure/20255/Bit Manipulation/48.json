@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "K-th Symbol in Grammar (Bit Manipulation)",
+            "description": "Problem Statement\n\nWe build a table of n rows (1-indexed). We start by writing 0 in the 1st row. Now in every subsequent row, we look at the previous row and replace each occurrence of 0 with 01, and each occurrence of 1 with 10.\nFor example, for n = 3, the 1st row is 0, the 2nd row is 01, and the 3rd row is 0110.\nGiven two integer n and k, return the kth (1-indexed) symbol in the nth row of a table of n rows.\n",
+            "examples": "Sample Input\n1 1\n\nSample Output\n0\n\nExplanation: row 1: 0\n\nSample Input\n2 1\n\nSample Output\n0\n\nExplanation:\nrow 1: 0\nrow 2: 01\n\nSample Input\n2 2\n\nSample Output\n1\n\nExplanation:\nrow 1: 0\nrow 2: 01",
+            "constraints": "1 <= n <= 30\n1 <= k <= 2^(n-1)",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2 1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2 2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3 2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4 8",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def kthGrammar(self, n, k):\n        # TODO: Return kth symbol in nth row\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n, k = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    print(sol.kthGrammar(n, k))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int kthGrammar(int n, int k) {\n        // TODO: Return kth symbol in nth row\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int k = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.kthGrammar(n, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    kthGrammar(n, k) {\n        // TODO: Return kth symbol in nth row\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const n = parseInt(parts[0]);\n    const k = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.kthGrammar(n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int kthGrammar(int n, int k) {\n        // TODO: Return kth symbol in nth row\n        return 0;\n    }\n};\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    Solution sol;\n    cout << sol.kthGrammar(n, k) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid kthGrammar(int n, int k) {\n    // TODO: Print kth symbol in nth row\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    kthGrammar(n, k);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Notice the recursive pattern: row n is built from row n-1 by replacing 0->01 and 1->10.",
+                "Use bit manipulation: the kth symbol in row n is related to the (k+1)/2th symbol in row n-1."
+            ]
+        }
+    ]
+}
+

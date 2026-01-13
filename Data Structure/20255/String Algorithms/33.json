@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Prefix and Suffix Pairs II (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed string array words.\nLet's define a boolean function isPrefixAndSuffix that takes two strings, str1 and str2:\n\nisPrefixAndSuffix(str1, str2) returns true if str1 is both a prefix and a suffix of str2, and false otherwise.\n\nFor example, isPrefixAndSuffix(\"aba\", \"ababa\") is true because \"aba\" is a prefix of \"ababa\" and also a suffix, but isPrefixAndSuffix(\"abc\", \"abcd\") is false.\nReturn an integer denoting the number of index pairs (i, j) such that i < j, and isPrefixAndSuffix(words[i], words[j]) is true.\n",
+            "examples": "Sample Input\na aba ababa aa\n\nSample Output\n4\n\nExplanation: The counted index pairs are: (0,1), (0,2), (0,3), and (1,2).\n\nSample Input\npa papa ma mama\n\nSample Output\n2\n\nExplanation: The counted index pairs are: (0,1) and (2,3).",
+            "constraints": "1 <= words.length <= 10^5\n1 <= words[i].length <= 10^5\nwords[i] consists only of lowercase English letters.\nThe sum of the lengths of all words[i] does not exceed 5 * 10^5.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "a aba ababa aa",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "pa papa ma mama",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abab ab",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "a ab abc abcd",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "aba ababa abababa",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countPrefixSuffixPairs(self, words):\n        # TODO: Return count of prefix-suffix pairs\n        pass\n\nif __name__ == '__main__':\n    import sys\n    words = sys.stdin.read().strip().split()\n    sol = Solution()\n    print(sol.countPrefixSuffixPairs(words))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long countPrefixSuffixPairs(String[] words) {\n        // TODO: Return count of prefix-suffix pairs\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        System.out.println(sol.countPrefixSuffixPairs(words));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countPrefixSuffixPairs(words) {\n        // TODO: Return count of prefix-suffix pairs\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const words = input.trim().split(/\\s+/);\n    const sol = new Solution();\n    console.log(sol.countPrefixSuffixPairs(words));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long countPrefixSuffixPairs(vector<string>& words) {\n        // TODO: Return count of prefix-suffix pairs\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    Solution sol;\n    cout << sol.countPrefixSuffixPairs(words) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid countPrefixSuffixPairs(char** words, int wordsSize) {\n    // TODO: Print count of prefix-suffix pairs\n}\n\nint main() {\n    char line[500005];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* words[100005];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    countPrefixSuffixPairs(words, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Trie or hash-based approach for efficient prefix-suffix matching.",
+                "For each word, check if any previous word is both prefix and suffix of current word."
+            ]
+        }
+    ]
+}
+

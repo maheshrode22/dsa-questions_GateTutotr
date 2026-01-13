@@ -1,0 +1,604 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Divide Two Integers (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.\nThe integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2.\nReturn the quotient after dividing dividend by divisor.\nNote: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [-2^31, 2^31 - 1]. For this problem, if the quotient is strictly greater than 2^31 - 1, then return 2^31 - 1, and if the quotient is strictly less than -2^31, then return -2^31.\n",
+            "examples": "Sample Input\n10 3\n\nSample Output\n3\n\nExplanation: 10/3 = 3.33333.. which is truncated to 3.\n\nSample Input\n7 -3\n\nSample Output\n-2\n\nExplanation: 7/-3 = -2.33333.. which is truncated to -2.",
+            "constraints": "-2^31 <= dividend, divisor <= 2^31 - 1\ndivisor != 0",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "10 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "-2147483648 2",
+                    "expectedOutput": "-1073741824"
+                },
+                {
+                    "input": "-2147483648 -1",
+                    "expectedOutput": "2147483647"
+                },
+                {
+                    "input": "-1 -1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "2147483647 1",
+                    "expectedOutput": "2147483647"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def divide(self, dividend, divisor):\n        # TODO: Return quotient without using *, /, or %\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        dividend, divisor = int(input_data[0]), int(input_data[1])\n        sol = Solution()\n        print(sol.divide(dividend, divisor))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int divide(int dividend, int divisor) {\n        // TODO: Return quotient without using *, /, or %\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        int dividend = Integer.parseInt(parts[0]);\n        int divisor = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.divide(dividend, divisor));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    divide(dividend, divisor) {\n        // TODO: Return quotient without using *, /, or %\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const dividend = parseInt(parts[0]);\n    const divisor = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.divide(dividend, divisor));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int divide(int dividend, int divisor) {\n        // TODO: Return quotient without using *, /, or %\n        return 0;\n    }\n};\n\nint main() {\n    int dividend, divisor;\n    if (cin >> dividend >> divisor) {\n        Solution sol;\n        cout << sol.divide(dividend, divisor) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <limits.h>\n\nvoid divide(int dividend, int divisor) {\n    // TODO: Print quotient without using *, /, or %\n}\n\nint main() {\n    int dividend, divisor;\n    if (scanf(\"%d %d\", &dividend, &divisor) == 2) {\n        divide(dividend, divisor);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation to perform division by powers of 2.",
+                "Use left shift to multiply by 2 and right shift to divide by 2."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Add Binary (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven two binary strings a and b, return their sum as a binary string.\n",
+            "examples": "Sample Input\n11 1\n\nSample Output\n100\n\nExplanation: 11 (binary) + 1 (binary) = 100 (binary).\n\nSample Input\n1010 1011\n\nSample Output\n10101\n\nExplanation: 1010 (binary) + 1011 (binary) = 10101 (binary).",
+            "constraints": "1 <= a.length, b.length <= 10^4\na and b consist only of '0' or '1' characters.\nEach string does not contain leading zeros except for the zero itself.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "11 1",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "1101001 1000111",
+                    "expectedOutput": "10110000"
+                },
+                {
+                    "input": "1101 1001",
+                    "expectedOutput": "10110"
+                },
+                {
+                    "input": "1000 1100",
+                    "expectedOutput": "10100"
+                },
+                {
+                    "input": "1111 1",
+                    "expectedOutput": "10000"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def addBinary(self, a, b):\n        # TODO: Return sum as binary string\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        a, b = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.addBinary(a, b))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String addBinary(String a, String b) {\n        // TODO: Return sum as binary string\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        String a = parts[0];\n        String b = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.addBinary(a, b));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    addBinary(a, b) {\n        // TODO: Return sum as binary string\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const a = parts[0];\n    const b = parts[1];\n    const sol = new Solution();\n    console.log(sol.addBinary(a, b));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string addBinary(string a, string b) {\n        // TODO: Return sum as binary string\n        return \"\";\n    }\n};\n\nint main() {\n    string a, b;\n    if (cin >> a >> b) {\n        Solution sol;\n        cout << sol.addBinary(a, b) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid addBinary(char* a, char* b) {\n    // TODO: Print sum as binary string\n}\n\nint main() {\n    char a[10005], b[10005];\n    if (scanf(\"%s %s\", a, b) == 2) {\n        addBinary(a, b);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Process strings from right to left, adding digits with carry.",
+                "Use bit manipulation or string operations to handle binary addition."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Subsets (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums of unique elements, return all possible subsets (the power set).\nThe solution set must not contain duplicate subsets. Return the solution in any order.\n",
+            "examples": "Sample Input\n1 2 3\n\nSample Output\n[] [1] [2] [1,2] [3] [1,3] [2,3] [1,2,3]\n\nExplanation: All possible subsets of [1,2,3].\n\nSample Input\n0\n\nSample Output\n[] [0]\n\nExplanation: All possible subsets of [0].",
+            "constraints": "1 <= nums.length <= 10\n-10 <= nums[i] <= 10\nAll the numbers of nums are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 2 3",
+                    "expectedOutput": "[] [1] [2] [1,2] [3] [1,3] [2,3] [1,2,3]"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "[] [0]"
+                },
+                {
+                    "input": "6 1 5 2 4",
+                    "expectedOutput": "[] [4] [2] [2,4] [5] [5,4] [5,2] [5,2,4] [1] [1,4] [1,2] [1,2,4] [1,5] [1,5,4] [1,5,2] [1,5,2,4] [6] [6,4] [6,2] [6,2,4] [6,5] [6,5,4] [6,5,2] [6,5,2,4] [6,1] [6,1,4] [6,1,2] [6,1,2,4] [6,1,5] [6,1,5,4] [6,1,5,2] [6,1,5,2,4]"
+                },
+                {
+                    "input": "-2 -1 0 1 2",
+                    "expectedOutput": "[] [2] [1] [1,2] [0] [0,2] [0,1] [0,1,2] [-1] [-1,2] [-1,1] [-1,1,2] [-1,0] [-1,0,2] [-1,0,1] [-1,0,1,2] [-2] [-2,2] [-2,1] [-2,1,2] [-2,0] [-2,0,2] [-2,0,1] [-2,0,1,2] [-2,-1] [-2,-1,2] [-2,-1,1] [-2,-1,1,2] [-2,-1,0] [-2,-1,0,2] [-2,-1,0,1] [-2,-1,0,1,2]"
+                },
+                {
+                    "input": "1 3 5",
+                    "expectedOutput": "[] [5] [3] [3,5] [1] [1,5] [1,3] [1,3,5]"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def subsets(self, nums):\n        # TODO: Return all possible subsets\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.subsets(nums)\n    # Format output: [] [1] [2] [1,2] ...\n    output = []\n    for subset in result:\n        output.append('[' + ','.join(map(str, subset)) + ']')\n    print(' '.join(output))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<Integer>> subsets(int[] nums) {\n        // TODO: Return all possible subsets\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        List<List<Integer>> result = sol.subsets(nums);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i).toString().replace(\" \", \"\") + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    subsets(nums) {\n        // TODO: Return all possible subsets\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.subsets(nums);\n    const output = result.map(subset => '[' + subset.join(',') + ']');\n    console.log(output.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> subsets(vector<int>& nums) {\n        // TODO: Return all possible subsets\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    vector<vector<int>> result = sol.subsets(nums);\n    for (int i = 0; i < result.size(); i++) {\n        cout << \"[\";\n        for (int j = 0; j < result[i].size(); j++) {\n            cout << result[i][j] << (j == result[i].size() - 1 ? \"\" : \",\");\n        }\n        cout << \"]\" << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid subsets(int* nums, int numsSize) {\n    // TODO: Print all possible subsets\n}\n\nint main() {\n    int nums[15];\n    int numsSize = 0;\n    char line[200];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    subsets(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation: each number from 0 to 2^n - 1 represents a subset.",
+                "For each number, check which bits are set to include corresponding elements."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Gray Code (Bit Manipulation)",
+            "description": "Problem Statement\n\nAn n-bit gray code sequence is a sequence of 2^n integers where:\n\nEvery integer is in the inclusive range [0, 2^n - 1],\nThe first integer is 0,\nAn integer appears no more than once in the sequence,\nThe binary representation of every pair of adjacent integers differs by exactly one bit, and\nThe binary representation of the first and last integers differs by exactly one bit.\n\nGiven an integer n, return any valid n-bit gray code sequence.\n",
+            "examples": "Sample Input\n2\n\nSample Output\n0 1 3 2\n\nExplanation: The binary representation of [0,1,3,2] is [00,01,11,10].\n- 00 and 01 differ by one bit\n- 01 and 11 differ by one bit\n- 11 and 10 differ by one bit\n- 10 and 00 differ by one bit\n\nSample Input\n1\n\nSample Output\n0 1\n\nExplanation: The binary representation of [0,1] is [0,1].",
+            "constraints": "1 <= n <= 16",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "0 1 3 2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "0 1"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "0 1 3 2 6 7 5 4"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "0 1 3 2 6 7 5 4 12 13 15 14 10 11 9 8"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "0 1 3 2 6 7 5 4 12 13 15 14 10 11 9 8 24 25 27 26 30 31 29 28 20 21 23 22 18 19 17 16"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def grayCode(self, n):\n        # TODO: Return n-bit gray code sequence\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    result = sol.grayCode(n)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<Integer> grayCode(int n) {\n        // TODO: Return n-bit gray code sequence\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        List<Integer> result = sol.grayCode(n);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    grayCode(n) {\n        // TODO: Return n-bit gray code sequence\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.grayCode(n);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> grayCode(int n) {\n        // TODO: Return n-bit gray code sequence\n        return {};\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<int> result = sol.grayCode(n);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid grayCode(int n) {\n    // TODO: Print n-bit gray code sequence\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    grayCode(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use the formula: gray(i) = i XOR (i >> 1).",
+                "Or build recursively: start with [0,1], then reflect and prepend 1."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Subsets II (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums that may contain duplicates, return all possible subsets (the power set).\nThe solution set must not contain duplicate subsets. Return the solution in any order.\n",
+            "examples": "Sample Input\n1 2 2\n\nSample Output\n[] [1] [2] [1,2] [2,2] [1,2,2]\n\nExplanation: All possible subsets without duplicates.\n\nSample Input\n0\n\nSample Output\n[] [0]\n\nExplanation: All possible subsets of [0].",
+            "constraints": "1 <= nums.length <= 10\n-10 <= nums[i] <= 10",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 2 2",
+                    "expectedOutput": "[] [1] [2] [1,2] [2,2] [1,2,2]"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "[] [0]"
+                },
+                {
+                    "input": "-1 1 -1 1",
+                    "expectedOutput": "[] [-1] [1] [-1,-1] [-1,1] [1,1] [-1,-1,1] [-1,1,1] [-1,-1,1,1]"
+                },
+                {
+                    "input": "1 2 2 3",
+                    "expectedOutput": "[] [1] [2] [3] [1,2] [1,3] [2,2] [2,3] [1,2,2] [1,2,3] [2,2,3] [1,2,2,3]"
+                },
+                {
+                    "input": "2 1 2",
+                    "expectedOutput": "[] [1] [2] [1,2] [2,2] [1,2,2]"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def subsetsWithDup(self, nums):\n        # TODO: Return all possible subsets without duplicates\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.subsetsWithDup(nums)\n    # Format output: [] [1] [2] [1,2] ...\n    output = []\n    for subset in result:\n        output.append('[' + ','.join(map(str, subset)) + ']')\n    print(' '.join(output))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<Integer>> subsetsWithDup(int[] nums) {\n        // TODO: Return all possible subsets without duplicates\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        List<List<Integer>> result = sol.subsetsWithDup(nums);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i).toString().replace(\" \", \"\") + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    subsetsWithDup(nums) {\n        // TODO: Return all possible subsets without duplicates\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.subsetsWithDup(nums);\n    const output = result.map(subset => '[' + subset.join(',') + ']');\n    console.log(output.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> subsetsWithDup(vector<int>& nums) {\n        // TODO: Return all possible subsets without duplicates\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    vector<vector<int>> result = sol.subsetsWithDup(nums);\n    for (int i = 0; i < result.size(); i++) {\n        cout << \"[\";\n        for (int j = 0; j < result[i].size(); j++) {\n            cout << result[i][j] << (j == result[i].size() - 1 ? \"\" : \",\");\n        }\n        cout << \"]\" << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid subsetsWithDup(int* nums, int numsSize) {\n    // TODO: Print all possible subsets without duplicates\n}\n\nint main() {\n    int nums[15];\n    int numsSize = 0;\n    char line[200];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    subsetsWithDup(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Sort the array first to handle duplicates easily.",
+                "Use bit manipulation or backtracking, but skip duplicate subsets."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Single Number (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a non-empty array of integers nums, every element appears twice except for one. Find that single one.\nYou must implement a solution with a linear runtime complexity and use only constant extra space.\n",
+            "examples": "Sample Input\n2 2 1\n\nSample Output\n1\n\nExplanation: The single element that appears only once is 1.\n\nSample Input\n4 1 2 1 2\n\nSample Output\n4\n\nExplanation: The single element that appears only once is 4.",
+            "constraints": "1 <= nums.length <= 3 * 10^4\n-3 * 10^4 <= nums[i] <= 3 * 10^4\nEach element in the array appears twice except for one element which appears only once.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "-1 2 -1 -2 2",
+                    "expectedOutput": "-2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "10 1 10 2 2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3 3 7 7 10",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "10 10 20 20 30",
+                    "expectedOutput": "30"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def singleNumber(self, nums):\n        # TODO: Return the single number using XOR\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.singleNumber(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int singleNumber(int[] nums) {\n        // TODO: Return the single number using XOR\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.singleNumber(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    singleNumber(nums) {\n        // TODO: Return the single number using XOR\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.singleNumber(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        // TODO: Return the single number using XOR\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.singleNumber(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid singleNumber(int* nums, int numsSize) {\n    // TODO: Print the single number using XOR\n}\n\nint main() {\n    int nums[30005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    singleNumber(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use XOR operation: a XOR a = 0, and a XOR 0 = a.",
+                "XOR all numbers together - pairs will cancel out, leaving the single number."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Single Number II (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums where every element appears three times except for one, which appears exactly once. Find the single element and return it.\nYou must implement a solution with a linear runtime complexity and use only constant extra space.\n",
+            "examples": "Sample Input\n2 2 3 2\n\nSample Output\n3\n\nExplanation: The single element that appears only once is 3.\n\nSample Input\n0 1 0 1 0 1 99\n\nSample Output\n99\n\nExplanation: The single element that appears only once is 99.",
+            "constraints": "1 <= nums.length <= 3 * 10^4\n-2^31 <= nums[i] <= 2^31 - 1\nEach element in nums appears exactly three times except for one element which appears once.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1000000000 1000000000 1000000000 7",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "-1 -1 -1 100",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "-2 -2 -2 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "1 1 1 2 2 2 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "7 7 7 10",
+                    "expectedOutput": "10"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def singleNumber(self, nums):\n        # TODO: Return the single number (appears once, others appear 3 times)\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.singleNumber(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int singleNumber(int[] nums) {\n        // TODO: Return the single number (appears once, others appear 3 times)\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.singleNumber(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    singleNumber(nums) {\n        // TODO: Return the single number (appears once, others appear 3 times)\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.singleNumber(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        // TODO: Return the single number (appears once, others appear 3 times)\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.singleNumber(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid singleNumber(int* nums, int numsSize) {\n    // TODO: Print the single number (appears once, others appear 3 times)\n}\n\nint main() {\n    int nums[30005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    singleNumber(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation to count bits at each position modulo 3.",
+                "Track ones and twos separately, then combine to find the single number."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Repeated DNA Sequences (Bit Manipulation)",
+            "description": "Problem Statement\n\nThe DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.\nFor example, \"ACGAATTCCG\" is a DNA sequence.\nWhen studying DNA, it is useful to identify repeated sequences within the DNA.\nGiven a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.\n",
+            "examples": "Sample Input\nAAAAACCCCCAAAAACCCCCCAAAAAGGGTTT\n\nSample Output\nAAAAACCCCC CCCCCAAAAA\n\nExplanation: The 10-letter sequences that occur more than once are shown.\n\nSample Input\nAAAAAAAAAAAAA\n\nSample Output\nAAAAAAAAAA\n\nExplanation: The 10-letter sequence \"AAAAAAAAAA\" occurs multiple times.",
+            "constraints": "1 <= s.length <= 10^5\ns[i] is either 'A', 'C', 'G', or 'T'.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "ACGACGACGACGACGACG",
+                    "expectedOutput": "ACGACGACGA CGACGACGAC GACGACGACG"
+                },
+                {
+                    "input": "AAAAAAAAAAAAA",
+                    "expectedOutput": "AAAAAAAAAA"
+                },
+                {
+                    "input": "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT",
+                    "expectedOutput": "AAAAACCCCC CCCCCAAAAA"
+                },
+                {
+                    "input": "CGTTGCGTTGCGTTGCGTTG",
+                    "expectedOutput": "CGTTGCGTTG GCGTTGCGTT GTTGCGTTGC TGCGTTGCGT TTGCGTTGCG"
+                },
+                {
+                    "input": "ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT",
+                    "expectedOutput": "ACGTACGTAC CGTACGTACG GTACGTACGT TACGTACGTA"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findRepeatedDnaSequences(self, s):\n        # TODO: Return all 10-letter sequences that occur more than once\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    result = sol.findRepeatedDnaSequences(s)\n    print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> findRepeatedDnaSequences(String s) {\n        // TODO: Return all 10-letter sequences that occur more than once\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        List<String> result = sol.findRepeatedDnaSequences(s);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findRepeatedDnaSequences(s) {\n        // TODO: Return all 10-letter sequences that occur more than once\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    const result = sol.findRepeatedDnaSequences(s);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> findRepeatedDnaSequences(string s) {\n        // TODO: Return all 10-letter sequences that occur more than once\n        return {};\n    }\n};\n\nint main() {\n    string s;\n    getline(cin, s);\n    Solution sol;\n    vector<string> result = sol.findRepeatedDnaSequences(s);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid findRepeatedDnaSequences(char* s) {\n    // TODO: Print all 10-letter sequences that occur more than once\n}\n\nint main() {\n    char s[100005];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    findRepeatedDnaSequences(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to track all 10-letter substrings and their occurrences.",
+                "Use bit manipulation to encode DNA sequences efficiently."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Reverse Bits (Bit Manipulation)",
+            "description": "Problem Statement\n\nReverse bits of a given 32 bits unsigned integer.\nNote: In some languages, such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.\n",
+            "examples": "Sample Input\n43261596\n\nSample Output\n964176192\n\nExplanation: The input binary string 00000010100101000001111010011100 represents the unsigned integer 43261596, so return 964176192 which its binary representation is 00111001011110000010100101000000.\n\nSample Input\n4294967293\n\nSample Output\n3221225471\n\nExplanation: The input binary string 11111111111111111111111111111101 represents the unsigned integer 4294967293, so return 3221225471.",
+            "constraints": "The input must be a 32-bit unsigned integer (or signed integer in Java).",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "4294967295",
+                    "expectedOutput": "4294967295"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "2147483648"
+                },
+                {
+                    "input": "2147483648",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "43261596",
+                    "expectedOutput": "964176192"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def reverseBits(self, n):\n        # TODO: Reverse bits of 32-bit unsigned integer\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    result = sol.reverseBits(n)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int reverseBits(int n) {\n        // TODO: Reverse bits of 32-bit integer\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        long input = Long.parseLong(br.readLine().trim());\n        int n = (int)input;\n        Solution sol = new Solution();\n        long result = Integer.toUnsignedLong(sol.reverseBits(n));\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    reverseBits(n) {\n        // TODO: Reverse bits of 32-bit unsigned integer\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.reverseBits(n);\n    console.log(result >>> 0);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    uint32_t reverseBits(uint32_t n) {\n        // TODO: Reverse bits of 32-bit unsigned integer\n        return 0;\n    }\n};\n\nint main() {\n    unsigned long long input;\n    cin >> input;\n    uint32_t n = (uint32_t)input;\n    Solution sol;\n    cout << sol.reverseBits(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdint.h>\n\nvoid reverseBits(uint32_t n) {\n    // TODO: Print reversed bits of 32-bit unsigned integer\n}\n\nint main() {\n    unsigned long long input;\n    scanf(\"%llu\", &input);\n    uint32_t n = (uint32_t)input;\n    reverseBits(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Extract bits from right to left and build the result from left to right.",
+                "Use bit shifting and masking operations to reverse the bits."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Number of 1 Bits (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a positive integer n, write a function that returns the number of set bits in its binary representation (also known as the Hamming weight).\n",
+            "examples": "Sample Input\n11\n\nSample Output\n3\n\nExplanation: The input binary string 1011 has a total of three set bits.\n\nSample Input\n128\n\nSample Output\n1\n\nExplanation: The input binary string 10000000 has a total of one set bit.\n\nSample Input\n2147483645\n\nSample Output\n30\n\nExplanation: The input binary string 1111111111111111111111111111101 has a total of thirty set bits.",
+            "constraints": "1 <= n <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "11",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "2147483647",
+                    "expectedOutput": "31"
+                },
+                {
+                    "input": "32",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def hammingWeight(self, n):\n        # TODO: Return the number of set bits (Hamming weight)\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    print(sol.hammingWeight(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int hammingWeight(int n) {\n        // TODO: Return the number of set bits (Hamming weight)\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseUnsignedInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.hammingWeight(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    hammingWeight(n) {\n        // TODO: Return the number of set bits (Hamming weight)\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.hammingWeight(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int hammingWeight(uint32_t n) {\n        // TODO: Return the number of set bits (Hamming weight)\n        return 0;\n    }\n};\n\nint main() {\n    unsigned int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.hammingWeight(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdint.h>\n\nvoid hammingWeight(uint32_t n) {\n    // TODO: Print the number of set bits (Hamming weight)\n}\n\nint main() {\n    unsigned int n;\n    scanf(\"%u\", &n);\n    hammingWeight(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation: n & (n-1) removes the rightmost set bit.",
+                "Count how many times you can remove set bits until n becomes 0."
+            ]
+        }
+    ]
+}

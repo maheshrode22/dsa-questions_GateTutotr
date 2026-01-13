@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Repeated DNA Sequences (Bit Manipulation)",
+            "description": "Problem Statement\n\nThe DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.\nFor example, \"ACGAATTCCG\" is a DNA sequence.\nWhen studying DNA, it is useful to identify repeated sequences within the DNA.\nGiven a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.\n",
+            "examples": "Sample Input\nAAAAACCCCCAAAAACCCCCCAAAAAGGGTTT\n\nSample Output\nAAAAACCCCC CCCCCAAAAA\n\nExplanation: The 10-letter sequences that occur more than once are shown.\n\nSample Input\nAAAAAAAAAAAAA\n\nSample Output\nAAAAAAAAAA\n\nExplanation: The 10-letter sequence \"AAAAAAAAAA\" occurs multiple times.",
+            "constraints": "1 <= s.length <= 10^5\ns[i] is either 'A', 'C', 'G', or 'T'.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "ACGACGACGACGACGACG",
+                    "expectedOutput": "ACGACGACGA CGACGACGAC GACGACGACG"
+                },
+                {
+                    "input": "AAAAAAAAAAAAA",
+                    "expectedOutput": "AAAAAAAAAA"
+                },
+                {
+                    "input": "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT",
+                    "expectedOutput": "AAAAACCCCC CCCCCAAAAA"
+                },
+                {
+                    "input": "CGTTGCGTTGCGTTGCGTTG",
+                    "expectedOutput": "CGTTGCGTTG GCGTTGCGTT GTTGCGTTGC TGCGTTGCGT TTGCGTTGCG"
+                },
+                {
+                    "input": "ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT",
+                    "expectedOutput": "ACGTACGTAC CGTACGTACG GTACGTACGT TACGTACGTA"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findRepeatedDnaSequences(self, s):\n        # TODO: Return all 10-letter sequences that occur more than once\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    result = sol.findRepeatedDnaSequences(s)\n    print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> findRepeatedDnaSequences(String s) {\n        // TODO: Return all 10-letter sequences that occur more than once\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        List<String> result = sol.findRepeatedDnaSequences(s);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findRepeatedDnaSequences(s) {\n        // TODO: Return all 10-letter sequences that occur more than once\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    const result = sol.findRepeatedDnaSequences(s);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> findRepeatedDnaSequences(string s) {\n        // TODO: Return all 10-letter sequences that occur more than once\n        return {};\n    }\n};\n\nint main() {\n    string s;\n    getline(cin, s);\n    Solution sol;\n    vector<string> result = sol.findRepeatedDnaSequences(s);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid findRepeatedDnaSequences(char* s) {\n    // TODO: Print all 10-letter sequences that occur more than once\n}\n\nint main() {\n    char s[100005];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    findRepeatedDnaSequences(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to track all 10-letter substrings and their occurrences.",
+                "Use bit manipulation to encode DNA sequences efficiently."
+            ]
+        }
+    ]
+}
+

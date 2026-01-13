@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Time to Revert Word to Initial State II (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed string word and an integer k.\nAt every second, you must perform the following operations:\n\nRemove the first k characters of word.\nAdd any k characters to the end of word.\n\nNote that you do not necessarily need to add the same characters that you removed. However, you must perform both operations at every second.\nReturn the minimum time greater than zero required for word to revert to its initial state.\n",
+            "examples": "Sample Input\nabacaba 3\n\nSample Output\n2\n\nExplanation: At the 1st second, remove \"aba\" and add \"bac\", word becomes \"cababac\". At the 2nd second, remove \"cab\" and add \"aba\", word becomes \"abacaba\".\n\nSample Input\nabacaba 4\n\nSample Output\n1\n\nExplanation: At the 1st second, remove \"abac\" and add \"caba\", word becomes \"abacaba\".",
+            "constraints": "1 <= word.length <= 10^6\n1 <= k <= word.length\nword consists only of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abacaba 3",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abacaba 4",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "abcbabcd 2",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abc 1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "aaaaa 1",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minimumTimeToInitialState(self, word, k):\n        # TODO: Return minimum time\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        word, k = input_data[0], int(input_data[1])\n        sol = Solution()\n        print(sol.minimumTimeToInitialState(word, k))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minimumTimeToInitialState(String word, int k) {\n        // TODO: Return minimum time\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        String word = parts[0];\n        int k = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.minimumTimeToInitialState(word, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minimumTimeToInitialState(word, k) {\n        // TODO: Return minimum time\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const word = parts[0];\n    const k = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.minimumTimeToInitialState(word, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minimumTimeToInitialState(string word, int k) {\n        // TODO: Return minimum time\n        return 0;\n    }\n};\n\nint main() {\n    string word;\n    int k;\n    if (cin >> word >> k) {\n        Solution sol;\n        cout << sol.minimumTimeToInitialState(word, k) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid minimumTimeToInitialState(char* word, int k) {\n    // TODO: Print minimum time\n}\n\nint main() {\n    char word[1000005];\n    int k;\n    if (scanf(\"%s %d\", word, &k) == 2) {\n        minimumTimeToInitialState(word, k);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use KMP algorithm to efficiently find matching prefixes and suffixes.",
+                "Check if the suffix of word matches the prefix after removing k characters each time."
+            ]
+        }
+    ]
+}
+

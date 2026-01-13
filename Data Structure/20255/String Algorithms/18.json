@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Happy Prefix (String Algorithm)",
+            "description": "Problem Statement\n\nA string is called a happy prefix if is a non-empty prefix which is also a suffix (excluding itself).\nGiven a string s, return the longest happy prefix of s. Return an empty string \"\" if no such prefix exists.\n",
+            "examples": "Sample Input\nlevel\n\nSample Output\nl\n\nExplanation: s contains 4 prefix excluding itself (\"l\", \"le\", \"lev\", \"leve\"), and suffix (\"l\", \"el\", \"vel\", \"evel\"). The largest prefix which is also suffix is given by \"l\".\n\nSample Input\nababab\n\nSample Output\nabab\n\nExplanation: \"abab\" is the largest prefix which is also suffix.",
+            "constraints": "1 <= s.length <= 10^5\ns contains only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "level",
+                    "expectedOutput": "l"
+                },
+                {
+                    "input": "ababab",
+                    "expectedOutput": "abab"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "abababa",
+                    "expectedOutput": "ababa"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestPrefix(self, s):\n        # TODO: Return the longest happy prefix\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.longestPrefix(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String longestPrefix(String s) {\n        // TODO: Return the longest happy prefix\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.longestPrefix(s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestPrefix(s) {\n        // TODO: Return the longest happy prefix\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.longestPrefix(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string longestPrefix(string s) {\n        // TODO: Return the longest happy prefix\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.longestPrefix(s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid longestPrefix(char* s) {\n    // TODO: Print the longest happy prefix\n}\n\nint main() {\n    char s[100005];\n    scanf(\"%s\", s);\n    longestPrefix(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use KMP algorithm to compute the longest prefix-suffix array (LPS).",
+                "The answer is the longest prefix that is also a suffix (excluding the whole string)."
+            ]
+        }
+    ]
+}
+

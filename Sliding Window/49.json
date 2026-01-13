@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Find K-Length Substrings With No Repeated Characters (Sliding Window)",
+      "description": "Given a string s and an integer k, return the number of substrings in s of length k with no repeated characters.\n\nInput Format:\nFirst line: string s.\nSecond line: integer k.\n\nOutput Format:\nPrint a single integer: the count of valid substrings.",
+      "examples": "Sample Input\nhavefunonleetcode\n5\n\nSample Output\n6",
+      "constraints": "See problem description.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "havefunonleetcode\n5",
+          "expectedOutput": "6"
+        },
+        {
+          "input": "home\n5",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "abcabc\n3",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "aaaaa\n1",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "abcdef\n6",
+          "expectedOutput": "1"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def numKLenSubstrNoRepeats(self, s, k):\n        # TODO: Return the number of substrings of length k with no repeated characters\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    k = int(input().strip())\n    sol = Solution()\n    print(sol.numKLenSubstrNoRepeats(s, k))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int numKLenSubstrNoRepeats(String s, int k) {\n        // TODO: Return the number of substrings of length k with no repeated characters\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.nextLine().strip();\n        int k = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.numKLenSubstrNoRepeats(s, k));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    numKLenSubstrNoRepeats(s, k) {\n        // TODO: Return the number of substrings of length k with no repeated characters\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const s = lines[0].trim();\n    const k = parseInt(lines[1].trim());\n    const sol = new Solution();\n    console.log(sol.numKLenSubstrNoRepeats(s, k));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int numKLenSubstrNoRepeats(string s, int k) {\n        // TODO: Return the number of substrings of length k with no repeated characters\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string s;\n    int k;\n    cin >> s >> k;\n    Solution sol;\n    cout << sol.numKLenSubstrNoRepeats(s, k) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char s[10001];\n    int k;\n    scanf(\"%s %d\", s, &k);\n    // TODO: Return the number of substrings of length k with no repeated characters\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

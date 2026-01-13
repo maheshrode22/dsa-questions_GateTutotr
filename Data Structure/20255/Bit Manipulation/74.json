@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Encode Number (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a non-negative integer num, Return its encoding string.\nThe encoding is done by converting the integer to a string using a secret function that you should deduce from the following table:\nnum = 0 -> \"\"\nnum = 1 -> \"0\"\nnum = 2 -> \"1\"\nnum = 3 -> \"00\"\nnum = 4 -> \"01\"\nnum = 5 -> \"10\"\nnum = 6 -> \"11\"\nnum = 7 -> \"000\"\n...\n",
+            "examples": "Sample Input\n23\n\nSample Output\n1000\n\nExplanation: 23 in binary encoding format.\n\nSample Input\n107\n\nSample Output\n101100\n\nExplanation: 107 in binary encoding format.\n\nSample Input\n9\n\nSample Output\n010\n\nExplanation: 9 in binary encoding format.",
+            "constraints": "0 <= num <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "9",
+                    "expectedOutput": "010"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "011"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "01"
+                },
+                {
+                    "input": "107",
+                    "expectedOutput": "101100"
+                },
+                {
+                    "input": "31",
+                    "expectedOutput": "00000"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def encode(self, num):\n        # TODO: Return encoding string for num\n        pass\n\nif __name__ == '__main__':\n    import sys\n    num = int(sys.stdin.read().strip())\n    sol = Solution()\n    print(sol.encode(num))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String encode(int num) {\n        // TODO: Return encoding string for num\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int num = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.encode(num));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    encode(num) {\n        // TODO: Return encoding string for num\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const num = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.encode(num));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string encode(int num) {\n        // TODO: Return encoding string for num\n        return \"\";\n    }\n};\n\nint main() {\n    int num;\n    cin >> num;\n    Solution sol;\n    cout << sol.encode(num) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid encode(int num) {\n    // TODO: Print encoding string for num\n}\n\nint main() {\n    int num;\n    scanf(\"%d\", &num);\n    encode(num);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "The encoding follows a pattern: for num+1, convert to binary and remove the leading '1'.",
+                "num+1 in binary without the first bit gives the encoding."
+            ]
+        }
+    ]
+}
+

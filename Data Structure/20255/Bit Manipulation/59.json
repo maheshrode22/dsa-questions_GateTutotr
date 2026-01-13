@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find the Shortest Superstring (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an array of strings words, return the smallest string that contains each string in words as a substring. If there are multiple valid strings of the smallest length, return any of them.\nYou may assume that no string in words is a substring of another string in words.\n",
+            "examples": "Sample Input\nalex\nloves\nleetcode\n\nSample Output\nalexlovesleetcode\n\nExplanation: All permutations of \"alex\",\"loves\",\"leetcode\" would also be accepted.\n\nSample Input\ncatg\nctaagt\ngcta\nttca\natgcatc\n\nSample Output\ngctaagttcatgcatc\n\nExplanation: This is one possible shortest superstring.",
+            "constraints": "1 <= words.length <= 12\n1 <= words[i].length <= 20\nwords[i] consists of lowercase English letters.\nAll the strings of words are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "a\nab\nabc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "abcde\nbcdef\ncdefg",
+                    "expectedOutput": "abcdefg"
+                },
+                {
+                    "input": "a\nb\nc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "shortest\nsuperstring\nstring\nabc",
+                    "expectedOutput": "superstringshortestabc"
+                },
+                {
+                    "input": "abc\nbcd\nxyz\nzyx",
+                    "expectedOutput": "zyxyzabcd"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def shortestSuperstring(self, words):\n        # TODO: Return smallest string containing each word as substring\n        pass\n\nif __name__ == '__main__':\n    import sys\n    words = []\n    for line in sys.stdin:\n        line = line.strip()\n        if line:\n            words.append(line)\n    sol = Solution()\n    print(sol.shortestSuperstring(words))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String shortestSuperstring(String[] words) {\n        // TODO: Return smallest string containing each word as substring\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<String> wordsList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            wordsList.add(line.trim());\n        }\n        String[] words = wordsList.toArray(new String[wordsList.size()]);\n        Solution sol = new Solution();\n        System.out.println(sol.shortestSuperstring(words));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    shortestSuperstring(words) {\n        // TODO: Return smallest string containing each word as substring\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const words = input.trim().split('\\n').filter(line => line.trim());\n    const sol = new Solution();\n    console.log(sol.shortestSuperstring(words));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string shortestSuperstring(vector<string>& words) {\n        // TODO: Return smallest string containing each word as substring\n        return \"\";\n    }\n};\n\nint main() {\n    vector<string> words;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        if (!line.empty()) {\n            words.push_back(line);\n        }\n    }\n    Solution sol;\n    cout << sol.shortestSuperstring(words) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid shortestSuperstring(char** words, int wordsSize) {\n    // TODO: Print smallest string containing each word as substring\n}\n\nint main() {\n    char words[12][25];\n    int wordsSize = 0;\n    char line[25];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        line[strcspn(line, \"\\n\")] = 0;\n        if (strlen(line) > 0) {\n            strcpy(words[wordsSize], line);\n            wordsSize++;\n        }\n    }\n    char* wordsPtrs[12];\n    for (int i = 0; i < wordsSize; i++) {\n        wordsPtrs[i] = words[i];\n    }\n    shortestSuperstring(wordsPtrs, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming with bitmask to track which words have been used.",
+                "Precompute the overlap between pairs of words to optimize the solution."
+            ]
+        }
+    ]
+}
+

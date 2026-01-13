@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check if a Word Occurs as a Prefix of Any Word in a Sentence (String Algorithm)",
+            "description": "Problem Statement\n\nGiven a sentence that consists of some words separated by a single space, and a searchWord, check if searchWord is a prefix of any word in sentence.\nReturn the index of the word in sentence (1-indexed) where searchWord is a prefix of this word. If searchWord is a prefix of more than one word, return the index of the first word (minimum index). If there is no such word return -1.\nA prefix of a string s is any leading contiguous substring of s.\n",
+            "examples": "Sample Input\ni love eating burger\nburg\n\nSample Output\n4\n\nExplanation: \"burg\" is prefix of \"burger\" which is the 4th word in the sentence.\n\nSample Input\nthis problem is an easy problem\npro\n\nSample Output\n2\n\nExplanation: \"pro\" is prefix of \"problem\" which is the 2nd and the 6th word in the sentence, but we return 2 as it's the minimal index.",
+            "constraints": "1 <= sentence.length <= 100\n1 <= searchWord.length <= 10\nsentence consists of lowercase English letters and spaces.\nsearchWord consists of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "i love eating burger\nburg",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "this problem is an easy problem\npro",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "i am tired\nyou",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "hello world\nhe",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "a b c d\na",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isPrefixOfWord(self, sentence, searchWord):\n        # TODO: Return the 1-indexed word position or -1\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    sentence = lines[0] if len(lines) > 0 else \"\"\n    searchWord = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    print(sol.isPrefixOfWord(sentence, searchWord))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int isPrefixOfWord(String sentence, String searchWord) {\n        // TODO: Return the 1-indexed word position or -1\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String sentence = br.readLine().trim();\n        String searchWord = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.isPrefixOfWord(sentence, searchWord));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isPrefixOfWord(sentence, searchWord) {\n        // TODO: Return the 1-indexed word position or -1\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const sentence = lines[0] || \"\";\n    const searchWord = lines[1] || \"\";\n    const sol = new Solution();\n    console.log(sol.isPrefixOfWord(sentence, searchWord));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int isPrefixOfWord(string sentence, string searchWord) {\n        // TODO: Return the 1-indexed word position or -1\n        return -1;\n    }\n};\n\nint main() {\n    string sentence;\n    getline(cin, sentence);\n    string searchWord;\n    getline(cin, searchWord);\n    Solution sol;\n    cout << sol.isPrefixOfWord(sentence, searchWord) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid isPrefixOfWord(char* sentence, char* searchWord) {\n    // TODO: Print the 1-indexed word position or -1\n}\n\nint main() {\n    char sentence[105], searchWord[15];\n    fgets(sentence, sizeof(sentence), stdin);\n    sentence[strcspn(sentence, \"\\n\")] = 0;\n    fgets(searchWord, sizeof(searchWord), stdin);\n    searchWord[strcspn(searchWord, \"\\n\")] = 0;\n    isPrefixOfWord(sentence, searchWord);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Split the sentence into words.",
+                "Check if searchWord is a prefix of each word using string comparison."
+            ]
+        }
+    ]
+}
+

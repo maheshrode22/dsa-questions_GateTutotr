@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Beautiful Indices in the Given Array I (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed string s, a string a, a string b, and an integer k.\nAn index i is beautiful if:\n\n0 <= i <= s.length - a.length\ns[i..(i + a.length - 1)] == a\nThere exists an index j such that:\n0 <= j <= s.length - b.length\ns[j..(j + b.length - 1)] == b\n|j - i| <= k\n\nReturn a space-separated string of beautiful indices in sorted order. If no beautiful indices exist, return empty string.\n",
+            "examples": "Sample Input\nisawsquirrelnearmysquirrelhouseohmy\nmy\nsquirrel\n15\n\nSample Output\n16 33\n\nExplanation: There are 2 beautiful indices: [16,33].\n\nSample Input\nabcd\na\na\n4\n\nSample Output\n0\n\nExplanation: There is 1 beautiful index: [0].",
+            "constraints": "1 <= k <= s.length <= 10^5\n1 <= a.length, b.length <= 10\ns, a, and b contain only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "isawsquirrelnearmysquirrelhouseohmy\nmy\nsquirrel\n15",
+                    "expectedOutput": "16 33"
+                },
+                {
+                    "input": "abcd\na\na\n4",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "hello\nll\nll\n2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc\nx\ny\n1",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "aaaaa\naa\naa\n1",
+                    "expectedOutput": "0 1 2 3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def beautifulIndices(self, s, a, b, k):\n        # TODO: Return list of beautiful indices\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    s = lines[0] if len(lines) > 0 else \"\"\n    a = lines[1] if len(lines) > 1 else \"\"\n    b = lines[2] if len(lines) > 2 else \"\"\n    k = int(lines[3]) if len(lines) > 3 else 0\n    sol = Solution()\n    result = sol.beautifulIndices(s, a, b, k)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public ArrayList<Integer> beautifulIndices(String s, String a, String b, int k) {\n        // TODO: Return list of beautiful indices\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String a = br.readLine().trim();\n        String b = br.readLine().trim();\n        int k = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        ArrayList<Integer> result = sol.beautifulIndices(s, a, b, k);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    beautifulIndices(s, a, b, k) {\n        // TODO: Return array of beautiful indices\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0] || \"\";\n    const a = lines[1] || \"\";\n    const b = lines[2] || \"\";\n    const k = parseInt(lines[3]) || 0;\n    const sol = new Solution();\n    const result = sol.beautifulIndices(s, a, b, k);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> beautifulIndices(string s, string a, string b, int k) {\n        // TODO: Return vector of beautiful indices\n        return {};\n    }\n};\n\nint main() {\n    string s, a, b;\n    int k;\n    getline(cin, s);\n    getline(cin, a);\n    getline(cin, b);\n    cin >> k;\n    Solution sol;\n    vector<int> result = sol.beautifulIndices(s, a, b, k);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid beautifulIndices(char* s, char* a, char* b, int k) {\n    // TODO: Print beautiful indices\n}\n\nint main() {\n    char s[100005], a[15], b[15];\n    int k;\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    fgets(a, sizeof(a), stdin);\n    a[strcspn(a, \"\\n\")] = 0;\n    fgets(b, sizeof(b), stdin);\n    b[strcspn(b, \"\\n\")] = 0;\n    scanf(\"%d\", &k);\n    beautifulIndices(s, a, b, k);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find all occurrences of string a and string b in s.",
+                "For each occurrence of a, check if there's an occurrence of b within distance k."
+            ]
+        }
+    ]
+}
+

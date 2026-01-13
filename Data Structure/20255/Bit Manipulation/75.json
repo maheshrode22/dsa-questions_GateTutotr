@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a m x n binary matrix mat. In one step, you can choose one cell and flip it and all the four neighbors of it if they exist (Flip is changing 1 to 0 and 0 to 1). A pair of cells are called neighbors if they share one edge.\nReturn the minimum number of steps required to convert mat to a zero matrix or -1 if you cannot.\nA binary matrix is a matrix with all cells equal to 0 or 1 only.\nA zero matrix is a matrix with all cells equal to 0.\n",
+            "examples": "Sample Input\n0 0\n0 1\n\nSample Output\n3\n\nExplanation: One possible solution is to flip (1, 0) then (0, 1) and finally (1, 1) as shown.\n\nSample Input\n0\n\nSample Output\n0\n\nExplanation: Given matrix is a zero matrix. We do not need to change it.\n\nSample Input\n1 0 0\n1 0 0\n\nSample Output\n-1\n\nExplanation: Given matrix cannot be a zero matrix.",
+            "constraints": "m == mat.length\nn == mat[i].length\n1 <= m, n <= 3\nmat[i][j] is either 0 or 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "0 0\n0 1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 1 1\n1 1 1\n1 1 1",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "1 1\n1 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1 1 0\n0 0 0\n0 0 1",
+                    "expectedOutput": "6"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minFlips(self, mat):\n        # TODO: Return minimum number of flips, or -1 if impossible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    mat = []\n    for line in lines:\n        if line.strip():\n            mat.append(list(map(int, line.strip().split())))\n    sol = Solution()\n    print(sol.minFlips(mat))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minFlips(int[][] mat) {\n        // TODO: Return minimum number of flips, or -1 if impossible\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> matList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            int[] row = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) {\n                row[i] = Integer.parseInt(parts[i]);\n            }\n            matList.add(row);\n        }\n        int[][] mat = matList.toArray(new int[matList.size()][]);\n        Solution sol = new Solution();\n        System.out.println(sol.minFlips(mat));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minFlips(mat) {\n        // TODO: Return minimum number of flips, or -1 if impossible\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const mat = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            mat.push(line.trim().split(/\\s+/).map(Number));\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.minFlips(mat));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minFlips(vector<vector<int>>& mat) {\n        // TODO: Return minimum number of flips, or -1 if impossible\n        return -1;\n    }\n};\n\nint main() {\n    vector<vector<int>> mat;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> row;\n        int num;\n        while (iss >> num) {\n            row.push_back(num);\n        }\n        if (!row.empty()) {\n            mat.push_back(row);\n        }\n    }\n    Solution sol;\n    cout << sol.minFlips(mat) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid minFlips(int** mat, int matSize, int* matColSize) {\n    // TODO: Print minimum number of flips, or -1 if impossible\n}\n\nint main() {\n    int mat[3][3];\n    int matSize = 0;\n    int matColSize[3];\n    char line[100];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int row[3];\n        int colSize = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            row[colSize++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (colSize > 0) {\n            for (int i = 0; i < colSize; i++) {\n                mat[matSize][i] = row[i];\n            }\n            matColSize[matSize] = colSize;\n            matSize++;\n        }\n    }\n    int* matPtrs[3];\n    for (int i = 0; i < matSize; i++) {\n        matPtrs[i] = mat[i];\n    }\n    minFlips(matPtrs, matSize, matColSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use BFS to try all possible flip sequences.",
+                "Use bitmask to represent the state of the matrix since m, n <= 3."
+            ]
+        }
+    ]
+}
+

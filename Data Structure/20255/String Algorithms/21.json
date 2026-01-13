@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Repeating Substring (String Algorithm)",
+            "description": "Problem Statement\n\nFor a string sequence, a string word is k-repeating if word concatenated k times is a substring of sequence. The word's maximum k-repeating value is the highest value k where word is k-repeating in sequence. If word is not a substring of sequence, word's maximum k-repeating value is 0.\nGiven strings sequence and word, return the maximum k-repeating value of word in sequence.\n",
+            "examples": "Sample Input\nababc\nab\n\nSample Output\n2\n\nExplanation: \"abab\" is a substring in \"ababc\".\n\nSample Input\nababc\nba\n\nSample Output\n1\n\nExplanation: \"ba\" is a substring in \"ababc\". \"baba\" is not a substring in \"ababc\".",
+            "constraints": "1 <= sequence.length <= 100\n1 <= word.length <= 100\nsequence and word contains only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "ababc\nab",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "ababc\nba",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "ababc\nac",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "aaabaaaabaaabaaaabbaaabbaabbaaaabbaabbaaabaabaabbaabbaabbaabbaabbaaabbaabbaabbaabbaabbaaabbaabbaabbaabbaabba\nbba",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "aaa\na",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxRepeating(self, sequence, word):\n        # TODO: Return maximum k-repeating value\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    sequence = lines[0] if len(lines) > 0 else \"\"\n    word = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    print(sol.maxRepeating(sequence, word))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxRepeating(String sequence, String word) {\n        // TODO: Return maximum k-repeating value\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String sequence = br.readLine().trim();\n        String word = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.maxRepeating(sequence, word));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxRepeating(sequence, word) {\n        // TODO: Return maximum k-repeating value\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const sequence = lines[0] || \"\";\n    const word = lines[1] || \"\";\n    const sol = new Solution();\n    console.log(sol.maxRepeating(sequence, word));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxRepeating(string sequence, string word) {\n        // TODO: Return maximum k-repeating value\n        return 0;\n    }\n};\n\nint main() {\n    string sequence;\n    getline(cin, sequence);\n    string word;\n    getline(cin, word);\n    Solution sol;\n    cout << sol.maxRepeating(sequence, word) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid maxRepeating(char* sequence, char* word) {\n    // TODO: Print maximum k-repeating value\n}\n\nint main() {\n    char sequence[105], word[105];\n    fgets(sequence, sizeof(sequence), stdin);\n    sequence[strcspn(sequence, \"\\n\")] = 0;\n    fgets(word, sizeof(word), stdin);\n    word[strcspn(word, \"\\n\")] = 0;\n    maxRepeating(sequence, word);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Try increasing values of k and check if word repeated k times is a substring.",
+                "Stop when the repeated word is no longer found in the sequence."
+            ]
+        }
+    ]
+}
+

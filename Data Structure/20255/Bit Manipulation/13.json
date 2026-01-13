@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Power of Two (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer n, return true if it is a power of two. Otherwise, return false.\nAn integer n is a power of two, if there exists an integer x such that n == 2^x.\n",
+            "examples": "Sample Input\n1\n\nSample Output\nTrue\n\nExplanation: 2^0 = 1\n\nSample Input\n16\n\nSample Output\nTrue\n\nExplanation: 2^4 = 16\n\nSample Input\n3\n\nSample Output\nFalse\n\nExplanation: 3 is not a power of two.",
+            "constraints": "-2^31 <= n <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "16",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "-16",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "4096",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isPowerOfTwo(self, n):\n        # TODO: Return True if n is a power of two, else False\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    result = sol.isPowerOfTwo(n)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean isPowerOfTwo(int n) {\n        // TODO: Return true if n is a power of two, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.isPowerOfTwo(n) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isPowerOfTwo(n) {\n        // TODO: Return true if n is a power of two, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.isPowerOfTwo(n);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPowerOfTwo(int n) {\n        // TODO: Return true if n is a power of two, else false\n        return false;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << (sol.isPowerOfTwo(n) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n\nvoid isPowerOfTwo(int n) {\n    // TODO: Print \"True\" if n is a power of two, else \"False\"\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    isPowerOfTwo(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "A power of two has exactly one bit set in its binary representation.",
+                "Use bit manipulation: n & (n-1) == 0 for positive powers of two."
+            ]
+        }
+    ]
+}
+

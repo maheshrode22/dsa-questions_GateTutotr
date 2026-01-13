@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Strobogrammatic Number (Hash Table)",
+            "description": "Problem Statement\n\nGiven a string num which represents an integer, return true if num is a strobogrammatic number.\nA strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).\n",
+            "examples": "Example 1:\n\nInput: num = \"69\"\nOutput: true\n\nExample 2:\n\nInput: num = \"88\"\nOutput: true\n\nExample 3:\n\nInput: num = \"962\"\nOutput: false",
+            "constraints": "1 <= num.length <= 50\nnum consists of only digits.\nnum does not contain any leading zeros except for zero itself.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "69",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "88",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "962",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "6",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isStrobogrammatic(self, num):\n        # TODO: Check if number is strobogrammatic using hash map for rotated digits\n        # Return True if strobogrammatic, False otherwise\n        pass\n\nif __name__ == '__main__':\n    import sys\n    num = sys.stdin.read().strip()\n    sol = Solution()\n    result = sol.isStrobogrammatic(num)\n    print(\"true\" if result else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    boolean isStrobogrammatic(String num){\n        // TODO: Check if number is strobogrammatic using hash map for rotated digits\n        // Return true if strobogrammatic, false otherwise\n        return false;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String num = br.readLine().trim();\n        Solution sol = new Solution();\n        boolean result = sol.isStrobogrammatic(num);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  isStrobogrammatic(num){\n    // TODO: Check if number is strobogrammatic using hash map for rotated digits\n    // Return true if strobogrammatic, false otherwise\n    return false;\n  }\n}\nfunction solve(input){\n  const num = input.trim();\n  const sol = new Solution();\n  const result = sol.isStrobogrammatic(num);\n  console.log(result ? \"true\" : \"false\");\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    bool isStrobogrammatic(string num){\n        // TODO: Check if number is strobogrammatic using hash map for rotated digits\n        // Return true if strobogrammatic, false otherwise\n        return false;\n    }\n};\nint main(){\n    string num;\n    cin >> num;\n    Solution sol;\n    bool result = sol.isStrobogrammatic(num);\n    cout << (result ? \"true\" : \"false\");\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n\nbool isStrobogrammatic(char* num){\n    // TODO: Check if number is strobogrammatic\n    // Return true if strobogrammatic, false otherwise\n    return false;\n}\n\nint main(){\n    char num[55];\n    scanf(\"%s\", num);\n    bool result = isStrobogrammatic(num);\n    printf(\"%s\", result ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Define a map for rotatable digits: 0->0, 1->1, 6->9, 8->8, 9->6.",
+                "Use two pointers to check if characters at symmetric positions match the rotation rule."
+            ]
+        }
+    ]
+}

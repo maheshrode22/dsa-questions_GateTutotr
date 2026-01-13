@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Integer Replacement (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a positive integer n, you can apply one of the following operations:\n\nIf n is even, replace n with n / 2.\nIf n is odd, replace n with either n + 1 or n - 1.\n\nReturn the minimum number of operations needed for n to become 1.\n",
+            "examples": "Sample Input\n8\n\nSample Output\n3\n\nExplanation: 8 -> 4 -> 2 -> 1\n\nSample Input\n7\n\nSample Output\n4\n\nExplanation: 7 -> 8 -> 4 -> 2 -> 1\nor 7 -> 6 -> 3 -> 2 -> 1\n\nSample Input\n4\n\nSample Output\n2\n\nExplanation: 4 -> 2 -> 1",
+            "constraints": "1 <= n <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "8",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def integerReplacement(self, n):\n        # TODO: Return minimum number of operations to make n = 1\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    print(sol.integerReplacement(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int integerReplacement(int n) {\n        // TODO: Return minimum number of operations to make n = 1\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        long n = Long.parseLong(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.integerReplacement((int)n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    integerReplacement(n) {\n        // TODO: Return minimum number of operations to make n = 1\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.integerReplacement(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int integerReplacement(int n) {\n        // TODO: Return minimum number of operations to make n = 1\n        return 0;\n    }\n};\n\nint main() {\n    long long n;\n    cin >> n;\n    Solution sol;\n    cout << sol.integerReplacement((int)n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <limits.h>\n\nvoid integerReplacement(long long n) {\n    // TODO: Print minimum number of operations to make n = 1\n}\n\nint main() {\n    long long n;\n    scanf(\"%lld\", &n);\n    integerReplacement(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For odd numbers, prefer n-1 if (n+1)/2 is even, otherwise prefer n+1.",
+                "Use bit manipulation to check if (n+1)/2 or (n-1)/2 is even."
+            ]
+        }
+    ]
+}
+

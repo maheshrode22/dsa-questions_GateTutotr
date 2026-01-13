@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Ransom Note (Hash Table)",
+            "description": "Problem Statement\n\nGiven two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.\nEach letter in magazine can only be used once in ransomNote.\n",
+            "examples": "Example 1:\nInput: ransomNote = \"a\", magazine = \"b\"\nOutput: false\nExample 2:\nInput: ransomNote = \"aa\", magazine = \"ab\"\nOutput: false\nExample 3:\nInput: ransomNote = \"aa\", magazine = \"aab\"\nOutput: true",
+            "constraints": "1 <= ransomNote.length, magazine.length <= 10^5\nransomNote and magazine consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "a\nb",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "aa\nab",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "aa\naab",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "abc\nab",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def canConstruct(self, ransomNote, magazine):\n        # TODO: Check if ransomNote can be constructed from magazine using hash map\n        # Return True if possible, False otherwise\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    ransomNote = data[0].strip()\n    magazine = data[1].strip()\n    sol = Solution()\n    result = sol.canConstruct(ransomNote, magazine)\n    print(\"true\" if result else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    boolean canConstruct(String ransomNote, String magazine){\n        // TODO: Check if ransomNote can be constructed from magazine using hash map\n        // Return true if possible, false otherwise\n        return false;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String ransomNote = br.readLine().trim();\n        String magazine = br.readLine().trim();\n        Solution sol = new Solution();\n        boolean result = sol.canConstruct(ransomNote, magazine);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  canConstruct(ransomNote, magazine){\n    // TODO: Check if ransomNote can be constructed from magazine using hash map\n    // Return true if possible, false otherwise\n    return false;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const ransomNote = lines[0].trim();\n  const magazine = lines[1].trim();\n  const sol = new Solution();\n  const result = sol.canConstruct(ransomNote, magazine);\n  console.log(result ? \"true\" : \"false\");\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    bool canConstruct(string ransomNote, string magazine){\n        // TODO: Check if ransomNote can be constructed from magazine using hash map\n        // Return true if possible, false otherwise\n        return false;\n    }\n};\nint main(){\n    string ransomNote, magazine;\n    getline(cin, ransomNote);\n    getline(cin, magazine);\n    Solution sol;\n    bool result = sol.canConstruct(ransomNote, magazine);\n    cout << (result ? \"true\" : \"false\");\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n\nbool canConstruct(char* ransomNote, char* magazine){\n    // TODO: Check if ransomNote can be constructed from magazine\n    // Return true if possible, false otherwise\n    return false;\n}\n\nint main(){\n    char ransomNote[100005], magazine[100005];\n    scanf(\"%s\", ransomNote);\n    scanf(\"%s\", magazine);\n    bool result = canConstruct(ransomNote, magazine);\n    printf(\"%s\", result ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Count the frequency of each character in the magazine.",
+                "Iterate through the ransom note and decrement the counts. If any count goes below zero, return false."
+            ]
+        }
+    ]
+}

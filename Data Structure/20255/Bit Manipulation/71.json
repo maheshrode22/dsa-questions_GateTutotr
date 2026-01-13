@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Circular Permutation in Binary Representation (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven 2 integers n and start. Your task is return any permutation p of (0,1,2.....,2^n -1) such that :\np[0] = start\np[i] and p[i+1] differ by only one bit in their binary representation.\np[0] and p[2^n -1] must also differ by only one bit in their binary representation.\n",
+            "examples": "Sample Input\n2 3\n\nSample Output\n3 2 0 1\n\nExplanation: The binary representation of the permutation is (11,10,00,01). \nAll the adjacent element differ by one bit. Another valid permutation is [3,1,0,2]\n\nSample Input\n3 2\n\nSample Output\n2 6 7 5 4 0 1 3\n\nExplanation: The binary representation of the permutation is (010,110,111,101,100,000,001,011).",
+            "constraints": "1 <= n <= 16\n0 <= start < 2^n",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 0",
+                    "expectedOutput": "0 1"
+                },
+                {
+                    "input": "2 3",
+                    "expectedOutput": "3 2 0 1"
+                },
+                {
+                    "input": "3 2",
+                    "expectedOutput": "2 6 7 5 4 0 1 3"
+                },
+                {
+                    "input": "4 5",
+                    "expectedOutput": "5 4 6 7 3 2 0 1 9 8 10 11 15 14 12 13"
+                },
+                {
+                    "input": "5 15",
+                    "expectedOutput": "15 14 10 11 9 8 24 25 27 26 30 31 29 28 20 21 23 22 18 19 17 16 0 1 3 2 6 7 5 4 12 13"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def circularPermutation(self, n, start):\n        # TODO: Return circular permutation starting with start\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n, start = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    result = sol.circularPermutation(n, start)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<Integer> circularPermutation(int n, int start) {\n        // TODO: Return circular permutation starting with start\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int start = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        List<Integer> result = sol.circularPermutation(n, start);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    circularPermutation(n, start) {\n        // TODO: Return circular permutation starting with start\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const [n, start] = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.circularPermutation(n, start);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> circularPermutation(int n, int start) {\n        // TODO: Return circular permutation starting with start\n        return {};\n    }\n};\n\nint main() {\n    int n, start;\n    cin >> n >> start;\n    Solution sol;\n    vector<int> result = sol.circularPermutation(n, start);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid circularPermutation(int n, int start) {\n    // TODO: Print space-separated circular permutation starting with start\n}\n\nint main() {\n    int n, start;\n    scanf(\"%d %d\", &n, &start);\n    circularPermutation(n, start);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Generate a Gray code sequence and rotate it to start with the given value.",
+                "Use XOR to generate Gray code: gray(i) = i XOR (i >> 1)."
+            ]
+        }
+    ]
+}
+

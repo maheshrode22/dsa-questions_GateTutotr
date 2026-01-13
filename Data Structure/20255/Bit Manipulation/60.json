@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Prison Cells After N Days (Bit Manipulation)",
+            "description": "Problem Statement\n\nThere are 8 prison cells in a row and each cell is either occupied or vacant.\nEach day, whether the cell is occupied or vacant changes according to the following rules:\nIf a cell has two adjacent neighbors that are both occupied or both vacant, then the cell becomes occupied.\nOtherwise, it becomes vacant.\nNote that because the prison is a row, the first and the last cells in the row can't have two adjacent neighbors.\nYou are given an integer array cells where cells[i] == 1 if the ith cell is occupied and cells[i] == 0 if the ith cell is vacant, and you are given an integer n.\nReturn the state of the prison after n days (i.e., n such changes described above).\n",
+            "examples": "Sample Input\n0 1 0 1 1 0 0 1\n7\n\nSample Output\n0 0 1 1 0 0 0 0\n\nExplanation: The following table summarizes the state of the prison on each day:\nDay 0: [0, 1, 0, 1, 1, 0, 0, 1]\nDay 1: [0, 1, 1, 0, 0, 0, 0, 0]\nDay 2: [0, 0, 0, 0, 1, 1, 1, 0]\nDay 3: [0, 1, 1, 0, 0, 1, 0, 0]\nDay 4: [0, 0, 0, 0, 0, 1, 0, 0]\nDay 5: [0, 1, 1, 1, 0, 1, 0, 0]\nDay 6: [0, 0, 1, 0, 1, 1, 0, 0]\nDay 7: [0, 0, 1, 1, 0, 0, 0, 0]\n\nSample Input\n1 0 0 1 0 0 1 0\n1000000000\n\nSample Output\n0 0 1 1 1 1 1 0",
+            "constraints": "cells.length == 8\ncells[i] is either 0 or 1.\n1 <= n <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "0 0 0 0 0 0 0 0\n5",
+                    "expectedOutput": "0 1 0 1 1 0 1 0"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1\n2",
+                    "expectedOutput": "0 0 1 1 1 1 0 0"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1\n15",
+                    "expectedOutput": "0 1 1 1 1 1 1 0"
+                },
+                {
+                    "input": "1 0 1 0 1 0 1 0\n1",
+                    "expectedOutput": "0 1 1 1 1 1 1 0"
+                },
+                {
+                    "input": "0 1 1 0 1 1 1 0\n2",
+                    "expectedOutput": "0 1 0 1 1 1 0 0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def prisonAfterNDays(self, cells, n):\n        # TODO: Return state of prison after n days\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    cells = list(map(int, lines[0].strip().split()))\n    n = int(lines[1].strip())\n    sol = Solution()\n    result = sol.prisonAfterNDays(cells, n)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] prisonAfterNDays(int[] cells, int n) {\n        // TODO: Return state of prison after n days\n        return new int[8];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] cells = new int[8];\n        for (int i = 0; i < 8; i++) {\n            cells[i] = Integer.parseInt(parts[i]);\n        }\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        int[] result = sol.prisonAfterNDays(cells, n);\n        for (int i = 0; i < result.length; i++) {\n            System.out.print(result[i] + (i == result.length - 1 ? \"\" : \" \"));\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    prisonAfterNDays(cells, n) {\n        // TODO: Return state of prison after n days\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const cells = lines[0].trim().split(/\\s+/).map(Number);\n    const n = parseInt(lines[1].trim());\n    const sol = new Solution();\n    const result = sol.prisonAfterNDays(cells, n);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> prisonAfterNDays(vector<int>& cells, int n) {\n        // TODO: Return state of prison after n days\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> cells;\n    int num;\n    while (iss >> num) {\n        cells.push_back(num);\n    }\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<int> result = sol.prisonAfterNDays(cells, n);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid prisonAfterNDays(int* cells, int n) {\n    // TODO: Print state of prison after n days (space-separated)\n}\n\nint main() {\n    int cells[8];\n    for (int i = 0; i < 8; i++) {\n        scanf(\"%d\", &cells[i]);\n    }\n    int n;\n    scanf(\"%d\", &n);\n    prisonAfterNDays(cells, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "The pattern repeats after a certain number of days. Use cycle detection.",
+                "Use bit manipulation to represent the state of 8 cells as a single integer."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "GCD Sort of an Array (Number Theory)",
+            "description": "You are given an integer array nums, and you can perform the following operation any number of times on nums:\nSwap the positions of two elements nums[i] and nums[j] if gcd(nums[i], nums[j]) > 1.\nReturn true if it is possible to sort nums in non-decreasing order using the above swap method, or false otherwise.\n\nInput Format:\nFirst line: integer n.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint true or false.",
+            "examples": "Sample Input\n3\n7 21 3\n\nSample Output\ntrue",
+            "constraints": "1 <= nums.length <= 3 * 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 4033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "3\n7 21 3",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "4\n5 2 6 2",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "5\n10 5 9 3 15",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "4\n16 25 26 13",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "9\n8 19 12 2 12 24 12 13 17",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def gcdSort(self, nums):\n        # TODO: Return true if possible, else false\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    nums = list(map(int, input().split()))\n    sol = Solution()\n    print(\"true\" if sol.gcdSort(nums) else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public boolean gcdSort(int[] nums) {\n        // TODO: Return true if possible, else false\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] nums = new int[n];\n        for(int i=0; i<n; i++) nums[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.gcdSort(nums) ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    gcdSort(nums) {\n        // TODO: Return true if possible, else false\n        return false;\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst nums = input[1].split(' ').map(Number);\nconst sol = new Solution();\nconsole.log(sol.gcdSort(nums) ? \"true\" : \"false\");"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <numeric>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool gcdSort(vector<int>& nums) {\n        // TODO: Return true if possible, else false\n        return false;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for(int i=0; i<n; i++) cin >> nums[i];\n    Solution sol;\n    cout << (sol.gcdSort(nums) ? \"true\" : \"false\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nbool gcdSort(int* nums, int numsSize) {\n    // TODO: Return true if possible, else false\n    return false;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int* nums = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &nums[i]);\n    printf(\"%s\\n\", gcdSort(nums, n) ? \"true\" : \"false\");\n    free(nums);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Union-Find to group numbers that can be swapped.",
+                "Check if each number can move to its sorted position (i.e., belongs to the same component)."
+            ]
+        }
+    ]
+}

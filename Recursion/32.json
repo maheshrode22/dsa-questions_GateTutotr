@@ -1,0 +1,63 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Recursive Power Calculation",
+      "description": "Write a recursive function to calculate x raised to the power n (x^n). Assume x and n are integers.\n\nInput Format:\nTwo space-separated integers x and n.\n\nOutput Format:\nPrint the value of x^n.",
+      "examples": "Sample Input\n2 3\n\nSample Output\n8\n\nSample Input\n5 0\n\nSample Output\n1",
+      "constraints": "1 <= x <= 10\n0 <= n <= 9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "2 3",
+          "expectedOutput": "8"
+        },
+        {
+          "input": "5 0",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "3 4",
+          "expectedOutput": "81"
+        },
+        {
+          "input": "1 10",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "10 2",
+          "expectedOutput": "100"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def power(self, x, n):\n        # TODO: implement recursive power\n        pass\n\nif __name__ == '__main__':\n    try:\n        line = input().split()\n        x, n = int(line[0]), int(line[1])\n        print(Solution().power(x, n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public long power(int x, int n) {\n        // TODO: implement recursive power\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int x = sc.nextInt();\n            int n = sc.nextInt();\n            System.out.println(new Solution().power(x, n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    power(x, n) {\n        // TODO: implement recursive power\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const x = parseInt(parts[0]);\n    const n = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.power(x, n));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long power(int x, int n) {\n        // TODO: implement recursive power\n        return 0;\n    }\n};\n\nint main() {\n    int x, n;\n    if (cin >> x >> n) {\n        Solution sol;\n        cout << sol.power(x, n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long power(int x, int n) {\n    // TODO: implement recursive power\n    return 0;\n}\n\nint main() {\n    int x, n;\n    if (scanf(\"%d %d\", &x, &n) == 2) {\n        printf(\"%lld\", power(x, n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about the base case and the recursive step."
+      ]
+    }
+  ]
+}

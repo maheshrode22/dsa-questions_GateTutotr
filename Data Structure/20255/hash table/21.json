@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Valid Anagram (Hash Table)",
+            "description": "Problem Statement\n\nGiven two strings s and t, return true if t is an anagram of s, and false otherwise.\n",
+            "examples": "Example 1:\n\nInput: s = \"anagram\", t = \"nagaram\"\nOutput: true\n\nExample 2:\n\nInput: s = \"rat\", t = \"car\"\nOutput: false",
+            "constraints": "1 <= s.length, t.length <= 5 * 10^4\ns and t consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "anagram\nnagaram",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "rat\ncar",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "a\na",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "ab\na",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "a\nab",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isAnagram(self, s, t):\n        # TODO: Check if t is an anagram of s using hash map or sorting\n        # Return True if anagram, False otherwise\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    s = data[0].strip()\n    t = data[1].strip()\n    sol = Solution()\n    result = sol.isAnagram(s, t)\n    print(\"true\" if result else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    boolean isAnagram(String s, String t){\n        // TODO: Check if t is an anagram of s using hash map or sorting\n        // Return true if anagram, false otherwise\n        return false;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String t = br.readLine().trim();\n        Solution sol = new Solution();\n        boolean result = sol.isAnagram(s, t);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  isAnagram(s, t){\n    // TODO: Check if t is an anagram of s using hash map or sorting\n    // Return true if anagram, false otherwise\n    return false;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const s = lines[0].trim();\n  const t = lines[1].trim();\n  const sol = new Solution();\n  const result = sol.isAnagram(s, t);\n  console.log(result ? \"true\" : \"false\");\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    bool isAnagram(string s, string t){\n        // TODO: Check if t is an anagram of s using hash map or sorting\n        // Return true if anagram, false otherwise\n        return false;\n    }\n};\nint main(){\n    string s, t;\n    getline(cin, s);\n    getline(cin, t);\n    Solution sol;\n    bool result = sol.isAnagram(s, t);\n    cout << (result ? \"true\" : \"false\");\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n\nbool isAnagram(char* s, char* t){\n    // TODO: Check if t is an anagram of s\n    // Return true if anagram, false otherwise\n    return false;\n}\n\nint main(){\n    char s[50005], t[50005];\n    scanf(\"%s\", s);\n    scanf(\"%s\", t);\n    bool result = isAnagram(s, t);\n    printf(\"%s\", result ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Count the frequency of each character in both strings. If they match, it's an anagram.",
+                "Or sort both strings and compare them."
+            ]
+        }
+    ]
+}

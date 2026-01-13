@@ -1,0 +1,63 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Three Divisors (Number Theory)",
+            "description": "Given an integer n, return true if n has exactly three positive divisors. Otherwise, return false.\n\nInput Format:\nFirst line: integer n.\n\nOutput Format:\nPrint true or false.",
+            "examples": "Sample Input\n4\n\nSample Output\ntrue",
+            "constraints": "1 <= n <= 10^4",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 4033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "16",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "43",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "50",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isThree(self, n):\n        # TODO: Return true if exactly three divisors, else false\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    print(\"true\" if sol.isThree(n) else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public boolean isThree(int n) {\n        // TODO: Return true if exactly three divisors, else false\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.isThree(n) ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isThree(n) {\n        // TODO: Return true if exactly three divisors, else false\n        return false;\n    }\n}\n\nconst fs = require('fs');\nconst n = Number(fs.readFileSync(0, 'utf-8').trim());\nconst sol = new Solution();\nconsole.log(sol.isThree(n) ? \"true\" : \"false\");"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isThree(int n) {\n        // TODO: Return true if exactly three divisors, else false\n        return false;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << (sol.isThree(n) ? \"true\" : \"false\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool isThree(int n) {\n    // TODO: Return true if exactly three divisors, else false\n    return false;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%s\\n\", isThree(n) ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "A number has exactly 3 divisors if and only if it is the square of a prime number."
+            ]
+        }
+    ]
+}

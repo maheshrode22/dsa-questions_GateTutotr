@@ -1,0 +1,63 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Sum of Digits Recursively",
+      "description": "Write a recursive function to find the sum of digits of a given non-negative integer N.\n\nInput Format:\nA single integer N.\n\nOutput Format:\nPrint the sum of digits of N.",
+      "examples": "Sample Input\n1234\n\nSample Output\n10\n\nSample Input\n5\n\nSample Output\n5",
+      "constraints": "0 <= N <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "1234",
+          "expectedOutput": "10"
+        },
+        {
+          "input": "5",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "0",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "99",
+          "expectedOutput": "18"
+        },
+        {
+          "input": "101",
+          "expectedOutput": "2"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def sumOfDigits(self, n):\n        # TODO: implement recursive sum of digits\n        pass\n\nif __name__ == '__main__':\n    try:\n        n = int(input())\n        print(Solution().sumOfDigits(n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int sumOfDigits(int n) {\n        // TODO: implement recursive sum of digits\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            System.out.println(new Solution().sumOfDigits(n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    sumOfDigits(n) {\n        // TODO: implement recursive sum of digits\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.sumOfDigits(n));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int sumOfDigits(int n) {\n        // TODO: implement recursive sum of digits\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        Solution sol;\n        cout << sol.sumOfDigits(n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint sumOfDigits(int n) {\n    // TODO: implement recursive sum of digits\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printf(\"%d\", sumOfDigits(n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about the base case and the recursive step."
+      ]
+    }
+  ]
+}

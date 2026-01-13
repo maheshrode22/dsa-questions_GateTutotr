@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Minimum Window Subsequence (Sliding Window)",
+      "description": "Given strings s1 and s2, return the minimum contiguous substring part of s1, so that s2 is a subsequence of the part. If there is no such window in s1 that covers all characters in s2, return the empty string \"\". If there are multiple such minimum-length windows, return the one with the left-most starting index.\n\nInput Format:\nFirst line: string s1.\nSecond line: string s2.\n\nOutput Format:\nPrint the minimum window substring.",
+      "examples": "Sample Input\nabcdebdde\nbde\n\nSample Output\nbcde",
+      "constraints": "See problem description.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "abcdebdde\nbde",
+          "expectedOutput": "bcde"
+        },
+        {
+          "input": "jmeqksfrsdcmsiwvaovztaqenprpvnbstl\nu",
+          "expectedOutput": ""
+        },
+        {
+          "input": "fgaabbc\nabc",
+          "expectedOutput": "abbc"
+        },
+        {
+          "input": "abcde\nace",
+          "expectedOutput": "abcde"
+        },
+        {
+          "input": "baaaaa\na",
+          "expectedOutput": "a"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def minWindow(self, s1, s2):\n        # TODO: Return the minimum contiguous substring of s1 such that s2 is a subsequence\n        pass\n\nif __name__ == '__main__':\n    s1 = input().strip()\n    s2 = input().strip()\n    sol = Solution()\n    print(sol.minWindow(s1, s2))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public String minWindow(String s1, String s2) {\n        // TODO: Return the minimum contiguous substring of s1 such that s2 is a subsequence\n        return null;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s1 = sc.nextLine().strip();\n        String s2 = sc.nextLine().strip();\n        Solution sol = new Solution();\n        System.out.println(sol.minWindow(s1, s2));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    minWindow(s1, s2) {\n        // TODO: Return the minimum contiguous substring of s1 such that s2 is a subsequence\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const s1 = lines[0].trim();\n    const s2 = lines[1].trim();\n    const sol = new Solution();\n    console.log(sol.minWindow(s1, s2));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    string minWindow(string s1, string s2) {\n        // TODO: Return the minimum contiguous substring of s1 such that s2 is a subsequence\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string s1, s2;\n    cin >> s1 >> s2;\n    Solution sol;\n    cout << sol.minWindow(s1, s2) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char s1[20001], s2[101];\n    scanf(\"%s %s\", s1, s2);\n    // TODO: Return the minimum contiguous substring of s1 such that s2 is a subsequence\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,544 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find the Shortest Superstring (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an array of strings words, return the smallest string that contains each string in words as a substring. If there are multiple valid strings of the smallest length, return any of them.\nYou may assume that no string in words is a substring of another string in words.\n",
+            "examples": "Sample Input\nalex\nloves\nleetcode\n\nSample Output\nalexlovesleetcode\n\nExplanation: All permutations of \"alex\",\"loves\",\"leetcode\" would also be accepted.\n\nSample Input\ncatg\nctaagt\ngcta\nttca\natgcatc\n\nSample Output\ngctaagttcatgcatc\n\nExplanation: This is one possible shortest superstring.",
+            "constraints": "1 <= words.length <= 12\n1 <= words[i].length <= 20\nwords[i] consists of lowercase English letters.\nAll the strings of words are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "a\nab\nabc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "abcde\nbcdef\ncdefg",
+                    "expectedOutput": "abcdefg"
+                },
+                {
+                    "input": "a\nb\nc",
+                    "expectedOutput": "abc"
+                },
+                {
+                    "input": "shortest\nsuperstring\nstring\nabc",
+                    "expectedOutput": "superstringshortestabc"
+                },
+                {
+                    "input": "abc\nbcd\nxyz\nzyx",
+                    "expectedOutput": "zyxyzabcd"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def shortestSuperstring(self, words):\n        # TODO: Return smallest string containing each word as substring\n        pass\n\nif __name__ == '__main__':\n    import sys\n    words = []\n    for line in sys.stdin:\n        line = line.strip()\n        if line:\n            words.append(line)\n    sol = Solution()\n    print(sol.shortestSuperstring(words))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String shortestSuperstring(String[] words) {\n        // TODO: Return smallest string containing each word as substring\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<String> wordsList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            wordsList.add(line.trim());\n        }\n        String[] words = wordsList.toArray(new String[wordsList.size()]);\n        Solution sol = new Solution();\n        System.out.println(sol.shortestSuperstring(words));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    shortestSuperstring(words) {\n        // TODO: Return smallest string containing each word as substring\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const words = input.trim().split('\\n').filter(line => line.trim());\n    const sol = new Solution();\n    console.log(sol.shortestSuperstring(words));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string shortestSuperstring(vector<string>& words) {\n        // TODO: Return smallest string containing each word as substring\n        return \"\";\n    }\n};\n\nint main() {\n    vector<string> words;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        if (!line.empty()) {\n            words.push_back(line);\n        }\n    }\n    Solution sol;\n    cout << sol.shortestSuperstring(words) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid shortestSuperstring(char** words, int wordsSize) {\n    // TODO: Print smallest string containing each word as substring\n}\n\nint main() {\n    char words[12][25];\n    int wordsSize = 0;\n    char line[25];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        line[strcspn(line, \"\\n\")] = 0;\n        if (strlen(line) > 0) {\n            strcpy(words[wordsSize], line);\n            wordsSize++;\n        }\n    }\n    char* wordsPtrs[12];\n    for (int i = 0; i < wordsSize; i++) {\n        wordsPtrs[i] = words[i];\n    }\n    shortestSuperstring(wordsPtrs, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming with bitmask to track which words have been used.",
+                "Precompute the overlap between pairs of words to optimize the solution."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Prison Cells After N Days (Bit Manipulation)",
+            "description": "Problem Statement\n\nThere are 8 prison cells in a row and each cell is either occupied or vacant.\nEach day, whether the cell is occupied or vacant changes according to the following rules:\nIf a cell has two adjacent neighbors that are both occupied or both vacant, then the cell becomes occupied.\nOtherwise, it becomes vacant.\nNote that because the prison is a row, the first and the last cells in the row can't have two adjacent neighbors.\nYou are given an integer array cells where cells[i] == 1 if the ith cell is occupied and cells[i] == 0 if the ith cell is vacant, and you are given an integer n.\nReturn the state of the prison after n days (i.e., n such changes described above).\n",
+            "examples": "Sample Input\n0 1 0 1 1 0 0 1\n7\n\nSample Output\n0 0 1 1 0 0 0 0\n\nExplanation: The following table summarizes the state of the prison on each day:\nDay 0: [0, 1, 0, 1, 1, 0, 0, 1]\nDay 1: [0, 1, 1, 0, 0, 0, 0, 0]\nDay 2: [0, 0, 0, 0, 1, 1, 1, 0]\nDay 3: [0, 1, 1, 0, 0, 1, 0, 0]\nDay 4: [0, 0, 0, 0, 0, 1, 0, 0]\nDay 5: [0, 1, 1, 1, 0, 1, 0, 0]\nDay 6: [0, 0, 1, 0, 1, 1, 0, 0]\nDay 7: [0, 0, 1, 1, 0, 0, 0, 0]\n\nSample Input\n1 0 0 1 0 0 1 0\n1000000000\n\nSample Output\n0 0 1 1 1 1 1 0",
+            "constraints": "cells.length == 8\ncells[i] is either 0 or 1.\n1 <= n <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "0 0 0 0 0 0 0 0\n5",
+                    "expectedOutput": "0 1 0 1 1 0 1 0"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1\n2",
+                    "expectedOutput": "0 0 1 1 1 1 0 0"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1\n15",
+                    "expectedOutput": "0 1 1 1 1 1 1 0"
+                },
+                {
+                    "input": "1 0 1 0 1 0 1 0\n1",
+                    "expectedOutput": "0 1 1 1 1 1 1 0"
+                },
+                {
+                    "input": "0 1 1 0 1 1 1 0\n2",
+                    "expectedOutput": "0 1 0 1 1 1 0 0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def prisonAfterNDays(self, cells, n):\n        # TODO: Return state of prison after n days\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    cells = list(map(int, lines[0].strip().split()))\n    n = int(lines[1].strip())\n    sol = Solution()\n    result = sol.prisonAfterNDays(cells, n)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] prisonAfterNDays(int[] cells, int n) {\n        // TODO: Return state of prison after n days\n        return new int[8];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] cells = new int[8];\n        for (int i = 0; i < 8; i++) {\n            cells[i] = Integer.parseInt(parts[i]);\n        }\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        int[] result = sol.prisonAfterNDays(cells, n);\n        for (int i = 0; i < result.length; i++) {\n            System.out.print(result[i] + (i == result.length - 1 ? \"\" : \" \"));\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    prisonAfterNDays(cells, n) {\n        // TODO: Return state of prison after n days\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const cells = lines[0].trim().split(/\\s+/).map(Number);\n    const n = parseInt(lines[1].trim());\n    const sol = new Solution();\n    const result = sol.prisonAfterNDays(cells, n);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> prisonAfterNDays(vector<int>& cells, int n) {\n        // TODO: Return state of prison after n days\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> cells;\n    int num;\n    while (iss >> num) {\n        cells.push_back(num);\n    }\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<int> result = sol.prisonAfterNDays(cells, n);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid prisonAfterNDays(int* cells, int n) {\n    // TODO: Print state of prison after n days (space-separated)\n}\n\nint main() {\n    int cells[8];\n    for (int i = 0; i < 8; i++) {\n        scanf(\"%d\", &cells[i]);\n    }\n    int n;\n    scanf(\"%d\", &n);\n    prisonAfterNDays(cells, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "The pattern repeats after a certain number of days. Use cycle detection.",
+                "Use bit manipulation to represent the state of 8 cells as a single integer."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Unique Paths III (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an m x n integer array grid where grid[i][j] could be:\n1 representing the starting square. There is exactly one starting square.\n2 representing the ending square. There is exactly one ending square.\n0 representing empty squares we can walk over.\n-1 representing obstacles that we cannot walk over.\nReturn the number of 4-directional walks from the starting square to the ending square, that walk over every non-obstacle square exactly once.\n",
+            "examples": "Sample Input\n1 0 0 0\n0 0 0 0\n0 0 2 -1\n\nSample Output\n2\n\nExplanation: We have the following two paths: \n1. (0,0),(0,1),(0,2),(0,3),(1,3),(1,2),(1,1),(1,0),(2,0),(2,1),(2,2)\n2. (0,0),(1,0),(2,0),(2,1),(1,1),(0,1),(0,2),(0,3),(1,3),(1,2),(2,2)\n\nSample Input\n1 0 0 0\n0 0 0 0\n0 0 0 2\n\nSample Output\n4\n\nExplanation: We have four different paths.\n\nSample Input\n0 1\n2 0\n\nSample Output\n0\n\nExplanation: There is no path that walks over every empty square exactly once.",
+            "constraints": "m == grid.length\nn == grid[i].length\n1 <= m, n <= 20\n1 <= m * n <= 20\n-1 <= grid[i][j] <= 2\nThere is exactly one starting cell and one ending cell.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "0 1\n2 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "0 0 0\n1 0 0\n0 2 -1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1 0 2\n-1 0 0\n0 0 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "0 0 1\n0 0 0\n2 0 0",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1 0 0\n0 0 0\n0 0 2",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def uniquePathsIII(self, grid):\n        # TODO: Return number of paths walking over every non-obstacle square exactly once\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    grid = []\n    for line in lines:\n        if line.strip():\n            grid.append(list(map(int, line.strip().split())))\n    sol = Solution()\n    print(sol.uniquePathsIII(grid))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int uniquePathsIII(int[][] grid) {\n        // TODO: Return number of paths walking over every non-obstacle square exactly once\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> gridList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            int[] row = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) {\n                row[i] = Integer.parseInt(parts[i]);\n            }\n            gridList.add(row);\n        }\n        int[][] grid = gridList.toArray(new int[gridList.size()][]);\n        Solution sol = new Solution();\n        System.out.println(sol.uniquePathsIII(grid));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    uniquePathsIII(grid) {\n        // TODO: Return number of paths walking over every non-obstacle square exactly once\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const grid = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            grid.push(line.trim().split(/\\s+/).map(Number));\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.uniquePathsIII(grid));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int uniquePathsIII(vector<vector<int>>& grid) {\n        // TODO: Return number of paths walking over every non-obstacle square exactly once\n        return 0;\n    }\n};\n\nint main() {\n    vector<vector<int>> grid;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> row;\n        int num;\n        while (iss >> num) {\n            row.push_back(num);\n        }\n        if (!row.empty()) {\n            grid.push_back(row);\n        }\n    }\n    Solution sol;\n    cout << sol.uniquePathsIII(grid) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid uniquePathsIII(int** grid, int gridSize, int* gridColSize) {\n    // TODO: Print number of paths walking over every non-obstacle square exactly once\n}\n\nint main() {\n    int grid[20][20];\n    int gridSize = 0;\n    int gridColSize[20];\n    char line[1000];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int row[20];\n        int colSize = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            row[colSize++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (colSize > 0) {\n            for (int i = 0; i < colSize; i++) {\n                grid[gridSize][i] = row[i];\n            }\n            gridColSize[gridSize] = colSize;\n            gridSize++;\n        }\n    }\n    int* gridPtrs[20];\n    for (int i = 0; i < gridSize; i++) {\n        gridPtrs[i] = grid[i];\n    }\n    uniquePathsIII(gridPtrs, gridSize, gridColSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use DFS/backtracking to explore all paths from start to end.",
+                "Use bit manipulation to track which cells have been visited."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Triples with Bitwise AND Equal to Zero (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums, return the number of AND triples.\nAn AND triple is a triple of indices (i, j, k) such that:\n0 <= i < nums.length\n0 <= j < nums.length\n0 <= k < nums.length\nnums[i] & nums[j] & nums[k] == 0, where & represents the bitwise-AND operator.\n",
+            "examples": "Sample Input\n2 1 3\n\nSample Output\n12\n\nExplanation: We could choose the following i, j, k triples:\n(i=0, j=0, k=1) : 2 & 2 & 1 = 0\n(i=0, j=1, k=0) : 2 & 1 & 2 = 0\n(i=0, j=1, k=1) : 2 & 1 & 1 = 0\n(i=0, j=1, k=2) : 2 & 1 & 3 = 0\n(i=0, j=2, k=1) : 2 & 3 & 1 = 0\n(i=1, j=0, k=0) : 1 & 2 & 2 = 0\n(i=1, j=0, k=1) : 1 & 2 & 1 = 0\n(i=1, j=0, k=2) : 1 & 2 & 3 = 0\n(i=1, j=1, k=0) : 1 & 1 & 2 = 0\n(i=1, j=2, k=0) : 1 & 3 & 2 = 0\n(i=2, j=0, k=1) : 3 & 2 & 1 = 0\n(i=2, j=1, k=0) : 3 & 1 & 2 = 0\n\nSample Input\n0 0 0\n\nSample Output\n27\n\nExplanation: All triples result in 0.",
+            "constraints": "1 <= nums.length <= 1000\n0 <= nums[i] < 2^16",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "0 0 0",
+                    "expectedOutput": "27"
+                },
+                {
+                    "input": "5 3 7 10",
+                    "expectedOutput": "18"
+                },
+                {
+                    "input": "15 15 15 15",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "5 3 0 1 4",
+                    "expectedOutput": "91"
+                },
+                {
+                    "input": "1 2 3 4",
+                    "expectedOutput": "48"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countTriplets(self, nums):\n        # TODO: Return number of AND triples (i, j, k) where nums[i] & nums[j] & nums[k] == 0\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.countTriplets(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countTriplets(int[] nums) {\n        // TODO: Return number of AND triples (i, j, k) where nums[i] & nums[j] & nums[k] == 0\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.countTriplets(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countTriplets(nums) {\n        // TODO: Return number of AND triples (i, j, k) where nums[i] & nums[j] & nums[k] == 0\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.countTriplets(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countTriplets(vector<int>& nums) {\n        // TODO: Return number of AND triples (i, j, k) where nums[i] & nums[j] & nums[k] == 0\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.countTriplets(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid countTriplets(int* nums, int numsSize) {\n    // TODO: Print number of AND triples (i, j, k) where nums[i] & nums[j] & nums[k] == 0\n}\n\nint main() {\n    int nums[1005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    countTriplets(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming or memoization to count pairs (i, j) and their AND results.",
+                "For each pair (i, j), count how many k satisfy (nums[i] & nums[j] & nums[k]) == 0."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Minimum Number of K Consecutive Bit Flips (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given a binary array nums and an integer k.\nA k-bit flip is choosing a subarray of length k from nums and simultaneously changing every 0 in the subarray to 1, and every 1 in the subarray to 0.\nReturn the minimum number of k-bit flips required so that there is no 0 in the array. If it is not possible, return -1.\nA subarray is a contiguous part of an array.\n",
+            "examples": "Sample Input\n0 1 0\n1\n\nSample Output\n2\n\nExplanation: Flip nums[0], then flip nums[2].\n\nSample Input\n1 1 0\n2\n\nSample Output\n-1\n\nExplanation: No matter how we flip subarrays of size 2, we cannot make the array become [1,1,1].\n\nSample Input\n0 0 0 1 0 1 1 0\n3\n\nSample Output\n3\n\nExplanation: \nFlip nums[0],nums[1],nums[2]: nums becomes [1,1,1,1,0,1,1,0]\nFlip nums[4],nums[5],nums[6]: nums becomes [1,1,1,1,1,0,0,0]\nFlip nums[5],nums[6],nums[7]: nums becomes [1,1,1,1,1,1,1,1]",
+            "constraints": "1 <= nums.length <= 10^5\n1 <= k <= nums.length",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "0 0 1 1 0 1 1 0 1 0\n2",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "0 0 0 0 0 0 0 0 0\n3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 0 1 0 1 0 1 0\n4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 0 0 1 0 0 1\n4",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1\n5",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minKBitFlips(self, nums, k):\n        # TODO: Return minimum number of k-bit flips, or -1 if impossible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    nums = list(map(int, lines[0].strip().split()))\n    k = int(lines[1].strip())\n    sol = Solution()\n    print(sol.minKBitFlips(nums, k))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minKBitFlips(int[] nums, int k) {\n        // TODO: Return minimum number of k-bit flips, or -1 if impossible\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        int k = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.minKBitFlips(nums, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minKBitFlips(nums, k) {\n        // TODO: Return minimum number of k-bit flips, or -1 if impossible\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const nums = lines[0].trim().split(/\\s+/).map(Number);\n    const k = parseInt(lines[1].trim());\n    const sol = new Solution();\n    console.log(sol.minKBitFlips(nums, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minKBitFlips(vector<int>& nums, int k) {\n        // TODO: Return minimum number of k-bit flips, or -1 if impossible\n        return -1;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    int k;\n    cin >> k;\n    Solution sol;\n    cout << sol.minKBitFlips(nums, k) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid minKBitFlips(int* nums, int numsSize, int k) {\n    // TODO: Print minimum number of k-bit flips, or -1 if impossible\n}\n\nint main() {\n    int nums[100005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    int k;\n    scanf(\"%d\", &k);\n    minKBitFlips(nums, numsSize, k);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a greedy approach: flip from left to right whenever you encounter a 0.",
+                "Use a difference array or sliding window to track flip operations efficiently."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Number of Squareful Arrays (Bit Manipulation)",
+            "description": "Problem Statement\n\nAn array is squareful if the sum of every pair of adjacent elements is a perfect square.\nGiven an integer array nums, return the number of permutations of nums that are squareful.\nTwo permutations perm1 and perm2 are different if there is some index i such that perm1[i] != perm2[i].\n",
+            "examples": "Sample Input\n1 17 8\n\nSample Output\n2\n\nExplanation: [1,8,17] and [17,8,1] are the valid permutations.\n\nSample Input\n2 2 2\n\nSample Output\n1\n\nExplanation: Only [2,2,2] is valid since 2+2=4 is a perfect square.\n\nSample Input\n1 17 8 1\n\nSample Output\n2\n\nExplanation: Valid permutations are [1,8,17,1] and [1,17,8,1].",
+            "constraints": "1 <= nums.length <= 12\n0 <= nums[i] <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "9 0 16 25 36",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2 2 2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "1 17 8",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "9 0 9",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "0 0 0",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def numSquarefulPerms(self, nums):\n        # TODO: Return number of squareful permutations\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.numSquarefulPerms(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int numSquarefulPerms(int[] nums) {\n        // TODO: Return number of squareful permutations\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.numSquarefulPerms(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    numSquarefulPerms(nums) {\n        // TODO: Return number of squareful permutations\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.numSquarefulPerms(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int numSquarefulPerms(vector<int>& nums) {\n        // TODO: Return number of squareful permutations\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.numSquarefulPerms(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\nvoid numSquarefulPerms(int* nums, int numsSize) {\n    // TODO: Print number of squareful permutations\n}\n\nint main() {\n    int nums[15];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    numSquarefulPerms(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking with bitmask to track which indices have been used.",
+                "Precompute which pairs of numbers sum to a perfect square."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Complement of Base 10 Integer (Bit Manipulation)",
+            "description": "Problem Statement\n\nThe complement of an integer is the integer you get when you flip all the 0's to 1's and all the 1's to 0's in its binary representation.\nFor example, The integer 5 is \"101\" in binary and its complement is \"010\" which is the integer 2.\nGiven an integer n, return its complement.\n",
+            "examples": "Sample Input\n5\n\nSample Output\n2\n\nExplanation: 5 is \"101\" in binary, with complement \"010\" in binary, which is 2 in base-10.\n\nSample Input\n7\n\nSample Output\n0\n\nExplanation: 7 is \"111\" in binary, with complement \"000\" in binary, which is 0 in base-10.\n\nSample Input\n10\n\nSample Output\n5\n\nExplanation: 10 is \"1010\" in binary, with complement \"0101\" in binary, which is 5 in base-10.",
+            "constraints": "0 <= n < 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "0",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "8",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "27"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "31",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def bitwiseComplement(self, n):\n        # TODO: Return complement of n\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n = int(sys.stdin.read().strip())\n    sol = Solution()\n    print(sol.bitwiseComplement(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int bitwiseComplement(int n) {\n        // TODO: Return complement of n\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.bitwiseComplement(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    bitwiseComplement(n) {\n        // TODO: Return complement of n\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.bitwiseComplement(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int bitwiseComplement(int n) {\n        // TODO: Return complement of n\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.bitwiseComplement(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid bitwiseComplement(int n) {\n    // TODO: Print complement of n\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    bitwiseComplement(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the highest bit position in n, then create a mask with all 1's up to that position.",
+                "Use XOR with the mask to flip all bits: complement = n XOR mask."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Binary Prefix Divisible by 5 (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given a binary array nums (0-indexed).\nWe define xi as the number whose binary representation is the subarray nums[0..i] (from most-significant-bit to least-significant-bit).\nFor example, if nums = [1,0,1], then x0 = 1, x1 = 2, and x2 = 5.\nReturn an array of booleans answer where answer[i] is true if xi is divisible by 5.\n",
+            "examples": "Sample Input\n0 1 1\n\nSample Output\nTrue False False\n\nExplanation: The input numbers in binary are 0, 01, 011; which are 0, 1, and 3 in base-10.\nOnly the first number is divisible by 5, so answer[0] is true.\n\nSample Input\n1 1 1\n\nSample Output\nFalse False False\n\nExplanation: The numbers are 1, 3, 7 in base-10, none divisible by 5.",
+            "constraints": "1 <= nums.length <= 10^5\nnums[i] is either 0 or 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "1",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "0 1 0 1 0 1 0 1 0 1",
+                    "expectedOutput": "True False False True True False False True True False"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1 1 1",
+                    "expectedOutput": "False False False True False False False True False False"
+                },
+                {
+                    "input": "0 0 0 0 0 0 0 0 0 0",
+                    "expectedOutput": "True True True True True True True True True True"
+                },
+                {
+                    "input": "1 0 1 0 1 0",
+                    "expectedOutput": "False False True True False False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def prefixesDivBy5(self, nums):\n        # TODO: Return array of booleans where answer[i] is True if prefix is divisible by 5\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.prefixesDivBy5(nums)\n    print(' '.join('True' if x else 'False' for x in result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<Boolean> prefixesDivBy5(int[] nums) {\n        // TODO: Return list of booleans where answer[i] is true if prefix is divisible by 5\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        List<Boolean> result = sol.prefixesDivBy5(nums);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) ? \"True\" : \"False\");\n            if (i < result.size() - 1) System.out.print(\" \");\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    prefixesDivBy5(nums) {\n        // TODO: Return array of booleans where answer[i] is true if prefix is divisible by 5\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.prefixesDivBy5(nums);\n    console.log(result.map(x => x ? 'True' : 'False').join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<bool> prefixesDivBy5(vector<int>& nums) {\n        // TODO: Return vector of booleans where answer[i] is true if prefix is divisible by 5\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    vector<bool> result = sol.prefixesDivBy5(nums);\n    for (int i = 0; i < result.size(); i++) {\n        cout << (result[i] ? \"True\" : \"False\");\n        if (i < result.size() - 1) cout << \" \";\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nvoid prefixesDivBy5(int* nums, int numsSize) {\n    // TODO: Print space-separated booleans (True/False) where answer[i] is True if prefix is divisible by 5\n}\n\nint main() {\n    int nums[100005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    prefixesDivBy5(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use modular arithmetic: (current_value * 2 + nums[i]) % 5 to avoid overflow.",
+                "Only track the remainder modulo 5, not the full binary number."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Campus Bikes II (Bit Manipulation)",
+            "description": "Problem Statement\n\nOn a campus represented as a 2D grid, there are n workers and m bikes, with n <= m. Each worker and bike is a 2D coordinate on this grid.\nWe assign one unique bike to each worker so that the sum of the Manhattan distances between each worker and their assigned bike is minimized.\nReturn the minimum possible sum of Manhattan distances between each worker and their assigned bike.\nThe Manhattan distance between two points p1 and p2 is Manhattan(p1, p2) = |p1.x - p2.x| + |p1.y - p2.y|.\n",
+            "examples": "Sample Input\n0 0\n2 1\n1 2\n3 3\n\nSample Output\n6\n\nExplanation: \nWe assign bike 0 to worker 0, bike 1 to worker 1. The Manhattan distance of both assignments is 3, so the output is 6.\n\nSample Input\n0 0\n1 1\n2 0\n1 0\n2 2\n2 1\n\nSample Output\n4\n\nExplanation: \nWe first assign bike 0 to worker 0, then assign bike 1 to worker 1 or worker 2, bike 2 to worker 2 or worker 1. Both assignments lead to sum of the Manhattan distances as 4.",
+            "constraints": "n == workers.length\nm == bikes.length\n1 <= n <= m <= 10\nworkers[i].length == 2\nbikes[i].length == 2\n0 <= workers[i][0], workers[i][1], bikes[i][0], bikes[i][1] < 1000\nAll the workers and the bikes locations are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "0 0\n2 1\n1 2\n3 3",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "0 0\n1 1\n2 0\n1 0\n2 2\n2 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "0 0\n1 0\n2 0\n3 0\n4 0\n0 999\n1 999\n2 999\n3 999\n4 999",
+                    "expectedOutput": "4995"
+                },
+                {
+                    "input": "1 1\n2 2\n3 3\n4 4\n5 5\n6 6\n7 7",
+                    "expectedOutput": "18"
+                },
+                {
+                    "input": "0 1\n1 0\n2 3\n3 2\n4 5",
+                    "expectedOutput": "8"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def assignBikes(self, workers, bikes):\n        # TODO: Return minimum sum of Manhattan distances\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = [line.strip() for line in sys.stdin if line.strip()]\n    # First half are workers, second half are bikes\n    n = len(lines) // 2\n    workers = [list(map(int, lines[i].split())) for i in range(n)]\n    bikes = [list(map(int, lines[i].split())) for i in range(n, len(lines))]\n    sol = Solution()\n    print(sol.assignBikes(workers, bikes))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int assignBikes(int[][] workers, int[][] bikes) {\n        // TODO: Return minimum sum of Manhattan distances\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> allCoords = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            allCoords.add(new int[]{Integer.parseInt(parts[0]), Integer.parseInt(parts[1])});\n        }\n        int n = allCoords.size() / 2;\n        int[][] workers = new int[n][2];\n        int[][] bikes = new int[allCoords.size() - n][2];\n        for (int i = 0; i < n; i++) {\n            workers[i] = allCoords.get(i);\n        }\n        for (int i = n; i < allCoords.size(); i++) {\n            bikes[i - n] = allCoords.get(i);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.assignBikes(workers, bikes));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    assignBikes(workers, bikes) {\n        // TODO: Return minimum sum of Manhattan distances\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const workers = [];\n    const bikes = [];\n    const n = Math.floor(lines.length / 2);\n    for (let i = 0; i < n; i++) {\n        workers.push(lines[i].trim().split(/\\s+/).map(Number));\n    }\n    for (let i = n; i < lines.length; i++) {\n        bikes.push(lines[i].trim().split(/\\s+/).map(Number));\n    }\n    const sol = new Solution();\n    console.log(sol.assignBikes(workers, bikes));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int assignBikes(vector<vector<int>>& workers, vector<vector<int>>& bikes) {\n        // TODO: Return minimum sum of Manhattan distances\n        return 0;\n    }\n};\n\nint main() {\n    vector<vector<int>> allCoords;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> coord;\n        int num;\n        while (iss >> num) {\n            coord.push_back(num);\n        }\n        allCoords.push_back(coord);\n    }\n    int n = allCoords.size() / 2;\n    vector<vector<int>> workers(allCoords.begin(), allCoords.begin() + n);\n    vector<vector<int>> bikes(allCoords.begin() + n, allCoords.end());\n    Solution sol;\n    cout << sol.assignBikes(workers, bikes) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\nvoid assignBikes(int** workers, int workersSize, int** bikes, int bikesSize) {\n    // TODO: Print minimum sum of Manhattan distances\n}\n\nint main() {\n    int coords[20][2];\n    int totalSize = 0;\n    char line[100];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        sscanf(line, \"%d %d\", &coords[totalSize][0], &coords[totalSize][1]);\n        totalSize++;\n    }\n    int workersSize = totalSize / 2;\n    int bikesSize = totalSize - workersSize;\n    int* workersPtrs[10], *bikesPtrs[10];\n    for (int i = 0; i < workersSize; i++) workersPtrs[i] = coords[i];\n    for (int i = 0; i < bikesSize; i++) bikesPtrs[i] = coords[workersSize + i];\n    assignBikes(workersPtrs, workersSize, bikesPtrs, bikesSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming with bitmask to track which bikes have been assigned.",
+                "For each worker, try assigning each available bike and use memoization to avoid recomputation."
+            ]
+        }
+    ]
+}

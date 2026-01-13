@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Number of Boomerangs (Hash Table)",
+            "description": "Problem Statement\n\nYou are given n points in the plane that are all distinct, where points[i] = [xi, yi]. A boomerang is a tuple of points (i, j, k) such that the distance between i and j equals the distance between i and k (the order of the tuple matters).\nReturn the number of boomerangs.\n",
+            "examples": "Example 1:\n\nInput: points = [[0,0],[1,0],[2,0]]\nOutput: 2\nExplanation: The two boomerangs are [[1,0],[0,0],[2,0]] and [[1,0],[2,0],[0,0]].\n\nExample 2:\n\nInput: points = [[1,1],[2,2],[3,3]]\nOutput: 2\n\nExample 3:\n\nInput: points = [[1,1]]\nOutput: 0",
+            "constraints": "n == points.length\n1 <= n <= 500\npoints[i].length == 2\n-10^4 <= xi, yi <= 10^4\nAll the points are unique.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3\n0 0\n1 0\n2 0",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "3\n1 1\n2 2\n3 3",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1\n1 1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2\n0 0\n1 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "3\n0 0\n1 0\n0 1",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def numberOfBoomerangs(self, points):\n        # TODO: Count boomerangs using hash map for distances\n        # Return count\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    points = []\n    for i in range(1, n+1):\n        points.append(list(map(int, data[i].split())))\n    sol = Solution()\n    result = sol.numberOfBoomerangs(points)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int numberOfBoomerangs(int[][] points){\n        // TODO: Count boomerangs using hash map for distances\n        // Return count\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] points = new int[n][2];\n        for(int i=0;i<n;i++){\n            String[] parts = br.readLine().trim().split(\" \");\n            points[i][0] = Integer.parseInt(parts[0]);\n            points[i][1] = Integer.parseInt(parts[1]);\n        }\n        Solution sol = new Solution();\n        int result = sol.numberOfBoomerangs(points);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  numberOfBoomerangs(points){\n    // TODO: Count boomerangs using hash map for distances\n    // Return count\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const points = [];\n  for(let i=1;i<=n;i++){\n    points.push(lines[i].split(\" \").map(Number));\n  }\n  const sol = new Solution();\n  const result = sol.numberOfBoomerangs(points);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int numberOfBoomerangs(vector<vector<int>>& points){\n        // TODO: Count boomerangs using hash map for distances\n        // Return count\n        return 0;\n    }\n};\nint main(){\n    int n; cin >> n;\n    vector<vector<int>> points(n, vector<int>(2));\n    for(int i=0;i<n;i++) cin >> points[i][0] >> points[i][1];\n    Solution sol;\n    int result = sol.numberOfBoomerangs(points);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint numberOfBoomerangs(int** points, int pointsSize, int* pointsColSize){\n    // TODO: Count boomerangs\n    // Return count\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int** points = (int**)malloc(n * sizeof(int*));\n    for(int i=0;i<n;i++){\n        points[i] = (int*)malloc(2 * sizeof(int));\n        scanf(\"%d %d\", &points[i][0], &points[i][1]);\n    }\n    int pointsColSize = 2;\n    int result = numberOfBoomerangs(points, n, &pointsColSize);\n    printf(\"%d\", result);\n    for(int i=0;i<n;i++) free(points[i]);\n    free(points);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each point, calculate distances to all other points and store frequencies in a hash map.",
+                "If 'k' points are at the same distance 'd', we can choose 2 of them in k*(k-1) ways."
+            ]
+        }
+    ]
+}

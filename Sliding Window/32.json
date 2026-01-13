@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Longest Harmonious Subsequence (Sliding Window)",
+      "description": "We define a harmonious array as an array where the difference between its maximum value and its minimum value is exactly 1.\nGiven an integer array nums, return the length of its longest harmonious subsequence among all its possible subsequences.\n\nInput Format:\nFirst line: integer n.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint a single integer: the length of the longest harmonious subsequence.",
+      "examples": "Sample Input\n8\n1 3 2 2 5 2 3 7\n\nSample Output\n5",
+      "constraints": "1 <= nums.length <= 2 * 10^4\n-10^9 <= nums[i] <= 10^9",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "8\n1 3 2 2 5 2 3 7",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "4\n1 2 3 4",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "4\n1 1 1 1",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "6\n1 2 1 2 1 2",
+          "expectedOutput": "6"
+        },
+        {
+          "input": "5\n10 12 14 16 18",
+          "expectedOutput": "0"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def findLHS(self, nums):\n        # TODO: Return the length of the longest harmonious subsequence\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    nums = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.findLHS(nums))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int findLHS(int[] nums) {\n        // TODO: Return the length of the longest harmonious subsequence\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] nums = new int[n];\n        for(int i=0; i<n; i++) nums[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.findLHS(nums));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    findLHS(nums) {\n        // TODO: Return the length of the longest harmonious subsequence\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const n = parseInt(lines[0].trim());\n    const nums = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.findLHS(nums));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int findLHS(vector<int>& nums) {\n        // TODO: Return the length of the longest harmonious subsequence\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for(int i=0; i<n; i++) cin >> nums[i];\n    Solution sol;\n    cout << sol.findLHS(nums) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int *nums = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &nums[i]);\n    // TODO: Return the length of the longest harmonious subsequence\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Smallest Sufficient Team (Bit Manipulation)",
+            "description": "Problem Statement\n\nIn a project, you have a list of required skills req_skills, and a list of people. The ith person people[i] contains a list of skills that the person has.\nConsider a sufficient team: a set of people such that for every required skill in req_skills, there is at least one person in the team who has that skill. We can represent these teams by the index of each person.\nFor example, team = [0, 1, 3] represents the people with skills people[0], people[1], and people[3].\nReturn any sufficient team of the smallest possible size, represented by the index of each person. You may return the answer in any order.\nIt is guaranteed an answer exists.\n",
+            "examples": "Sample Input\njava nodejs reactjs\njava\nnodejs\nnodejs reactjs\n\nSample Output\n0 2\n\nExplanation: Team [0,2] has all required skills.\n\nSample Input\nalgorithms math java reactjs csharp aws\nalgorithms math java\nalgorithms math reactjs\njava csharp aws\nreactjs csharp\ncsharp math\naws java\n\nSample Output\n1 2\n\nExplanation: Team [1,2] has all required skills.",
+            "constraints": "1 <= req_skills.length <= 16\n1 <= req_skills[i].length <= 16\nreq_skills[i] consists of lowercase English letters.\nAll the strings of req_skills are unique.\n1 <= people.length <= 60\n0 <= people[i].length <= 16\n1 <= people[i][j].length <= 16\npeople[i][j] consists of lowercase English letters.\nAll the strings of people[i] are unique.\nEvery skill in people[i] is a skill in req_skills.\nIt is guaranteed a sufficient team exists.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "python sql\npython\nsql\npython sql",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "java nodejs reactjs\njava\nnodejs\nnodejs reactjs",
+                    "expectedOutput": "0 2"
+                },
+                {
+                    "input": "programming testing design\nprogramming\ntesting\ndesign\nprogramming testing\ntesting design\ndesign programming",
+                    "expectedOutput": "4 0"
+                },
+                {
+                    "input": "a b c\na b\nb c\nc\na",
+                    "expectedOutput": "1 3"
+                },
+                {
+                    "input": "network database\nnetwork\ndatabase\nnetwork database",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def smallestSufficientTeam(self, req_skills, people):\n        # TODO: Return any sufficient team of smallest size (list of indices)\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = [line.strip() for line in sys.stdin if line.strip()]\n    req_skills = lines[0].split()\n    people = []\n    for i in range(1, len(lines)):\n        people.append(lines[i].split())\n    sol = Solution()\n    result = sol.smallestSufficientTeam(req_skills, people)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] smallestSufficientTeam(String[] req_skills, List<List<String>> people) {\n        // TODO: Return any sufficient team of smallest size (array of indices)\n        return new int[0];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] req_skills = br.readLine().trim().split(\" \");\n        List<List<String>> people = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] skills = line.trim().split(\" \");\n            people.add(Arrays.asList(skills));\n        }\n        Solution sol = new Solution();\n        int[] result = sol.smallestSufficientTeam(req_skills, people);\n        for (int i = 0; i < result.length; i++) {\n            System.out.print(result[i] + (i == result.length - 1 ? \"\" : \" \"));\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    smallestSufficientTeam(req_skills, people) {\n        // TODO: Return any sufficient team of smallest size (array of indices)\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const req_skills = lines[0].trim().split(/\\s+/);\n    const people = [];\n    for (let i = 1; i < lines.length; i++) {\n        people.push(lines[i].trim().split(/\\s+/));\n    }\n    const sol = new Solution();\n    const result = sol.smallestSufficientTeam(req_skills, people);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> smallestSufficientTeam(vector<string>& req_skills, vector<vector<string>>& people) {\n        // TODO: Return any sufficient team of smallest size (vector of indices)\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> req_skills;\n    string skill;\n    while (iss >> skill) {\n        req_skills.push_back(skill);\n    }\n    vector<vector<string>> people;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss2(line);\n        vector<string> person;\n        string s;\n        while (iss2 >> s) {\n            person.push_back(s);\n        }\n        people.push_back(person);\n    }\n    Solution sol;\n    vector<int> result = sol.smallestSufficientTeam(req_skills, people);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid smallestSufficientTeam(char** req_skills, int req_skillsSize, char*** people, int peopleSize, int* peopleColSize) {\n    // TODO: Print space-separated indices of smallest sufficient team\n}\n\nint main() {\n    // Simplified input parsing for C - would need more complex parsing\n    printf(\"TODO: Implement input parsing\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming with bitmask to track which skills are covered.",
+                "For each person, represent their skills as a bitmask and use DP to find minimum team size."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Repeated Dna Sequences (Sliding Window)",
+      "description": "The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.\nGiven a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.\n\nInput Format:\nFirst line: string s.\n\nOutput Format:\nPrint the repeated 10-letter sequences on a single line, separated by spaces.",
+      "examples": "Sample Input\nAAAAACCCCCAAAAACCCCCCAAAAAGGGTTT\n\nSample Output\nAAAAACCCCC CCCCCAAAAA",
+      "constraints": "1 <= s.length <= 10^5\ns[i] is either 'A', 'C', 'G', or 'T'.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT",
+          "expectedOutput": "AAAAACCCCC CCCCCAAAAA"
+        },
+        {
+          "input": "AAAAAAAAAAAAA",
+          "expectedOutput": "AAAAAAAAAA"
+        },
+        {
+          "input": "AAAAAAAAAAA",
+          "expectedOutput": "AAAAAAAAAA"
+        },
+        {
+          "input": "ACGTACGTACGTACGT",
+          "expectedOutput": "ACGTACGTAC CGTACGTACG GTACGTACGT"
+        },
+        {
+          "input": "GAGAGAGAGAGAGAGAGAGA",
+          "expectedOutput": "AGAGAGAGAG GAGAGAGAGA"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def findRepeatedDnaSequences(self, s):\n        # TODO: Return all the 10-letter-long sequences that occur more than once\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    res = sol.findRepeatedDnaSequences(s)\n    print(' '.join(res))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public List<String> findRepeatedDnaSequences(String s) {\n        // TODO: Return all the 10-letter-long sequences that occur more than once\n        return null;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.nextLine().strip();\n        Solution sol = new Solution();\n        List<String> res = sol.findRepeatedDnaSequences(s);\n        for (int i = 0; i < res.size(); i++) System.out.print(res.get(i) + (i == res.size() - 1 ? \"\" : \" \"));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    findRepeatedDnaSequences(s) {\n        // TODO: Return all the 10-letter-long sequences that occur more than once\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const s = fs.readFileSync(0, 'utf-8').trim();\n    const sol = new Solution();\n    const res = sol.findRepeatedDnaSequences(s);\n    console.log(res.join(' '));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> findRepeatedDnaSequences(string s) {\n        // TODO: Return all the 10-letter-long sequences that occur more than once\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string s;\n    cin >> s;\n    Solution sol;\n    vector<string> res = sol.findRepeatedDnaSequences(s);\n    for(int i=0; i<res.size(); ++i) cout << res[i] << (i == res.size()-1 ? \"\" : \" \");\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char s[100001];\n    scanf(\"%s\", s);\n    // TODO: Return all the 10-letter-long sequences that occur more than once\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Number Complement (Bit Manipulation)",
+            "description": "Problem Statement\n\nThe complement of an integer is the integer you get when you flip all the 0's to 1's and all the 1's to 0's in its binary representation.\nFor example, The integer 5 is \"101\" in binary and its complement is \"010\" which is the integer 2.\nGiven an integer num, return its complement.\n",
+            "examples": "Sample Input\n5\n\nSample Output\n2\n\nExplanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.\n\nSample Input\n1\n\nSample Output\n0\n\nExplanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.",
+            "constraints": "1 <= num < 2^31",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "32",
+                    "expectedOutput": "31"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "27"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findComplement(self, num):\n        # TODO: Return complement of num\n        pass\n\nif __name__ == '__main__':\n    num = int(input().strip())\n    sol = Solution()\n    print(sol.findComplement(num))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int findComplement(int num) {\n        // TODO: Return complement of num\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int num = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.findComplement(num));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findComplement(num) {\n        // TODO: Return complement of num\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const num = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.findComplement(num));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findComplement(int num) {\n        // TODO: Return complement of num\n        return 0;\n    }\n};\n\nint main() {\n    int num;\n    cin >> num;\n    Solution sol;\n    cout << sol.findComplement(num) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findComplement(int num) {\n    // TODO: Print complement of num\n}\n\nint main() {\n    int num;\n    scanf(\"%d\", &num);\n    findComplement(num);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the highest bit position in num, then XOR with a mask of all 1's up to that position.",
+                "Create a mask: (1 << (number of bits)) - 1, then XOR with num."
+            ]
+        }
+    ]
+}
+

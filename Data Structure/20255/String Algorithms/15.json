@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Repeated String Match (String Algorithm)",
+            "description": "Problem Statement\n\nGiven two strings a and b, return the minimum number of times you should repeat string a so that string b is a substring of it. If it is impossible for b to be a substring of a after repeating it, return -1.\n\nNotice: string \"abc\" repeated 0 times is \"\", repeated 1 time is \"abc\" and repeated 2 times is \"abcabc\".\n",
+            "examples": "Sample Input\nabcd cdabcdab\n\nSample Output\n3\n\nExplanation: We return 3 because by repeating a three times \"abcdabcdabcd\", b is a substring of it.\n\nSample Input\na aa\n\nSample Output\n2\n\nExplanation: We need to repeat \"a\" twice to get \"aa\".",
+            "constraints": "1 <= a.length, b.length <= 10^4\na and b consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abcd cdabcdab",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "a aa",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc cba",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "abab abababab",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc abc",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def repeatedStringMatch(self, a, b):\n        # TODO: Return minimum number of repetitions or -1\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        a, b = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.repeatedStringMatch(a, b))\n    else:\n        print(\"-1\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int repeatedStringMatch(String a, String b) {\n        // TODO: Return minimum number of repetitions or -1\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"-1\");\n            return;\n        }\n        String a = parts[0];\n        String b = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.repeatedStringMatch(a, b));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    repeatedStringMatch(a, b) {\n        // TODO: Return minimum number of repetitions or -1\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"-1\");\n        return;\n    }\n    const a = parts[0];\n    const b = parts[1];\n    const sol = new Solution();\n    console.log(sol.repeatedStringMatch(a, b));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int repeatedStringMatch(string a, string b) {\n        // TODO: Return minimum number of repetitions or -1\n        return -1;\n    }\n};\n\nint main() {\n    string a, b;\n    if (cin >> a >> b) {\n        Solution sol;\n        cout << sol.repeatedStringMatch(a, b) << endl;\n    } else {\n        cout << \"-1\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid repeatedStringMatch(char* a, char* b) {\n    // TODO: Print minimum number of repetitions or -1\n}\n\nint main() {\n    char a[10005], b[10005];\n    if (scanf(\"%s %s\", a, b) == 2) {\n        repeatedStringMatch(a, b);\n    } else {\n        printf(\"-1\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Calculate the minimum number of repetitions needed based on string lengths.",
+                "Check if b is a substring of the repeated string."
+            ]
+        }
+    ]
+}
+

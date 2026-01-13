@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Maximum Average Subarray I (Sliding Window)",
+      "description": "You are given an integer array nums consisting of n elements, and an integer k.\nFind a contiguous subarray whose length is equal to k that has the maximum average value and return this value.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint a single value: the maximum average. Format to 5 decimal places.",
+      "examples": "Sample Input\n6 4\n1 12 -5 -6 50 3\n\nSample Output\n12.75000",
+      "constraints": "n == nums.length\n1 <= k <= n <= 10^5\n-10^4 <= nums[i] <= 10^4",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "6 4\n1 12 -5 -6 50 3",
+          "expectedOutput": "12.75000"
+        },
+        {
+          "input": "1 1\n5",
+          "expectedOutput": "5.00000"
+        },
+        {
+          "input": "5 2\n1 2 3 4 5",
+          "expectedOutput": "4.50000"
+        },
+        {
+          "input": "4 2\n-1 -1 -1 -1",
+          "expectedOutput": "-1.00000"
+        },
+        {
+          "input": "5 3\n1 10 100 1000 10000",
+          "expectedOutput": "3700.00000"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def findMaxAverage(self, nums, k):\n        # TODO: Return the maximum average value\n        pass\n\nif __name__ == '__main__':\n    line1 = input().split()\n    n, k = int(line1[0]), int(line1[1])\n    nums = list(map(int, input().split()))\n    sol = Solution()\n    print(f'{sol.findMaxAverage(nums, k):.5f}')"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public double findMaxAverage(int[] nums, int k) {\n        // TODO: Return the maximum average value\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int k = sc.nextInt();\n        int[] nums = new int[n];\n        for(int i=0; i<n; i++) nums[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.printf(\"%.5f\\n\", sol.findMaxAverage(nums, k));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    findMaxAverage(nums, k) {\n        // TODO: Return the maximum average value\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const nums = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.findMaxAverage(nums, k).toFixed(5));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    double findMaxAverage(vector<int>& nums, int k) {\n        // TODO: Return the maximum average value\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, k;\n    cin >> n >> k;\n    vector<int> nums(n);\n    for(int i=0; i<n; i++) cin >> nums[i];\n    Solution sol;\n    printf(\"%.5f\\n\", sol.findMaxAverage(nums, k));\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    int *nums = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &nums[i]);\n    // TODO: Return the maximum average value\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

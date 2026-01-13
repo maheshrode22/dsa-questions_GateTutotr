@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Single Number II (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums where every element appears three times except for one, which appears exactly once. Find the single element and return it.\nYou must implement a solution with a linear runtime complexity and use only constant extra space.\n",
+            "examples": "Sample Input\n2 2 3 2\n\nSample Output\n3\n\nExplanation: The single element that appears only once is 3.\n\nSample Input\n0 1 0 1 0 1 99\n\nSample Output\n99\n\nExplanation: The single element that appears only once is 99.",
+            "constraints": "1 <= nums.length <= 3 * 10^4\n-2^31 <= nums[i] <= 2^31 - 1\nEach element in nums appears exactly three times except for one element which appears once.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1000000000 1000000000 1000000000 7",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "-1 -1 -1 100",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "-2 -2 -2 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "1 1 1 2 2 2 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "7 7 7 10",
+                    "expectedOutput": "10"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def singleNumber(self, nums):\n        # TODO: Return the single number (appears once, others appear 3 times)\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.singleNumber(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int singleNumber(int[] nums) {\n        // TODO: Return the single number (appears once, others appear 3 times)\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.singleNumber(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    singleNumber(nums) {\n        // TODO: Return the single number (appears once, others appear 3 times)\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.singleNumber(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        // TODO: Return the single number (appears once, others appear 3 times)\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.singleNumber(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid singleNumber(int* nums, int numsSize) {\n    // TODO: Print the single number (appears once, others appear 3 times)\n}\n\nint main() {\n    int nums[30005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    singleNumber(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation to count bits at each position modulo 3.",
+                "Track ones and twos separately, then combine to find the single number."
+            ]
+        }
+    ]
+}
+

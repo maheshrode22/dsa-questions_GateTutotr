@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Match Substring After Replacement (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given two strings s and sub. You are also given a 2D character array mappings where mappings[i] = [oldi, newi] indicates that you may perform the following operation any number of times:\n\nReplace a character oldi of sub with newi.\n\nEach character in sub cannot be replaced more than once.\nReturn \"True\" if it is possible to make sub a substring of s by replacing zero or more characters according to mappings. Otherwise, return \"False\".\nA substring is a contiguous non-empty sequence of characters within a string.\n",
+            "examples": "Sample Input\nfool3e7bar\nleet\ne 3\nt 7\nt 8\n\nSample Output\nTrue\n\nExplanation: Replace the first 'e' in sub with '3' and 't' in sub with '7'. Now sub = \"l3e7\" is a substring of s.\n\nSample Input\nfooleetbar\nf00l\no 0\n\nSample Output\nFalse\n\nExplanation: The string \"f00l\" is not a substring of s and no replacements can be made.",
+            "constraints": "1 <= sub.length <= s.length <= 5000\n0 <= mappings.length <= 1000\nmappings[i].length == 2\noldi != newi\ns and sub consist of uppercase and lowercase English letters and digits.\noldi and newi are either uppercase or lowercase English letters or digits.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "fool3e7bar\nleet\ne 3\nt 7\nt 8",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "fooleetbar\nf00l\no 0",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "Fool33tbaR\nleetd\ne 3\nt 7\nd b",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "hello\nxyz",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def matchReplacement(self, s, sub, mappings):\n        # TODO: Return \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    s = lines[0] if len(lines) > 0 else \"\"\n    sub = lines[1] if len(lines) > 1 else \"\"\n    mappings = []\n    for i in range(2, len(lines)):\n        parts = lines[i].split()\n        if len(parts) == 2:\n            mappings.append([parts[0], parts[1]])\n    sol = Solution()\n    print(sol.matchReplacement(s, sub, mappings))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String matchReplacement(String s, String sub, List<List<String>> mappings) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String sub = br.readLine().trim();\n        List<List<String>> mappings = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            if (parts.length == 2) {\n                List<String> mapping = new ArrayList<>();\n                mapping.add(parts[0]);\n                mapping.add(parts[1]);\n                mappings.add(mapping);\n            }\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.matchReplacement(s, sub, mappings));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    matchReplacement(s, sub, mappings) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0] || \"\";\n    const sub = lines[1] || \"\";\n    const mappings = [];\n    for (let i = 2; i < lines.length; i++) {\n        const parts = lines[i].trim().split(/\\s+/);\n        if (parts.length === 2) {\n            mappings.push([parts[0], parts[1]]);\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.matchReplacement(s, sub, mappings));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string matchReplacement(string s, string sub, vector<vector<string>>& mappings) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n};\n\nint main() {\n    string s, sub;\n    getline(cin, s);\n    getline(cin, sub);\n    vector<vector<string>> mappings;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        string oldChar, newChar;\n        if (iss >> oldChar >> newChar) {\n            mappings.push_back({oldChar, newChar});\n        }\n    }\n    Solution sol;\n    cout << sol.matchReplacement(s, sub, mappings) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid matchReplacement(char* s, char* sub, char mappings[][2][10], int mappingsSize) {\n    // TODO: Print \"True\" or \"False\"\n}\n\nint main() {\n    char s[5005], sub[5005];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    fgets(sub, sizeof(sub), stdin);\n    sub[strcspn(sub, \"\\n\")] = 0;\n    char mappings[1005][2][10];\n    int mappingsSize = 0;\n    char line[100];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        char oldChar[10], newChar[10];\n        if (sscanf(line, \"%s %s\", oldChar, newChar) == 2) {\n            strcpy(mappings[mappingsSize][0], oldChar);\n            strcpy(mappings[mappingsSize][1], newChar);\n            mappingsSize++;\n        }\n    }\n    matchReplacement(s, sub, mappings, mappingsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Build a mapping from old characters to possible new characters.",
+                "For each position in s, check if sub can match after applying replacements."
+            ]
+        }
+    ]
+}
+

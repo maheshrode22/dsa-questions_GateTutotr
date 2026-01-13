@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "First Unique Character in a String (Hash Table)",
+            "description": "Problem Statement\n\nGiven a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.\n",
+            "examples": "Example 1:\n\nInput: s = \"leetcode\"\nOutput: 0\nExplanation:\nThe character 'l' at index 0 is the first character that does not occur at any other index.\n\nExample 2:\n\nInput: s = \"loveleetcode\"\nOutput: 2\n\nExample 3:\n\nInput: s = \"aabb\"\nOutput: -1",
+            "constraints": "1 <= s.length <= 10^5\ns consists of only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "leetcode",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "loveleetcode",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "aabb",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "z",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "aadadaad",
+                    "expectedOutput": "-1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def firstUniqChar(self, s):\n        # TODO: Find index of first unique character using hash map\n        # Return index or -1\n        pass\n\nif __name__ == '__main__':\n    import sys\n    s = sys.stdin.read().strip()\n    sol = Solution()\n    result = sol.firstUniqChar(s)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int firstUniqChar(String s){\n        // TODO: Find index of first unique character using hash map\n        // Return index or -1\n        return -1;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        int result = sol.firstUniqChar(s);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  firstUniqChar(s){\n    // TODO: Find index of first unique character using hash map\n    // Return index or -1\n    return -1;\n  }\n}\nfunction solve(input){\n  const s = input.trim();\n  const sol = new Solution();\n  const result = sol.firstUniqChar(s);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int firstUniqChar(string s){\n        // TODO: Find index of first unique character using hash map\n        // Return index or -1\n        return -1;\n    }\n};\nint main(){\n    string s;\n    cin >> s;\n    Solution sol;\n    int result = sol.firstUniqChar(s);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nint firstUniqChar(char* s){\n    // TODO: Find index of first unique character\n    // Return index or -1\n    return -1;\n}\n\nint main(){\n    char s[100005];\n    scanf(\"%s\", s);\n    int result = firstUniqChar(s);\n    printf(\"%d\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Traverse the string to build a frequency map.",
+                "Traverse the string again and check the frequency of each character. Return the index of the first one with frequency 1."
+            ]
+        }
+    ]
+}

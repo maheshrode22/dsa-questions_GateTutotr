@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Maximum Length Of Repeated Subarray (Sliding Window)",
+      "description": "Given two integer arrays nums1 and nums2, return the maximum length of a subarray that appears in both arrays.\n\nInput Format:\nFirst line: two integers n and m (lengths of nums1 and nums2).\nSecond line: n space-separated integers (nums1).\nThird line: m space-separated integers (nums2).\n\nOutput Format:\nPrint a single integer: the maximum length.",
+      "examples": "Sample Input\n5 5\n1 2 3 2 1\n3 2 1 4 7\n\nSample Output\n3",
+      "constraints": "See problem description.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "5 5\n1 2 3 2 1\n3 2 1 4 7",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "5 5\n0 0 0 0 0\n0 0 0 0 0",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "3 3\n1 2 3\n4 5 6",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "4 4\n1 2 3 4\n2 3 4 5",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "6 5\n1 0 0 0 1 1\n1 0 0 1 1",
+          "expectedOutput": "4"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def findLength(self, nums1, nums2):\n        # TODO: Return the maximum length of a subarray that appears in both arrays\n        pass\n\nif __name__ == '__main__':\n    n, m = map(int, input().split())\n    nums1 = list(map(int, input().split()))\n    nums2 = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.findLength(nums1, nums2))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int findLength(int[] nums1, int[] nums2) {\n        // TODO: Return the maximum length of a subarray that appears in both arrays\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int m = sc.nextInt();\n        int[] nums1 = new int[n];\n        for(int i=0; i<n; i++) nums1[i] = sc.nextInt();\n        int[] nums2 = new int[m];\n        for(int i=0; i<m; i++) nums2[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.findLength(nums1, nums2));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    findLength(nums1, nums2) {\n        // TODO: Return the maximum length of a subarray that appears in both arrays\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const [n, m] = lines[0].trim().split(/\\s+/).map(Number);\n    const nums1 = lines[1].trim().split(/\\s+/).map(Number);\n    const nums2 = lines[2].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.findLength(nums1, nums2));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int findLength(vector<int>& nums1, vector<int>& nums2) {\n        // TODO: Return the maximum length of a subarray that appears in both arrays\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, m;\n    cin >> n >> m;\n    vector<int> nums1(n), nums2(m);\n    for(int i=0; i<n; i++) cin >> nums1[i];\n    for(int i=0; i<m; i++) cin >> nums2[i];\n    Solution sol;\n    cout << sol.findLength(nums1, nums2) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n    int *nums1 = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &nums1[i]);\n    int *nums2 = (int*)malloc(m * sizeof(int));\n    for(int i=0; i<m; i++) scanf(\"%d\", &nums2[i]);\n    // TODO: Return the maximum length of a subarray that appears in both arrays\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

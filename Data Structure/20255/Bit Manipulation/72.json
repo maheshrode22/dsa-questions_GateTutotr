@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Length of a Concatenated String with Unique Characters (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an array of strings arr. A string s is formed by the concatenation of a subsequence of arr that has unique characters.\nReturn the maximum possible length of s.\nA subsequence is an array that can be derived from another array by deleting some or no elements without changing the order of the remaining elements.\n",
+            "examples": "Sample Input\nun iq ue\n\nSample Output\n4\n\nExplanation: All the valid concatenations are:\n- \"\"\n- \"un\"\n- \"iq\"\n- \"ue\"\n- \"uniq\" (\"un\" + \"iq\")\n- \"ique\" (\"iq\" + \"ue\")\nMaximum length is 4.\n\nSample Input\ncha r act ers\n\nSample Output\n6\n\nExplanation: Possible longest valid concatenations are \"chaers\" (\"cha\" + \"ers\") and \"acters\" (\"act\" + \"ers\").\n\nSample Input\nabcdefghijklmnopqrstuvwxyz\n\nSample Output\n26\n\nExplanation: The only string in arr has all 26 characters.",
+            "constraints": "1 <= arr.length <= 16\n1 <= arr[i].length <= 26\narr[i] contains only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abcd abef cdgh cdef",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "un iq ue",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abcdefghijklmnopqrstuvwxyz",
+                    "expectedOutput": "26"
+                },
+                {
+                    "input": "unique strings with no common characters",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "a b c d e f g h i j k l m n o p",
+                    "expectedOutput": "16"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxLength(self, arr):\n        # TODO: Return maximum length of concatenated string with unique characters\n        pass\n\nif __name__ == '__main__':\n    import sys\n    arr = sys.stdin.read().strip().split()\n    sol = Solution()\n    print(sol.maxLength(arr))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxLength(List<String> arr) {\n        // TODO: Return maximum length of concatenated string with unique characters\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        List<String> arr = Arrays.asList(parts);\n        Solution sol = new Solution();\n        System.out.println(sol.maxLength(arr));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxLength(arr) {\n        // TODO: Return maximum length of concatenated string with unique characters\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const arr = input.trim().split(/\\s+/);\n    const sol = new Solution();\n    console.log(sol.maxLength(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxLength(vector<string>& arr) {\n        // TODO: Return maximum length of concatenated string with unique characters\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> arr;\n    string s;\n    while (iss >> s) {\n        arr.push_back(s);\n    }\n    Solution sol;\n    cout << sol.maxLength(arr) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid maxLength(char** arr, int arrSize) {\n    // TODO: Print maximum length of concatenated string with unique characters\n}\n\nint main() {\n    // Simplified input parsing for C\n    printf(\"TODO: Implement input parsing\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bitmask to represent the set of characters in each string.",
+                "Use backtracking or dynamic programming to try all combinations of strings."
+            ]
+        }
+    ]
+}
+

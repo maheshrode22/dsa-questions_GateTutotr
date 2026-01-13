@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "K Empty Slots (Sliding Window)",
+      "description": "You have n bulbs in a row numbered from 1 to n. Initially, all the bulbs are turned off. We turn on exactly one bulb every day until all bulbs are on after n days.\nYou are given an array bulbs of length n where bulbs[i] = x means that on the (i+1)th day, we will turn on the bulb at position x.\nGiven an integer k, return the minimum day number such that there exists two turned on bulbs that have exactly k bulbs between them that are all turned off. If there isn't such day, return -1.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers (permutation of 1 to n).\n\nOutput Format:\nPrint a single integer: the minimum day number (1-indexed), or -1.",
+      "examples": "Sample Input\n3 1\n1 3 2\n\nSample Output\n2",
+      "constraints": "n == bulbs.length\n1 <= n <= 2 * 10^4\n1 <= bulbs[i] <= n\nbulbs is a permutation of numbers from 1 to n.\n0 <= k <= 2 * 10^4",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "3 1\n1 3 2",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "3 1\n1 2 3",
+          "expectedOutput": "-1"
+        },
+        {
+          "input": "5 2\n1 5 2 4 3",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "5 1\n1 5 2 4 3",
+          "expectedOutput": "4"
+        },
+        {
+          "input": "2 0\n1 2",
+          "expectedOutput": "2"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def kEmptySlots(self, bulbs, k):\n        # TODO: Return the minimum day number such that there exists two turned on bulbs with k bulbs between them\n        pass\n\nif __name__ == '__main__':\n    line1 = input().split()\n    n, k = int(line1[0]), int(line1[1])\n    bulbs = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.kEmptySlots(bulbs, k))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int kEmptySlots(int[] bulbs, int k) {\n        // TODO: Return the minimum day number such that there exists two turned on bulbs with k bulbs between them\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int k = sc.nextInt();\n        int[] bulbs = new int[n];\n        for(int i=0; i<n; i++) bulbs[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.kEmptySlots(bulbs, k));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    kEmptySlots(bulbs, k) {\n        // TODO: Return the minimum day number such that there exists two turned on bulbs with k bulbs between them\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const bulbs = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.kEmptySlots(bulbs, k));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int kEmptySlots(vector<int>& bulbs, int k) {\n        // TODO: Return the minimum day number such that there exists two turned on bulbs with k bulbs between them\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, k;\n    cin >> n >> k;\n    vector<int> bulbs(n);\n    for(int i=0; i<n; i++) cin >> bulbs[i];\n    Solution sol;\n    cout << sol.kEmptySlots(bulbs, k) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    int *bulbs = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &bulbs[i]);\n    // TODO: Return the minimum day number such that there exists two turned on bulbs with k bulbs between them\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "String Transformation (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given two strings s and t of equal length n. You can perform the following operation on the string s:\n\nRemove a suffix of s of length l where 0 < l < n and append it at the start of s.\nFor example, let s = 'abcd' then in one operation you can remove the suffix 'cd' and append it in front of s making s = 'cdab'.\n\nYou are also given an integer k. Return the number of ways in which s can be transformed into t in exactly k operations.\nSince the answer can be large, return it modulo 10^9 + 7.\n",
+            "examples": "Sample Input\nabcd cdab 2\n\nSample Output\n2\n\nExplanation: There are 2 ways to transform s to t in 2 operations.\n\nSample Input\nababab ababab 1\n\nSample Output\n2\n\nExplanation: There are 2 ways to transform s to t in 1 operation.",
+            "constraints": "2 <= s.length <= 5 * 10^5\n1 <= k <= 10^15\ns.length == t.length\ns and t consist of only lowercase English alphabets.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abcd cdab 2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "ababab ababab 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc abc 0",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "abc cba 1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "ab ba 1",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def numberOfWays(self, s, t, k):\n        # TODO: Return number of ways modulo 10^9 + 7\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 3:\n        s, t, k = input_data[0], input_data[1], int(input_data[2])\n        sol = Solution()\n        print(sol.numberOfWays(s, t, k))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long numberOfWays(String s, String t, long k) {\n        // TODO: Return number of ways modulo 10^9 + 7\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 3) {\n            System.out.println(\"0\");\n            return;\n        }\n        String s = parts[0];\n        String t = parts[1];\n        long k = Long.parseLong(parts[2]);\n        Solution sol = new Solution();\n        System.out.println(sol.numberOfWays(s, t, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    numberOfWays(s, t, k) {\n        // TODO: Return number of ways modulo 10^9 + 7\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 3) {\n        console.log(\"0\");\n        return;\n    }\n    const s = parts[0];\n    const t = parts[1];\n    const k = BigInt(parts[2]);\n    const sol = new Solution();\n    console.log(sol.numberOfWays(s, t, k).toString());\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long numberOfWays(string s, string t, long long k) {\n        // TODO: Return number of ways modulo 10^9 + 7\n        return 0;\n    }\n};\n\nint main() {\n    string s, t;\n    long long k;\n    if (cin >> s >> t >> k) {\n        Solution sol;\n        cout << sol.numberOfWays(s, t, k) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid numberOfWays(char* s, char* t, long long k) {\n    // TODO: Print number of ways modulo 10^9 + 7\n}\n\nint main() {\n    char s[500005], t[500005];\n    long long k;\n    if (scanf(\"%s %s %lld\", s, t, &k) == 3) {\n        numberOfWays(s, t, k);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find all positions where s can match t after rotations.",
+                "Use matrix exponentiation or dynamic programming for k operations."
+            ]
+        }
+    ]
+}
+

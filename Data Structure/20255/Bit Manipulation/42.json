@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Stickers to Spell Word (Bit Manipulation)",
+            "description": "Problem Statement\n\nWe are given n different types of stickers. Each sticker has a lowercase English word on it.\nYou would like to spell out the given string target by cutting individual letters from your collection of stickers and rearranging them. You can use each sticker more than once if you want, and you have infinite quantities of each sticker.\nReturn the minimum number of stickers that you need to spell out target. If the task is impossible, return -1.\n",
+            "examples": "Sample Input\nwith example science\nthehat\n\nSample Output\n3\n\nExplanation:\nWe can use 2 \"with\" stickers, and 1 \"example\" sticker.\nAfter cutting and rearrange the letters of those stickers, we can form the target \"thehat\".\nAlso, this is the minimum number of stickers necessary to form the target string.\n\nSample Input\nnotice possible\nbasicbasic\n\nSample Output\n-1\n\nExplanation:\nWe cannot form the target \"basicbasic\" from cutting letters from the given stickers.",
+            "constraints": "n == stickers.length\n1 <= n <= 50\n1 <= stickers[i].length <= 10\n1 <= target.length <= 15\nstickers[i] and target consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "with example science\nthehat",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "notice possible\nbasicbasic",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "a b c\nabc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc abc\nabcabc",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc\nd",
+                    "expectedOutput": "-1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minStickers(self, stickers, target):\n        # TODO: Return minimum number of stickers needed, or -1 if impossible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    stickers = lines[0].split()\n    target = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    print(sol.minStickers(stickers, target))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minStickers(String[] stickers, String target) {\n        // TODO: Return minimum number of stickers needed, or -1 if impossible\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] stickers = br.readLine().trim().split(\" \");\n        String target = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.minStickers(stickers, target));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minStickers(stickers, target) {\n        // TODO: Return minimum number of stickers needed, or -1 if impossible\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const stickers = lines[0].split(/\\s+/);\n    const target = lines[1] || '';\n    const sol = new Solution();\n    console.log(sol.minStickers(stickers, target));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minStickers(vector<string>& stickers, string target) {\n        // TODO: Return minimum number of stickers needed, or -1 if impossible\n        return -1;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> stickers;\n    string word;\n    while (iss >> word) {\n        stickers.push_back(word);\n    }\n    getline(cin, line);\n    string target = line;\n    Solution sol;\n    cout << sol.minStickers(stickers, target) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid minStickers(char** stickers, int stickersSize, char* target) {\n    // TODO: Print minimum number of stickers needed, or -1 if impossible\n}\n\nint main() {\n    char line[10000];\n    fgets(line, sizeof(line), stdin);\n    char* stickers[50];\n    int stickersSize = 0;\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        stickers[stickersSize] = (char*)malloc(strlen(token) + 1);\n        strcpy(stickers[stickersSize], token);\n        stickersSize++;\n        token = strtok(NULL, \" \\n\");\n    }\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    minStickers(stickers, stickersSize, line);\n    for (int i = 0; i < stickersSize; i++) {\n        free(stickers[i]);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming with bit manipulation to represent which characters of target are covered.",
+                "For each state, try using each sticker and update the state accordingly."
+            ]
+        }
+    ]
+}
+

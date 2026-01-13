@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Word Ladder (Hash Table)",
+            "description": "Problem Statement\n\nA transformation sequence from word beginWord to word endWord using a dictionary wordList is a sequence of words beginWord -> s1 -> s2 -> ... -> sk such that:\n- Every adjacent pair of words differs by a single letter.\n- Every si for 1 <= i <= k is in wordList. Note that beginWord does not need to be in wordList.\n- sk == endWord\n\nGiven two words, beginWord and endWord, and a dictionary wordList, return the number of words in the shortest transformation sequence from beginWord to endWord, or 0 if no such sequence exists.\n",
+            "examples": "Example 1:\n\nInput: beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]\nOutput: 5\nExplanation: One shortest transformation sequence is \"hit\" -> \"hot\" -> \"dot\" -> \"dog\" -> \"cog\", which is 5 words long.\n\nExample 2:\n\nInput: beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"]\nOutput: 0\nExplanation: The endWord \"cog\" is not in wordList, therefore there is no valid transformation sequence.",
+            "constraints": "1 <= beginWord.length <= 10\nendWord.length == beginWord.length\n1 <= wordList.length <= 5000\nwordList[i].length == beginWord.length\nbeginWord, endWord, and wordList[i] consist of lowercase English letters\nbeginWord != endWord\nAll the words in wordList are unique",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "hit\ncog\n6\nhot dot dog lot log cog",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "hit\ncog\n5\nhot dot dog lot log",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "a\nc\n2\na b",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "hot\ndog\n3\nhot dog dot",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc\ndef\n6\nabc dbf dbf def dbc daf",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def ladderLength(self, beginWord, endWord, wordList):\n        # TODO: Use BFS with hash set to find shortest transformation sequence\n        # Return length of shortest sequence or 0 if not possible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    beginWord = data[0]\n    endWord = data[1]\n    n = int(data[2])\n    wordList = data[3].split()\n    sol = Solution()\n    result = sol.ladderLength(beginWord, endWord, wordList)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int ladderLength(String beginWord, String endWord, List<String> wordList){\n        // TODO: Use BFS with hash set to find shortest transformation sequence\n        // Return length of shortest sequence or 0 if not possible\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String beginWord = br.readLine().trim();\n        String endWord = br.readLine().trim();\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] words = br.readLine().trim().split(\" \");\n        List<String> wordList = new ArrayList<>();\n        for(String word : words) wordList.add(word);\n        Solution sol = new Solution();\n        int result = sol.ladderLength(beginWord, endWord, wordList);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  ladderLength(beginWord, endWord, wordList){\n    // TODO: Use BFS with hash set to find shortest transformation sequence\n    // Return length of shortest sequence or 0 if not possible\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const beginWord = lines[0];\n  const endWord = lines[1];\n  const n = parseInt(lines[2]);\n  const wordList = lines[3].split(\" \");\n  const sol = new Solution();\n  const result = sol.ladderLength(beginWord, endWord, wordList);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int ladderLength(string beginWord, string endWord, vector<string>& wordList){\n        // TODO: Use BFS with hash set to find shortest transformation sequence\n        // Return length of shortest sequence or 0 if not possible\n        return 0;\n    }\n};\nint main(){\n    string beginWord, endWord;\n    getline(cin, beginWord);\n    getline(cin, endWord);\n    int n; cin >> n;\n    cin.ignore();\n    vector<string> wordList(n);\n    for(int i=0;i<n;i++) cin >> wordList[i];\n    Solution sol;\n    int result = sol.ladderLength(beginWord, endWord, wordList);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\nchar wordList[5000][11];\n\nint ladderLength(char* beginWord, char* endWord, int n){\n    // TODO: Use BFS approach to find shortest transformation sequence\n    // Return length of shortest sequence or 0 if not possible\n    return 0;\n}\n\nint main(){\n    char beginWord[11], endWord[11];\n    scanf(\"%s\", beginWord);\n    scanf(\"%s\", endWord);\n    int n; scanf(\"%d\", &n);\n    for(int i=0;i<n;i++) scanf(\"%s\", wordList[i]);\n    int result = ladderLength(beginWord, endWord, n);\n    printf(\"%d\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use BFS to find the shortest path. Use a hash set to store all words in wordList for O(1) lookup.",
+                "For each word, try changing each character and check if the new word is in the word set."
+            ]
+        }
+    ]
+}

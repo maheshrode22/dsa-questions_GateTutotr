@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Number of 1 Bits (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a positive integer n, write a function that returns the number of set bits in its binary representation (also known as the Hamming weight).\n",
+            "examples": "Sample Input\n11\n\nSample Output\n3\n\nExplanation: The input binary string 1011 has a total of three set bits.\n\nSample Input\n128\n\nSample Output\n1\n\nExplanation: The input binary string 10000000 has a total of one set bit.\n\nSample Input\n2147483645\n\nSample Output\n30\n\nExplanation: The input binary string 1111111111111111111111111111101 has a total of thirty set bits.",
+            "constraints": "1 <= n <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "11",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "2147483647",
+                    "expectedOutput": "31"
+                },
+                {
+                    "input": "32",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def hammingWeight(self, n):\n        # TODO: Return the number of set bits (Hamming weight)\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    print(sol.hammingWeight(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int hammingWeight(int n) {\n        // TODO: Return the number of set bits (Hamming weight)\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseUnsignedInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.hammingWeight(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    hammingWeight(n) {\n        // TODO: Return the number of set bits (Hamming weight)\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.hammingWeight(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int hammingWeight(uint32_t n) {\n        // TODO: Return the number of set bits (Hamming weight)\n        return 0;\n    }\n};\n\nint main() {\n    unsigned int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.hammingWeight(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdint.h>\n\nvoid hammingWeight(uint32_t n) {\n    // TODO: Print the number of set bits (Hamming weight)\n}\n\nint main() {\n    unsigned int n;\n    scanf(\"%u\", &n);\n    hammingWeight(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation: n & (n-1) removes the rightmost set bit.",
+                "Count how many times you can remove set bits until n becomes 0."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Constrained Subsequence Sum (Sliding Window)",
+            "description": "Given an integer array nums and an integer k, return the maximum sum of a non-empty subsequence of that array such that for every two consecutive integers in the subsequence, nums[i] and nums[j], where i < j, the condition j - i <= k is satisfied.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint a single integer: the maximum sum.",
+            "examples": "Sample Input\n5 2\n10 2 -10 5 20\n\nSample Output\n37\n\nExplanation: The subsequence is [10, 2, 5, 20].",
+            "constraints": "1 <= k <= nums.length <= 10^5\n-10^4 <= nums[i] <= 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5 2\n10 2 -10 5 20",
+                    "expectedOutput": "37"
+                },
+                {
+                    "input": "3 1\n-1 -2 -3",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "5 2\n10 -2 -10 -5 20",
+                    "expectedOutput": "23"
+                },
+                {
+                    "input": "32 6\n19 5 -15 -19 18 16 14 -6 -5 -17 -3 -9 13 7 -2 -9 6 2 -6 -17 9 14 6 19 -4 20 11 7 -7 4 1 -7",
+                    "expectedOutput": "191"
+                },
+                {
+                    "input": "44 9\n-18 9 -16 13 -1 0 13 -7 18 12 -10 -16 -17 -16 -4 8 3 4 -15 2 17 6 -17 4 13 -5 1 7 9 11 9 19 2 -16 13 17 -16 9 2 -15 0 -3 -1 11",
+                    "expectedOutput": "232"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def constrainedSubsetSum(self, nums, k):\n        # TODO: Return the maximum sum\n        pass\n\nif __name__ == '__main__':\n    n, k = map(int, input().split())\n    nums = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.constrainedSubsetSum(nums, k))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int constrainedSubsetSum(int[] nums, int k) {\n        // TODO: Return the maximum sum\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int k = sc.nextInt();\n        int[] nums = new int[n];\n        for(int i=0; i<n; i++) nums[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.constrainedSubsetSum(nums, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    constrainedSubsetSum(nums, k) {\n        // TODO: Return the maximum sum\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst [n, k] = input[0].split(' ').map(Number);\nconst nums = input[1].split(' ').map(Number);\nconst sol = new Solution();\nconsole.log(sol.constrainedSubsetSum(nums, k));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int constrainedSubsetSum(vector<int>& nums, int k) {\n        // TODO: Return the maximum sum\n        return 0;\n    }\n};\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<int> nums(n);\n    for(int i=0; i<n; i++) cin >> nums[i];\n    Solution sol;\n    cout << sol.constrainedSubsetSum(nums, k) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint constrainedSubsetSum(int* nums, int numsSize, int k) {\n    // TODO: Return the maximum sum\n    return 0;\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    int* nums = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &nums[i]);\n    printf(\"%d\\n\", constrainedSubsetSum(nums, n, k));\n    free(nums);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Dynamic Programming: dp[i] = nums[i] + max(0, max(dp[i-k], ..., dp[i-1])).",
+                "Use a Monotonic Queue to efficiently find the maximum in the window [i-k, i-1]."
+            ]
+        }
+    ]
+}

@@ -1,64 +1,64 @@
 {
-    "problems": [
+  "problems": [
+    {
+      "id": null,
+      "title": "Get Equal Substrings Within Budget",
+      "description": "You are given two strings s and t of the same length and an integer maxCost.\nYou want to change s to t. Changing the i-th character of s to i-th character of t costs |s[i] - t[i]| (that is, the absolute difference between the ASCII values of the characters).\nYou are also given an integer maxCost.\nReturn the maximum length of a substring of s that can be changed to be the same as the corresponding substring of t with a cost less than or equal to maxCost.\nIf there is no substring from s that can be changed to its corresponding substring from t, return 0.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: string t (no spaces).\nThird line: integer maxCost.\n\nOutput Format:\nPrint a single integer: the maximum length of such substring.",
+      "examples": "Sample Input\nabcd\nbcdf\n3\n\nSample Output\n3\n\nExplanation:\nCosts: |a-b|=1, |b-c|=1, |c-d|=1, |d-f|=2. Costs array: [1, 1, 1, 2].\nSubstrings with cost <= 3:\n[1, 1, 1] sum=3, len=3.\n[1, 1, 2] sum=4 > 3.\nMax length is 3.",
+      "constraints": "1 <= |s| <= 100000\n|t| == |s|\n0 <= maxCost <= 10^6\ns and t consist of lowercase English letters.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
         {
-            "id": null,
-            "title": "Get Equal Substrings Within Budget",
-            "description": "You are given two strings s and t of the same length and an integer maxCost.\nYou want to change s to t. Changing the i-th character of s to i-th character of t costs |s[i] - t[i]| (that is, the absolute difference between the ASCII values of the characters).\nYou are also given an integer maxCost.\nReturn the maximum length of a substring of s that can be changed to be the same as the corresponding substring of t with a cost less than or equal to maxCost.\nIf there is no substring from s that can be changed to its corresponding substring from t, return 0.\n\nInput Format:\nFirst line: string s (no spaces).\nSecond line: string t (no spaces).\nThird line: integer maxCost.\n\nOutput Format:\nPrint a single integer: the maximum length of such substring.",
-            "examples": "Sample Input\nabcd\nbcdf\n3\n\nSample Output\n3\n\nExplanation:\nCosts: |a-b|=1, |b-c|=1, |c-d|=1, |d-f|=2. Costs array: [1, 1, 1, 2].\nSubstrings with cost <= 3:\n[1, 1, 1] sum=3, len=3.\n[1, 1, 2] sum=4 > 3.\nMax length is 3.",
-            "constraints": "1 <= |s| <= 100000\n|t| == |s|\n0 <= maxCost <= 10^6\ns and t consist of lowercase English letters.",
-            "hints": 2,
-            "timeLimit": 1,
-            "memoryLimit": 256,
-            "subdomainId": 2033,
-            "difficulty": 2,
-            "testCases": [
-                {
-                    "input": "abcd\nbcdf\n3",
-                    "expectedOutput": "3"
-                },
-                {
-                    "input": "abcd\ncdef\n3",
-                    "expectedOutput": "1"
-                },
-                {
-                    "input": "abcd\nacde\n0",
-                    "expectedOutput": "1"
-                },
-                {
-                    "input": "krrgw\nzjxss\n19",
-                    "expectedOutput": "2"
-                },
-                {
-                    "input": "equal\nequal\n0",
-                    "expectedOutput": "5"
-                }
-            ],
-            "starterCodes": [
-                {
-                    "language": 1,
-                    "code": "class Solution:\n    def equalSubstring(self, s, t, maxCost):\n        # TODO: Return the maximum length of substring with cost <= maxCost\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    t = input().strip()\n    try:\n        maxCost = int(input().strip())\n        sol = Solution()\n        print(sol.equalSubstring(s, t, maxCost))\n    except:\n        pass"
-                },
-                {
-                    "language": 2,
-                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int equalSubstring(String s, String t, int maxCost) {\n        // TODO: Return the maximum length of substring with cost <= maxCost\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String t = br.readLine().trim();\n        String costStr = br.readLine();\n        if (costStr != null) {\n            int maxCost = Integer.parseInt(costStr.trim());\n            Solution sol = new Solution();\n            System.out.println(sol.equalSubstring(s, t, maxCost));\n        }\n    }\n}"
-                },
-                {
-                    "language": 3,
-                    "code": "class Solution {\n    equalSubstring(s, t, maxCost) {\n        // TODO: Return the maximum length of substring with cost <= maxCost\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const s = lines[0].trim();\n    const t = lines[1].trim();\n    if (lines.length > 2) {\n        const maxCost = parseInt(lines[2].trim());\n        const sol = new Solution();\n        console.log(sol.equalSubstring(s, t, maxCost));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
-                },
-                {
-                    "language": 4,
-                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int equalSubstring(const string& s, const string& t, int maxCost) {\n        // TODO: Return the maximum length of substring with cost <= maxCost\n        return 0;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    string s, t;\n    int maxCost;\n    if (cin >> s >> t >> maxCost) {\n        Solution sol;\n        cout << sol.equalSubstring(s, t, maxCost);\n    }\n    return 0;\n}"
-                },
-                {
-                    "language": 5,
-                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint equalSubstring(const char* s, const char* t, int maxCost) {\n    // TODO: Return the maximum length of substring with cost <= maxCost\n    return 0;\n}\n\nint main() {\n    char s[100005], t[100005];\n    int maxCost;\n    if (scanf(\"%s\", s) == 1 && scanf(\"%s\", t) == 1 && scanf(\"%d\", &maxCost) == 1) {\n        printf(\"%d\", equalSubstring(s, t, maxCost));\n    }\n    return 0;\n}"
-                }
-            ],
-            "hintsList": [
-                "Calculate the cost for each index: abs(s[i] - t[i]).",
-                "Use a sliding window on the cost array to find the longest subarray with sum <= maxCost."
-            ]
+          "input": "abcd\nbcdf\n3",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "abcd\ncdef\n3",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "abcd\nacde\n0",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "krrgw\nzjxss\n19",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "equal\nequal\n0",
+          "expectedOutput": "5"
         }
-    ]
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def equalSubstring(self, s, t, maxCost):\n        # TODO: Return the maximum length of a substring that can be changed with a cost <= maxCost\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    t = input().strip()\n    maxCost = int(input())\n    sol = Solution()\n    print(sol.equalSubstring(s, t, maxCost))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int equalSubstring(String s, String t, int maxCost) {\n        // TODO: Return the maximum length of a substring that can be changed with a cost <= maxCost\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.next();\n        String t = sc.next();\n        int maxCost = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.equalSubstring(s, t, maxCost));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    equalSubstring(s, t, maxCost) {\n        // TODO: Return the maximum length of a substring that can be changed with a cost <= maxCost\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const s = lines[0].trim();\n    const t = lines[1].trim();\n    const maxCost = parseInt(lines[2].trim());\n    const sol = new Solution();\n    console.log(sol.equalSubstring(s, t, maxCost));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int equalSubstring(string s, string t, int maxCost) {\n        // TODO: Return the maximum length of a substring that can be changed with a cost <= maxCost\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string s, t;\n    int maxCost;\n    cin >> s >> t >> maxCost;\n    Solution sol;\n    cout << sol.equalSubstring(s, t, maxCost) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char s[100001], t[100001];\n    int maxCost;\n    scanf(\"%s %s %d\", s, t, &maxCost);\n    // TODO: Return the maximum length of a substring that can be changed with a cost <= maxCost\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Calculate the cost for each index: abs(s[i] - t[i]).",
+        "Use a sliding window on the cost array to find the longest subarray with sum <= maxCost."
+      ]
+    }
+  ]
 }

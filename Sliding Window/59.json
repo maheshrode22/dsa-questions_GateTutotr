@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit (Sliding Window)",
+            "description": "Given an array of integers nums and an integer limit, return the size of the longest non-empty subarray such that the absolute difference between any two elements of this subarray is less than or equal to limit.\n\nInput Format:\nFirst line: two integers n and limit.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint a single integer: the size of the longest subarray.",
+            "examples": "Sample Input\n4 4\n8 2 4 7\n\nSample Output\n2\n\nExplanation: [8] (diff 0), [2,4] (diff 2), [4,7] (diff 3), [7] (diff 0). Longest is 2.",
+            "constraints": "1 <= nums.length <= 10^5\n1 <= nums[i] <= 10^9\n0 <= limit <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 4\n8 2 4 7",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "6 5\n10 1 2 4 7 2",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "8 0\n4 2 2 2 4 4 2 2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "27 6\n6 11 15 10 6 13 9 10 17 15 18 6 9 14 3 11 2 17 6 8 4 9 15 19 11 15 13",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "15 8\n10 20 15 13 6 14 19 1 4 5 3 7 17 9 2",
+                    "expectedOutput": "5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestSubarray(self, nums, limit):\n        # TODO: Return the size of the longest subarray\n        pass\n\nif __name__ == '__main__':\n    n, limit = map(int, input().split())\n    nums = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.longestSubarray(nums, limit))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int longestSubarray(int[] nums, int limit) {\n        // TODO: Return the size of the longest subarray\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int limit = sc.nextInt();\n        int[] nums = new int[n];\n        for(int i=0; i<n; i++) nums[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.longestSubarray(nums, limit));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestSubarray(nums, limit) {\n        // TODO: Return the size of the longest subarray\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst [n, limit] = input[0].split(' ').map(Number);\nconst nums = input[1].split(' ').map(Number);\nconst sol = new Solution();\nconsole.log(sol.longestSubarray(nums, limit));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestSubarray(vector<int>& nums, int limit) {\n        // TODO: Return the size of the longest subarray\n        return 0;\n    }\n};\n\nint main() {\n    int n, limit;\n    cin >> n >> limit;\n    vector<int> nums(n);\n    for(int i=0; i<n; i++) cin >> nums[i];\n    Solution sol;\n    cout << sol.longestSubarray(nums, limit) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint longestSubarray(int* nums, int numsSize, int limit) {\n    // TODO: Return the size of the longest subarray\n    return 0;\n}\n\nint main() {\n    int n, limit;\n    scanf(\"%d %d\", &n, &limit);\n    int* nums = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &nums[i]);\n    printf(\"%d\\n\", longestSubarray(nums, n, limit));\n    free(nums);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two monotonic deques: one to keep track of the maximum and one for the minimum in the current window.",
+                "If max - min > limit, shrink the window from the left."
+            ]
+        }
+    ]
+}

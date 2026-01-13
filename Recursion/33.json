@@ -1,0 +1,63 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Count 'a' in String Recursively",
+      "description": "Write a recursive function to count the number of occurrences of the character 'a' in a given string.\n\nInput Format:\nA single string S.\n\nOutput Format:\nPrint the count of 'a' in S.",
+      "examples": "Sample Input\nbanana\n\nSample Output\n3\n\nSample Input\napple\n\nSample Output\n1",
+      "constraints": "1 <= Length of S <= 100",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "banana",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "apple",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "xyz",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "aaaaa",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "Aba",
+          "expectedOutput": "1"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def countA(self, s):\n        # TODO: implement recursive count\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        print(Solution().countA(s))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int countA(String s) {\n        // TODO: implement recursive count\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.next();\n            System.out.println(new Solution().countA(s));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    countA(s) {\n        // TODO: implement recursive count\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.countA(s));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countA(string s) {\n        // TODO: implement recursive count\n        return 0;\n    }\n};\n\nint main() {\n    string s;\n    if (cin >> s) {\n        Solution sol;\n        cout << sol.countA(s);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n\nint countA(char *s) {\n    // TODO: implement recursive count\n    return 0;\n}\n\nint main() {\n    char s[105];\n    if (scanf(\"%s\", s) == 1) {\n        printf(\"%d\", countA(s));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about the base case and the recursive step."
+      ]
+    }
+  ]
+}

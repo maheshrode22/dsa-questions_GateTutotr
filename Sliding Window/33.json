@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Smallest Range Covering Elements From K Lists (Sliding Window)",
+      "description": "You have k lists of sorted integers in non-decreasing order. Find the smallest range that includes at least one number from each of the k lists.\nWe define the range [a, b] is smaller than range [c, d] if b - a < d - c or a < c if b - a == d - c.\n\nInput Format:\nFirst line: integer k.\nNext k lines: Each line starts with m_i (number of elements in list i), followed by m_i space-separated integers.\n\nOutput Format:\nPrint the range [a, b] as two space-separated integers.",
+      "examples": "Sample Input\n3\n5 4 10 15 24 26\n4 0 9 12 20\n4 5 18 22 30\n\nSample Output\n20 24",
+      "constraints": "nums.length == k\n1 <= k <= 3500\n1 <= nums[i].length <= 50\n-10^5 <= nums[i][j] <= 10^5\nnums[i] is sorted in non-decreasing order.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "3\n5 4 10 15 24 26\n4 0 9 12 20\n4 5 18 22 30",
+          "expectedOutput": "20 24"
+        },
+        {
+          "input": "3\n3 1 2 3\n3 1 2 3\n3 1 2 3",
+          "expectedOutput": "1 1"
+        },
+        {
+          "input": "2\n2 1 10\n2 5 15",
+          "expectedOutput": "1 5"
+        },
+        {
+          "input": "2\n1 1\n1 2",
+          "expectedOutput": "1 2"
+        },
+        {
+          "input": "3\n1 1\n1 5\n1 10",
+          "expectedOutput": "1 10"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def smallestRange(self, nums):\n        # TODO: Return the smallest range that includes at least one number from each list\n        pass\n\nif __name__ == '__main__':\n    k = int(input().strip())\n    nums = []\n    for _ in range(k): nums.append(list(map(int, input().split()))[1:])\n    sol = Solution()\n    res = sol.smallestRange(nums)\n    print(f'{res[0]} {res[1]}')"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int[] smallestRange(List<List<Integer>> nums) {\n        // TODO: Return the smallest range that includes at least one number from each list\n        return null;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int k = sc.nextInt();\n        List<List<Integer>> nums = new ArrayList<>();\n        for(int i=0; i<k; i++) {\n            int m = sc.nextInt();\n            List<Integer> list = new ArrayList<>();\n            for(int j=0; j<m; j++) list.add(sc.nextInt());\n            nums.add(list);\n        }\n        Solution sol = new Solution();\n        int[] res = sol.smallestRange(nums);\n        System.out.println(res[0] + \" \" + res[1]);\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    smallestRange(nums) {\n        // TODO: Return the smallest range that includes at least one number from each list\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const k = parseInt(lines[0].trim());\n    const nums = [];\n    for(let i=1; i<=k; i++) nums.push(lines[i].trim().split(/\\s+/).slice(1).map(Number));\n    const sol = new Solution();\n    const res = sol.smallestRange(nums);\n    console.log(`${res[0]} ${res[1]}`);\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> smallestRange(vector<vector<int>>& nums) {\n        // TODO: Return the smallest range that includes at least one number from each list\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int k;\n    cin >> k;\n    vector<vector<int>> nums(k);\n    for(int i=0; i<k; i++) {\n        int m; cin >> m;\n        nums[i].resize(m);\n        for(int j=0; j<m; j++) cin >> nums[i][j];\n    }\n    Solution sol;\n    vector<int> res = sol.smallestRange(nums);\n    cout << res[0] << \" \" << res[1] << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    int k;\n    scanf(\"%d\", &k);\n    // TODO: Return the smallest range that includes at least one number from each list\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

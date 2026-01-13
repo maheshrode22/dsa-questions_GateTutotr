@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Substring of All Vowels in Order (Sliding Window)",
+            "description": "A string is considered beautiful if it satisfies the following conditions:\n1. Each of the 5 English vowels ('a', 'e', 'i', 'o', 'u') must appear at least once in it.\n2. The letters must be sorted in alphabetical order.\nGiven a string word consisting of English vowels, return the length of the longest beautiful substring of word. If no such substring exists, return 0.\n\nInput Format:\nFirst line: string word.\n\nOutput Format:\nPrint a single integer: the length of the longest beautiful substring.",
+            "examples": "Sample Input\naeiaaioaaaaeiiiiouuuooaauuaeiu\n\nSample Output\n13\n\nExplanation: \"aaaaeiiiiouuu\" is the longest beautiful substring.",
+            "constraints": "1 <= word.length <= 5 * 10^5\nword consists of characters 'a', 'e', 'i', 'o', and 'u'.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "aeiaaioaaaaeiiiiouuuooaauuaeiu",
+                    "expectedOutput": "13"
+                },
+                {
+                    "input": "aeeeiiiioooauuuaeiou",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "uauaeaaaeeiouuuaeeeiiooouuuaaaeioouuuoioiu",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "euuuaaaeiouaeeeioouuaaeiooouoooia",
+                    "expectedOutput": "9"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestBeautifulSubstring(self, word):\n        # TODO: Return the length of the longest beautiful substring\n        pass\n\nif __name__ == '__main__':\n    word = input().strip()\n    sol = Solution()\n    print(sol.longestBeautifulSubstring(word))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int longestBeautifulSubstring(String word) {\n        // TODO: Return the length of the longest beautiful substring\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String word = sc.next();\n            Solution sol = new Solution();\n            System.out.println(sol.longestBeautifulSubstring(word));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestBeautifulSubstring(word) {\n        // TODO: Return the length of the longest beautiful substring\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst word = fs.readFileSync(0, 'utf-8').trim();\nconst sol = new Solution();\nconsole.log(sol.longestBeautifulSubstring(word));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestBeautifulSubstring(string word) {\n        // TODO: Return the length of the longest beautiful substring\n        return 0;\n    }\n};\n\nint main() {\n    string word;\n    cin >> word;\n    Solution sol;\n    cout << sol.longestBeautifulSubstring(word) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint longestBeautifulSubstring(char* word) {\n    // TODO: Return the length of the longest beautiful substring\n    return 0;\n}\n\nint main() {\n    char word[500005];\n    scanf(\"%s\", word);\n    printf(\"%d\\n\", longestBeautifulSubstring(word));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the string and keep track of the current vowel and the length of the current valid sequence.",
+                "Reset if the order is broken (current char < previous char)."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Prime Number of Set Bits in Binary Representation (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven two integers left and right, return the count of numbers in the inclusive range [left, right] having a prime number of set bits in their binary representation.\nRecall that the number of set bits an integer has is the number of 1's present when written in binary.\nFor example, 21 written in binary is 10101, which has 3 set bits.\n",
+            "examples": "Sample Input\n6 10\n\nSample Output\n4\n\nExplanation:\n6  -> 110 (2 set bits, 2 is prime)\n7  -> 111 (3 set bits, 3 is prime)\n8  -> 1000 (1 set bit, 1 is not prime)\n9  -> 1001 (2 set bits, 2 is prime)\n10 -> 1010 (2 set bits, 2 is prime)\n4 numbers have a prime number of set bits.\n\nSample Input\n10 15\n\nSample Output\n5\n\nExplanation:\n10 -> 1010 (2 set bits, 2 is prime)\n11 -> 1011 (3 set bits, 3 is prime)\n12 -> 1100 (2 set bits, 2 is prime)\n13 -> 1101 (3 set bits, 3 is prime)\n14 -> 1110 (3 set bits, 3 is prime)\n15 -> 1111 (4 set bits, 4 is not prime)\n5 numbers have a prime number of set bits.",
+            "constraints": "1 <= left <= right <= 10^6\n0 <= right - left <= 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "6 10",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "10 15",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "1 20",
+                    "expectedOutput": "14"
+                },
+                {
+                    "input": "100 105",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "5 5",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countPrimeSetBits(self, left, right):\n        # TODO: Return count of numbers with prime number of set bits\n        pass\n\nif __name__ == '__main__':\n    import sys\n    left, right = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    print(sol.countPrimeSetBits(left, right))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countPrimeSetBits(int left, int right) {\n        // TODO: Return count of numbers with prime number of set bits\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int left = Integer.parseInt(parts[0]);\n        int right = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.countPrimeSetBits(left, right));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countPrimeSetBits(left, right) {\n        // TODO: Return count of numbers with prime number of set bits\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const left = parseInt(parts[0]);\n    const right = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.countPrimeSetBits(left, right));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countPrimeSetBits(int left, int right) {\n        // TODO: Return count of numbers with prime number of set bits\n        return 0;\n    }\n};\n\nint main() {\n    int left, right;\n    cin >> left >> right;\n    Solution sol;\n    cout << sol.countPrimeSetBits(left, right) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid countPrimeSetBits(int left, int right) {\n    // TODO: Print count of numbers with prime number of set bits\n}\n\nint main() {\n    int left, right;\n    scanf(\"%d %d\", &left, &right);\n    countPrimeSetBits(left, right);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each number in range, count set bits and check if the count is prime.",
+                "Since numbers are up to 10^6, the maximum set bits is 20. Check if count is in {2, 3, 5, 7, 11, 13, 17, 19}."
+            ]
+        }
+    ]
+}
+

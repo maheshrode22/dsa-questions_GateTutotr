@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Replace The Substring For Balanced String (Sliding Window)",
+      "description": "Return the minimum length of the substring that can be replaced to make the string balanced (each of 'Q', 'W', 'E', 'R' appears n/4 times).\n\nInput Format:\nFirst line: string s.\n\nOutput Format:\nPrint a single integer: the minimum length.",
+      "examples": "Sample Input\nQWER\n\nSample Output\n0",
+      "constraints": "See problem description.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "QWER",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "QQWE",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "QQQW",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "QQQQ",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "WWEQERQW",
+          "expectedOutput": "1"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def balancedString(self, s):\n        # TODO: Return the minimum length of the substring to replace to make the string balanced\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.balancedString(s))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int balancedString(String s) {\n        // TODO: Return the minimum length of the substring to replace to make the string balanced\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.nextLine().strip();\n        Solution sol = new Solution();\n        System.out.println(sol.balancedString(s));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    balancedString(s) {\n        // TODO: Return the minimum length of the substring to replace to make the string balanced\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const s = fs.readFileSync(0, 'utf-8').trim();\n    const sol = new Solution();\n    console.log(sol.balancedString(s));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int balancedString(string s) {\n        // TODO: Return the minimum length of the substring to replace to make the string balanced\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.balancedString(s) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char s[100001];\n    scanf(\"%s\", s);\n    // TODO: Return the minimum length of the substring to replace to make the string balanced\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

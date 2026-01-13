@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Binary Number with Alternating Bits (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a positive integer, check whether it has alternating bits: namely, if two adjacent bits will always have different values.\n",
+            "examples": "Sample Input\n5\n\nSample Output\nTrue\n\nExplanation: The binary representation of 5 is: 101\n\nSample Input\n7\n\nSample Output\nFalse\n\nExplanation: The binary representation of 7 is: 111.\n\nSample Input\n11\n\nSample Output\nFalse\n\nExplanation: The binary representation of 11 is: 1011.",
+            "constraints": "1 <= n <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "11",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def hasAlternatingBits(self, n):\n        # TODO: Return True if n has alternating bits, else False\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    result = sol.hasAlternatingBits(n)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean hasAlternatingBits(int n) {\n        // TODO: Return true if n has alternating bits, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.hasAlternatingBits(n) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    hasAlternatingBits(n) {\n        // TODO: Return true if n has alternating bits, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.hasAlternatingBits(n);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool hasAlternatingBits(int n) {\n        // TODO: Return true if n has alternating bits, else false\n        return false;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << (sol.hasAlternatingBits(n) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n\nvoid hasAlternatingBits(int n) {\n    // TODO: Print \"True\" if n has alternating bits, else \"False\"\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    hasAlternatingBits(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if (n ^ (n >> 1)) has all bits set to 1.",
+                "For alternating bits, n XOR (n >> 1) should be all 1's, then check if (n ^ (n >> 1)) + 1 is a power of 2."
+            ]
+        }
+    ]
+}
+

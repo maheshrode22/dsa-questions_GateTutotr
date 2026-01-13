@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find the Index of the First Occurrence in a String (String Algorithm)",
+            "description": "Problem Statement\n\nGiven two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.\n\nReturn the index (0-based) of the first occurrence, or -1 if not found.\n",
+            "examples": "Sample Input\nsadbutsad sad\n\nSample Output\n0\n\nExplanation: \"sad\" occurs at index 0 and 6. The first occurrence is at index 0.\n\nSample Input\nleetcode leeto\n\nSample Output\n-1\n\nExplanation: \"leeto\" did not occur in \"leetcode\", so we return -1.",
+            "constraints": "1 <= haystack.length, needle.length <= 10^4\nhaystack and needle consist of only lowercase English characters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "sadbutsad sad",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "leetcode leeto",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "hello ll",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "aaaaa bba",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "abc abc",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def strStr(self, haystack, needle):\n        # TODO: Return the index of first occurrence or -1\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        haystack, needle = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.strStr(haystack, needle))\n    else:\n        print(\"-1\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int strStr(String haystack, String needle) {\n        // TODO: Return the index of first occurrence or -1\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"-1\");\n            return;\n        }\n        String haystack = parts[0];\n        String needle = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.strStr(haystack, needle));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    strStr(haystack, needle) {\n        // TODO: Return the index of first occurrence or -1\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"-1\");\n        return;\n    }\n    const haystack = parts[0];\n    const needle = parts[1];\n    const sol = new Solution();\n    console.log(sol.strStr(haystack, needle));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int strStr(string haystack, string needle) {\n        // TODO: Return the index of first occurrence or -1\n        return -1;\n    }\n};\n\nint main() {\n    string haystack, needle;\n    if (cin >> haystack >> needle) {\n        Solution sol;\n        cout << sol.strStr(haystack, needle) << endl;\n    } else {\n        cout << \"-1\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid strStr(char* haystack, char* needle) {\n    // TODO: Print the index of first occurrence or -1\n}\n\nint main() {\n    char haystack[10005], needle[10005];\n    if (scanf(\"%s %s\", haystack, needle) == 2) {\n        strStr(haystack, needle);\n    } else {\n        printf(\"-1\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a sliding window approach to check each position in haystack.",
+                "Compare needle with substring of haystack starting at each position."
+            ]
+        }
+    ]
+}
+

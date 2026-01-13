@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Longest Substring With At Most Two Distinct Characters (Sliding Window)",
+      "description": "Given a string s, return the length of the longest substring that contains at most two distinct characters.\n\nInput Format:\nFirst line: string s.\n\nOutput Format:\nPrint a single integer: the length of the longest valid substring.",
+      "examples": "Sample Input\neceba\n\nSample Output\n3\n\nExplanation: The substring is \"ece\" which its length is 3.",
+      "constraints": "1 <= s.length <= 10^5\ns consists of English letters.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "eceba",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "ccaabbb",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "abcabcabc",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "aaaaa",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "abacaba",
+          "expectedOutput": "3"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def lengthOfLongestSubstringTwoDistinct(self, s):\n        # TODO: Return the length of the longest substring that contains at most two distinct characters\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.lengthOfLongestSubstringTwoDistinct(s))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int lengthOfLongestSubstringTwoDistinct(String s) {\n        // TODO: Return the length of the longest substring that contains at most two distinct characters\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.nextLine().strip();\n        Solution sol = new Solution();\n        System.out.println(sol.lengthOfLongestSubstringTwoDistinct(s));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    lengthOfLongestSubstringTwoDistinct(s) {\n        // TODO: Return the length of the longest substring that contains at most two distinct characters\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const s = fs.readFileSync(0, 'utf-8').trim();\n    const sol = new Solution();\n    console.log(sol.lengthOfLongestSubstringTwoDistinct(s));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int lengthOfLongestSubstringTwoDistinct(string s) {\n        // TODO: Return the length of the longest substring that contains at most two distinct characters\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.lengthOfLongestSubstringTwoDistinct(s) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char s[100001];\n    scanf(\"%s\", s);\n    // TODO: Return the length of the longest substring that contains at most two distinct characters\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

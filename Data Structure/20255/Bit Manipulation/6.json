@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Single Number (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a non-empty array of integers nums, every element appears twice except for one. Find that single one.\nYou must implement a solution with a linear runtime complexity and use only constant extra space.\n",
+            "examples": "Sample Input\n2 2 1\n\nSample Output\n1\n\nExplanation: The single element that appears only once is 1.\n\nSample Input\n4 1 2 1 2\n\nSample Output\n4\n\nExplanation: The single element that appears only once is 4.",
+            "constraints": "1 <= nums.length <= 3 * 10^4\n-3 * 10^4 <= nums[i] <= 3 * 10^4\nEach element in the array appears twice except for one element which appears only once.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "-1 2 -1 -2 2",
+                    "expectedOutput": "-2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "10 1 10 2 2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3 3 7 7 10",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "10 10 20 20 30",
+                    "expectedOutput": "30"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def singleNumber(self, nums):\n        # TODO: Return the single number using XOR\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.singleNumber(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int singleNumber(int[] nums) {\n        // TODO: Return the single number using XOR\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.singleNumber(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    singleNumber(nums) {\n        // TODO: Return the single number using XOR\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.singleNumber(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        // TODO: Return the single number using XOR\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.singleNumber(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid singleNumber(int* nums, int numsSize) {\n    // TODO: Print the single number using XOR\n}\n\nint main() {\n    int nums[30005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    singleNumber(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use XOR operation: a XOR a = 0, and a XOR 0 = a.",
+                "XOR all numbers together - pairs will cancel out, leaving the single number."
+            ]
+        }
+    ]
+}
+

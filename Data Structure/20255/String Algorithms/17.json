@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Camelcase Matching (String Algorithm)",
+            "description": "Problem Statement\n\nGiven an array of strings queries and a string pattern, return a boolean array answer where answer[i] is true if queries[i] matches pattern, and false otherwise.\nA query word queries[i] matches pattern if you can insert lowercase English letters into the pattern so that it equals the query. You may insert a character at any position in pattern or you may choose not to insert any characters at all.\n\nReturn a space-separated string of \"True\" or \"False\" for each query.\n",
+            "examples": "Sample Input\nFooBar FooBarTest FootBall FrameBuffer ForceFeedBack\nFB\n\nSample Output\nTrue False True True False\n\nExplanation: \"FooBar\" can be generated like this \"F\" + \"oo\" + \"B\" + \"ar\".\n\nSample Input\nFooBar FooBarTest\nFoBa\n\nSample Output\nTrue False\n\nExplanation: \"FooBar\" can be generated like this \"Fo\" + \"o\" + \"Ba\" + \"r\".",
+            "constraints": "1 <= pattern.length, queries.length <= 100\n1 <= queries[i].length <= 100\nqueries[i] and pattern consist of English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "FooBar FooBarTest FootBall FrameBuffer ForceFeedBack\nFB",
+                    "expectedOutput": "True False True True False"
+                },
+                {
+                    "input": "FooBar FooBarTest\nFoBa",
+                    "expectedOutput": "True False"
+                },
+                {
+                    "input": "FooBarTest\nFoBaT",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "CompetitiveProgramming Contest\nCP",
+                    "expectedOutput": "True False"
+                },
+                {
+                    "input": "FooBar\nFB",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def camelMatch(self, queries, pattern):\n        # TODO: Return list of \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    queries = lines[0].split() if len(lines) > 0 else []\n    pattern = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    result = sol.camelMatch(queries, pattern)\n    print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public ArrayList<String> camelMatch(String[] queries, String pattern) {\n        // TODO: Return list of \"True\" or \"False\"\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] queries = br.readLine().trim().split(\" \");\n        String pattern = br.readLine().trim();\n        Solution sol = new Solution();\n        ArrayList<String> result = sol.camelMatch(queries, pattern);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    camelMatch(queries, pattern) {\n        // TODO: Return array of \"True\" or \"False\"\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const queries = lines[0] ? lines[0].split(/\\s+/) : [];\n    const pattern = lines[1] || \"\";\n    const sol = new Solution();\n    const result = sol.camelMatch(queries, pattern);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> camelMatch(vector<string>& queries, string pattern) {\n        // TODO: Return vector of \"True\" or \"False\"\n        return {};\n    }\n};\n\nint main() {\n    string queriesLine;\n    getline(cin, queriesLine);\n    istringstream iss1(queriesLine);\n    vector<string> queries;\n    string query;\n    while (iss1 >> query) {\n        queries.push_back(query);\n    }\n    string pattern;\n    getline(cin, pattern);\n    Solution sol;\n    vector<string> result = sol.camelMatch(queries, pattern);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid camelMatch(char** queries, int queriesSize, char* pattern) {\n    // TODO: Print \"True\" or \"False\" for each query\n}\n\nint main() {\n    char line[10005];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* queries[105];\n    int queriesSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        queries[queriesSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    char pattern[105];\n    fgets(pattern, sizeof(pattern), stdin);\n    pattern[strcspn(pattern, \"\\n\")] = 0;\n    camelMatch(queries, queriesSize, pattern);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers: one for the query and one for the pattern.",
+                "Match uppercase letters exactly, and skip lowercase letters in the query."
+            ]
+        }
+    ]
+}
+

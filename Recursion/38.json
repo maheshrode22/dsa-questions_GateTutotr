@@ -1,0 +1,63 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "GCD Recursively",
+      "description": "Write a recursive function to find the Greatest Common Divisor (GCD) of two numbers using the Euclidean algorithm.\n\nInput Format:\nTwo space-separated integers A and B.\n\nOutput Format:\nPrint the GCD of A and B.",
+      "examples": "Sample Input\n48 18\n\nSample Output\n6\n\nSample Input\n10 5\n\nSample Output\n5",
+      "constraints": "1 <= A, B <= 10^9",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "48 18",
+          "expectedOutput": "6"
+        },
+        {
+          "input": "10 5",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "7 3",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "100 10",
+          "expectedOutput": "10"
+        },
+        {
+          "input": "14 21",
+          "expectedOutput": "7"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def gcd(self, a, b):\n        # TODO: implement recursive gcd\n        pass\n\nif __name__ == '__main__':\n    try:\n        line = input().split()\n        a, b = int(line[0]), int(line[1])\n        print(Solution().gcd(a, b))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int gcd(int a, int b) {\n        # TODO: implement recursive gcd\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int a = sc.nextInt();\n            int b = sc.nextInt();\n            System.out.println(new Solution().gcd(a, b));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    gcd(a, b) {\n        # TODO: implement recursive gcd\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const a = parseInt(parts[0]);\n    const b = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.gcd(a, b));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int gcd(int a, int b) {\n        // TODO: implement recursive gcd\n        return 0;\n    }\n};\n\nint main() {\n    int a, b;\n    if (cin >> a >> b) {\n        Solution sol;\n        cout << sol.gcd(a, b);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nint gcd(int a, int b) {\n    // TODO: implement recursive gcd\n    return 0;\n}\n\nint main() {\n    int a, b;\n    if (scanf(\"%d %d\", &a, &b) == 2) {\n        printf(\"%d\", gcd(a, b));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about the base case and the recursive step."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Convert a Number to Hexadecimal (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a 32-bit integer num, return a string representing its hexadecimal representation. For negative integers, two's complement method is used.\nAll the letters in the answer string should be lowercase characters, and there should not be any leading zeros in the answer except for the zero itself.\nNote: You are not allowed to use any built-in library method to directly solve this problem.\n",
+            "examples": "Sample Input\n26\n\nSample Output\n1a\n\nExplanation: 26 in decimal is 1a in hexadecimal.\n\nSample Input\n-1\n\nSample Output\nffffffff\n\nExplanation: -1 in two's complement is ffffffff in hexadecimal.\n\nSample Input\n0\n\nSample Output\n0\n\nExplanation: 0 in hexadecimal is 0.",
+            "constraints": "-2^31 <= num <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "26",
+                    "expectedOutput": "1a"
+                },
+                {
+                    "input": "-1",
+                    "expectedOutput": "ffffffff"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "31",
+                    "expectedOutput": "1f"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "a"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def toHex(self, num):\n        # TODO: Return hexadecimal representation of num\n        pass\n\nif __name__ == '__main__':\n    num = int(input().strip())\n    sol = Solution()\n    print(sol.toHex(num))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String toHex(int num) {\n        // TODO: Return hexadecimal representation of num\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int num = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.toHex(num));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    toHex(num) {\n        // TODO: Return hexadecimal representation of num\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const num = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.toHex(num));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string toHex(int num) {\n        // TODO: Return hexadecimal representation of num\n        return \"\";\n    }\n};\n\nint main() {\n    int num;\n    cin >> num;\n    Solution sol;\n    cout << sol.toHex(num) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdint.h>\n\nvoid toHex(int32_t num) {\n    // TODO: Print hexadecimal representation of num\n}\n\nint main() {\n    int num;\n    scanf(\"%d\", &num);\n    toHex(num);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Extract 4 bits at a time from right to left.",
+                "Use bit masking: (num >> (4*i)) & 0xF to get each hex digit."
+            ]
+        }
+    ]
+}
+

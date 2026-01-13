@@ -1,0 +1,604 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Smallest Sufficient Team (Bit Manipulation)",
+            "description": "Problem Statement\n\nIn a project, you have a list of required skills req_skills, and a list of people. The ith person people[i] contains a list of skills that the person has.\nConsider a sufficient team: a set of people such that for every required skill in req_skills, there is at least one person in the team who has that skill. We can represent these teams by the index of each person.\nFor example, team = [0, 1, 3] represents the people with skills people[0], people[1], and people[3].\nReturn any sufficient team of the smallest possible size, represented by the index of each person. You may return the answer in any order.\nIt is guaranteed an answer exists.\n",
+            "examples": "Sample Input\njava nodejs reactjs\njava\nnodejs\nnodejs reactjs\n\nSample Output\n0 2\n\nExplanation: Team [0,2] has all required skills.\n\nSample Input\nalgorithms math java reactjs csharp aws\nalgorithms math java\nalgorithms math reactjs\njava csharp aws\nreactjs csharp\ncsharp math\naws java\n\nSample Output\n1 2\n\nExplanation: Team [1,2] has all required skills.",
+            "constraints": "1 <= req_skills.length <= 16\n1 <= req_skills[i].length <= 16\nreq_skills[i] consists of lowercase English letters.\nAll the strings of req_skills are unique.\n1 <= people.length <= 60\n0 <= people[i].length <= 16\n1 <= people[i][j].length <= 16\npeople[i][j] consists of lowercase English letters.\nAll the strings of people[i] are unique.\nEvery skill in people[i] is a skill in req_skills.\nIt is guaranteed a sufficient team exists.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "python sql\npython\nsql\npython sql",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "java nodejs reactjs\njava\nnodejs\nnodejs reactjs",
+                    "expectedOutput": "0 2"
+                },
+                {
+                    "input": "programming testing design\nprogramming\ntesting\ndesign\nprogramming testing\ntesting design\ndesign programming",
+                    "expectedOutput": "4 0"
+                },
+                {
+                    "input": "a b c\na b\nb c\nc\na",
+                    "expectedOutput": "1 3"
+                },
+                {
+                    "input": "network database\nnetwork\ndatabase\nnetwork database",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def smallestSufficientTeam(self, req_skills, people):\n        # TODO: Return any sufficient team of smallest size (list of indices)\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = [line.strip() for line in sys.stdin if line.strip()]\n    req_skills = lines[0].split()\n    people = []\n    for i in range(1, len(lines)):\n        people.append(lines[i].split())\n    sol = Solution()\n    result = sol.smallestSufficientTeam(req_skills, people)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] smallestSufficientTeam(String[] req_skills, List<List<String>> people) {\n        // TODO: Return any sufficient team of smallest size (array of indices)\n        return new int[0];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] req_skills = br.readLine().trim().split(\" \");\n        List<List<String>> people = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] skills = line.trim().split(\" \");\n            people.add(Arrays.asList(skills));\n        }\n        Solution sol = new Solution();\n        int[] result = sol.smallestSufficientTeam(req_skills, people);\n        for (int i = 0; i < result.length; i++) {\n            System.out.print(result[i] + (i == result.length - 1 ? \"\" : \" \"));\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    smallestSufficientTeam(req_skills, people) {\n        // TODO: Return any sufficient team of smallest size (array of indices)\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const req_skills = lines[0].trim().split(/\\s+/);\n    const people = [];\n    for (let i = 1; i < lines.length; i++) {\n        people.push(lines[i].trim().split(/\\s+/));\n    }\n    const sol = new Solution();\n    const result = sol.smallestSufficientTeam(req_skills, people);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> smallestSufficientTeam(vector<string>& req_skills, vector<vector<string>>& people) {\n        // TODO: Return any sufficient team of smallest size (vector of indices)\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> req_skills;\n    string skill;\n    while (iss >> skill) {\n        req_skills.push_back(skill);\n    }\n    vector<vector<string>> people;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss2(line);\n        vector<string> person;\n        string s;\n        while (iss2 >> s) {\n            person.push_back(s);\n        }\n        people.push_back(person);\n    }\n    Solution sol;\n    vector<int> result = sol.smallestSufficientTeam(req_skills, people);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid smallestSufficientTeam(char** req_skills, int req_skillsSize, char*** people, int peopleSize, int* peopleColSize) {\n    // TODO: Print space-separated indices of smallest sufficient team\n}\n\nint main() {\n    // Simplified input parsing for C - would need more complex parsing\n    printf(\"TODO: Implement input parsing\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming with bitmask to track which skills are covered.",
+                "For each person, represent their skills as a bitmask and use DP to find minimum team size."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Can Make Palindrome from Substring (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given a string s and array queries where queries[i] = [lefti, righti, ki]. We may rearrange the substring s[lefti...righti] for each query and then choose up to ki of them to replace with any lowercase English letter.\nIf the substring is possible to be a palindrome string after the operations above, the result of the query is true. Otherwise, the result is false.\nReturn a boolean array answer where answer[i] is the result of the ith query queries[i].\nNote that each letter is counted individually for replacement, so if, for example s[lefti...righti] = \"aaa\", and ki = 2, we can only replace two of the letters. Also, note that no query modifies the initial string s.\n",
+            "examples": "Sample Input\nabcda\n3 3 0\n1 2 0\n0 3 1\n0 3 2\n0 4 1\n\nSample Output\nTrue False False True True\n\nExplanation:\nqueries[0]: substring = \"d\", is palindrome.\nqueries[1]: substring = \"bc\", is not palindrome.\nqueries[2]: substring = \"abcd\", is not palindrome after replacing only 1 character.\nqueries[3]: substring = \"abcd\", could be changed to \"abba\" which is palindrome.\nqueries[4]: substring = \"abcda\", could be changed to \"abcba\" which is palindrome.\n\nSample Input\nlyb\n0 1 0\n2 2 1\n\nSample Output\nFalse True",
+            "constraints": "1 <= s.length, queries.length <= 10^5\n0 <= lefti <= righti < s.length\n0 <= ki <= s.length\ns consists of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abcd\n0 2 1\n1 3 1",
+                    "expectedOutput": "True True"
+                },
+                {
+                    "input": "zaz\n0 2 1\n0 1 0\n1 2 0",
+                    "expectedOutput": "True False False"
+                },
+                {
+                    "input": "abcda\n3 3 0\n1 2 0\n0 3 1\n0 3 2\n0 4 1",
+                    "expectedOutput": "True False False True True"
+                },
+                {
+                    "input": "aaaa\n0 3 0\n1 2 0",
+                    "expectedOutput": "True True"
+                },
+                {
+                    "input": "aabbc\n0 4 2\n1 3 1",
+                    "expectedOutput": "True True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def canMakePaliQueries(self, s, queries):\n        # TODO: Return list of booleans for each query\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = [line.strip() for line in sys.stdin if line.strip()]\n    s = lines[0]\n    queries = []\n    for i in range(1, len(lines)):\n        parts = list(map(int, lines[i].split()))\n        queries.append(parts)\n    sol = Solution()\n    result = sol.canMakePaliQueries(s, queries)\n    print(' '.join('True' if x else 'False' for x in result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<Boolean> canMakePaliQueries(String s, int[][] queries) {\n        // TODO: Return list of booleans for each query\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        List<int[]> queriesList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            queriesList.add(new int[]{Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2])});\n        }\n        int[][] queries = queriesList.toArray(new int[queriesList.size()][]);\n        Solution sol = new Solution();\n        List<Boolean> result = sol.canMakePaliQueries(s, queries);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) ? \"True\" : \"False\");\n            if (i < result.size() - 1) System.out.print(\" \");\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    canMakePaliQueries(s, queries) {\n        // TODO: Return array of booleans for each query\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0].trim();\n    const queries = [];\n    for (let i = 1; i < lines.length; i++) {\n        queries.push(lines[i].trim().split(/\\s+/).map(Number));\n    }\n    const sol = new Solution();\n    const result = sol.canMakePaliQueries(s, queries);\n    console.log(result.map(x => x ? 'True' : 'False').join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<bool> canMakePaliQueries(string s, vector<vector<int>>& queries) {\n        // TODO: Return vector of booleans for each query\n        return {};\n    }\n};\n\nint main() {\n    string s;\n    getline(cin, s);\n    vector<vector<int>> queries;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> query;\n        int num;\n        while (iss >> num) {\n            query.push_back(num);\n        }\n        queries.push_back(query);\n    }\n    Solution sol;\n    vector<bool> result = sol.canMakePaliQueries(s, queries);\n    for (int i = 0; i < result.size(); i++) {\n        cout << (result[i] ? \"True\" : \"False\");\n        if (i < result.size() - 1) cout << \" \";\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n#include <string.h>\n\nvoid canMakePaliQueries(char* s, int** queries, int queriesSize, int* queriesColSize) {\n    // TODO: Print space-separated booleans (True/False) for each query\n}\n\nint main() {\n    char s[100005];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    // Simplified - would need more complex parsing for queries\n    printf(\"TODO: Implement input parsing\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Count the frequency of each character in the substring.",
+                "A string can form a palindrome if at most one character has odd frequency (after rearranging and replacing)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Number of Valid Words for Each Puzzle (Bit Manipulation)",
+            "description": "Problem Statement\n\nWith respect to a given puzzle string, a word is valid if both the following conditions are satisfied:\nword contains the first letter of puzzle.\nFor each letter in word, that letter is in puzzle.\nFor example, if the puzzle is \"abcdefg\", then valid words are \"faced\", \"cabbage\", and \"baggage\", while invalid words are \"beefed\" (does not include 'a') and \"based\" (includes 's' which is not in the puzzle).\nReturn an array answer, where answer[i] is the number of words in the given word list words that is valid with respect to the puzzle puzzles[i].\n",
+            "examples": "Sample Input\naaaa asas able ability actt actor access\naboveyz abrodyz abslute absoryz actresz gaswxyz\n\nSample Output\n1 1 3 2 4 0\n\nExplanation: \n1 valid word for \"aboveyz\" : \"aaaa\" \n1 valid word for \"abrodyz\" : \"aaaa\"\n3 valid words for \"abslute\" : \"aaaa\", \"asas\", \"able\"\n2 valid words for \"absoryz\" : \"aaaa\", \"asas\"\n4 valid words for \"actresz\" : \"aaaa\", \"asas\", \"actt\", \"access\"\nThere are no valid words for \"gaswxyz\" cause none of the words in the list contains letter 'g'.\n\nSample Input\napple pleas please\naelwxyz aelpxyz aelpsxy saelpxy xaelpsy\n\nSample Output\n0 1 3 2 0",
+            "constraints": "1 <= words.length <= 10^5\n4 <= words[i].length <= 50\n1 <= puzzles.length <= 10^4\npuzzles[i].length == 7\nwords[i] and puzzles[i] consist of lowercase English letters.\nEach puzzles[i] does not contain repeated characters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "apple pleas please\naelwxyz aelpxyz aelpsxy saelpxy xaelpsy",
+                    "expectedOutput": "0 1 3 2 0"
+                },
+                {
+                    "input": "hello world abc def ghi\nahelloz dworldz abcdefg xyzghif mnopqrs",
+                    "expectedOutput": "0 1 1 0 0"
+                },
+                {
+                    "input": "aaaa asas able ability actt actor access\naboveyz abrodyz abslute absoryz actresz gaswxyz",
+                    "expectedOutput": "1 1 3 2 4 0"
+                },
+                {
+                    "input": "hello world\nehlol dlrow",
+                    "expectedOutput": "1 1"
+                },
+                {
+                    "input": "cat dog bird\nact dgo bdir",
+                    "expectedOutput": "1 1 1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findNumOfValidWords(self, words, puzzles):\n        # TODO: Return array where answer[i] is number of valid words for puzzles[i]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = [line.strip() for line in sys.stdin if line.strip()]\n    words = lines[0].split()\n    puzzles = lines[1].split()\n    sol = Solution()\n    result = sol.findNumOfValidWords(words, puzzles)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<Integer> findNumOfValidWords(String[] words, String[] puzzles) {\n        // TODO: Return list where answer[i] is number of valid words for puzzles[i]\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        String[] puzzles = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        List<Integer> result = sol.findNumOfValidWords(words, puzzles);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findNumOfValidWords(words, puzzles) {\n        // TODO: Return array where answer[i] is number of valid words for puzzles[i]\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const words = lines[0].trim().split(/\\s+/);\n    const puzzles = lines[1].trim().split(/\\s+/);\n    const sol = new Solution();\n    const result = sol.findNumOfValidWords(words, puzzles);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> findNumOfValidWords(vector<string>& words, vector<string>& puzzles) {\n        // TODO: Return vector where answer[i] is number of valid words for puzzles[i]\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    getline(cin, line);\n    istringstream iss2(line);\n    vector<string> puzzles;\n    string puzzle;\n    while (iss2 >> puzzle) {\n        puzzles.push_back(puzzle);\n    }\n    Solution sol;\n    vector<int> result = sol.findNumOfValidWords(words, puzzles);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid findNumOfValidWords(char** words, int wordsSize, char** puzzles, int puzzlesSize) {\n    // TODO: Print space-separated integers where answer[i] is number of valid words for puzzles[i]\n}\n\nint main() {\n    // Simplified input parsing for C\n    printf(\"TODO: Implement input parsing\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bitmask to represent the set of letters in each word.",
+                "For each puzzle, check which words contain the first letter and all letters are in the puzzle."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Circular Permutation in Binary Representation (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven 2 integers n and start. Your task is return any permutation p of (0,1,2.....,2^n -1) such that :\np[0] = start\np[i] and p[i+1] differ by only one bit in their binary representation.\np[0] and p[2^n -1] must also differ by only one bit in their binary representation.\n",
+            "examples": "Sample Input\n2 3\n\nSample Output\n3 2 0 1\n\nExplanation: The binary representation of the permutation is (11,10,00,01). \nAll the adjacent element differ by one bit. Another valid permutation is [3,1,0,2]\n\nSample Input\n3 2\n\nSample Output\n2 6 7 5 4 0 1 3\n\nExplanation: The binary representation of the permutation is (010,110,111,101,100,000,001,011).",
+            "constraints": "1 <= n <= 16\n0 <= start < 2^n",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 0",
+                    "expectedOutput": "0 1"
+                },
+                {
+                    "input": "2 3",
+                    "expectedOutput": "3 2 0 1"
+                },
+                {
+                    "input": "3 2",
+                    "expectedOutput": "2 6 7 5 4 0 1 3"
+                },
+                {
+                    "input": "4 5",
+                    "expectedOutput": "5 4 6 7 3 2 0 1 9 8 10 11 15 14 12 13"
+                },
+                {
+                    "input": "5 15",
+                    "expectedOutput": "15 14 10 11 9 8 24 25 27 26 30 31 29 28 20 21 23 22 18 19 17 16 0 1 3 2 6 7 5 4 12 13"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def circularPermutation(self, n, start):\n        # TODO: Return circular permutation starting with start\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n, start = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    result = sol.circularPermutation(n, start)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<Integer> circularPermutation(int n, int start) {\n        // TODO: Return circular permutation starting with start\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int start = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        List<Integer> result = sol.circularPermutation(n, start);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    circularPermutation(n, start) {\n        // TODO: Return circular permutation starting with start\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const [n, start] = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.circularPermutation(n, start);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> circularPermutation(int n, int start) {\n        // TODO: Return circular permutation starting with start\n        return {};\n    }\n};\n\nint main() {\n    int n, start;\n    cin >> n >> start;\n    Solution sol;\n    vector<int> result = sol.circularPermutation(n, start);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid circularPermutation(int n, int start) {\n    // TODO: Print space-separated circular permutation starting with start\n}\n\nint main() {\n    int n, start;\n    scanf(\"%d %d\", &n, &start);\n    circularPermutation(n, start);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Generate a Gray code sequence and rotate it to start with the given value.",
+                "Use XOR to generate Gray code: gray(i) = i XOR (i >> 1)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Maximum Length of a Concatenated String with Unique Characters (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an array of strings arr. A string s is formed by the concatenation of a subsequence of arr that has unique characters.\nReturn the maximum possible length of s.\nA subsequence is an array that can be derived from another array by deleting some or no elements without changing the order of the remaining elements.\n",
+            "examples": "Sample Input\nun iq ue\n\nSample Output\n4\n\nExplanation: All the valid concatenations are:\n- \"\"\n- \"un\"\n- \"iq\"\n- \"ue\"\n- \"uniq\" (\"un\" + \"iq\")\n- \"ique\" (\"iq\" + \"ue\")\nMaximum length is 4.\n\nSample Input\ncha r act ers\n\nSample Output\n6\n\nExplanation: Possible longest valid concatenations are \"chaers\" (\"cha\" + \"ers\") and \"acters\" (\"act\" + \"ers\").\n\nSample Input\nabcdefghijklmnopqrstuvwxyz\n\nSample Output\n26\n\nExplanation: The only string in arr has all 26 characters.",
+            "constraints": "1 <= arr.length <= 16\n1 <= arr[i].length <= 26\narr[i] contains only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abcd abef cdgh cdef",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "un iq ue",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abcdefghijklmnopqrstuvwxyz",
+                    "expectedOutput": "26"
+                },
+                {
+                    "input": "unique strings with no common characters",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "a b c d e f g h i j k l m n o p",
+                    "expectedOutput": "16"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxLength(self, arr):\n        # TODO: Return maximum length of concatenated string with unique characters\n        pass\n\nif __name__ == '__main__':\n    import sys\n    arr = sys.stdin.read().strip().split()\n    sol = Solution()\n    print(sol.maxLength(arr))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxLength(List<String> arr) {\n        // TODO: Return maximum length of concatenated string with unique characters\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        List<String> arr = Arrays.asList(parts);\n        Solution sol = new Solution();\n        System.out.println(sol.maxLength(arr));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxLength(arr) {\n        // TODO: Return maximum length of concatenated string with unique characters\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const arr = input.trim().split(/\\s+/);\n    const sol = new Solution();\n    console.log(sol.maxLength(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxLength(vector<string>& arr) {\n        // TODO: Return maximum length of concatenated string with unique characters\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> arr;\n    string s;\n    while (iss >> s) {\n        arr.push_back(s);\n    }\n    Solution sol;\n    cout << sol.maxLength(arr) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid maxLength(char** arr, int arrSize) {\n    // TODO: Print maximum length of concatenated string with unique characters\n}\n\nint main() {\n    // Simplified input parsing for C\n    printf(\"TODO: Implement input parsing\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bitmask to represent the set of characters in each string.",
+                "Use backtracking or dynamic programming to try all combinations of strings."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Maximum Score Words Formed by Letters (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a list of words, list of single letters (might be repeating) and score of every character.\nReturn the maximum score of any valid set of words formed by using the given letters (words[i] cannot be used two or more times).\nIt is not necessary to use all characters in letters and each letter can only be used once. Score of letters 'a', 'b', 'c', ... ,'z' is given by score[0], score[1], ... , score[25] respectively.\n",
+            "examples": "Sample Input\ndog cat dad good\na a c d d d g o o\n1 0 9 5 0 0 3 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0\n\nSample Output\n23\n\nExplanation:\nScore a=1, c=9, d=5, g=3, o=2\nGiven letters, we can form the words \"dad\" (5+1+5) and \"good\" (3+2+2+5) with a score of 23.\nWords \"dad\" and \"dog\" only get a score of 21.\n\nSample Input\nxxxz ax bx cx\nz a b c x x x\n4 4 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 10\n\nSample Output\n27\n\nExplanation:\nScore a=4, b=4, c=4, x=5, z=10\nGiven letters, we can form the words \"ax\" (4+5), \"bx\" (4+5) and \"cx\" (4+5) with a score of 27.",
+            "constraints": "1 <= words.length <= 14\n1 <= words[i].length <= 15\n1 <= letters.length <= 100\nletters[i].length == 1\nscore.length == 26\n0 <= score[i] <= 10\nwords[i], letters[i] contains only lower case English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "xxxz ax bx cx\nz a b c x x x\n4 4 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 10",
+                    "expectedOutput": "27"
+                },
+                {
+                    "input": "leetcode\nl e t c o d\n0 0 1 1 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "dog cat dad good\na a c d d d g o o\n1 0 9 5 0 0 3 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0",
+                    "expectedOutput": "23"
+                },
+                {
+                    "input": "quartz pearl opal\nq u a r t z p e a r l o p a l\n1 3 3 2 1 4 2 4 1 8 5 1 3 4 1 3 10 1 1 1 2 4 2 4 1 10",
+                    "expectedOutput": "38"
+                },
+                {
+                    "input": "abc def\na b c d e f\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26",
+                    "expectedOutput": "21"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxScoreWords(self, words, letters, score):\n        # TODO: Return maximum score of valid set of words\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = [line.strip() for line in sys.stdin if line.strip()]\n    words = lines[0].split()\n    letters = lines[1].split()\n    score = list(map(int, lines[2].split()))\n    sol = Solution()\n    print(sol.maxScoreWords(words, letters, score))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxScoreWords(String[] words, String[] letters, int[] score) {\n        // TODO: Return maximum score of valid set of words\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        String[] letters = br.readLine().trim().split(\" \");\n        String[] scoreParts = br.readLine().trim().split(\" \");\n        int[] score = new int[26];\n        for (int i = 0; i < 26; i++) {\n            score[i] = Integer.parseInt(scoreParts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.maxScoreWords(words, letters, score));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxScoreWords(words, letters, score) {\n        // TODO: Return maximum score of valid set of words\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const words = lines[0].trim().split(/\\s+/);\n    const letters = lines[1].trim().split(/\\s+/);\n    const score = lines[2].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.maxScoreWords(words, letters, score));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxScoreWords(vector<string>& words, vector<string>& letters, vector<int>& score) {\n        // TODO: Return maximum score of valid set of words\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> words;\n    string word;\n    while (iss >> word) words.push_back(word);\n    getline(cin, line);\n    istringstream iss2(line);\n    vector<string> letters;\n    string letter;\n    while (iss2 >> letter) letters.push_back(letter);\n    getline(cin, line);\n    istringstream iss3(line);\n    vector<int> score(26);\n    for (int i = 0; i < 26; i++) iss3 >> score[i];\n    Solution sol;\n    cout << sol.maxScoreWords(words, letters, score) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid maxScoreWords(char** words, int wordsSize, char** letters, int lettersSize, int* score) {\n    // TODO: Print maximum score of valid set of words\n}\n\nint main() {\n    // Simplified input parsing for C\n    printf(\"TODO: Implement input parsing\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking to try all combinations of words.",
+                "Use bitmask or recursion to track which words have been used."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Encode Number (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a non-negative integer num, Return its encoding string.\nThe encoding is done by converting the integer to a string using a secret function that you should deduce from the following table:\nnum = 0 -> \"\"\nnum = 1 -> \"0\"\nnum = 2 -> \"1\"\nnum = 3 -> \"00\"\nnum = 4 -> \"01\"\nnum = 5 -> \"10\"\nnum = 6 -> \"11\"\nnum = 7 -> \"000\"\n...\n",
+            "examples": "Sample Input\n23\n\nSample Output\n1000\n\nExplanation: 23 in binary encoding format.\n\nSample Input\n107\n\nSample Output\n101100\n\nExplanation: 107 in binary encoding format.\n\nSample Input\n9\n\nSample Output\n010\n\nExplanation: 9 in binary encoding format.",
+            "constraints": "0 <= num <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "9",
+                    "expectedOutput": "010"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "011"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "01"
+                },
+                {
+                    "input": "107",
+                    "expectedOutput": "101100"
+                },
+                {
+                    "input": "31",
+                    "expectedOutput": "00000"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def encode(self, num):\n        # TODO: Return encoding string for num\n        pass\n\nif __name__ == '__main__':\n    import sys\n    num = int(sys.stdin.read().strip())\n    sol = Solution()\n    print(sol.encode(num))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String encode(int num) {\n        // TODO: Return encoding string for num\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int num = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.encode(num));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    encode(num) {\n        // TODO: Return encoding string for num\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const num = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.encode(num));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string encode(int num) {\n        // TODO: Return encoding string for num\n        return \"\";\n    }\n};\n\nint main() {\n    int num;\n    cin >> num;\n    Solution sol;\n    cout << sol.encode(num) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid encode(int num) {\n    // TODO: Print encoding string for num\n}\n\nint main() {\n    int num;\n    scanf(\"%d\", &num);\n    encode(num);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "The encoding follows a pattern: for num+1, convert to binary and remove the leading '1'.",
+                "num+1 in binary without the first bit gives the encoding."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a m x n binary matrix mat. In one step, you can choose one cell and flip it and all the four neighbors of it if they exist (Flip is changing 1 to 0 and 0 to 1). A pair of cells are called neighbors if they share one edge.\nReturn the minimum number of steps required to convert mat to a zero matrix or -1 if you cannot.\nA binary matrix is a matrix with all cells equal to 0 or 1 only.\nA zero matrix is a matrix with all cells equal to 0.\n",
+            "examples": "Sample Input\n0 0\n0 1\n\nSample Output\n3\n\nExplanation: One possible solution is to flip (1, 0) then (0, 1) and finally (1, 1) as shown.\n\nSample Input\n0\n\nSample Output\n0\n\nExplanation: Given matrix is a zero matrix. We do not need to change it.\n\nSample Input\n1 0 0\n1 0 0\n\nSample Output\n-1\n\nExplanation: Given matrix cannot be a zero matrix.",
+            "constraints": "m == mat.length\nn == mat[i].length\n1 <= m, n <= 3\nmat[i][j] is either 0 or 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "0 0\n0 1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 1 1\n1 1 1\n1 1 1",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "1 1\n1 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1 1 0\n0 0 0\n0 0 1",
+                    "expectedOutput": "6"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minFlips(self, mat):\n        # TODO: Return minimum number of flips, or -1 if impossible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    mat = []\n    for line in lines:\n        if line.strip():\n            mat.append(list(map(int, line.strip().split())))\n    sol = Solution()\n    print(sol.minFlips(mat))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minFlips(int[][] mat) {\n        // TODO: Return minimum number of flips, or -1 if impossible\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> matList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            int[] row = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) {\n                row[i] = Integer.parseInt(parts[i]);\n            }\n            matList.add(row);\n        }\n        int[][] mat = matList.toArray(new int[matList.size()][]);\n        Solution sol = new Solution();\n        System.out.println(sol.minFlips(mat));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minFlips(mat) {\n        // TODO: Return minimum number of flips, or -1 if impossible\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const mat = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            mat.push(line.trim().split(/\\s+/).map(Number));\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.minFlips(mat));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minFlips(vector<vector<int>>& mat) {\n        // TODO: Return minimum number of flips, or -1 if impossible\n        return -1;\n    }\n};\n\nint main() {\n    vector<vector<int>> mat;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> row;\n        int num;\n        while (iss >> num) {\n            row.push_back(num);\n        }\n        if (!row.empty()) {\n            mat.push_back(row);\n        }\n    }\n    Solution sol;\n    cout << sol.minFlips(mat) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid minFlips(int** mat, int matSize, int* matColSize) {\n    // TODO: Print minimum number of flips, or -1 if impossible\n}\n\nint main() {\n    int mat[3][3];\n    int matSize = 0;\n    int matColSize[3];\n    char line[100];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int row[3];\n        int colSize = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            row[colSize++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (colSize > 0) {\n            for (int i = 0; i < colSize; i++) {\n                mat[matSize][i] = row[i];\n            }\n            matColSize[matSize] = colSize;\n            matSize++;\n        }\n    }\n    int* matPtrs[3];\n    for (int i = 0; i < matSize; i++) {\n        matPtrs[i] = mat[i];\n    }\n    minFlips(matPtrs, matSize, matColSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use BFS to try all possible flip sequences.",
+                "Use bitmask to represent the state of the matrix since m, n <= 3."
+            ]
+        },
+        {
+            "id": null,
+            "title": "XOR Queries of a Subarray (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an array arr of positive integers. You are also given the array queries where queries[i] = [lefti, righti].\nFor each query i compute the XOR of elements from lefti to righti (that is, arr[lefti] XOR arr[lefti + 1] XOR ... XOR arr[righti] ).\nReturn an array answer where answer[i] is the answer to the ith query.\n",
+            "examples": "Sample Input\n1 3 4 8\n0 1\n1 2\n0 3\n3 3\n\nSample Output\n2 7 14 8\n\nExplanation: \nThe binary representation of the elements in the array are:\n1 = 0001 \n3 = 0011 \n4 = 0100 \n8 = 1000 \nThe XOR values for queries are:\n[0,1] = 1 xor 3 = 2 \n[1,2] = 3 xor 4 = 7 \n[0,3] = 1 xor 3 xor 4 xor 8 = 14 \n[3,3] = 8\n\nSample Input\n4 8 2 10\n2 3\n1 3\n0 0\n0 3\n\nSample Output\n8 0 4 4",
+            "constraints": "1 <= arr.length, queries.length <= 3 * 10^4\n1 <= arr[i] <= 10^9\nqueries[i].length == 2\n0 <= lefti <= righti < arr.length",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 8 2 10\n2 3\n1 3\n0 0\n0 3",
+                    "expectedOutput": "8 0 4 4"
+                },
+                {
+                    "input": "10 5 2 3 15\n0 4\n1 2\n2 3\n0 1\n3 4",
+                    "expectedOutput": "1 7 1 15 12"
+                },
+                {
+                    "input": "5 2 3 9\n0 0\n1 3\n0 2\n2 3",
+                    "expectedOutput": "5 8 4 10"
+                },
+                {
+                    "input": "7 11 15 22 29\n0 2\n1 3\n0 4\n4 4",
+                    "expectedOutput": "3 18 8 29"
+                },
+                {
+                    "input": "5 1 4 2\n0 2\n1 3\n0 1\n2 2",
+                    "expectedOutput": "0 7 4 4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def xorQueries(self, arr, queries):\n        # TODO: Return array of XOR results for each query\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = [line.strip() for line in sys.stdin if line.strip()]\n    arr = list(map(int, lines[0].split()))\n    queries = []\n    for i in range(1, len(lines)):\n        queries.append(list(map(int, lines[i].split())))\n    sol = Solution()\n    result = sol.xorQueries(arr, queries)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] xorQueries(int[] arr, int[][] queries) {\n        // TODO: Return array of XOR results for each query\n        return new int[0];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            arr[i] = Integer.parseInt(parts[i]);\n        }\n        List<int[]> queriesList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] qParts = line.trim().split(\" \");\n            queriesList.add(new int[]{Integer.parseInt(qParts[0]), Integer.parseInt(qParts[1])});\n        }\n        int[][] queries = queriesList.toArray(new int[queriesList.size()][]);\n        Solution sol = new Solution();\n        int[] result = sol.xorQueries(arr, queries);\n        for (int i = 0; i < result.length; i++) {\n            System.out.print(result[i] + (i == result.length - 1 ? \"\" : \" \"));\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    xorQueries(arr, queries) {\n        // TODO: Return array of XOR results for each query\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const arr = lines[0].trim().split(/\\s+/).map(Number);\n    const queries = [];\n    for (let i = 1; i < lines.length; i++) {\n        queries.push(lines[i].trim().split(/\\s+/).map(Number));\n    }\n    const sol = new Solution();\n    const result = sol.xorQueries(arr, queries);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> xorQueries(vector<int>& arr, vector<vector<int>>& queries) {\n        // TODO: Return vector of XOR results for each query\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> arr;\n    int num;\n    while (iss >> num) arr.push_back(num);\n    vector<vector<int>> queries;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss2(line);\n        vector<int> query;\n        int q;\n        while (iss2 >> q) query.push_back(q);\n        queries.push_back(query);\n    }\n    Solution sol;\n    vector<int> result = sol.xorQueries(arr, queries);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid xorQueries(int* arr, int arrSize, int** queries, int queriesSize, int* queriesColSize) {\n    // TODO: Print space-separated XOR results for each query\n}\n\nint main() {\n    int arr[30005];\n    int arrSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        arr[arrSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    // Simplified - would need more complex parsing for queries\n    printf(\"TODO: Implement query parsing\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use prefix XOR array: prefix[i] = arr[0] XOR arr[1] XOR ... XOR arr[i].",
+                "XOR from left to right = prefix[right] XOR prefix[left-1] (if left > 0)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Minimum Flips to Make a OR b Equal to c (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven 3 positives numbers a, b and c. Return the minimum flips required in some bits of a and b to make ( a OR b == c ). (bitwise OR operation).\nFlip operation consists of change any single bit 1 to 0 or change the bit 0 to 1 in their binary representation.\n",
+            "examples": "Sample Input\n2 6 5\n\nSample Output\n3\n\nExplanation: After flips a = 1 , b = 4 , c = 5 such that (a OR b == c)\n\nSample Input\n4 2 7\n\nSample Output\n1\n\nExplanation: Flip one bit in a or b to make (a OR b) == 7.\n\nSample Input\n1 2 3\n\nSample Output\n0\n\nExplanation: (1 OR 2) == 3, no flips needed.",
+            "constraints": "1 <= a <= 10^9\n1 <= b <= 10^9\n1 <= c <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "10 15 25",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "2 6 5",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 2 3",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "8 3 11",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "4 2 7",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minFlips(self, a, b, c):\n        # TODO: Return minimum flips to make (a OR b) == c\n        pass\n\nif __name__ == '__main__':\n    import sys\n    a, b, c = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    print(sol.minFlips(a, b, c))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minFlips(int a, int b, int c) {\n        // TODO: Return minimum flips to make (a OR b) == c\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int a = Integer.parseInt(parts[0]);\n        int b = Integer.parseInt(parts[1]);\n        int c = Integer.parseInt(parts[2]);\n        Solution sol = new Solution();\n        System.out.println(sol.minFlips(a, b, c));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minFlips(a, b, c) {\n        // TODO: Return minimum flips to make (a OR b) == c\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const [a, b, c] = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.minFlips(a, b, c));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minFlips(int a, int b, int c) {\n        // TODO: Return minimum flips to make (a OR b) == c\n        return 0;\n    }\n};\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    Solution sol;\n    cout << sol.minFlips(a, b, c) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid minFlips(int a, int b, int c) {\n    // TODO: Print minimum flips to make (a OR b) == c\n}\n\nint main() {\n    int a, b, c;\n    scanf(\"%d %d %d\", &a, &b, &c);\n    minFlips(a, b, c);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check each bit position. For bit i:",
+                "If c[i] == 1 but (a[i] OR b[i]) == 0, need 1 flip. If c[i] == 0 but (a[i] OR b[i]) == 1, need to flip all 1s in a[i] and b[i]."
+            ]
+        }
+    ]
+}

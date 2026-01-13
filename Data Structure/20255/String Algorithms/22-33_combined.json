@@ -1,0 +1,724 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Counting Words with a Given Prefix (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given an array of strings words and a string pref.\nReturn the number of strings in words that contain pref as a prefix.\nA prefix of a string s is any leading contiguous substring of s.\n",
+            "examples": "Sample Input\npay attention practice attend\nat\n\nSample Output\n2\n\nExplanation: The 2 strings that contain \"at\" as a prefix are: \"attention\" and \"attend\".\n\nSample Input\nleetcode win loops success\ncode\n\nSample Output\n0\n\nExplanation: There are no strings that contain \"code\" as a prefix.",
+            "constraints": "1 <= words.length <= 100\n1 <= words[i].length, pref.length <= 100\nwords[i] and pref consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "pay attention practice attend\nat",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "leetcode win loops success\ncode",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "apple app application\napp",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "hello world\nhe",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "a ab abc abcd\nabc",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def prefixCount(self, words, pref):\n        # TODO: Return count of words with prefix\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    words = lines[0].split() if len(lines) > 0 else []\n    pref = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    print(sol.prefixCount(words, pref))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int prefixCount(String[] words, String pref) {\n        // TODO: Return count of words with prefix\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        String pref = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.prefixCount(words, pref));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    prefixCount(words, pref) {\n        // TODO: Return count of words with prefix\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const words = lines[0] ? lines[0].split(/\\s+/) : [];\n    const pref = lines[1] || \"\";\n    const sol = new Solution();\n    console.log(sol.prefixCount(words, pref));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int prefixCount(vector<string>& words, string pref) {\n        // TODO: Return count of words with prefix\n        return 0;\n    }\n};\n\nint main() {\n    string wordsLine;\n    getline(cin, wordsLine);\n    istringstream iss(wordsLine);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    string pref;\n    getline(cin, pref);\n    Solution sol;\n    cout << sol.prefixCount(words, pref) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid prefixCount(char** words, int wordsSize, char* pref) {\n    // TODO: Print count of words with prefix\n}\n\nint main() {\n    char line[10005];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* words[105];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    char pref[105];\n    fgets(pref, sizeof(pref), stdin);\n    pref[strcspn(pref, \"\\n\")] = 0;\n    prefixCount(words, wordsSize, pref);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through each word and check if it starts with the prefix.",
+                "Use string comparison functions to check if a word has the given prefix."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Match Substring After Replacement (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given two strings s and sub. You are also given a 2D character array mappings where mappings[i] = [oldi, newi] indicates that you may perform the following operation any number of times:\n\nReplace a character oldi of sub with newi.\n\nEach character in sub cannot be replaced more than once.\nReturn \"True\" if it is possible to make sub a substring of s by replacing zero or more characters according to mappings. Otherwise, return \"False\".\nA substring is a contiguous non-empty sequence of characters within a string.\n",
+            "examples": "Sample Input\nfool3e7bar\nleet\ne 3\nt 7\nt 8\n\nSample Output\nTrue\n\nExplanation: Replace the first 'e' in sub with '3' and 't' in sub with '7'. Now sub = \"l3e7\" is a substring of s.\n\nSample Input\nfooleetbar\nf00l\no 0\n\nSample Output\nFalse\n\nExplanation: The string \"f00l\" is not a substring of s and no replacements can be made.",
+            "constraints": "1 <= sub.length <= s.length <= 5000\n0 <= mappings.length <= 1000\nmappings[i].length == 2\noldi != newi\ns and sub consist of uppercase and lowercase English letters and digits.\noldi and newi are either uppercase or lowercase English letters or digits.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "fool3e7bar\nleet\ne 3\nt 7\nt 8",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "fooleetbar\nf00l\no 0",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "Fool33tbaR\nleetd\ne 3\nt 7\nd b",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "abc\nabc",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "hello\nxyz",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def matchReplacement(self, s, sub, mappings):\n        # TODO: Return \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    s = lines[0] if len(lines) > 0 else \"\"\n    sub = lines[1] if len(lines) > 1 else \"\"\n    mappings = []\n    for i in range(2, len(lines)):\n        parts = lines[i].split()\n        if len(parts) == 2:\n            mappings.append([parts[0], parts[1]])\n    sol = Solution()\n    print(sol.matchReplacement(s, sub, mappings))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String matchReplacement(String s, String sub, List<List<String>> mappings) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String sub = br.readLine().trim();\n        List<List<String>> mappings = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            if (parts.length == 2) {\n                List<String> mapping = new ArrayList<>();\n                mapping.add(parts[0]);\n                mapping.add(parts[1]);\n                mappings.add(mapping);\n            }\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.matchReplacement(s, sub, mappings));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    matchReplacement(s, sub, mappings) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0] || \"\";\n    const sub = lines[1] || \"\";\n    const mappings = [];\n    for (let i = 2; i < lines.length; i++) {\n        const parts = lines[i].trim().split(/\\s+/);\n        if (parts.length === 2) {\n            mappings.push([parts[0], parts[1]]);\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.matchReplacement(s, sub, mappings));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string matchReplacement(string s, string sub, vector<vector<string>>& mappings) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n};\n\nint main() {\n    string s, sub;\n    getline(cin, s);\n    getline(cin, sub);\n    vector<vector<string>> mappings;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        string oldChar, newChar;\n        if (iss >> oldChar >> newChar) {\n            mappings.push_back({oldChar, newChar});\n        }\n    }\n    Solution sol;\n    cout << sol.matchReplacement(s, sub, mappings) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid matchReplacement(char* s, char* sub, char mappings[][2][10], int mappingsSize) {\n    // TODO: Print \"True\" or \"False\"\n}\n\nint main() {\n    char s[5005], sub[5005];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    fgets(sub, sizeof(sub), stdin);\n    sub[strcspn(sub, \"\\n\")] = 0;\n    char mappings[1005][2][10];\n    int mappingsSize = 0;\n    char line[100];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        char oldChar[10], newChar[10];\n        if (sscanf(line, \"%s %s\", oldChar, newChar) == 2) {\n            strcpy(mappings[mappingsSize][0], oldChar);\n            strcpy(mappings[mappingsSize][1], newChar);\n            mappingsSize++;\n        }\n    }\n    matchReplacement(s, sub, mappings, mappingsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Build a mapping from old characters to possible new characters.",
+                "For each position in s, check if sub can match after applying replacements."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Maximum Deletions on a String (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a string s consisting of only lowercase English letters. In one operation, you can:\n\nDelete the entire string s, or\nDelete the first i letters of s if the first i letters of s are equal to the following i letters in s, for any i in the range 1 <= i <= s.length / 2.\n\nReturn the maximum number of operations needed to delete all of s.\n",
+            "examples": "Sample Input\nabcabcdabc\n\nSample Output\n2\n\nExplanation: Delete the first 3 letters (\"abc\") since the next 3 letters are equal. Now, s = \"abcdabc\". Then delete all the letters.\n\nSample Input\naaabaab\n\nSample Output\n4\n\nExplanation: Delete operations: \"a\", \"aab\", \"a\", then all letters.",
+            "constraints": "1 <= s.length <= 4000\ns consists only of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abcabcdabc",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "aaabaab",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "aaaaa",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "abab",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def deleteString(self, s):\n        # TODO: Return maximum number of operations\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.deleteString(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int deleteString(String s) {\n        // TODO: Return maximum number of operations\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.deleteString(s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    deleteString(s) {\n        // TODO: Return maximum number of operations\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.deleteString(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int deleteString(string s) {\n        // TODO: Return maximum number of operations\n        return 0;\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.deleteString(s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid deleteString(char* s) {\n    // TODO: Print maximum number of operations\n}\n\nint main() {\n    char s[4005];\n    scanf(\"%s\", s);\n    deleteString(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming to find the maximum deletions.",
+                "For each position, check if a prefix matches the following substring."
+            ]
+        },
+        {
+            "id": null,
+            "title": "String Transformation (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given two strings s and t of equal length n. You can perform the following operation on the string s:\n\nRemove a suffix of s of length l where 0 < l < n and append it at the start of s.\nFor example, let s = 'abcd' then in one operation you can remove the suffix 'cd' and append it in front of s making s = 'cdab'.\n\nYou are also given an integer k. Return the number of ways in which s can be transformed into t in exactly k operations.\nSince the answer can be large, return it modulo 10^9 + 7.\n",
+            "examples": "Sample Input\nabcd cdab 2\n\nSample Output\n2\n\nExplanation: There are 2 ways to transform s to t in 2 operations.\n\nSample Input\nababab ababab 1\n\nSample Output\n2\n\nExplanation: There are 2 ways to transform s to t in 1 operation.",
+            "constraints": "2 <= s.length <= 5 * 10^5\n1 <= k <= 10^15\ns.length == t.length\ns and t consist of only lowercase English alphabets.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abcd cdab 2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "ababab ababab 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc abc 0",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "abc cba 1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "ab ba 1",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def numberOfWays(self, s, t, k):\n        # TODO: Return number of ways modulo 10^9 + 7\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 3:\n        s, t, k = input_data[0], input_data[1], int(input_data[2])\n        sol = Solution()\n        print(sol.numberOfWays(s, t, k))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long numberOfWays(String s, String t, long k) {\n        // TODO: Return number of ways modulo 10^9 + 7\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 3) {\n            System.out.println(\"0\");\n            return;\n        }\n        String s = parts[0];\n        String t = parts[1];\n        long k = Long.parseLong(parts[2]);\n        Solution sol = new Solution();\n        System.out.println(sol.numberOfWays(s, t, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    numberOfWays(s, t, k) {\n        // TODO: Return number of ways modulo 10^9 + 7\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 3) {\n        console.log(\"0\");\n        return;\n    }\n    const s = parts[0];\n    const t = parts[1];\n    const k = BigInt(parts[2]);\n    const sol = new Solution();\n    console.log(sol.numberOfWays(s, t, k).toString());\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long numberOfWays(string s, string t, long long k) {\n        // TODO: Return number of ways modulo 10^9 + 7\n        return 0;\n    }\n};\n\nint main() {\n    string s, t;\n    long long k;\n    if (cin >> s >> t >> k) {\n        Solution sol;\n        cout << sol.numberOfWays(s, t, k) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid numberOfWays(char* s, char* t, long long k) {\n    // TODO: Print number of ways modulo 10^9 + 7\n}\n\nint main() {\n    char s[500005], t[500005];\n    long long k;\n    if (scanf(\"%s %s %lld\", s, t, &k) == 3) {\n        numberOfWays(s, t, k);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find all positions where s can match t after rotations.",
+                "Use matrix exponentiation or dynamic programming for k operations."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Beautiful Indices in the Given Array I (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed string s, a string a, a string b, and an integer k.\nAn index i is beautiful if:\n\n0 <= i <= s.length - a.length\ns[i..(i + a.length - 1)] == a\nThere exists an index j such that:\n0 <= j <= s.length - b.length\ns[j..(j + b.length - 1)] == b\n|j - i| <= k\n\nReturn a space-separated string of beautiful indices in sorted order. If no beautiful indices exist, return empty string.\n",
+            "examples": "Sample Input\nisawsquirrelnearmysquirrelhouseohmy\nmy\nsquirrel\n15\n\nSample Output\n16 33\n\nExplanation: There are 2 beautiful indices: [16,33].\n\nSample Input\nabcd\na\na\n4\n\nSample Output\n0\n\nExplanation: There is 1 beautiful index: [0].",
+            "constraints": "1 <= k <= s.length <= 10^5\n1 <= a.length, b.length <= 10\ns, a, and b contain only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "isawsquirrelnearmysquirrelhouseohmy\nmy\nsquirrel\n15",
+                    "expectedOutput": "16 33"
+                },
+                {
+                    "input": "abcd\na\na\n4",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "hello\nll\nll\n2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc\nx\ny\n1",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "aaaaa\naa\naa\n1",
+                    "expectedOutput": "0 1 2 3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def beautifulIndices(self, s, a, b, k):\n        # TODO: Return list of beautiful indices\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    s = lines[0] if len(lines) > 0 else \"\"\n    a = lines[1] if len(lines) > 1 else \"\"\n    b = lines[2] if len(lines) > 2 else \"\"\n    k = int(lines[3]) if len(lines) > 3 else 0\n    sol = Solution()\n    result = sol.beautifulIndices(s, a, b, k)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public ArrayList<Integer> beautifulIndices(String s, String a, String b, int k) {\n        // TODO: Return list of beautiful indices\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String a = br.readLine().trim();\n        String b = br.readLine().trim();\n        int k = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        ArrayList<Integer> result = sol.beautifulIndices(s, a, b, k);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    beautifulIndices(s, a, b, k) {\n        // TODO: Return array of beautiful indices\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0] || \"\";\n    const a = lines[1] || \"\";\n    const b = lines[2] || \"\";\n    const k = parseInt(lines[3]) || 0;\n    const sol = new Solution();\n    const result = sol.beautifulIndices(s, a, b, k);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> beautifulIndices(string s, string a, string b, int k) {\n        // TODO: Return vector of beautiful indices\n        return {};\n    }\n};\n\nint main() {\n    string s, a, b;\n    int k;\n    getline(cin, s);\n    getline(cin, a);\n    getline(cin, b);\n    cin >> k;\n    Solution sol;\n    vector<int> result = sol.beautifulIndices(s, a, b, k);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid beautifulIndices(char* s, char* a, char* b, int k) {\n    // TODO: Print beautiful indices\n}\n\nint main() {\n    char s[100005], a[15], b[15];\n    int k;\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    fgets(a, sizeof(a), stdin);\n    a[strcspn(a, \"\\n\")] = 0;\n    fgets(b, sizeof(b), stdin);\n    b[strcspn(b, \"\\n\")] = 0;\n    scanf(\"%d\", &k);\n    beautifulIndices(s, a, b, k);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find all occurrences of string a and string b in s.",
+                "For each occurrence of a, check if there's an occurrence of b within distance k."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Beautiful Indices in the Given Array II (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed string s, a string a, a string b, and an integer k.\nAn index i is beautiful if:\n\n0 <= i <= s.length - a.length\ns[i..(i + a.length - 1)] == a\nThere exists an index j such that:\n0 <= j <= s.length - b.length\ns[j..(j + b.length - 1)] == b\n|j - i| <= k\n\nReturn a space-separated string of beautiful indices in sorted order. If no beautiful indices exist, return empty string.\n",
+            "examples": "Sample Input\nisawsquirrelnearmysquirrelhouseohmy\nmy\nsquirrel\n15\n\nSample Output\n16 33\n\nExplanation: There are 2 beautiful indices: [16,33].\n\nSample Input\nabcd\na\na\n4\n\nSample Output\n0\n\nExplanation: There is 1 beautiful index: [0].",
+            "constraints": "1 <= k <= s.length <= 5 * 10^5\n1 <= a.length, b.length <= 5 * 10^5\ns, a, and b contain only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "isawsquirrelnearmysquirrelhouseohmy\nmy\nsquirrel\n15",
+                    "expectedOutput": "16 33"
+                },
+                {
+                    "input": "abcd\na\na\n4",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "hello\nll\nll\n2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc\nx\ny\n1",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "aaaaa\naa\naa\n1",
+                    "expectedOutput": "0 1 2 3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def beautifulIndices(self, s, a, b, k):\n        # TODO: Return list of beautiful indices\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    s = lines[0] if len(lines) > 0 else \"\"\n    a = lines[1] if len(lines) > 1 else \"\"\n    b = lines[2] if len(lines) > 2 else \"\"\n    k = int(lines[3]) if len(lines) > 3 else 0\n    sol = Solution()\n    result = sol.beautifulIndices(s, a, b, k)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public ArrayList<Integer> beautifulIndices(String s, String a, String b, int k) {\n        // TODO: Return list of beautiful indices\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String a = br.readLine().trim();\n        String b = br.readLine().trim();\n        int k = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        ArrayList<Integer> result = sol.beautifulIndices(s, a, b, k);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    beautifulIndices(s, a, b, k) {\n        // TODO: Return array of beautiful indices\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0] || \"\";\n    const a = lines[1] || \"\";\n    const b = lines[2] || \"\";\n    const k = parseInt(lines[3]) || 0;\n    const sol = new Solution();\n    const result = sol.beautifulIndices(s, a, b, k);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> beautifulIndices(string s, string a, string b, int k) {\n        // TODO: Return vector of beautiful indices\n        return {};\n    }\n};\n\nint main() {\n    string s, a, b;\n    int k;\n    getline(cin, s);\n    getline(cin, a);\n    getline(cin, b);\n    cin >> k;\n    Solution sol;\n    vector<int> result = sol.beautifulIndices(s, a, b, k);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid beautifulIndices(char* s, char* a, char* b, int k) {\n    // TODO: Print beautiful indices\n}\n\nint main() {\n    char s[500005], a[500005], b[500005];\n    int k;\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    fgets(a, sizeof(a), stdin);\n    a[strcspn(a, \"\\n\")] = 0;\n    fgets(b, sizeof(b), stdin);\n    b[strcspn(b, \"\\n\")] = 0;\n    scanf(\"%d\", &k);\n    beautifulIndices(s, a, b, k);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use KMP algorithm for efficient string matching with large constraints.",
+                "For each occurrence of a, check if there's an occurrence of b within distance k."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Minimum Time to Revert Word to Initial State I (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed string word and an integer k.\nAt every second, you must perform the following operations:\n\nRemove the first k characters of word.\nAdd any k characters to the end of word.\n\nNote that you do not necessarily need to add the same characters that you removed. However, you must perform both operations at every second.\nReturn the minimum time greater than zero required for word to revert to its initial state.\n",
+            "examples": "Sample Input\nabacaba 3\n\nSample Output\n2\n\nExplanation: At the 1st second, remove \"aba\" and add \"bac\", word becomes \"cababac\". At the 2nd second, remove \"cab\" and add \"aba\", word becomes \"abacaba\".\n\nSample Input\nabacaba 4\n\nSample Output\n1\n\nExplanation: At the 1st second, remove \"abac\" and add \"caba\", word becomes \"abacaba\".",
+            "constraints": "1 <= word.length <= 50\n1 <= k <= word.length\nword consists only of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abacaba 3",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abacaba 4",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "abcbabcd 2",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abc 1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "aaaaa 1",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minimumTimeToInitialState(self, word, k):\n        # TODO: Return minimum time\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        word, k = input_data[0], int(input_data[1])\n        sol = Solution()\n        print(sol.minimumTimeToInitialState(word, k))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minimumTimeToInitialState(String word, int k) {\n        // TODO: Return minimum time\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        String word = parts[0];\n        int k = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.minimumTimeToInitialState(word, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minimumTimeToInitialState(word, k) {\n        // TODO: Return minimum time\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const word = parts[0];\n    const k = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.minimumTimeToInitialState(word, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minimumTimeToInitialState(string word, int k) {\n        // TODO: Return minimum time\n        return 0;\n    }\n};\n\nint main() {\n    string word;\n    int k;\n    if (cin >> word >> k) {\n        Solution sol;\n        cout << sol.minimumTimeToInitialState(word, k) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid minimumTimeToInitialState(char* word, int k) {\n    // TODO: Print minimum time\n}\n\nint main() {\n    char word[55];\n    int k;\n    if (scanf(\"%s %d\", word, &k) == 2) {\n        minimumTimeToInitialState(word, k);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if the suffix of word matches the prefix after removing k characters each time.",
+                "Use string matching to find when the word returns to its initial state."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Minimum Time to Revert Word to Initial State II (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed string word and an integer k.\nAt every second, you must perform the following operations:\n\nRemove the first k characters of word.\nAdd any k characters to the end of word.\n\nNote that you do not necessarily need to add the same characters that you removed. However, you must perform both operations at every second.\nReturn the minimum time greater than zero required for word to revert to its initial state.\n",
+            "examples": "Sample Input\nabacaba 3\n\nSample Output\n2\n\nExplanation: At the 1st second, remove \"aba\" and add \"bac\", word becomes \"cababac\". At the 2nd second, remove \"cab\" and add \"aba\", word becomes \"abacaba\".\n\nSample Input\nabacaba 4\n\nSample Output\n1\n\nExplanation: At the 1st second, remove \"abac\" and add \"caba\", word becomes \"abacaba\".",
+            "constraints": "1 <= word.length <= 10^6\n1 <= k <= word.length\nword consists only of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abacaba 3",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abacaba 4",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "abcbabcd 2",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abc 1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "aaaaa 1",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minimumTimeToInitialState(self, word, k):\n        # TODO: Return minimum time\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        word, k = input_data[0], int(input_data[1])\n        sol = Solution()\n        print(sol.minimumTimeToInitialState(word, k))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minimumTimeToInitialState(String word, int k) {\n        // TODO: Return minimum time\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        String word = parts[0];\n        int k = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.minimumTimeToInitialState(word, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minimumTimeToInitialState(word, k) {\n        // TODO: Return minimum time\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const word = parts[0];\n    const k = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.minimumTimeToInitialState(word, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minimumTimeToInitialState(string word, int k) {\n        // TODO: Return minimum time\n        return 0;\n    }\n};\n\nint main() {\n    string word;\n    int k;\n    if (cin >> word >> k) {\n        Solution sol;\n        cout << sol.minimumTimeToInitialState(word, k) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid minimumTimeToInitialState(char* word, int k) {\n    // TODO: Print minimum time\n}\n\nint main() {\n    char word[1000005];\n    int k;\n    if (scanf(\"%s %d\", word, &k) == 2) {\n        minimumTimeToInitialState(word, k);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use KMP algorithm to efficiently find matching prefixes and suffixes.",
+                "Check if the suffix of word matches the prefix after removing k characters each time."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Number of Subarrays That Match a Pattern I (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed integer array nums of size n, and a 0-indexed integer array pattern of size m consisting of integers -1, 0, and 1.\nA subarray nums[i..j] of size m + 1 is said to match the pattern if the following conditions hold for each element pattern[k]:\n\nnums[i + k + 1] > nums[i + k] if pattern[k] == 1.\nnums[i + k + 1] == nums[i + k] if pattern[k] == 0.\nnums[i + k + 1] < nums[i + k] if pattern[k] == -1.\n\nReturn the count of subarrays in nums that match the pattern.\n",
+            "examples": "Sample Input\n1 2 3 4 5 6\n1 1\n\nSample Output\n4\n\nExplanation: The pattern [1,1] indicates strictly increasing subarrays of size 3. Subarrays [1,2,3], [2,3,4], [3,4,5], and [4,5,6] match.\n\nSample Input\n1 4 4 1 3 5 5 3\n1 0 -1\n\nSample Output\n2\n\nExplanation: Subarrays [1,4,4,1] and [3,5,5,3] match the pattern.",
+            "constraints": "2 <= n == nums.length <= 100\n1 <= nums[i] <= 10^9\n1 <= m == pattern.length < n\n-1 <= pattern[i] <= 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 2 3 4 5 6\n1 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 4 4 1 3 5 5 3\n1 0 -1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1 2\n1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5 4 3 2 1\n-1 -1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 1 1 1\n0 0",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countMatchingSubarrays(self, nums, pattern):\n        # TODO: Return count of matching subarrays\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    nums = list(map(int, lines[0].split())) if len(lines) > 0 else []\n    pattern = list(map(int, lines[1].split())) if len(lines) > 1 else []\n    sol = Solution()\n    print(sol.countMatchingSubarrays(nums, pattern))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countMatchingSubarrays(int[] nums, int[] pattern) {\n        // TODO: Return count of matching subarrays\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] numsStr = br.readLine().trim().split(\" \");\n        int[] nums = new int[numsStr.length];\n        for (int i = 0; i < numsStr.length; i++) {\n            nums[i] = Integer.parseInt(numsStr[i]);\n        }\n        String[] patternStr = br.readLine().trim().split(\" \");\n        int[] pattern = new int[patternStr.length];\n        for (int i = 0; i < patternStr.length; i++) {\n            pattern[i] = Integer.parseInt(patternStr[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.countMatchingSubarrays(nums, pattern));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countMatchingSubarrays(nums, pattern) {\n        // TODO: Return count of matching subarrays\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const nums = lines[0] ? lines[0].split(/\\s+/).map(Number) : [];\n    const pattern = lines[1] ? lines[1].split(/\\s+/).map(Number) : [];\n    const sol = new Solution();\n    console.log(sol.countMatchingSubarrays(nums, pattern));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countMatchingSubarrays(vector<int>& nums, vector<int>& pattern) {\n        // TODO: Return count of matching subarrays\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss1(line);\n    vector<int> nums;\n    int num;\n    while (iss1 >> num) {\n        nums.push_back(num);\n    }\n    getline(cin, line);\n    istringstream iss2(line);\n    vector<int> pattern;\n    while (iss2 >> num) {\n        pattern.push_back(num);\n    }\n    Solution sol;\n    cout << sol.countMatchingSubarrays(nums, pattern) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid countMatchingSubarrays(int* nums, int numsSize, int* pattern, int patternSize) {\n    // TODO: Print count of matching subarrays\n}\n\nint main() {\n    int nums[105], pattern[105];\n    int numsSize = 0, patternSize = 0;\n    char line[1000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    fgets(line, sizeof(line), stdin);\n    token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        pattern[patternSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    countMatchingSubarrays(nums, numsSize, pattern, patternSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Convert the array differences to a pattern string.",
+                "Use string matching algorithm to find all occurrences of the pattern."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Number of Subarrays That Match a Pattern II (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed integer array nums of size n, and a 0-indexed integer array pattern of size m consisting of integers -1, 0, and 1.\nA subarray nums[i..j] of size m + 1 is said to match the pattern if the following conditions hold for each element pattern[k]:\n\nnums[i + k + 1] > nums[i + k] if pattern[k] == 1.\nnums[i + k + 1] == nums[i + k] if pattern[k] == 0.\nnums[i + k + 1] < nums[i + k] if pattern[k] == -1.\n\nReturn the count of subarrays in nums that match the pattern.\n",
+            "examples": "Sample Input\n1 2 3 4 5 6\n1 1\n\nSample Output\n4\n\nExplanation: The pattern [1,1] indicates strictly increasing subarrays of size 3. Subarrays [1,2,3], [2,3,4], [3,4,5], and [4,5,6] match.\n\nSample Input\n1 4 4 1 3 5 5 3\n1 0 -1\n\nSample Output\n2\n\nExplanation: Subarrays [1,4,4,1] and [3,5,5,3] match the pattern.",
+            "constraints": "2 <= n == nums.length <= 10^6\n1 <= nums[i] <= 10^9\n1 <= m == pattern.length < n\n-1 <= pattern[i] <= 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "1 2 3 4 5 6\n1 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 4 4 1 3 5 5 3\n1 0 -1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1 2\n1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5 4 3 2 1\n-1 -1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 1 1 1\n0 0",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countMatchingSubarrays(self, nums, pattern):\n        # TODO: Return count of matching subarrays\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    nums = list(map(int, lines[0].split())) if len(lines) > 0 else []\n    pattern = list(map(int, lines[1].split())) if len(lines) > 1 else []\n    sol = Solution()\n    print(sol.countMatchingSubarrays(nums, pattern))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countMatchingSubarrays(int[] nums, int[] pattern) {\n        // TODO: Return count of matching subarrays\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] numsStr = br.readLine().trim().split(\" \");\n        int[] nums = new int[numsStr.length];\n        for (int i = 0; i < numsStr.length; i++) {\n            nums[i] = Integer.parseInt(numsStr[i]);\n        }\n        String[] patternStr = br.readLine().trim().split(\" \");\n        int[] pattern = new int[patternStr.length];\n        for (int i = 0; i < patternStr.length; i++) {\n            pattern[i] = Integer.parseInt(patternStr[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.countMatchingSubarrays(nums, pattern));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countMatchingSubarrays(nums, pattern) {\n        // TODO: Return count of matching subarrays\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const nums = lines[0] ? lines[0].split(/\\s+/).map(Number) : [];\n    const pattern = lines[1] ? lines[1].split(/\\s+/).map(Number) : [];\n    const sol = new Solution();\n    console.log(sol.countMatchingSubarrays(nums, pattern));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countMatchingSubarrays(vector<int>& nums, vector<int>& pattern) {\n        // TODO: Return count of matching subarrays\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss1(line);\n    vector<int> nums;\n    int num;\n    while (iss1 >> num) {\n        nums.push_back(num);\n    }\n    getline(cin, line);\n    istringstream iss2(line);\n    vector<int> pattern;\n    while (iss2 >> num) {\n        pattern.push_back(num);\n    }\n    Solution sol;\n    cout << sol.countMatchingSubarrays(nums, pattern) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid countMatchingSubarrays(int* nums, int numsSize, int* pattern, int patternSize) {\n    // TODO: Print count of matching subarrays\n}\n\nint main() {\n    int nums[1000005], pattern[1000005];\n    int numsSize = 0, patternSize = 0;\n    char line[1000000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    fgets(line, sizeof(line), stdin);\n    token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        pattern[patternSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    countMatchingSubarrays(nums, numsSize, pattern, patternSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Convert the array differences to a pattern string.",
+                "Use KMP algorithm for efficient string matching with large constraints."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Count Prefix and Suffix Pairs I (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed string array words.\nLet's define a boolean function isPrefixAndSuffix that takes two strings, str1 and str2:\n\nisPrefixAndSuffix(str1, str2) returns true if str1 is both a prefix and a suffix of str2, and false otherwise.\n\nFor example, isPrefixAndSuffix(\"aba\", \"ababa\") is true because \"aba\" is a prefix of \"ababa\" and also a suffix, but isPrefixAndSuffix(\"abc\", \"abcd\") is false.\nReturn an integer denoting the number of index pairs (i, j) such that i < j, and isPrefixAndSuffix(words[i], words[j]) is true.\n",
+            "examples": "Sample Input\na aba ababa aa\n\nSample Output\n4\n\nExplanation: The counted index pairs are: (0,1), (0,2), (0,3), and (1,2).\n\nSample Input\npa papa ma mama\n\nSample Output\n2\n\nExplanation: The counted index pairs are: (0,1) and (2,3).",
+            "constraints": "1 <= words.length <= 50\n1 <= words[i].length <= 10\nwords[i] consists only of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "a aba ababa aa",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "pa papa ma mama",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abab ab",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "a ab abc abcd",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "aba ababa abababa",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countPrefixSuffixPairs(self, words):\n        # TODO: Return count of prefix-suffix pairs\n        pass\n\nif __name__ == '__main__':\n    import sys\n    words = sys.stdin.read().strip().split()\n    sol = Solution()\n    print(sol.countPrefixSuffixPairs(words))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countPrefixSuffixPairs(String[] words) {\n        // TODO: Return count of prefix-suffix pairs\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        System.out.println(sol.countPrefixSuffixPairs(words));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countPrefixSuffixPairs(words) {\n        // TODO: Return count of prefix-suffix pairs\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const words = input.trim().split(/\\s+/);\n    const sol = new Solution();\n    console.log(sol.countPrefixSuffixPairs(words));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countPrefixSuffixPairs(vector<string>& words) {\n        // TODO: Return count of prefix-suffix pairs\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    Solution sol;\n    cout << sol.countPrefixSuffixPairs(words) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid countPrefixSuffixPairs(char** words, int wordsSize) {\n    // TODO: Print count of prefix-suffix pairs\n}\n\nint main() {\n    char line[505];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* words[55];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    countPrefixSuffixPairs(words, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each pair (i, j) where i < j, check if words[i] is both prefix and suffix of words[j].",
+                "Use string comparison to check prefix and suffix conditions."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Count Prefix and Suffix Pairs II (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a 0-indexed string array words.\nLet's define a boolean function isPrefixAndSuffix that takes two strings, str1 and str2:\n\nisPrefixAndSuffix(str1, str2) returns true if str1 is both a prefix and a suffix of str2, and false otherwise.\n\nFor example, isPrefixAndSuffix(\"aba\", \"ababa\") is true because \"aba\" is a prefix of \"ababa\" and also a suffix, but isPrefixAndSuffix(\"abc\", \"abcd\") is false.\nReturn an integer denoting the number of index pairs (i, j) such that i < j, and isPrefixAndSuffix(words[i], words[j]) is true.\n",
+            "examples": "Sample Input\na aba ababa aa\n\nSample Output\n4\n\nExplanation: The counted index pairs are: (0,1), (0,2), (0,3), and (1,2).\n\nSample Input\npa papa ma mama\n\nSample Output\n2\n\nExplanation: The counted index pairs are: (0,1) and (2,3).",
+            "constraints": "1 <= words.length <= 10^5\n1 <= words[i].length <= 10^5\nwords[i] consists only of lowercase English letters.\nThe sum of the lengths of all words[i] does not exceed 5 * 10^5.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "a aba ababa aa",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "pa papa ma mama",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abab ab",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "a ab abc abcd",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "aba ababa abababa",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countPrefixSuffixPairs(self, words):\n        # TODO: Return count of prefix-suffix pairs\n        pass\n\nif __name__ == '__main__':\n    import sys\n    words = sys.stdin.read().strip().split()\n    sol = Solution()\n    print(sol.countPrefixSuffixPairs(words))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public long countPrefixSuffixPairs(String[] words) {\n        // TODO: Return count of prefix-suffix pairs\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        System.out.println(sol.countPrefixSuffixPairs(words));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countPrefixSuffixPairs(words) {\n        // TODO: Return count of prefix-suffix pairs\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const words = input.trim().split(/\\s+/);\n    const sol = new Solution();\n    console.log(sol.countPrefixSuffixPairs(words));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long countPrefixSuffixPairs(vector<string>& words) {\n        // TODO: Return count of prefix-suffix pairs\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    Solution sol;\n    cout << sol.countPrefixSuffixPairs(words) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid countPrefixSuffixPairs(char** words, int wordsSize) {\n    // TODO: Print count of prefix-suffix pairs\n}\n\nint main() {\n    char line[500005];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* words[100005];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    countPrefixSuffixPairs(words, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Trie or hash-based approach for efficient prefix-suffix matching.",
+                "For each word, check if any previous word is both prefix and suffix of current word."
+            ]
+        }
+    ]
+}

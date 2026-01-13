@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Bitwise AND of Numbers Range (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven two integers left and right that represent the range [left, right], return the bitwise AND of all numbers in this range, inclusive.\n",
+            "examples": "Sample Input\n5 7\n\nSample Output\n4\n\nExplanation: The bitwise AND of 5, 6, and 7 is 4.\n\nSample Input\n0 0\n\nSample Output\n0\n\nExplanation: The bitwise AND of 0 is 0.\n\nSample Input\n1 2147483647\n\nSample Output\n0\n\nExplanation: The bitwise AND of all numbers in this large range is 0.",
+            "constraints": "0 <= left <= right <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5 7",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "100 105",
+                    "expectedOutput": "96"
+                },
+                {
+                    "input": "16 31",
+                    "expectedOutput": "16"
+                },
+                {
+                    "input": "8 12",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "0 0",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def rangeBitwiseAnd(self, left, right):\n        # TODO: Return bitwise AND of all numbers in range [left, right]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        left, right = int(input_data[0]), int(input_data[1])\n        sol = Solution()\n        print(sol.rangeBitwiseAnd(left, right))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int rangeBitwiseAnd(int left, int right) {\n        // TODO: Return bitwise AND of all numbers in range [left, right]\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        int left = Integer.parseInt(parts[0]);\n        int right = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.rangeBitwiseAnd(left, right));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    rangeBitwiseAnd(left, right) {\n        // TODO: Return bitwise AND of all numbers in range [left, right]\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const left = parseInt(parts[0]);\n    const right = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.rangeBitwiseAnd(left, right));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int rangeBitwiseAnd(int left, int right) {\n        // TODO: Return bitwise AND of all numbers in range [left, right]\n        return 0;\n    }\n};\n\nint main() {\n    int left, right;\n    if (cin >> left >> right) {\n        Solution sol;\n        cout << sol.rangeBitwiseAnd(left, right) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid rangeBitwiseAnd(int left, int right) {\n    // TODO: Print bitwise AND of all numbers in range [left, right]\n}\n\nint main() {\n    int left, right;\n    if (scanf(\"%d %d\", &left, &right) == 2) {\n        rangeBitwiseAnd(left, right);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the common prefix of left and right in binary representation.",
+                "Right shift both numbers until they are equal, then left shift back."
+            ]
+        }
+    ]
+}
+

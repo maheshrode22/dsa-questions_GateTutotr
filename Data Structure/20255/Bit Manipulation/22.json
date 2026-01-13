@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Android Unlock Patterns (Bit Manipulation)",
+            "description": "Problem Statement\n\nAndroid devices have a special lock screen with a 3 x 3 grid of dots. Users can set an \"unlock pattern\" by connecting the dots in a specific sequence, forming a series of joined line segments where each segment's endpoints are two consecutive dots in the sequence. A sequence of k dots is a valid unlock pattern if both of the following are true:\n\nAll the dots in the sequence are distinct.\nIf the line segment connecting two consecutive dots in the sequence passes through the center of any other dot, the other dot must have previously appeared in the sequence. No jumps through the center non-selected dots are allowed.\n\nFor example, connecting dots 2 and 9 without dots 5 or 6 appearing beforehand is valid because the line from dot 2 to dot 9 does not pass through the center of either dot 5 or 6.\nHowever, connecting dots 1 and 3 without dot 2 appearing beforehand is invalid because the line from dot 1 to dot 3 passes through the center of dot 2.\n\nGiven two integers m and n, return the number of unique and valid unlock patterns of the Android grid lock screen that consist of at least m keys and at most n keys.\nTwo unlock patterns are considered unique if there is a dot in one sequence that is not in the other, or the order of the dots is different.\n",
+            "examples": "Sample Input\n1 1\n\nSample Output\n9\n\nExplanation: There are 9 patterns of length 1.\n\nSample Input\n1 2\n\nSample Output\n65\n\nExplanation: There are 9 patterns of length 1 and 56 patterns of length 2, total 65.",
+            "constraints": "1 <= m, n <= 9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 1",
+                    "expectedOutput": "9"
+                },
+                {
+                    "input": "1 2",
+                    "expectedOutput": "65"
+                },
+                {
+                    "input": "2 2",
+                    "expectedOutput": "56"
+                },
+                {
+                    "input": "4 4",
+                    "expectedOutput": "1624"
+                },
+                {
+                    "input": "4 5",
+                    "expectedOutput": "8776"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def numberOfPatterns(self, m, n):\n        # TODO: Return number of unique valid unlock patterns\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        m, n = int(input_data[0]), int(input_data[1])\n        sol = Solution()\n        print(sol.numberOfPatterns(m, n))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int numberOfPatterns(int m, int n) {\n        // TODO: Return number of unique valid unlock patterns\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        int m = Integer.parseInt(parts[0]);\n        int n = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.numberOfPatterns(m, n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    numberOfPatterns(m, n) {\n        // TODO: Return number of unique valid unlock patterns\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const m = parseInt(parts[0]);\n    const n = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.numberOfPatterns(m, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int numberOfPatterns(int m, int n) {\n        // TODO: Return number of unique valid unlock patterns\n        return 0;\n    }\n};\n\nint main() {\n    int m, n;\n    if (cin >> m >> n) {\n        Solution sol;\n        cout << sol.numberOfPatterns(m, n) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid numberOfPatterns(int m, int n) {\n    // TODO: Print number of unique valid unlock patterns\n}\n\nint main() {\n    int m, n;\n    if (scanf(\"%d %d\", &m, &n) == 2) {\n        numberOfPatterns(m, n);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking with bit manipulation to track visited dots.",
+                "Check if a move is valid by ensuring intermediate dots are already visited when needed."
+            ]
+        }
+    ]
+}
+

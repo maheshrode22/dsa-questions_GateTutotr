@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Partition to K Equal Sum Subsets (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums and an integer k, return true if it is possible to divide this array into k non-empty subsets whose sums are all equal.\n",
+            "examples": "Sample Input\n4 3 2 3 5 2 1\n4\n\nSample Output\nTrue\n\nExplanation: It is possible to divide it into 4 subsets (5), (1, 4), (2,3), (2,3) with equal sums.\n\nSample Input\n1 2 3 4\n3\n\nSample Output\nFalse\n\nExplanation: It is not possible to divide the array into 3 equal sum subsets.",
+            "constraints": "1 <= k <= nums.length <= 16\n1 <= nums[i] <= 10^4\nThe frequency of each element is in the range [1, 4].",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 3 2 3 5 2 1\n4",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1 2 3 4\n3",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1\n2",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1 2 3 4 5 6 7 8\n4",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "2 2 2 2 3 4 5\n4",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def canPartitionKSubsets(self, nums, k):\n        # TODO: Return True if nums can be partitioned into k equal sum subsets\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    nums = list(map(int, lines[0].split()))\n    k = int(lines[1]) if len(lines) > 1 else 0\n    sol = Solution()\n    result = sol.canPartitionKSubsets(nums, k)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean canPartitionKSubsets(int[] nums, int k) {\n        // TODO: Return true if nums can be partitioned into k equal sum subsets\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        int k = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.canPartitionKSubsets(nums, k) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    canPartitionKSubsets(nums, k) {\n        // TODO: Return true if nums can be partitioned into k equal sum subsets\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const nums = lines[0].split(/\\s+/).map(Number);\n    const k = parseInt(lines[1] || '0');\n    const sol = new Solution();\n    const result = sol.canPartitionKSubsets(nums, k);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool canPartitionKSubsets(vector<int>& nums, int k) {\n        // TODO: Return true if nums can be partitioned into k equal sum subsets\n        return false;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    int k;\n    cin >> k;\n    Solution sol;\n    cout << (sol.canPartitionKSubsets(nums, k) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <stdlib.h>\n\nvoid canPartitionKSubsets(int* nums, int numsSize, int k) {\n    // TODO: Print \"True\" if nums can be partitioned into k equal sum subsets, else \"False\"\n}\n\nint main() {\n    int nums[17];\n    int numsSize = 0;\n    char line[1000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    int k;\n    scanf(\"%d\", &k);\n    canPartitionKSubsets(nums, numsSize, k);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Calculate target sum = total_sum / k. Use backtracking with bit manipulation to track which elements are used.",
+                "Try to fill each subset one by one, ensuring each subset sums to target."
+            ]
+        }
+    ]
+}
+

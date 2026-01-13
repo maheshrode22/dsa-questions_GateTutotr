@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "New 21 Game (Sliding Window)",
+      "description": "Alice plays a game where she starts with 0 points and draws numbers while she has less than k points. During each draw, she gains an integer number of points randomly from [1, maxPts]. Return the probability that Alice has n or fewer points. Answers within 10^-5 are considered accepted.\n\nInput Format:\nFirst line: three integers n, k, and maxPts.\n\nOutput Format:\nPrint the probability formatted to 5 decimal places.",
+      "examples": "Sample Input\n10 1 10\n\nSample Output\n1.00000",
+      "constraints": "See problem description.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "10 1 10",
+          "expectedOutput": "1.00000"
+        },
+        {
+          "input": "6 1 10",
+          "expectedOutput": "0.60000"
+        },
+        {
+          "input": "21 17 10",
+          "expectedOutput": "0.73278"
+        },
+        {
+          "input": "0 0 1",
+          "expectedOutput": "1.00000"
+        },
+        {
+          "input": "10 10 10",
+          "expectedOutput": "0.23579"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def new21Game(self, n, k, maxPts):\n        # TODO: Return the probability that Alice has n or fewer points\n        pass\n\nif __name__ == '__main__':\n    n, k, maxPts = map(int, input().split())\n    sol = Solution()\n    print(f'{sol.new21Game(n, k, maxPts):.5f}')"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public double new21Game(int n, int k, int maxPts) {\n        // TODO: Return the probability that Alice has n or fewer points\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int k = sc.nextInt();\n        int maxPts = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.printf(\"%.5f\\n\", sol.new21Game(n, k, maxPts));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    new21Game(n, k, maxPts) {\n        // TODO: Return the probability that Alice has n or fewer points\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const line = fs.readFileSync(0, 'utf-8').trim();\n    const [n, k, maxPts] = line.split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.new21Game(n, k, maxPts).toFixed(5));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    double new21Game(int n, int k, int maxPts) {\n        // TODO: Return the probability that Alice has n or fewer points\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, k, maxPts;\n    cin >> n >> k >> maxPts;\n    Solution sol;\n    printf(\"%.5f\\n\", sol.new21Game(n, k, maxPts));\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    int n, k, maxPts;\n    scanf(\"%d %d %d\", &n, &k, &maxPts);\n    // TODO: Return the probability that Alice has n or fewer points\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

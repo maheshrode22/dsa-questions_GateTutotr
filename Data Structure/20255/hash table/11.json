@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Linked List Cycle (Hash Table)",
+            "description": "Problem Statement\n\nGiven head, the head of a linked list, determine if the linked list has a cycle in it.\nThere is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer.\nReturn true if there is a cycle in the linked list. Otherwise, return false.\n",
+            "examples": "Example 1:\n\nInput: head = [3,2,0,-4], pos = 1\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).\n\nExample 2:\n\nInput: head = [1,2], pos = 0\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 0th node.\n\nExample 3:\n\nInput: head = [1], pos = -1\nOutput: false\nExplanation: There is no cycle in the linked list.",
+            "constraints": "The number of the nodes in the list is in the range [0, 10^4]\n-10^5 <= Node.val <= 10^5\npos is -1 or a valid index in the linked-list",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "4 1\n3 2 0 -4",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2 0\n1 2",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "1 -1\n1",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "0 -1",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "5 -1\n1 2 3 4 5",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\nclass Solution:\n    def hasCycle(self, head):\n        # TODO: Use hash set to detect cycle in linked list\n        # Return True if cycle exists, False otherwise\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    parts = data[0].split()\n    n, pos = int(parts[0]), int(parts[1])\n    if n == 0:\n        print(\"false\")\n    else:\n        vals = list(map(int, data[1].split()))\n        nodes = [ListNode(val) for val in vals]\n        for i in range(n-1):\n            nodes[i].next = nodes[i+1]\n        if pos >= 0:\n            nodes[n-1].next = nodes[pos]\n        sol = Solution()\n        result = sol.hasCycle(nodes[0])\n        print(\"true\" if result else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass ListNode{\n    int val;\n    ListNode next;\n    ListNode(int val){ this.val = val; }\n}\nclass Solution{\n    boolean hasCycle(ListNode head){\n        // TODO: Use hash set to detect cycle in linked list\n        // Return true if cycle exists, false otherwise\n        return false;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int pos = Integer.parseInt(parts[1]);\n        if(n == 0){\n            System.out.println(\"false\");\n        } else {\n            String[] vals = br.readLine().trim().split(\" \");\n            ListNode[] nodes = new ListNode[n];\n            for(int i=0;i<n;i++) nodes[i] = new ListNode(Integer.parseInt(vals[i]));\n            for(int i=0;i<n-1;i++) nodes[i].next = nodes[i+1];\n            if(pos >= 0) nodes[n-1].next = nodes[pos];\n            Solution sol = new Solution();\n            boolean result = sol.hasCycle(nodes[0]);\n            System.out.println(result ? \"true\" : \"false\");\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class ListNode{\n  constructor(val, next=null){\n    this.val = val;\n    this.next = next;\n  }\n}\nclass Solution{\n  hasCycle(head){\n    // TODO: Use hash set to detect cycle in linked list\n    // Return true if cycle exists, false otherwise\n    return false;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const [n, pos] = lines[0].split(\" \").map(Number);\n  if(n === 0){\n    console.log(\"false\");\n  } else {\n    const vals = lines[1].split(\" \").map(Number);\n    const nodes = vals.map(val => new ListNode(val));\n    for(let i=0;i<n-1;i++) nodes[i].next = nodes[i+1];\n    if(pos >= 0) nodes[n-1].next = nodes[pos];\n    const sol = new Solution();\n    const result = sol.hasCycle(nodes[0]);\n    console.log(result ? \"true\" : \"false\");\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{\n    int val;\n    ListNode *next;\n    ListNode(int x) : val(x), next(NULL) {}\n};\nclass Solution{\npublic:\n    bool hasCycle(ListNode *head){\n        // TODO: Use hash set to detect cycle in linked list\n        // Return true if cycle exists, false otherwise\n        return false;\n    }\n};\nint main(){\n    int n, pos; cin >> n >> pos;\n    if(n == 0){\n        cout << \"false\";\n    } else {\n        vector<ListNode*> nodes(n);\n        for(int i=0;i<n;i++){\n            int val; cin >> val;\n            nodes[i] = new ListNode(val);\n        }\n        for(int i=0;i<n-1;i++) nodes[i]->next = nodes[i+1];\n        if(pos >= 0) nodes[n-1]->next = nodes[pos];\n        Solution sol;\n        bool result = sol.hasCycle(nodes[0]);\n        cout << (result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\ntypedef struct ListNode{\n    int val;\n    struct ListNode *next;\n} ListNode;\n\nbool hasCycle(ListNode *head){\n    // TODO: Detect cycle in linked list\n    // Return true if cycle exists, false otherwise\n    return false;\n}\n\nint main(){\n    int n, pos; scanf(\"%d %d\", &n, &pos);\n    if(n == 0){\n        printf(\"false\");\n    } else {\n        ListNode* nodes[10000];\n        for(int i=0;i<n;i++){\n            int val; scanf(\"%d\", &val);\n            nodes[i] = (ListNode*)malloc(sizeof(ListNode));\n            nodes[i]->val = val;\n            nodes[i]->next = NULL;\n        }\n        for(int i=0;i<n-1;i++) nodes[i]->next = nodes[i+1];\n        if(pos >= 0) nodes[n-1]->next = nodes[pos];\n        bool result = hasCycle(nodes[0]);\n        printf(\"%s\", result ? \"true\" : \"false\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to store visited nodes. If you encounter a node already in the set, there's a cycle.",
+                "Alternative approach: Use Floyd's cycle detection (two pointers - slow and fast)."
+            ]
+        }
+    ]
+}

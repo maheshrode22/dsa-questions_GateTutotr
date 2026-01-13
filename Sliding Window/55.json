@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Number of Occurrences of a Substring (Sliding Window)",
+            "description": "Given a string s, return the maximum number of occurrences of any substring under the following rules:\n1. The number of unique characters in the substring must be less than or equal to maxLetters.\n2. The substring size must be between minSize and maxSize inclusive.\n\nInput Format:\nFirst line: string s.\nSecond line: three integers maxLetters, minSize, maxSize.\n\nOutput Format:\nPrint a single integer: the maximum number of occurrences.",
+            "examples": "Sample Input\naababcaab\n2 3 4\n\nSample Output\n2\n\nExplanation: Substring \"aab\" has 2 occurrences.",
+            "constraints": "1 <= s.length <= 10^5\n1 <= maxLetters <= 26\n1 <= minSize <= maxSize <= min(26, s.length)",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "aababcaab\n2 3 4",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "aaaa\n1 3 3",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abacedfbaaaafadccefffcbefeaab\n1 3 6",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "afabaeadbdacedfdacbdffefebbddaaabfaddbfedcafaecacb\n6 3 7",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "acbbececfbcdafabacdfaadceefd\n6 2 6",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxFreq(self, s, maxLetters, minSize, maxSize):\n        # TODO: Return the maximum number of occurrences\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    maxLetters, minSize, maxSize = map(int, input().split())\n    sol = Solution()\n    print(sol.maxFreq(s, maxLetters, minSize, maxSize))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int maxFreq(String s, int maxLetters, int minSize, int maxSize) {\n        // TODO: Return the maximum number of occurrences\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.next();\n        int maxLetters = sc.nextInt();\n        int minSize = sc.nextInt();\n        int maxSize = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.maxFreq(s, maxLetters, minSize, maxSize));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxFreq(s, maxLetters, minSize, maxSize) {\n        // TODO: Return the maximum number of occurrences\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst s = input[0].trim();\nconst [maxLetters, minSize, maxSize] = input[1].split(' ').map(Number);\nconst sol = new Solution();\nconsole.log(sol.maxFreq(s, maxLetters, minSize, maxSize));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxFreq(string s, int maxLetters, int minSize, int maxSize) {\n        // TODO: Return the maximum number of occurrences\n        return 0;\n    }\n};\n\nint main() {\n    string s;\n    int maxLetters, minSize, maxSize;\n    cin >> s >> maxLetters >> minSize >> maxSize;\n    Solution sol;\n    cout << sol.maxFreq(s, maxLetters, minSize, maxSize) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint maxFreq(char* s, int maxLetters, int minSize, int maxSize) {\n    // TODO: Return the maximum number of occurrences\n    return 0;\n}\n\nint main() {\n    char s[100005];\n    int maxLetters, minSize, maxSize;\n    scanf(\"%s\", s);\n    scanf(\"%d %d %d\", &maxLetters, &minSize, &maxSize);\n    printf(\"%d\\n\", maxFreq(s, maxLetters, minSize, maxSize));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Focus on substrings of length minSize only, as they cover all valid occurrences.",
+                "Use a hash map to count occurrences of valid substrings."
+            ]
+        }
+    ]
+}

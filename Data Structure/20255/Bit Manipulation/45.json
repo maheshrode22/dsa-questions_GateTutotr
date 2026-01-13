@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "IP to CIDR (Bit Manipulation)",
+            "description": "Problem Statement\n\nAn IP address is a formatted 32-bit unsigned integer where each group of 8 bits is printed as a decimal number and the dot character '.' splits the groups.\nA CIDR block is a format used to denote a specific set of IP addresses. It is a string consisting of a base IP address, followed by a slash, followed by a prefix length k. The addresses it covers are all the IPs whose first k bits are the same as the base IP address.\nYou are given a start IP address ip and the number of IP addresses we need to cover n. Your goal is to use as few CIDR blocks as possible to cover all the IP addresses in the inclusive range [ip, ip + n - 1] exactly. No other IP addresses outside of the range should be covered.\nReturn the shortest list of CIDR blocks that covers the range of IP addresses. If there are multiple answers, return any of them.\n",
+            "examples": "Sample Input\n255.0.0.7\n10\n\nSample Output\n255.0.0.7/32\n255.0.0.8/29\n255.0.0.16/32\n\nExplanation:\nThe IP addresses that need to be covered are:\n- 255.0.0.7 through 255.0.0.16\n\nThe CIDR block \"255.0.0.7/32\" covers the first address.\nThe CIDR block \"255.0.0.8/29\" covers the middle 8 addresses.\nThe CIDR block \"255.0.0.16/32\" covers the last address.\n\nSample Input\n117.145.102.62\n8\n\nSample Output\n117.145.102.62/31\n117.145.102.64/30\n117.145.102.68/31",
+            "constraints": "7 <= ip.length <= 15\nip is a valid IPv4 on the form \"a.b.c.d\" where a, b, c, and d are integers in the range [0, 255].\n1 <= n <= 1000\nEvery implied address ip + x (for x < n) will be a valid IPv4 address.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1.2.3.4\n4",
+                    "expectedOutput": "1.2.3.4/30"
+                },
+                {
+                    "input": "192.168.1.1\n1",
+                    "expectedOutput": "192.168.1.1/32"
+                },
+                {
+                    "input": "192.168.1.0\n16",
+                    "expectedOutput": "192.168.1.0/28"
+                },
+                {
+                    "input": "255.255.255.252\n4",
+                    "expectedOutput": "255.255.255.252/30"
+                },
+                {
+                    "input": "117.145.102.62\n8",
+                    "expectedOutput": "117.145.102.62/31\n117.145.102.64/30\n117.145.102.68/31"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def ipToCIDR(self, ip, n):\n        # TODO: Return list of CIDR blocks covering [ip, ip + n - 1]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    ip = lines[0]\n    n = int(lines[1]) if len(lines) > 1 else 0\n    sol = Solution()\n    result = sol.ipToCIDR(ip, n)\n    for cidr in result:\n        print(cidr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> ipToCIDR(String ip, int n) {\n        // TODO: Return list of CIDR blocks covering [ip, ip + n - 1]\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String ip = br.readLine().trim();\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        List<String> result = sol.ipToCIDR(ip, n);\n        for (String cidr : result) {\n            System.out.println(cidr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    ipToCIDR(ip, n) {\n        // TODO: Return list of CIDR blocks covering [ip, ip + n - 1]\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const ip = lines[0];\n    const n = parseInt(lines[1] || '0');\n    const sol = new Solution();\n    const result = sol.ipToCIDR(ip, n);\n    for (const cidr of result) {\n        console.log(cidr);\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> ipToCIDR(string ip, int n) {\n        // TODO: Return list of CIDR blocks covering [ip, ip + n - 1]\n        return {};\n    }\n};\n\nint main() {\n    string ip;\n    getline(cin, ip);\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<string> result = sol.ipToCIDR(ip, n);\n    for (const string& cidr : result) {\n        cout << cidr << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid ipToCIDR(char* ip, int n) {\n    // TODO: Print CIDR blocks covering [ip, ip + n - 1] (one per line)\n}\n\nint main() {\n    char ip[20];\n    fgets(ip, sizeof(ip), stdin);\n    ip[strcspn(ip, \"\\n\")] = 0;\n    int n;\n    scanf(\"%d\", &n);\n    ipToCIDR(ip, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Convert IP address to integer, then use bit manipulation to find the largest power of 2 that fits.",
+                "For each remaining range, find the longest prefix that covers as many addresses as possible without exceeding the range."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Rotate String (String Algorithm)",
+            "description": "Problem Statement\n\nGiven two strings s and goal, return true if and only if s can become goal after some number of shifts on s.\nA shift on s consists of moving the leftmost character of s to the rightmost position.\n\nFor example, if s = \"abcde\", then it will be \"bcdea\" after one shift.\n\nReturn \"True\" if s can become goal, else \"False\".\n",
+            "examples": "Sample Input\nabcde cdeab\n\nSample Output\nTrue\n\nExplanation: s can become goal after 2 shifts.\n\nSample Input\nabcde abced\n\nSample Output\nFalse\n\nExplanation: s cannot become goal after any number of shifts.",
+            "constraints": "1 <= s.length, goal.length <= 100\ns and goal consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "abcde cdeab",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "abcde abced",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "aa aa",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "abc abc",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "hello world",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def rotateString(self, s, goal):\n        # TODO: Return \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        s, goal = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.rotateString(s, goal))\n    else:\n        print(\"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String rotateString(String s, String goal) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"False\");\n            return;\n        }\n        String s = parts[0];\n        String goal = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.rotateString(s, goal));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    rotateString(s, goal) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"False\");\n        return;\n    }\n    const s = parts[0];\n    const goal = parts[1];\n    const sol = new Solution();\n    console.log(sol.rotateString(s, goal));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string rotateString(string s, string goal) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n};\n\nint main() {\n    string s, goal;\n    if (cin >> s >> goal) {\n        Solution sol;\n        cout << sol.rotateString(s, goal) << endl;\n    } else {\n        cout << \"False\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid rotateString(char* s, char* goal) {\n    // TODO: Print \"True\" or \"False\"\n}\n\nint main() {\n    char s[105], goal[105];\n    if (scanf(\"%s %s\", s, goal) == 2) {\n        rotateString(s, goal);\n    } else {\n        printf(\"False\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if goal is a substring of s + s.",
+                "Also verify that s and goal have the same length."
+            ]
+        }
+    ]
+}
+

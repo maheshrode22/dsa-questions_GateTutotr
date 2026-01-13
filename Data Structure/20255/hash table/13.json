@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Substring with At Most Two Distinct Characters (Hash Table)",
+            "description": "Problem Statement\n\nGiven a string s, return the length of the longest substring that contains at most two distinct characters.\n",
+            "examples": "Example 1:\n\nInput: s = \"eceba\"\nOutput: 3\nExplanation: The substring is \"ece\" which its length is 3.\n\nExample 2:\n\nInput: s = \"ccaabbb\"\nOutput: 5\nExplanation: The substring is \"aabbb\" which its length is 5.",
+            "constraints": "1 <= s.length <= 10^5\ns consists of English letters",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "eceba",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "ccaabbb",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "abcabcabc",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "aabbcc",
+                    "expectedOutput": "4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def lengthOfLongestSubstringTwoDistinct(self, s):\n        # TODO: Use hash map with sliding window to track character frequencies\n        # Return length of longest substring with at most 2 distinct characters\n        pass\n\nif __name__ == '__main__':\n    import sys\n    s = sys.stdin.read().strip()\n    sol = Solution()\n    result = sol.lengthOfLongestSubstringTwoDistinct(s)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int lengthOfLongestSubstringTwoDistinct(String s){\n        // TODO: Use hash map with sliding window to track character frequencies\n        // Return length of longest substring with at most 2 distinct characters\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        int result = sol.lengthOfLongestSubstringTwoDistinct(s);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  lengthOfLongestSubstringTwoDistinct(s){\n    // TODO: Use hash map with sliding window to track character frequencies\n    // Return length of longest substring with at most 2 distinct characters\n    return 0;\n  }\n}\nfunction solve(input){\n  const s = input.trim();\n  const sol = new Solution();\n  const result = sol.lengthOfLongestSubstringTwoDistinct(s);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int lengthOfLongestSubstringTwoDistinct(string s){\n        // TODO: Use hash map with sliding window to track character frequencies\n        // Return length of longest substring with at most 2 distinct characters\n        return 0;\n    }\n};\nint main(){\n    string s;\n    getline(cin, s);\n    Solution sol;\n    int result = sol.lengthOfLongestSubstringTwoDistinct(s);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\nchar s[100001];\n\nint lengthOfLongestSubstringTwoDistinct(){\n    // TODO: Find length of longest substring with at most 2 distinct characters\n    // Return the length\n    return 0;\n}\n\nint main(){\n    scanf(\"%s\", s);\n    int result = lengthOfLongestSubstringTwoDistinct();\n    printf(\"%d\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use sliding window technique with a hash map to track character frequencies in current window.",
+                "Expand window by moving right pointer. When distinct characters exceed 2, shrink from left."
+            ]
+        }
+    ]
+}

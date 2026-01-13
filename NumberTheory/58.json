@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Check If It Is a Good Array (Number Theory)",
+            "description": "Given an array nums of positive integers. Your task is to select some subset of nums, multiply each element by an integer and add all these numbers. The array is said to be good if you can obtain a sum of 1 from the array by any possible subset and multiplicand.\nReturn True if the array is good otherwise return False.\n\nInput Format:\nFirst line: integer n.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint true or false.",
+            "examples": "Sample Input\n4\n12 5 7 23\n\nSample Output\ntrue",
+            "constraints": "1 <= nums.length <= 10^5",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 4033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4\n12 5 7 23",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "3\n29 6 10",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2\n3 6",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "10\n29 21 42 30 39 41 34 21 45 15",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "8\n34 31 43 45 35 25 39 29",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isGoodArray(self, nums):\n        # TODO: Return true if good, else false\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    nums = list(map(int, input().split()))\n    sol = Solution()\n    print(\"true\" if sol.isGoodArray(nums) else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public boolean isGoodArray(int[] nums) {\n        // TODO: Return true if good, else false\n        return false;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] nums = new int[n];\n        for(int i=0; i<n; i++) nums[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.isGoodArray(nums) ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isGoodArray(nums) {\n        // TODO: Return true if good, else false\n        return false;\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst nums = input[1].split(' ').map(Number);\nconst sol = new Solution();\nconsole.log(sol.isGoodArray(nums) ? \"true\" : \"false\");"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <numeric>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isGoodArray(vector<int>& nums) {\n        // TODO: Return true if good, else false\n        return false;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> nums(n);\n    for(int i=0; i<n; i++) cin >> nums[i];\n    Solution sol;\n    cout << (sol.isGoodArray(nums) ? \"true\" : \"false\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nbool isGoodArray(int* nums, int numsSize) {\n    // TODO: Return true if good, else false\n    return false;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int* nums = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &nums[i]);\n    printf(\"%s\\n\", isGoodArray(nums, n) ? \"true\" : \"false\");\n    free(nums);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "This is related to Bezout's identity.",
+                "Check if the GCD of all numbers is 1."
+            ]
+        }
+    ]
+}

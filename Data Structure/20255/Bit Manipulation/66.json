@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Binary Prefix Divisible by 5 (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given a binary array nums (0-indexed).\nWe define xi as the number whose binary representation is the subarray nums[0..i] (from most-significant-bit to least-significant-bit).\nFor example, if nums = [1,0,1], then x0 = 1, x1 = 2, and x2 = 5.\nReturn an array of booleans answer where answer[i] is true if xi is divisible by 5.\n",
+            "examples": "Sample Input\n0 1 1\n\nSample Output\nTrue False False\n\nExplanation: The input numbers in binary are 0, 01, 011; which are 0, 1, and 3 in base-10.\nOnly the first number is divisible by 5, so answer[0] is true.\n\nSample Input\n1 1 1\n\nSample Output\nFalse False False\n\nExplanation: The numbers are 1, 3, 7 in base-10, none divisible by 5.",
+            "constraints": "1 <= nums.length <= 10^5\nnums[i] is either 0 or 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "1",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "0 1 0 1 0 1 0 1 0 1",
+                    "expectedOutput": "True False False True True False False True True False"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1 1 1",
+                    "expectedOutput": "False False False True False False False True False False"
+                },
+                {
+                    "input": "0 0 0 0 0 0 0 0 0 0",
+                    "expectedOutput": "True True True True True True True True True True"
+                },
+                {
+                    "input": "1 0 1 0 1 0",
+                    "expectedOutput": "False False True True False False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def prefixesDivBy5(self, nums):\n        # TODO: Return array of booleans where answer[i] is True if prefix is divisible by 5\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.prefixesDivBy5(nums)\n    print(' '.join('True' if x else 'False' for x in result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<Boolean> prefixesDivBy5(int[] nums) {\n        // TODO: Return list of booleans where answer[i] is true if prefix is divisible by 5\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        List<Boolean> result = sol.prefixesDivBy5(nums);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) ? \"True\" : \"False\");\n            if (i < result.size() - 1) System.out.print(\" \");\n        }\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    prefixesDivBy5(nums) {\n        // TODO: Return array of booleans where answer[i] is true if prefix is divisible by 5\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.prefixesDivBy5(nums);\n    console.log(result.map(x => x ? 'True' : 'False').join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<bool> prefixesDivBy5(vector<int>& nums) {\n        // TODO: Return vector of booleans where answer[i] is true if prefix is divisible by 5\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    vector<bool> result = sol.prefixesDivBy5(nums);\n    for (int i = 0; i < result.size(); i++) {\n        cout << (result[i] ? \"True\" : \"False\");\n        if (i < result.size() - 1) cout << \" \";\n    }\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nvoid prefixesDivBy5(int* nums, int numsSize) {\n    // TODO: Print space-separated booleans (True/False) where answer[i] is True if prefix is divisible by 5\n}\n\nint main() {\n    int nums[100005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    prefixesDivBy5(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use modular arithmetic: (current_value * 2 + nums[i]) % 5 to avoid overflow.",
+                "Only track the remainder modulo 5, not the full binary number."
+            ]
+        }
+    ]
+}
+

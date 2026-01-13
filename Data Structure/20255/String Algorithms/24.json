@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Deletions on a String (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a string s consisting of only lowercase English letters. In one operation, you can:\n\nDelete the entire string s, or\nDelete the first i letters of s if the first i letters of s are equal to the following i letters in s, for any i in the range 1 <= i <= s.length / 2.\n\nReturn the maximum number of operations needed to delete all of s.\n",
+            "examples": "Sample Input\nabcabcdabc\n\nSample Output\n2\n\nExplanation: Delete the first 3 letters (\"abc\") since the next 3 letters are equal. Now, s = \"abcdabc\". Then delete all the letters.\n\nSample Input\naaabaab\n\nSample Output\n4\n\nExplanation: Delete operations: \"a\", \"aab\", \"a\", then all letters.",
+            "constraints": "1 <= s.length <= 4000\ns consists only of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "abcabcdabc",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "aaabaab",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "aaaaa",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "abab",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def deleteString(self, s):\n        # TODO: Return maximum number of operations\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.deleteString(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int deleteString(String s) {\n        // TODO: Return maximum number of operations\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.deleteString(s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    deleteString(s) {\n        // TODO: Return maximum number of operations\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.deleteString(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int deleteString(string s) {\n        // TODO: Return maximum number of operations\n        return 0;\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.deleteString(s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid deleteString(char* s) {\n    // TODO: Print maximum number of operations\n}\n\nint main() {\n    char s[4005];\n    scanf(\"%s\", s);\n    deleteString(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming to find the maximum deletions.",
+                "For each position, check if a prefix matches the following substring."
+            ]
+        }
+    ]
+}
+

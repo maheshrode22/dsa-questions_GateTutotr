@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Line Reflection (Hash Table)",
+            "description": "Problem Statement\n\nGiven n points on a 2D plane, find if there is such a line parallel to the y-axis that reflects the given points symmetrically.\nIn other words, answer whether or not if there exists a line that after reflecting all points over the given line, the original points' set is the same as the reflected ones.\nNote that there can be repeated points.\n",
+            "examples": "Example 1:\n\nInput: points = [[1,1],[-1,1]]\nOutput: true\nExplanation: We can choose the line x = 0.\n\nExample 2:\n\nInput: points = [[1,1],[-1,-1]]\nOutput: false\nExplanation: We can't choose a line.",
+            "constraints": "n == points.length\n1 <= n <= 10^4\n-10^8 <= points[i][j] <= 10^8",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2\n1 1\n-1 1",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2\n1 1\n-1 -1",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "3\n1 1\n-1 1\n2 2",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "4\n1 1\n-1 1\n2 2\n-2 2",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "1\n0 0",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isReflected(self, points):\n        # TODO: Check if points are symmetric relative to a line parallel to y-axis\n        # Return True if symmetric, False otherwise\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    points = []\n    for i in range(1, n+1):\n        points.append(list(map(int, data[i].split())))\n    sol = Solution()\n    result = sol.isReflected(points)\n    print(\"true\" if result else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    boolean isReflected(int[][] points){\n        // TODO: Check if points are symmetric relative to a line parallel to y-axis\n        // Return true if symmetric, false otherwise\n        return false;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] points = new int[n][2];\n        for(int i=0;i<n;i++){\n            String[] parts = br.readLine().trim().split(\" \");\n            points[i][0] = Integer.parseInt(parts[0]);\n            points[i][1] = Integer.parseInt(parts[1]);\n        }\n        Solution sol = new Solution();\n        boolean result = sol.isReflected(points);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  isReflected(points){\n    // TODO: Check if points are symmetric relative to a line parallel to y-axis\n    // Return true if symmetric, false otherwise\n    return false;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const points = [];\n  for(let i=1;i<=n;i++){\n    points.push(lines[i].split(\" \").map(Number));\n  }\n  const sol = new Solution();\n  const result = sol.isReflected(points);\n  console.log(result ? \"true\" : \"false\");\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    bool isReflected(vector<vector<int>>& points){\n        // TODO: Check if points are symmetric relative to a line parallel to y-axis\n        // Return true if symmetric, false otherwise\n        return false;\n    }\n};\nint main(){\n    int n; cin >> n;\n    vector<vector<int>> points(n, vector<int>(2));\n    for(int i=0;i<n;i++) cin >> points[i][0] >> points[i][1];\n    Solution sol;\n    bool result = sol.isReflected(points);\n    cout << (result ? \"true\" : \"false\");\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool isReflected(int points[][2], int n){\n    // TODO: Check if points are symmetric\n    // Return true if symmetric, false otherwise\n    return false;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int points[10000][2];\n    for(int i=0;i<n;i++) scanf(\"%d %d\", &points[i][0], &points[i][1]);\n    bool result = isReflected(points, n);\n    printf(\"%s\", result ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the smallest and largest x-coordinates. The line of symmetry must be (minX + maxX) / 2.",
+                "Store all points in a hash set and check if the reflected point exists for every point."
+            ]
+        }
+    ]
+}

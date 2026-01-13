@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Longest Substring With At Least K Repeating Characters (Sliding Window)",
+      "description": "Given a string s and an integer k, return the length of the longest substring of s such that the frequency of each character in this substring is greater than or equal to k.\nIf no such substring exists, return 0.\n\nInput Format:\nFirst line: string s.\nSecond line: integer k.\n\nOutput Format:\nPrint a single integer: the length of the longest valid substring.",
+      "examples": "Sample Input\naaabb\n3\n\nSample Output\n3\n\nExplanation: The longest substring is \"aaa\", as 'a' is repeated 3 times.",
+      "constraints": "1 <= s.length <= 10^4\ns consists of only lowercase English letters.\n1 <= k <= 10^5",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "aaabb\n3",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "ababbc\n2",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "abcdef\n2",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "abacaba\n3",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "zzzzzz\n3",
+          "expectedOutput": "6"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def longestSubstring(self, s, k):\n        # TODO: Return the length of the longest substring where each character frequency is >= k\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    k = int(input().strip())\n    sol = Solution()\n    print(sol.longestSubstring(s, k))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int longestSubstring(String s, int k) {\n        // TODO: Return the length of the longest substring where each character frequency is >= k\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.nextLine().strip();\n        int k = Integer.parseInt(sc.nextLine().strip());\n        Solution sol = new Solution();\n        System.out.println(sol.longestSubstring(s, k));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    longestSubstring(s, k) {\n        // TODO: Return the length of the longest substring where each character frequency is >= k\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const s = lines[0].trim();\n    const k = parseInt(lines[1].trim());\n    const sol = new Solution();\n    console.log(sol.longestSubstring(s, k));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestSubstring(string s, int k) {\n        // TODO: Return the length of the longest substring where each character frequency is >= k\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string s;\n    int k;\n    cin >> s >> k;\n    Solution sol;\n    cout << sol.longestSubstring(s, k) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char s[10001];\n    int k;\n    scanf(\"%s %d\", s, &k);\n    // TODO: Return the length of the longest substring where each character frequency is >= k\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

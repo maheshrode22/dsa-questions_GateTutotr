@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Longest Nice Substring (Sliding Window)",
+            "description": "A string s is nice if, for every letter of the alphabet that s contains, it appears both in uppercase and lowercase.\nGiven a string s, return the longest substring of s that is nice. If there are multiple, return the substring of the earliest occurrence. If there are none, return an empty string.\n\nInput Format:\nFirst line: string s.\n\nOutput Format:\nPrint the longest nice substring.",
+            "examples": "Sample Input\nYazaAay\n\nSample Output\naAa\n\nExplanation: \"aAa\" is nice.",
+            "constraints": "1 <= s.length <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "YazaAay",
+                    "expectedOutput": "aAa"
+                },
+                {
+                    "input": "Bb",
+                    "expectedOutput": "Bb"
+                },
+                {
+                    "input": "c",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "iSNUhhvyCoFrMTQut",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "CBrEDtCyQWlF",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestNiceSubstring(self, s):\n        # TODO: Return the longest nice substring\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.longestNiceSubstring(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public String longestNiceSubstring(String s) {\n        // TODO: Return the longest nice substring\n        return \"\";\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.next();\n            Solution sol = new Solution();\n            System.out.println(sol.longestNiceSubstring(s));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestNiceSubstring(s) {\n        // TODO: Return the longest nice substring\n        return \"\";\n    }\n}\n\nconst fs = require('fs');\nconst s = fs.readFileSync(0, 'utf-8').trim();\nconst sol = new Solution();\nconsole.log(sol.longestNiceSubstring(s));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    string longestNiceSubstring(string s) {\n        // TODO: Return the longest nice substring\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.longestNiceSubstring(s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nchar* longestNiceSubstring(char* s) {\n    // TODO: Return the longest nice substring\n    return \"\";\n}\n\nint main() {\n    char s[105];\n    scanf(\"%s\", s);\n    printf(\"%s\\n\", longestNiceSubstring(s));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Divide and Conquer: if a character appears but its counterpart doesn't, that character cannot be part of any nice substring.",
+                "Split the string at such characters and recursively solve for the substrings."
+            ]
+        }
+    ]
+}

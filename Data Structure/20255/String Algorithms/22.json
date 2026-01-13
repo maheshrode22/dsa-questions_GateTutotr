@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Counting Words with a Given Prefix (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given an array of strings words and a string pref.\nReturn the number of strings in words that contain pref as a prefix.\nA prefix of a string s is any leading contiguous substring of s.\n",
+            "examples": "Sample Input\npay attention practice attend\nat\n\nSample Output\n2\n\nExplanation: The 2 strings that contain \"at\" as a prefix are: \"attention\" and \"attend\".\n\nSample Input\nleetcode win loops success\ncode\n\nSample Output\n0\n\nExplanation: There are no strings that contain \"code\" as a prefix.",
+            "constraints": "1 <= words.length <= 100\n1 <= words[i].length, pref.length <= 100\nwords[i] and pref consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "pay attention practice attend\nat",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "leetcode win loops success\ncode",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "apple app application\napp",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "hello world\nhe",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "a ab abc abcd\nabc",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def prefixCount(self, words, pref):\n        # TODO: Return count of words with prefix\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    words = lines[0].split() if len(lines) > 0 else []\n    pref = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    print(sol.prefixCount(words, pref))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int prefixCount(String[] words, String pref) {\n        // TODO: Return count of words with prefix\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        String pref = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.prefixCount(words, pref));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    prefixCount(words, pref) {\n        // TODO: Return count of words with prefix\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const words = lines[0] ? lines[0].split(/\\s+/) : [];\n    const pref = lines[1] || \"\";\n    const sol = new Solution();\n    console.log(sol.prefixCount(words, pref));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int prefixCount(vector<string>& words, string pref) {\n        // TODO: Return count of words with prefix\n        return 0;\n    }\n};\n\nint main() {\n    string wordsLine;\n    getline(cin, wordsLine);\n    istringstream iss(wordsLine);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    string pref;\n    getline(cin, pref);\n    Solution sol;\n    cout << sol.prefixCount(words, pref) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid prefixCount(char** words, int wordsSize, char* pref) {\n    // TODO: Print count of words with prefix\n}\n\nint main() {\n    char line[10005];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* words[105];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    char pref[105];\n    fgets(pref, sizeof(pref), stdin);\n    pref[strcspn(pref, \"\\n\")] = 0;\n    prefixCount(words, wordsSize, pref);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through each word and check if it starts with the prefix.",
+                "Use string comparison functions to check if a word has the given prefix."
+            ]
+        }
+    ]
+}
+

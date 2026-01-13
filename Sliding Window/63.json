@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Number of Visible Points (Sliding Window)",
+            "description": "You are given an array points, an integer angle, and your location.\nReturn the maximum number of points you can see.\n\nInput Format:\nFirst line: two integers n and angle.\nSecond line: two integers posx, posy (your location).\nNext n lines: two integers xi, yi.\n\nOutput Format:\nPrint a single integer: the maximum number of visible points.",
+            "examples": "Sample Input\n3 90\n1 1\n2 1\n2 2\n3 3\n\nSample Output\n3\n\nExplanation: All points can be made visible.",
+            "constraints": "1 <= points.length <= 10^5\n0 <= angle < 360",
+            "hints": 3,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3 90\n1 1\n2 1\n2 2\n3 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "4 90\n1 1\n2 1\n2 2\n3 4\n1 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "2 13\n1 1\n1 0\n2 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "8 325\n5 2\n9 9\n5 10\n3 4\n6 1\n5 3\n1 8\n7 8\n2 8",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "14 145\n0 9\n2 5\n0 3\n2 7\n0 5\n4 6\n3 9\n7 2\n10 3\n5 1\n8 5\n4 6\n8 5\n6 1\n7 10",
+                    "expectedOutput": "14"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def visiblePoints(self, points, angle, location):\n        # TODO: Return the maximum number of visible points\n        pass\n\nif __name__ == '__main__':\n    n, angle = map(int, input().split())\n    lx, ly = map(int, input().split())\n    points = []\n    for _ in range(n):\n        points.append(list(map(int, input().split())))\n    sol = Solution()\n    print(sol.visiblePoints(points, angle, [lx, ly]))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int visiblePoints(List<List<Integer>> points, int angle, List<Integer> location) {\n        // TODO: Return the maximum number of visible points\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int angle = sc.nextInt();\n        int lx = sc.nextInt();\n        int ly = sc.nextInt();\n        List<Integer> location = new ArrayList<>();\n        location.add(lx); location.add(ly);\n        List<List<Integer>> points = new ArrayList<>();\n        for(int i=0; i<n; i++) {\n            List<Integer> p = new ArrayList<>();\n            p.add(sc.nextInt());\n            p.add(sc.nextInt());\n            points.add(p);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.visiblePoints(points, angle, location));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    visiblePoints(points, angle, location) {\n        // TODO: Return the maximum number of visible points\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst [n, angle] = input[0].split(' ').map(Number);\nconst location = input[1].split(' ').map(Number);\nconst points = [];\nfor(let i=2; i<n+2; i++) points.push(input[i].split(' ').map(Number));\nconst sol = new Solution();\nconsole.log(sol.visiblePoints(points, angle, location));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int visiblePoints(vector<vector<int>>& points, int angle, vector<int>& location) {\n        // TODO: Return the maximum number of visible points\n        return 0;\n    }\n};\n\nint main() {\n    int n, angle;\n    cin >> n >> angle;\n    vector<int> location(2);\n    cin >> location[0] >> location[1];\n    vector<vector<int>> points(n, vector<int>(2));\n    for(int i=0; i<n; i++) cin >> points[i][0] >> points[i][1];\n    Solution sol;\n    cout << sol.visiblePoints(points, angle, location) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint visiblePoints(int** points, int pointsSize, int* pointsColSize, int angle, int* location, int locationSize) {\n    // TODO: Return the maximum number of visible points\n    return 0;\n}\n\nint main() {\n    int n, angle;\n    scanf(\"%d %d\", &n, &angle);\n    int location[2];\n    scanf(\"%d %d\", &location[0], &location[1]);\n    int** points = (int**)malloc(n * sizeof(int*));\n    for(int i=0; i<n; i++) {\n        points[i] = (int*)malloc(2 * sizeof(int));\n        scanf(\"%d %d\", &points[i][0], &points[i][1]);\n    }\n    printf(\"%d\\n\", visiblePoints(points, n, NULL, angle, location, 2));\n    for(int i=0; i<n; i++) free(points[i]);\n    free(points);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Convert all coordinates to angles relative to your location using atan2.",
+                "Sort the angles and use a sliding window of size 'angle'.",
+                "Handle the circular nature by duplicating angles + 360."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Longest Duplicate Substring (Sliding Window)",
+      "description": "Given a string s, consider all duplicated substrings: (contiguous) substrings of s that occur 2 or more times. Return any duplicated substring that has the longest possible length. If s does not have a duplicated substring, return \"\".\n\nInput Format:\nFirst line: string s.\n\nOutput Format:\nPrint the longest duplicated substring.",
+      "examples": "Sample Input\nbanana\n\nSample Output\nana",
+      "constraints": "See problem description.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "banana",
+          "expectedOutput": "ana"
+        },
+        {
+          "input": "abcd",
+          "expectedOutput": ""
+        },
+        {
+          "input": "aaaaa",
+          "expectedOutput": "aaaa"
+        },
+        {
+          "input": "abacaba",
+          "expectedOutput": "aba"
+        },
+        {
+          "input": "abcdefg",
+          "expectedOutput": ""
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def longestDupSubstring(self, s):\n        # TODO: Return the longest duplicated substring\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.longestDupSubstring(s))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public String longestDupSubstring(String s) {\n        // TODO: Return the longest duplicated substring\n        return \"\";\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.nextLine().strip();\n        Solution sol = new Solution();\n        System.out.println(sol.longestDupSubstring(s));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    longestDupSubstring(s) {\n        // TODO: Return the longest duplicated substring\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const s = fs.readFileSync(0, 'utf-8').trim();\n    const sol = new Solution();\n    console.log(sol.longestDupSubstring(s));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    string longestDupSubstring(string s) {\n        // TODO: Return the longest duplicated substring\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.longestDupSubstring(s) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char s[30001];\n    scanf(\"%s\", s);\n    // TODO: Return the longest duplicated substring\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

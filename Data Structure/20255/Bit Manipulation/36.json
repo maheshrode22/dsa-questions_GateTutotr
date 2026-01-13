@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Total Hamming Distance (Bit Manipulation)",
+            "description": "Problem Statement\n\nThe Hamming distance between two integers is the number of positions at which the corresponding bits are different.\nGiven an integer array nums, return the sum of Hamming distances between all the pairs of the integers in nums.\n",
+            "examples": "Sample Input\n4 14 2\n\nSample Output\n6\n\nExplanation: In binary representation, the 4 is 0100, 14 is 1110, and 2 is 0010 (just showing the four bits relevant in this case).\nThe answer will be:\nHammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 + 2 = 6.\n\nSample Input\n4 14 4\n\nSample Output\n4",
+            "constraints": "1 <= nums.length <= 10^4\n0 <= nums[i] <= 10^9\nThe answer for the given input will fit in a 32-bit integer.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 14 2",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "4 14 4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 3 5",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 2 4 8 16",
+                    "expectedOutput": "20"
+                },
+                {
+                    "input": "3 3 3 3 3 3 3 3 3 3",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def totalHammingDistance(self, nums):\n        # TODO: Return sum of Hamming distances between all pairs\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.totalHammingDistance(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int totalHammingDistance(int[] nums) {\n        // TODO: Return sum of Hamming distances between all pairs\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.totalHammingDistance(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    totalHammingDistance(nums) {\n        // TODO: Return sum of Hamming distances between all pairs\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.totalHammingDistance(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int totalHammingDistance(vector<int>& nums) {\n        // TODO: Return sum of Hamming distances between all pairs\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.totalHammingDistance(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid totalHammingDistance(int* nums, int numsSize) {\n    // TODO: Print sum of Hamming distances between all pairs\n}\n\nint main() {\n    int nums[10005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    totalHammingDistance(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each bit position, count how many numbers have that bit set and how many don't.",
+                "The contribution to total Hamming distance from bit i is: count(1) * count(0)."
+            ]
+        }
+    ]
+}
+

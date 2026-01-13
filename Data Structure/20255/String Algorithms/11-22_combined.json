@@ -1,0 +1,724 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find the Index of the First Occurrence in a String (String Algorithm)",
+            "description": "Problem Statement\n\nGiven two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.\n\nReturn the index (0-based) of the first occurrence, or -1 if not found.\n",
+            "examples": "Sample Input\nsadbutsad sad\n\nSample Output\n0\n\nExplanation: \"sad\" occurs at index 0 and 6. The first occurrence is at index 0.\n\nSample Input\nleetcode leeto\n\nSample Output\n-1\n\nExplanation: \"leeto\" did not occur in \"leetcode\", so we return -1.",
+            "constraints": "1 <= haystack.length, needle.length <= 10^4\nhaystack and needle consist of only lowercase English characters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "sadbutsad sad",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "leetcode leeto",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "hello ll",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "aaaaa bba",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "abc abc",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def strStr(self, haystack, needle):\n        # TODO: Return the index of first occurrence or -1\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        haystack, needle = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.strStr(haystack, needle))\n    else:\n        print(\"-1\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int strStr(String haystack, String needle) {\n        // TODO: Return the index of first occurrence or -1\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"-1\");\n            return;\n        }\n        String haystack = parts[0];\n        String needle = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.strStr(haystack, needle));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    strStr(haystack, needle) {\n        // TODO: Return the index of first occurrence or -1\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"-1\");\n        return;\n    }\n    const haystack = parts[0];\n    const needle = parts[1];\n    const sol = new Solution();\n    console.log(sol.strStr(haystack, needle));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int strStr(string haystack, string needle) {\n        // TODO: Return the index of first occurrence or -1\n        return -1;\n    }\n};\n\nint main() {\n    string haystack, needle;\n    if (cin >> haystack >> needle) {\n        Solution sol;\n        cout << sol.strStr(haystack, needle) << endl;\n    } else {\n        cout << \"-1\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid strStr(char* haystack, char* needle) {\n    // TODO: Print the index of first occurrence or -1\n}\n\nint main() {\n    char haystack[10005], needle[10005];\n    if (scanf(\"%s %s\", haystack, needle) == 2) {\n        strStr(haystack, needle);\n    } else {\n        printf(\"-1\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a sliding window approach to check each position in haystack.",
+                "Compare needle with substring of haystack starting at each position."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Shortest Palindrome (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a string s. You can convert s to a palindrome by adding characters in front of it.\nReturn the shortest palindrome you can find by performing this transformation.\n",
+            "examples": "Sample Input\naacecaaa\n\nSample Output\naaacecaaa\n\nExplanation: Add \"aa\" in front to make it a palindrome.\n\nSample Input\nabcd\n\nSample Output\ndcbabcd\n\nExplanation: Add \"dcba\" in front to make it a palindrome.",
+            "constraints": "0 <= s.length <= 5 * 10^4\ns consists of lowercase English letters only.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "aacecaaa",
+                    "expectedOutput": "aaacecaaa"
+                },
+                {
+                    "input": "abcd",
+                    "expectedOutput": "dcbabcd"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "ab",
+                    "expectedOutput": "bab"
+                },
+                {
+                    "input": "race",
+                    "expectedOutput": "ecarace"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def shortestPalindrome(self, s):\n        # TODO: Return the shortest palindrome\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.shortestPalindrome(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String shortestPalindrome(String s) {\n        // TODO: Return the shortest palindrome\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.shortestPalindrome(s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    shortestPalindrome(s) {\n        // TODO: Return the shortest palindrome\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.shortestPalindrome(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string shortestPalindrome(string s) {\n        // TODO: Return the shortest palindrome\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.shortestPalindrome(s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid shortestPalindrome(char* s) {\n    // TODO: Print the shortest palindrome\n}\n\nint main() {\n    char s[50005];\n    scanf(\"%s\", s);\n    shortestPalindrome(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the longest palindromic prefix of the string.",
+                "Reverse the remaining suffix and add it to the front."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Repeated Substring Pattern (String Algorithm)",
+            "description": "Problem Statement\n\nGiven a string s, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.\n\nReturn \"True\" if it can be constructed, else \"False\".\n",
+            "examples": "Sample Input\nabab\n\nSample Output\nTrue\n\nExplanation: It is the substring \"ab\" twice.\n\nSample Input\naba\n\nSample Output\nFalse\n\nExplanation: It cannot be constructed from a repeated substring.\n\nSample Input\nabcabcabcabc\n\nSample Output\nTrue\n\nExplanation: It is the substring \"abc\" four times.",
+            "constraints": "1 <= s.length <= 10^4\ns consists of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "abab",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "aba",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "abcabcabcabc",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "ababab",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def repeatedSubstringPattern(self, s):\n        # TODO: Return \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.repeatedSubstringPattern(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String repeatedSubstringPattern(String s) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.repeatedSubstringPattern(s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    repeatedSubstringPattern(s) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.repeatedSubstringPattern(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string repeatedSubstringPattern(string s) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.repeatedSubstringPattern(s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid repeatedSubstringPattern(char* s) {\n    // TODO: Print \"True\" or \"False\"\n}\n\nint main() {\n    char s[10005];\n    scanf(\"%s\", s);\n    repeatedSubstringPattern(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Try all possible substring lengths that divide the string length.",
+                "Check if repeating the substring gives the original string."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Add Bold Tag in String (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a string s and an array of strings words.\nYou should add a closed pair of bold tag <b> and </b> to wrap the substrings in s that exist in words.\n\nIf two such substrings overlap, you should wrap them together with only one pair of closed bold-tag.\nIf two substrings wrapped by bold tags are consecutive, you should combine them.\n\nReturn s after adding the bold tags.\n",
+            "examples": "Sample Input\nabcxyz123\nabc 123\n\nSample Output\n<b>abc</b>xyz<b>123</b>\n\nExplanation: The two strings of words are substrings of s.\n\nSample Input\naaabbb\naa b\n\nSample Output\n<b>aaabbb</b>\n\nExplanation: \"aa\" and \"b\" overlap and are consecutive, so they are combined.",
+            "constraints": "1 <= s.length <= 1000\n0 <= words.length <= 100\n1 <= words[i].length <= 1000\ns and words[i] consist of English letters and digits.\nAll the values of words are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abcxyz123\nabc 123",
+                    "expectedOutput": "<b>abc</b>xyz<b>123</b>"
+                },
+                {
+                    "input": "aaabbb\naa b",
+                    "expectedOutput": "<b>aaabbb</b>"
+                },
+                {
+                    "input": "hello\nhe ll",
+                    "expectedOutput": "<b>hell</b>o"
+                },
+                {
+                    "input": "abcdef\nxyz",
+                    "expectedOutput": "abcdef"
+                },
+                {
+                    "input": "aabbcc\naa bb cc",
+                    "expectedOutput": "<b>aabbcc</b>"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def addBoldTag(self, s, words):\n        # TODO: Return s with bold tags added\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    s = lines[0]\n    words = lines[1].split() if len(lines) > 1 else []\n    sol = Solution()\n    print(sol.addBoldTag(s, words))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String addBoldTag(String s, String[] words) {\n        // TODO: Return s with bold tags added\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String[] words = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        System.out.println(sol.addBoldTag(s, words));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    addBoldTag(s, words) {\n        // TODO: Return s with bold tags added\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const s = lines[0];\n    const words = lines.length > 1 ? lines[1].split(/\\s+/) : [];\n    const sol = new Solution();\n    console.log(sol.addBoldTag(s, words));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string addBoldTag(string s, vector<string>& words) {\n        // TODO: Return s with bold tags added\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    getline(cin, s);\n    string wordsLine;\n    getline(cin, wordsLine);\n    vector<string> words;\n    istringstream iss(wordsLine);\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    Solution sol;\n    cout << sol.addBoldTag(s, words) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid addBoldTag(char* s, char** words, int wordsSize) {\n    // TODO: Print s with bold tags added\n}\n\nint main() {\n    char s[1005], wordsLine[10005];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    fgets(wordsLine, sizeof(wordsLine), stdin);\n    wordsLine[strcspn(wordsLine, \"\\n\")] = 0;\n    char* words[105];\n    int wordsSize = 0;\n    char* token = strtok(wordsLine, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    addBoldTag(s, words, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Mark all positions where words appear in the string.",
+                "Merge overlapping and consecutive marked regions, then add bold tags."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Repeated String Match (String Algorithm)",
+            "description": "Problem Statement\n\nGiven two strings a and b, return the minimum number of times you should repeat string a so that string b is a substring of it. If it is impossible for b to be a substring of a after repeating it, return -1.\n\nNotice: string \"abc\" repeated 0 times is \"\", repeated 1 time is \"abc\" and repeated 2 times is \"abcabc\".\n",
+            "examples": "Sample Input\nabcd cdabcdab\n\nSample Output\n3\n\nExplanation: We return 3 because by repeating a three times \"abcdabcdabcd\", b is a substring of it.\n\nSample Input\na aa\n\nSample Output\n2\n\nExplanation: We need to repeat \"a\" twice to get \"aa\".",
+            "constraints": "1 <= a.length, b.length <= 10^4\na and b consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "abcd cdabcdab",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "a aa",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc cba",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "abab abababab",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc abc",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def repeatedStringMatch(self, a, b):\n        # TODO: Return minimum number of repetitions or -1\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        a, b = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.repeatedStringMatch(a, b))\n    else:\n        print(\"-1\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int repeatedStringMatch(String a, String b) {\n        // TODO: Return minimum number of repetitions or -1\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"-1\");\n            return;\n        }\n        String a = parts[0];\n        String b = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.repeatedStringMatch(a, b));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    repeatedStringMatch(a, b) {\n        // TODO: Return minimum number of repetitions or -1\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"-1\");\n        return;\n    }\n    const a = parts[0];\n    const b = parts[1];\n    const sol = new Solution();\n    console.log(sol.repeatedStringMatch(a, b));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int repeatedStringMatch(string a, string b) {\n        // TODO: Return minimum number of repetitions or -1\n        return -1;\n    }\n};\n\nint main() {\n    string a, b;\n    if (cin >> a >> b) {\n        Solution sol;\n        cout << sol.repeatedStringMatch(a, b) << endl;\n    } else {\n        cout << \"-1\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid repeatedStringMatch(char* a, char* b) {\n    // TODO: Print minimum number of repetitions or -1\n}\n\nint main() {\n    char a[10005], b[10005];\n    if (scanf(\"%s %s\", a, b) == 2) {\n        repeatedStringMatch(a, b);\n    } else {\n        printf(\"-1\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Calculate the minimum number of repetitions needed based on string lengths.",
+                "Check if b is a substring of the repeated string."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Rotate String (String Algorithm)",
+            "description": "Problem Statement\n\nGiven two strings s and goal, return true if and only if s can become goal after some number of shifts on s.\nA shift on s consists of moving the leftmost character of s to the rightmost position.\n\nFor example, if s = \"abcde\", then it will be \"bcdea\" after one shift.\n\nReturn \"True\" if s can become goal, else \"False\".\n",
+            "examples": "Sample Input\nabcde cdeab\n\nSample Output\nTrue\n\nExplanation: s can become goal after 2 shifts.\n\nSample Input\nabcde abced\n\nSample Output\nFalse\n\nExplanation: s cannot become goal after any number of shifts.",
+            "constraints": "1 <= s.length, goal.length <= 100\ns and goal consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "abcde cdeab",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "abcde abced",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "aa aa",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "abc abc",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "hello world",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def rotateString(self, s, goal):\n        # TODO: Return \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        s, goal = input_data[0], input_data[1]\n        sol = Solution()\n        print(sol.rotateString(s, goal))\n    else:\n        print(\"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String rotateString(String s, String goal) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"False\");\n            return;\n        }\n        String s = parts[0];\n        String goal = parts[1];\n        Solution sol = new Solution();\n        System.out.println(sol.rotateString(s, goal));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    rotateString(s, goal) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"False\");\n        return;\n    }\n    const s = parts[0];\n    const goal = parts[1];\n    const sol = new Solution();\n    console.log(sol.rotateString(s, goal));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string rotateString(string s, string goal) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n};\n\nint main() {\n    string s, goal;\n    if (cin >> s >> goal) {\n        Solution sol;\n        cout << sol.rotateString(s, goal) << endl;\n    } else {\n        cout << \"False\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid rotateString(char* s, char* goal) {\n    // TODO: Print \"True\" or \"False\"\n}\n\nint main() {\n    char s[105], goal[105];\n    if (scanf(\"%s %s\", s, goal) == 2) {\n        rotateString(s, goal);\n    } else {\n        printf(\"False\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if goal is a substring of s + s.",
+                "Also verify that s and goal have the same length."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Camelcase Matching (String Algorithm)",
+            "description": "Problem Statement\n\nGiven an array of strings queries and a string pattern, return a boolean array answer where answer[i] is true if queries[i] matches pattern, and false otherwise.\nA query word queries[i] matches pattern if you can insert lowercase English letters into the pattern so that it equals the query. You may insert a character at any position in pattern or you may choose not to insert any characters at all.\n\nReturn a space-separated string of \"True\" or \"False\" for each query.\n",
+            "examples": "Sample Input\nFooBar FooBarTest FootBall FrameBuffer ForceFeedBack\nFB\n\nSample Output\nTrue False True True False\n\nExplanation: \"FooBar\" can be generated like this \"F\" + \"oo\" + \"B\" + \"ar\".\n\nSample Input\nFooBar FooBarTest\nFoBa\n\nSample Output\nTrue False\n\nExplanation: \"FooBar\" can be generated like this \"Fo\" + \"o\" + \"Ba\" + \"r\".",
+            "constraints": "1 <= pattern.length, queries.length <= 100\n1 <= queries[i].length <= 100\nqueries[i] and pattern consist of English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "FooBar FooBarTest FootBall FrameBuffer ForceFeedBack\nFB",
+                    "expectedOutput": "True False True True False"
+                },
+                {
+                    "input": "FooBar FooBarTest\nFoBa",
+                    "expectedOutput": "True False"
+                },
+                {
+                    "input": "FooBarTest\nFoBaT",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "CompetitiveProgramming Contest\nCP",
+                    "expectedOutput": "True False"
+                },
+                {
+                    "input": "FooBar\nFB",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def camelMatch(self, queries, pattern):\n        # TODO: Return list of \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    queries = lines[0].split() if len(lines) > 0 else []\n    pattern = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    result = sol.camelMatch(queries, pattern)\n    print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public ArrayList<String> camelMatch(String[] queries, String pattern) {\n        // TODO: Return list of \"True\" or \"False\"\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] queries = br.readLine().trim().split(\" \");\n        String pattern = br.readLine().trim();\n        Solution sol = new Solution();\n        ArrayList<String> result = sol.camelMatch(queries, pattern);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    camelMatch(queries, pattern) {\n        // TODO: Return array of \"True\" or \"False\"\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const queries = lines[0] ? lines[0].split(/\\s+/) : [];\n    const pattern = lines[1] || \"\";\n    const sol = new Solution();\n    const result = sol.camelMatch(queries, pattern);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> camelMatch(vector<string>& queries, string pattern) {\n        // TODO: Return vector of \"True\" or \"False\"\n        return {};\n    }\n};\n\nint main() {\n    string queriesLine;\n    getline(cin, queriesLine);\n    istringstream iss1(queriesLine);\n    vector<string> queries;\n    string query;\n    while (iss1 >> query) {\n        queries.push_back(query);\n    }\n    string pattern;\n    getline(cin, pattern);\n    Solution sol;\n    vector<string> result = sol.camelMatch(queries, pattern);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid camelMatch(char** queries, int queriesSize, char* pattern) {\n    // TODO: Print \"True\" or \"False\" for each query\n}\n\nint main() {\n    char line[10005];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* queries[105];\n    int queriesSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        queries[queriesSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    char pattern[105];\n    fgets(pattern, sizeof(pattern), stdin);\n    pattern[strcspn(pattern, \"\\n\")] = 0;\n    camelMatch(queries, queriesSize, pattern);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers: one for the query and one for the pattern.",
+                "Match uppercase letters exactly, and skip lowercase letters in the query."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Longest Happy Prefix (String Algorithm)",
+            "description": "Problem Statement\n\nA string is called a happy prefix if is a non-empty prefix which is also a suffix (excluding itself).\nGiven a string s, return the longest happy prefix of s. Return an empty string \"\" if no such prefix exists.\n",
+            "examples": "Sample Input\nlevel\n\nSample Output\nl\n\nExplanation: s contains 4 prefix excluding itself (\"l\", \"le\", \"lev\", \"leve\"), and suffix (\"l\", \"el\", \"vel\", \"evel\"). The largest prefix which is also suffix is given by \"l\".\n\nSample Input\nababab\n\nSample Output\nabab\n\nExplanation: \"abab\" is the largest prefix which is also suffix.",
+            "constraints": "1 <= s.length <= 10^5\ns contains only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "level",
+                    "expectedOutput": "l"
+                },
+                {
+                    "input": "ababab",
+                    "expectedOutput": "abab"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "abababa",
+                    "expectedOutput": "ababa"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestPrefix(self, s):\n        # TODO: Return the longest happy prefix\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.longestPrefix(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String longestPrefix(String s) {\n        // TODO: Return the longest happy prefix\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.longestPrefix(s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    longestPrefix(s) {\n        // TODO: Return the longest happy prefix\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.longestPrefix(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string longestPrefix(string s) {\n        // TODO: Return the longest happy prefix\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.longestPrefix(s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid longestPrefix(char* s) {\n    // TODO: Print the longest happy prefix\n}\n\nint main() {\n    char s[100005];\n    scanf(\"%s\", s);\n    longestPrefix(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use KMP algorithm to compute the longest prefix-suffix array (LPS).",
+                "The answer is the longest prefix that is also a suffix (excluding the whole string)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "String Matching in an Array (String Algorithm)",
+            "description": "Problem Statement\n\nGiven an array of string words, return all strings in words that are a substring of another word. You can return the answer in any order.\n\nReturn a space-separated string of all matching words. If no matches found, return empty string.\n",
+            "examples": "Sample Input\nmass as hero superhero\n\nSample Output\nas hero\n\nExplanation: \"as\" is substring of \"mass\" and \"hero\" is substring of \"superhero\".\n\nSample Input\nleetcode et code\n\nSample Output\net code\n\nExplanation: \"et\", \"code\" are substring of \"leetcode\".",
+            "constraints": "1 <= words.length <= 100\n1 <= words[i].length <= 30\nwords[i] contains only lowercase English letters.\nAll the strings of words are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "mass as hero superhero",
+                    "expectedOutput": "as hero"
+                },
+                {
+                    "input": "leetcode et code",
+                    "expectedOutput": "et code"
+                },
+                {
+                    "input": "blue green bu",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "a ab abc",
+                    "expectedOutput": "a ab"
+                },
+                {
+                    "input": "hello world hell",
+                    "expectedOutput": "hell"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def stringMatching(self, words):\n        # TODO: Return list of matching words\n        pass\n\nif __name__ == '__main__':\n    import sys\n    words = sys.stdin.read().strip().split()\n    sol = Solution()\n    result = sol.stringMatching(words)\n    print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public ArrayList<String> stringMatching(String[] words) {\n        // TODO: Return list of matching words\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        ArrayList<String> result = sol.stringMatching(words);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    stringMatching(words) {\n        // TODO: Return array of matching words\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const words = input.trim().split(/\\s+/);\n    const sol = new Solution();\n    const result = sol.stringMatching(words);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> stringMatching(vector<string>& words) {\n        // TODO: Return vector of matching words\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    Solution sol;\n    vector<string> result = sol.stringMatching(words);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid stringMatching(char** words, int wordsSize) {\n    // TODO: Print matching words\n}\n\nint main() {\n    char line[3005];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* words[105];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    stringMatching(words, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each word, check if it is a substring of any other word.",
+                "Use string matching functions to check substring relationships."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if a Word Occurs as a Prefix of Any Word in a Sentence (String Algorithm)",
+            "description": "Problem Statement\n\nGiven a sentence that consists of some words separated by a single space, and a searchWord, check if searchWord is a prefix of any word in sentence.\nReturn the index of the word in sentence (1-indexed) where searchWord is a prefix of this word. If searchWord is a prefix of more than one word, return the index of the first word (minimum index). If there is no such word return -1.\nA prefix of a string s is any leading contiguous substring of s.\n",
+            "examples": "Sample Input\ni love eating burger\nburg\n\nSample Output\n4\n\nExplanation: \"burg\" is prefix of \"burger\" which is the 4th word in the sentence.\n\nSample Input\nthis problem is an easy problem\npro\n\nSample Output\n2\n\nExplanation: \"pro\" is prefix of \"problem\" which is the 2nd and the 6th word in the sentence, but we return 2 as it's the minimal index.",
+            "constraints": "1 <= sentence.length <= 100\n1 <= searchWord.length <= 10\nsentence consists of lowercase English letters and spaces.\nsearchWord consists of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "i love eating burger\nburg",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "this problem is an easy problem\npro",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "i am tired\nyou",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "hello world\nhe",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "a b c d\na",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isPrefixOfWord(self, sentence, searchWord):\n        # TODO: Return the 1-indexed word position or -1\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    sentence = lines[0] if len(lines) > 0 else \"\"\n    searchWord = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    print(sol.isPrefixOfWord(sentence, searchWord))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int isPrefixOfWord(String sentence, String searchWord) {\n        // TODO: Return the 1-indexed word position or -1\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String sentence = br.readLine().trim();\n        String searchWord = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.isPrefixOfWord(sentence, searchWord));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isPrefixOfWord(sentence, searchWord) {\n        // TODO: Return the 1-indexed word position or -1\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const sentence = lines[0] || \"\";\n    const searchWord = lines[1] || \"\";\n    const sol = new Solution();\n    console.log(sol.isPrefixOfWord(sentence, searchWord));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int isPrefixOfWord(string sentence, string searchWord) {\n        // TODO: Return the 1-indexed word position or -1\n        return -1;\n    }\n};\n\nint main() {\n    string sentence;\n    getline(cin, sentence);\n    string searchWord;\n    getline(cin, searchWord);\n    Solution sol;\n    cout << sol.isPrefixOfWord(sentence, searchWord) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid isPrefixOfWord(char* sentence, char* searchWord) {\n    // TODO: Print the 1-indexed word position or -1\n}\n\nint main() {\n    char sentence[105], searchWord[15];\n    fgets(sentence, sizeof(sentence), stdin);\n    sentence[strcspn(sentence, \"\\n\")] = 0;\n    fgets(searchWord, sizeof(searchWord), stdin);\n    searchWord[strcspn(searchWord, \"\\n\")] = 0;\n    isPrefixOfWord(sentence, searchWord);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Split the sentence into words.",
+                "Check if searchWord is a prefix of each word using string comparison."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Maximum Repeating Substring (String Algorithm)",
+            "description": "Problem Statement\n\nFor a string sequence, a string word is k-repeating if word concatenated k times is a substring of sequence. The word's maximum k-repeating value is the highest value k where word is k-repeating in sequence. If word is not a substring of sequence, word's maximum k-repeating value is 0.\nGiven strings sequence and word, return the maximum k-repeating value of word in sequence.\n",
+            "examples": "Sample Input\nababc\nab\n\nSample Output\n2\n\nExplanation: \"abab\" is a substring in \"ababc\".\n\nSample Input\nababc\nba\n\nSample Output\n1\n\nExplanation: \"ba\" is a substring in \"ababc\". \"baba\" is not a substring in \"ababc\".",
+            "constraints": "1 <= sequence.length <= 100\n1 <= word.length <= 100\nsequence and word contains only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "ababc\nab",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "ababc\nba",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "ababc\nac",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "aaabaaaabaaabaaaabbaaabbaabbaaaabbaabbaaabaabaabbaabbaabbaabbaabbaaabbaabbaabbaabbaabbaaabbaabbaabbaabbaabba\nbba",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "aaa\na",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxRepeating(self, sequence, word):\n        # TODO: Return maximum k-repeating value\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    sequence = lines[0] if len(lines) > 0 else \"\"\n    word = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    print(sol.maxRepeating(sequence, word))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxRepeating(String sequence, String word) {\n        // TODO: Return maximum k-repeating value\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String sequence = br.readLine().trim();\n        String word = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.maxRepeating(sequence, word));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxRepeating(sequence, word) {\n        // TODO: Return maximum k-repeating value\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const sequence = lines[0] || \"\";\n    const word = lines[1] || \"\";\n    const sol = new Solution();\n    console.log(sol.maxRepeating(sequence, word));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxRepeating(string sequence, string word) {\n        // TODO: Return maximum k-repeating value\n        return 0;\n    }\n};\n\nint main() {\n    string sequence;\n    getline(cin, sequence);\n    string word;\n    getline(cin, word);\n    Solution sol;\n    cout << sol.maxRepeating(sequence, word) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid maxRepeating(char* sequence, char* word) {\n    // TODO: Print maximum k-repeating value\n}\n\nint main() {\n    char sequence[105], word[105];\n    fgets(sequence, sizeof(sequence), stdin);\n    sequence[strcspn(sequence, \"\\n\")] = 0;\n    fgets(word, sizeof(word), stdin);\n    word[strcspn(word, \"\\n\")] = 0;\n    maxRepeating(sequence, word);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Try increasing values of k and check if word repeated k times is a substring.",
+                "Stop when the repeated word is no longer found in the sequence."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Counting Words with a Given Prefix (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given an array of strings words and a string pref.\nReturn the number of strings in words that contain pref as a prefix.\nA prefix of a string s is any leading contiguous substring of s.\n",
+            "examples": "Sample Input\npay attention practice attend\nat\n\nSample Output\n2\n\nExplanation: The 2 strings that contain \"at\" as a prefix are: \"attention\" and \"attend\".\n\nSample Input\nleetcode win loops success\ncode\n\nSample Output\n0\n\nExplanation: There are no strings that contain \"code\" as a prefix.",
+            "constraints": "1 <= words.length <= 100\n1 <= words[i].length, pref.length <= 100\nwords[i] and pref consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "pay attention practice attend\nat",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "leetcode win loops success\ncode",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "apple app application\napp",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "hello world\nhe",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "a ab abc abcd\nabc",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def prefixCount(self, words, pref):\n        # TODO: Return count of words with prefix\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    words = lines[0].split() if len(lines) > 0 else []\n    pref = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    print(sol.prefixCount(words, pref))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int prefixCount(String[] words, String pref) {\n        // TODO: Return count of words with prefix\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        String pref = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.prefixCount(words, pref));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    prefixCount(words, pref) {\n        // TODO: Return count of words with prefix\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const words = lines[0] ? lines[0].split(/\\s+/) : [];\n    const pref = lines[1] || \"\";\n    const sol = new Solution();\n    console.log(sol.prefixCount(words, pref));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int prefixCount(vector<string>& words, string pref) {\n        // TODO: Return count of words with prefix\n        return 0;\n    }\n};\n\nint main() {\n    string wordsLine;\n    getline(cin, wordsLine);\n    istringstream iss(wordsLine);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    string pref;\n    getline(cin, pref);\n    Solution sol;\n    cout << sol.prefixCount(words, pref) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid prefixCount(char** words, int wordsSize, char* pref) {\n    // TODO: Print count of words with prefix\n}\n\nint main() {\n    char line[10005];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* words[105];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    char pref[105];\n    fgets(pref, sizeof(pref), stdin);\n    pref[strcspn(pref, \"\\n\")] = 0;\n    prefixCount(words, wordsSize, pref);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through each word and check if it starts with the prefix.",
+                "Use string comparison functions to check if a word has the given prefix."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Flips to Make a OR b Equal to c (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven 3 positives numbers a, b and c. Return the minimum flips required in some bits of a and b to make ( a OR b == c ). (bitwise OR operation).\nFlip operation consists of change any single bit 1 to 0 or change the bit 0 to 1 in their binary representation.\n",
+            "examples": "Sample Input\n2 6 5\n\nSample Output\n3\n\nExplanation: After flips a = 1 , b = 4 , c = 5 such that (a OR b == c)\n\nSample Input\n4 2 7\n\nSample Output\n1\n\nExplanation: Flip one bit in a or b to make (a OR b) == 7.\n\nSample Input\n1 2 3\n\nSample Output\n0\n\nExplanation: (1 OR 2) == 3, no flips needed.",
+            "constraints": "1 <= a <= 10^9\n1 <= b <= 10^9\n1 <= c <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "10 15 25",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "2 6 5",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 2 3",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "8 3 11",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "4 2 7",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minFlips(self, a, b, c):\n        # TODO: Return minimum flips to make (a OR b) == c\n        pass\n\nif __name__ == '__main__':\n    import sys\n    a, b, c = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    print(sol.minFlips(a, b, c))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minFlips(int a, int b, int c) {\n        // TODO: Return minimum flips to make (a OR b) == c\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int a = Integer.parseInt(parts[0]);\n        int b = Integer.parseInt(parts[1]);\n        int c = Integer.parseInt(parts[2]);\n        Solution sol = new Solution();\n        System.out.println(sol.minFlips(a, b, c));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minFlips(a, b, c) {\n        // TODO: Return minimum flips to make (a OR b) == c\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const [a, b, c] = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.minFlips(a, b, c));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minFlips(int a, int b, int c) {\n        // TODO: Return minimum flips to make (a OR b) == c\n        return 0;\n    }\n};\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    Solution sol;\n    cout << sol.minFlips(a, b, c) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid minFlips(int a, int b, int c) {\n    // TODO: Print minimum flips to make (a OR b) == c\n}\n\nint main() {\n    int a, b, c;\n    scanf(\"%d %d %d\", &a, &b, &c);\n    minFlips(a, b, c);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check each bit position. For bit i:",
+                "If c[i] == 1 but (a[i] OR b[i]) == 0, need 1 flip. If c[i] == 0 but (a[i] OR b[i]) == 1, need to flip all 1s in a[i] and b[i]."
+            ]
+        }
+    ]
+}
+

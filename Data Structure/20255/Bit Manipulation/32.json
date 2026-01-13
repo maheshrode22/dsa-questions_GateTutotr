@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Can I Win (Bit Manipulation)",
+            "description": "Problem Statement\n\nIn the \"100 game\" two players take turns adding, to a running total, any integer from 1 to 10. The player who first causes the running total to reach or exceed 100 wins.\nWhat if we change the game so that players cannot re-use integers?\nFor example, two players might take turns drawing from a common pool of numbers from 1 to 15 without replacement until they reach a total >= 100.\nGiven two integers maxChoosableInteger and desiredTotal, return true if the first player to move can force a win, otherwise, return false. Assume both players play optimally.\n",
+            "examples": "Sample Input\n10 11\n\nSample Output\nFalse\n\nExplanation:\nNo matter which integer the first player choose, the first player will lose.\nThe first player can choose an integer from 1 up to 10.\nIf the first player choose 1, the second player can only choose integers from 2 up to 10.\nThe second player will win by choosing 10 and get a total = 11, which is >= desiredTotal.\nSame with other integers chosen by the first player, the second player will always win.\n\nSample Input\n10 0\n\nSample Output\nTrue\n\nExplanation: If desiredTotal is 0, first player wins immediately.\n\nSample Input\n10 1\n\nSample Output\nTrue\n\nExplanation: First player can choose 1 and win.",
+            "constraints": "1 <= maxChoosableInteger <= 20\n0 <= desiredTotal <= 300",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "10 11",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "10 0",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "10 1",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "10 15",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "8 25",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def canIWin(self, maxChoosableInteger, desiredTotal):\n        # TODO: Return True if first player can force a win, else False\n        pass\n\nif __name__ == '__main__':\n    import sys\n    maxChoosableInteger, desiredTotal = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    result = sol.canIWin(maxChoosableInteger, desiredTotal)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean canIWin(int maxChoosableInteger, int desiredTotal) {\n        // TODO: Return true if first player can force a win, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int maxChoosableInteger = Integer.parseInt(parts[0]);\n        int desiredTotal = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.canIWin(maxChoosableInteger, desiredTotal) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    canIWin(maxChoosableInteger, desiredTotal) {\n        // TODO: Return true if first player can force a win, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const maxChoosableInteger = parseInt(parts[0]);\n    const desiredTotal = parseInt(parts[1]);\n    const sol = new Solution();\n    const result = sol.canIWin(maxChoosableInteger, desiredTotal);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool canIWin(int maxChoosableInteger, int desiredTotal) {\n        // TODO: Return true if first player can force a win, else false\n        return false;\n    }\n};\n\nint main() {\n    int maxChoosableInteger, desiredTotal;\n    cin >> maxChoosableInteger >> desiredTotal;\n    Solution sol;\n    cout << (sol.canIWin(maxChoosableInteger, desiredTotal) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n\nvoid canIWin(int maxChoosableInteger, int desiredTotal) {\n    // TODO: Print \"True\" if first player can force a win, else \"False\"\n}\n\nint main() {\n    int maxChoosableInteger, desiredTotal;\n    scanf(\"%d %d\", &maxChoosableInteger, &desiredTotal);\n    canIWin(maxChoosableInteger, desiredTotal);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use memoization with bit manipulation to represent which numbers are chosen.",
+                "For each state, check if there's a move that leads to a winning position."
+            ]
+        }
+    ]
+}
+

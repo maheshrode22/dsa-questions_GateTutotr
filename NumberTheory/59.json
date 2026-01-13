@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Simplified Fractions (Number Theory)",
+            "description": "Given an integer n, return a list of all simplified fractions between 0 and 1 (exclusive) such that the denominator is less-than-or-equal-to n. You can return the answer in any order.\n\nInput Format:\nFirst line: integer n.\n\nOutput Format:\nPrint space-separated strings.",
+            "examples": "Sample Input\n2\n\nSample Output\n1/2",
+            "constraints": "1 <= n <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 4033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "1/2"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1/2 1/3 2/3"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "1/2 1/3 2/3 1/4 3/4 1/5 2/5 3/5 4/5 1/6 5/6 1/7 2/7 3/7 4/7 5/7 6/7 1/8 3/8 5/8 7/8 1/9 2/9 4/9 5/9 7/9 8/9 1/10 3/10 7/10 9/10"
+                },
+                {
+                    "input": "6",
+                    "expectedOutput": "1/2 1/3 2/3 1/4 3/4 1/5 2/5 3/5 4/5 1/6 5/6"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "1/2 1/3 2/3 1/4 3/4 1/5 2/5 3/5 4/5 1/6 5/6 1/7 2/7 3/7 4/7 5/7 6/7"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def simplifiedFractions(self, n):\n        # TODO: Return list of fractions\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    print(*(sol.simplifiedFractions(n)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public List<String> simplifiedFractions(int n) {\n        // TODO: Return list of fractions\n        return new ArrayList<>();\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        List<String> res = sol.simplifiedFractions(n);\n        for(int i=0; i<res.size(); i++) System.out.print(res.get(i) + (i==res.size()-1?\"\":\" \"));\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    simplifiedFractions(n) {\n        // TODO: Return list of fractions\n        return [];\n    }\n}\n\nconst fs = require('fs');\nconst n = Number(fs.readFileSync(0, 'utf-8').trim());\nconst sol = new Solution();\nconsole.log(sol.simplifiedFractions(n).join(' '));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <numeric>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> simplifiedFractions(int n) {\n        // TODO: Return list of fractions\n        return {};\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<string> res = sol.simplifiedFractions(n);\n    for(int i=0; i<res.size(); i++) cout << res[i] << (i==res.size()-1?\"\":\" \");\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\n// Return array of strings. Set returnSize.\nchar** simplifiedFractions(int n, int* returnSize) {\n    // TODO: Return list of fractions\n    *returnSize = 0;\n    return NULL;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int returnSize;\n    char** res = simplifiedFractions(n, &returnSize);\n    for(int i=0; i<returnSize; i++) printf(\"%s%s\", res[i], (i==returnSize-1?\"\":\" \"));\n    printf(\"\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Iterate through all denominators from 2 to n.",
+                "For each denominator, iterate numerators and check GCD."
+            ]
+        }
+    ]
+}

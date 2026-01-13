@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Set Mismatch (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou have a set of integers s, which originally contains all the numbers from 1 to n. Unfortunately, due to some error, one of the numbers in s got duplicated to another number in the set, which results in repetition of one number and loss of another number.\nYou are given an integer array nums representing the data status of this set after the error.\nFind the number that occurs twice and the number that is missing and return them in the form of an array.\n",
+            "examples": "Sample Input\n1 2 2 4\n\nSample Output\n2 3\n\nExplanation: The number 2 appears twice and the number 3 is missing.\n\nSample Input\n1 1\n\nSample Output\n1 2\n\nExplanation: The number 1 appears twice and the number 2 is missing.",
+            "constraints": "2 <= nums.length <= 10^4\n1 <= nums[i] <= 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "1 2 2 4",
+                    "expectedOutput": "2 3"
+                },
+                {
+                    "input": "1 1",
+                    "expectedOutput": "1 2"
+                },
+                {
+                    "input": "3 1 2 5 3",
+                    "expectedOutput": "3 4"
+                },
+                {
+                    "input": "1 2 4 6 6",
+                    "expectedOutput": "6 3"
+                },
+                {
+                    "input": "4 2 2 5 3",
+                    "expectedOutput": "2 1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findErrorNums(self, nums):\n        # TODO: Return [duplicate, missing]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.findErrorNums(nums)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] findErrorNums(int[] nums) {\n        // TODO: Return [duplicate, missing]\n        return new int[2];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        int[] result = sol.findErrorNums(nums);\n        System.out.println(result[0] + \" \" + result[1]);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findErrorNums(nums) {\n        // TODO: Return [duplicate, missing]\n        return [0, 0];\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.findErrorNums(nums);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> findErrorNums(vector<int>& nums) {\n        // TODO: Return [duplicate, missing]\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    vector<int> result = sol.findErrorNums(nums);\n    cout << result[0] << \" \" << result[1] << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid findErrorNums(int* nums, int numsSize) {\n    // TODO: Print duplicate and missing (space-separated)\n}\n\nint main() {\n    int nums[10005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    findErrorNums(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use XOR to find the duplicate and missing numbers.",
+                "Calculate expected sum and actual sum to find the difference."
+            ]
+        }
+    ]
+}
+

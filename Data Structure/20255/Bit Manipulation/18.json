@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Product of Word Lengths (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a string array words, return the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. If no such two words exist, return 0.\n",
+            "examples": "Sample Input\nabcw baz foo bar xtfn abcdef\n\nSample Output\n16\n\nExplanation: The two words can be \"abcw\", \"xtfn\".\n\nSample Input\na ab abc d cd bcd abcd\n\nSample Output\n4\n\nExplanation: The two words can be \"ab\", \"cd\".\n\nSample Input\na aa aaa aaaa\n\nSample Output\n0\n\nExplanation: No such pair of words.",
+            "constraints": "2 <= words.length <= 1000\n1 <= words[i].length <= 1000\nwords[i] consists only of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "a ab abc d cd bcd abcd",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abcw baz foo bar xtfn abcdef",
+                    "expectedOutput": "16"
+                },
+                {
+                    "input": "a aa aaa aaaa",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "hello world python programming",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "abc def ghi",
+                    "expectedOutput": "9"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxProduct(self, words):\n        # TODO: Return maximum product of word lengths without common letters\n        pass\n\nif __name__ == '__main__':\n    import sys\n    words = sys.stdin.read().strip().split()\n    sol = Solution()\n    print(sol.maxProduct(words))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxProduct(String[] words) {\n        // TODO: Return maximum product of word lengths without common letters\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        System.out.println(sol.maxProduct(words));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxProduct(words) {\n        // TODO: Return maximum product of word lengths without common letters\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const words = input.trim().split(/\\s+/);\n    const sol = new Solution();\n    console.log(sol.maxProduct(words));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxProduct(vector<string>& words) {\n        // TODO: Return maximum product of word lengths without common letters\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    Solution sol;\n    cout << sol.maxProduct(words) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid maxProduct(char** words, int wordsSize) {\n    // TODO: Print maximum product of word lengths without common letters\n}\n\nint main() {\n    char line[1000000];\n    fgets(line, sizeof(line), stdin);\n    char* words[1005];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        words[wordsSize] = (char*)malloc(strlen(token) + 1);\n        strcpy(words[wordsSize], token);\n        wordsSize++;\n        token = strtok(NULL, \" \\n\");\n    }\n    maxProduct(words, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation to represent each word's character set as a bitmask.",
+                "Two words don't share common letters if their bitmasks have no common set bits (bitwise AND is 0)."
+            ]
+        }
+    ]
+}
+

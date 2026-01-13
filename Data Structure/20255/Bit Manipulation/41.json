@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Bulb Switcher II (Bit Manipulation)",
+            "description": "Problem Statement\n\nThere is a room with n bulbs labeled from 1 to n that all are turned on initially, and four buttons on the wall. Each of the four buttons has a different functionality where:\n\nButton 1: Flips the status of all the bulbs.\nButton 2: Flips the status of all the bulbs with even labels (i.e., 2, 4, ...).\nButton 3: Flips the status of all the bulbs with odd labels (i.e., 1, 3, ...).\nButton 4: Flips the status of all the bulbs with a label j = 3k + 1 where k = 0, 1, 2, ... (i.e., 1, 4, 7, 10, ...).\n\nYou must make exactly presses button presses in total. For each press, you may pick any of the four buttons to press.\nGiven the two integers n and presses, return the number of different possible statuses after performing all presses button presses.\n",
+            "examples": "Sample Input\n1 1\n\nSample Output\n2\n\nExplanation: Status can be:\n- [off] by pressing button 1\n- [on] by pressing button 2\n\nSample Input\n2 1\n\nSample Output\n3\n\nExplanation: Status can be:\n- [off, off] by pressing button 1\n- [on, off] by pressing button 2\n- [off, on] by pressing button 3",
+            "constraints": "1 <= n <= 1000\n0 <= presses <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "2 1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "3 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "4 2",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "5 3",
+                    "expectedOutput": "8"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def flipLights(self, n, presses):\n        # TODO: Return number of different possible statuses\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n, presses = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    print(sol.flipLights(n, presses))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int flipLights(int n, int presses) {\n        // TODO: Return number of different possible statuses\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int presses = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.flipLights(n, presses));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    flipLights(n, presses) {\n        // TODO: Return number of different possible statuses\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const n = parseInt(parts[0]);\n    const presses = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.flipLights(n, presses));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int flipLights(int n, int presses) {\n        // TODO: Return number of different possible statuses\n        return 0;\n    }\n};\n\nint main() {\n    int n, presses;\n    cin >> n >> presses;\n    Solution sol;\n    cout << sol.flipLights(n, presses) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid flipLights(int n, int presses) {\n    // TODO: Print number of different possible statuses\n}\n\nint main() {\n    int n, presses;\n    scanf(\"%d %d\", &n, &presses);\n    flipLights(n, presses);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Notice that the operations are commutative and have cycles.",
+                "After 4 operations, the pattern repeats. Consider cases: presses = 0, 1, 2, 3, and >= 4."
+            ]
+        }
+    ]
+}
+

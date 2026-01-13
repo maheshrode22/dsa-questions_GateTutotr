@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Pyramid Transition Matrix (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are stacking blocks to form a pyramid. Each block has a color, which is represented by a single letter. Each row of blocks contains one less block than the row beneath it and is centered on top.\nTo make the pyramid aesthetically pleasing, there are only specific triangular patterns that are allowed. A triangular pattern consists of a single block stacked on top of two blocks. The patterns are given as a list of three-letter strings allowed, where the first two characters of a pattern represent the left and right bottom blocks respectively, and the third character is the top block.\nFor example, \"ABC\" represents a triangular pattern with a 'C' block stacked on top of an 'A' (left) and 'B' (right) block. Note that this is different from \"BAC\" where 'B' is on the left bottom and 'A' is on the right bottom.\nYou start with a bottom row of blocks bottom, given as a single string, that you must use as the base of the pyramid.\nGiven bottom and allowed, return true if you can build the pyramid all the way to the top such that every triangular pattern in the pyramid is in allowed, or false otherwise.\n",
+            "examples": "Sample Input\nBCD\nBCC CDE CEA FFF\n\nSample Output\nTrue\n\nExplanation: The allowed triangular patterns are shown.\nStarting from the bottom (level 3), we can build \"CE\" on level 2 and then build \"A\" on level 1.\nThere are three triangular patterns in the pyramid, which are \"BCC\", \"CDE\", and \"CEA\". All are allowed.\n\nSample Input\nAAAA\nAAB AAC BCD BBE DEF\n\nSample Output\nFalse\n\nExplanation: The allowed triangular patterns are shown.\nStarting from the bottom (level 4), there are multiple ways to build level 3, but trying all the possibilities, you will get always stuck before building level 1.",
+            "constraints": "2 <= bottom.length <= 6\n0 <= allowed.length <= 216\nallowed[i].length == 3\nThe letters in all input strings are from the set {'A', 'B', 'C', 'D', 'E', 'F'}.\nAll the values of allowed are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "BCD\nBCC CDE CEA FFF",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "AAAA\nAAB AAC BCD BBE DEF",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "ABC\nABD BCE DEF",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "FFFA\nFFF FFA FAF AFF",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "ABC\nABD BDC CDB BDD DEF DEE",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def pyramidTransition(self, bottom, allowed):\n        # TODO: Return True if pyramid can be built, else False\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    bottom = lines[0]\n    allowed = lines[1].split() if len(lines) > 1 else []\n    sol = Solution()\n    result = sol.pyramidTransition(bottom, allowed)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean pyramidTransition(String bottom, List<String> allowed) {\n        // TODO: Return true if pyramid can be built, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String bottom = br.readLine().trim();\n        String[] allowedParts = br.readLine().trim().split(\" \");\n        List<String> allowed = Arrays.asList(allowedParts);\n        Solution sol = new Solution();\n        System.out.println(sol.pyramidTransition(bottom, allowed) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    pyramidTransition(bottom, allowed) {\n        // TODO: Return true if pyramid can be built, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const bottom = lines[0];\n    const allowed = lines.length > 1 ? lines[1].split(/\\s+/) : [];\n    const sol = new Solution();\n    const result = sol.pyramidTransition(bottom, allowed);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool pyramidTransition(string bottom, vector<string>& allowed) {\n        // TODO: Return true if pyramid can be built, else false\n        return false;\n    }\n};\n\nint main() {\n    string bottom;\n    getline(cin, bottom);\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> allowed;\n    string word;\n    while (iss >> word) {\n        allowed.push_back(word);\n    }\n    Solution sol;\n    cout << (sol.pyramidTransition(bottom, allowed) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid pyramidTransition(char* bottom, char** allowed, int allowedSize) {\n    // TODO: Print \"True\" if pyramid can be built, else \"False\"\n}\n\nint main() {\n    char bottom[10];\n    fgets(bottom, sizeof(bottom), stdin);\n    bottom[strcspn(bottom, \"\\n\")] = 0;\n    \n    char line[3000];\n    fgets(line, sizeof(line), stdin);\n    char* allowed[216];\n    int allowedSize = 0;\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        allowed[allowedSize] = (char*)malloc(strlen(token) + 1);\n        strcpy(allowed[allowedSize], token);\n        allowedSize++;\n        token = strtok(NULL, \" \\n\");\n    }\n    pyramidTransition(bottom, allowed, allowedSize);\n    for (int i = 0; i < allowedSize; i++) {\n        free(allowed[i]);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking with memoization. For each row, try all possible combinations of blocks.",
+                "Build the pyramid from bottom to top, checking if each triangular pattern is allowed."
+            ]
+        }
+    ]
+}
+

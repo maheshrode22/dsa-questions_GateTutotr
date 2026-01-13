@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Construct Binary Tree from Preorder and Inorder Traversal (Hash Table)",
+            "description": "Problem Statement\n\nGiven two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.\nFor this problem, output the level-order traversal of the constructed tree.\n",
+            "examples": "Example 1:\n\nInput: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]\nOutput: [3,9,20,null,null,15,7]\n\nExample 2:\n\nInput: preorder = [-1], inorder = [-1]\nOutput: [-1]",
+            "constraints": "1 <= preorder.length <= 3000\ninorder.length == preorder.length\n-3000 <= preorder[i], inorder[i] <= 3000\npreorder and inorder consist of unique values",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5\n3 9 20 15 7\n9 3 15 20 7",
+                    "expectedOutput": "3 9 20 null null 15 7"
+                },
+                {
+                    "input": "1\n-1\n-1",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "3\n1 2 3\n2 1 3",
+                    "expectedOutput": "1 2 3"
+                },
+                {
+                    "input": "7\n1 2 4 5 3 6 7\n4 2 5 1 6 3 7",
+                    "expectedOutput": "1 2 3 4 5 6 7"
+                },
+                {
+                    "input": "4\n10 5 15 20\n5 10 15 20",
+                    "expectedOutput": "10 5 15 null null null 20"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\nclass Solution:\n    def buildTree(self, preorder, inorder):\n        # TODO: Build binary tree using hash map for inorder indices\n        # Return root of constructed tree\n        pass\n\nif __name__ == '__main__':\n    import sys\n    from collections import deque\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    preorder = list(map(int, data[1].split()))\n    inorder = list(map(int, data[2].split()))\n    sol = Solution()\n    root = sol.buildTree(preorder, inorder)\n    # Level-order traversal\n    if not root:\n        print(\"null\")\n    else:\n        result = []\n        queue = deque([root])\n        while queue:\n            node = queue.popleft()\n            if node:\n                result.append(str(node.val))\n                queue.append(node.left)\n                queue.append(node.right)\n            else:\n                result.append(\"null\")\n        # Remove trailing nulls\n        while result and result[-1] == \"null\":\n            result.pop()\n        print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass TreeNode{\n    int val;\n    TreeNode left, right;\n    TreeNode(int val){ this.val = val; }\n}\nclass Solution{\n    TreeNode buildTree(int[] preorder, int[] inorder){\n        // TODO: Build binary tree using hash map for inorder indices\n        // Return root of constructed tree\n        return null;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] pre = br.readLine().trim().split(\" \");\n        String[] in = br.readLine().trim().split(\" \");\n        int[] preorder = new int[n];\n        int[] inorder = new int[n];\n        for(int i=0;i<n;i++){\n            preorder[i] = Integer.parseInt(pre[i]);\n            inorder[i] = Integer.parseInt(in[i]);\n        }\n        Solution sol = new Solution();\n        TreeNode root = sol.buildTree(preorder, inorder);\n        // Level-order traversal\n        if(root == null){\n            System.out.println(\"null\");\n        } else {\n            List<String> result = new ArrayList<>();\n            Queue<TreeNode> queue = new LinkedList<>();\n            queue.offer(root);\n            while(!queue.isEmpty()){\n                TreeNode node = queue.poll();\n                if(node != null){\n                    result.add(String.valueOf(node.val));\n                    queue.offer(node.left);\n                    queue.offer(node.right);\n                } else {\n                    result.add(\"null\");\n                }\n            }\n            while(result.size() > 0 && result.get(result.size()-1).equals(\"null\")){\n                result.remove(result.size()-1);\n            }\n            System.out.println(String.join(\" \", result));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class TreeNode{\n  constructor(val, left=null, right=null){\n    this.val = val;\n    this.left = left;\n    this.right = right;\n  }\n}\nclass Solution{\n  buildTree(preorder, inorder){\n    // TODO: Build binary tree using hash map for inorder indices\n    // Return root of constructed tree\n    return null;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const preorder = lines[1].split(\" \").map(Number);\n  const inorder = lines[2].split(\" \").map(Number);\n  const sol = new Solution();\n  const root = sol.buildTree(preorder, inorder);\n  // Level-order traversal\n  if(!root){\n    console.log(\"null\");\n  } else {\n    const result = [];\n    const queue = [root];\n    while(queue.length > 0){\n      const node = queue.shift();\n      if(node){\n        result.push(node.val);\n        queue.push(node.left);\n        queue.push(node.right);\n      } else {\n        result.push(\"null\");\n      }\n    }\n    while(result.length > 0 && result[result.length-1] === \"null\"){\n      result.pop();\n    }\n    console.log(result.join(\" \"));\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct TreeNode{\n    int val;\n    TreeNode *left, *right;\n    TreeNode(int x) : val(x), left(NULL), right(NULL) {}\n};\nclass Solution{\npublic:\n    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder){\n        // TODO: Build binary tree using hash map for inorder indices\n        // Return root of constructed tree\n        return NULL;\n    }\n};\nint main(){\n    int n; cin >> n;\n    vector<int> preorder(n), inorder(n);\n    for(int i=0;i<n;i++) cin >> preorder[i];\n    for(int i=0;i<n;i++) cin >> inorder[i];\n    Solution sol;\n    TreeNode* root = sol.buildTree(preorder, inorder);\n    // Level-order traversal\n    if(!root){\n        cout << \"null\";\n    } else {\n        vector<string> result;\n        queue<TreeNode*> q;\n        q.push(root);\n        while(!q.empty()){\n            TreeNode* node = q.front(); q.pop();\n            if(node){\n                result.push_back(to_string(node->val));\n                q.push(node->left);\n                q.push(node->right);\n            } else {\n                result.push_back(\"null\");\n            }\n        }\n        while(!result.empty() && result.back() == \"null\"){\n            result.pop_back();\n        }\n        for(int i=0;i<result.size();i++){\n            cout << result[i];\n            if(i < result.size()-1) cout << \" \";\n        }\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct TreeNode{\n    int val;\n    struct TreeNode *left, *right;\n} TreeNode;\n\nTreeNode* createNode(int val){\n    TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));\n    node->val = val;\n    node->left = node->right = NULL;\n    return node;\n}\n\nTreeNode* buildTree(int* preorder, int* inorder, int n){\n    // TODO: Build binary tree using array-based hash map for inorder indices\n    // Return root of constructed tree\n    return NULL;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int preorder[3000], inorder[3000];\n    for(int i=0;i<n;i++) scanf(\"%d\", &preorder[i]);\n    for(int i=0;i<n;i++) scanf(\"%d\", &inorder[i]);\n    TreeNode* root = buildTree(preorder, inorder, n);\n    // Simple output for C (just root value for simplicity)\n    if(root) printf(\"%d\", root->val);\n    else printf(\"null\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash map to store the index of each value in the inorder array for O(1) lookup.",
+                "The first element in preorder is always the root. Find it in inorder to split left and right subtrees."
+            ]
+        }
+    ]
+}

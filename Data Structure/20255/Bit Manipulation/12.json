@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Complete Tree Nodes (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven the root of a complete binary tree, return the number of the nodes in the tree.\nAccording to Wikipedia, every level, except possibly the last, is completely filled in a complete binary tree, and all nodes in the last level are as far left as possible. It can have between 1 and 2^h nodes inclusive at the last level h.\nDesign an algorithm that runs in less than O(n) time complexity.\nNote: Input is given as a level-order array representation where null represents missing nodes.\n",
+            "examples": "Sample Input\n1 2 3 4 5 6\n\nSample Output\n6\n\nExplanation: The tree has 6 nodes.\n\nSample Input\n\n\nSample Output\n0\n\nExplanation: Empty tree has 0 nodes.\n\nSample Input\n1\n\nSample Output\n1\n\nExplanation: The tree has 1 node.",
+            "constraints": "The number of nodes in the tree is in the range [0, 5 * 10^4].\n0 <= Node.val <= 5 * 10^4\nThe tree is guaranteed to be complete.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "1 2 3 4 5 6",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1 2 3 4 5 6 7",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15",
+                    "expectedOutput": "15"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countNodes(self, root):\n        # TODO: Return the number of nodes in the complete binary tree\n        pass\n    \n    def buildTree(self, arr):\n        if not arr:\n            return None\n        from collections import deque\n        root = TreeNode(arr[0])\n        queue = deque([root])\n        i = 1\n        while queue and i < len(arr):\n            node = queue.popleft()\n            if arr[i] is not None:\n                node.left = TreeNode(arr[i])\n                queue.append(node.left)\n            i += 1\n            if i < len(arr) and arr[i] is not None:\n                node.right = TreeNode(arr[i])\n                queue.append(node.right)\n            i += 1\n        return root\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.readline().strip()\n    if not line:\n        print(0)\n    else:\n        arr = [int(x) if x != 'null' else None for x in line.split()]\n        sol = Solution()\n        root = sol.buildTree(arr)\n        print(sol.countNodes(root))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass TreeNode {\n    int val;\n    TreeNode left;\n    TreeNode right;\n    TreeNode(int x) { val = x; }\n}\n\nclass Solution {\n    public int countNodes(TreeNode root) {\n        // TODO: Return the number of nodes in the complete binary tree\n        return 0;\n    }\n    \n    public TreeNode buildTree(String[] arr) {\n        if (arr.length == 0 || arr[0].equals(\"null\")) return null;\n        TreeNode root = new TreeNode(Integer.parseInt(arr[0]));\n        Queue<TreeNode> queue = new LinkedList<>();\n        queue.offer(root);\n        int i = 1;\n        while (!queue.isEmpty() && i < arr.length) {\n            TreeNode node = queue.poll();\n            if (i < arr.length && !arr[i].equals(\"null\")) {\n                node.left = new TreeNode(Integer.parseInt(arr[i]));\n                queue.offer(node.left);\n            }\n            i++;\n            if (i < arr.length && !arr[i].equals(\"null\")) {\n                node.right = new TreeNode(Integer.parseInt(arr[i]));\n                queue.offer(node.right);\n            }\n            i++;\n        }\n        return root;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String line = br.readLine().trim();\n        if (line.isEmpty()) {\n            System.out.println(0);\n            return;\n        }\n        String[] arr = line.split(\" \");\n        Solution sol = new Solution();\n        TreeNode root = sol.buildTree(arr);\n        System.out.println(sol.countNodes(root));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class TreeNode {\n    constructor(val, left, right) {\n        this.val = val;\n        this.left = left;\n        this.right = right;\n    }\n}\n\nclass Solution {\n    countNodes(root) {\n        // TODO: Return the number of nodes in the complete binary tree\n        return 0;\n    }\n    \n    buildTree(arr) {\n        if (arr.length === 0) return null;\n        const root = new TreeNode(parseInt(arr[0]));\n        const queue = [root];\n        let i = 1;\n        while (queue.length > 0 && i < arr.length) {\n            const node = queue.shift();\n            if (arr[i] !== 'null' && arr[i] !== undefined) {\n                node.left = new TreeNode(parseInt(arr[i]));\n                queue.push(node.left);\n            }\n            i++;\n            if (i < arr.length && arr[i] !== 'null' && arr[i] !== undefined) {\n                node.right = new TreeNode(parseInt(arr[i]));\n                queue.push(node.right);\n            }\n            i++;\n        }\n        return root;\n    }\n}\n\nfunction solve(input) {\n    const line = input.trim();\n    if (!line) {\n        console.log(0);\n        return;\n    }\n    const arr = line.split(/\\s+/);\n    const sol = new Solution();\n    const root = sol.buildTree(arr);\n    console.log(sol.countNodes(root));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct TreeNode {\n    int val;\n    TreeNode *left;\n    TreeNode *right;\n    TreeNode(int x) : val(x), left(NULL), right(NULL) {}\n};\n\nclass Solution {\npublic:\n    int countNodes(TreeNode* root) {\n        // TODO: Return the number of nodes in the complete binary tree\n        return 0;\n    }\n    \n    TreeNode* buildTree(vector<string>& arr) {\n        if (arr.empty() || arr[0] == \"null\") return nullptr;\n        TreeNode* root = new TreeNode(stoi(arr[0]));\n        queue<TreeNode*> q;\n        q.push(root);\n        int i = 1;\n        while (!q.empty() && i < arr.size()) {\n            TreeNode* node = q.front();\n            q.pop();\n            if (i < arr.size() && arr[i] != \"null\") {\n                node->left = new TreeNode(stoi(arr[i]));\n                q.push(node->left);\n            }\n            i++;\n            if (i < arr.size() && arr[i] != \"null\") {\n                node->right = new TreeNode(stoi(arr[i]));\n                q.push(node->right);\n            }\n            i++;\n        }\n        return root;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    if (line.empty()) {\n        cout << 0 << endl;\n        return 0;\n    }\n    istringstream iss(line);\n    vector<string> arr;\n    string token;\n    while (iss >> token) {\n        arr.push_back(token);\n    }\n    Solution sol;\n    TreeNode* root = sol.buildTree(arr);\n    cout << sol.countNodes(root) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nstruct TreeNode {\n    int val;\n    struct TreeNode* left;\n    struct TreeNode* right;\n};\n\nvoid countNodes(struct TreeNode* root) {\n    // TODO: Print the number of nodes in the complete binary tree\n}\n\nint main() {\n    char line[200000];\n    if (fgets(line, sizeof(line), stdin) == NULL || line[0] == '\\n') {\n        printf(\"0\\n\");\n        return 0;\n    }\n    // Note: Tree building and traversal logic needed\n    // This is a simplified version - full implementation would require\n    // parsing the input array and building the tree structure\n    printf(\"0\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use binary search to find the last level and count nodes efficiently.",
+                "Use bit manipulation to navigate the tree structure."
+            ]
+        }
+    ]
+}
+

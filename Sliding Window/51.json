@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Swap For Longest Repeated Character Substring (Sliding Window)",
+      "description": "You can swap two characters in the text. Return the length of the longest substring with repeated characters.\n\nInput Format:\nFirst line: string text.\n\nOutput Format:\nPrint a single integer: the maximum length.",
+      "examples": "Sample Input\nababa\n\nSample Output\n3",
+      "constraints": "See problem description.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "ababa",
+          "expectedOutput": "3"
+        },
+        {
+          "input": "aaabaaa",
+          "expectedOutput": "6"
+        },
+        {
+          "input": "aaaaa",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "abcdef",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "aaabbaaa",
+          "expectedOutput": "4"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def maxRepOpt1(self, text):\n        # TODO: Return the length of the longest substring with repeated characters after at most one swap\n        pass\n\nif __name__ == '__main__':\n    text = input().strip()\n    sol = Solution()\n    print(sol.maxRepOpt1(text))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int maxRepOpt1(String text) {\n        // TODO: Return the length of the longest substring with repeated characters after at most one swap\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String text = sc.nextLine().strip();\n        Solution sol = new Solution();\n        System.out.println(sol.maxRepOpt1(text));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    maxRepOpt1(text) {\n        // TODO: Return the length of the longest substring with repeated characters after at most one swap\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const text = fs.readFileSync(0, 'utf-8').trim();\n    const sol = new Solution();\n    console.log(sol.maxRepOpt1(text));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxRepOpt1(string text) {\n        // TODO: Return the length of the longest substring with repeated characters after at most one swap\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string text;\n    cin >> text;\n    Solution sol;\n    cout << sol.maxRepOpt1(text) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char text[20001];\n    scanf(\"%s\", text);\n    // TODO: Return the length of the longest substring with repeated characters after at most one swap\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

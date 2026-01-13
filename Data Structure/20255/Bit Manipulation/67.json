@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Campus Bikes II (Bit Manipulation)",
+            "description": "Problem Statement\n\nOn a campus represented as a 2D grid, there are n workers and m bikes, with n <= m. Each worker and bike is a 2D coordinate on this grid.\nWe assign one unique bike to each worker so that the sum of the Manhattan distances between each worker and their assigned bike is minimized.\nReturn the minimum possible sum of Manhattan distances between each worker and their assigned bike.\nThe Manhattan distance between two points p1 and p2 is Manhattan(p1, p2) = |p1.x - p2.x| + |p1.y - p2.y|.\n",
+            "examples": "Sample Input\n0 0\n2 1\n1 2\n3 3\n\nSample Output\n6\n\nExplanation: \nWe assign bike 0 to worker 0, bike 1 to worker 1. The Manhattan distance of both assignments is 3, so the output is 6.\n\nSample Input\n0 0\n1 1\n2 0\n1 0\n2 2\n2 1\n\nSample Output\n4\n\nExplanation: \nWe first assign bike 0 to worker 0, then assign bike 1 to worker 1 or worker 2, bike 2 to worker 2 or worker 1. Both assignments lead to sum of the Manhattan distances as 4.",
+            "constraints": "n == workers.length\nm == bikes.length\n1 <= n <= m <= 10\nworkers[i].length == 2\nbikes[i].length == 2\n0 <= workers[i][0], workers[i][1], bikes[i][0], bikes[i][1] < 1000\nAll the workers and the bikes locations are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "0 0\n2 1\n1 2\n3 3",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "0 0\n1 1\n2 0\n1 0\n2 2\n2 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "0 0\n1 0\n2 0\n3 0\n4 0\n0 999\n1 999\n2 999\n3 999\n4 999",
+                    "expectedOutput": "4995"
+                },
+                {
+                    "input": "1 1\n2 2\n3 3\n4 4\n5 5\n6 6\n7 7",
+                    "expectedOutput": "18"
+                },
+                {
+                    "input": "0 1\n1 0\n2 3\n3 2\n4 5",
+                    "expectedOutput": "8"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def assignBikes(self, workers, bikes):\n        # TODO: Return minimum sum of Manhattan distances\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = [line.strip() for line in sys.stdin if line.strip()]\n    # First half are workers, second half are bikes\n    n = len(lines) // 2\n    workers = [list(map(int, lines[i].split())) for i in range(n)]\n    bikes = [list(map(int, lines[i].split())) for i in range(n, len(lines))]\n    sol = Solution()\n    print(sol.assignBikes(workers, bikes))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int assignBikes(int[][] workers, int[][] bikes) {\n        // TODO: Return minimum sum of Manhattan distances\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> allCoords = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            allCoords.add(new int[]{Integer.parseInt(parts[0]), Integer.parseInt(parts[1])});\n        }\n        int n = allCoords.size() / 2;\n        int[][] workers = new int[n][2];\n        int[][] bikes = new int[allCoords.size() - n][2];\n        for (int i = 0; i < n; i++) {\n            workers[i] = allCoords.get(i);\n        }\n        for (int i = n; i < allCoords.size(); i++) {\n            bikes[i - n] = allCoords.get(i);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.assignBikes(workers, bikes));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    assignBikes(workers, bikes) {\n        // TODO: Return minimum sum of Manhattan distances\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const workers = [];\n    const bikes = [];\n    const n = Math.floor(lines.length / 2);\n    for (let i = 0; i < n; i++) {\n        workers.push(lines[i].trim().split(/\\s+/).map(Number));\n    }\n    for (let i = n; i < lines.length; i++) {\n        bikes.push(lines[i].trim().split(/\\s+/).map(Number));\n    }\n    const sol = new Solution();\n    console.log(sol.assignBikes(workers, bikes));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int assignBikes(vector<vector<int>>& workers, vector<vector<int>>& bikes) {\n        // TODO: Return minimum sum of Manhattan distances\n        return 0;\n    }\n};\n\nint main() {\n    vector<vector<int>> allCoords;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> coord;\n        int num;\n        while (iss >> num) {\n            coord.push_back(num);\n        }\n        allCoords.push_back(coord);\n    }\n    int n = allCoords.size() / 2;\n    vector<vector<int>> workers(allCoords.begin(), allCoords.begin() + n);\n    vector<vector<int>> bikes(allCoords.begin() + n, allCoords.end());\n    Solution sol;\n    cout << sol.assignBikes(workers, bikes) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\nvoid assignBikes(int** workers, int workersSize, int** bikes, int bikesSize) {\n    // TODO: Print minimum sum of Manhattan distances\n}\n\nint main() {\n    int coords[20][2];\n    int totalSize = 0;\n    char line[100];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        sscanf(line, \"%d %d\", &coords[totalSize][0], &coords[totalSize][1]);\n        totalSize++;\n    }\n    int workersSize = totalSize / 2;\n    int bikesSize = totalSize - workersSize;\n    int* workersPtrs[10], *bikesPtrs[10];\n    for (int i = 0; i < workersSize; i++) workersPtrs[i] = coords[i];\n    for (int i = 0; i < bikesSize; i++) bikesPtrs[i] = coords[workersSize + i];\n    assignBikes(workersPtrs, workersSize, bikesPtrs, bikesSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming with bitmask to track which bikes have been assigned.",
+                "For each worker, try assigning each available bike and use memoization to avoid recomputation."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Unique Word Abbreviation (Bit Manipulation)",
+            "description": "Problem Statement\n\nA string can be abbreviated by replacing any number of non-adjacent substrings with their lengths. For example, a string such as \"substitution\" could be abbreviated as (but not limited to):\n\n\"s10n\" (\"s ubstitutio n\")\n\"sub4u4\" (\"sub stit u tion\")\n\"12\" (\"substitution\")\n\"su3i1u2on\" (\"su bst i t u ti on\")\n\"substitution\" (no substrings replaced)\n\nNote that \"s55n\" (\"s ubsti tutio n\") is not a valid abbreviation of \"substitution\" because the replaced substrings are adjacent.\nThe length of an abbreviation is the number of letters that were not replaced plus the number of substrings that were replaced. For example, the abbreviation \"s10n\" has a length of 3 (2 letters + 1 substring) and \"su3i1u2on\" has a length of 9 (6 letters + 3 substrings).\nGiven a target string target and an array of strings dictionary, return an abbreviation of target with the shortest possible length such that it is not an abbreviation of any string in dictionary. If there are multiple shortest abbreviations, return any of them.\n",
+            "examples": "Sample Input\napple\nblade\n\nSample Output\na4\n\nExplanation: The shortest abbreviation of \"apple\" is \"5\", but this is also an abbreviation of \"blade\".\nThe next shortest abbreviations are \"a4\" and \"4e\". \"4e\" is an abbreviation of blade while \"a4\" is not.\nHence, return \"a4\".\n\nSample Input\napple\nblade plain amber\n\nSample Output\n1p3\n\nExplanation: \"5\" is an abbreviation of both \"apple\" but also every word in the dictionary.\n\"a4\" is an abbreviation of \"apple\" but also \"amber\".\n\"4e\" is an abbreviation of \"apple\" but also \"blade\".\n\"1p3\", \"2p2\", and \"3l1\" are the next shortest abbreviations of \"apple\".\nSince none of them are abbreviations of words in the dictionary, returning any of them is correct.",
+            "constraints": "1 <= target.length <= 21\n0 <= dictionary.length <= 1000\n1 <= dictionary[i].length <= 100\ntarget and dictionary[i] consist of lowercase English letters.\ndictionary does not contain target.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "apple\nblade",
+                    "expectedOutput": "a4"
+                },
+                {
+                    "input": "apple\nblade plain amber",
+                    "expectedOutput": "1p3"
+                },
+                {
+                    "input": "cat\ndog dot",
+                    "expectedOutput": "c2"
+                },
+                {
+                    "input": "a\nb",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "internationalization\ninternational intermittent interact",
+                    "expectedOutput": "20"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minAbbreviation(self, target, dictionary):\n        # TODO: Return shortest abbreviation of target not matching any word in dictionary\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    target = lines[0]\n    dictionary = lines[1].split() if len(lines) > 1 and lines[1] else []\n    sol = Solution()\n    print(sol.minAbbreviation(target, dictionary))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String minAbbreviation(String target, String[] dictionary) {\n        // TODO: Return shortest abbreviation of target not matching any word in dictionary\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String target = br.readLine().trim();\n        String dictLine = br.readLine().trim();\n        String[] dictionary = dictLine.isEmpty() ? new String[0] : dictLine.split(\" \");\n        Solution sol = new Solution();\n        System.out.println(sol.minAbbreviation(target, dictionary));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minAbbreviation(target, dictionary) {\n        // TODO: Return shortest abbreviation of target not matching any word in dictionary\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const target = lines[0];\n    const dictionary = lines.length > 1 && lines[1] ? lines[1].split(' ') : [];\n    const sol = new Solution();\n    console.log(sol.minAbbreviation(target, dictionary));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string minAbbreviation(string target, vector<string>& dictionary) {\n        // TODO: Return shortest abbreviation of target not matching any word in dictionary\n        return \"\";\n    }\n};\n\nint main() {\n    string target;\n    getline(cin, target);\n    string dictLine;\n    getline(cin, dictLine);\n    vector<string> dictionary;\n    istringstream iss(dictLine);\n    string word;\n    while (iss >> word) {\n        dictionary.push_back(word);\n    }\n    Solution sol;\n    cout << sol.minAbbreviation(target, dictionary) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid minAbbreviation(char* target, char** dictionary, int dictSize) {\n    // TODO: Print shortest abbreviation of target not matching any word in dictionary\n}\n\nint main() {\n    char target[25];\n    fgets(target, sizeof(target), stdin);\n    target[strcspn(target, \"\\n\")] = 0;\n    \n    char line[10000];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    \n    char* dictionary[1000];\n    int dictSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        dictionary[dictSize] = (char*)malloc(strlen(token) + 1);\n        strcpy(dictionary[dictSize], token);\n        dictSize++;\n        token = strtok(NULL, \" \");\n    }\n    \n    minAbbreviation(target, dictionary, dictSize);\n    \n    for (int i = 0; i < dictSize; i++) {\n        free(dictionary[i]);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation to represent which positions to keep as letters vs numbers.",
+                "Generate all possible abbreviations and check which ones don't match dictionary words."
+            ]
+        }
+    ]
+}
+

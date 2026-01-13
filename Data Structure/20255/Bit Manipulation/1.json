@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Divide Two Integers (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.\nThe integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2.\nReturn the quotient after dividing dividend by divisor.\nNote: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [-2^31, 2^31 - 1]. For this problem, if the quotient is strictly greater than 2^31 - 1, then return 2^31 - 1, and if the quotient is strictly less than -2^31, then return -2^31.\n",
+            "examples": "Sample Input\n10 3\n\nSample Output\n3\n\nExplanation: 10/3 = 3.33333.. which is truncated to 3.\n\nSample Input\n7 -3\n\nSample Output\n-2\n\nExplanation: 7/-3 = -2.33333.. which is truncated to -2.",
+            "constraints": "-2^31 <= dividend, divisor <= 2^31 - 1\ndivisor != 0",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "10 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "-2147483648 2",
+                    "expectedOutput": "-1073741824"
+                },
+                {
+                    "input": "-2147483648 -1",
+                    "expectedOutput": "2147483647"
+                },
+                {
+                    "input": "-1 -1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "2147483647 1",
+                    "expectedOutput": "2147483647"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def divide(self, dividend, divisor):\n        # TODO: Return quotient without using *, /, or %\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        dividend, divisor = int(input_data[0]), int(input_data[1])\n        sol = Solution()\n        print(sol.divide(dividend, divisor))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int divide(int dividend, int divisor) {\n        // TODO: Return quotient without using *, /, or %\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        int dividend = Integer.parseInt(parts[0]);\n        int divisor = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.divide(dividend, divisor));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    divide(dividend, divisor) {\n        // TODO: Return quotient without using *, /, or %\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const dividend = parseInt(parts[0]);\n    const divisor = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.divide(dividend, divisor));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int divide(int dividend, int divisor) {\n        // TODO: Return quotient without using *, /, or %\n        return 0;\n    }\n};\n\nint main() {\n    int dividend, divisor;\n    if (cin >> dividend >> divisor) {\n        Solution sol;\n        cout << sol.divide(dividend, divisor) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <limits.h>\n\nvoid divide(int dividend, int divisor) {\n    // TODO: Print quotient without using *, /, or %\n}\n\nint main() {\n    int dividend, divisor;\n    if (scanf(\"%d %d\", &dividend, &divisor) == 2) {\n        divide(dividend, divisor);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation to perform division by powers of 2.",
+                "Use left shift to multiply by 2 and right shift to divide by 2."
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Generalized Abbreviation (Bit Manipulation)",
+            "description": "Problem Statement\n\nA word's generalized abbreviation can be constructed by taking any number of non-overlapping and non-adjacent substrings and replacing them with their respective lengths.\n\nFor example, \"abcde\" can be abbreviated into:\n- \"a3e\" (\"bcd\" turned into \"3\")\n- \"1bcd1\" (\"a\" and \"e\" both turned into \"1\")\n- \"5\" (\"abcde\" turned into \"5\")\n- \"abcde\" (no substrings replaced)\n\nHowever, these abbreviations are invalid:\n- \"23\" (\"ab\" turned into \"2\" and \"cde\" turned into \"3\") is invalid as the substrings chosen are adjacent.\n- \"22de\" (\"ab\" turned into \"2\" and \"bc\" turned into \"2\") is invalid as the substring chosen overlap.\n\nGiven a string word, return a list of all the possible generalized abbreviations of word. Return the answer in any order.\n",
+            "examples": "Sample Input\nword\n\nSample Output\n4 3d 2r1 2rd 1o2 1o1d 1or1 1ord w3 w2d w1r1 w1rd wo2 wo1d wor1 word\n\nExplanation: All possible abbreviations of \"word\".\n\nSample Input\na\n\nSample Output\n1 a\n\nExplanation: All possible abbreviations of \"a\".",
+            "constraints": "1 <= word.length <= 15\nword consists of only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "word",
+                    "expectedOutput": "4 3d 2r1 2rd 1o2 1o1d 1or1 1ord w3 w2d w1r1 w1rd wo2 wo1d wor1 word"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "1 a"
+                },
+                {
+                    "input": "ab",
+                    "expectedOutput": "1b 2 a1 ab"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "1b1 1bc 2c 3 a1c a2 ab1 abc"
+                },
+                {
+                    "input": "abcd",
+                    "expectedOutput": "1b1d 1b2 1bc1 1bcd 2c1 2cd 3d 4 a1c1 a1cd a2d a3 ab1d ab2 abc1 abcd"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def generateAbbreviations(self, word):\n        # TODO: Return all possible generalized abbreviations\n        pass\n\nif __name__ == '__main__':\n    word = input().strip()\n    sol = Solution()\n    result = sol.generateAbbreviations(word)\n    print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> generateAbbreviations(String word) {\n        // TODO: Return all possible generalized abbreviations\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String word = br.readLine().trim();\n        Solution sol = new Solution();\n        List<String> result = sol.generateAbbreviations(word);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    generateAbbreviations(word) {\n        // TODO: Return all possible generalized abbreviations\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const word = input.trim();\n    const sol = new Solution();\n    const result = sol.generateAbbreviations(word);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> generateAbbreviations(string word) {\n        // TODO: Return all possible generalized abbreviations\n        return {};\n    }\n};\n\nint main() {\n    string word;\n    getline(cin, word);\n    Solution sol;\n    vector<string> result = sol.generateAbbreviations(word);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid generateAbbreviations(char* word) {\n    // TODO: Print all possible generalized abbreviations (space-separated)\n}\n\nint main() {\n    char word[20];\n    fgets(word, sizeof(word), stdin);\n    word[strcspn(word, \"\\n\")] = 0;\n    generateAbbreviations(word);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation: each bit position represents whether to abbreviate that character.",
+                "For each bitmask, generate the abbreviation by replacing consecutive 1s with their count."
+            ]
+        }
+    ]
+}
+

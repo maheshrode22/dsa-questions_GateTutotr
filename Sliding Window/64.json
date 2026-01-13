@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Defuse the Bomb (Sliding Window)",
+            "description": "You have a bomb to defuse, and your time is running out! Your informer will provide you with a circular array code of length of n and a key k.\nTo decrypt the code, you must replace every number. All the numbers are replaced simultaneously.\nIf k > 0, replace the ith number with the sum of the next k numbers.\nIf k < 0, replace the ith number with the sum of the previous k numbers.\nIf k == 0, replace the ith number with 0.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint n space-separated integers: the decrypted code.",
+            "examples": "Sample Input\n4 3\n5 7 1 4\n\nSample Output\n12 10 16 13\n\nExplanation: Each number is replaced by the sum of the next 3 numbers.",
+            "constraints": "1 <= n <= 100\n1 <= code[i] <= 100\n-(n - 1) <= k <= n - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 3\n5 7 1 4",
+                    "expectedOutput": "12 10 16 13"
+                },
+                {
+                    "input": "4 0\n1 2 3 4",
+                    "expectedOutput": "0 0 0 0"
+                },
+                {
+                    "input": "4 -2\n2 4 9 3",
+                    "expectedOutput": "12 5 6 13"
+                },
+                {
+                    "input": "17 -13\n18 3 8 12 1 5 2 17 13 12 12 12 4 14 20 5 2",
+                    "expectedOutput": "119 136 134 140 135 123 116 106 111 120 118 110 117 119 115 132 129"
+                },
+                {
+                    "input": "8 -7\n18 20 2 3 5 15 4 19",
+                    "expectedOutput": "68 66 84 83 81 71 82 67"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def decrypt(self, code, k):\n        # TODO: Return the decrypted code\n        pass\n\nif __name__ == '__main__':\n    n, k = map(int, input().split())\n    code = list(map(int, input().split()))\n    sol = Solution()\n    print(*(sol.decrypt(code, k)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int[] decrypt(int[] code, int k) {\n        // TODO: Return the decrypted code\n        return new int[0];\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int k = sc.nextInt();\n        int[] code = new int[n];\n        for(int i=0; i<n; i++) code[i] = sc.nextInt();\n        Solution sol = new Solution();\n        int[] res = sol.decrypt(code, k);\n        for(int i=0; i<res.length; i++) System.out.print(res[i] + (i==res.length-1?\"\":\" \"));\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    decrypt(code, k) {\n        // TODO: Return the decrypted code\n        return [];\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst [n, k] = input[0].split(' ').map(Number);\nconst code = input[1].split(' ').map(Number);\nconst sol = new Solution();\nconsole.log(sol.decrypt(code, k).join(' '));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> decrypt(vector<int>& code, int k) {\n        // TODO: Return the decrypted code\n        return {};\n    }\n};\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<int> code(n);\n    for(int i=0; i<n; i++) cin >> code[i];\n    Solution sol;\n    vector<int> res = sol.decrypt(code, k);\n    for(int i=0; i<n; i++) cout << res[i] << (i==n-1?\"\":\" \");\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint* decrypt(int* code, int codeSize, int k, int* returnSize) {\n    // TODO: Return the decrypted code\n    *returnSize = codeSize;\n    return NULL;\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    int* code = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &code[i]);\n    int returnSize;\n    int* res = decrypt(code, n, k, &returnSize);\n    for(int i=0; i<returnSize; i++) printf(\"%d%s\", res[i], (i==returnSize-1?\"\":\" \"));\n    printf(\"\\n\");\n    free(code);\n    free(res);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a sliding window of size |k|.",
+                "Handle the circular nature using modulo operator."
+            ]
+        }
+    ]
+}

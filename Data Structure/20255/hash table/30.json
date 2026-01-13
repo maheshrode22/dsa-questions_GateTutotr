@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum XOR of Two Numbers in an Array (Hash Table)",
+            "description": "Problem Statement\n\nGiven an integer array nums, return the maximum result of nums[i] XOR nums[j], where 0 <= i <= j < n.\n",
+            "examples": "Example 1:\n\nInput: nums = [3,10,5,25,2,8]\nOutput: 28\nExplanation: The maximum result is 5 XOR 25 = 28.\n\nExample 2:\n\nInput: nums = [14,70,53,83,49,91,36,80,92,51,66,70]\nOutput: 127",
+            "constraints": "1 <= nums.length <= 2 * 10^5\n0 <= nums[i] <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "6\n3 10 5 25 2 8",
+                    "expectedOutput": "28"
+                },
+                {
+                    "input": "12\n14 70 53 83 49 91 36 80 92 51 66 70",
+                    "expectedOutput": "127"
+                },
+                {
+                    "input": "1\n0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2\n2 8",
+                    "expectedOutput": "10"
+                },
+                {
+                    "input": "2\n10 25",
+                    "expectedOutput": "19"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findMaximumXOR(self, nums):\n        # TODO: Find maximum XOR of two numbers using Trie or Hash Set\n        # Return max XOR\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    n = int(data[0])\n    nums = list(map(int, data[1:]))\n    sol = Solution()\n    result = sol.findMaximumXOR(nums)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int findMaximumXOR(int[] nums){\n        // TODO: Find maximum XOR of two numbers using Trie or Hash Set\n        // Return max XOR\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[n];\n        for(int i=0;i<n;i++) nums[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        int result = sol.findMaximumXOR(nums);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  findMaximumXOR(nums){\n    // TODO: Find maximum XOR of two numbers using Trie or Hash Set\n    // Return max XOR\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const nums = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  const result = sol.findMaximumXOR(nums);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int findMaximumXOR(vector<int>& nums){\n        // TODO: Find maximum XOR of two numbers using Trie or Hash Set\n        // Return max XOR\n        return 0;\n    }\n};\nint main(){\n    int n; cin >> n;\n    vector<int> nums(n);\n    for(int i=0;i<n;i++) cin >> nums[i];\n    Solution sol;\n    int result = sol.findMaximumXOR(nums);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint findMaximumXOR(int* nums, int numsSize){\n    // TODO: Find maximum XOR\n    // Return max XOR\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int* nums = (int*)malloc(n * sizeof(int));\n    for(int i=0;i<n;i++) scanf(\"%d\", &nums[i]);\n    int result = findMaximumXOR(nums, n);\n    printf(\"%d\", result);\n    free(nums);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Build a Trie with the binary representation of numbers.",
+                "For each number, try to find another number in the Trie that maximizes the XOR."
+            ]
+        }
+    ]
+}

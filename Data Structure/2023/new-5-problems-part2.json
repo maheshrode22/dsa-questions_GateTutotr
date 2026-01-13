@@ -1,0 +1,359 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Diameter of Binary Tree",
+            "description": "Problem Statement\n\nGiven a binary tree, find its diameter.\n\nThe diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.\n\nThe length of a path between two nodes is represented by the number of edges between them.\n\nYou are given the tree in level-order array format where -1 represents NULL.\n\nInput Format\nThe first line contains an integer N (number of elements).\nThe second line contains N space-separated integers representing level-order tree, where -1 means NULL.\n\nOutput Format\nPrint the diameter of the tree. If tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\n3\n\nExplanation:\nLongest path is 4 -> 2 -> 1 -> 3 or 5 -> 2 -> 1 -> 3. Length = 3 edges.",
+            "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\n3\n\nSample Input 2\n1\n10\n\nSample Output 2\n0",
+            "constraints": "1 ≤ N ≤ 1000\n1 ≤ nodeValue ≤ 10^6 or -1 for NULL",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2023,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "7\n1 2 3 4 5 -1 -1",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "0",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                },
+                {
+                    "input": "3\n1 2 -1",
+                    "expectedOutput": "1",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                },
+                {
+                    "input": "5\n1 2 3 -1 4",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                },
+                {
+                    "input": "9\n1 2 3 4 5 -1 -1 6 7 -1 -1",
+                    "expectedOutput": "4",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build binary tree\n        pass\n\n    def diameterOfBinaryTree(self, root):\n        # TODO: Find diameter\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    result = sol.diameterOfBinaryTree(root)\n    print(result)\n\nif __name__ == \"__main__\":\n    solve()",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Node {\n    int data;\n    Node left, right;\n    Node(int d) { data = d; }\n}\nclass Solution {\n    Node buildTree(int[] arr) {\n        // TODO: Build tree\n        return null;\n    }\n    int diameterOfBinaryTree(Node root) {\n        // TODO: Find diameter\n        return 0;\n    }\n}\npublic class SolutionMain {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Solution sol = new Solution();\n        Node root = sol.buildTree(arr);\n        if (root == null) {\n            System.out.println(\"Tree is Empty\");\n            return;\n        }\n        System.out.println(sol.diameterOfBinaryTree(root));\n    }\n}",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n  constructor(data) {\n    this.data = data;\n    this.left = null;\n    this.right = null;\n  }\n}\nclass Solution {\n  buildTree(arr) {\n    // TODO: Build tree\n    return null;\n  }\n  diameterOfBinaryTree(root) {\n    // TODO: Find diameter\n    return 0;\n  }\n}\nfunction solve(input) {\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  const root = sol.buildTree(arr);\n  if (!root) {\n    console.log(\"Tree is Empty\");\n    return;\n  }\n  console.log(sol.diameterOfBinaryTree(root));\n}\nconst fs = require(\"fs\");\nsolve(fs.readFileSync(0, \"utf-8\"));",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node {\n    int data;\n    Node* left;\n    Node* right;\n    Node(int d) { data = d; left = right = NULL; }\n};\nclass Solution {\npublic:\n    Node* buildTree(vector<int>& arr) {\n        // TODO: Build tree\n        return NULL;\n    }\n    int diameterOfBinaryTree(Node* root) {\n        // TODO: Find diameter\n        return 0;\n    }\n};\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    Node* root = sol.buildTree(arr);\n    if (!root) {\n        cout << \"Tree is Empty\";\n        return 0;\n    }\n    cout << sol.diameterOfBinaryTree(root);\n}",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    int data;\n    struct Node* left;\n    struct Node* right;\n} Node;\n\nNode* buildTree(int arr[], int n) {\n    // TODO: Build tree\n    return NULL;\n}\n\nint diameterOfBinaryTree(Node* root) {\n    // TODO: Find diameter\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    Node* root = buildTree(arr, n);\n    if (!root) {\n        printf(\"Tree is Empty\");\n        return 0;\n    }\n    printf(\"%d\", diameterOfBinaryTree(root));\n    return 0;\n}",
+                    "problemTitle": "Find Diameter of Binary Tree"
+                }
+            ],
+            "hintsList": [
+                "Diameter at a node = leftHeight + rightHeight. The max diameter might not pass through root.",
+                "Use recursion to calculate height and update max diameter at each node."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if Binary Tree is Balanced",
+            "description": "Problem Statement\n\nGiven a binary tree, determine if it is height-balanced.\n\nA binary tree is height-balanced if for every node, the difference between the heights of left and right subtrees is at most 1.\n\nYou are given the tree in level-order array format where -1 represents NULL.\n\nInput Format\nThe first line contains an integer N (number of elements).\nThe second line contains N space-separated integers representing level-order tree, where -1 means NULL.\n\nOutput Format\nPrint YES if the tree is balanced, otherwise NO. If tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\nYES\n\nExplanation:\nRoot(1): Left height=2, Right height=1. Diff=1 (<=1)\nNode(2): Left height=1, Right height=1. Diff=0 (<=1)\nAll nodes satisfy the condition.",
+            "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\nYES\n\nSample Input 2\n7\n1 2 3 4 -1 -1 -1\n\nSample Output 2\nNO",
+            "constraints": "1 ≤ N ≤ 1000\n1 ≤ nodeValue ≤ 10^6 or -1 for NULL",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2023,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "7\n1 2 3 4 5 -1 -1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                },
+                {
+                    "input": "7\n1 2 3 4 -1 -1 -1",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                },
+                {
+                    "input": "3\n1 2 -1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                },
+                {
+                    "input": "9\n1 2 3 4 5 -1 -1 6 7 -1 -1",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree\n        pass\n\n    def isBalanced(self, root):\n        # TODO: Check if balanced\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    print(\"YES\" if sol.isBalanced(root) else \"NO\")\n\nif __name__ == \"__main__\":\n    solve()",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Node {\n    int data;\n    Node left, right;\n    Node(int d) { data = d; }\n}\nclass Solution {\n    Node buildTree(int[] arr) {\n        // TODO: Build tree\n        return null;\n    }\n    boolean isBalanced(Node root) {\n        // TODO: Check balanced\n        return false;\n    }\n}\npublic class SolutionMain {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Solution sol = new Solution();\n        Node root = sol.buildTree(arr);\n        if (root == null) {\n            System.out.println(\"Tree is Empty\");\n            return;\n        }\n        System.out.println(sol.isBalanced(root) ? \"YES\" : \"NO\");\n    }\n}",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n  constructor(data) {\n    this.data = data;\n    this.left = null;\n    this.right = null;\n  }\n}\nclass Solution {\n  buildTree(arr) {\n    // TODO: Build tree\n    return null;\n  }\n  isBalanced(root) {\n    // TODO: Check balanced\n    return false;\n  }\n}\nfunction solve(input) {\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  const root = sol.buildTree(arr);\n  if (!root) {\n    console.log(\"Tree is Empty\");\n    return;\n  }\n  console.log(sol.isBalanced(root) ? \"YES\" : \"NO\");\n}\nconst fs = require(\"fs\");\nsolve(fs.readFileSync(0, \"utf-8\"));",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node {\n    int data;\n    Node* left;\n    Node* right;\n    Node(int d) { data = d; left = right = NULL; }\n};\nclass Solution {\npublic:\n    Node* buildTree(vector<int>& arr) {\n        // TODO: Build tree\n        return NULL;\n    }\n    bool isBalanced(Node* root) {\n        // TODO: Check balanced\n        return false;\n    }\n};\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    Node* root = sol.buildTree(arr);\n    if (!root) {\n        cout << \"Tree is Empty\";\n        return 0;\n    }\n    cout << (sol.isBalanced(root) ? \"YES\" : \"NO\");\n}",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\ntypedef struct Node {\n    int data;\n    struct Node* left;\n    struct Node* right;\n} Node;\n\nNode* buildTree(int arr[], int n) {\n    // TODO: Build tree\n    return NULL;\n}\n\nbool isBalanced(Node* root) {\n    // TODO: Check balanced\n    return false;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    Node* root = buildTree(arr, n);\n    if (!root) {\n        printf(\"Tree is Empty\");\n        return 0;\n    }\n    printf(\"%s\", isBalanced(root) ? \"YES\" : \"NO\");\n    return 0;\n}",
+                    "problemTitle": "Check if Binary Tree is Balanced"
+                }
+            ],
+            "hintsList": [
+                "A tree is balanced if abs(leftHeight - rightHeight) <= 1 for all nodes.",
+                "Use a helper function that returns height if balanced, or -1 if unbalanced."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Left View of Binary Tree",
+            "description": "Problem Statement\n\nGiven a binary tree, print its Left View.\n\nThe Left View of a binary tree is the set of nodes visible when the tree is visited from the left side.\n\nYou are given the tree in level-order array format where -1 represents NULL.\n\nInput Format\nThe first line contains an integer N (number of elements).\nThe second line contains N space-separated integers representing level-order tree, where -1 means NULL.\n\nOutput Format\nPrint the left view elements in one line, space-separated. If tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n\nOutput:\n1 2 4\n\nExplanation:\nLevel 0: 1\nLevel 1: 2 3 (2 is visible)\nLevel 2: 4 5 (4 is visible)\nLeft View: 1 2 4",
+            "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n\nSample Output 1\n1 2 4\n\nSample Input 2\n5\n1 -1 3 -1 4\n\nSample Output 2\n1 3 4",
+            "constraints": "1 ≤ N ≤ 1000\n1 ≤ nodeValue ≤ 10^6 or -1 for NULL",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2023,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "7\n1 2 3 4 5 -1 -1",
+                    "expectedOutput": "1 2 4",
+                    "problemTitle": "Find Left View of Binary Tree"
+                },
+                {
+                    "input": "5\n1 -1 3 -1 4",
+                    "expectedOutput": "1 3 4",
+                    "problemTitle": "Find Left View of Binary Tree"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "10",
+                    "problemTitle": "Find Left View of Binary Tree"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "1 2",
+                    "problemTitle": "Find Left View of Binary Tree"
+                },
+                {
+                    "input": "9\n1 2 3 4 5 6 7 -1 -1",
+                    "expectedOutput": "1 2 4",
+                    "problemTitle": "Find Left View of Binary Tree"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree\n        pass\n\n    def leftView(self, root):\n        # TODO: Find left view\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    result = sol.leftView(root)\n    print(\" \".join(map(str, result)))\n\nif __name__ == \"__main__\":\n    solve()",
+                    "problemTitle": "Find Left View of Binary Tree"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Node {\n    int data;\n    Node left, right;\n    Node(int d) { data = d; }\n}\nclass Solution {\n    Node buildTree(int[] arr) {\n        // TODO: Build tree\n        return null;\n    }\n    ArrayList<Integer> leftView(Node root) {\n        // TODO: Find left view\n        return new ArrayList<>();\n    }\n}\npublic class SolutionMain {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Solution sol = new Solution();\n        Node root = sol.buildTree(arr);\n        if (root == null) {\n            System.out.println(\"Tree is Empty\");\n            return;\n        }\n        ArrayList<Integer> res = sol.leftView(root);\n        System.out.println(res.toString().replaceAll(\"[\\\\[\\\\],]\", \"\"));\n    }\n}",
+                    "problemTitle": "Find Left View of Binary Tree"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n  constructor(data) {\n    this.data = data;\n    this.left = null;\n    this.right = null;\n  }\n}\nclass Solution {\n  buildTree(arr) {\n    // TODO: Build tree\n    return null;\n  }\n  leftView(root) {\n    // TODO: Find left view\n    return [];\n  }\n}\nfunction solve(input) {\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  const root = sol.buildTree(arr);\n  if (!root) {\n    console.log(\"Tree is Empty\");\n    return;\n  }\n  const res = sol.leftView(root);\n  console.log(res.join(\" \"));\n}\nconst fs = require(\"fs\");\nsolve(fs.readFileSync(0, \"utf-8\"));",
+                    "problemTitle": "Find Left View of Binary Tree"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node {\n    int data;\n    Node* left;\n    Node* right;\n    Node(int d) { data = d; left = right = NULL; }\n};\nclass Solution {\npublic:\n    Node* buildTree(vector<int>& arr) {\n        // TODO: Build tree\n        return NULL;\n    }\n    vector<int> leftView(Node* root) {\n        // TODO: Find left view\n        return {};\n    }\n};\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    Node* root = sol.buildTree(arr);\n    if (!root) {\n        cout << \"Tree is Empty\";\n        return 0;\n    }\n    vector<int> res = sol.leftView(root);\n    for (int i = 0; i < res.size(); i++) {\n        cout << res[i];\n        if (i < res.size() - 1) cout << \" \";\n    }\n}",
+                    "problemTitle": "Find Left View of Binary Tree"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    int data;\n    struct Node* left;\n    struct Node* right;\n} Node;\n\nNode* buildTree(int arr[], int n) {\n    // TODO: Build tree\n    return NULL;\n}\n\nvoid leftView(Node* root) {\n    // TODO: Print left view\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    Node* root = buildTree(arr, n);\n    if (!root) {\n        printf(\"Tree is Empty\");\n        return 0;\n    }\n    leftView(root);\n    return 0;\n}",
+                    "problemTitle": "Find Left View of Binary Tree"
+                }
+            ],
+            "hintsList": [
+                "Use Level Order Traversal (BFS) and print the first node of every level.",
+                "Alternatively, use DFS (Preorder) and keep track of max level visited so far."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if Binary Tree is BST",
+            "description": "Problem Statement\n\nGiven a binary tree, check if it is a Binary Search Tree (BST).\n\nA Binary Search Tree (BST) is a node-based binary tree data structure which has the following properties:\n- The left subtree of a node contains only nodes with keys less than the node's key.\n- The right subtree of a node contains only nodes with keys greater than the node's key.\n- Both the left and right subtrees must also be binary search trees.\n\nYou are given the tree in level-order array format where -1 represents NULL.\n\nInput Format\nThe first line contains an integer N (number of elements).\nThe second line contains N space-separated integers representing level-order tree, where -1 means NULL.\n\nOutput Format\nPrint YES if the tree is a BST, otherwise NO. If tree is empty, print \"Tree is Empty\".\n\nExample\nInput:\n7\n2 1 3 -1 -1 -1 -1\n\nOutput:\nYES\n\nExplanation:\n    2\n   / \\\n  1   3\nLeft child 1 < 2, Right child 3 > 2. Valid BST.",
+            "examples": "Sample Input 1\n7\n2 1 3 -1 -1 -1 -1\n\nSample Output 1\nYES\n\nSample Input 2\n7\n1 2 3 -1 -1 -1 -1\n\nSample Output 2\nNO",
+            "constraints": "1 ≤ N ≤ 1000\n1 ≤ nodeValue ≤ 10^6 or -1 for NULL",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2023,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "7\n2 1 3 -1 -1 -1 -1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Binary Tree is BST"
+                },
+                {
+                    "input": "7\n1 2 3 -1 -1 -1 -1",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check if Binary Tree is BST"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Binary Tree is BST"
+                },
+                {
+                    "input": "5\n10 5 15 -1 -1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Binary Tree is BST"
+                },
+                {
+                    "input": "5\n10 5 8 -1 -1",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check if Binary Tree is BST"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree\n        pass\n\n    def isBST(self, root):\n        # TODO: Check if BST\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"Tree is Empty\")\n        return\n    print(\"YES\" if sol.isBST(root) else \"NO\")\n\nif __name__ == \"__main__\":\n    solve()",
+                    "problemTitle": "Check if Binary Tree is BST"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Node {\n    int data;\n    Node left, right;\n    Node(int d) { data = d; }\n}\nclass Solution {\n    Node buildTree(int[] arr) {\n        // TODO: Build tree\n        return null;\n    }\n    boolean isBST(Node root) {\n        // TODO: Check BST\n        return false;\n    }\n}\npublic class SolutionMain {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        Solution sol = new Solution();\n        Node root = sol.buildTree(arr);\n        if (root == null) {\n            System.out.println(\"Tree is Empty\");\n            return;\n        }\n        System.out.println(sol.isBST(root) ? \"YES\" : \"NO\");\n    }\n}",
+                    "problemTitle": "Check if Binary Tree is BST"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n  constructor(data) {\n    this.data = data;\n    this.left = null;\n    this.right = null;\n  }\n}\nclass Solution {\n  buildTree(arr) {\n    // TODO: Build tree\n    return null;\n  }\n  isBST(root) {\n    // TODO: Check BST\n    return false;\n  }\n}\nfunction solve(input) {\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const sol = new Solution();\n  const root = sol.buildTree(arr);\n  if (!root) {\n    console.log(\"Tree is Empty\");\n    return;\n  }\n  console.log(sol.isBST(root) ? \"YES\" : \"NO\");\n}\nconst fs = require(\"fs\");\nsolve(fs.readFileSync(0, \"utf-8\"));",
+                    "problemTitle": "Check if Binary Tree is BST"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node {\n    int data;\n    Node* left;\n    Node* right;\n    Node(int d) { data = d; left = right = NULL; }\n};\nclass Solution {\npublic:\n    Node* buildTree(vector<int>& arr) {\n        // TODO: Build tree\n        return NULL;\n    }\n    bool isBST(Node* root) {\n        // TODO: Check BST\n        return false;\n    }\n};\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    Solution sol;\n    Node* root = sol.buildTree(arr);\n    if (!root) {\n        cout << \"Tree is Empty\";\n        return 0;\n    }\n    cout << (sol.isBST(root) ? \"YES\" : \"NO\");\n}",
+                    "problemTitle": "Check if Binary Tree is BST"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n#include <limits.h>\n\ntypedef struct Node {\n    int data;\n    struct Node* left;\n    struct Node* right;\n} Node;\n\nNode* buildTree(int arr[], int n) {\n    // TODO: Build tree\n    return NULL;\n}\n\nbool isBST(Node* root) {\n    // TODO: Check BST\n    return false;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    Node* root = buildTree(arr, n);\n    if (!root) {\n        printf(\"Tree is Empty\");\n        return 0;\n    }\n    printf(\"%s\", isBST(root) ? \"YES\" : \"NO\");\n    return 0;\n}",
+                    "problemTitle": "Check if Binary Tree is BST"
+                }
+            ],
+            "hintsList": [
+                "Inorder traversal of a BST yields sorted elements. Check if inorder traversal is sorted.",
+                "Alternatively, validate recursively: isBST(node, min, max). Left child must be < node, Right child > node."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Lowest Common Ancestor in Binary Tree",
+            "description": "Problem Statement\n\nGiven a binary tree and two nodes n1 and n2, find their Lowest Common Ancestor (LCA).\n\nThe LCA of two nodes is the lowest node in the tree that has both n1 and n2 as descendants (where we allow a node to be a descendant of itself).\n\nYou are given the tree in level-order array format where -1 represents NULL.\n\nInput Format\nThe first line contains an integer N (number of elements).\nThe second line contains N space-separated integers representing level-order tree, where -1 means NULL.\nThe third line contains two integers n1 and n2.\n\nOutput Format\nPrint the value of the LCA node. If tree is empty or nodes not found, print -1.\n\nExample\nInput:\n7\n1 2 3 4 5 -1 -1\n4 5\n\nOutput:\n2\n\nExplanation:\nLCA of 4 and 5 is 2.",
+            "examples": "Sample Input 1\n7\n1 2 3 4 5 -1 -1\n4 5\n\nSample Output 1\n2\n\nSample Input 2\n7\n1 2 3 4 5 -1 -1\n4 3\n\nSample Output 2\n1",
+            "constraints": "1 ≤ N ≤ 1000\n1 ≤ nodeValue ≤ 10^6 or -1 for NULL",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2023,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "7\n1 2 3 4 5 -1 -1\n4 5",
+                    "expectedOutput": "2",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                },
+                {
+                    "input": "7\n1 2 3 4 5 -1 -1\n4 3",
+                    "expectedOutput": "1",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                },
+                {
+                    "input": "7\n1 2 3 4 5 -1 -1\n2 4",
+                    "expectedOutput": "2",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                },
+                {
+                    "input": "1\n10\n10 10",
+                    "expectedOutput": "10",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                },
+                {
+                    "input": "5\n1 2 3 -1 4\n2 4",
+                    "expectedOutput": "2",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nclass Solution:\n    def buildTree(self, arr):\n        # TODO: Build tree\n        pass\n\n    def findLCA(self, root, n1, n2):\n        # TODO: Find LCA\n        pass\n\ndef solve():\n    n = int(input())\n    arr = list(map(int, input().split()))\n    n1, n2 = map(int, input().split())\n    sol = Solution()\n    root = sol.buildTree(arr)\n    if root is None:\n        print(\"-1\")\n        return\n    lca = sol.findLCA(root, n1, n2)\n    print(lca.data if lca else -1)\n\nif __name__ == \"__main__\":\n    solve()",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\nclass Node {\n    int data;\n    Node left, right;\n    Node(int d) { data = d; }\n}\nclass Solution {\n    Node buildTree(int[] arr) {\n        // TODO: Build tree\n        return null;\n    }\n    Node findLCA(Node root, int n1, int n2) {\n        // TODO: Find LCA\n        return null;\n    }\n}\npublic class SolutionMain {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        int[] arr = Arrays.stream(br.readLine().split(\" \")).mapToInt(Integer::parseInt).toArray();\n        String[] nodes = br.readLine().split(\" \");\n        int n1 = Integer.parseInt(nodes[0]);\n        int n2 = Integer.parseInt(nodes[1]);\n        Solution sol = new Solution();\n        Node root = sol.buildTree(arr);\n        if (root == null) {\n            System.out.println(\"-1\");\n            return;\n        }\n        Node lca = sol.findLCA(root, n1, n2);\n        System.out.println(lca != null ? lca.data : -1);\n    }\n}",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n  constructor(data) {\n    this.data = data;\n    this.left = null;\n    this.right = null;\n  }\n}\nclass Solution {\n  buildTree(arr) {\n    // TODO: Build tree\n    return null;\n  }\n  findLCA(root, n1, n2) {\n    // TODO: Find LCA\n    return null;\n  }\n}\nfunction solve(input) {\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const arr = lines[1].split(\" \").map(Number);\n  const [n1, n2] = lines[2].split(\" \").map(Number);\n  const sol = new Solution();\n  const root = sol.buildTree(arr);\n  if (!root) {\n    console.log(\"-1\");\n    return;\n  }\n  const lca = sol.findLCA(root, n1, n2);\n  console.log(lca ? lca.data : -1);\n}\nconst fs = require(\"fs\");\nsolve(fs.readFileSync(0, \"utf-8\"));",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct Node {\n    int data;\n    Node* left;\n    Node* right;\n    Node(int d) { data = d; left = right = NULL; }\n};\nclass Solution {\npublic:\n    Node* buildTree(vector<int>& arr) {\n        // TODO: Build tree\n        return NULL;\n    }\n    Node* findLCA(Node* root, int n1, int n2) {\n        // TODO: Find LCA\n        return NULL;\n    }\n};\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    cin >> n;\n    vector<int> arr(n);\n    for (int i = 0; i < n; i++) cin >> arr[i];\n    int n1, n2;\n    cin >> n1 >> n2;\n    Solution sol;\n    Node* root = sol.buildTree(arr);\n    if (!root) {\n        cout << \"-1\";\n        return 0;\n    }\n    Node* lca = sol.findLCA(root, n1, n2);\n    cout << (lca ? lca->data : -1);\n}",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    int data;\n    struct Node* left;\n    struct Node* right;\n} Node;\n\nNode* buildTree(int arr[], int n) {\n    // TODO: Build tree\n    return NULL;\n}\n\nNode* findLCA(Node* root, int n1, int n2) {\n    // TODO: Find LCA\n    return NULL;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    int arr[n];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n    int n1, n2;\n    scanf(\"%d %d\", &n1, &n2);\n    Node* root = buildTree(arr, n);\n    if (!root) {\n        printf(\"-1\");\n        return 0;\n    }\n    Node* lca = findLCA(root, n1, n2);\n    printf(\"%d\", lca ? lca->data : -1);\n    return 0;\n}",
+                    "problemTitle": "Find Lowest Common Ancestor in Binary Tree"
+                }
+            ],
+            "hintsList": [
+                "If root matches n1 or n2, root is LCA. Otherwise recurse left and right.",
+                "If one child returns non-null and other returns null, return the non-null child. If both return non-null, root is LCA."
+            ]
+        }
+    ]
+}

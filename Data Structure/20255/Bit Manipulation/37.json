@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Non-decreasing Subsequences (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums, return all the different possible non-decreasing subsequences of the given array with at least two elements. You may return the answer in any order.\n",
+            "examples": "Sample Input\n4 6 7 7\n\nSample Output\n4 6\n4 6 7\n4 6 7 7\n4 7\n4 7 7\n6 7\n6 7 7\n7 7\n\nExplanation: All non-decreasing subsequences with at least 2 elements.\n\nSample Input\n4 4 3 2 1\n\nSample Output\n4 4\n\nExplanation: Only one non-decreasing subsequence exists.",
+            "constraints": "1 <= nums.length <= 15\n-100 <= nums[i] <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 6 7 7",
+                    "expectedOutput": "4 6\n4 6 7\n4 6 7 7\n4 7\n4 7 7\n6 7\n6 7 7\n7 7"
+                },
+                {
+                    "input": "4 4 3 2 1",
+                    "expectedOutput": "4 4"
+                },
+                {
+                    "input": "1 2 2 3",
+                    "expectedOutput": "1 2\n1 2 2\n1 2 2 3\n1 2 3\n1 3\n2 2\n2 2 3\n2 3"
+                },
+                {
+                    "input": "1 3 2 4 5",
+                    "expectedOutput": "1 3\n1 3 4\n1 3 4 5\n1 3 5\n1 2\n1 2 4\n1 2 4 5\n1 2 5\n1 4\n1 4 5\n1 5\n3 4\n3 4 5\n3 5\n2 4\n2 4 5\n2 5\n4 5"
+                },
+                {
+                    "input": "10 9 8 7 6 5 4 3 2 1",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findSubsequences(self, nums):\n        # TODO: Return all non-decreasing subsequences with at least 2 elements\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.findSubsequences(nums)\n    for seq in result:\n        print(' '.join(map(str, seq)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<Integer>> findSubsequences(int[] nums) {\n        // TODO: Return all non-decreasing subsequences with at least 2 elements\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        List<List<Integer>> result = sol.findSubsequences(nums);\n        for (List<Integer> seq : result) {\n            for (int i = 0; i < seq.size(); i++) {\n                System.out.print(seq.get(i) + (i == seq.size() - 1 ? \"\" : \" \"));\n            }\n            System.out.println();\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findSubsequences(nums) {\n        // TODO: Return all non-decreasing subsequences with at least 2 elements\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.findSubsequences(nums);\n    for (const seq of result) {\n        console.log(seq.join(' '));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> findSubsequences(vector<int>& nums) {\n        // TODO: Return all non-decreasing subsequences with at least 2 elements\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    vector<vector<int>> result = sol.findSubsequences(nums);\n    for (const auto& seq : result) {\n        for (int i = 0; i < seq.size(); i++) {\n            cout << seq[i] << (i == seq.size() - 1 ? \"\" : \" \");\n        }\n        cout << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid findSubsequences(int* nums, int numsSize) {\n    // TODO: Print all non-decreasing subsequences with at least 2 elements (one per line, space-separated)\n}\n\nint main() {\n    int nums[16];\n    int numsSize = 0;\n    char line[1000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    findSubsequences(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking with bit manipulation to generate all subsequences.",
+                "Track the last element in the current subsequence to ensure non-decreasing order."
+            ]
+        }
+    ]
+}
+

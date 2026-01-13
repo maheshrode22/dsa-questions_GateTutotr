@@ -36,23 +36,23 @@
       "starterCodes": [
         {
           "language": 1,
-          "code": "class Solution:\n    def minOperations(self, nums, x):\n        # TODO: Return minimum operations to reduce x to 0, or -1\n        pass\n\nif __name__ == '__main__':\n    try:\n        n_x = input().split()\n        n = int(n_x[0])\n        x = int(n_x[1])\n        nums = list(map(int, input().split()))\n        sol = Solution()\n        print(sol.minOperations(nums, x))\n    except:\n        pass"
+          "code": "class Solution:\n    def minOperations(self, arr, n, x):\n        # TODO: Return the minimum number of operations to reduce x to exactly 0, or -1\n        pass\n\nif __name__ == '__main__':\n    n, x = map(int, input().split())\n    arr = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.minOperations(arr, n, x))"
         },
         {
           "language": 2,
-          "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minOperations(int[] nums, int x) {\n        // TODO: Return minimum operations to reduce x to 0, or -1\n        return -1;\n    }\n\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] first = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(first[0]);\n        int x = Integer.parseInt(first[1]);\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[n];\n        for (int i = 0; i < n; i++) nums[i] = Integer.parseInt(parts[i]);\n        Solution sol = new Solution();\n        System.out.println(sol.minOperations(nums, x));\n    }\n}"
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int minOperations(int[] arr, int n, int x) {\n        // TODO: Return the minimum number of operations to reduce x to exactly 0, or -1\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int x = sc.nextInt();\n        int[] arr = new int[n];\n        for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.minOperations(arr, n, x));\n    }\n}"
         },
         {
           "language": 3,
-          "code": "class Solution {\n    minOperations(nums, x) {\n        // TODO: Return minimum operations to reduce x to 0, or -1\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\n/);\n    const first = lines[0].trim().split(/\\s+/);\n    const n = parseInt(first[0]), x = parseInt(first[1]);\n    const nums = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.minOperations(nums, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+          "code": "class Solution {\n    minOperations(arr, n, x) {\n        // TODO: Return the minimum number of operations to reduce x to exactly 0, or -1\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const [n, x] = lines[0].trim().split(/\\s+/).map(Number);\n    const arr = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.minOperations(arr, n, x));\n}\n\nmain();"
         },
         {
           "language": 4,
-          "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minOperations(vector<int>& nums, int x) {\n        // TODO: Return minimum operations to reduce x to 0, or -1\n        return -1;\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, x;\n    if (!(cin >> n >> x)) return 0;\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) cin >> nums[i];\n    Solution sol;\n    cout << sol.minOperations(nums, x);\n    return 0;\n}"
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int minOperations(vector<int>& arr, int n, int x) {\n        // TODO: Return the minimum number of operations to reduce x to exactly 0, or -1\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, x;\n    cin >> n >> x;\n    vector<int> arr(n);\n    for(int i=0; i<n; i++) cin >> arr[i];\n    Solution sol;\n    cout << sol.minOperations(arr, n, x) << endl;\n    return 0;\n}"
         },
         {
           "language": 5,
-          "code": "#include <stdio.h>\n\nint minOperations(int nums[], int n, int x) {\n    // TODO: Return minimum operations to reduce x to 0, or -1\n    return -1;\n}\n\nint main() {\n    int n, x;\n    if (scanf(\"%d %d\", &n, &x) != 2) return 0;\n    int nums[100000];\n    for (int i = 0; i < n; i++) scanf(\"%d\", &nums[i]);\n    printf(\"%d\", minOperations(nums, n, x));\n    return 0;\n}"
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    int n, x;\n    scanf(\"%d %d\", &n, &x);\n    int *arr = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n    // TODO: Return the minimum number of operations to reduce x to exactly 0, or -1\n    return 0;\n}"
         }
       ],
       "hintsList": [

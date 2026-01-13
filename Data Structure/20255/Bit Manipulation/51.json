@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Split Array with Same Average (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an integer array nums.\nYou should move each element of nums into one of the two arrays A and B such that A and B are non-empty, and average(A) == average(B).\nReturn true if it is possible to achieve that and false otherwise.\nNote that for an array arr, average(arr) is the sum of all the elements of arr over the length of arr.\n",
+            "examples": "Sample Input\n1 2 3 4 5 6 7 8\n\nSample Output\nTrue\n\nExplanation: We can split the array into [1,4,5,8] and [2,3,6,7], and both of them have an average of 4.5.\n\nSample Input\n3 1\n\nSample Output\nFalse\n\nExplanation: It is not possible to split into two arrays with the same average.",
+            "constraints": "1 <= nums.length <= 30\n0 <= nums[i] <= 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "1 2 3 4 5 6 7 8",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "3 1",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "10 20 30",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "5 5 5 5 5 5 5 5",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "2 4 6 8 10 12",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def splitArraySameAverage(self, nums):\n        # TODO: Return True if nums can be split into two arrays with same average\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.splitArraySameAverage(nums)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean splitArraySameAverage(int[] nums) {\n        // TODO: Return true if nums can be split into two arrays with same average\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.splitArraySameAverage(nums) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    splitArraySameAverage(nums) {\n        // TODO: Return true if nums can be split into two arrays with same average\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.splitArraySameAverage(nums);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool splitArraySameAverage(vector<int>& nums) {\n        // TODO: Return true if nums can be split into two arrays with same average\n        return false;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << (sol.splitArraySameAverage(nums) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <stdlib.h>\n\nvoid splitArraySameAverage(int* nums, int numsSize) {\n    // TODO: Print \"True\" if nums can be split into two arrays with same average, else \"False\"\n}\n\nint main() {\n    int nums[31];\n    int numsSize = 0;\n    char line[1000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    splitArraySameAverage(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "If average(A) == average(B), then average(A) == average(nums). Use this to reduce the problem.",
+                "Use dynamic programming with bit manipulation to track possible sums and counts for subsets."
+            ]
+        }
+    ]
+}
+

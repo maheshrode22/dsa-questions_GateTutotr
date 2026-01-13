@@ -1,0 +1,354 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Search for an Element in SLL",
+            "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL). Your task is to search for a given value X in the linked list. If the value is found, print its 1-based position. If not found, print -1.\n\nInput Format\nThe first line contains an integer N (size of the list).\nThe second line contains N space-separated integers.\nThe third line contains an integer X (value to search).\n\nOutput Format\nPrint the 1-based position of X if found, otherwise print -1.\n\nExample\nInput:\n5\n10 20 30 40 50\n30\nOutput: 3",
+            "examples": "Sample Input\n5\n10 20 30 40 50\n30\n\nSample Output\n3",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements, X ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n10 20 30 40 50\n30",
+                    "expectedOutput": "3",
+                    "problemTitle": "Search for an Element in SLL"
+                },
+                {
+                    "input": "4\n1 2 3 4\n5",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Search for an Element in SLL"
+                },
+                {
+                    "input": "1\n99\n99",
+                    "expectedOutput": "1",
+                    "problemTitle": "Search for an Element in SLL"
+                },
+                {
+                    "input": "6\n5 10 15 20 25 30\n10",
+                    "expectedOutput": "2",
+                    "problemTitle": "Search for an Element in SLL"
+                },
+                {
+                    "input": "3\n-1 0 1\n1",
+                    "expectedOutput": "3",
+                    "problemTitle": "Search for an Element in SLL"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef searchElement(head, x):\n    # TODO: Search for x and return its 1-based position, else -1\n    return -1\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:n+1]))\n    x = int(input_data[n+1])\n    head = insertAtEnd(arr, n)\n    print(searchElement(head, x))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Search for an Element in SLL"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node insertAtEnd(long[] arr, int n) {\n        Node head = null, tail = null;\n        for (long x : arr) {\n            Node temp = new Node(x);\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        return head;\n    }\n\n    public static int searchElement(Node head, long x) {\n        // TODO: Search for x and return its 1-based position, else -1\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            long x = sc.nextLong();\n            Node head = Result.insertAtEnd(arr, n);\n            System.out.print(Result.searchElement(head, x));\n        }\n    }\n}",
+                    "problemTitle": "Search for an Element in SLL"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction insertAtEnd(arr, n) {\n    let head = null, tail = null;\n    arr.forEach(x => {\n        let temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    return head;\n}\n\nfunction searchElement(head, x) {\n    // TODO: Search for x and return its 1-based position, else -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1, n + 1).map(Number);\n    const x = Number(lines[n + 1]);\n    const head = insertAtEnd(arr, n);\n    console.log(searchElement(head, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Search for an Element in SLL"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* insertAtEnd(vector<long long>& arr, int n) {\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nint searchElement(Node* head, long long x) {\n    // TODO: Search for x and return its 1-based position, else -1\n    return -1;\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        long long x; cin >> x;\n        Node* head = insertAtEnd(arr, n);\n        cout << searchElement(head, x);\n    }\n    return 0;\n}",
+                    "problemTitle": "Search for an Element in SLL"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* insertAtEnd(long long arr[], int n) {\n    Node *head = NULL, *tail = NULL;\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nint searchElement(Node* head, long long x) {\n    // TODO: Search for x and return its 1-based position, else -1\n    return -1;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        long long x; scanf(\"%lld\", &x);\n        Node* head = insertAtEnd(arr, n);\n        printf(\"%d\", searchElement(head, x));\n    }\n    return 0;\n}",
+                    "problemTitle": "Search for an Element in SLL"
+                }
+            ],
+            "hintsList": [
+                "Traverse the linked list and maintain a counter to track the current position."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Count Nodes in SLL",
+            "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL). Your task is to count the total number of nodes in the linked list.\n\nInput Format\nThe first line contains an integer N (size of the list).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the total number of nodes.\n\nExample\nInput:\n5\n10 20 30 40 50\nOutput: 5",
+            "examples": "Sample Input\n5\n10 20 30 40 50\n\nSample Output\n5",
+            "constraints": "0 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n10 20 30 40 50",
+                    "expectedOutput": "5",
+                    "problemTitle": "Count Nodes in SLL"
+                },
+                {
+                    "input": "0\n",
+                    "expectedOutput": "0",
+                    "problemTitle": "Count Nodes in SLL"
+                },
+                {
+                    "input": "1\n99",
+                    "expectedOutput": "1",
+                    "problemTitle": "Count Nodes in SLL"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "3",
+                    "problemTitle": "Count Nodes in SLL"
+                },
+                {
+                    "input": "6\n5 5 5 5 5 5",
+                    "expectedOutput": "6",
+                    "problemTitle": "Count Nodes in SLL"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef countNodes(head):\n    # TODO: Count nodes and return the total\n    return 0\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    head = insertAtEnd(arr, n)\n    print(countNodes(head))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Count Nodes in SLL"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node insertAtEnd(long[] arr, int n) {\n        Node head = null, tail = null;\n        for (long x : arr) {\n            Node temp = new Node(x);\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        return head;\n    }\n\n    public static int countNodes(Node head) {\n        // TODO: Count nodes and return the total\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            Node head = Result.insertAtEnd(arr, n);\n            System.out.print(Result.countNodes(head));\n        }\n    }\n}",
+                    "problemTitle": "Count Nodes in SLL"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction insertAtEnd(arr, n) {\n    let head = null, tail = null;\n    arr.forEach(x => {\n        let temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    return head;\n}\n\nfunction countNodes(head) {\n    // TODO: Count nodes and return the total\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const head = insertAtEnd(arr, n);\n    console.log(countNodes(head));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Count Nodes in SLL"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* insertAtEnd(vector<long long>& arr, int n) {\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nint countNodes(Node* head) {\n    // TODO: Count nodes and return the total\n    return 0;\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        Node* head = insertAtEnd(arr, n);\n        cout << countNodes(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Count Nodes in SLL"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* insertAtEnd(long long arr[], int n) {\n    Node *head = NULL, *tail = NULL;\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nint countNodes(Node* head) {\n    // TODO: Count nodes and return the total\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        Node* head = insertAtEnd(arr, n);\n        printf(\"%d\", countNodes(head));\n    }\n    return 0;\n}",
+                    "problemTitle": "Count Nodes in SLL"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the list and increment a counter for each node until you reach NULL."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find the Middle Element of SLL",
+            "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL). Your task is to find the middle element of the linked list. If there are two middle elements (when N is even), print the second middle element.\n\nInput Format\nThe first line contains an integer N (size of the list).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the middle element. If the list is empty, print -1.\n\nExample\nInput:\n5\n10 20 30 40 50\nOutput: 30\n\nInput:\n6\n10 20 30 40 50 60\nOutput: 40",
+            "examples": "Sample Input\n5\n10 20 30 40 50\n\nSample Output\n30",
+            "constraints": "0 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n10 20 30 40 50",
+                    "expectedOutput": "30",
+                    "problemTitle": "Find the Middle Element of SLL"
+                },
+                {
+                    "input": "6\n10 20 30 40 50 60",
+                    "expectedOutput": "40",
+                    "problemTitle": "Find the Middle Element of SLL"
+                },
+                {
+                    "input": "1\n99",
+                    "expectedOutput": "99",
+                    "problemTitle": "Find the Middle Element of SLL"
+                },
+                {
+                    "input": "2\n1 2",
+                    "expectedOutput": "2",
+                    "problemTitle": "Find the Middle Element of SLL"
+                },
+                {
+                    "input": "0\n",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Find the Middle Element of SLL"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef findMiddle(head):\n    # TODO: Find the middle element and return its data, else -1\n    return -1\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    head = insertAtEnd(arr, n)\n    print(findMiddle(head))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find the Middle Element of SLL"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node insertAtEnd(long[] arr, int n) {\n        Node head = null, tail = null;\n        for (long x : arr) {\n            Node temp = new Node(x);\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        return head;\n    }\n\n    public static long findMiddle(Node head) {\n        // TODO: Find the middle element and return its data, else -1\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            Node head = Result.insertAtEnd(arr, n);\n            System.out.print(Result.findMiddle(head));\n        }\n    }\n}",
+                    "problemTitle": "Find the Middle Element of SLL"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction insertAtEnd(arr, n) {\n    let head = null, tail = null;\n    arr.forEach(x => {\n        let temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    return head;\n}\n\nfunction findMiddle(head) {\n    // TODO: Find the middle element and return its data, else -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const head = insertAtEnd(arr, n);\n    console.log(findMiddle(head));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find the Middle Element of SLL"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* insertAtEnd(vector<long long>& arr, int n) {\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nlong long findMiddle(Node* head) {\n    // TODO: Find the middle element and return its data, else -1\n    return -1;\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        Node* head = insertAtEnd(arr, n);\n        cout << findMiddle(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Middle Element of SLL"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* insertAtEnd(long long arr[], int n) {\n    Node *head = NULL, *tail = NULL;\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nlong long findMiddle(Node* head) {\n    // TODO: Find the middle element and return its data, else -1\n    return -1;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        Node* head = insertAtEnd(arr, n);\n        printf(\"%lld\", findMiddle(head));\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Middle Element of SLL"
+                }
+            ],
+            "hintsList": [
+                "Use the slow and fast pointer approach (Tortoise and Hare algorithm)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Reverse a Singly Linked List",
+            "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL). Your task is to reverse the linked list and display the elements of the reversed list.\n\nInput Format\nThe first line contains an integer N (size of the list).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the elements of the reversed linked list separated by spaces.\n\nExample\nInput:\n5\n10 20 30 40 50\nOutput: 50 40 30 20 10",
+            "examples": "Sample Input\n5\n10 20 30 40 50\n\nSample Output\n50 40 30 20 10",
+            "constraints": "0 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n10 20 30 40 50",
+                    "expectedOutput": "50 40 30 20 10",
+                    "problemTitle": "Reverse a Singly Linked List"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "3 2 1",
+                    "problemTitle": "Reverse a Singly Linked List"
+                },
+                {
+                    "input": "1\n99",
+                    "expectedOutput": "99",
+                    "problemTitle": "Reverse a Singly Linked List"
+                },
+                {
+                    "input": "0\n",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Reverse a Singly Linked List"
+                },
+                {
+                    "input": "4\n-1 -2 -3 -4",
+                    "expectedOutput": "-4 -3 -2 -1",
+                    "problemTitle": "Reverse a Singly Linked List"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef reverseList(head):\n    # TODO: Reverse the list and return the new head\n    return head\n\ndef display(head):\n    if not head:\n        print(-1)\n        return\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    head = insertAtEnd(arr, n)\n    head = reverseList(head)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Reverse a Singly Linked List"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node insertAtEnd(long[] arr, int n) {\n        Node head = null, tail = null;\n        for (long x : arr) {\n            Node temp = new Node(x);\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        return head;\n    }\n\n    public static Node reverseList(Node head) {\n        // TODO: Reverse the list and return the new head\n        return head;\n    }\n}\n\npublic class Solution {\n    public static void display(Node head) {\n        if (head == null) {\n            System.out.print(-1);\n            return;\n        }\n        while (head != null) {\n            System.out.print(head.data + \" \");\n            head = head.next;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            Node head = Result.insertAtEnd(arr, n);\n            head = Result.reverseList(head);\n            display(head);\n        }\n    }\n}",
+                    "problemTitle": "Reverse a Singly Linked List"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction insertAtEnd(arr, n) {\n    let head = null, tail = null;\n    arr.forEach(x => {\n        let temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    return head;\n}\n\nfunction reverseList(head) {\n    // TODO: Reverse the list and return the new head\n    return head;\n}\n\nfunction display(head) {\n    if (!head) {\n        console.log(-1);\n        return;\n    }\n    let res = [];\n    while (head) {\n        res.push(head.data);\n        head = head.next;\n    }\n    console.log(res.join(\" \"));\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    let head = insertAtEnd(arr, n);\n    head = reverseList(head);\n    display(head);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Reverse a Singly Linked List"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* insertAtEnd(vector<long long>& arr, int n) {\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nNode* reverseList(Node* head) {\n    // TODO: Reverse the list and return the new head\n    return head;\n}\n\nvoid display(Node* head) {\n    if (!head) {\n        cout << -1;\n        return;\n    }\n    while (head) {\n        cout << head->data << \" \";\n        head = head.next;\n    }\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        Node* head = insertAtEnd(arr, n);\n        head = reverseList(head);\n        display(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Reverse a Singly Linked List"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* insertAtEnd(long long arr[], int n) {\n    Node *head = NULL, *tail = NULL;\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nNode* reverseList(Node* head) {\n    // TODO: Reverse the list and return the new head\n    return head;\n}\n\nvoid display(Node* head) {\n    if (!head) {\n        printf(\"-1\");\n        return;\n    }\n    while (head) {\n        printf(\"%lld \", head->data);\n        head = head.next;\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        Node* head = insertAtEnd(arr, n);\n        head = reverseList(head);\n        display(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Reverse a Singly Linked List"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the list and change the next pointer of each node to point to its previous node."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if SLL is a Palindrome",
+            "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL). Your task is to check if the data in the linked list forms a palindrome. If it is a palindrome, print YES, otherwise print NO.\n\nInput Format\nThe first line contains an integer N (size of the list).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint YES or NO.\n\nExample\nInput:\n5\n1 2 3 2 1\nOutput: YES",
+            "examples": "Sample Input\n5\n1 2 3 2 1\n\nSample Output\nYES",
+            "constraints": "0 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(N)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 2 1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                },
+                {
+                    "input": "4\n1 2 2 1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                },
+                {
+                    "input": "1\n99",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                },
+                {
+                    "input": "0\n",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef isPalindrome(head):\n    # TODO: Return YES if palindrome, else NO\n    return \"NO\"\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    head = insertAtEnd(arr, n)\n    print(isPalindrome(head))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node insertAtEnd(long[] arr, int n) {\n        Node head = null, tail = null;\n        for (long x : arr) {\n            Node temp = new Node(x);\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        return head;\n    }\n\n    public static String isPalindrome(Node head) {\n        // TODO: Return YES if palindrome, else NO\n        return \"NO\";\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            Node head = Result.insertAtEnd(arr, n);\n            System.out.print(Result.isPalindrome(head));\n        }\n    }\n}",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction insertAtEnd(arr, n) {\n    let head = null, tail = null;\n    arr.forEach(x => {\n        let temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    return head;\n}\n\nfunction isPalindrome(head) {\n    // TODO: Return YES if palindrome, else NO\n    return \"NO\";\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const head = insertAtEnd(arr, n);\n    console.log(isPalindrome(head));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* insertAtEnd(vector<long long>& arr, int n) {\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nstring isPalindrome(Node* head) {\n    // TODO: Return YES if palindrome, else NO\n    return \"NO\";\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        Node* head = insertAtEnd(arr, n);\n        cout << isPalindrome(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* insertAtEnd(long long arr[], int n) {\n    Node *head = NULL, *tail = NULL;\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nconst char* isPalindrome(Node* head) {\n    // TODO: Return YES if palindrome, else NO\n    return \"NO\";\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        Node* head = insertAtEnd(arr, n);\n        printf(\"%s\", isPalindrome(head));\n    }\n    return 0;\n}",
+                    "problemTitle": "Check if SLL is a Palindrome"
+                }
+            ],
+            "hintsList": [
+                "You can find the middle of the list, reverse the second half, and compare it with the first half."
+            ]
+        }
+    ]
+}

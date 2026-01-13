@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Ugly Number III (Number Theory)",
+            "description": "An ugly number is a positive integer that is divisible by a, b, or c.\nGiven four integers n, a, b, and c, return the nth ugly number.\n\nInput Format:\nFirst line: four integers n, a, b, c.\n\nOutput Format:\nPrint a single integer: the nth ugly number.",
+            "examples": "Sample Input\n3 2 3 5\n\nSample Output\n4",
+            "constraints": "1 <= n, a, b, c <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 4033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3 2 3 5",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "4 2 3 4",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "16 4 6 8",
+                    "expectedOutput": "48"
+                },
+                {
+                    "input": "20 9 5 4",
+                    "expectedOutput": "44"
+                },
+                {
+                    "input": "19 5 4 4",
+                    "expectedOutput": "48"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def nthUglyNumber(self, n, a, b, c):\n        # TODO: Return the nth ugly number\n        pass\n\nif __name__ == '__main__':\n    n, a, b, c = map(int, input().split())\n    sol = Solution()\n    print(sol.nthUglyNumber(n, a, b, c))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int nthUglyNumber(int n, int a, int b, int c) {\n        // TODO: Return the nth ugly number\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int a = sc.nextInt();\n        int b = sc.nextInt();\n        int c = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.nthUglyNumber(n, a, b, c));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    nthUglyNumber(n, a, b, c) {\n        // TODO: Return the nth ugly number\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst [n, a, b, c] = fs.readFileSync(0, 'utf-8').trim().split(' ').map(Number);\nconst sol = new Solution();\nconsole.log(sol.nthUglyNumber(n, a, b, c));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <numeric>\nusing namespace std;\n\nclass Solution {\npublic:\n    int nthUglyNumber(int n, int a, int b, int c) {\n        // TODO: Return the nth ugly number\n        return 0;\n    }\n};\n\nint main() {\n    int n, a, b, c;\n    cin >> n >> a >> b >> c;\n    Solution sol;\n    cout << sol.nthUglyNumber(n, a, b, c) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint nthUglyNumber(int n, int a, int b, int c) {\n    // TODO: Return the nth ugly number\n    return 0;\n}\n\nint main() {\n    int n, a, b, c;\n    scanf(\"%d %d %d %d\", &n, &a, &b, &c);\n    printf(\"%d\\n\", nthUglyNumber(n, a, b, c));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Binary Search on the answer.",
+                "Use inclusion-exclusion principle to count divisibles."
+            ]
+        }
+    ]
+}

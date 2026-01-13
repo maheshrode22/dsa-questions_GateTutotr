@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Transform to Chessboard (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an n x n binary grid board. In each move, you can swap any two rows with each other, or any two columns with each other.\nReturn the minimum number of moves to transform the board into a chessboard board. If the task is impossible, return -1.\nA chessboard board is a board where no 0's and no 1's are 4-directionally adjacent.\n",
+            "examples": "Sample Input\n0 1 1 0\n0 1 1 0\n1 0 0 1\n1 0 0 1\n\nSample Output\n2\n\nExplanation: One potential sequence of moves is shown.\nThe first move swaps the first and second column.\nThe second move swaps the second and third row.\n\nSample Input\n0 1\n1 0\n\nSample Output\n0\n\nExplanation: Also note that the board with 0 in the top left corner, is also a valid chessboard.\n\nSample Input\n1 0\n1 0\n\nSample Output\n-1\n\nExplanation: No matter what sequence of moves you make, you cannot end with a valid chessboard.",
+            "constraints": "n == board.length\nn == board[i].length\n2 <= n <= 30\nboard[i][j] is either 0 or 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "0 1 1 0\n0 1 1 0\n1 0 0 1\n1 0 0 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "0 1\n1 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1 0\n1 0",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "0 0 1 1\n1 1 0 0\n1 1 0 0\n0 0 1 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1 0 1 0\n0 1 0 1\n1 0 1 0\n0 1 0 1",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def movesToChessboard(self, board):\n        # TODO: Return minimum moves to transform to chessboard, or -1 if impossible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    board = []\n    for line in lines:\n        if line.strip():\n            board.append(list(map(int, line.strip().split())))\n    sol = Solution()\n    print(sol.movesToChessboard(board))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int movesToChessboard(int[][] board) {\n        // TODO: Return minimum moves to transform to chessboard, or -1 if impossible\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> boardList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            int[] row = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) {\n                row[i] = Integer.parseInt(parts[i]);\n            }\n            boardList.add(row);\n        }\n        int[][] board = boardList.toArray(new int[boardList.size()][]);\n        Solution sol = new Solution();\n        System.out.println(sol.movesToChessboard(board));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    movesToChessboard(board) {\n        // TODO: Return minimum moves to transform to chessboard, or -1 if impossible\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const board = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            board.push(line.trim().split(/\\s+/).map(Number));\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.movesToChessboard(board));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int movesToChessboard(vector<vector<int>>& board) {\n        // TODO: Return minimum moves to transform to chessboard, or -1 if impossible\n        return -1;\n    }\n};\n\nint main() {\n    vector<vector<int>> board;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> row;\n        int num;\n        while (iss >> num) {\n            row.push_back(num);\n        }\n        if (!row.empty()) {\n            board.push_back(row);\n        }\n    }\n    Solution sol;\n    cout << sol.movesToChessboard(board) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid movesToChessboard(int** board, int boardSize, int* boardColSize) {\n    // TODO: Print minimum moves to transform to chessboard, or -1 if impossible\n}\n\nint main() {\n    int board[30][30];\n    int boardSize = 0;\n    int boardColSize[30];\n    char line[1000];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int row[30];\n        int colSize = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            row[colSize++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (colSize > 0) {\n            for (int i = 0; i < colSize; i++) {\n                board[boardSize][i] = row[i];\n            }\n            boardColSize[boardSize] = colSize;\n            boardSize++;\n        }\n    }\n    int* boardPtrs[30];\n    for (int i = 0; i < boardSize; i++) {\n        boardPtrs[i] = board[i];\n    }\n    movesToChessboard(boardPtrs, boardSize, boardColSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if the board can be transformed: all rows must be identical or complementary, same for columns.",
+                "Use bit manipulation to represent rows and check patterns. Count mismatches for minimum swaps."
+            ]
+        }
+    ]
+}
+

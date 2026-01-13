@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Sum of Two Integers (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven two integers a and b, return the sum of the two integers without using the operators + and -.\n",
+            "examples": "Sample Input\n1 2\n\nSample Output\n3\n\nExplanation: 1 + 2 = 3\n\nSample Input\n2 3\n\nSample Output\n5\n\nExplanation: 2 + 3 = 5\n\nSample Input\n-2 -3\n\nSample Output\n-5\n\nExplanation: -2 + (-3) = -5",
+            "constraints": "-1000 <= a, b <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "2 3",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "-2 -3",
+                    "expectedOutput": "-5"
+                },
+                {
+                    "input": "0 5",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "500 500",
+                    "expectedOutput": "1000"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def getSum(self, a, b):\n        # TODO: Return sum of a and b without using + or -\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        a, b = int(input_data[0]), int(input_data[1])\n        sol = Solution()\n        print(sol.getSum(a, b))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int getSum(int a, int b) {\n        // TODO: Return sum of a and b without using + or -\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        int a = Integer.parseInt(parts[0]);\n        int b = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.getSum(a, b));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    getSum(a, b) {\n        // TODO: Return sum of a and b without using + or -\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const a = parseInt(parts[0]);\n    const b = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.getSum(a, b));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int getSum(int a, int b) {\n        // TODO: Return sum of a and b without using + or -\n        return 0;\n    }\n};\n\nint main() {\n    int a, b;\n    if (cin >> a >> b) {\n        Solution sol;\n        cout << sol.getSum(a, b) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid getSum(int a, int b) {\n    // TODO: Print sum of a and b without using + or -\n}\n\nint main() {\n    int a, b;\n    if (scanf(\"%d %d\", &a, &b) == 2) {\n        getSum(a, b);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use XOR for addition without carry, and AND with left shift for carry.",
+                "Repeat until there's no carry: sum = a XOR b, carry = (a AND b) << 1, then a = sum, b = carry."
+            ]
+        }
+    ]
+}
+

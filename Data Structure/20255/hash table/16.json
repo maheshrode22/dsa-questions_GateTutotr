@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Repeated DNA Sequences (Hash Table)",
+            "description": "Problem Statement\n\nThe DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.\nFor example, \"ACGAATTCCG\" is a DNA sequence.\n\nWhen studying DNA, it is useful to identify repeated sequences within the DNA.\nGiven a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.\n",
+            "examples": "Example 1:\n\nInput: s = \"AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT\"\nOutput: [\"AAAAACCCCC\",\"CCCCCAAAAA\"]\n\nExample 2:\n\nInput: s = \"AAAAAAAAAAAAA\"\nOutput: [\"AAAAAAAAAA\"]",
+            "constraints": "1 <= s.length <= 10^5\ns[i] is either 'A', 'C', 'G', or 'T'",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT",
+                    "expectedOutput": "AAAAACCCCC CCCCCAAAAA"
+                },
+                {
+                    "input": "AAAAAAAAAAAAA",
+                    "expectedOutput": "AAAAAAAAAA"
+                },
+                {
+                    "input": "AAAAAAAAAAA",
+                    "expectedOutput": "AAAAAAAAAA"
+                },
+                {
+                    "input": "ACGTACGTAC",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "AAAAAAAAAAAAAAAAAAAAAA",
+                    "expectedOutput": "AAAAAAAAAA"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findRepeatedDnaSequences(self, s):\n        # TODO: Use hash set to track seen 10-letter sequences\n        # Return list of sequences that appear more than once\n        pass\n\nif __name__ == '__main__':\n    import sys\n    s = sys.stdin.read().strip()\n    sol = Solution()\n    result = sol.findRepeatedDnaSequences(s)\n    if len(result) == 0:\n        print(\"\")\n    else:\n        print(' '.join(sorted(result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    List<String> findRepeatedDnaSequences(String s){\n        // TODO: Use hash set to track seen 10-letter sequences\n        // Return list of sequences that appear more than once\n        return new ArrayList<>();\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        List<String> result = sol.findRepeatedDnaSequences(s);\n        if(result.isEmpty()){\n            System.out.println(\"\");\n        } else {\n            Collections.sort(result);\n            System.out.println(String.join(\" \", result));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  findRepeatedDnaSequences(s){\n    // TODO: Use hash set to track seen 10-letter sequences\n    // Return array of sequences that appear more than once\n    return [];\n  }\n}\nfunction solve(input){\n  const s = input.trim();\n  const sol = new Solution();\n  const result = sol.findRepeatedDnaSequences(s);\n  if(result.length === 0){\n    console.log(\"\");\n  } else {\n    console.log(result.sort().join(\" \"));\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    vector<string> findRepeatedDnaSequences(string s){\n        // TODO: Use hash set to track seen 10-letter sequences\n        // Return vector of sequences that appear more than once\n        return {};\n    }\n};\nint main(){\n    string s;\n    getline(cin, s);\n    Solution sol;\n    vector<string> result = sol.findRepeatedDnaSequences(s);\n    if(result.empty()){\n        cout << \"\";\n    } else {\n        sort(result.begin(), result.end());\n        for(int i=0;i<result.size();i++){\n            cout << result[i];\n            if(i < result.size()-1) cout << \" \";\n        }\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\nchar s[100001];\nchar result[10000][11];\nint resultSize = 0;\n\nvoid findRepeatedDnaSequences(){\n    // TODO: Find repeated 10-letter DNA sequences\n    // Store results in result array and update resultSize\n}\n\nint main(){\n    scanf(\"%s\", s);\n    findRepeatedDnaSequences();\n    if(resultSize == 0){\n        printf(\"\");\n    } else {\n        for(int i=0;i<resultSize;i++){\n            printf(\"%s\", result[i]);\n            if(i < resultSize-1) printf(\" \");\n        }\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to store all 10-letter substrings you've seen. Use another set to store repeated ones.",
+                "Iterate through the string and extract each 10-letter substring. Check if it's in the seen set."
+            ]
+        }
+    ]
+}

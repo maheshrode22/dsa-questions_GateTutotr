@@ -1,0 +1,724 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Set Matrix Zeroes (Hash Table)",
+            "description": "Problem Statement\n\nGiven an m x n integer matrix, if an element is 0, set its entire row and column to 0's.\nYou must do it in place.\n",
+            "examples": "Example 1:\n\nInput: matrix = [[1,1,1],[1,0,1],[1,1,1]]\nOutput: [[1,0,1],[0,0,0],[1,0,1]]\n\nExample 2:\n\nInput: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]\nOutput: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]",
+            "constraints": "m == matrix.length\nn == matrix[0].length\n1 <= m, n <= 200\n-2^31 <= matrix[i][j] <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3 3\n1 1 1\n1 0 1\n1 1 1",
+                    "expectedOutput": "1 0 1\n0 0 0\n1 0 1"
+                },
+                {
+                    "input": "3 4\n0 1 2 0\n3 4 5 2\n1 3 1 5",
+                    "expectedOutput": "0 0 0 0\n0 4 5 0\n0 3 1 0"
+                },
+                {
+                    "input": "1 1\n0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2 2\n1 2\n3 4",
+                    "expectedOutput": "1 2\n3 4"
+                },
+                {
+                    "input": "4 3\n1 2 3\n4 0 6\n7 8 9\n10 11 12",
+                    "expectedOutput": "1 0 3\n0 0 0\n7 0 9\n10 0 12"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def setZeroes(self, matrix):\n        # TODO: Set entire row and column to 0 if element is 0\n        # Modify matrix in-place using hash sets to track rows and columns\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    m, n = int(data[0]), int(data[1])\n    matrix = []\n    idx = 2\n    for i in range(m):\n        row = []\n        for j in range(n):\n            row.append(int(data[idx]))\n            idx += 1\n        matrix.append(row)\n    sol = Solution()\n    sol.setZeroes(matrix)\n    for row in matrix:\n        print(' '.join(map(str, row)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    void setZeroes(int[][] matrix){\n        // TODO: Set entire row and column to 0 if element is 0\n        // Modify matrix in-place using hash sets to track rows and columns\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] dims = br.readLine().trim().split(\" \");\n        int m = Integer.parseInt(dims[0]);\n        int n = Integer.parseInt(dims[1]);\n        int[][] matrix = new int[m][n];\n        for(int i=0;i<m;i++){\n            String[] parts = br.readLine().trim().split(\" \");\n            for(int j=0;j<n;j++){\n                matrix[i][j] = Integer.parseInt(parts[j]);\n            }\n        }\n        Solution sol = new Solution();\n        sol.setZeroes(matrix);\n        for(int i=0;i<m;i++){\n            for(int j=0;j<n;j++){\n                System.out.print(matrix[i][j]);\n                if(j < n-1) System.out.print(\" \");\n            }\n            System.out.println();\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  setZeroes(matrix){\n    // TODO: Set entire row and column to 0 if element is 0\n    // Modify matrix in-place using hash sets to track rows and columns\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const [m, n] = lines[0].split(\" \").map(Number);\n  const matrix = [];\n  for(let i=1;i<=m;i++){\n    matrix.push(lines[i].split(\" \").map(Number));\n  }\n  const sol = new Solution();\n  sol.setZeroes(matrix);\n  for(const row of matrix){\n    console.log(row.join(\" \"));\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    void setZeroes(vector<vector<int>>& matrix){\n        // TODO: Set entire row and column to 0 if element is 0\n        // Modify matrix in-place using hash sets to track rows and columns\n    }\n};\nint main(){\n    int m, n; cin >> m >> n;\n    vector<vector<int>> matrix(m, vector<int>(n));\n    for(int i=0;i<m;i++){\n        for(int j=0;j<n;j++){\n            cin >> matrix[i][j];\n        }\n    }\n    Solution sol;\n    sol.setZeroes(matrix);\n    for(int i=0;i<m;i++){\n        for(int j=0;j<n;j++){\n            cout << matrix[i][j];\n            if(j < n-1) cout << \" \";\n        }\n        cout << \"\\n\";\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint zeroRows[200], zeroCols[200];\nint zeroRowCount = 0, zeroColCount = 0;\n\nvoid setZeroes(int matrix[][200], int m, int n){\n    // TODO: Set entire row and column to 0 if element is 0\n    // Use arrays to track which rows and columns should be zeroed\n}\n\nint main(){\n    int m, n; scanf(\"%d %d\", &m, &n);\n    int matrix[200][200];\n    for(int i=0;i<m;i++){\n        for(int j=0;j<n;j++){\n            scanf(\"%d\", &matrix[i][j]);\n        }\n    }\n    setZeroes(matrix, m, n);\n    for(int i=0;i<m;i++){\n        for(int j=0;j<n;j++){\n            printf(\"%d\", matrix[i][j]);\n            if(j < n-1) printf(\" \");\n        }\n        printf(\"\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two hash sets to store which rows and columns need to be zeroed.",
+                "First pass: identify all rows and columns containing zeros. Second pass: set those rows and columns to zero."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Construct Binary Tree from Preorder and Inorder Traversal (Hash Table)",
+            "description": "Problem Statement\n\nGiven two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.\nFor this problem, output the level-order traversal of the constructed tree.\n",
+            "examples": "Example 1:\n\nInput: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]\nOutput: [3,9,20,null,null,15,7]\n\nExample 2:\n\nInput: preorder = [-1], inorder = [-1]\nOutput: [-1]",
+            "constraints": "1 <= preorder.length <= 3000\ninorder.length == preorder.length\n-3000 <= preorder[i], inorder[i] <= 3000\npreorder and inorder consist of unique values",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5\n3 9 20 15 7\n9 3 15 20 7",
+                    "expectedOutput": "3 9 20 null null 15 7"
+                },
+                {
+                    "input": "1\n-1\n-1",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "3\n1 2 3\n2 1 3",
+                    "expectedOutput": "1 2 3"
+                },
+                {
+                    "input": "7\n1 2 4 5 3 6 7\n4 2 5 1 6 3 7",
+                    "expectedOutput": "1 2 3 4 5 6 7"
+                },
+                {
+                    "input": "4\n10 5 15 20\n5 10 15 20",
+                    "expectedOutput": "10 5 15 null null null 20"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\nclass Solution:\n    def buildTree(self, preorder, inorder):\n        # TODO: Build binary tree using hash map for inorder indices\n        # Return root of constructed tree\n        pass\n\nif __name__ == '__main__':\n    import sys\n    from collections import deque\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    preorder = list(map(int, data[1].split()))\n    inorder = list(map(int, data[2].split()))\n    sol = Solution()\n    root = sol.buildTree(preorder, inorder)\n    # Level-order traversal\n    if not root:\n        print(\"null\")\n    else:\n        result = []\n        queue = deque([root])\n        while queue:\n            node = queue.popleft()\n            if node:\n                result.append(str(node.val))\n                queue.append(node.left)\n                queue.append(node.right)\n            else:\n                result.append(\"null\")\n        # Remove trailing nulls\n        while result and result[-1] == \"null\":\n            result.pop()\n        print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass TreeNode{\n    int val;\n    TreeNode left, right;\n    TreeNode(int val){ this.val = val; }\n}\nclass Solution{\n    TreeNode buildTree(int[] preorder, int[] inorder){\n        // TODO: Build binary tree using hash map for inorder indices\n        // Return root of constructed tree\n        return null;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] pre = br.readLine().trim().split(\" \");\n        String[] in = br.readLine().trim().split(\" \");\n        int[] preorder = new int[n];\n        int[] inorder = new int[n];\n        for(int i=0;i<n;i++){\n            preorder[i] = Integer.parseInt(pre[i]);\n            inorder[i] = Integer.parseInt(in[i]);\n        }\n        Solution sol = new Solution();\n        TreeNode root = sol.buildTree(preorder, inorder);\n        // Level-order traversal\n        if(root == null){\n            System.out.println(\"null\");\n        } else {\n            List<String> result = new ArrayList<>();\n            Queue<TreeNode> queue = new LinkedList<>();\n            queue.offer(root);\n            while(!queue.isEmpty()){\n                TreeNode node = queue.poll();\n                if(node != null){\n                    result.add(String.valueOf(node.val));\n                    queue.offer(node.left);\n                    queue.offer(node.right);\n                } else {\n                    result.add(\"null\");\n                }\n            }\n            while(result.size() > 0 && result.get(result.size()-1).equals(\"null\")){\n                result.remove(result.size()-1);\n            }\n            System.out.println(String.join(\" \", result));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class TreeNode{\n  constructor(val, left=null, right=null){\n    this.val = val;\n    this.left = left;\n    this.right = right;\n  }\n}\nclass Solution{\n  buildTree(preorder, inorder){\n    // TODO: Build binary tree using hash map for inorder indices\n    // Return root of constructed tree\n    return null;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const preorder = lines[1].split(\" \").map(Number);\n  const inorder = lines[2].split(\" \").map(Number);\n  const sol = new Solution();\n  const root = sol.buildTree(preorder, inorder);\n  // Level-order traversal\n  if(!root){\n    console.log(\"null\");\n  } else {\n    const result = [];\n    const queue = [root];\n    while(queue.length > 0){\n      const node = queue.shift();\n      if(node){\n        result.push(node.val);\n        queue.push(node.left);\n        queue.push(node.right);\n      } else {\n        result.push(\"null\");\n      }\n    }\n    while(result.length > 0 && result[result.length-1] === \"null\"){\n      result.pop();\n    }\n    console.log(result.join(\" \"));\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct TreeNode{\n    int val;\n    TreeNode *left, *right;\n    TreeNode(int x) : val(x), left(NULL), right(NULL) {}\n};\nclass Solution{\npublic:\n    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder){\n        // TODO: Build binary tree using hash map for inorder indices\n        // Return root of constructed tree\n        return NULL;\n    }\n};\nint main(){\n    int n; cin >> n;\n    vector<int> preorder(n), inorder(n);\n    for(int i=0;i<n;i++) cin >> preorder[i];\n    for(int i=0;i<n;i++) cin >> inorder[i];\n    Solution sol;\n    TreeNode* root = sol.buildTree(preorder, inorder);\n    // Level-order traversal\n    if(!root){\n        cout << \"null\";\n    } else {\n        vector<string> result;\n        queue<TreeNode*> q;\n        q.push(root);\n        while(!q.empty()){\n            TreeNode* node = q.front(); q.pop();\n            if(node){\n                result.push_back(to_string(node->val));\n                q.push(node->left);\n                q.push(node->right);\n            } else {\n                result.push_back(\"null\");\n            }\n        }\n        while(!result.empty() && result.back() == \"null\"){\n            result.pop_back();\n        }\n        for(int i=0;i<result.size();i++){\n            cout << result[i];\n            if(i < result.size()-1) cout << \" \";\n        }\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct TreeNode{\n    int val;\n    struct TreeNode *left, *right;\n} TreeNode;\n\nTreeNode* createNode(int val){\n    TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));\n    node->val = val;\n    node->left = node->right = NULL;\n    return node;\n}\n\nTreeNode* buildTree(int* preorder, int* inorder, int n){\n    // TODO: Build binary tree using array-based hash map for inorder indices\n    // Return root of constructed tree\n    return NULL;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int preorder[3000], inorder[3000];\n    for(int i=0;i<n;i++) scanf(\"%d\", &preorder[i]);\n    for(int i=0;i<n;i++) scanf(\"%d\", &inorder[i]);\n    TreeNode* root = buildTree(preorder, inorder, n);\n    // Simple output for C (just root value for simplicity)\n    if(root) printf(\"%d\", root->val);\n    else printf(\"null\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash map to store the index of each value in the inorder array for O(1) lookup.",
+                "The first element in preorder is always the root. Find it in inorder to split left and right subtrees."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Construct Binary Tree from Inorder and Postorder Traversal (Hash Table)",
+            "description": "Problem Statement\n\nGiven two integer arrays inorder and postorder where inorder is the inorder traversal of a binary tree and postorder is the postorder traversal of the same tree, construct and return the binary tree.\nFor this problem, output the level-order traversal of the constructed tree.\n",
+            "examples": "Example 1:\n\nInput: inorder = [9,3,15,20,7], postorder = [9,15,7,20,3]\nOutput: [3,9,20,null,null,15,7]\n\nExample 2:\n\nInput: inorder = [-1], postorder = [-1]\nOutput: [-1]",
+            "constraints": "1 <= inorder.length <= 3000\npostorder.length == inorder.length\n-3000 <= inorder[i], postorder[i] <= 3000\ninorder and postorder consist of unique values",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5\n9 3 15 20 7\n9 15 7 20 3",
+                    "expectedOutput": "3 9 20 null null 15 7"
+                },
+                {
+                    "input": "1\n-1\n-1",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "3\n2 1 3\n2 3 1",
+                    "expectedOutput": "1 2 3"
+                },
+                {
+                    "input": "7\n4 2 5 1 6 3 7\n4 5 2 6 7 3 1",
+                    "expectedOutput": "1 2 3 4 5 6 7"
+                },
+                {
+                    "input": "4\n5 10 15 20\n5 20 15 10",
+                    "expectedOutput": "10 5 15 null null null 20"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\nclass Solution:\n    def buildTree(self, inorder, postorder):\n        # TODO: Build binary tree using hash map for inorder indices\n        # Return root of constructed tree\n        pass\n\nif __name__ == '__main__':\n    import sys\n    from collections import deque\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    inorder = list(map(int, data[1].split()))\n    postorder = list(map(int, data[2].split()))\n    sol = Solution()\n    root = sol.buildTree(inorder, postorder)\n    # Level-order traversal\n    if not root:\n        print(\"null\")\n    else:\n        result = []\n        queue = deque([root])\n        while queue:\n            node = queue.popleft()\n            if node:\n                result.append(str(node.val))\n                queue.append(node.left)\n                queue.append(node.right)\n            else:\n                result.append(\"null\")\n        while result and result[-1] == \"null\":\n            result.pop()\n        print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass TreeNode{\n    int val;\n    TreeNode left, right;\n    TreeNode(int val){ this.val = val; }\n}\nclass Solution{\n    TreeNode buildTree(int[] inorder, int[] postorder){\n        // TODO: Build binary tree using hash map for inorder indices\n        // Return root of constructed tree\n        return null;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] in = br.readLine().trim().split(\" \");\n        String[] post = br.readLine().trim().split(\" \");\n        int[] inorder = new int[n];\n        int[] postorder = new int[n];\n        for(int i=0;i<n;i++){\n            inorder[i] = Integer.parseInt(in[i]);\n            postorder[i] = Integer.parseInt(post[i]);\n        }\n        Solution sol = new Solution();\n        TreeNode root = sol.buildTree(inorder, postorder);\n        if(root == null){\n            System.out.println(\"null\");\n        } else {\n            List<String> result = new ArrayList<>();\n            Queue<TreeNode> queue = new LinkedList<>();\n            queue.offer(root);\n            while(!queue.isEmpty()){\n                TreeNode node = queue.poll();\n                if(node != null){\n                    result.add(String.valueOf(node.val));\n                    queue.offer(node.left);\n                    queue.offer(node.right);\n                } else {\n                    result.add(\"null\");\n                }\n            }\n            while(result.size() > 0 && result.get(result.size()-1).equals(\"null\")){\n                result.remove(result.size()-1);\n            }\n            System.out.println(String.join(\" \", result));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class TreeNode{\n  constructor(val, left=null, right=null){\n    this.val = val;\n    this.left = left;\n    this.right = right;\n  }\n}\nclass Solution{\n  buildTree(inorder, postorder){\n    // TODO: Build binary tree using hash map for inorder indices\n    // Return root of constructed tree\n    return null;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const inorder = lines[1].split(\" \").map(Number);\n  const postorder = lines[2].split(\" \").map(Number);\n  const sol = new Solution();\n  const root = sol.buildTree(inorder, postorder);\n  if(!root){\n    console.log(\"null\");\n  } else {\n    const result = [];\n    const queue = [root];\n    while(queue.length > 0){\n      const node = queue.shift();\n      if(node){\n        result.push(node.val);\n        queue.push(node.left);\n        queue.push(node.right);\n      } else {\n        result.push(\"null\");\n      }\n    }\n    while(result.length > 0 && result[result.length-1] === \"null\"){\n      result.pop();\n    }\n    console.log(result.join(\" \"));\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct TreeNode{\n    int val;\n    TreeNode *left, *right;\n    TreeNode(int x) : val(x), left(NULL), right(NULL) {}\n};\nclass Solution{\npublic:\n    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder){\n        // TODO: Build binary tree using hash map for inorder indices\n        // Return root of constructed tree\n        return NULL;\n    }\n};\nint main(){\n    int n; cin >> n;\n    vector<int> inorder(n), postorder(n);\n    for(int i=0;i<n;i++) cin >> inorder[i];\n    for(int i=0;i<n;i++) cin >> postorder[i];\n    Solution sol;\n    TreeNode* root = sol.buildTree(inorder, postorder);\n    if(!root){\n        cout << \"null\";\n    } else {\n        vector<string> result;\n        queue<TreeNode*> q;\n        q.push(root);\n        while(!q.empty()){\n            TreeNode* node = q.front(); q.pop();\n            if(node){\n                result.push_back(to_string(node->val));\n                q.push(node->left);\n                q.push(node->right);\n            } else {\n                result.push_back(\"null\");\n            }\n        }\n        while(!result.empty() && result.back() == \"null\"){\n            result.pop_back();\n        }\n        for(int i=0;i<result.size();i++){\n            cout << result[i];\n            if(i < result.size()-1) cout << \" \";\n        }\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct TreeNode{\n    int val;\n    struct TreeNode *left, *right;\n} TreeNode;\n\nTreeNode* createNode(int val){\n    TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));\n    node->val = val;\n    node->left = node->right = NULL;\n    return node;\n}\n\nTreeNode* buildTree(int* inorder, int* postorder, int n){\n    // TODO: Build binary tree using array-based hash map for inorder indices\n    // Return root of constructed tree\n    return NULL;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    int inorder[3000], postorder[3000];\n    for(int i=0;i<n;i++) scanf(\"%d\", &inorder[i]);\n    for(int i=0;i<n;i++) scanf(\"%d\", &postorder[i]);\n    TreeNode* root = buildTree(inorder, postorder, n);\n    if(root) printf(\"%d\", root->val);\n    else printf(\"null\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash map to store the index of each value in the inorder array for O(1) lookup.",
+                "The last element in postorder is always the root. Find it in inorder to split left and right subtrees."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Word Ladder (Hash Table)",
+            "description": "Problem Statement\n\nA transformation sequence from word beginWord to word endWord using a dictionary wordList is a sequence of words beginWord -> s1 -> s2 -> ... -> sk such that:\n- Every adjacent pair of words differs by a single letter.\n- Every si for 1 <= i <= k is in wordList. Note that beginWord does not need to be in wordList.\n- sk == endWord\n\nGiven two words, beginWord and endWord, and a dictionary wordList, return the number of words in the shortest transformation sequence from beginWord to endWord, or 0 if no such sequence exists.\n",
+            "examples": "Example 1:\n\nInput: beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]\nOutput: 5\nExplanation: One shortest transformation sequence is \"hit\" -> \"hot\" -> \"dot\" -> \"dog\" -> \"cog\", which is 5 words long.\n\nExample 2:\n\nInput: beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"]\nOutput: 0\nExplanation: The endWord \"cog\" is not in wordList, therefore there is no valid transformation sequence.",
+            "constraints": "1 <= beginWord.length <= 10\nendWord.length == beginWord.length\n1 <= wordList.length <= 5000\nwordList[i].length == beginWord.length\nbeginWord, endWord, and wordList[i] consist of lowercase English letters\nbeginWord != endWord\nAll the words in wordList are unique",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "hit\ncog\n6\nhot dot dog lot log cog",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "hit\ncog\n5\nhot dot dog lot log",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "a\nc\n2\na b",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "hot\ndog\n3\nhot dog dot",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc\ndef\n6\nabc dbf dbf def dbc daf",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def ladderLength(self, beginWord, endWord, wordList):\n        # TODO: Use BFS with hash set to find shortest transformation sequence\n        # Return length of shortest sequence or 0 if not possible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    beginWord = data[0]\n    endWord = data[1]\n    n = int(data[2])\n    wordList = data[3].split()\n    sol = Solution()\n    result = sol.ladderLength(beginWord, endWord, wordList)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int ladderLength(String beginWord, String endWord, List<String> wordList){\n        // TODO: Use BFS with hash set to find shortest transformation sequence\n        // Return length of shortest sequence or 0 if not possible\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String beginWord = br.readLine().trim();\n        String endWord = br.readLine().trim();\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] words = br.readLine().trim().split(\" \");\n        List<String> wordList = new ArrayList<>();\n        for(String word : words) wordList.add(word);\n        Solution sol = new Solution();\n        int result = sol.ladderLength(beginWord, endWord, wordList);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  ladderLength(beginWord, endWord, wordList){\n    // TODO: Use BFS with hash set to find shortest transformation sequence\n    // Return length of shortest sequence or 0 if not possible\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const beginWord = lines[0];\n  const endWord = lines[1];\n  const n = parseInt(lines[2]);\n  const wordList = lines[3].split(\" \");\n  const sol = new Solution();\n  const result = sol.ladderLength(beginWord, endWord, wordList);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int ladderLength(string beginWord, string endWord, vector<string>& wordList){\n        // TODO: Use BFS with hash set to find shortest transformation sequence\n        // Return length of shortest sequence or 0 if not possible\n        return 0;\n    }\n};\nint main(){\n    string beginWord, endWord;\n    getline(cin, beginWord);\n    getline(cin, endWord);\n    int n; cin >> n;\n    cin.ignore();\n    vector<string> wordList(n);\n    for(int i=0;i<n;i++) cin >> wordList[i];\n    Solution sol;\n    int result = sol.ladderLength(beginWord, endWord, wordList);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\nchar wordList[5000][11];\n\nint ladderLength(char* beginWord, char* endWord, int n){\n    // TODO: Use BFS approach to find shortest transformation sequence\n    // Return length of shortest sequence or 0 if not possible\n    return 0;\n}\n\nint main(){\n    char beginWord[11], endWord[11];\n    scanf(\"%s\", beginWord);\n    scanf(\"%s\", endWord);\n    int n; scanf(\"%d\", &n);\n    for(int i=0;i<n;i++) scanf(\"%s\", wordList[i]);\n    int result = ladderLength(beginWord, endWord, n);\n    printf(\"%d\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use BFS to find the shortest path. Use a hash set to store all words in wordList for O(1) lookup.",
+                "For each word, try changing each character and check if the new word is in the word set."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Longest Consecutive Sequence (Hash Table)",
+            "description": "Problem Statement\n\nGiven an unsorted array of integers nums, return the length of the longest consecutive elements sequence.\nYou must write an algorithm that runs in O(n) time.\n",
+            "examples": "Example 1:\n\nInput: nums = [100,4,200,1,3,2]\nOutput: 4\nExplanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.\n\nExample 2:\n\nInput: nums = [0,3,7,2,5,8,4,6,0,1]\nOutput: 9\n\nExample 3:\n\nInput: nums = [1,0,1,2]\nOutput: 3",
+            "constraints": "0 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "6\n100 4 200 1 3 2",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "10\n0 3 7 2 5 8 4 6 0 1",
+                    "expectedOutput": "9"
+                },
+                {
+                    "input": "4\n1 0 1 2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "5\n9 1 4 7 3",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def longestConsecutive(self, nums):\n        # TODO: Use hash set to find longest consecutive sequence in O(n) time\n        # Return length of longest consecutive sequence\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    n = int(data[0])\n    if n == 0:\n        print(0)\n    else:\n        nums = list(map(int, data[1:]))\n        sol = Solution()\n        result = sol.longestConsecutive(nums)\n        print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int longestConsecutive(int[] nums){\n        // TODO: Use hash set to find longest consecutive sequence in O(n) time\n        // Return length of longest consecutive sequence\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        if(n == 0){\n            System.out.println(0);\n        } else {\n            String[] parts = br.readLine().trim().split(\" \");\n            int[] nums = new int[n];\n            for(int i=0;i<n;i++) nums[i] = Integer.parseInt(parts[i]);\n            Solution sol = new Solution();\n            int result = sol.longestConsecutive(nums);\n            System.out.println(result);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  longestConsecutive(nums){\n    // TODO: Use hash set to find longest consecutive sequence in O(n) time\n    // Return length of longest consecutive sequence\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  if(n === 0){\n    console.log(0);\n  } else {\n    const nums = lines[1].split(\" \").map(Number);\n    const sol = new Solution();\n    const result = sol.longestConsecutive(nums);\n    console.log(result);\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int longestConsecutive(vector<int>& nums){\n        // TODO: Use hash set to find longest consecutive sequence in O(n) time\n        // Return length of longest consecutive sequence\n        return 0;\n    }\n};\nint main(){\n    int n; cin >> n;\n    if(n == 0){\n        cout << 0;\n    } else {\n        vector<int> nums(n);\n        for(int i=0;i<n;i++) cin >> nums[i];\n        Solution sol;\n        int result = sol.longestConsecutive(nums);\n        cout << result;\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint nums[100000];\n\nint longestConsecutive(int* arr, int n){\n    // TODO: Find longest consecutive sequence\n    // Return length of longest consecutive sequence\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    if(n == 0){\n        printf(\"0\");\n    } else {\n        for(int i=0;i<n;i++) scanf(\"%d\", &nums[i]);\n        int result = longestConsecutive(nums, n);\n        printf(\"%d\", result);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Put all numbers in a hash set. For each number, check if it's the start of a sequence (num-1 not in set).",
+                "If it's the start, count consecutive numbers by checking num+1, num+2, etc. in the set."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Linked List Cycle (Hash Table)",
+            "description": "Problem Statement\n\nGiven head, the head of a linked list, determine if the linked list has a cycle in it.\nThere is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer.\nReturn true if there is a cycle in the linked list. Otherwise, return false.\n",
+            "examples": "Example 1:\n\nInput: head = [3,2,0,-4], pos = 1\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).\n\nExample 2:\n\nInput: head = [1,2], pos = 0\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 0th node.\n\nExample 3:\n\nInput: head = [1], pos = -1\nOutput: false\nExplanation: There is no cycle in the linked list.",
+            "constraints": "The number of the nodes in the list is in the range [0, 10^4]\n-10^5 <= Node.val <= 10^5\npos is -1 or a valid index in the linked-list",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "4 1\n3 2 0 -4",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2 0\n1 2",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "1 -1\n1",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "0 -1",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "5 -1\n1 2 3 4 5",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\nclass Solution:\n    def hasCycle(self, head):\n        # TODO: Use hash set to detect cycle in linked list\n        # Return True if cycle exists, False otherwise\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    parts = data[0].split()\n    n, pos = int(parts[0]), int(parts[1])\n    if n == 0:\n        print(\"false\")\n    else:\n        vals = list(map(int, data[1].split()))\n        nodes = [ListNode(val) for val in vals]\n        for i in range(n-1):\n            nodes[i].next = nodes[i+1]\n        if pos >= 0:\n            nodes[n-1].next = nodes[pos]\n        sol = Solution()\n        result = sol.hasCycle(nodes[0])\n        print(\"true\" if result else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass ListNode{\n    int val;\n    ListNode next;\n    ListNode(int val){ this.val = val; }\n}\nclass Solution{\n    boolean hasCycle(ListNode head){\n        // TODO: Use hash set to detect cycle in linked list\n        // Return true if cycle exists, false otherwise\n        return false;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int pos = Integer.parseInt(parts[1]);\n        if(n == 0){\n            System.out.println(\"false\");\n        } else {\n            String[] vals = br.readLine().trim().split(\" \");\n            ListNode[] nodes = new ListNode[n];\n            for(int i=0;i<n;i++) nodes[i] = new ListNode(Integer.parseInt(vals[i]));\n            for(int i=0;i<n-1;i++) nodes[i].next = nodes[i+1];\n            if(pos >= 0) nodes[n-1].next = nodes[pos];\n            Solution sol = new Solution();\n            boolean result = sol.hasCycle(nodes[0]);\n            System.out.println(result ? \"true\" : \"false\");\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class ListNode{\n  constructor(val, next=null){\n    this.val = val;\n    this.next = next;\n  }\n}\nclass Solution{\n  hasCycle(head){\n    // TODO: Use hash set to detect cycle in linked list\n    // Return true if cycle exists, false otherwise\n    return false;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const [n, pos] = lines[0].split(\" \").map(Number);\n  if(n === 0){\n    console.log(\"false\");\n  } else {\n    const vals = lines[1].split(\" \").map(Number);\n    const nodes = vals.map(val => new ListNode(val));\n    for(let i=0;i<n-1;i++) nodes[i].next = nodes[i+1];\n    if(pos >= 0) nodes[n-1].next = nodes[pos];\n    const sol = new Solution();\n    const result = sol.hasCycle(nodes[0]);\n    console.log(result ? \"true\" : \"false\");\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{\n    int val;\n    ListNode *next;\n    ListNode(int x) : val(x), next(NULL) {}\n};\nclass Solution{\npublic:\n    bool hasCycle(ListNode *head){\n        // TODO: Use hash set to detect cycle in linked list\n        // Return true if cycle exists, false otherwise\n        return false;\n    }\n};\nint main(){\n    int n, pos; cin >> n >> pos;\n    if(n == 0){\n        cout << \"false\";\n    } else {\n        vector<ListNode*> nodes(n);\n        for(int i=0;i<n;i++){\n            int val; cin >> val;\n            nodes[i] = new ListNode(val);\n        }\n        for(int i=0;i<n-1;i++) nodes[i]->next = nodes[i+1];\n        if(pos >= 0) nodes[n-1]->next = nodes[pos];\n        Solution sol;\n        bool result = sol.hasCycle(nodes[0]);\n        cout << (result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\ntypedef struct ListNode{\n    int val;\n    struct ListNode *next;\n} ListNode;\n\nbool hasCycle(ListNode *head){\n    // TODO: Detect cycle in linked list\n    // Return true if cycle exists, false otherwise\n    return false;\n}\n\nint main(){\n    int n, pos; scanf(\"%d %d\", &n, &pos);\n    if(n == 0){\n        printf(\"false\");\n    } else {\n        ListNode* nodes[10000];\n        for(int i=0;i<n;i++){\n            int val; scanf(\"%d\", &val);\n            nodes[i] = (ListNode*)malloc(sizeof(ListNode));\n            nodes[i]->val = val;\n            nodes[i]->next = NULL;\n        }\n        for(int i=0;i<n-1;i++) nodes[i]->next = nodes[i+1];\n        if(pos >= 0) nodes[n-1]->next = nodes[pos];\n        bool result = hasCycle(nodes[0]);\n        printf(\"%s\", result ? \"true\" : \"false\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to store visited nodes. If you encounter a node already in the set, there's a cycle.",
+                "Alternative approach: Use Floyd's cycle detection (two pointers - slow and fast)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Max Points on a Line (Hash Table)",
+            "description": "Problem Statement\n\nGiven an array of points where points[i] = [xi, yi] represents a point on the X-Y plane, return the maximum number of points that lie on the same straight line.\n",
+            "examples": "Example 1:\n\nInput: points = [[1,1],[2,2],[3,3]]\nOutput: 3\n\nExample 2:\n\nInput: points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]\nOutput: 4",
+            "constraints": "1 <= points.length <= 300\npoints[i].length == 2\n-10^4 <= xi, yi <= 10^4\nAll the points are unique",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "3\n1 1\n2 2\n3 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "6\n1 1\n3 2\n5 3\n4 1\n2 3\n1 4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1\n1 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4\n0 0\n1 1\n2 2\n3 3",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "5\n1 1\n1 2\n1 3\n2 1\n2 2",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxPoints(self, points):\n        # TODO: Use hash map to count points with same slope from each point\n        # Return maximum number of points on same line\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    points = []\n    for i in range(1, n+1):\n        x, y = map(int, data[i].split())\n        points.append([x, y])\n    sol = Solution()\n    result = sol.maxPoints(points)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int maxPoints(int[][] points){\n        // TODO: Use hash map to count points with same slope from each point\n        // Return maximum number of points on same line\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] points = new int[n][2];\n        for(int i=0;i<n;i++){\n            String[] parts = br.readLine().trim().split(\" \");\n            points[i][0] = Integer.parseInt(parts[0]);\n            points[i][1] = Integer.parseInt(parts[1]);\n        }\n        Solution sol = new Solution();\n        int result = sol.maxPoints(points);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  maxPoints(points){\n    // TODO: Use hash map to count points with same slope from each point\n    // Return maximum number of points on same line\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const points = [];\n  for(let i=1;i<=n;i++){\n    const [x, y] = lines[i].split(\" \").map(Number);\n    points.push([x, y]);\n  }\n  const sol = new Solution();\n  const result = sol.maxPoints(points);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int maxPoints(vector<vector<int>>& points){\n        // TODO: Use hash map to count points with same slope from each point\n        // Return maximum number of points on same line\n        return 0;\n    }\n};\nint main(){\n    int n; cin >> n;\n    vector<vector<int>> points(n, vector<int>(2));\n    for(int i=0;i<n;i++){\n        cin >> points[i][0] >> points[i][1];\n    }\n    Solution sol;\n    int result = sol.maxPoints(points);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint points[300][2];\n\nint maxPoints(int n){\n    // TODO: Find maximum number of points on same line\n    // Return maximum count\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    for(int i=0;i<n;i++){\n        scanf(\"%d %d\", &points[i][0], &points[i][1]);\n    }\n    int result = maxPoints(n);\n    printf(\"%d\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each point, use a hash map to count how many other points have the same slope with it.",
+                "Be careful with vertical lines (infinite slope) and duplicate points. Use GCD to normalize slopes."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Longest Substring with At Most Two Distinct Characters (Hash Table)",
+            "description": "Problem Statement\n\nGiven a string s, return the length of the longest substring that contains at most two distinct characters.\n",
+            "examples": "Example 1:\n\nInput: s = \"eceba\"\nOutput: 3\nExplanation: The substring is \"ece\" which its length is 3.\n\nExample 2:\n\nInput: s = \"ccaabbb\"\nOutput: 5\nExplanation: The substring is \"aabbb\" which its length is 5.",
+            "constraints": "1 <= s.length <= 10^5\ns consists of English letters",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "eceba",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "ccaabbb",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "abcabcabc",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "aabbcc",
+                    "expectedOutput": "4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def lengthOfLongestSubstringTwoDistinct(self, s):\n        # TODO: Use hash map with sliding window to track character frequencies\n        # Return length of longest substring with at most 2 distinct characters\n        pass\n\nif __name__ == '__main__':\n    import sys\n    s = sys.stdin.read().strip()\n    sol = Solution()\n    result = sol.lengthOfLongestSubstringTwoDistinct(s)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int lengthOfLongestSubstringTwoDistinct(String s){\n        // TODO: Use hash map with sliding window to track character frequencies\n        // Return length of longest substring with at most 2 distinct characters\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        int result = sol.lengthOfLongestSubstringTwoDistinct(s);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  lengthOfLongestSubstringTwoDistinct(s){\n    // TODO: Use hash map with sliding window to track character frequencies\n    // Return length of longest substring with at most 2 distinct characters\n    return 0;\n  }\n}\nfunction solve(input){\n  const s = input.trim();\n  const sol = new Solution();\n  const result = sol.lengthOfLongestSubstringTwoDistinct(s);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int lengthOfLongestSubstringTwoDistinct(string s){\n        // TODO: Use hash map with sliding window to track character frequencies\n        // Return length of longest substring with at most 2 distinct characters\n        return 0;\n    }\n};\nint main(){\n    string s;\n    getline(cin, s);\n    Solution sol;\n    int result = sol.lengthOfLongestSubstringTwoDistinct(s);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\nchar s[100001];\n\nint lengthOfLongestSubstringTwoDistinct(){\n    // TODO: Find length of longest substring with at most 2 distinct characters\n    // Return the length\n    return 0;\n}\n\nint main(){\n    scanf(\"%s\", s);\n    int result = lengthOfLongestSubstringTwoDistinct();\n    printf(\"%d\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use sliding window technique with a hash map to track character frequencies in current window.",
+                "Expand window by moving right pointer. When distinct characters exceed 2, shrink from left."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Intersection of Two Linked Lists (Hash Table)",
+            "description": "Problem Statement\n\nGiven the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.\nFor this problem, return the value of the intersecting node, or -1 if there is no intersection.\n",
+            "examples": "Example 1:\n\nInput: listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3\nOutput: 8\nExplanation: The intersected node's value is 8.\n\nExample 2:\n\nInput: listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1\nOutput: 2\nExplanation: The intersected node's value is 2.\n\nExample 3:\n\nInput: listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2\nOutput: -1\nExplanation: The two lists do not intersect.",
+            "constraints": "The number of nodes of listA is in the m\nThe number of nodes of listB is in the n\n1 <= m, n <= 3 * 10^4\n1 <= Node.val <= 10^5",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5 6 2 3\n4 1 8 4 5\n5 6 1 8 4 5",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "5 3 3 1\n1 9 1 2 4\n3 2 4",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "3 2 3 2\n2 6 4\n1 5",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "1 1 0 0\n5\n5",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "4 4 1 1\n1 2 3 4\n5 2 3 4",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\nclass Solution:\n    def getIntersectionNode(self, headA, headB):\n        # TODO: Use hash set to find intersection node\n        # Return the intersecting node or None\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    m, n, skipA, skipB = map(int, data[0].split())\n    valsA = list(map(int, data[1].split()))\n    valsB = list(map(int, data[2].split()))\n    nodesA = [ListNode(val) for val in valsA]\n    nodesB = [ListNode(val) for val in valsB]\n    for i in range(m-1):\n        nodesA[i].next = nodesA[i+1]\n    for i in range(n-1):\n        nodesB[i].next = nodesB[i+1]\n    # Create intersection\n    if skipA < m and skipB < n:\n        nodesB[skipB-1].next = nodesA[skipA] if skipB > 0 else nodesA[skipA]\n        if skipB == 0:\n            nodesB[0] = nodesA[skipA]\n    sol = Solution()\n    result = sol.getIntersectionNode(nodesA[0] if m > 0 else None, nodesB[0] if n > 0 else None)\n    print(result.val if result else -1)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass ListNode{\n    int val;\n    ListNode next;\n    ListNode(int val){ this.val = val; }\n}\nclass Solution{\n    ListNode getIntersectionNode(ListNode headA, ListNode headB){\n        // TODO: Use hash set to find intersection node\n        // Return the intersecting node or null\n        return null;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] params = br.readLine().trim().split(\" \");\n        int m = Integer.parseInt(params[0]);\n        int n = Integer.parseInt(params[1]);\n        int skipA = Integer.parseInt(params[2]);\n        int skipB = Integer.parseInt(params[3]);\n        String[] valsA = br.readLine().trim().split(\" \");\n        String[] valsB = br.readLine().trim().split(\" \");\n        ListNode[] nodesA = new ListNode[m];\n        ListNode[] nodesB = new ListNode[n];\n        for(int i=0;i<m;i++) nodesA[i] = new ListNode(Integer.parseInt(valsA[i]));\n        for(int i=0;i<n;i++) nodesB[i] = new ListNode(Integer.parseInt(valsB[i]));\n        for(int i=0;i<m-1;i++) nodesA[i].next = nodesA[i+1];\n        for(int i=0;i<n-1;i++) nodesB[i].next = nodesB[i+1];\n        if(skipA < m && skipB < n && skipB > 0){\n            nodesB[skipB-1].next = nodesA[skipA];\n        }\n        Solution sol = new Solution();\n        ListNode result = sol.getIntersectionNode(m > 0 ? nodesA[0] : null, n > 0 ? nodesB[0] : null);\n        System.out.println(result != null ? result.val : -1);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class ListNode{\n  constructor(val, next=null){\n    this.val = val;\n    this.next = next;\n  }\n}\nclass Solution{\n  getIntersectionNode(headA, headB){\n    // TODO: Use hash set to find intersection node\n    // Return the intersecting node or null\n    return null;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const [m, n, skipA, skipB] = lines[0].split(\" \").map(Number);\n  const valsA = lines[1].split(\" \").map(Number);\n  const valsB = lines[2].split(\" \").map(Number);\n  const nodesA = valsA.map(val => new ListNode(val));\n  const nodesB = valsB.map(val => new ListNode(val));\n  for(let i=0;i<m-1;i++) nodesA[i].next = nodesA[i+1];\n  for(let i=0;i<n-1;i++) nodesB[i].next = nodesB[i+1];\n  if(skipA < m && skipB < n && skipB > 0){\n    nodesB[skipB-1].next = nodesA[skipA];\n  }\n  const sol = new Solution();\n  const result = sol.getIntersectionNode(m > 0 ? nodesA[0] : null, n > 0 ? nodesB[0] : null);\n  console.log(result ? result.val : -1);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{\n    int val;\n    ListNode *next;\n    ListNode(int x) : val(x), next(NULL) {}\n};\nclass Solution{\npublic:\n    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB){\n        // TODO: Use hash set to find intersection node\n        // Return the intersecting node or NULL\n        return NULL;\n    }\n};\nint main(){\n    int m, n, skipA, skipB;\n    cin >> m >> n >> skipA >> skipB;\n    vector<ListNode*> nodesA(m), nodesB(n);\n    for(int i=0;i<m;i++){\n        int val; cin >> val;\n        nodesA[i] = new ListNode(val);\n    }\n    for(int i=0;i<n;i++){\n        int val; cin >> val;\n        nodesB[i] = new ListNode(val);\n    }\n    for(int i=0;i<m-1;i++) nodesA[i]->next = nodesA[i+1];\n    for(int i=0;i<n-1;i++) nodesB[i]->next = nodesB[i+1];\n    if(skipA < m && skipB < n && skipB > 0){\n        nodesB[skipB-1]->next = nodesA[skipA];\n    }\n    Solution sol;\n    ListNode* result = sol.getIntersectionNode(m > 0 ? nodesA[0] : NULL, n > 0 ? nodesB[0] : NULL);\n    cout << (result ? result->val : -1);\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct ListNode{\n    int val;\n    struct ListNode *next;\n} ListNode;\n\nListNode* getIntersectionNode(ListNode *headA, ListNode *headB){\n    // TODO: Find intersection node\n    // Return the intersecting node or NULL\n    return NULL;\n}\n\nint main(){\n    int m, n, skipA, skipB;\n    scanf(\"%d %d %d %d\", &m, &n, &skipA, &skipB);\n    ListNode* nodesA[30000];\n    ListNode* nodesB[30000];\n    for(int i=0;i<m;i++){\n        int val; scanf(\"%d\", &val);\n        nodesA[i] = (ListNode*)malloc(sizeof(ListNode));\n        nodesA[i]->val = val;\n        nodesA[i]->next = NULL;\n    }\n    for(int i=0;i<n;i++){\n        int val; scanf(\"%d\", &val);\n        nodesB[i] = (ListNode*)malloc(sizeof(ListNode));\n        nodesB[i]->val = val;\n        nodesB[i]->next = NULL;\n    }\n    for(int i=0;i<m-1;i++) nodesA[i]->next = nodesA[i+1];\n    for(int i=0;i<n-1;i++) nodesB[i]->next = nodesB[i+1];\n    if(skipA < m && skipB < n && skipB > 0){\n        nodesB[skipB-1]->next = nodesA[skipA];\n    }\n    ListNode* result = getIntersectionNode(m > 0 ? nodesA[0] : NULL, n > 0 ? nodesB[0] : NULL);\n    printf(\"%d\", result ? result->val : -1);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to store all nodes from listA. Then traverse listB and check if any node is in the set.",
+                "Alternative O(1) space solution: Calculate lengths of both lists and align them before traversing together."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Fraction to Recurring Decimal (Hash Table)",
+            "description": "Problem Statement\n\nGiven two integers representing the numerator and denominator of a fraction, return the fraction in string format.\nIf the fractional part is repeating, enclose the repeating part in parentheses.\nIf multiple answers are possible, return any of them.\n",
+            "examples": "Example 1:\n\nInput: numerator = 1, denominator = 2\nOutput: \"0.5\"\n\nExample 2:\n\nInput: numerator = 2, denominator = 1\nOutput: \"2\"\n\nExample 3:\n\nInput: numerator = 4, denominator = 333\nOutput: \"0.(012)\"",
+            "constraints": "-2^31 <= numerator, denominator <= 2^31 - 1\ndenominator != 0",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 2",
+                    "expectedOutput": "0.5"
+                },
+                {
+                    "input": "2 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "4 333",
+                    "expectedOutput": "0.(012)"
+                },
+                {
+                    "input": "1 6",
+                    "expectedOutput": "0.1(6)"
+                },
+                {
+                    "input": "-1 2",
+                    "expectedOutput": "-0.5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def fractionToDecimal(self, numerator, denominator):\n        # TODO: Use hash map to detect repeating remainders in division\n        # Return fraction as string with repeating part in parentheses\n        pass\n\nif __name__ == '__main__':\n    import sys\n    numerator, denominator = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    result = sol.fractionToDecimal(numerator, denominator)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    String fractionToDecimal(int numerator, int denominator){\n        // TODO: Use hash map to detect repeating remainders in division\n        // Return fraction as string with repeating part in parentheses\n        return \"\";\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int numerator = Integer.parseInt(parts[0]);\n        int denominator = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        String result = sol.fractionToDecimal(numerator, denominator);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  fractionToDecimal(numerator, denominator){\n    // TODO: Use hash map to detect repeating remainders in division\n    // Return fraction as string with repeating part in parentheses\n    return \"\";\n  }\n}\nfunction solve(input){\n  const [numerator, denominator] = input.trim().split(\" \").map(Number);\n  const sol = new Solution();\n  const result = sol.fractionToDecimal(numerator, denominator);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    string fractionToDecimal(int numerator, int denominator){\n        // TODO: Use hash map to detect repeating remainders in division\n        // Return fraction as string with repeating part in parentheses\n        return \"\";\n    }\n};\nint main(){\n    int numerator, denominator;\n    cin >> numerator >> denominator;\n    Solution sol;\n    string result = sol.fractionToDecimal(numerator, denominator);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nchar* fractionToDecimal(int numerator, int denominator){\n    // TODO: Convert fraction to decimal string\n    // Return fraction as string with repeating part in parentheses\n    static char result[10000];\n    result[0] = '0';\n    result[1] = '\\0';\n    return result;\n}\n\nint main(){\n    int numerator, denominator;\n    scanf(\"%d %d\", &numerator, &denominator);\n    char* result = fractionToDecimal(numerator, denominator);\n    printf(\"%s\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash map to store each remainder and its position. When you see a remainder again, you've found the repeating cycle.",
+                "Handle the integer part separately. For the decimal part, multiply remainder by 10 and divide by denominator repeatedly."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Repeated DNA Sequences (Hash Table)",
+            "description": "Problem Statement\n\nThe DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.\nFor example, \"ACGAATTCCG\" is a DNA sequence.\n\nWhen studying DNA, it is useful to identify repeated sequences within the DNA.\nGiven a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.\n",
+            "examples": "Example 1:\n\nInput: s = \"AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT\"\nOutput: [\"AAAAACCCCC\",\"CCCCCAAAAA\"]\n\nExample 2:\n\nInput: s = \"AAAAAAAAAAAAA\"\nOutput: [\"AAAAAAAAAA\"]",
+            "constraints": "1 <= s.length <= 10^5\ns[i] is either 'A', 'C', 'G', or 'T'",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT",
+                    "expectedOutput": "AAAAACCCCC CCCCCAAAAA"
+                },
+                {
+                    "input": "AAAAAAAAAAAAA",
+                    "expectedOutput": "AAAAAAAAAA"
+                },
+                {
+                    "input": "AAAAAAAAAAA",
+                    "expectedOutput": "AAAAAAAAAA"
+                },
+                {
+                    "input": "ACGTACGTAC",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "AAAAAAAAAAAAAAAAAAAAAA",
+                    "expectedOutput": "AAAAAAAAAA"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findRepeatedDnaSequences(self, s):\n        # TODO: Use hash set to track seen 10-letter sequences\n        # Return list of sequences that appear more than once\n        pass\n\nif __name__ == '__main__':\n    import sys\n    s = sys.stdin.read().strip()\n    sol = Solution()\n    result = sol.findRepeatedDnaSequences(s)\n    if len(result) == 0:\n        print(\"\")\n    else:\n        print(' '.join(sorted(result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    List<String> findRepeatedDnaSequences(String s){\n        // TODO: Use hash set to track seen 10-letter sequences\n        // Return list of sequences that appear more than once\n        return new ArrayList<>();\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        List<String> result = sol.findRepeatedDnaSequences(s);\n        if(result.isEmpty()){\n            System.out.println(\"\");\n        } else {\n            Collections.sort(result);\n            System.out.println(String.join(\" \", result));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  findRepeatedDnaSequences(s){\n    // TODO: Use hash set to track seen 10-letter sequences\n    // Return array of sequences that appear more than once\n    return [];\n  }\n}\nfunction solve(input){\n  const s = input.trim();\n  const sol = new Solution();\n  const result = sol.findRepeatedDnaSequences(s);\n  if(result.length === 0){\n    console.log(\"\");\n  } else {\n    console.log(result.sort().join(\" \"));\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    vector<string> findRepeatedDnaSequences(string s){\n        // TODO: Use hash set to track seen 10-letter sequences\n        // Return vector of sequences that appear more than once\n        return {};\n    }\n};\nint main(){\n    string s;\n    getline(cin, s);\n    Solution sol;\n    vector<string> result = sol.findRepeatedDnaSequences(s);\n    if(result.empty()){\n        cout << \"\";\n    } else {\n        sort(result.begin(), result.end());\n        for(int i=0;i<result.size();i++){\n            cout << result[i];\n            if(i < result.size()-1) cout << \" \";\n        }\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\nchar s[100001];\nchar result[10000][11];\nint resultSize = 0;\n\nvoid findRepeatedDnaSequences(){\n    // TODO: Find repeated 10-letter DNA sequences\n    // Store results in result array and update resultSize\n}\n\nint main(){\n    scanf(\"%s\", s);\n    findRepeatedDnaSequences();\n    if(resultSize == 0){\n        printf(\"\");\n    } else {\n        for(int i=0;i<resultSize;i++){\n            printf(\"%s\", result[i]);\n            if(i < resultSize-1) printf(\" \");\n        }\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to store all 10-letter substrings you've seen. Use another set to store repeated ones.",
+                "Iterate through the string and extract each 10-letter substring. Check if it's in the seen set."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Happy Number (Hash Table)",
+            "description": "Problem Statement\n\nWrite an algorithm to determine if a number n is happy.\nA happy number is a number defined by the following process:\n\n- Starting with any positive integer, replace the number by the sum of the squares of its digits.\n- Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.\n- Those numbers for which this process ends in 1 are happy.\n\nReturn true if n is a happy number, and false if not.\n",
+            "examples": "Example 1:\n\nInput: n = 19\nOutput: true\nExplanation:\n1\u00b2 + 9\u00b2 = 82\n8\u00b2 + 2\u00b2 = 68\n6\u00b2 + 8\u00b2 = 100\n1\u00b2 + 0\u00b2 + 0\u00b2 = 1\n\nExample 2:\n\nInput: n = 2\nOutput: false",
+            "constraints": "1 <= n <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "19",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isHappy(self, n):\n        # TODO: Use hash set to detect cycles in the sum of squares sequence\n        # Return True if n is happy, False otherwise\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n = int(sys.stdin.read().strip())\n    sol = Solution()\n    result = sol.isHappy(n)\n    print(\"true\" if result else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    boolean isHappy(int n){\n        // TODO: Use hash set to detect cycles in the sum of squares sequence\n        // Return true if n is happy, false otherwise\n        return false;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        boolean result = sol.isHappy(n);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  isHappy(n){\n    // TODO: Use hash set to detect cycles in the sum of squares sequence\n    // Return true if n is happy, false otherwise\n    return false;\n  }\n}\nfunction solve(input){\n  const n = parseInt(input.trim());\n  const sol = new Solution();\n  const result = sol.isHappy(n);\n  console.log(result ? \"true\" : \"false\");\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    bool isHappy(int n){\n        // TODO: Use hash set to detect cycles in the sum of squares sequence\n        // Return true if n is happy, false otherwise\n        return false;\n    }\n};\nint main(){\n    int n; cin >> n;\n    Solution sol;\n    bool result = sol.isHappy(n);\n    cout << (result ? \"true\" : \"false\");\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\nint seen[1000];\nint seenCount = 0;\n\nbool isHappy(int n){\n    // TODO: Determine if n is a happy number\n    // Return true if happy, false otherwise\n    return false;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    bool result = isHappy(n);\n    printf(\"%s\", result ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to track numbers you've seen. If you see the same number twice, you're in a cycle.",
+                "Create a helper function to calculate the sum of squares of digits. Keep applying it until you reach 1 or detect a cycle."
+            ]
+        }
+    ]
+}

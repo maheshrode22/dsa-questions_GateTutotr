@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Happy Number (Hash Table)",
+            "description": "Problem Statement\n\nWrite an algorithm to determine if a number n is happy.\nA happy number is a number defined by the following process:\n\n- Starting with any positive integer, replace the number by the sum of the squares of its digits.\n- Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.\n- Those numbers for which this process ends in 1 are happy.\n\nReturn true if n is a happy number, and false if not.\n",
+            "examples": "Example 1:\n\nInput: n = 19\nOutput: true\nExplanation:\n1² + 9² = 82\n8² + 2² = 68\n6² + 8² = 100\n1² + 0² + 0² = 1\n\nExample 2:\n\nInput: n = 2\nOutput: false",
+            "constraints": "1 <= n <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "19",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isHappy(self, n):\n        # TODO: Use hash set to detect cycles in the sum of squares sequence\n        # Return True if n is happy, False otherwise\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n = int(sys.stdin.read().strip())\n    sol = Solution()\n    result = sol.isHappy(n)\n    print(\"true\" if result else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    boolean isHappy(int n){\n        // TODO: Use hash set to detect cycles in the sum of squares sequence\n        // Return true if n is happy, false otherwise\n        return false;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        boolean result = sol.isHappy(n);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  isHappy(n){\n    // TODO: Use hash set to detect cycles in the sum of squares sequence\n    // Return true if n is happy, false otherwise\n    return false;\n  }\n}\nfunction solve(input){\n  const n = parseInt(input.trim());\n  const sol = new Solution();\n  const result = sol.isHappy(n);\n  console.log(result ? \"true\" : \"false\");\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    bool isHappy(int n){\n        // TODO: Use hash set to detect cycles in the sum of squares sequence\n        // Return true if n is happy, false otherwise\n        return false;\n    }\n};\nint main(){\n    int n; cin >> n;\n    Solution sol;\n    bool result = sol.isHappy(n);\n    cout << (result ? \"true\" : \"false\");\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\nint seen[1000];\nint seenCount = 0;\n\nbool isHappy(int n){\n    // TODO: Determine if n is a happy number\n    // Return true if happy, false otherwise\n    return false;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    bool result = isHappy(n);\n    printf(\"%s\", result ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to track numbers you've seen. If you see the same number twice, you're in a cycle.",
+                "Create a helper function to calculate the sum of squares of digits. Keep applying it until you reach 1 or detect a cycle."
+            ]
+        }
+    ]
+}

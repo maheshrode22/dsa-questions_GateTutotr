@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Graph Connectivity With Threshold (Number Theory)",
+            "description": "We have n cities labeled from 1 to n. Two different cities with labels x and y are directly connected by a bidirectional road if and only if x and y share a common divisor strictly greater than some threshold.\nGiven the two integers, n and threshold, and an array of queries, you must determine for each queries[i] = [ai, bi] if cities ai and bi are connected directly or indirectly.\n\nInput Format:\nFirst line: three integers n, threshold, and q_count.\nNext q_count lines: two integers u, v.\n\nOutput Format:\nPrint space-separated true/false values.",
+            "examples": "Sample Input\n6 2 3\n1 4\n2 5\n3 6\n\nSample Output\nfalse false true",
+            "constraints": "2 <= n <= 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 4033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "6 2 3\n1 4\n2 5\n3 6",
+                    "expectedOutput": "false false true"
+                },
+                {
+                    "input": "6 0 5\n4 5\n3 4\n3 2\n2 6\n1 3",
+                    "expectedOutput": "true true true true true"
+                },
+                {
+                    "input": "5 1 5\n4 5\n4 5\n3 2\n2 3\n3 4",
+                    "expectedOutput": "false false false false false"
+                },
+                {
+                    "input": "49 1 5\n34 49\n11 33\n32 18\n2 16\n30 14",
+                    "expectedOutput": "true true true true true"
+                },
+                {
+                    "input": "34 4 10\n8 21\n27 19\n18 28\n9 6\n34 26\n28 6\n3 13\n24 1\n5 4\n12 26",
+                    "expectedOutput": "false false false true false false false false false false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def areConnected(self, n, threshold, queries):\n        # TODO: Return boolean array\n        pass\n\nif __name__ == '__main__':\n    line1 = list(map(int, input().split()))\n    n, threshold, q_count = line1[0], line1[1], line1[2]\n    queries = []\n    for _ in range(q_count):\n        queries.append(list(map(int, input().split())))\n    sol = Solution()\n    res = sol.areConnected(n, threshold, queries)\n    print(*(str(x).lower() for x in res))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public List<Boolean> areConnected(int n, int threshold, int[][] queries) {\n        // TODO: Return boolean list\n        return new ArrayList<>();\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int threshold = sc.nextInt();\n        int q_count = sc.nextInt();\n        int[][] queries = new int[q_count][2];\n        for(int i=0; i<q_count; i++) {\n            queries[i][0] = sc.nextInt();\n            queries[i][1] = sc.nextInt();\n        }\n        Solution sol = new Solution();\n        List<Boolean> res = sol.areConnected(n, threshold, queries);\n        for(int i=0; i<res.size(); i++) System.out.print(res.get(i) + (i==res.size()-1?\"\":\" \"));\n        System.out.println();\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    areConnected(n, threshold, queries) {\n        // TODO: Return boolean array\n        return [];\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst [n, threshold, q_count] = input[0].split(' ').map(Number);\nconst queries = [];\nfor(let i=1; i<=q_count; i++) queries.push(input[i].split(' ').map(Number));\nconst sol = new Solution();\nconsole.log(sol.areConnected(n, threshold, queries).join(' '));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<bool> areConnected(int n, int threshold, vector<vector<int>>& queries) {\n        // TODO: Return boolean vector\n        return {};\n    }\n};\n\nint main() {\n    int n, threshold, q_count;\n    cin >> n >> threshold >> q_count;\n    vector<vector<int>> queries(q_count, vector<int>(2));\n    for(int i=0; i<q_count; i++) cin >> queries[i][0] >> queries[i][1];\n    Solution sol;\n    vector<bool> res = sol.areConnected(n, threshold, queries);\n    for(int i=0; i<res.size(); i++) cout << (res[i]?\"true\":\"false\") << (i==res.size()-1?\"\":\" \");\n    cout << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nbool* areConnected(int n, int threshold, int** queries, int queriesSize, int* queriesColSize, int* returnSize) {\n    // TODO: Return boolean array\n    *returnSize = queriesSize;\n    return NULL;\n}\n\nint main() {\n    int n, threshold, q_count;\n    scanf(\"%d %d %d\", &n, &threshold, &q_count);\n    int** queries = (int**)malloc(q_count * sizeof(int*));\n    for(int i=0; i<q_count; i++) {\n        queries[i] = (int*)malloc(2 * sizeof(int));\n        scanf(\"%d %d\", &queries[i][0], &queries[i][1]);\n    }\n    int returnSize;\n    bool* res = areConnected(n, threshold, queries, q_count, NULL, &returnSize);\n    for(int i=0; i<returnSize; i++) printf(\"%s%s\", res[i]?\"true\":\"false\", (i==returnSize-1?\"\":\" \"));\n    printf(\"\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Union-Find.",
+                "Iterate multiples of i > threshold."
+            ]
+        }
+    ]
+}

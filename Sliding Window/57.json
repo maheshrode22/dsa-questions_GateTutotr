@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximum Points You Can Obtain from Cards (Sliding Window)",
+            "description": "There are several cards arranged in a row, and each card has an associated number of points.\nIn one step, you can take one card from the beginning or from the end of the row. You have to take exactly k cards.\nYour score is the sum of the points of the cards you have taken.\nGiven the integer array cardPoints and the integer k, return the maximum score you can obtain.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers.\n\nOutput Format:\nPrint a single integer: the maximum score.",
+            "examples": "Sample Input\n7 3\n1 2 3 4 5 6 1\n\nSample Output\n12\n\nExplanation: Take the three cards on the right: 1 + 6 + 5 = 12.",
+            "constraints": "1 <= cardPoints.length <= 10^5\n1 <= cardPoints[i] <= 10^4\n1 <= k <= cardPoints.length",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 5033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "7 3\n1 2 3 4 5 6 1",
+                    "expectedOutput": "12"
+                },
+                {
+                    "input": "3 2\n2 2 2",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "7 7\n9 7 7 9 7 7 9",
+                    "expectedOutput": "55"
+                },
+                {
+                    "input": "33 1\n24 59 94 36 80 51 60 57 82 41 81 55 100 9 4 42 73 2 56 57 49 83 51 26 49 12 17 36 84 1 95 21 91",
+                    "expectedOutput": "91"
+                },
+                {
+                    "input": "15 14\n98 94 67 82 19 90 13 86 17 50 6 98 21 84 68",
+                    "expectedOutput": "887"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxScore(self, cardPoints, k):\n        # TODO: Return the maximum score\n        pass\n\nif __name__ == '__main__':\n    n, k = map(int, input().split())\n    cardPoints = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.maxScore(cardPoints, k))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int maxScore(int[] cardPoints, int k) {\n        // TODO: Return the maximum score\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int k = sc.nextInt();\n        int[] cardPoints = new int[n];\n        for(int i=0; i<n; i++) cardPoints[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.maxScore(cardPoints, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxScore(cardPoints, k) {\n        // TODO: Return the maximum score\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst input = fs.readFileSync(0, 'utf-8').trim().split('\\n');\nconst [n, k] = input[0].split(' ').map(Number);\nconst cardPoints = input[1].split(' ').map(Number);\nconst sol = new Solution();\nconsole.log(sol.maxScore(cardPoints, k));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxScore(vector<int>& cardPoints, int k) {\n        // TODO: Return the maximum score\n        return 0;\n    }\n};\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<int> cardPoints(n);\n    for(int i=0; i<n; i++) cin >> cardPoints[i];\n    Solution sol;\n    cout << sol.maxScore(cardPoints, k) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint maxScore(int* cardPoints, int cardPointsSize, int k) {\n    // TODO: Return the maximum score\n    return 0;\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    int* cardPoints = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &cardPoints[i]);\n    printf(\"%d\\n\", maxScore(cardPoints, n, k));\n    free(cardPoints);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Taking k cards from the ends is equivalent to leaving a subarray of size n-k in the middle.",
+                "Minimize the sum of the subarray of size n-k."
+            ]
+        }
+    ]
+}

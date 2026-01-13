@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Shortest Palindrome (String Algorithm)",
+            "description": "Problem Statement\n\nYou are given a string s. You can convert s to a palindrome by adding characters in front of it.\nReturn the shortest palindrome you can find by performing this transformation.\n",
+            "examples": "Sample Input\naacecaaa\n\nSample Output\naaacecaaa\n\nExplanation: Add \"aa\" in front to make it a palindrome.\n\nSample Input\nabcd\n\nSample Output\ndcbabcd\n\nExplanation: Add \"dcba\" in front to make it a palindrome.",
+            "constraints": "0 <= s.length <= 5 * 10^4\ns consists of lowercase English letters only.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "aacecaaa",
+                    "expectedOutput": "aaacecaaa"
+                },
+                {
+                    "input": "abcd",
+                    "expectedOutput": "dcbabcd"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "a"
+                },
+                {
+                    "input": "ab",
+                    "expectedOutput": "bab"
+                },
+                {
+                    "input": "race",
+                    "expectedOutput": "ecarace"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def shortestPalindrome(self, s):\n        # TODO: Return the shortest palindrome\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.shortestPalindrome(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String shortestPalindrome(String s) {\n        // TODO: Return the shortest palindrome\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.shortestPalindrome(s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    shortestPalindrome(s) {\n        // TODO: Return the shortest palindrome\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.shortestPalindrome(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string shortestPalindrome(string s) {\n        // TODO: Return the shortest palindrome\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.shortestPalindrome(s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid shortestPalindrome(char* s) {\n    // TODO: Print the shortest palindrome\n}\n\nint main() {\n    char s[50005];\n    scanf(\"%s\", s);\n    shortestPalindrome(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the longest palindromic prefix of the string.",
+                "Reverse the remaining suffix and add it to the front."
+            ]
+        }
+    ]
+}
+

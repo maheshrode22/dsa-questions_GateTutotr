@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Palindrome Permutation (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a string s, return true if a permutation of the string could form a palindrome and false otherwise.\n",
+            "examples": "Sample Input\ncode\n\nSample Output\nFalse\n\nExplanation: No permutation of \"code\" can form a palindrome.\n\nSample Input\naab\n\nSample Output\nTrue\n\nExplanation: \"aba\" is a palindrome permutation of \"aab\".\n\nSample Input\ncarerac\n\nSample Output\nTrue\n\nExplanation: \"racecar\" is a palindrome permutation of \"carerac\".",
+            "constraints": "1 <= s.length <= 5000\ns consists of only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "code",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "aab",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "carerac",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "zzzz",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def canPermutePalindrome(self, s):\n        # TODO: Return True if permutation can form palindrome, else False\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    result = sol.canPermutePalindrome(s)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean canPermutePalindrome(String s) {\n        // TODO: Return true if permutation can form palindrome, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.canPermutePalindrome(s) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    canPermutePalindrome(s) {\n        // TODO: Return true if permutation can form palindrome, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    const result = sol.canPermutePalindrome(s);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool canPermutePalindrome(string s) {\n        // TODO: Return true if permutation can form palindrome, else false\n        return false;\n    }\n};\n\nint main() {\n    string s;\n    getline(cin, s);\n    Solution sol;\n    cout << (sol.canPermutePalindrome(s) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid canPermutePalindrome(char* s) {\n    // TODO: Print \"True\" if permutation can form palindrome, else \"False\"\n}\n\nint main() {\n    char s[5005];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    canPermutePalindrome(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "A palindrome can have at most one character with odd frequency.",
+                "Use bit manipulation to track character frequencies efficiently."
+            ]
+        }
+    ]
+}
+

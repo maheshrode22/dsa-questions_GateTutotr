@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Counting Bits (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.\n",
+            "examples": "Sample Input\n2\n\nSample Output\n0 1 1\n\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n\nSample Input\n5\n\nSample Output\n0 1 1 2 1 2\n\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n3 --> 11\n4 --> 100\n5 --> 101",
+            "constraints": "0 <= n <= 10^5",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "0 1 1"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "0 1 1 2 1 2"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "0 1 1 2 1 2 2 3 1 2 2"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "0 1 1 2 1 2 2 3 1 2 2 3 2 3 3 4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countBits(self, n):\n        # TODO: Return array with count of 1's for each number from 0 to n\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    result = sol.countBits(n)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] countBits(int n) {\n        // TODO: Return array with count of 1's for each number from 0 to n\n        return new int[n + 1];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        int[] result = sol.countBits(n);\n        for (int i = 0; i < result.length; i++) {\n            System.out.print(result[i] + (i == result.length - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countBits(n) {\n        // TODO: Return array with count of 1's for each number from 0 to n\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.countBits(n);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> countBits(int n) {\n        // TODO: Return array with count of 1's for each number from 0 to n\n        return {};\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<int> result = sol.countBits(n);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid countBits(int n) {\n    // TODO: Print array with count of 1's for each number from 0 to n (space-separated)\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    countBits(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming: ans[i] = ans[i >> 1] + (i & 1).",
+                "The number of 1's in i equals the number of 1's in i/2 plus whether the last bit is 1."
+            ]
+        }
+    ]
+}
+

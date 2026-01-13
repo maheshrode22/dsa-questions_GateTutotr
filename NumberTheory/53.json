@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Mirror Reflection (Number Theory)",
+            "description": "There is a special square room with mirrors on each of the four walls. Except for the southwest corner, there are receptors on each of the remaining corners, numbered 0, 1, and 2.\nThe square room has walls of length p and a laser ray from the southwest corner first meets the east wall at a distance q from the 0th receptor.\nGiven the two integers p and q, return the number of the receptor that the ray meets first.\n\nInput Format:\nFirst line: two integers p and q.\n\nOutput Format:\nPrint a single integer: the receptor number.",
+            "examples": "Sample Input\n2 1\n\nSample Output\n2",
+            "constraints": "1 <= q <= p <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 4033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "3 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "79 41",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "96 88",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "79 22",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def mirrorReflection(self, p, q):\n        # TODO: Return the receptor number\n        pass\n\nif __name__ == '__main__':\n    p, q = map(int, input().split())\n    sol = Solution()\n    print(sol.mirrorReflection(p, q))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int mirrorReflection(int p, int q) {\n        // TODO: Return the receptor number\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int p = sc.nextInt();\n        int q = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.mirrorReflection(p, q));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    mirrorReflection(p, q) {\n        // TODO: Return the receptor number\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst [p, q] = fs.readFileSync(0, 'utf-8').trim().split(' ').map(Number);\nconst sol = new Solution();\nconsole.log(sol.mirrorReflection(p, q));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int mirrorReflection(int p, int q) {\n        // TODO: Return the receptor number\n        return 0;\n    }\n};\n\nint main() {\n    int p, q;\n    cin >> p >> q;\n    Solution sol;\n    cout << sol.mirrorReflection(p, q) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint mirrorReflection(int p, int q) {\n    // TODO: Return the receptor number\n    return 0;\n}\n\nint main() {\n    int p, q;\n    scanf(\"%d %d\", &p, &q);\n    printf(\"%d\\n\", mirrorReflection(p, q));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Think about extending the room grid.",
+                "Use LCM of p and q."
+            ]
+        }
+    ]
+}

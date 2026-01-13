@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Maximize Number of Nice Divisors (Number Theory)",
+            "description": "You are given a positive integer primeFactors. You are asked to construct a positive integer n such that the number of prime factors of n is at most primeFactors, and the number of nice divisors of n is maximized.\nReturn the number of nice divisors of n modulo 10^9 + 7.\n\nInput Format:\nFirst line: integer primeFactors.\n\nOutput Format:\nPrint a single integer.",
+            "examples": "Sample Input\n5\n\nSample Output\n6",
+            "constraints": "1 <= primeFactors <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 4033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "8",
+                    "expectedOutput": "18"
+                },
+                {
+                    "input": "84",
+                    "expectedOutput": "792294829"
+                },
+                {
+                    "input": "63",
+                    "expectedOutput": "460353133"
+                },
+                {
+                    "input": "73",
+                    "expectedOutput": "572712676"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxNiceDivisors(self, primeFactors):\n        # TODO: Return the number of nice divisors\n        pass\n\nif __name__ == '__main__':\n    pf = int(input().strip())\n    sol = Solution()\n    print(sol.maxNiceDivisors(pf))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int maxNiceDivisors(int primeFactors) {\n        // TODO: Return the number of nice divisors\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int pf = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.maxNiceDivisors(pf));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxNiceDivisors(primeFactors) {\n        // TODO: Return the number of nice divisors\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst pf = Number(fs.readFileSync(0, 'utf-8').trim());\nconst sol = new Solution();\nconsole.log(sol.maxNiceDivisors(pf));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxNiceDivisors(int primeFactors) {\n        // TODO: Return the number of nice divisors\n        return 0;\n    }\n};\n\nint main() {\n    int pf;\n    cin >> pf;\n    Solution sol;\n    cout << sol.maxNiceDivisors(pf) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint maxNiceDivisors(int primeFactors) {\n    // TODO: Return the number of nice divisors\n    return 0;\n}\n\nint main() {\n    int pf;\n    scanf(\"%d\", &pf);\n    printf(\"%d\\n\", maxNiceDivisors(pf));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Maximize the product of exponents summing to primeFactors.",
+                "Decompose primeFactors into sum of 3s."
+            ]
+        }
+    ]
+}

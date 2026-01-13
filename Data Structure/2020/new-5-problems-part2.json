@@ -1,0 +1,354 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find Nth Node from End in SLL",
+            "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) and an integer K. Your task is to find the Kth node from the end of the linked list and print its value. If K is greater than the length of the list, print -1.\n\nInput Format\nThe first line contains an integer N (size of the list).\nThe second line contains N space-separated integers.\nThe third line contains an integer K (position from end).\n\nOutput Format\nPrint the value of the Kth node from the end, or -1 if K > N.\n\nExample\nInput:\n5\n10 20 30 40 50\n2\nOutput: 40\nExplanation: The 2nd node from the end has value 40.",
+            "examples": "Sample Input\n5\n10 20 30 40 50\n2\n\nSample Output\n40",
+            "constraints": "1 ≤ N ≤ 10^5\n1 ≤ K ≤ N\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n10 20 30 40 50\n2",
+                    "expectedOutput": "40",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                },
+                {
+                    "input": "5\n10 20 30 40 50\n5",
+                    "expectedOutput": "10",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                },
+                {
+                    "input": "1\n99\n1",
+                    "expectedOutput": "99",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                },
+                {
+                    "input": "3\n1 2 3\n6",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                },
+                {
+                    "input": "4\n-1 -2 -3 -4\n3",
+                    "expectedOutput": "-2",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef findNthFromEnd(head, k):\n    # TODO: Find the Kth node from end and return its data, else -1\n    return -1\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:n+1]))\n    k = int(input_data[n+1])\n    head = insertAtEnd(arr, n)\n    print(findNthFromEnd(head, k))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node insertAtEnd(long[] arr, int n) {\n        Node head = null, tail = null;\n        for (long x : arr) {\n            Node temp = new Node(x);\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        return head;\n    }\n\n    public static long findNthFromEnd(Node head, int k) {\n        // TODO: Find the Kth node from end and return its data, else -1\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            int k = sc.nextInt();\n            Node head = Result.insertAtEnd(arr, n);\n            System.out.print(Result.findNthFromEnd(head, k));\n        }\n    }\n}",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction insertAtEnd(arr, n) {\n    let head = null, tail = null;\n    arr.forEach(x => {\n        let temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    return head;\n}\n\nfunction findNthFromEnd(head, k) {\n    // TODO: Find the Kth node from end and return its data, else -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1, n + 1).map(Number);\n    const k = parseInt(lines[n + 1]);\n    const head = insertAtEnd(arr, n);\n    console.log(findNthFromEnd(head, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* insertAtEnd(vector<long long>& arr, int n) {\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nlong long findNthFromEnd(Node* head, int k) {\n    // TODO: Find the Kth node from end and return its data, else -1\n    return -1;\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int k; cin >> k;\n        Node* head = insertAtEnd(arr, n);\n        cout << findNthFromEnd(head, k);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* insertAtEnd(long long arr[], int n) {\n    Node *head = NULL, *tail = NULL;\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nlong long findNthFromEnd(Node* head, int k) {\n    // TODO: Find the Kth node from end and return its data, else -1\n    return -1;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        int k; scanf(\"%d\", &k);\n        Node* head = insertAtEnd(arr, n);\n        printf(\"%lld\", findNthFromEnd(head, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Find Nth Node from End in SLL"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers: move the first pointer K steps ahead, then move both pointers together until the first reaches the end."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Remove Duplicates from Unsorted SLL",
+            "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL). The list may contain duplicate values. Your task is to remove all duplicate nodes and keep only the first occurrence of each value. Display the resulting list.\n\nInput Format\nThe first line contains an integer N (size of the list).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the elements of the list after removing duplicates, separated by spaces.\n\nExample\nInput:\n6\n1 2 3 2 4 1\nOutput: 1 2 3 4",
+            "examples": "Sample Input\n6\n1 2 3 2 4 1\n\nSample Output\n1 2 3 4",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(N)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "6\n1 2 3 2 4 1",
+                    "expectedOutput": "1 2 3 4",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                },
+                {
+                    "input": "5\n1 1 1 1 1",
+                    "expectedOutput": "1",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                },
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "1 2 3 4 5",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                },
+                {
+                    "input": "1\n99",
+                    "expectedOutput": "99",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                },
+                {
+                    "input": "4\n-1 0 -1 0",
+                    "expectedOutput": "-1 0",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef removeDuplicates(head):\n    # TODO: Remove duplicates and return the updated head\n    return head\n\ndef display(head):\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    head = insertAtEnd(arr, n)\n    head = removeDuplicates(head)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node insertAtEnd(long[] arr, int n) {\n        Node head = null, tail = null;\n        for (long x : arr) {\n            Node temp = new Node(x);\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        return head;\n    }\n\n    public static Node removeDuplicates(Node head) {\n        // TODO: Remove duplicates and return the updated head\n        return head;\n    }\n}\n\npublic class Solution {\n    public static void display(Node head) {\n        while (head != null) {\n            System.out.print(head.data + \" \");\n            head = head.next;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            Node head = Result.insertAtEnd(arr, n);\n            head = Result.removeDuplicates(head);\n            display(head);\n        }\n    }\n}",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction insertAtEnd(arr, n) {\n    let head = null, tail = null;\n    arr.forEach(x => {\n        let temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    return head;\n}\n\nfunction removeDuplicates(head) {\n    // TODO: Remove duplicates and return the updated head\n    return head;\n}\n\nfunction display(head) {\n    let res = [];\n    while (head) {\n        res.push(head.data);\n        head = head.next;\n    }\n    console.log(res.join(\" \"));\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    let head = insertAtEnd(arr, n);\n    head = removeDuplicates(head);\n    display(head);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* insertAtEnd(vector<long long>& arr, int n) {\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nNode* removeDuplicates(Node* head) {\n    // TODO: Remove duplicates and return the updated head\n    return head;\n}\n\nvoid display(Node* head) {\n    while (head) {\n        cout << head->data << \" \";\n        head = head->next;\n    }\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        Node* head = insertAtEnd(arr, n);\n        head = removeDuplicates(head);\n        display(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* insertAtEnd(long long arr[], int n) {\n    Node *head = NULL, *tail = NULL;\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nNode* removeDuplicates(Node* head) {\n    // TODO: Remove duplicates and return the updated head\n    return head;\n}\n\nvoid display(Node* head) {\n    while (head) {\n        printf(\"%lld \", head->data);\n        head = head->next;\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        Node* head = insertAtEnd(arr, n);\n        head = removeDuplicates(head);\n        display(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Remove Duplicates from Unsorted SLL"
+                }
+            ],
+            "hintsList": [
+                "Use a hash set to track seen values while traversing the list and remove nodes with duplicate values."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Detect Cycle in SLL",
+            "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL). Additionally, you are given an integer P which indicates that the last node should point to the Pth node (1-based index) to create a cycle. If P is 0 or greater than N, there is no cycle. Your task is to detect if there is a cycle in the linked list. Print YES if a cycle exists, otherwise print NO.\n\nInput Format\nThe first line contains an integer N (size of the list).\nThe second line contains N space-separated integers.\nThe third line contains an integer P (position to create cycle, 0 means no cycle).\n\nOutput Format\nPrint YES or NO.\n\nExample\nInput:\n4\n1 2 3 4\n2\nOutput: YES\nExplanation: Last node (4) points to 2nd node, creating a cycle.",
+            "examples": "Sample Input\n4\n1 2 3 4\n2\n\nSample Output\nYES",
+            "constraints": "1 ≤ N ≤ 10^5\n0 ≤ P ≤ N\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "4\n1 2 3 4\n2",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Detect Cycle in SLL"
+                },
+                {
+                    "input": "5\n10 20 30 40 50\n0",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Detect Cycle in SLL"
+                },
+                {
+                    "input": "3\n1 2 3\n1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Detect Cycle in SLL"
+                },
+                {
+                    "input": "1\n99\n0",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Detect Cycle in SLL"
+                },
+                {
+                    "input": "5\n5 4 3 2 1\n5",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Detect Cycle in SLL"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef createListWithCycle(arr, n, p):\n    if n == 0: return None\n    head = tail = None\n    nodes = []\n    for x in arr:\n        newNode = Node(x)\n        nodes.append(newNode)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    if p > 0 and p <= n:\n        tail.next = nodes[p - 1]\n    return head\n\ndef hasCycle(head):\n    # TODO: Return YES if cycle exists, else NO\n    return \"NO\"\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:n+1]))\n    p = int(input_data[n+1])\n    head = createListWithCycle(arr, n, p)\n    print(hasCycle(head))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Detect Cycle in SLL"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node createListWithCycle(long[] arr, int n, int p) {\n        if (n == 0) return null;\n        Node head = null, tail = null;\n        Node[] nodes = new Node[n];\n        for (int i = 0; i < n; i++) {\n            Node temp = new Node(arr[i]);\n            nodes[i] = temp;\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        if (p > 0 && p <= n) {\n            tail.next = nodes[p - 1];\n        }\n        return head;\n    }\n\n    public static String hasCycle(Node head) {\n        // TODO: Return YES if cycle exists, else NO\n        return \"NO\";\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            int p = sc.nextInt();\n            Node head = Result.createListWithCycle(arr, n, p);\n            System.out.print(Result.hasCycle(head));\n        }\n    }\n}",
+                    "problemTitle": "Detect Cycle in SLL"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction createListWithCycle(arr, n, p) {\n    if (n === 0) return null;\n    let head = null, tail = null;\n    const nodes = [];\n    arr.forEach(x => {\n        let temp = new Node(x);\n        nodes.push(temp);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    if (p > 0 && p <= n) {\n        tail.next = nodes[p - 1];\n    }\n    return head;\n}\n\nfunction hasCycle(head) {\n    // TODO: Return YES if cycle exists, else NO\n    return \"NO\";\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1, n + 1).map(Number);\n    const p = parseInt(lines[n + 1]);\n    const head = createListWithCycle(arr, n, p);\n    console.log(hasCycle(head));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Detect Cycle in SLL"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* createListWithCycle(vector<long long>& arr, int n, int p) {\n    if (n == 0) return NULL;\n    Node *head = NULL, *tail = NULL;\n    vector<Node*> nodes;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        nodes.push_back(temp);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    if (p > 0 && p <= n) {\n        tail->next = nodes[p - 1];\n    }\n    return head;\n}\n\nstring hasCycle(Node* head) {\n    // TODO: Return YES if cycle exists, else NO\n    return \"NO\";\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int p; cin >> p;\n        Node* head = createListWithCycle(arr, n, p);\n        cout << hasCycle(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Detect Cycle in SLL"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* createListWithCycle(long long arr[], int n, int p) {\n    if (n == 0) return NULL;\n    Node *head = NULL, *tail = NULL;\n    Node* nodes[n];\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        nodes[i] = temp;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    if (p > 0 && p <= n) {\n        tail->next = nodes[p - 1];\n    }\n    return head;\n}\n\nconst char* hasCycle(Node* head) {\n    // TODO: Return YES if cycle exists, else NO\n    return \"NO\";\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        int p; scanf(\"%d\", &p);\n        Node* head = createListWithCycle(arr, n, p);\n        printf(\"%s\", hasCycle(head));\n    }\n    return 0;\n}",
+                    "problemTitle": "Detect Cycle in SLL"
+                }
+            ],
+            "hintsList": [
+                "Use Floyd's Cycle Detection Algorithm (slow and fast pointers)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Merge Two Sorted Linked Lists",
+            "description": "Problem Statement\nYou are given two sorted Singly Linked Lists. Your task is to merge them into a single sorted linked list and display the elements.\n\nInput Format\nThe first line contains an integer N1 (size of first list).\nThe second line contains N1 space-separated sorted integers.\nThe third line contains an integer N2 (size of second list).\nThe fourth line contains N2 space-separated sorted integers.\n\nOutput Format\nPrint the elements of the merged sorted list separated by spaces.\n\nExample\nInput:\n3\n1 3 5\n3\n2 4 6\nOutput: 1 2 3 4 5 6",
+            "examples": "Sample Input\n3\n1 3 5\n3\n2 4 6\n\nSample Output\n1 2 3 4 5 6",
+            "constraints": "0 ≤ N1, N2 ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nBoth lists are sorted in ascending order\nTime Complexity: O(N1 + N2)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "3\n1 3 5\n3\n2 4 6",
+                    "expectedOutput": "1 2 3 4 5 6",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                },
+                {
+                    "input": "2\n1 2\n2\n3 4",
+                    "expectedOutput": "1 2 3 4",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                },
+                {
+                    "input": "0\n\n3\n1 2 3",
+                    "expectedOutput": "1 2 3",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                },
+                {
+                    "input": "3\n1 2 3\n0\n",
+                    "expectedOutput": "1 2 3",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                },
+                {
+                    "input": "4\n-5 -3 0 2\n3\n-4 1 3",
+                    "expectedOutput": "-5 -4 -3 0 1 2 3",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef mergeSortedLists(head1, head2):\n    # TODO: Merge two sorted lists and return the merged head\n    return head1\n\ndef display(head):\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    idx = 0\n    n1 = int(input_data[idx])\n    idx += 1\n    arr1 = list(map(int, input_data[idx:idx+n1]))\n    idx += n1\n    n2 = int(input_data[idx])\n    idx += 1\n    arr2 = list(map(int, input_data[idx:idx+n2]))\n    head1 = insertAtEnd(arr1, n1)\n    head2 = insertAtEnd(arr2, n2)\n    merged = mergeSortedLists(head1, head2)\n    display(merged)\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node insertAtEnd(long[] arr, int n) {\n        Node head = null, tail = null;\n        for (long x : arr) {\n            Node temp = new Node(x);\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        return head;\n    }\n\n    public static Node mergeSortedLists(Node head1, Node head2) {\n        // TODO: Merge two sorted lists and return the merged head\n        return head1;\n    }\n}\n\npublic class Solution {\n    public static void display(Node head) {\n        while (head != null) {\n            System.out.print(head.data + \" \");\n            head = head.next;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n1 = sc.nextInt();\n            long[] arr1 = new long[n1];\n            for (int i = 0; i < n1; i++) arr1[i] = sc.nextLong();\n            int n2 = sc.nextInt();\n            long[] arr2 = new long[n2];\n            for (int i = 0; i < n2; i++) arr2[i] = sc.nextLong();\n            Node head1 = Result.insertAtEnd(arr1, n1);\n            Node head2 = Result.insertAtEnd(arr2, n2);\n            Node merged = Result.mergeSortedLists(head1, head2);\n            display(merged);\n        }\n    }\n}",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction insertAtEnd(arr, n) {\n    let head = null, tail = null;\n    arr.forEach(x => {\n        let temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    return head;\n}\n\nfunction mergeSortedLists(head1, head2) {\n    // TODO: Merge two sorted lists and return the merged head\n    return head1;\n}\n\nfunction display(head) {\n    let res = [];\n    while (head) {\n        res.push(head.data);\n        head = head.next;\n    }\n    console.log(res.join(\" \"));\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    let idx = 0;\n    const n1 = parseInt(lines[idx++]);\n    const arr1 = lines.slice(idx, idx + n1).map(Number);\n    idx += n1;\n    const n2 = parseInt(lines[idx++]);\n    const arr2 = lines.slice(idx, idx + n2).map(Number);\n    const head1 = insertAtEnd(arr1, n1);\n    const head2 = insertAtEnd(arr2, n2);\n    const merged = mergeSortedLists(head1, head2);\n    display(merged);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* insertAtEnd(vector<long long>& arr, int n) {\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nNode* mergeSortedLists(Node* head1, Node* head2) {\n    // TODO: Merge two sorted lists and return the merged head\n    return head1;\n}\n\nvoid display(Node* head) {\n    while (head) {\n        cout << head->data << \" \";\n        head = head->next;\n    }\n}\n\nint main() {\n    int n1;\n    if (cin >> n1) {\n        vector<long long> arr1(n1);\n        for (int i = 0; i < n1; i++) cin >> arr1[i];\n        int n2; cin >> n2;\n        vector<long long> arr2(n2);\n        for (int i = 0; i < n2; i++) cin >> arr2[i];\n        Node* head1 = insertAtEnd(arr1, n1);\n        Node* head2 = insertAtEnd(arr2, n2);\n        Node* merged = mergeSortedLists(head1, head2);\n        display(merged);\n    }\n    return 0;\n}",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* insertAtEnd(long long arr[], int n) {\n    Node *head = NULL, *tail = NULL;\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nNode* mergeSortedLists(Node* head1, Node* head2) {\n    // TODO: Merge two sorted lists and return the merged head\n    return head1;\n}\n\nvoid display(Node* head) {\n    while (head) {\n        printf(\"%lld \", head->data);\n        head = head->next;\n    }\n}\n\nint main() {\n    int n1;\n    if (scanf(\"%d\", &n1) == 1) {\n        long long arr1[n1];\n        for (int i = 0; i < n1; i++) scanf(\"%lld\", &arr1[i]);\n        int n2; scanf(\"%d\", &n2);\n        long long arr2[n2];\n        for (int i = 0; i < n2; i++) scanf(\"%lld\", &arr2[i]);\n        Node* head1 = insertAtEnd(arr1, n1);\n        Node* head2 = insertAtEnd(arr2, n2);\n        Node* merged = mergeSortedLists(head1, head2);\n        display(merged);\n    }\n    return 0;\n}",
+                    "problemTitle": "Merge Two Sorted Linked Lists"
+                }
+            ],
+            "hintsList": [
+                "Compare values from both lists and link nodes in sorted order using a dummy node."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Rotate Linked List by K positions",
+            "description": "Problem Statement\nYou are given N integers to create a Singly Linked List (SLL) and an integer K. Your task is to rotate the linked list to the right by K positions and display the resulting list.\n\nInput Format\nThe first line contains an integer N (size of the list).\nThe second line contains N space-separated integers.\nThe third line contains an integer K (number of positions to rotate).\n\nOutput Format\nPrint the elements of the rotated list separated by spaces.\n\nExample\nInput:\n5\n1 2 3 4 5\n2\nOutput: 4 5 1 2 3\nExplanation: Rotating right by 2: [4,5,1,2,3]",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n2\n\nSample Output\n4 5 1 2 3",
+            "constraints": "1 ≤ N ≤ 10^5\n0 ≤ K ≤ 10^9\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2020,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 4 5\n2",
+                    "expectedOutput": "4 5 1 2 3",
+                    "problemTitle": "Rotate Linked List by K positions"
+                },
+                {
+                    "input": "3\n10 20 30\n1",
+                    "expectedOutput": "30 10 20",
+                    "problemTitle": "Rotate Linked List by K positions"
+                },
+                {
+                    "input": "4\n1 2 3 4\n4",
+                    "expectedOutput": "1 2 3 4",
+                    "problemTitle": "Rotate Linked List by K positions"
+                },
+                {
+                    "input": "1\n99\n5",
+                    "expectedOutput": "99",
+                    "problemTitle": "Rotate Linked List by K positions"
+                },
+                {
+                    "input": "5\n1 2 3 4 5\n0",
+                    "expectedOutput": "1 2 3 4 5",
+                    "problemTitle": "Rotate Linked List by K positions"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef insertAtEnd(arr, n):\n    head = tail = None\n    for x in arr:\n        newNode = Node(x)\n        if head is None:\n            head = tail = newNode\n        else:\n            tail.next = newNode\n            tail = newNode\n    return head\n\ndef rotateRight(head, k):\n    # TODO: Rotate the list right by k positions and return new head\n    return head\n\ndef display(head):\n    while head:\n        print(head.data, end=\" \")\n        head = head.next\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:n+1]))\n    k = int(input_data[n+1])\n    head = insertAtEnd(arr, n)\n    head = rotateRight(head, k)\n    display(head)\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Rotate Linked List by K positions"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Node {\n    long data;\n    Node next;\n    Node(long d) { data = d; next = null; }\n}\n\nclass Result {\n    public static Node insertAtEnd(long[] arr, int n) {\n        Node head = null, tail = null;\n        for (long x : arr) {\n            Node temp = new Node(x);\n            if (head == null) head = tail = temp;\n            else { tail.next = temp; tail = temp; }\n        }\n        return head;\n    }\n\n    public static Node rotateRight(Node head, int k) {\n        // TODO: Rotate the list right by k positions and return new head\n        return head;\n    }\n}\n\npublic class Solution {\n    public static void display(Node head) {\n        while (head != null) {\n            System.out.print(head.data + \" \");\n            head = head.next;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextLong();\n            int k = sc.nextInt();\n            Node head = Result.insertAtEnd(arr, n);\n            head = Result.rotateRight(head, k);\n            display(head);\n        }\n    }\n}",
+                    "problemTitle": "Rotate Linked List by K positions"
+                },
+                {
+                    "language": 3,
+                    "code": "class Node {\n    constructor(data) { this.data = data; this.next = null; }\n}\n\nfunction insertAtEnd(arr, n) {\n    let head = null, tail = null;\n    arr.forEach(x => {\n        let temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail.next = temp; tail = temp; }\n    });\n    return head;\n}\n\nfunction rotateRight(head, k) {\n    // TODO: Rotate the list right by k positions and return new head\n    return head;\n}\n\nfunction display(head) {\n    let res = [];\n    while (head) {\n        res.push(head.data);\n        head = head.next;\n    }\n    console.log(res.join(\" \"));\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1, n + 1).map(Number);\n    const k = parseInt(lines[n + 1]);\n    let head = insertAtEnd(arr, n);\n    head = rotateRight(head, k);\n    display(head);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Rotate Linked List by K positions"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nstruct Node {\n    long long data;\n    Node* next;\n    Node(long long x) : data(x), next(NULL) {}\n};\n\nNode* insertAtEnd(vector<long long>& arr, int n) {\n    Node *head = NULL, *tail = NULL;\n    for (long long x : arr) {\n        Node* temp = new Node(x);\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nNode* rotateRight(Node* head, int k) {\n    // TODO: Rotate the list right by k positions and return new head\n    return head;\n}\n\nvoid display(Node* head) {\n    while (head) {\n        cout << head->data << \" \";\n        head = head->next;\n    }\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int k; cin >> k;\n        Node* head = insertAtEnd(arr, n);\n        head = rotateRight(head, k);\n        display(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Rotate Linked List by K positions"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    long long data;\n    struct Node* next;\n} Node;\n\nNode* insertAtEnd(long long arr[], int n) {\n    Node *head = NULL, *tail = NULL;\n    for (int i = 0; i < n; i++) {\n        Node* temp = (Node*)malloc(sizeof(Node));\n        temp->data = arr[i];\n        temp->next = NULL;\n        if (!head) head = tail = temp;\n        else { tail->next = temp; tail = temp; }\n    }\n    return head;\n}\n\nNode* rotateRight(Node* head, int k) {\n    // TODO: Rotate the list right by k positions and return new head\n    return head;\n}\n\nvoid display(Node* head) {\n    while (head) {\n        printf(\"%lld \", head->data);\n        head = head->next;\n    }\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[n];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        int k; scanf(\"%d\", &k);\n        Node* head = insertAtEnd(arr, n);\n        head = rotateRight(head, k);\n        display(head);\n    }\n    return 0;\n}",
+                    "problemTitle": "Rotate Linked List by K positions"
+                }
+            ],
+            "hintsList": [
+                "First find the length and make it circular, then find the new head at position (n - k % n) and break the circle."
+            ]
+        }
+    ]
+}

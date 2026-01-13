@@ -1,0 +1,354 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Find the Second Largest Element",
+            "description": "Problem Statement\nYou are given an array of N integers. Your task is to find the second largest element in the array. If all elements are the same or the array has fewer than two distinct elements, print -1.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the second largest element or -1 if it doesn't exist.\n\nExample\nInput: 5\n10 20 4 45 99\nOutput: 45",
+            "examples": "Sample Input\n5\n10 20 4 45 99\n\nSample Output\n45",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n10 20 4 45 99",
+                    "expectedOutput": "45",
+                    "problemTitle": "Find the Second Largest Element"
+                },
+                {
+                    "input": "2\n10 10",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Find the Second Largest Element"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Find the Second Largest Element"
+                },
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "4",
+                    "problemTitle": "Find the Second Largest Element"
+                },
+                {
+                    "input": "5\n5 4 3 2 1",
+                    "expectedOutput": "4",
+                    "problemTitle": "Find the Second Largest Element"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def findSecondLargest(arr, n):\n    # TODO: Implement logic to find the second largest element\n    return -1\n\ndef solve():\n    import sys\n    input = sys.stdin.read().split()\n    if not input: return\n    n = int(input[0])\n    arr = list(map(int, input[1:]))\n    print(findSecondLargest(arr, n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find the Second Largest Element"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static long findSecondLargest(long[] arr, int n) {\n        // TODO: Implement logic to find the second largest element\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            System.out.print(Result.findSecondLargest(arr, n));\n        }\n    }\n}",
+                    "problemTitle": "Find the Second Largest Element"
+                },
+                {
+                    "language": 3,
+                    "code": "function findSecondLargest(arr, n) {\n    // TODO: Implement logic to find the second largest element\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    console.log(findSecondLargest(arr, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find the Second Largest Element"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <climits>\n\nusing namespace std;\n\nlong long findSecondLargest(vector<long long>& arr, int n) {\n    // TODO: Implement logic to find the second largest element\n    return -1;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << findSecondLargest(arr, n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Second Largest Element"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <limits.h>\n\nlong long findSecondLargest(long long arr[], int n) {\n    // TODO: Implement logic to find the second largest element\n    return -1;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%lld\", findSecondLargest(arr, n));\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Second Largest Element"
+                }
+            ],
+            "hintsList": [
+                "Keep track of the largest and second largest elements while iterating through the array."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Move All Zeroes to the End",
+            "description": "Problem Statement\nYou are given an array of N integers. Your task is to move all zeroes to the end of the array while maintaining the relative order of the non-zero elements.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the modified array elements separated by spaces.\n\nExample\nInput: 5\n0 1 0 3 12\nOutput: 1 3 12 0 0",
+            "examples": "Sample Input\n5\n0 1 0 3 12\n\nSample Output\n1 3 12 0 0",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n0 1 0 3 12",
+                    "expectedOutput": "1 3 12 0 0",
+                    "problemTitle": "Move All Zeroes to the End"
+                },
+                {
+                    "input": "3\n0 0 0",
+                    "expectedOutput": "0 0 0",
+                    "problemTitle": "Move All Zeroes to the End"
+                },
+                {
+                    "input": "4\n1 2 3 4",
+                    "expectedOutput": "1 2 3 4",
+                    "problemTitle": "Move All Zeroes to the End"
+                },
+                {
+                    "input": "5\n0 0 1 2 3",
+                    "expectedOutput": "1 2 3 0 0",
+                    "problemTitle": "Move All Zeroes to the End"
+                },
+                {
+                    "input": "2\n0 5",
+                    "expectedOutput": "5 0",
+                    "problemTitle": "Move All Zeroes to the End"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def moveZeroes(arr, n):\n    # TODO: Move all zeroes to the end in-place\n    return arr\n\ndef solve():\n    import sys\n    input = sys.stdin.read().split()\n    if not input: return\n    n = int(input[0])\n    arr = list(map(int, input[1:]))\n    result = moveZeroes(arr, n)\n    print(*(result))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Move All Zeroes to the End"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static void moveZeroes(long[] arr, int n) {\n        // TODO: Move all zeroes to the end in-place\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            Result.moveZeroes(arr, n);\n            for (int i = 0; i < n; i++) {\n                System.out.print(arr[i] + (i == n - 1 ? \"\" : \" \"));\n            }\n        }\n    }\n}",
+                    "problemTitle": "Move All Zeroes to the End"
+                },
+                {
+                    "language": 3,
+                    "code": "function moveZeroes(arr, n) {\n    // TODO: Move all zeroes to the end in-place\n    return arr;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const result = moveZeroes(arr, n);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Move All Zeroes to the End"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nvoid moveZeroes(vector<long long>& arr, int n) {\n    // TODO: Move all zeroes to the end in-place\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        moveZeroes(arr, n);\n        for (int i = 0; i < n; i++) {\n            cout << arr[i] << (i == n - 1 ? \"\" : \" \");\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Move All Zeroes to the End"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid moveZeroes(long long arr[], int n) {\n    // TODO: Move all zeroes to the end in-place\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        moveZeroes(arr, n);\n        for (int i = 0; i < n; i++) {\n            printf(\"%lld%s\", arr[i], (i == n - 1 ? \"\" : \" \"));\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Move All Zeroes to the End"
+                }
+            ],
+            "hintsList": [
+                "Use a pointer to keep track of the position for the next non-zero element."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find the Missing Number",
+            "description": "Problem Statement\nYou are given an array of N-1 integers in the range of 1 to N. Each integer appears exactly once except for one number which is missing. Your task is to find the missing number.\n\nInput Format\nThe first line contains an integer N-1 (number of elements in the array).\nThe second line contains N-1 space-separated integers.\n\nOutput Format\nPrint the missing number.\n\nExample\nInput: 4\n1 2 4 5\nOutput: 3\nExplanation: N is 5, and the missing number in range 1 to 5 is 3.",
+            "examples": "Sample Input\n4\n1 2 4 5\n\nSample Output\n3",
+            "constraints": "1 ≤ N ≤ 10^5\n1 ≤ Array elements ≤ N\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "4\n1 2 4 5",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find the Missing Number"
+                },
+                {
+                    "input": "1\n2",
+                    "expectedOutput": "1",
+                    "problemTitle": "Find the Missing Number"
+                },
+                {
+                    "input": "2\n1 2",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find the Missing Number"
+                },
+                {
+                    "input": "5\n1 2 3 4 6",
+                    "expectedOutput": "5",
+                    "problemTitle": "Find the Missing Number"
+                },
+                {
+                    "input": "3\n2 3 4",
+                    "expectedOutput": "1",
+                    "problemTitle": "Find the Missing Number"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def findMissingNumber(arr, n_minus_1):\n    # TODO: Find the missing number in range 1 to N\n    return -1\n\ndef solve():\n    import sys\n    input = sys.stdin.read().split()\n    if not input: return\n    n_minus_1 = int(input[0])\n    arr = list(map(int, input[1:]))\n    print(findMissingNumber(arr, n_minus_1))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find the Missing Number"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static long findMissingNumber(long[] arr, int n_minus_1) {\n        // TODO: Find the missing number in range 1 to N\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n_minus_1 = sc.nextInt();\n            long[] arr = new long[n_minus_1];\n            for (int i = 0; i < n_minus_1; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            System.out.print(Result.findMissingNumber(arr, n_minus_1));\n        }\n    }\n}",
+                    "problemTitle": "Find the Missing Number"
+                },
+                {
+                    "language": 3,
+                    "code": "function findMissingNumber(arr, n_minus_1) {\n    // TODO: Find the missing number in range 1 to N\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n_minus_1 = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    console.log(findMissingNumber(arr, n_minus_1));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find the Missing Number"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nlong long findMissingNumber(vector<long long>& arr, int n_minus_1) {\n    // TODO: Find the missing number in range 1 to N\n    return -1;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n_minus_1;\n    if (cin >> n_minus_1) {\n        vector<long long> arr(n_minus_1);\n        for (int i = 0; i < n_minus_1; i++) cin >> arr[i];\n        cout << findMissingNumber(arr, n_minus_1);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Missing Number"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long findMissingNumber(long long arr[], int n_minus_1) {\n    // TODO: Find the missing number in range 1 to N\n    return -1;\n}\n\nint main() {\n    int n_minus_1;\n    if (scanf(\"%d\", &n_minus_1) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n_minus_1; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%lld\", findMissingNumber(arr, n_minus_1));\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Missing Number"
+                }
+            ],
+            "hintsList": [
+                "Calculate the sum of the first N natural numbers and subtract the sum of the array elements."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if Array is Sorted",
+            "description": "Problem Statement\nYou are given an array of N integers. Your task is to check if the array is sorted in non-decreasing order. If it is sorted, print YES, otherwise print NO.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint YES or NO.\n\nExample\nInput: 5\n1 2 3 4 5\nOutput: YES",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\nYES",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Array is Sorted"
+                },
+                {
+                    "input": "5\n1 2 4 3 5",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check if Array is Sorted"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Array is Sorted"
+                },
+                {
+                    "input": "3\n10 10 10",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Array is Sorted"
+                },
+                {
+                    "input": "4\n1 2 2 3",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Array is Sorted"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def isSorted(arr, n):\n    # TODO: Return YES if sorted, else NO\n    return \"NO\"\n\ndef solve():\n    import sys\n    input = sys.stdin.read().split()\n    if not input: return\n    n = int(input[0])\n    arr = list(map(int, input[1:]))\n    print(isSorted(arr, n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Check if Array is Sorted"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static String isSorted(long[] arr, int n) {\n        // TODO: Return YES if sorted, else NO\n        return \"NO\";\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            System.out.print(Result.isSorted(arr, n));\n        }\n    }\n}",
+                    "problemTitle": "Check if Array is Sorted"
+                },
+                {
+                    "language": 3,
+                    "code": "function isSorted(arr, n) {\n    // TODO: Return YES if sorted, else NO\n    return \"NO\";\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    console.log(isSorted(arr, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Check if Array is Sorted"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\nstring isSorted(vector<long long>& arr, int n) {\n    // TODO: Return YES if sorted, else NO\n    return \"NO\";\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << isSorted(arr, n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Check if Array is Sorted"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nconst char* isSorted(long long arr[], int n) {\n    // TODO: Return YES if sorted, else NO\n    return \"NO\";\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%s\", isSorted(arr, n));\n    }\n    return 0;\n}",
+                    "problemTitle": "Check if Array is Sorted"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the array and check if every element is less than or equal to the next element."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find the Element that Appears Once",
+            "description": "Problem Statement\nYou are given an array of N integers where every element appears exactly twice except for one element which appears only once. Your task is to find that single element.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the element that appears once.\n\nExample\nInput: 5\n1 1 2 2 3\nOutput: 3",
+            "examples": "Sample Input\n5\n1 1 2 2 3\n\nSample Output\n3",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n1 1 2 2 3",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find the Element that Appears Once"
+                },
+                {
+                    "input": "3\n10 20 10",
+                    "expectedOutput": "20",
+                    "problemTitle": "Find the Element that Appears Once"
+                },
+                {
+                    "input": "7\n1 2 3 1 2 3 4",
+                    "expectedOutput": "4",
+                    "problemTitle": "Find the Element that Appears Once"
+                },
+                {
+                    "input": "1\n100",
+                    "expectedOutput": "100",
+                    "problemTitle": "Find the Element that Appears Once"
+                },
+                {
+                    "input": "5\n-1 -1 -2 -3 -2",
+                    "expectedOutput": "-3",
+                    "problemTitle": "Find the Element that Appears Once"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def findSingleElement(arr, n):\n    # TODO: Find the element that appears once\n    return -1\n\ndef solve():\n    import sys\n    input = sys.stdin.read().split()\n    if not input: return\n    n = int(input[0])\n    arr = list(map(int, input[1:]))\n    print(findSingleElement(arr, n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find the Element that Appears Once"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static long findSingleElement(long[] arr, int n) {\n        // TODO: Find the element that appears once\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            System.out.print(Result.findSingleElement(arr, n));\n        }\n    }\n}",
+                    "problemTitle": "Find the Element that Appears Once"
+                },
+                {
+                    "language": 3,
+                    "code": "function findSingleElement(arr, n) {\n    // TODO: Find the element that appears once\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    console.log(findSingleElement(arr, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find the Element that Appears Once"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nlong long findSingleElement(vector<long long>& arr, int n) {\n    // TODO: Find the element that appears once\n    return -1;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << findSingleElement(arr, n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Element that Appears Once"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long findSingleElement(long long arr[], int n) {\n    // TODO: Find the element that appears once\n    return -1;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%lld\", findSingleElement(arr, n));\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Element that Appears Once"
+                }
+            ],
+            "hintsList": [
+                "Use the XOR operator. XORing an element with itself results in 0, and XORing with 0 results in the element itself."
+            ]
+        }
+    ]
+}

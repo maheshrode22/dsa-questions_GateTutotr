@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Minimum Genetic Mutation (Hash Table)",
+            "description": "Problem Statement\n\nA gene string can be represented by an 8-character long string, with choices from 'A', 'C', 'G', and 'T'.\nSuppose we need to investigate a mutation from a gene string startGene to a gene string endGene where one mutation is defined as one single character changed in the gene string.\n\nFor example, \"AACCGGTT\" --> \"AACCGGTA\" is one mutation.\n\nThere is also a gene bank bank that records all the valid gene mutations. A gene must be in bank to make it a valid gene string.\nGiven the two gene strings startGene and endGene and the gene bank bank, return the minimum number of mutations needed to mutate from startGene to endGene. If there is no such a mutation, return -1.\nNote that the starting point is assumed to be valid, so it might not be included in the bank.\n",
+            "examples": "Example 1:\n\nInput: startGene = \"AACCGGTT\", endGene = \"AACCGGTA\", bank = [\"AACCGGTA\"]\nOutput: 1\n\nExample 2:\n\nInput: startGene = \"AACCGGTT\", endGene = \"AAACGGTA\", bank = [\"AACCGGTA\",\"AACCGCTA\",\"AAACGGTA\"]\nOutput: 2",
+            "constraints": "0 <= bank.length <= 10\nstartGene.length == endGene.length == bank[i].length == 8\nstartGene, endGene, and bank[i] consist of only the characters ['A', 'C', 'G', 'T'].",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "AACCGGTT\nAACCGGTA\n1\nAACCGGTA",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "AACCGGTT\nAAACGGTA\n3\nAACCGGTA AACCGCTA AAACGGTA",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "AAAAACCC\nAACCCCCC\n3\nAAAACCCC AAACCCCC AACCCCCC",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "AACCGGTT\nAACCGGTA\n0\n",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "AACCGGTT\nAACCGGTT\n0\n",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minMutation(self, startGene, endGene, bank):\n        # TODO: Find min mutations using BFS\n        # Return min mutations or -1\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    startGene = data[0].strip()\n    endGene = data[1].strip()\n    n = int(data[2].strip())\n    if n > 0:\n        bank = data[3].strip().split()\n    else:\n        bank = []\n    sol = Solution()\n    result = sol.minMutation(startGene, endGene, bank)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int minMutation(String startGene, String endGene, String[] bank){\n        // TODO: Find min mutations using BFS\n        // Return min mutations or -1\n        return -1;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String startGene = br.readLine().trim();\n        String endGene = br.readLine().trim();\n        int n = Integer.parseInt(br.readLine().trim());\n        String[] bank = new String[n];\n        if(n > 0){\n            String[] parts = br.readLine().trim().split(\" \");\n            for(int i=0;i<n;i++) bank[i] = parts[i];\n        }\n        Solution sol = new Solution();\n        int result = sol.minMutation(startGene, endGene, bank);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  minMutation(startGene, endGene, bank){\n    // TODO: Find min mutations using BFS\n    // Return min mutations or -1\n    return -1;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const startGene = lines[0].trim();\n  const endGene = lines[1].trim();\n  const n = parseInt(lines[2].trim());\n  let bank = [];\n  if(n > 0){\n      bank = lines[3].trim().split(\" \");\n  }\n  const sol = new Solution();\n  const result = sol.minMutation(startGene, endGene, bank);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int minMutation(string startGene, string endGene, vector<string>& bank){\n        // TODO: Find min mutations using BFS\n        // Return min mutations or -1\n        return -1;\n    }\n};\nint main(){\n    string startGene, endGene;\n    cin >> startGene >> endGene;\n    int n;\n    cin >> n;\n    vector<string> bank(n);\n    for(int i=0;i<n;i++) cin >> bank[i];\n    Solution sol;\n    int result = sol.minMutation(startGene, endGene, bank);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nint minMutation(char* startGene, char* endGene, char** bank, int bankSize){\n    // TODO: Find min mutations\n    // Return min mutations or -1\n    return -1;\n}\n\nint main(){\n    char startGene[10], endGene[10];\n    scanf(\"%s\", startGene);\n    scanf(\"%s\", endGene);\n    int n;\n    scanf(\"%d\", &n);\n    char** bank = (char**)malloc(n * sizeof(char*));\n    for(int i=0;i<n;i++){\n        bank[i] = (char*)malloc(10 * sizeof(char));\n        scanf(\"%s\", bank[i]);\n    }\n    int result = minMutation(startGene, endGene, bank, n);\n    printf(\"%d\", result);\n    for(int i=0;i<n;i++) free(bank[i]);\n    free(bank);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use BFS to find the shortest path from startGene to endGene.",
+                "Each step in BFS corresponds to a single character mutation that exists in the bank."
+            ]
+        }
+    ]
+}

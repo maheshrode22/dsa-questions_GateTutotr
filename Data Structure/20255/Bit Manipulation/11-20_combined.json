@@ -1,0 +1,604 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Bitwise AND of Numbers Range (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven two integers left and right that represent the range [left, right], return the bitwise AND of all numbers in this range, inclusive.\n",
+            "examples": "Sample Input\n5 7\n\nSample Output\n4\n\nExplanation: The bitwise AND of 5, 6, and 7 is 4.\n\nSample Input\n0 0\n\nSample Output\n0\n\nExplanation: The bitwise AND of 0 is 0.\n\nSample Input\n1 2147483647\n\nSample Output\n0\n\nExplanation: The bitwise AND of all numbers in this large range is 0.",
+            "constraints": "0 <= left <= right <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "5 7",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "100 105",
+                    "expectedOutput": "96"
+                },
+                {
+                    "input": "16 31",
+                    "expectedOutput": "16"
+                },
+                {
+                    "input": "8 12",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "0 0",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def rangeBitwiseAnd(self, left, right):\n        # TODO: Return bitwise AND of all numbers in range [left, right]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    input_data = sys.stdin.read().split()\n    if len(input_data) >= 2:\n        left, right = int(input_data[0]), int(input_data[1])\n        sol = Solution()\n        print(sol.rangeBitwiseAnd(left, right))\n    else:\n        print(\"0\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int rangeBitwiseAnd(int left, int right) {\n        // TODO: Return bitwise AND of all numbers in range [left, right]\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        if (parts.length < 2) {\n            System.out.println(\"0\");\n            return;\n        }\n        int left = Integer.parseInt(parts[0]);\n        int right = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.rangeBitwiseAnd(left, right));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    rangeBitwiseAnd(left, right) {\n        // TODO: Return bitwise AND of all numbers in range [left, right]\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    if (parts.length < 2) {\n        console.log(\"0\");\n        return;\n    }\n    const left = parseInt(parts[0]);\n    const right = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.rangeBitwiseAnd(left, right));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int rangeBitwiseAnd(int left, int right) {\n        // TODO: Return bitwise AND of all numbers in range [left, right]\n        return 0;\n    }\n};\n\nint main() {\n    int left, right;\n    if (cin >> left >> right) {\n        Solution sol;\n        cout << sol.rangeBitwiseAnd(left, right) << endl;\n    } else {\n        cout << \"0\" << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid rangeBitwiseAnd(int left, int right) {\n    // TODO: Print bitwise AND of all numbers in range [left, right]\n}\n\nint main() {\n    int left, right;\n    if (scanf(\"%d %d\", &left, &right) == 2) {\n        rangeBitwiseAnd(left, right);\n    } else {\n        printf(\"0\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the common prefix of left and right in binary representation.",
+                "Right shift both numbers until they are equal, then left shift back."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Count Complete Tree Nodes (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven the root of a complete binary tree, return the number of the nodes in the tree.\nAccording to Wikipedia, every level, except possibly the last, is completely filled in a complete binary tree, and all nodes in the last level are as far left as possible. It can have between 1 and 2^h nodes inclusive at the last level h.\nDesign an algorithm that runs in less than O(n) time complexity.\nNote: Input is given as a level-order array representation where null represents missing nodes.\n",
+            "examples": "Sample Input\n1 2 3 4 5 6\n\nSample Output\n6\n\nExplanation: The tree has 6 nodes.\n\nSample Input\n\n\nSample Output\n0\n\nExplanation: Empty tree has 0 nodes.\n\nSample Input\n1\n\nSample Output\n1\n\nExplanation: The tree has 1 node.",
+            "constraints": "The number of nodes in the tree is in the range [0, 5 * 10^4].\n0 <= Node.val <= 5 * 10^4\nThe tree is guaranteed to be complete.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "1 2 3 4 5 6",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1 2 3 4 5 6 7",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15",
+                    "expectedOutput": "15"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countNodes(self, root):\n        # TODO: Return the number of nodes in the complete binary tree\n        pass\n    \n    def buildTree(self, arr):\n        if not arr:\n            return None\n        from collections import deque\n        root = TreeNode(arr[0])\n        queue = deque([root])\n        i = 1\n        while queue and i < len(arr):\n            node = queue.popleft()\n            if arr[i] is not None:\n                node.left = TreeNode(arr[i])\n                queue.append(node.left)\n            i += 1\n            if i < len(arr) and arr[i] is not None:\n                node.right = TreeNode(arr[i])\n                queue.append(node.right)\n            i += 1\n        return root\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\nif __name__ == '__main__':\n    import sys\n    line = sys.stdin.readline().strip()\n    if not line:\n        print(0)\n    else:\n        arr = [int(x) if x != 'null' else None for x in line.split()]\n        sol = Solution()\n        root = sol.buildTree(arr)\n        print(sol.countNodes(root))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass TreeNode {\n    int val;\n    TreeNode left;\n    TreeNode right;\n    TreeNode(int x) { val = x; }\n}\n\nclass Solution {\n    public int countNodes(TreeNode root) {\n        // TODO: Return the number of nodes in the complete binary tree\n        return 0;\n    }\n    \n    public TreeNode buildTree(String[] arr) {\n        if (arr.length == 0 || arr[0].equals(\"null\")) return null;\n        TreeNode root = new TreeNode(Integer.parseInt(arr[0]));\n        Queue<TreeNode> queue = new LinkedList<>();\n        queue.offer(root);\n        int i = 1;\n        while (!queue.isEmpty() && i < arr.length) {\n            TreeNode node = queue.poll();\n            if (i < arr.length && !arr[i].equals(\"null\")) {\n                node.left = new TreeNode(Integer.parseInt(arr[i]));\n                queue.offer(node.left);\n            }\n            i++;\n            if (i < arr.length && !arr[i].equals(\"null\")) {\n                node.right = new TreeNode(Integer.parseInt(arr[i]));\n                queue.offer(node.right);\n            }\n            i++;\n        }\n        return root;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String line = br.readLine().trim();\n        if (line.isEmpty()) {\n            System.out.println(0);\n            return;\n        }\n        String[] arr = line.split(\" \");\n        Solution sol = new Solution();\n        TreeNode root = sol.buildTree(arr);\n        System.out.println(sol.countNodes(root));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class TreeNode {\n    constructor(val, left, right) {\n        this.val = val;\n        this.left = left;\n        this.right = right;\n    }\n}\n\nclass Solution {\n    countNodes(root) {\n        // TODO: Return the number of nodes in the complete binary tree\n        return 0;\n    }\n    \n    buildTree(arr) {\n        if (arr.length === 0) return null;\n        const root = new TreeNode(parseInt(arr[0]));\n        const queue = [root];\n        let i = 1;\n        while (queue.length > 0 && i < arr.length) {\n            const node = queue.shift();\n            if (arr[i] !== 'null' && arr[i] !== undefined) {\n                node.left = new TreeNode(parseInt(arr[i]));\n                queue.push(node.left);\n            }\n            i++;\n            if (i < arr.length && arr[i] !== 'null' && arr[i] !== undefined) {\n                node.right = new TreeNode(parseInt(arr[i]));\n                queue.push(node.right);\n            }\n            i++;\n        }\n        return root;\n    }\n}\n\nfunction solve(input) {\n    const line = input.trim();\n    if (!line) {\n        console.log(0);\n        return;\n    }\n    const arr = line.split(/\\s+/);\n    const sol = new Solution();\n    const root = sol.buildTree(arr);\n    console.log(sol.countNodes(root));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct TreeNode {\n    int val;\n    TreeNode *left;\n    TreeNode *right;\n    TreeNode(int x) : val(x), left(NULL), right(NULL) {}\n};\n\nclass Solution {\npublic:\n    int countNodes(TreeNode* root) {\n        // TODO: Return the number of nodes in the complete binary tree\n        return 0;\n    }\n    \n    TreeNode* buildTree(vector<string>& arr) {\n        if (arr.empty() || arr[0] == \"null\") return nullptr;\n        TreeNode* root = new TreeNode(stoi(arr[0]));\n        queue<TreeNode*> q;\n        q.push(root);\n        int i = 1;\n        while (!q.empty() && i < arr.size()) {\n            TreeNode* node = q.front();\n            q.pop();\n            if (i < arr.size() && arr[i] != \"null\") {\n                node->left = new TreeNode(stoi(arr[i]));\n                q.push(node->left);\n            }\n            i++;\n            if (i < arr.size() && arr[i] != \"null\") {\n                node->right = new TreeNode(stoi(arr[i]));\n                q.push(node->right);\n            }\n            i++;\n        }\n        return root;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    if (line.empty()) {\n        cout << 0 << endl;\n        return 0;\n    }\n    istringstream iss(line);\n    vector<string> arr;\n    string token;\n    while (iss >> token) {\n        arr.push_back(token);\n    }\n    Solution sol;\n    TreeNode* root = sol.buildTree(arr);\n    cout << sol.countNodes(root) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nstruct TreeNode {\n    int val;\n    struct TreeNode* left;\n    struct TreeNode* right;\n};\n\nvoid countNodes(struct TreeNode* root) {\n    // TODO: Print the number of nodes in the complete binary tree\n}\n\nint main() {\n    char line[200000];\n    if (fgets(line, sizeof(line), stdin) == NULL || line[0] == '\\n') {\n        printf(\"0\\n\");\n        return 0;\n    }\n    // Note: Tree building and traversal logic needed\n    // This is a simplified version - full implementation would require\n    // parsing the input array and building the tree structure\n    printf(\"0\\n\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use binary search to find the last level and count nodes efficiently.",
+                "Use bit manipulation to navigate the tree structure."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Power of Two (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer n, return true if it is a power of two. Otherwise, return false.\nAn integer n is a power of two, if there exists an integer x such that n == 2^x.\n",
+            "examples": "Sample Input\n1\n\nSample Output\nTrue\n\nExplanation: 2^0 = 1\n\nSample Input\n16\n\nSample Output\nTrue\n\nExplanation: 2^4 = 16\n\nSample Input\n3\n\nSample Output\nFalse\n\nExplanation: 3 is not a power of two.",
+            "constraints": "-2^31 <= n <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "3",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "16",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "-16",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "4096",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isPowerOfTwo(self, n):\n        # TODO: Return True if n is a power of two, else False\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    result = sol.isPowerOfTwo(n)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean isPowerOfTwo(int n) {\n        // TODO: Return true if n is a power of two, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.isPowerOfTwo(n) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    isPowerOfTwo(n) {\n        // TODO: Return true if n is a power of two, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.isPowerOfTwo(n);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPowerOfTwo(int n) {\n        // TODO: Return true if n is a power of two, else false\n        return false;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << (sol.isPowerOfTwo(n) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n\nvoid isPowerOfTwo(int n) {\n    // TODO: Print \"True\" if n is a power of two, else \"False\"\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    isPowerOfTwo(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "A power of two has exactly one bit set in its binary representation.",
+                "Use bit manipulation: n & (n-1) == 0 for positive powers of two."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Single Number III (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order.\nYou must write an algorithm that runs in linear runtime complexity and uses only constant extra space.\n",
+            "examples": "Sample Input\n1 2 1 3 2 5\n\nSample Output\n3 5\n\nExplanation: The two single numbers are 3 and 5. [5, 3] is also a valid answer.\n\nSample Input\n-1 0\n\nSample Output\n-1 0\n\nExplanation: The two single numbers are -1 and 0.\n\nSample Input\n0 1\n\nSample Output\n0 1\n\nExplanation: The two single numbers are 0 and 1.",
+            "constraints": "2 <= nums.length <= 3 * 10^4\n-2^31 <= nums[i] <= 2^31 - 1\nEach integer in nums will appear twice, only two integers will appear once.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 2 1 3 2 5",
+                    "expectedOutput": "3 5"
+                },
+                {
+                    "input": "-1 0",
+                    "expectedOutput": "-1 0"
+                },
+                {
+                    "input": "0 1",
+                    "expectedOutput": "0 1"
+                },
+                {
+                    "input": "3 4 5 4 3 6",
+                    "expectedOutput": "5 6"
+                },
+                {
+                    "input": "4 1 4 13 6 7 6 7",
+                    "expectedOutput": "1 13"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def singleNumber(self, nums):\n        # TODO: Return the two single numbers\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.singleNumber(nums)\n    print(' '.join(map(str, sorted(result))))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] singleNumber(int[] nums) {\n        // TODO: Return the two single numbers\n        return new int[2];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        int[] result = sol.singleNumber(nums);\n        Arrays.sort(result);\n        System.out.println(result[0] + \" \" + result[1]);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    singleNumber(nums) {\n        // TODO: Return the two single numbers\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.singleNumber(nums);\n    result.sort((a, b) => a - b);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> singleNumber(vector<int>& nums) {\n        // TODO: Return the two single numbers\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    vector<int> result = sol.singleNumber(nums);\n    sort(result.begin(), result.end());\n    cout << result[0] << \" \" << result[1] << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid singleNumber(int* nums, int numsSize) {\n    // TODO: Print the two single numbers (space-separated)\n}\n\nint main() {\n    int nums[30005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    singleNumber(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "XOR all numbers to get XOR of the two single numbers.",
+                "Find a bit that differs between the two numbers, then separate them into two groups."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Palindrome Permutation (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a string s, return true if a permutation of the string could form a palindrome and false otherwise.\n",
+            "examples": "Sample Input\ncode\n\nSample Output\nFalse\n\nExplanation: No permutation of \"code\" can form a palindrome.\n\nSample Input\naab\n\nSample Output\nTrue\n\nExplanation: \"aba\" is a palindrome permutation of \"aab\".\n\nSample Input\ncarerac\n\nSample Output\nTrue\n\nExplanation: \"racecar\" is a palindrome permutation of \"carerac\".",
+            "constraints": "1 <= s.length <= 5000\ns consists of only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "code",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "aab",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "carerac",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "zzzz",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def canPermutePalindrome(self, s):\n        # TODO: Return True if permutation can form palindrome, else False\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    result = sol.canPermutePalindrome(s)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean canPermutePalindrome(String s) {\n        // TODO: Return true if permutation can form palindrome, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.canPermutePalindrome(s) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    canPermutePalindrome(s) {\n        // TODO: Return true if permutation can form palindrome, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    const result = sol.canPermutePalindrome(s);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool canPermutePalindrome(string s) {\n        // TODO: Return true if permutation can form palindrome, else false\n        return false;\n    }\n};\n\nint main() {\n    string s;\n    getline(cin, s);\n    Solution sol;\n    cout << (sol.canPermutePalindrome(s) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid canPermutePalindrome(char* s) {\n    // TODO: Print \"True\" if permutation can form palindrome, else \"False\"\n}\n\nint main() {\n    char s[5005];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    canPermutePalindrome(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "A palindrome can have at most one character with odd frequency.",
+                "Use bit manipulation to track character frequencies efficiently."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Missing Number (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.\n",
+            "examples": "Sample Input\n3 0 1\n\nSample Output\n2\n\nExplanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.\n\nSample Input\n0 1\n\nSample Output\n2\n\nExplanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.\n\nSample Input\n9 6 4 2 3 5 7 0 1\n\nSample Output\n8\n\nExplanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.",
+            "constraints": "n == nums.length\n1 <= n <= 10^4\n0 <= nums[i] <= n\nAll the numbers of nums are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "3 0 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5 2 4 6 3 0 1",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "0 2 3 4",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def missingNumber(self, nums):\n        # TODO: Return the missing number in range [0, n]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.missingNumber(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int missingNumber(int[] nums) {\n        // TODO: Return the missing number in range [0, n]\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.missingNumber(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    missingNumber(nums) {\n        // TODO: Return the missing number in range [0, n]\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.missingNumber(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int missingNumber(vector<int>& nums) {\n        // TODO: Return the missing number in range [0, n]\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.missingNumber(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid missingNumber(int* nums, int numsSize) {\n    // TODO: Print the missing number in range [0, n]\n}\n\nint main() {\n    int nums[10005];\n    int numsSize = 0;\n    char line[50000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    missingNumber(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use XOR: XOR all numbers from 0 to n, then XOR with all numbers in nums.",
+                "The missing number will be the result of the XOR operation."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find the Duplicate Number (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.\nThere is only one repeated number in nums, return this repeated number.\nYou must solve the problem without modifying the array nums and using only constant extra space.\n",
+            "examples": "Sample Input\n1 3 4 2 2\n\nSample Output\n2\n\nExplanation: The duplicate number is 2.\n\nSample Input\n3 1 3 4 2\n\nSample Output\n3\n\nExplanation: The duplicate number is 3.\n\nSample Input\n3 3 3 3 3\n\nSample Output\n3\n\nExplanation: The duplicate number is 3.",
+            "constraints": "1 <= n <= 10^5\nnums.length == n + 1\n1 <= nums[i] <= n\nAll the integers in nums appear only once except for precisely one integer which appears two or more times.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 2 3 3 3 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 2 2 3 4",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "3 1 3 4 2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 2 3 4 4 4 5",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 3 4 2 2",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findDuplicate(self, nums):\n        # TODO: Return the duplicate number\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.findDuplicate(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int findDuplicate(int[] nums) {\n        // TODO: Return the duplicate number\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.findDuplicate(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findDuplicate(nums) {\n        // TODO: Return the duplicate number\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.findDuplicate(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findDuplicate(vector<int>& nums) {\n        // TODO: Return the duplicate number\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.findDuplicate(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid findDuplicate(int* nums, int numsSize) {\n    // TODO: Print the duplicate number\n}\n\nint main() {\n    int nums[100005];\n    int numsSize = 0;\n    char line[500000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    findDuplicate(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Floyd's cycle detection algorithm (tortoise and hare).",
+                "Treat the array as a linked list where nums[i] points to nums[nums[i]]."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Maximum Product of Word Lengths (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a string array words, return the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. If no such two words exist, return 0.\n",
+            "examples": "Sample Input\nabcw baz foo bar xtfn abcdef\n\nSample Output\n16\n\nExplanation: The two words can be \"abcw\", \"xtfn\".\n\nSample Input\na ab abc d cd bcd abcd\n\nSample Output\n4\n\nExplanation: The two words can be \"ab\", \"cd\".\n\nSample Input\na aa aaa aaaa\n\nSample Output\n0\n\nExplanation: No such pair of words.",
+            "constraints": "2 <= words.length <= 1000\n1 <= words[i].length <= 1000\nwords[i] consists only of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "a ab abc d cd bcd abcd",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "abcw baz foo bar xtfn abcdef",
+                    "expectedOutput": "16"
+                },
+                {
+                    "input": "a aa aaa aaaa",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "hello world python programming",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "abc def ghi",
+                    "expectedOutput": "9"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxProduct(self, words):\n        # TODO: Return maximum product of word lengths without common letters\n        pass\n\nif __name__ == '__main__':\n    import sys\n    words = sys.stdin.read().strip().split()\n    sol = Solution()\n    print(sol.maxProduct(words))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int maxProduct(String[] words) {\n        // TODO: Return maximum product of word lengths without common letters\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        System.out.println(sol.maxProduct(words));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    maxProduct(words) {\n        // TODO: Return maximum product of word lengths without common letters\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const words = input.trim().split(/\\s+/);\n    const sol = new Solution();\n    console.log(sol.maxProduct(words));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxProduct(vector<string>& words) {\n        // TODO: Return maximum product of word lengths without common letters\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    Solution sol;\n    cout << sol.maxProduct(words) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid maxProduct(char** words, int wordsSize) {\n    // TODO: Print maximum product of word lengths without common letters\n}\n\nint main() {\n    char line[1000000];\n    fgets(line, sizeof(line), stdin);\n    char* words[1005];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        words[wordsSize] = (char*)malloc(strlen(token) + 1);\n        strcpy(words[wordsSize], token);\n        wordsSize++;\n        token = strtok(NULL, \" \\n\");\n    }\n    maxProduct(words, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation to represent each word's character set as a bitmask.",
+                "Two words don't share common letters if their bitmasks have no common set bits (bitwise AND is 0)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Generalized Abbreviation (Bit Manipulation)",
+            "description": "Problem Statement\n\nA word's generalized abbreviation can be constructed by taking any number of non-overlapping and non-adjacent substrings and replacing them with their respective lengths.\n\nFor example, \"abcde\" can be abbreviated into:\n- \"a3e\" (\"bcd\" turned into \"3\")\n- \"1bcd1\" (\"a\" and \"e\" both turned into \"1\")\n- \"5\" (\"abcde\" turned into \"5\")\n- \"abcde\" (no substrings replaced)\n\nHowever, these abbreviations are invalid:\n- \"23\" (\"ab\" turned into \"2\" and \"cde\" turned into \"3\") is invalid as the substrings chosen are adjacent.\n- \"22de\" (\"ab\" turned into \"2\" and \"bc\" turned into \"2\") is invalid as the substring chosen overlap.\n\nGiven a string word, return a list of all the possible generalized abbreviations of word. Return the answer in any order.\n",
+            "examples": "Sample Input\nword\n\nSample Output\n4 3d 2r1 2rd 1o2 1o1d 1or1 1ord w3 w2d w1r1 w1rd wo2 wo1d wor1 word\n\nExplanation: All possible abbreviations of \"word\".\n\nSample Input\na\n\nSample Output\n1 a\n\nExplanation: All possible abbreviations of \"a\".",
+            "constraints": "1 <= word.length <= 15\nword consists of only lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "word",
+                    "expectedOutput": "4 3d 2r1 2rd 1o2 1o1d 1or1 1ord w3 w2d w1r1 w1rd wo2 wo1d wor1 word"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "1 a"
+                },
+                {
+                    "input": "ab",
+                    "expectedOutput": "1b 2 a1 ab"
+                },
+                {
+                    "input": "abc",
+                    "expectedOutput": "1b1 1bc 2c 3 a1c a2 ab1 abc"
+                },
+                {
+                    "input": "abcd",
+                    "expectedOutput": "1b1d 1b2 1bc1 1bcd 2c1 2cd 3d 4 a1c1 a1cd a2d a3 ab1d ab2 abc1 abcd"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def generateAbbreviations(self, word):\n        # TODO: Return all possible generalized abbreviations\n        pass\n\nif __name__ == '__main__':\n    word = input().strip()\n    sol = Solution()\n    result = sol.generateAbbreviations(word)\n    print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> generateAbbreviations(String word) {\n        // TODO: Return all possible generalized abbreviations\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String word = br.readLine().trim();\n        Solution sol = new Solution();\n        List<String> result = sol.generateAbbreviations(word);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    generateAbbreviations(word) {\n        // TODO: Return all possible generalized abbreviations\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const word = input.trim();\n    const sol = new Solution();\n    const result = sol.generateAbbreviations(word);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> generateAbbreviations(string word) {\n        // TODO: Return all possible generalized abbreviations\n        return {};\n    }\n};\n\nint main() {\n    string word;\n    getline(cin, word);\n    Solution sol;\n    vector<string> result = sol.generateAbbreviations(word);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid generateAbbreviations(char* word) {\n    // TODO: Print all possible generalized abbreviations (space-separated)\n}\n\nint main() {\n    char word[20];\n    fgets(word, sizeof(word), stdin);\n    word[strcspn(word, \"\\n\")] = 0;\n    generateAbbreviations(word);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use bit manipulation: each bit position represents whether to abbreviate that character.",
+                "For each bitmask, generate the abbreviation by replacing consecutive 1s with their count."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Counting Bits (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.\n",
+            "examples": "Sample Input\n2\n\nSample Output\n0 1 1\n\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n\nSample Input\n5\n\nSample Output\n0 1 1 2 1 2\n\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n3 --> 11\n4 --> 100\n5 --> 101",
+            "constraints": "0 <= n <= 10^5",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "0 1 1"
+                },
+                {
+                    "input": "5",
+                    "expectedOutput": "0 1 1 2 1 2"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "0 1 1 2 1 2 2 3 1 2 2"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "0 1 1 2 1 2 2 3 1 2 2 3 2 3 3 4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countBits(self, n):\n        # TODO: Return array with count of 1's for each number from 0 to n\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    result = sol.countBits(n)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] countBits(int n) {\n        // TODO: Return array with count of 1's for each number from 0 to n\n        return new int[n + 1];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        int[] result = sol.countBits(n);\n        for (int i = 0; i < result.length; i++) {\n            System.out.print(result[i] + (i == result.length - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countBits(n) {\n        // TODO: Return array with count of 1's for each number from 0 to n\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.countBits(n);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> countBits(int n) {\n        // TODO: Return array with count of 1's for each number from 0 to n\n        return {};\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<int> result = sol.countBits(n);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid countBits(int n) {\n    // TODO: Print array with count of 1's for each number from 0 to n (space-separated)\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    countBits(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming: ans[i] = ans[i >> 1] + (i & 1).",
+                "The number of 1's in i equals the number of 1's in i/2 plus whether the last bit is 1."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Repeated Substring Pattern (String Algorithm)",
+            "description": "Problem Statement\n\nGiven a string s, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.\n\nReturn \"True\" if it can be constructed, else \"False\".\n",
+            "examples": "Sample Input\nabab\n\nSample Output\nTrue\n\nExplanation: It is the substring \"ab\" twice.\n\nSample Input\naba\n\nSample Output\nFalse\n\nExplanation: It cannot be constructed from a repeated substring.\n\nSample Input\nabcabcabcabc\n\nSample Output\nTrue\n\nExplanation: It is the substring \"abc\" four times.",
+            "constraints": "1 <= s.length <= 10^4\ns consists of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "abab",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "aba",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "abcabcabcabc",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "a",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "ababab",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def repeatedSubstringPattern(self, s):\n        # TODO: Return \"True\" or \"False\"\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    print(sol.repeatedSubstringPattern(s))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String repeatedSubstringPattern(String s) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.repeatedSubstringPattern(s));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    repeatedSubstringPattern(s) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.repeatedSubstringPattern(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string repeatedSubstringPattern(string s) {\n        // TODO: Return \"True\" or \"False\"\n        return \"\";\n    }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    Solution sol;\n    cout << sol.repeatedSubstringPattern(s) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nvoid repeatedSubstringPattern(char* s) {\n    // TODO: Print \"True\" or \"False\"\n}\n\nint main() {\n    char s[10005];\n    scanf(\"%s\", s);\n    repeatedSubstringPattern(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Try all possible substring lengths that divide the string length.",
+                "Check if repeating the substring gives the original string."
+            ]
+        }
+    ]
+}
+

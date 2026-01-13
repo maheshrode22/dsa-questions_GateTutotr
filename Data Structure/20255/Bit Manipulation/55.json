@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Score After Flipping Matrix (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an m x n binary matrix grid.\nA move consists of choosing any row or column and toggling each value in that row or column (i.e., changing all 0's to 1's, and all 1's to 0's).\nEvery row of the matrix is interpreted as a binary number, and the score of the matrix is the sum of these numbers.\nReturn the highest possible score after making any number of moves (including zero moves).\n",
+            "examples": "Sample Input\n0 0 1 1\n1 0 1 0\n1 1 0 0\n\nSample Output\n39\n\nExplanation: 0b1111 + 0b1001 + 0b1111 = 15 + 9 + 15 = 39\n\nSample Input\n0\n\nSample Output\n1\n\nExplanation: After toggling, grid becomes [[1]] which is 1 in binary.",
+            "constraints": "m == grid.length\nn == grid[i].length\n1 <= m, n <= 20\ngrid[i][j] is either 0 or 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "0 0 1 1\n1 0 1 0\n1 1 0 0",
+                    "expectedOutput": "39"
+                },
+                {
+                    "input": "1 0 0\n0 1 1\n1 1 0",
+                    "expectedOutput": "19"
+                },
+                {
+                    "input": "0 1 0 1 0\n1 0 1 0 1\n0 0 0 0 0",
+                    "expectedOutput": "83"
+                },
+                {
+                    "input": "1 0 0 1 0\n1 0 1 0 1\n0 0 1 0 0",
+                    "expectedOutput": "78"
+                },
+                {
+                    "input": "1 1 1\n0 0 0\n1 0 1",
+                    "expectedOutput": "19"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def matrixScore(self, grid):\n        # TODO: Return highest possible score\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    grid = []\n    for line in lines:\n        if line.strip():\n            grid.append(list(map(int, line.strip().split())))\n    sol = Solution()\n    print(sol.matrixScore(grid))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int matrixScore(int[][] grid) {\n        // TODO: Return highest possible score\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> gridList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            int[] row = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) {\n                row[i] = Integer.parseInt(parts[i]);\n            }\n            gridList.add(row);\n        }\n        int[][] grid = gridList.toArray(new int[gridList.size()][]);\n        Solution sol = new Solution();\n        System.out.println(sol.matrixScore(grid));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    matrixScore(grid) {\n        // TODO: Return highest possible score\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const grid = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            grid.push(line.trim().split(/\\s+/).map(Number));\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.matrixScore(grid));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int matrixScore(vector<vector<int>>& grid) {\n        // TODO: Return highest possible score\n        return 0;\n    }\n};\n\nint main() {\n    vector<vector<int>> grid;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> row;\n        int num;\n        while (iss >> num) {\n            row.push_back(num);\n        }\n        if (!row.empty()) {\n            grid.push_back(row);\n        }\n    }\n    Solution sol;\n    cout << sol.matrixScore(grid) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid matrixScore(int** grid, int gridSize, int* gridColSize) {\n    // TODO: Print highest possible score\n}\n\nint main() {\n    int grid[20][20];\n    int gridSize = 0;\n    int gridColSize[20];\n    char line[1000];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int row[20];\n        int colSize = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            row[colSize++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (colSize > 0) {\n            for (int i = 0; i < colSize; i++) {\n                grid[gridSize][i] = row[i];\n            }\n            gridColSize[gridSize] = colSize;\n            gridSize++;\n        }\n    }\n    int* gridPtrs[20];\n    for (int i = 0; i < gridSize; i++) {\n        gridPtrs[i] = grid[i];\n    }\n    matrixScore(gridPtrs, gridSize, gridColSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "First, toggle rows so that the leftmost column is all 1's (this maximizes the most significant bit).",
+                "Then, for each column, toggle it if more than half the values are 0's."
+            ]
+        }
+    ]
+}
+

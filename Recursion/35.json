@@ -1,0 +1,63 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Recursive Array Sum",
+      "description": "Write a recursive function to find the sum of all elements in an array.\n\nInput Format:\nThe first line contains N (size of array).\nThe second line contains N space-separated integers.\n\nOutput Format:\nPrint the sum of the array elements.",
+      "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\n15",
+      "constraints": "1 <= N <= 100\n-1000 <= Array Element <= 1000",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "5\n1 2 3 4 5",
+          "expectedOutput": "15"
+        },
+        {
+          "input": "3\n10 20 30",
+          "expectedOutput": "60"
+        },
+        {
+          "input": "1\n100",
+          "expectedOutput": "100"
+        },
+        {
+          "input": "4\n-1 -2 -3 -4",
+          "expectedOutput": "-10"
+        },
+        {
+          "input": "2\n0 0",
+          "expectedOutput": "0"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def arraySum(self, arr, n):\n        # TODO: implement recursive sum\n        pass\n\nif __name__ == '__main__':\n    try:\n        import sys\n        input = sys.stdin.read().split()\n        n = int(input[0])\n        arr = list(map(int, input[1:]))\n        print(Solution().arraySum(arr, n))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public int arraySum(int[] arr, int n) {\n        // TODO: implement recursive sum\n        return 0;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for(int i=0; i<n; i++) arr[i] = sc.nextInt();\n            System.out.println(new Solution().arraySum(arr, n));\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    arraySum(arr, n) {\n        // TODO: implement recursive sum\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const sol = new Solution();\n    console.log(sol.arraySum(arr, n));\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    long long arraySum(vector<int>& arr, int n) {\n        # TODO: implement recursive sum\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for(int i=0; i<n; i++) cin >> arr[i];\n        Solution sol;\n        cout << sol.arraySum(arr, n);\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n\nlong long arraySum(int arr[], int n) {\n    // TODO: implement recursive sum\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[105];\n        for(int i=0; i<n; i++) scanf(\"%d\", &arr[i]);\n        printf(\"%lld\", arraySum(arr, n));\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about the base case and the recursive step."
+      ]
+    }
+  ]
+}

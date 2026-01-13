@@ -1,0 +1,359 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Implement Stack using Two Queues",
+            "description": "Problem Statement\n\nImplement a Stack using two Queues. A Stack follows LIFO (Last In First Out) order, while a Queue follows FIFO (First In First Out) order. Your task is to simulate stack operations using only queue operations.\n\nYou need to implement these operations:\n\n1. Push: Add an element to the stack\n2. Pop: Remove and return the top element from the stack\n3. Top: View the top element without removing it\n4. Display: Show all elements from top to bottom\n\nThis is useful in:\n- Understanding data structure conversions\n- Interview preparation\n- Algorithm design patterns\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations:\n- 1 X : Push element X to the stack\n- 2 : Pop element from the stack\n- 3 : Get top element of the stack\n- 4 : Display all elements from top to bottom\n\nOutput Format\n\nFor operation 1 (Push):\n- Print \"Pushed {X}\"\n\nFor operation 2 (Pop):\n- If stack is empty: Print \"Stack is Empty\"\n- Otherwise: Print \"Popped {X}\"\n\nFor operation 3 (Top):\n- If stack is empty: Print \"Stack is Empty\"\n- Otherwise: Print \"Top element: {X}\"\n\nFor operation 4 (Display):\n- If stack is empty: Print \"Stack is Empty\"\n- Otherwise: Print elements separated by space from top to bottom\n\nExample\n\nInput:\n6\n1 10\n1 20\n1 30\n4\n2\n3\n\nOutput:\nPushed 10\nPushed 20\nPushed 30\n30 20 10\nPopped 30\nTop element: 20",
+            "examples": "Sample Input\n6\n1 10\n1 20\n1 30\n4\n2\n3\n\nSample Output\nPushed 10\nPushed 20\nPushed 30\n30 20 10\nPopped 30\nTop element: 20",
+            "constraints": "1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "6\n1 10\n1 20\n1 30\n4\n2\n3",
+                    "expectedOutput": "Pushed 10\nPushed 20\nPushed 30\n30 20 10\nPopped 30\nTop element: 20",
+                    "problemTitle": "Implement Stack using Two Queues"
+                },
+                {
+                    "input": "3\n2\n1 5\n3",
+                    "expectedOutput": "Stack is Empty\nPushed 5\nTop element: 5",
+                    "problemTitle": "Implement Stack using Two Queues"
+                },
+                {
+                    "input": "7\n1 100\n1 200\n1 300\n2\n2\n2\n2",
+                    "expectedOutput": "Pushed 100\nPushed 200\nPushed 300\nPopped 300\nPopped 200\nPopped 100\nStack is Empty",
+                    "problemTitle": "Implement Stack using Two Queues"
+                },
+                {
+                    "input": "5\n1 7\n1 14\n3\n2\n4",
+                    "expectedOutput": "Pushed 7\nPushed 14\nTop element: 14\nPopped 14\n7",
+                    "problemTitle": "Implement Stack using Two Queues"
+                },
+                {
+                    "input": "4\n1 50\n1 60\n4\n2",
+                    "expectedOutput": "Pushed 50\nPushed 60\n60 50\nPopped 60",
+                    "problemTitle": "Implement Stack using Two Queues"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Stack:\n    def __init__(self):\n        self.q1 = []\n        self.q2 = []\n    \n    def push(self, element):\n        # TODO: Write your code here\n        pass\n    \n    def pop(self):\n        # TODO: Write your code here\n        pass\n    \n    def top(self):\n        # TODO: Write your code here\n        pass\n    \n    def display(self):\n        # TODO: Write your code here\n        pass\n\ndef solve():\n    n = int(input())\n    stack = Stack()\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            stack.push(element)\n            print(f\"Pushed {element}\")\n        elif operation[0] == \"2\":\n            result = stack.pop()\n            if result is None:\n                print(\"Stack is Empty\")\n            else:\n                print(f\"Popped {result}\")\n        elif operation[0] == \"3\":\n            result = stack.top()\n            if result is None:\n                print(\"Stack is Empty\")\n            else:\n                print(f\"Top element: {result}\")\n        elif operation[0] == \"4\":\n            elements = stack.display()\n            if not elements:\n                print(\"Stack is Empty\")\n            else:\n                print(\" \".join(map(str, elements)))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Implement Stack using Two Queues"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Stack {\n    Queue<Integer> q1;\n    Queue<Integer> q2;\n    \n    Stack() {\n        q1 = new LinkedList<>();\n        q2 = new LinkedList<>();\n    }\n    \n    void push(int element) {\n        // TODO: Write your code here\n    }\n    \n    Integer pop() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    Integer top() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    ArrayList<Integer> display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        Stack stack = new Stack();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                stack.push(element);\n                System.out.println(\"Pushed \" + element);\n            } else if (operation[0].equals(\"2\")) {\n                Integer result = stack.pop();\n                if (result == null) {\n                    System.out.println(\"Stack is Empty\");\n                } else {\n                    System.out.println(\"Popped \" + result);\n                }\n            } else if (operation[0].equals(\"3\")) {\n                Integer result = stack.top();\n                if (result == null) {\n                    System.out.println(\"Stack is Empty\");\n                } else {\n                    System.out.println(\"Top element: \" + result);\n                }\n            } else if (operation[0].equals(\"4\")) {\n                ArrayList<Integer> elements = stack.display();\n                if (elements == null || elements.isEmpty()) {\n                    System.out.println(\"Stack is Empty\");\n                } else {\n                    for (int j = 0; j < elements.size(); j++) {\n                        System.out.print(elements.get(j));\n                        if (j < elements.size() - 1) System.out.print(\" \");\n                    }\n                    System.out.println();\n                }\n            }\n        }\n    }\n}",
+                    "problemTitle": "Implement Stack using Two Queues"
+                },
+                {
+                    "language": 3,
+                    "code": "class Stack {\n    constructor() {\n        this.q1 = [];\n        this.q2 = [];\n    }\n    \n    push(element) {\n        // TODO: Write your code here\n    }\n    \n    pop() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    top() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const stack = new Stack();\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            stack.push(element);\n            console.log(`Pushed ${element}`);\n        } else if (operation[0] === \"2\") {\n            const result = stack.pop();\n            if (result === null) {\n                console.log(\"Stack is Empty\");\n            } else {\n                console.log(`Popped ${result}`);\n            }\n        } else if (operation[0] === \"3\") {\n            const result = stack.top();\n            if (result === null) {\n                console.log(\"Stack is Empty\");\n            } else {\n                console.log(`Top element: ${result}`);\n            }\n        } else if (operation[0] === \"4\") {\n            const elements = stack.display();\n            if (elements === null || elements.length === 0) {\n                console.log(\"Stack is Empty\");\n            } else {\n                console.log(elements.join(\" \"));\n            }\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Implement Stack using Two Queues"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Stack {\npublic:\n    queue<int> q1;\n    queue<int> q2;\n    \n    Stack() {}\n    \n    void push(int element) {\n        // TODO: Write your code here\n    }\n    \n    int pop() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    int top() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    vector<int> display() {\n        // TODO: Write your code here\n        return {};\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    Stack stack;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            stack.push(element);\n            cout << \"Pushed \" << element << endl;\n        } else if(operation == 2) {\n            int result = stack.pop();\n            if(result == -1) {\n                cout << \"Stack is Empty\" << endl;\n            } else {\n                cout << \"Popped \" << result << endl;\n            }\n        } else if(operation == 3) {\n            int result = stack.top();\n            if(result == -1) {\n                cout << \"Stack is Empty\" << endl;\n            } else {\n                cout << \"Top element: \" << result << endl;\n            }\n        } else if(operation == 4) {\n            vector<int> elements = stack.display();\n            if(elements.empty()) {\n                cout << \"Stack is Empty\" << endl;\n            } else {\n                for(int j = 0; j < elements.size(); j++) {\n                    cout << elements[j];\n                    if(j < elements.size() - 1) cout << \" \";\n                }\n                cout << endl;\n            }\n        }\n    }\n\n    return 0;\n}",
+                    "problemTitle": "Implement Stack using Two Queues"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\ntypedef struct {\n    int* items;\n    int front;\n    int rear;\n    int size;\n    int capacity;\n} Queue;\n\nvoid initQueue(Queue* q) {\n    q->capacity = 1000;\n    q->items = (int*)malloc(q->capacity * sizeof(int));\n    q->front = 0;\n    q->rear = -1;\n    q->size = 0;\n}\n\ntypedef struct {\n    Queue q1;\n    Queue q2;\n} Stack;\n\nvoid initStack(Stack* stack) {\n    initQueue(&stack->q1);\n    initQueue(&stack->q2);\n}\n\nvoid push(Stack* stack, int element) {\n    // TODO: Write your code here\n}\n\nint pop(Stack* stack) {\n    // TODO: Write your code here\n    return -1;\n}\n\nint top(Stack* stack) {\n    // TODO: Write your code here\n    return -1;\n}\n\nvoid display(Stack* stack) {\n    // TODO: Write your code here\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    Stack stack;\n    initStack(&stack);\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            push(&stack, element);\n            printf(\"Pushed %d\\n\", element);\n        } else if(operation == 2) {\n            int result = pop(&stack);\n            if(result == -1) {\n                printf(\"Stack is Empty\\n\");\n            } else {\n                printf(\"Popped %d\\n\", result);\n            }\n        } else if(operation == 3) {\n            int result = top(&stack);\n            if(result == -1) {\n                printf(\"Stack is Empty\\n\");\n            } else {\n                printf(\"Top element: %d\\n\", result);\n            }\n        } else if(operation == 4) {\n            display(&stack);\n        }\n    }\n    \n    free(stack.q1.items);\n    free(stack.q2.items);\n    return 0;\n}",
+                    "problemTitle": "Implement Stack using Two Queues"
+                }
+            ],
+            "hintsList": [
+                "For push operation: Add element to q1. For pop: Transfer all elements except last from q1 to q2, remove last element, then swap q1 and q2.",
+                "Alternative approach: Always keep the newest element at the front of the queue by reversing the queue after each push operation."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check if Queue Elements are Sortable using Stack",
+            "description": "Problem Statement\n\nYou are given a queue of N integers. Check if it's possible to sort the queue in ascending order using a single auxiliary stack.\n\nThe allowed operations are:\n1. Dequeue an element from the queue\n2. Push it to the stack or directly to the output queue\n3. Pop from stack to the output queue\n\nYou need to determine if you can sort the queue using these operations.\n\nInput Format\n\nThe first line contains an integer N (size of the queue).\nThe second line contains N space-separated integers representing queue elements from front to rear.\n\nOutput Format\n\nPrint YES if the queue can be sorted, otherwise print NO.\n\nExample\n\nInput:\n5\n5 1 2 6 3\nOutput: NO\n\nExplanation: It's not possible to sort this sequence using a single stack.",
+            "examples": "Sample Input 1\n5\n5 1 2 6 3\n\nSample Output 1\nNO\n\nSample Input 2\n5\n5 1 2 3 4\n\nSample Output 2\nYES",
+            "constraints": "1 ≤ N ≤ 1000\n1 ≤ elements ≤ 10^6",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n5 1 2 6 3",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                },
+                {
+                    "input": "5\n5 1 2 3 4",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                },
+                {
+                    "input": "4\n4 3 2 1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                },
+                {
+                    "input": "6\n3 2 1 6 5 4",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def isSortableUsingStack(queue, n):\n    # TODO: Write your code here\n    return \"NO\"\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    queue = list(map(int, input_data[1:]))\n    print(isSortableUsingStack(queue, n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static String isSortableUsingStack(int[] queue, int n) {\n        // TODO: Write your code here\n        return \"NO\";\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] queue = new int[n];\n            for (int i = 0; i < n; i++) queue[i] = sc.nextInt();\n            System.out.print(Result.isSortableUsingStack(queue, n));\n        }\n    }\n}",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                },
+                {
+                    "language": 3,
+                    "code": "function isSortableUsingStack(queue, n) {\n    // TODO: Write your code here\n    return \"NO\";\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const queue = lines.slice(1).map(Number);\n    console.log(isSortableUsingStack(queue, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\nstring isSortableUsingStack(vector<int>& queue, int n) {\n    // TODO: Write your code here\n    return \"NO\";\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> queue(n);\n        for (int i = 0; i < n; i++) cin >> queue[i];\n        cout << isSortableUsingStack(queue, n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n\nconst char* isSortableUsingStack(int queue[], int n) {\n    // TODO: Write your code here\n    return \"NO\";\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int queue[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &queue[i]);\n        printf(\"%s\", isSortableUsingStack(queue, n));\n    }\n    return 0;\n}",
+                    "problemTitle": "Check if Queue Elements are Sortable using Stack"
+                }
+            ],
+            "hintsList": [
+                "Use a stack to temporarily hold elements. We can only push elements to output in ascending order starting from 1.",
+                "Simulate the process: expected value starts from 1. If queue front matches expected, output it. If stack top matches expected, pop it. Otherwise, push queue front to stack. Check if stack top is always >= queue front (decreasing order in stack)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Generate Binary Numbers from 1 to N using Queue",
+            "description": "Problem Statement\n\nGiven a number N, generate binary numbers from 1 to N using a Queue.\n\nThis is a classic problem that demonstrates the use of a queue to generate binary representations efficiently.\n\nThe algorithm:\n1. Start with \"1\" in the queue\n2. For each binary number in queue:\n   - Dequeue and print it\n   - Enqueue number + \"0\"\n   - Enqueue number + \"1\"\n3. Continue until you have generated N binary numbers\n\nInput Format\n\nA single integer N.\n\nOutput Format\n\nPrint N lines, each containing a binary representation from 1 to N.\n\nExample\n\nInput: 5\nOutput:\n1\n10\n11\n100\n101",
+            "examples": "Sample Input\n5\n\nSample Output\n1\n10\n11\n100\n101",
+            "constraints": "1 ≤ N ≤ 10000",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "1\n10\n11\n100\n101",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1\n10\n11",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "1\n10\n11\n100\n101\n110\n111",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "1\n10\n11\n100\n101\n110\n111\n1000\n1001\n1010",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def generateBinaryNumbers(n):\n    # TODO: Write your code here using a queue\n    pass\n\ndef solve():\n    n = int(input())\n    generateBinaryNumbers(n)\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static void generateBinaryNumbers(int n) {\n        // TODO: Write your code here using Queue<String>\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            Result.generateBinaryNumbers(n);\n        }\n    }\n}",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                },
+                {
+                    "language": 3,
+                    "code": "function generateBinaryNumbers(n) {\n    // TODO: Write your code here using an array as queue\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    generateBinaryNumbers(n);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <queue>\n#include <string>\n\nusing namespace std;\n\nvoid generateBinaryNumbers(int n) {\n    // TODO: Write your code here using queue<string>\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        generateBinaryNumbers(n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid generateBinaryNumbers(int n) {\n    // TODO: Write your code here\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        generateBinaryNumbers(n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Generate Binary Numbers from 1 to N using Queue"
+                }
+            ],
+            "hintsList": [
+                "Start with enqueueing \"1\". Then for each dequeued number, print it and enqueue number+\"0\" and number+\"1\".",
+                "This approach works because appending '0' and '1' to a binary number generates the next two binary numbers in sequence."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Sort Queue using Recursion",
+            "description": "Problem Statement\n\nGiven a queue of N integers, sort the queue in ascending order using recursion without using any loop.\n\nYou are only allowed to use:\n- Enqueue operation\n- Dequeue operation\n- Recursion\n- A helper function to insert element in sorted order\n\nInput Format\n\nThe first line contains an integer N (size of the queue).\nThe second line contains N space-separated integers representing queue elements from front to rear.\n\nOutput Format\n\nPrint the sorted queue elements separated by space from front to rear.\n\nExample\n\nInput:\n5\n30 10 50 20 40\n\nOutput:\n10 20 30 40 50",
+            "examples": "Sample Input\n5\n30 10 50 20 40\n\nSample Output\n10 20 30 40 50",
+            "constraints": "1 ≤ N ≤ 1000\n-10^6 ≤ elements ≤ 10^6",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n30 10 50 20 40",
+                    "expectedOutput": "10 20 30 40 50",
+                    "problemTitle": "Sort Queue using Recursion"
+                },
+                {
+                    "input": "4\n4 3 2 1",
+                    "expectedOutput": "1 2 3 4",
+                    "problemTitle": "Sort Queue using Recursion"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "10",
+                    "problemTitle": "Sort Queue using Recursion"
+                },
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "1 2 3 4 5",
+                    "problemTitle": "Sort Queue using Recursion"
+                },
+                {
+                    "input": "6\n-5 10 -3 0 7 2",
+                    "expectedOutput": "-5 -3 0 2 7 10",
+                    "problemTitle": "Sort Queue using Recursion"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def sortQueue(queue):\n    # TODO: Write your code here using recursion\n    return queue\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    queue = list(map(int, input_data[1:]))\n    sorted_queue = sortQueue(queue)\n    print(\" \".join(map(str, sorted_queue)))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Sort Queue using Recursion"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static Queue<Integer> sortQueue(Queue<Integer> queue) {\n        // TODO: Write your code here using recursion\n        return queue;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            Queue<Integer> queue = new LinkedList<>();\n            for (int i = 0; i < n; i++) queue.add(sc.nextInt());\n            Queue<Integer> sorted = Result.sortQueue(queue);\n            while (!sorted.isEmpty()) {\n                System.out.print(sorted.poll());\n                if (!sorted.isEmpty()) System.out.print(\" \");\n            }\n        }\n    }\n}",
+                    "problemTitle": "Sort Queue using Recursion"
+                },
+                {
+                    "language": 3,
+                    "code": "function sortQueue(queue) {\n    // TODO: Write your code here using recursion\n    return queue;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const queue = lines.slice(1).map(Number);\n    const sorted = sortQueue(queue);\n    console.log(sorted.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Sort Queue using Recursion"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <queue>\n#include <vector>\n\nusing namespace std;\n\nqueue<int> sortQueue(queue<int> q) {\n    // TODO: Write your code here using recursion\n    return q;\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        queue<int> q;\n        for (int i = 0; i < n; i++) {\n            int x; cin >> x;\n            q.push(x);\n        }\n        queue<int> sorted_q = sortQueue(q);\n        while (!sorted_q.empty()) {\n            cout << sorted_q.front();\n            sorted_q.pop();\n            if (!sorted_q.empty()) cout << \" \";\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Sort Queue using Recursion"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid sortQueue(int queue[], int n) {\n    // TODO: Write your code here using recursion \n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int queue[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &queue[i]);\n        sortQueue(queue, n);\n        for (int i = 0; i < n; i++) {\n            printf(\"%d\", queue[i]);\n            if (i < n - 1) printf(\" \");\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Sort Queue using Recursion"
+                }
+            ],
+            "hintsList": [
+                "Base case: If queue is empty, return. Recursive case: Dequeue front element, recursively sort remaining queue, then insert dequeued element in sorted position.",
+                "Create a helper function insertInSortedOrder that takes a queue and an element, and inserts the element maintaining sorted order."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find First Non-Repeating Character in Stream using Queue",
+            "description": "Problem Statement\n\nGiven a stream of characters, find the first non-repeating character at each step. If all characters are repeating, print -1.\n\nYou need to use a Queue to efficiently track the first non-repeating character as new characters arrive in the stream.\n\nInput Format\n\nThe first line contains an integer N (length of the stream).\nThe second line contains N space-separated characters.\n\nOutput Format\n\nPrint N characters/values, each representing the first non-repeating character after processing each element in the stream. If all are repeating, print -1.\n\nExample\n\nInput:\n5\na a b c b\n\nOutput:\na -1 b b c\n\nExplanation:\n- After 'a': First non-repeating is 'a'\n- After 'a','a': All repeating, so -1\n- After 'a','a','b': First non-repeating is 'b' \n- After 'a','a','b','c': First non-repeating is 'b'\n- After 'a','a','b','c','b': First non-repeating is 'c'",
+            "examples": "Sample Input\n5\na a b c b\n\nSample Output\na -1 b b c",
+            "constraints": "1 ≤ N ≤ 10^5\nCharacters are lowercase English letters",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\na a b c b",
+                    "expectedOutput": "a -1 b b c",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                },
+                {
+                    "input": "6\na b c a b c",
+                    "expectedOutput": "a a a b c -1",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                },
+                {
+                    "input": "4\na b c d",
+                    "expectedOutput": "a a a a",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                },
+                {
+                    "input": "3\na a a",
+                    "expectedOutput": "a -1 -1",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                },
+                {
+                    "input": "7\nx y z x y z w",
+                    "expectedOutput": "x x x y z w w",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def firstNonRepeating(stream, n):\n    # TODO: Write your code here using queue and frequency map\n    return []\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    stream = input_data[1:]\n    result = firstNonRepeating(stream, n)\n    print(\" \".join(map(str, result)))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static List<String> firstNonRepeating(String[] stream, int n) {\n        // TODO: Write your code here using Queue and HashMap\n        return new ArrayList<>();\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            String[] stream = new String[n];\n            for (int i = 0; i < n; i++) stream[i] = sc.next();\n            List<String> result = Result.firstNonRepeating(stream, n);\n            for (int i = 0; i < result.size(); i++) {\n                System.out.print(result.get(i));\n                if (i < result.size() - 1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                },
+                {
+                    "language": 3,
+                    "code": "function firstNonRepeating(stream, n) {\n    // TODO: Write your code here using queue and frequency object\n    return [];\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const stream = lines.slice(1);\n    const result = firstNonRepeating(stream, n);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <queue>\n#include <unordered_map>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\nvector<string> firstNonRepeating(vector<string>& stream, int n) {\n    // TODO: Write your code here using queue and unordered_map\n    return {};\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<string> stream(n);\n        for (int i = 0; i < n; i++) cin >> stream[i];\n        vector<string> result = firstNonRepeating(stream, n);\n        for (int i = 0; i < result.size(); i++) {\n            cout << result[i];\n            if (i < result.size() - 1) cout << \" \";\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid firstNonRepeating(char stream[][10], int n) {\n    // TODO: Write your code here\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        char stream[n][10];\n        for (int i = 0; i < n; i++) scanf(\"%s\", stream[i]);\n        firstNonRepeating(stream, n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find First Non-Repeating Character in Stream using Queue"
+                }
+            ],
+            "hintsList": [
+                "Use a queue to maintain the order of characters and a frequency map to count occurrences. After processing each character, update frequency and remove repeating characters from queue front.",
+                "For each character: 1) Increment its frequency 2) Add to queue 3) Remove all repeating characters from queue front 4) Print queue front (or -1 if empty)."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Substring With Concatenation Of All Words (Sliding Window)",
+      "description": "You are given a string s and an array of strings words. All the strings of words are of the same length.\nA concatenated string is a string that exactly contains all the strings of any permutation of words concatenated.\n\nReturn an array of the starting indices of all the concatenated substrings in s. You can return the answer in any order.\n\nInput Format:\nFirst line: string s.\nSecond line: integer m (number of words).\nThird line: m space-separated strings (words).\n\nOutput Format:\nPrint the starting indices on a single line, separated by spaces.",
+      "examples": "Sample Input\nbarfoothefoobarman\n2\nfoo bar\n\nSample Output\n0 9\n\nExplanation:\nThe substring starting at 0 is \"barfoo\". It is the concatenation of [\"bar\",\"foo\"].\nThe substring starting at 9 is \"foobar\". It is the concatenation of [\"foo\",\"bar\"].",
+      "constraints": "1 <= s.length <= 10^4\n1 <= words.length <= 5000\n1 <= words[i].length <= 30\ns and words[i] consist of lowercase English letters.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 3,
+      "testCases": [
+        {
+          "input": "barfoothefoobarman\n2\nfoo bar",
+          "expectedOutput": "0 9"
+        },
+        {
+          "input": "wordgoodgoodgoodbestword\n4\nword good best word",
+          "expectedOutput": ""
+        },
+        {
+          "input": "barfoofoobarthefoobarman\n3\nbar foo the",
+          "expectedOutput": "6 9 12"
+        },
+        {
+          "input": "wordgoodgoodgoodbestword\n4\nword good best good",
+          "expectedOutput": "8"
+        },
+        {
+          "input": "lingmindraboofooowingdingbarrwingmonkeypoundcake\n5\nfooo barw wing ding wing",
+          "expectedOutput": ""
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def findSubstring(self, s, words):\n        # TODO: Return the starting indices of all the concatenated substrings\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    m = int(input().strip())\n    words = input().strip().split()\n    sol = Solution()\n    res = sol.findSubstring(s, words)\n    print(' '.join(map(str, res)))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public List<Integer> findSubstring(String s, String[] words) {\n        // TODO: Return the starting indices of all the concatenated substrings\n        return null;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.nextLine().strip();\n        int m = Integer.parseInt(sc.nextLine().strip());\n        String[] words = sc.nextLine().strip().split(\"\\\\s+\");\n        Solution sol = new Solution();\n        List<Integer> res = sol.findSubstring(s, words);\n        for (int i = 0; i < res.size(); i++) System.out.print(res.get(i) + (i == res.size() - 1 ? \"\" : \" \"));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    findSubstring(s, words) {\n        // TODO: Return the starting indices of all the concatenated substrings\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const s = lines[0].trim();\n    const m = parseInt(lines[1].trim());\n    const words = lines[2].trim().split(/\\s+/);\n    const sol = new Solution();\n    const res = sol.findSubstring(s, words);\n    console.log(res.join(' '));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> findSubstring(string s, vector<string>& words) {\n        // TODO: Return the starting indices of all the concatenated substrings\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    string s;\n    int m;\n    cin >> s >> m;\n    vector<string> words(m);\n    for(int i=0; i<m; ++i) cin >> words[i];\n    Solution sol;\n    vector<int> res = sol.findSubstring(s, words);\n    for(int i=0; i<res.size(); ++i) cout << res[i] << (i == res.size()-1 ? \"\" : \" \");\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char s[10001];\n    int m;\n    scanf(\"%s %d\", s, &m);\n    // TODO: Return the starting indices of all the concatenated substrings\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

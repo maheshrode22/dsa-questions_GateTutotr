@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Max Consecutive Ones III (Sliding Window)",
+      "description": "Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's.\n\nInput Format:\nFirst line: two integers n and k.\nSecond line: n space-separated integers (0s and 1s).\n\nOutput Format:\nPrint a single integer: the maximum number of consecutive 1s.",
+      "examples": "Sample Input\n11 2\n1 1 1 0 0 0 1 1 1 1 0\n\nSample Output\n6",
+      "constraints": "See problem description.",
+      "hints": 2,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 2033,
+      "difficulty": 2,
+      "testCases": [
+        {
+          "input": "11 2\n1 1 1 0 0 0 1 1 1 1 0",
+          "expectedOutput": "6"
+        },
+        {
+          "input": "19 3\n0 0 1 1 0 0 1 1 1 0 1 1 0 0 0 1 1 1 1",
+          "expectedOutput": "10"
+        },
+        {
+          "input": "5 0\n1 1 0 1 1",
+          "expectedOutput": "2"
+        },
+        {
+          "input": "5 5\n0 0 0 0 0",
+          "expectedOutput": "5"
+        },
+        {
+          "input": "10 2\n1 0 1 0 1 0 1 0 1 0",
+          "expectedOutput": "5"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def longestOnes(self, nums, k):\n        # TODO: Return the maximum number of consecutive 1's if you can flip at most k 0's\n        pass\n\nif __name__ == '__main__':\n    n, k = map(int, input().split())\n    nums = list(map(int, input().split()))\n    sol = Solution()\n    print(sol.longestOnes(nums, k))"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\nimport java.io.*;\n\nclass Solution {\n    public int longestOnes(int[] nums, int k) {\n        // TODO: Return the maximum number of consecutive 1's if you can flip at most k 0's\n        return 0;\n    }\n\n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int k = sc.nextInt();\n        int[] nums = new int[n];\n        for(int i=0; i<n; i++) nums[i] = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.longestOnes(nums, k));\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    longestOnes(nums, k) {\n        // TODO: Return the maximum number of consecutive 1's if you can flip at most k 0's\n        return null;\n    }\n}\n\nfunction main() {\n    const fs = require('fs');\n    const lines = fs.readFileSync(0, 'utf-8').trim().split('\\n');\n    const [n, k] = lines[0].trim().split(/\\s+/).map(Number);\n    const nums = lines[1].trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.longestOnes(nums, k));\n}\n\nmain();"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <unordered_map>\n#include <map>\n#include <set>\n#include <queue>\n\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestOnes(vector<int>& nums, int k) {\n        // TODO: Return the maximum number of consecutive 1's if you can flip at most k 0's\n        return {};\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n, k;\n    cin >> n >> k;\n    vector<int> nums(n);\n    for(int i=0; i<n; i++) cin >> nums[i];\n    Solution sol;\n    cout << sol.longestOnes(nums, k) << endl;\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    int *nums = (int*)malloc(n * sizeof(int));\n    for(int i=0; i<n; i++) scanf(\"%d\", &nums[i]);\n    // TODO: Return the maximum number of consecutive 1's if you can flip at most k 0's\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about how to use a sliding window to optimize the solution.",
+        "Consider using a frequency map or two pointers to track the window state."
+      ]
+    }
+  ]
+}

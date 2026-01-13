@@ -1,0 +1,359 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Implement Queue using Two Stacks",
+            "description": "Problem Statement\n\nImplement a Queue using two Stacks. A Queue follows FIFO (First In First Out) order, while a Stack follows LIFO (Last In First Out) order. Your task is to simulate queue operations using only stack operations.\n\nYou need to implement these operations:\n\n1. Enqueue: Add an element to the queue\n2. Dequeue: Remove and return the front element from the queue\n3. Front: View the front element without removing it\n4. Display: Show all elements from front to rear\n\nThis is useful in:\n- Understanding data structure conversions\n- Interview preparation\n- Algorithm design patterns\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations:\n- 1 X : Enqueue element X to the queue\n- 2 : Dequeue element from the queue\n- 3 : Get front element of the queue\n- 4 : Display all elements from front to rear\n\nOutput Format\n\nFor operation 1 (Enqueue):\n- Print \"Enqueued {X}\"\n\nFor operation 2 (Dequeue):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Dequeued {X}\"\n\nFor operation 3 (Front):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print \"Front element: {X}\"\n\nFor operation 4 (Display):\n- If queue is empty: Print \"Queue is Empty\"\n- Otherwise: Print elements separated by space from front to rear\n\nExample\n\nInput:\n6\n1 10\n1 20\n1 30\n4\n2\n3\n\nOutput:\nEnqueued 10\nEnqueued 20\nEnqueued 30\n10 20 30\nDequeued 10\nFront element: 20",
+            "examples": "Sample Input\n6\n1 10\n1 20\n1 30\n4\n2\n3\n\nSample Output\nEnqueued 10\nEnqueued 20\nEnqueued 30\n10 20 30\nDequeued 10\nFront element: 20",
+            "constraints": "1 ≤ N ≤ 1000\n1 ≤ X ≤ 10^6",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "6\n1 10\n1 20\n1 30\n4\n2\n3",
+                    "expectedOutput": "Enqueued 10\nEnqueued 20\nEnqueued 30\n10 20 30\nDequeued 10\nFront element: 20",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                },
+                {
+                    "input": "3\n2\n1 5\n3",
+                    "expectedOutput": "Queue is Empty\nEnqueued 5\nFront element: 5",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                },
+                {
+                    "input": "7\n1 100\n1 200\n1 300\n2\n2\n2\n2",
+                    "expectedOutput": "Enqueued 100\nEnqueued 200\nEnqueued 300\nDequeued 100\nDequeued 200\nDequeued 300\nQueue is Empty",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                },
+                {
+                    "input": "5\n1 7\n1 14\n3\n2\n4",
+                    "expectedOutput": "Enqueued 7\nEnqueued 14\nFront element: 7\nDequeued 7\n14",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                },
+                {
+                    "input": "4\n1 50\n1 60\n4\n2",
+                    "expectedOutput": "Enqueued 50\nEnqueued 60\n50 60\nDequeued 50",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Queue:\n    def __init__(self):\n        self.s1 = []\n        self.s2 = []\n    \n    def enqueue(self, element):\n        # TODO: Write your code here\n        pass\n    \n    def dequeue(self):\n        # TODO: Write your code here\n        pass\n    \n    def front(self):\n        # TODO: Write your code here\n        pass\n    \n    def display(self):\n        # TODO: Write your code here\n        pass\n\ndef solve():\n    n = int(input())\n    queue = Queue()\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            queue.enqueue(element)\n            print(f\"Enqueued {element}\")\n        elif operation[0] == \"2\":\n            result = queue.dequeue()\n            if result is None:\n                print(\"Queue is Empty\")\n            else:\n                print(f\"Dequeued {result}\")\n        elif operation[0] == \"3\":\n            result = queue.front()\n            if result is None:\n                print(\"Queue is Empty\")\n            else:\n                print(f\"Front element: {result}\")\n        elif operation[0] == \"4\":\n            elements = queue.display()\n            if not elements:\n                print(\"Queue is Empty\")\n            else:\n                print(\" \".join(map(str, elements)))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Queue {\n    Stack<Integer> s1;\n    Stack<Integer> s2;\n    \n    Queue() {\n        s1 = new Stack<>();\n        s2 = new Stack<>();\n    }\n    \n    void enqueue(int element) {\n        // TODO: Write your code here\n    }\n    \n    Integer dequeue() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    Integer front() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    ArrayList<Integer> display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        Queue queue = new Queue();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                queue.enqueue(element);\n                System.out.println(\"Enqueued \" + element);\n            } else if (operation[0].equals(\"2\")) {\n                Integer result = queue.dequeue();\n                if (result == null) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    System.out.println(\"Dequeued \" + result);\n                }\n            } else if (operation[0].equals(\"3\")) {\n                Integer result = queue.front();\n                if (result == null) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    System.out.println(\"Front element: \" + result);\n                }\n            } else if (operation[0].equals(\"4\")) {\n                ArrayList<Integer> elements = queue.display();\n                if (elements == null || elements.isEmpty()) {\n                    System.out.println(\"Queue is Empty\");\n                } else {\n                    for (int j = 0; j < elements.size(); j++) {\n                        System.out.print(elements.get(j));\n                        if (j < elements.size() - 1) System.out.print(\" \");\n                    }\n                    System.out.println();\n                }\n            }\n        }\n    }\n}",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                },
+                {
+                    "language": 3,
+                    "code": "class Queue {\n    constructor() {\n        this.s1 = [];\n        this.s2 = [];\n    }\n    \n    enqueue(element) {\n        // TODO: Write your code here\n    }\n    \n    dequeue() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    front() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    display() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const queue = new Queue();\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            queue.enqueue(element);\n            console.log(`Enqueued ${element}`);\n        } else if (operation[0] === \"2\") {\n            const result = queue.dequeue();\n            if (result === null) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(`Dequeued ${result}`);\n            }\n        } else if (operation[0] === \"3\") {\n            const result = queue.front();\n            if (result === null) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(`Front element: ${result}`);\n            }\n        } else if (operation[0] === \"4\") {\n            const elements = queue.display();\n            if (elements === null || elements.length === 0) {\n                console.log(\"Queue is Empty\");\n            } else {\n                console.log(elements.join(\" \"));\n            }\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Queue {\npublic:\n    stack<int> s1;\n    stack<int> s2;\n    \n    Queue() {}\n    \n    void enqueue(int element) {\n        // TODO: Write your code here\n    }\n    \n    int dequeue() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    int front() {\n        // TODO: Write your code here\n        return -1;\n    }\n    \n    vector<int> display() {\n        // TODO: Write your code here\n        return {};\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    Queue queue;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            queue.enqueue(element);\n            cout << \"Enqueued \" << element << endl;\n        } else if(operation == 2) {\n            int result = queue.dequeue();\n            if(result == -1) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                cout << \"Dequeued \" << result << endl;\n            }\n        } else if(operation == 3) {\n            int result = queue.front();\n            if(result == -1) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                cout << \"Front element: \" << result << endl;\n            }\n        } else if(operation == 4) {\n            vector<int> elements = queue.display();\n            if(elements.empty()) {\n                cout << \"Queue is Empty\" << endl;\n            } else {\n                for(int j = 0; j < elements.size(); j++) {\n                    cout << elements[j];\n                    if(j < elements.size() - 1) cout << \" \";\n                }\n                cout << endl;\n            }\n        }\n    }\n\n    return 0;\n}",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\ntypedef struct {\n    int* items;\n    int top;\n    int capacity;\n} Stack;\n\nvoid initStack(Stack* s) {\n    s->capacity = 1000;\n    s->items = (int*)malloc(s->capacity * sizeof(int));\n    s->top = -1;\n}\n\ntypedef struct {\n    Stack s1;\n    Stack s2;\n} Queue;\n\nvoid initQueue(Queue* queue) {\n    initStack(&queue->s1);\n    initStack(&queue->s2);\n}\n\nvoid enqueue(Queue* queue, int element) {\n    // TODO: Write your code here\n}\n\nint dequeue(Queue* queue) {\n    // TODO: Write your code here\n    return -1;\n}\n\nint front(Queue* queue) {\n    // TODO: Write your code here\n    return -1;\n}\n\nvoid display(Queue* queue) {\n    // TODO: Write your code here\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    Queue queue;\n    initQueue(&queue);\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            enqueue(&queue, element);\n            printf(\"Enqueued %d\\n\", element);\n        } else if(operation == 2) {\n            int result = dequeue(&queue);\n            if(result == -1) {\n                printf(\"Queue is Empty\\n\");\n            } else {\n                printf(\"Dequeued %d\\n\", result);\n            }\n        } else if(operation == 3) {\n            int result = front(&queue);\n            if(result == -1) {\n                printf(\"Queue is Empty\\n\");\n            } else {\n                printf(\"Front element: %d\\n\", result);\n            }\n        } else if(operation == 4) {\n            display(&queue);\n        }\n    }\n    \n    free(queue.s1.items);\n    free(queue.s2.items);\n    return 0;\n}",
+                    "problemTitle": "Implement Queue using Two Stacks"
+                }
+            ],
+            "hintsList": [
+                "For enqueue: Always push to s1. For dequeue: If s2 is empty, transfer all from s1 to s2, then pop from s2.",
+                "This ensures FIFO order: s1 holds new elements, s2 holds elements in reverse order ready to be dequeued."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check for Balanced Parentheses using Stack",
+            "description": "Problem Statement\n\nGiven a string containing only parentheses characters '(', ')', '{', '}', '[', and ']', determine if the input string is valid. A string is valid if:\n1. Open brackets must be closed by the same type of brackets\n2. Open brackets must be closed in the correct order\n3. Every close bracket has a corresponding open bracket of the same type\n\nInput Format\n\nThe first line contains a string of parentheses.\n\nOutput Format\n\nPrint YES if the string is balanced, otherwise print NO.\n\nExample\n\nInput: ({[]})\nOutput: YES\n\nInput: ({[})\nOutput: NO",
+            "examples": "Sample Input 1\n({[]})\n\nSample Output 1\nYES\n\nSample Input 2\n({[})\n\nSample Output 2\nNO",
+            "constraints": "1 ≤ String length ≤ 10^5\nString contains only (){}[]",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "({[]})",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                },
+                {
+                    "input": "({[})",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                },
+                {
+                    "input": "()",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                },
+                {
+                    "input": "((",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                },
+                {
+                    "input": "{[()()]}",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def isBalanced(s):\n    # TODO: Write your code here using stack\n    return \"NO\"\n\ndef solve():\n    s = input().strip()\n    print(isBalanced(s))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static String isBalanced(String s) {\n        // TODO: Write your code here using Stack\n        return \"NO\";\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine().trim();\n            System.out.print(Result.isBalanced(s));\n        }\n    }\n}",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                },
+                {
+                    "language": 3,
+                    "code": "function isBalanced(s) {\n    // TODO: Write your code here using array as stack\n    return \"NO\";\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    console.log(isBalanced(s));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <stack>\n#include <string>\n\nusing namespace std;\n\nstring isBalanced(string s) {\n    // TODO: Write your code here using stack<char>\n    return \"NO\";\n}\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        cout << isBalanced(s);\n    }\n    return 0;\n}",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdbool.h>\n\nconst char* isBalanced(char* s) {\n    // TODO: Write your code here\n    return \"NO\";\n}\n\nint main() {\n    char s[100001];\n    if (scanf(\"%s\", s) == 1) {\n        printf(\"%s\", isBalanced(s));\n    }\n    return 0;\n}",
+                    "problemTitle": "Check for Balanced Parentheses using Stack"
+                }
+            ],
+            "hintsList": [
+                "Use a stack. For each opening bracket, push it. For each closing bracket, check if it matches the top of stack.",
+                "Create a matching map: ')' matches '(', '}' matches '{', ']' matches '['. Pop and compare when you encounter a closing bracket."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Next Greater Element using Stack",
+            "description": "Problem Statement\n\nGiven an array of N integers, for each element, find the next greater element to its right. If no greater element exists, print -1.\n\nThe next greater element for an element X is the first element to the right of X that is greater than X.\n\nInput Format\n\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\n\nPrint N space-separated integers representing the next greater element for each element. Print -1 if no greater element exists.\n\nExample\n\nInput:\n4\n4 5 2 10\n\nOutput:\n5 10 10 -1\n\nExplanation:\n- For 4, next greater is 5\n- For 5, next greater is 10\n- For 2, next greater is 10\n- For 10, no greater element exists, so -1",
+            "examples": "Sample Input\n4\n4 5 2 10\n\nSample Output\n5 10 10 -1",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "4\n4 5 2 10",
+                    "expectedOutput": "5 10 10 -1",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                },
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "2 3 4 5 -1",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                },
+                {
+                    "input": "5\n5 4 3 2 1",
+                    "expectedOutput": "-1 -1 -1 -1 -1",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                },
+                {
+                    "input": "6\n6 2 5 4 1 7",
+                    "expectedOutput": "7 5 7 7 7 -1",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def findNextGreater(arr, n):\n    # TODO: Write your code here using stack\n    return [-1] * n\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    result = findNextGreater(arr, n)\n    print(\" \".join(map(str, result)))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static int[] findNextGreater(int[] arr, int n) {\n        // TODO: Write your code here using Stack\n        return new int[n];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n            int[] result = Result.findNextGreater(arr, n);\n            for (int i = 0; i < n; i++) {\n                System.out.print(result[i]);\n                if (i < n - 1) System.out.print(\" \");\n            }\n        }\n    }\n}",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                },
+                {
+                    "language": 3,
+                    "code": "function findNextGreater(arr, n) {\n    // TODO: Write your code here using array as stack\n    return new Array(n).fill(-1);\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const result = findNextGreater(arr, n);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <stack>\n\nusing namespace std;\n\nvector<int> findNextGreater(vector<int>& arr, int n) {\n    // TODO: Write your code here using stack<int>\n    return vector<int>(n, -1);\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        vector<int> result = findNextGreater(arr, n);\n        for (int i = 0; i < n; i++) {\n            cout << result[i];\n            if (i < n - 1) cout << \" \";\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid findNextGreater(int arr[], int n, int result[]) {\n    // TODO: Write your code here\n    for (int i = 0; i < n; i++) result[i] = -1;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int arr[n], result[n];\n        for (int i = 0; i < n; i++) scanf(\"%d\", &arr[i]);\n        findNextGreater(arr, n, result);\n        for (int i = 0; i < n; i++) {\n            printf(\"%d\", result[i]);\n            if (i < n - 1) printf(\" \");\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Find Next Greater Element using Stack"
+                }
+            ],
+            "hintsList": [
+                "Traverse the array from right to left. Use a stack to maintain elements in decreasing order.",
+                "For each element, pop all smaller elements from stack. The top of stack (if exists) is the next greater element. Then push current element to stack."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Evaluate Postfix Expression using Stack",
+            "description": "Problem Statement\n\nGiven a postfix expression, evaluate it using a stack.\n\nPostfix notation (also known as Reverse Polish Notation) is a mathematical notation where operators follow their operands. For example:\n- Infix: (2 + 3) * 4\n- Postfix: 2 3 + 4 *\n\nSupported operators: +, -, *, /\n\nInput Format\n\nThe first line contains a string representing the postfix expression with space-separated tokens.\n\nOutput Format\n\nPrint the result of the evaluation (integer division for /).\n\nExample\n\nInput: 2 3 + 4 *\nOutput: 20\n\nExplanation: (2 + 3) * 4 = 5 * 4 = 20",
+            "examples": "Sample Input 1\n2 3 + 4 *\n\nSample Output 1\n20\n\nSample Input 2\n5 1 2 + 4 * + 3 -\n\nSample Output 2\n14",
+            "constraints": "1 ≤ Expression length ≤ 1000\nOperands are integers\n-10^9 ≤ Operands ≤ 10^9",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "2 3 + 4 *",
+                    "expectedOutput": "20",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                },
+                {
+                    "input": "5 1 2 + 4 * + 3 -",
+                    "expectedOutput": "14",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                },
+                {
+                    "input": "10 2 /",
+                    "expectedOutput": "5",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                },
+                {
+                    "input": "3 4 + 2 * 7 /",
+                    "expectedOutput": "2",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                },
+                {
+                    "input": "15 7 1 1 + - / 3 * 2 1 1 + + -",
+                    "expectedOutput": "5",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def evaluatePostfix(expression):\n    # TODO: Write your code here using stack\n    return 0\n\ndef solve():\n    expression = input().strip()\n    print(evaluatePostfix(expression))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static int evaluatePostfix(String expression) {\n        // TODO: Write your code here using Stack<Integer>\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String expression = sc.nextLine().trim();\n            System.out.print(Result.evaluatePostfix(expression));\n        }\n    }\n}",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                },
+                {
+                    "language": 3,
+                    "code": "function evaluatePostfix(expression) {\n    // TODO: Write your code here using array as stack\n    return 0;\n}\n\nfunction solve(input) {\n    const expression = input.trim();\n    console.log(evaluatePostfix(expression));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <stack>\n#include <string>\n#include <sstream>\n\nusing namespace std;\n\nint evaluatePostfix(string expression) {\n    // TODO: Write your code here using stack<int>\n    return 0;\n}\n\nint main() {\n    string expression;\n    if (getline(cin, expression)) {\n        cout << evaluatePostfix(expression);\n    }\n    return 0;\n}",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n\nint evaluatePostfix(char* expression) {\n    // TODO: Write your code here\n    return 0;\n}\n\nint main() {\n    char expression[1001];\n    if (fgets(expression, sizeof(expression), stdin)) {\n        expression[strcspn(expression, \"\\n\")] = 0;\n        printf(\"%d\", evaluatePostfix(expression));\n    }\n    return 0;\n}",
+                    "problemTitle": "Evaluate Postfix Expression using Stack"
+                }
+            ],
+            "hintsList": [
+                "Scan the expression from left to right. If operand, push to stack. If operator, pop two operands, apply operator, push result back.",
+                "For operators: pop b, then pop a, compute a operator b, push result. Be careful with order for subtraction and division."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Implement Min Stack",
+            "description": "Problem Statement\n\nDesign a stack that supports push, pop, top, and retrieving the minimum element in constant time.\n\nImplement the MinStack class:\n- Push: Add an element to the stack\n- Pop: Remove the top element from the stack\n- Top: Get the top element\n- GetMin: Retrieve the minimum element in the stack in O(1) time\n\nInput Format\n\nThe first line contains an integer N (number of operations).\nNext N lines contain operations:\n- 1 X : Push element X to the stack\n- 2 : Pop element from the stack\n- 3 : Get top element of the stack\n- 4 : Get minimum element in the stack\n\nOutput Format\n\nFor operation 1 (Push):\n- Print \"Pushed {X}\"\n\nFor operation 2 (Pop):\n- If stack is empty: Print \"Stack is Empty\"\n- Otherwise: Print \"Popped {X}\"\n\nFor operation 3 (Top):\n- If stack is empty: Print \"Stack is Empty\"\n- Otherwise: Print \"Top element: {X}\"\n\nFor operation 4 (GetMin):\n- If stack is empty: Print \"Stack is Empty\"\n- Otherwise: Print \"Minimum element: {X}\"\n\nExample\n\nInput:\n7\n1 5\n1 3\n1 7\n4\n2\n4\n3\n\nOutput:\nPushed 5\nPushed 3\nPushed 7\nMinimum element: 3\nPopped 7\nMinimum element: 3\nTop element: 3",
+            "examples": "Sample Input\n7\n1 5\n1 3\n1 7\n4\n2\n4\n3\n\nSample Output\nPushed 5\nPushed 3\nPushed 7\nMinimum element: 3\nPopped 7\nMinimum element: 3\nTop element: 3",
+            "constraints": "1 ≤ N ≤ 1000\n-10^9 ≤ X ≤ 10^9",
+            "hints": 2,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2022,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "7\n1 5\n1 3\n1 7\n4\n2\n4\n3",
+                    "expectedOutput": "Pushed 5\nPushed 3\nPushed 7\nMinimum element: 3\nPopped 7\nMinimum element: 3\nTop element: 3",
+                    "problemTitle": "Implement Min Stack"
+                },
+                {
+                    "input": "5\n1 10\n1 5\n1 15\n4\n2",
+                    "expectedOutput": "Pushed 10\nPushed 5\nPushed 15\nMinimum element: 5\nPopped 15",
+                    "problemTitle": "Implement Min Stack"
+                },
+                {
+                    "input": "2\n4\n1 100",
+                    "expectedOutput": "Stack is Empty\nPushed 100",
+                    "problemTitle": "Implement Min Stack"
+                },
+                {
+                    "input": "6\n1 -5\n1 -3\n1 -10\n4\n2\n4",
+                    "expectedOutput": "Pushed -5\nPushed -3\nPushed -10\nMinimum element: -10\nPopped -10\nMinimum element: -5",
+                    "problemTitle": "Implement Min Stack"
+                },
+                {
+                    "input": "4\n1 1\n1 2\n2\n4",
+                    "expectedOutput": "Pushed 1\nPushed 2\nPopped 2\nMinimum element: 1",
+                    "problemTitle": "Implement Min Stack"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class MinStack:\n    def __init__(self):\n        # TODO: Initialize your data structures\n        pass\n    \n    def push(self, element):\n        # TODO: Write your code here\n        pass\n    \n    def pop(self):\n        # TODO: Write your code here\n        pass\n    \n    def top(self):\n        # TODO: Write your code here\n        pass\n    \n    def getMin(self):\n        # TODO: Write your code here\n        pass\n\ndef solve():\n    n = int(input())\n    stack = MinStack()\n    \n    for _ in range(n):\n        operation = input().split()\n        \n        if operation[0] == \"1\":\n            element = int(operation[1])\n            stack.push(element)\n            print(f\"Pushed {element}\")\n        elif operation[0] == \"2\":\n            result = stack.pop()\n            if result is None:\n                print(\"Stack is Empty\")\n            else:\n                print(f\"Popped {result}\")\n        elif operation[0] == \"3\":\n            result = stack.top()\n            if result is None:\n                print(\"Stack is Empty\")\n            else:\n                print(f\"Top element: {result}\")\n        elif operation[0] == \"4\":\n            result = stack.getMin()\n            if result is None:\n                print(\"Stack is Empty\")\n            else:\n                print(f\"Minimum element: {result}\")\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Implement Min Stack"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass MinStack {\n    // TODO: Declare your data structures\n    \n    MinStack() {\n        // TODO: Initialize\n    }\n    \n    void push(int element) {\n        // TODO: Write your code here\n    }\n    \n    Integer pop() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    Integer top() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    Integer getMin() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine());\n        MinStack stack = new MinStack();\n        \n        for (int i = 0; i < n; i++) {\n            String[] operation = br.readLine().split(\" \");\n            \n            if (operation[0].equals(\"1\")) {\n                int element = Integer.parseInt(operation[1]);\n                stack.push(element);\n                System.out.println(\"Pushed \" + element);\n            } else if (operation[0].equals(\"2\")) {\n                Integer result = stack.pop();\n                if (result == null) {\n                    System.out.println(\"Stack is Empty\");\n                } else {\n                    System.out.println(\"Popped \" + result);\n                }\n            } else if (operation[0].equals(\"3\")) {\n                Integer result = stack.top();\n                if (result == null) {\n                    System.out.println(\"Stack is Empty\");\n                } else {\n                    System.out.println(\"Top element: \" + result);\n                }\n            } else if (operation[0].equals(\"4\")) {\n                Integer result = stack.getMin();\n                if (result == null) {\n                    System.out.println(\"Stack is Empty\");\n                } else {\n                    System.out.println(\"Minimum element: \" + result);\n                }\n            }\n        }\n    }\n}",
+                    "problemTitle": "Implement Min Stack"
+                },
+                {
+                    "language": 3,
+                    "code": "class MinStack {\n    constructor() {\n        // TODO: Initialize your data structures\n    }\n    \n    push(element) {\n        // TODO: Write your code here\n    }\n    \n    pop() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    top() {\n        // TODO: Write your code here\n        return null;\n    }\n    \n    getMin() {\n        // TODO: Write your code here\n        return null;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(\"\\n\");\n    const n = parseInt(lines[0]);\n    const stack = new MinStack();\n    \n    for (let i = 1; i <= n; i++) {\n        const operation = lines[i].split(\" \");\n        \n        if (operation[0] === \"1\") {\n            const element = parseInt(operation[1]);\n            stack.push(element);\n            console.log(`Pushed ${element}`);\n        } else if (operation[0] === \"2\") {\n            const result = stack.pop();\n            if (result === null) {\n                console.log(\"Stack is Empty\");\n            } else {\n                console.log(`Popped ${result}`);\n            }\n        } else if (operation[0] === \"3\") {\n            const result = stack.top();\n            if (result === null) {\n                console.log(\"Stack is Empty\");\n            } else {\n                console.log(`Top element: ${result}`);\n            }\n        } else if (operation[0] === \"4\") {\n            const result = stack.getMin();\n            if (result === null) {\n                console.log(\"Stack is Empty\");\n            } else {\n                console.log(`Minimum element: ${result}`);\n            }\n        }\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Implement Min Stack"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass MinStack {\npublic:\n    // TODO: Declare your data structures\n    \n    MinStack() {\n        // TODO: Initialize\n    }\n    \n    void push(int element) {\n        // TODO: Write your code here\n    }\n    \n    int pop() {\n        // TODO: Write your code here\n        return INT_MIN;\n    }\n    \n    int top() {\n        // TODO: Write your code here\n        return INT_MIN;\n    }\n    \n    int getMin() {\n        // TODO: Write your code here\n        return INT_MIN;\n    }\n};\n\nint main(){\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n\n    int n;\n    cin >> n;\n    MinStack stack;\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        cin >> operation;\n        \n        if(operation == 1) {\n            int element;\n            cin >> element;\n            stack.push(element);\n            cout << \"Pushed \" << element << endl;\n        } else if(operation == 2) {\n            int result = stack.pop();\n            if(result == INT_MIN) {\n                cout << \"Stack is Empty\" << endl;\n            } else {\n                cout << \"Popped \" << result << endl;\n            }\n        } else if(operation == 3) {\n            int result = stack.top();\n            if(result == INT_MIN) {\n                cout << \"Stack is Empty\" << endl;\n            } else {\n                cout << \"Top element: \" << result << endl;\n            }\n        } else if(operation == 4) {\n            int result = stack.getMin();\n            if(result == INT_MIN) {\n                cout << \"Stack is Empty\" << endl;\n            } else {\n                cout << \"Minimum element: \" << result << endl;\n            }\n        }\n    }\n\n    return 0;\n}",
+                    "problemTitle": "Implement Min Stack"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <limits.h>\n\ntypedef struct {\n    // TODO: Define your data members\n    int dummy;\n} MinStack;\n\nvoid initMinStack(MinStack* stack) {\n    // TODO: Initialize\n}\n\nvoid push(MinStack* stack, int element) {\n    // TODO: Write your code here\n}\n\nint pop(MinStack* stack) {\n    // TODO: Write your code here\n    return INT_MIN;\n}\n\nint top(MinStack* stack) {\n    // TODO: Write your code here\n    return INT_MIN;\n}\n\nint getMin(MinStack* stack) {\n    // TODO: Write your code here\n    return INT_MIN;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    \n    MinStack stack;\n    initMinStack(&stack);\n    \n    for(int i = 0; i < n; i++) {\n        int operation;\n        scanf(\"%d\", &operation);\n        \n        if(operation == 1) {\n            int element;\n            scanf(\"%d\", &element);\n            push(&stack, element);\n            printf(\"Pushed %d\\n\", element);\n        } else if(operation == 2) {\n            int result = pop(&stack);\n            if(result == INT_MIN) {\n                printf(\"Stack is Empty\\n\");\n            } else {\n                printf(\"Popped %d\\n\", result);\n            }\n        } else if(operation == 3) {\n            int result = top(&stack);\n            if(result == INT_MIN) {\n                printf(\"Stack is Empty\\n\");\n            } else {\n                printf(\"Top element: %d\\n\", result);\n            }\n        } else if(operation == 4) {\n            int result = getMin(&stack);\n            if(result == INT_MIN) {\n                printf(\"Stack is Empty\\n\");\n            } else {\n                printf(\"Minimum element: %d\\n\", result);\n            }\n        }\n    }\n    \n    return 0;\n}",
+                    "problemTitle": "Implement Min Stack"
+                }
+            ],
+            "hintsList": [
+                "Use two stacks: one for actual elements and one for tracking minimum elements at each level.",
+                "When pushing, also push the current minimum to the min stack. When popping, pop from both stacks. GetMin returns top of min stack."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,354 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Reverse an Array",
+            "description": "Problem Statement\nYou are given an array of N integers. Your task is to reverse the array and print the elements.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the reversed array elements separated by spaces.\n\nExample\nInput: 5\n1 2 3 4 5\nOutput: 5 4 3 2 1",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\n5 4 3 2 1",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "5 4 3 2 1",
+                    "problemTitle": "Reverse an Array"
+                },
+                {
+                    "input": "4\n10 20 30 40",
+                    "expectedOutput": "40 30 20 10",
+                    "problemTitle": "Reverse an Array"
+                },
+                {
+                    "input": "1\n7",
+                    "expectedOutput": "7",
+                    "problemTitle": "Reverse an Array"
+                },
+                {
+                    "input": "3\n-1 0 1",
+                    "expectedOutput": "1 0 -1",
+                    "problemTitle": "Reverse an Array"
+                },
+                {
+                    "input": "6\n1 1 2 2 3 3",
+                    "expectedOutput": "3 3 2 2 1 1",
+                    "problemTitle": "Reverse an Array"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def reverseArray(arr, n):\n    # TODO: Reverse the array in-place or return a reversed list\n    return arr\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    result = reverseArray(arr, n)\n    print(*(result))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Reverse an Array"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static void reverseArray(long[] arr, int n) {\n        // TODO: Reverse the array in-place\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            Result.reverseArray(arr, n);\n            for (int i = 0; i < n; i++) {\n                System.out.print(arr[i] + (i == n - 1 ? \"\" : \" \"));\n            }\n        }\n    }\n}",
+                    "problemTitle": "Reverse an Array"
+                },
+                {
+                    "language": 3,
+                    "code": "function reverseArray(arr, n) {\n    // TODO: Reverse the array\n    return arr;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const result = reverseArray(arr, n);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Reverse an Array"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nusing namespace std;\n\nvoid reverseArray(vector<long long>& arr, int n) {\n    // TODO: Reverse the array in-place\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        reverseArray(arr, n);\n        for (int i = 0; i < n; i++) {\n            cout << arr[i] << (i == n - 1 ? \"\" : \" \");\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Reverse an Array"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid reverseArray(long long arr[], int n) {\n    // TODO: Reverse the array in-place\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        reverseArray(arr, n);\n        for (int i = 0; i < n; i++) {\n            printf(\"%lld%s\", arr[i], (i == n - 1 ? \"\" : \" \"));\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Reverse an Array"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers, one at the start and one at the end, and swap elements until they meet."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Frequency of an Element",
+            "description": "Problem Statement\nYou are given an array of N integers and a target element X. Your task is to find how many times X appears in the array.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\nThe third line contains the target integer X.\n\nOutput Format\nPrint the frequency of X in the array.\n\nExample\nInput:\n5\n1 2 2 3 2\n2\nOutput: 3",
+            "examples": "Sample Input\n5\n1 2 2 3 2\n2\n\nSample Output\n3",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements, X ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n1 2 2 3 2\n2",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find Frequency of an Element"
+                },
+                {
+                    "input": "4\n10 20 30 40\n50",
+                    "expectedOutput": "0",
+                    "problemTitle": "Find Frequency of an Element"
+                },
+                {
+                    "input": "6\n5 5 5 5 5 5\n5",
+                    "expectedOutput": "6",
+                    "problemTitle": "Find Frequency of an Element"
+                },
+                {
+                    "input": "1\n10\n10",
+                    "expectedOutput": "1",
+                    "problemTitle": "Find Frequency of an Element"
+                },
+                {
+                    "input": "5\n-1 -2 -1 -3 -1\n-1",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find Frequency of an Element"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def findFrequency(arr, n, x):\n    # TODO: Return the frequency of x in arr\n    return 0\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:n+1]))\n    x = int(input_data[n+1])\n    print(findFrequency(arr, n, x))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find Frequency of an Element"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static int findFrequency(long[] arr, int n, long x) {\n        // TODO: Return the frequency of x in arr\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            if (sc.hasNextLong()) {\n                long x = sc.nextLong();\n                System.out.print(Result.findFrequency(arr, n, x));\n            }\n        }\n    }\n}",
+                    "problemTitle": "Find Frequency of an Element"
+                },
+                {
+                    "language": 3,
+                    "code": "function findFrequency(arr, n, x) {\n    // TODO: Return the frequency of x in arr\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1, n + 1).map(Number);\n    const x = Number(lines[n + 1]);\n    console.log(findFrequency(arr, n, x));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find Frequency of an Element"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nint findFrequency(vector<long long>& arr, int n, long long x) {\n    // TODO: Return the frequency of x in arr\n    return 0;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        long long x;\n        cin >> x;\n        cout << findFrequency(arr, n, x);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find Frequency of an Element"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint findFrequency(long long arr[], int n, long long x) {\n    // TODO: Return the frequency of x in arr\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        long long x;\n        scanf(\"%lld\", &x);\n        printf(\"%d\", findFrequency(arr, n, x));\n    }\n    return 0;\n}",
+                    "problemTitle": "Find Frequency of an Element"
+                }
+            ],
+            "hintsList": [
+                "Iterate through the array and increment a counter whenever you find an element equal to X."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Remove Duplicates from Sorted Array",
+            "description": "Problem Statement\nYou are given a sorted array of N integers. Your task is to remove the duplicate elements in-place such that each unique element appears only once. Return the new length of the array and print the unique elements.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated sorted integers.\n\nOutput Format\nPrint the unique elements separated by spaces.\n\nExample\nInput: 6\n1 1 2 2 3 3\nOutput: 1 2 3",
+            "examples": "Sample Input\n6\n1 1 2 2 3 3\n\nSample Output\n1 2 3",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nArray is sorted\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "6\n1 1 2 2 3 3",
+                    "expectedOutput": "1 2 3",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                },
+                {
+                    "input": "5\n10 20 30 40 50",
+                    "expectedOutput": "10 20 30 40 50",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                },
+                {
+                    "input": "4\n1 1 1 1",
+                    "expectedOutput": "1",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                },
+                {
+                    "input": "1\n5",
+                    "expectedOutput": "5",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                },
+                {
+                    "input": "5\n-3 -3 -2 -1 -1",
+                    "expectedOutput": "-3 -2 -1",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def removeDuplicates(arr, n):\n    # TODO: Remove duplicates in-place and return the new length\n    return n\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    new_len = removeDuplicates(arr, n)\n    print(*(arr[:new_len]))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static int removeDuplicates(long[] arr, int n) {\n        // TODO: Remove duplicates in-place and return the new length\n        return n;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            int newLen = Result.removeDuplicates(arr, n);\n            for (int i = 0; i < newLen; i++) {\n                System.out.print(arr[i] + (i == newLen - 1 ? \"\" : \" \"));\n            }\n        }\n    }\n}",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                },
+                {
+                    "language": 3,
+                    "code": "function removeDuplicates(arr, n) {\n    // TODO: Remove duplicates in-place and return the new length\n    return n;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const newLen = removeDuplicates(arr, n);\n    console.log(arr.slice(0, newLen).join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nint removeDuplicates(vector<long long>& arr, int n) {\n    // TODO: Remove duplicates in-place and return the new length\n    return n;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int newLen = removeDuplicates(arr, n);\n        for (int i = 0; i < newLen; i++) {\n            cout << arr[i] << (i == newLen - 1 ? \"\" : \" \");\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint removeDuplicates(long long arr[], int n) {\n    // TODO: Remove duplicates in-place and return the new length\n    return n;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        int newLen = removeDuplicates(arr, n);\n        for (int i = 0; i < newLen; i++) {\n            printf(\"%lld%s\", arr[i], (i == newLen - 1 ? \"\" : \" \"));\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Remove Duplicates from Sorted Array"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers: one to track the current unique element and another to iterate through the array."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find Maximum and Minimum",
+            "description": "Problem Statement\nYou are given an array of N integers. Your task is to find the maximum and minimum elements in the array.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the maximum and minimum elements separated by a space.\n\nExample\nInput: 5\n10 20 4 45 99\nOutput: 99 4",
+            "examples": "Sample Input\n5\n10 20 4 45 99\n\nSample Output\n99 4",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n10 20 4 45 99",
+                    "expectedOutput": "99 4",
+                    "problemTitle": "Find Maximum and Minimum"
+                },
+                {
+                    "input": "3\n1 1 1",
+                    "expectedOutput": "1 1",
+                    "problemTitle": "Find Maximum and Minimum"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "10 10",
+                    "problemTitle": "Find Maximum and Minimum"
+                },
+                {
+                    "input": "4\n-1 -5 -2 -10",
+                    "expectedOutput": "-1 -10",
+                    "problemTitle": "Find Maximum and Minimum"
+                },
+                {
+                    "input": "5\n100 200 50 300 150",
+                    "expectedOutput": "300 50",
+                    "problemTitle": "Find Maximum and Minimum"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def findMaxMin(arr, n):\n    # TODO: Return a tuple (max, min)\n    return (0, 0)\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    max_val, min_val = findMaxMin(arr, n)\n    print(f\"{max_val} {min_val}\")\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find Maximum and Minimum"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static long[] findMaxMin(long[] arr, int n) {\n        // TODO: Return an array [max, min]\n        return new long[]{0, 0};\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            long[] res = Result.findMaxMin(arr, n);\n            System.out.print(res[0] + \" \" + res[1]);\n        }\n    }\n}",
+                    "problemTitle": "Find Maximum and Minimum"
+                },
+                {
+                    "language": 3,
+                    "code": "function findMaxMin(arr, n) {\n    // TODO: Return an array [max, min]\n    return [0, 0];\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const [maxVal, minVal] = findMaxMin(arr, n);\n    console.log(`${maxVal} ${minVal}`);\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find Maximum and Minimum"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <climits>\n\nusing namespace std;\n\npair<long long, long long> findMaxMin(vector<long long>& arr, int n) {\n    // TODO: Return a pair {max, min}\n    return {0, 0};\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        pair<long long, long long> res = findMaxMin(arr, n);\n        cout << res.first << \" \" << res.second;\n    }\n    return 0;\n}",
+                    "problemTitle": "Find Maximum and Minimum"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <limits.h>\n\nvoid findMaxMin(long long arr[], int n, long long *maxVal, long long *minVal) {\n    // TODO: Find max and min and store in maxVal and minVal\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        long long maxVal, minVal;\n        findMaxMin(arr, n, &maxVal, &minVal);\n        printf(\"%lld %lld\", maxVal, minVal);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find Maximum and Minimum"
+                }
+            ],
+            "hintsList": [
+                "Initialize max and min with the first element of the array and update them as you iterate through the rest of the array."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Rearrange Even and Odd Elements",
+            "description": "Problem Statement\nYou are given an array of N integers. Your task is to rearrange the array such that all even numbers appear first, followed by all odd numbers. You must maintain the relative order of the even numbers and the relative order of the odd numbers (Stable Partition).\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the rearranged array elements separated by spaces.\n\nExample\nInput: 5\n1 2 3 4 5\nOutput: 2 4 1 3 5",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\n2 4 1 3 5",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1) or O(N)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "2 4 1 3 5",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                },
+                {
+                    "input": "4\n2 4 6 8",
+                    "expectedOutput": "2 4 6 8",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                },
+                {
+                    "input": "3\n1 3 5",
+                    "expectedOutput": "1 3 5",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                },
+                {
+                    "input": "6\n10 11 12 13 14 15",
+                    "expectedOutput": "10 12 14 11 13 15",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                },
+                {
+                    "input": "2\n1 2",
+                    "expectedOutput": "2 1",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def rearrangeEvenOdd(arr, n):\n    # TODO: Rearrange array so evens come first\n    return arr\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    result = rearrangeEvenOdd(arr, n)\n    print(*(result))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static void rearrangeEvenOdd(long[] arr, int n) {\n        // TODO: Rearrange array so evens come first\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            Result.rearrangeEvenOdd(arr, n);\n            for (int i = 0; i < n; i++) {\n                System.out.print(arr[i] + (i == n - 1 ? \"\" : \" \"));\n            }\n        }\n    }\n}",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                },
+                {
+                    "language": 3,
+                    "code": "function rearrangeEvenOdd(arr, n) {\n    // TODO: Rearrange array so evens come first\n    return arr;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    const result = rearrangeEvenOdd(arr, n);\n    console.log(result.join(\" \"));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nvoid rearrangeEvenOdd(vector<long long>& arr, int n) {\n    // TODO: Rearrange array so evens come first\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        rearrangeEvenOdd(arr, n);\n        for (int i = 0; i < n; i++) {\n            cout << arr[i] << (i == n - 1 ? \"\" : \" \");\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid rearrangeEvenOdd(long long arr[], int n) {\n    // TODO: Rearrange array so evens come first\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        rearrangeEvenOdd(arr, n);\n        for (int i = 0; i < n; i++) {\n            printf(\"%lld%s\", arr[i], (i == n - 1 ? \"\" : \" \"));\n        }\n    }\n    return 0;\n}",
+                    "problemTitle": "Rearrange Even and Odd Elements"
+                }
+            ],
+            "hintsList": [
+                "You can use two pointers (left and right) to swap even and odd elements, or create a new array and fill it with evens then odds."
+            ]
+        }
+    ]
+}

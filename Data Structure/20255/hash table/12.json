@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Max Points on a Line (Hash Table)",
+            "description": "Problem Statement\n\nGiven an array of points where points[i] = [xi, yi] represents a point on the X-Y plane, return the maximum number of points that lie on the same straight line.\n",
+            "examples": "Example 1:\n\nInput: points = [[1,1],[2,2],[3,3]]\nOutput: 3\n\nExample 2:\n\nInput: points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]\nOutput: 4",
+            "constraints": "1 <= points.length <= 300\npoints[i].length == 2\n-10^4 <= xi, yi <= 10^4\nAll the points are unique",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "3\n1 1\n2 2\n3 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "6\n1 1\n3 2\n5 3\n4 1\n2 3\n1 4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1\n1 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4\n0 0\n1 1\n2 2\n3 3",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "5\n1 1\n1 2\n1 3\n2 1\n2 2",
+                    "expectedOutput": "3"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def maxPoints(self, points):\n        # TODO: Use hash map to count points with same slope from each point\n        # Return maximum number of points on same line\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    n = int(data[0])\n    points = []\n    for i in range(1, n+1):\n        x, y = map(int, data[i].split())\n        points.append([x, y])\n    sol = Solution()\n    result = sol.maxPoints(points)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    int maxPoints(int[][] points){\n        // TODO: Use hash map to count points with same slope from each point\n        // Return maximum number of points on same line\n        return 0;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        int[][] points = new int[n][2];\n        for(int i=0;i<n;i++){\n            String[] parts = br.readLine().trim().split(\" \");\n            points[i][0] = Integer.parseInt(parts[0]);\n            points[i][1] = Integer.parseInt(parts[1]);\n        }\n        Solution sol = new Solution();\n        int result = sol.maxPoints(points);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  maxPoints(points){\n    // TODO: Use hash map to count points with same slope from each point\n    // Return maximum number of points on same line\n    return 0;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const n = parseInt(lines[0]);\n  const points = [];\n  for(let i=1;i<=n;i++){\n    const [x, y] = lines[i].split(\" \").map(Number);\n    points.push([x, y]);\n  }\n  const sol = new Solution();\n  const result = sol.maxPoints(points);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    int maxPoints(vector<vector<int>>& points){\n        // TODO: Use hash map to count points with same slope from each point\n        // Return maximum number of points on same line\n        return 0;\n    }\n};\nint main(){\n    int n; cin >> n;\n    vector<vector<int>> points(n, vector<int>(2));\n    for(int i=0;i<n;i++){\n        cin >> points[i][0] >> points[i][1];\n    }\n    Solution sol;\n    int result = sol.maxPoints(points);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint points[300][2];\n\nint maxPoints(int n){\n    // TODO: Find maximum number of points on same line\n    // Return maximum count\n    return 0;\n}\n\nint main(){\n    int n; scanf(\"%d\", &n);\n    for(int i=0;i<n;i++){\n        scanf(\"%d %d\", &points[i][0], &points[i][1]);\n    }\n    int result = maxPoints(n);\n    printf(\"%d\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each point, use a hash map to count how many other points have the same slope with it.",
+                "Be careful with vertical lines (infinite slope) and duplicate points. Use GCD to normalize slopes."
+            ]
+        }
+    ]
+}

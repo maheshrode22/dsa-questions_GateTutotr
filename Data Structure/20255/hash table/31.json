@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Reconstruct Original Digits from English (Hash Table)",
+            "description": "Problem Statement\n\nGiven a string s containing an out-of-order English representation of digits 0-9, return the digits in ascending order.\n",
+            "examples": "Example 1:\nInput: s = \"owoztneoer\"\nOutput: \"012\"\nExample 2:\nInput: s = \"fviefuro\"\nOutput: \"45\"",
+            "constraints": "1 <= s.length <= 10^5\ns[i] is one of the characters [\"e\",\"g\",\"f\",\"i\",\"h\",\"o\",\"n\",\"s\",\"r\",\"u\",\"t\",\"w\",\"v\",\"x\",\"z\"].\ns is guaranteed to be valid.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "owoztneoer",
+                    "expectedOutput": "012"
+                },
+                {
+                    "input": "fviefuro",
+                    "expectedOutput": "45"
+                },
+                {
+                    "input": "zero",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "ninetwo",
+                    "expectedOutput": "29"
+                },
+                {
+                    "input": "zeroonetwothreefourfivesixseveneightnine",
+                    "expectedOutput": "0123456789"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def originalDigits(self, s):\n        # TODO: Reconstruct digits from english string\n        # Return string of digits in ascending order\n        pass\n\nif __name__ == '__main__':\n    import sys\n    s = sys.stdin.read().strip()\n    sol = Solution()\n    result = sol.originalDigits(s)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    String originalDigits(String s){\n        // TODO: Reconstruct digits from english string\n        // Return string of digits in ascending order\n        return \"\";\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        String result = sol.originalDigits(s);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  originalDigits(s){\n    // TODO: Reconstruct digits from english string\n    // Return string of digits in ascending order\n    return \"\";\n  }\n}\nfunction solve(input){\n  const s = input.trim();\n  const sol = new Solution();\n  const result = sol.originalDigits(s);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    string originalDigits(string s){\n        // TODO: Reconstruct digits from english string\n        // Return string of digits in ascending order\n        return \"\";\n    }\n};\nint main(){\n    string s;\n    cin >> s;\n    Solution sol;\n    string result = sol.originalDigits(s);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nchar* originalDigits(char* s){\n    // TODO: Reconstruct digits\n    // Return string of digits\n    static char result[100005];\n    result[0] = '\\0';\n    return result;\n}\n\nint main(){\n    char s[100005];\n    scanf(\"%s\", s);\n    char* result = originalDigits(s);\n    printf(\"%s\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Identify unique characters for each digit (e.g., 'z' is only in \"zero\", 'w' is only in \"two\").",
+                "Use counts of these unique characters to determine the count of each digit."
+            ]
+        }
+    ]
+}

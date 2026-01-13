@@ -1,0 +1,63 @@
+{
+  "problems": [
+    {
+      "id": null,
+      "title": "Check Palindrome Recursively",
+      "description": "Write a recursive function to check if a given string is a palindrome. A string is a palindrome if it reads the same forwards and backwards.\n\nInput Format:\nA single string S.\n\nOutput Format:\nPrint 'True' if S is a palindrome, else 'False'.",
+      "examples": "Sample Input\nracecar\n\nSample Output\nTrue\n\nSample Input\nhello\n\nSample Output\nFalse",
+      "constraints": "1 <= Length of S <= 100",
+      "hints": 1,
+      "timeLimit": 1,
+      "memoryLimit": 256,
+      "subdomainId": 3035,
+      "difficulty": 1,
+      "testCases": [
+        {
+          "input": "racecar",
+          "expectedOutput": "True"
+        },
+        {
+          "input": "hello",
+          "expectedOutput": "False"
+        },
+        {
+          "input": "madam",
+          "expectedOutput": "True"
+        },
+        {
+          "input": "a",
+          "expectedOutput": "True"
+        },
+        {
+          "input": "ab",
+          "expectedOutput": "False"
+        }
+      ],
+      "starterCodes": [
+        {
+          "language": 1,
+          "code": "class Solution:\n    def isPalindrome(self, s):\n        # TODO: implement recursive palindrome check\n        pass\n\nif __name__ == '__main__':\n    try:\n        s = input().strip()\n        print(Solution().isPalindrome(s))\n    except:\n        pass"
+        },
+        {
+          "language": 2,
+          "code": "import java.util.*;\n\nclass Solution {\n    public boolean isPalindrome(String s) {\n        # TODO: implement recursive palindrome check\n        return false;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.next();\n            System.out.println(new Solution().isPalindrome(s) ? \"True\" : \"False\");\n        }\n    }\n}"
+        },
+        {
+          "language": 3,
+          "code": "class Solution {\n    isPalindrome(s) {\n        # TODO: implement recursive palindrome check\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    console.log(sol.isPalindrome(s) ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\ntry {\n    solve(fs.readFileSync(0, 'utf-8'));\n} catch (e) {}\n"
+        },
+        {
+          "language": 4,
+          "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPalindrome(string s) {\n        // TODO: implement recursive palindrome check\n        return false;\n    }\n};\n\nint main() {\n    string s;\n    if (cin >> s) {\n        Solution sol;\n        cout << (sol.isPalindrome(s) ? \"True\" : \"False\");\n    }\n    return 0;\n}"
+        },
+        {
+          "language": 5,
+          "code": "#include <stdio.h>\n#include <string.h>\n#include <stdbool.h>\n\nbool isPalindrome(char *s, int start, int end) {\n    // TODO: implement recursive palindrome check\n    return false;\n}\n\nint main() {\n    char s[105];\n    if (scanf(\"%s\", s) == 1) {\n        if (isPalindrome(s, 0, strlen(s) - 1)) printf(\"True\");\n        else printf(\"False\");\n    }\n    return 0;\n}"
+        }
+      ],
+      "hintsList": [
+        "Think about the base case and the recursive step."
+      ]
+    }
+  ]
+}

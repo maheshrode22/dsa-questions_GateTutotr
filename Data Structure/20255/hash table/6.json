@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Set Matrix Zeroes (Hash Table)",
+            "description": "Problem Statement\n\nGiven an m x n integer matrix, if an element is 0, set its entire row and column to 0's.\nYou must do it in place.\n",
+            "examples": "Example 1:\n\nInput: matrix = [[1,1,1],[1,0,1],[1,1,1]]\nOutput: [[1,0,1],[0,0,0],[1,0,1]]\n\nExample 2:\n\nInput: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]\nOutput: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]",
+            "constraints": "m == matrix.length\nn == matrix[0].length\n1 <= m, n <= 200\n-2^31 <= matrix[i][j] <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "3 3\n1 1 1\n1 0 1\n1 1 1",
+                    "expectedOutput": "1 0 1\n0 0 0\n1 0 1"
+                },
+                {
+                    "input": "3 4\n0 1 2 0\n3 4 5 2\n1 3 1 5",
+                    "expectedOutput": "0 0 0 0\n0 4 5 0\n0 3 1 0"
+                },
+                {
+                    "input": "1 1\n0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2 2\n1 2\n3 4",
+                    "expectedOutput": "1 2\n3 4"
+                },
+                {
+                    "input": "4 3\n1 2 3\n4 0 6\n7 8 9\n10 11 12",
+                    "expectedOutput": "1 0 3\n0 0 0\n7 0 9\n10 0 12"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def setZeroes(self, matrix):\n        # TODO: Set entire row and column to 0 if element is 0\n        # Modify matrix in-place using hash sets to track rows and columns\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split()\n    m, n = int(data[0]), int(data[1])\n    matrix = []\n    idx = 2\n    for i in range(m):\n        row = []\n        for j in range(n):\n            row.append(int(data[idx]))\n            idx += 1\n        matrix.append(row)\n    sol = Solution()\n    sol.setZeroes(matrix)\n    for row in matrix:\n        print(' '.join(map(str, row)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    void setZeroes(int[][] matrix){\n        // TODO: Set entire row and column to 0 if element is 0\n        // Modify matrix in-place using hash sets to track rows and columns\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] dims = br.readLine().trim().split(\" \");\n        int m = Integer.parseInt(dims[0]);\n        int n = Integer.parseInt(dims[1]);\n        int[][] matrix = new int[m][n];\n        for(int i=0;i<m;i++){\n            String[] parts = br.readLine().trim().split(\" \");\n            for(int j=0;j<n;j++){\n                matrix[i][j] = Integer.parseInt(parts[j]);\n            }\n        }\n        Solution sol = new Solution();\n        sol.setZeroes(matrix);\n        for(int i=0;i<m;i++){\n            for(int j=0;j<n;j++){\n                System.out.print(matrix[i][j]);\n                if(j < n-1) System.out.print(\" \");\n            }\n            System.out.println();\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  setZeroes(matrix){\n    // TODO: Set entire row and column to 0 if element is 0\n    // Modify matrix in-place using hash sets to track rows and columns\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const [m, n] = lines[0].split(\" \").map(Number);\n  const matrix = [];\n  for(let i=1;i<=m;i++){\n    matrix.push(lines[i].split(\" \").map(Number));\n  }\n  const sol = new Solution();\n  sol.setZeroes(matrix);\n  for(const row of matrix){\n    console.log(row.join(\" \"));\n  }\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    void setZeroes(vector<vector<int>>& matrix){\n        // TODO: Set entire row and column to 0 if element is 0\n        // Modify matrix in-place using hash sets to track rows and columns\n    }\n};\nint main(){\n    int m, n; cin >> m >> n;\n    vector<vector<int>> matrix(m, vector<int>(n));\n    for(int i=0;i<m;i++){\n        for(int j=0;j<n;j++){\n            cin >> matrix[i][j];\n        }\n    }\n    Solution sol;\n    sol.setZeroes(matrix);\n    for(int i=0;i<m;i++){\n        for(int j=0;j<n;j++){\n            cout << matrix[i][j];\n            if(j < n-1) cout << \" \";\n        }\n        cout << \"\\n\";\n    }\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\nint zeroRows[200], zeroCols[200];\nint zeroRowCount = 0, zeroColCount = 0;\n\nvoid setZeroes(int matrix[][200], int m, int n){\n    // TODO: Set entire row and column to 0 if element is 0\n    // Use arrays to track which rows and columns should be zeroed\n}\n\nint main(){\n    int m, n; scanf(\"%d %d\", &m, &n);\n    int matrix[200][200];\n    for(int i=0;i<m;i++){\n        for(int j=0;j<n;j++){\n            scanf(\"%d\", &matrix[i][j]);\n        }\n    }\n    setZeroes(matrix, m, n);\n    for(int i=0;i<m;i++){\n        for(int j=0;j<n;j++){\n            printf(\"%d\", matrix[i][j]);\n            if(j < n-1) printf(\" \");\n        }\n        printf(\"\\n\");\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two hash sets to store which rows and columns need to be zeroed.",
+                "First pass: identify all rows and columns containing zeros. Second pass: set those rows and columns to zero."
+            ]
+        }
+    ]
+}

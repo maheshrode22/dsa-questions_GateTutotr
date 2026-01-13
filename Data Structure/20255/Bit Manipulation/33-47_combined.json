@@ -1,0 +1,904 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "   (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an array of transactions transactions where transactions[i] = [fromi, toi, amounti] indicates that the person with ID = fromi gave amounti $ to the person with ID = toi.\nReturn the minimum number of transactions required to settle the debt.\n",
+            "examples": "Sample Input\n0 1 10\n2 0 5\n\nSample Output\n2\n\nExplanation:\nPerson #0 gave person #1 $10.\nPerson #2 gave person #0 $5.\nTwo transactions are needed. One way to settle the debt is person #1 pays person #0 and #2 $5 each.\n\nSample Input\n0 1 10\n1 0 1\n1 2 5\n2 0 5\n\nSample Output\n1\n\nExplanation:\nPerson #0 gave person #1 $10.\nPerson #1 gave person #0 $1.\nPerson #1 gave person #2 $5.\nPerson #2 gave person #0 $5.\nTherefore, person #1 only need to give person #0 $4, and all debt is settled.",
+            "constraints": "1 <= transactions.length <= 8\ntransactions[i].length == 3\n0 <= fromi, toi < 12\nfromi != toi\n1 <= amounti <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "0 1 10\n2 0 5",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "0 1 10\n1 0 1\n1 2 5\n2 0 5",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "0 1 3\n1 2 3\n2 3 3\n3 4 3\n4 0 3",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "0 1 1\n1 2 2\n2 0 1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "0 1 10\n1 2 10\n2 0 10",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minTransfers(self, transactions):\n        # TODO: Return minimum number of transactions to settle debt\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    transactions = []\n    for line in lines:\n        if line.strip():\n            parts = line.strip().split()\n            if len(parts) >= 3:\n                transactions.append([int(parts[0]), int(parts[1]), int(parts[2])])\n    sol = Solution()\n    print(sol.minTransfers(transactions))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minTransfers(int[][] transactions) {\n        // TODO: Return minimum number of transactions to settle debt\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> transList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            if (parts.length >= 3) {\n                transList.add(new int[]{Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2])});\n            }\n        }\n        int[][] transactions = transList.toArray(new int[transList.size()][]);\n        Solution sol = new Solution();\n        System.out.println(sol.minTransfers(transactions));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minTransfers(transactions) {\n        // TODO: Return minimum number of transactions to settle debt\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const transactions = [];\n    for (const line of lines) {\n        const parts = line.trim().split(/\\s+/);\n        if (parts.length >= 3) {\n            transactions.push([parseInt(parts[0]), parseInt(parts[1]), parseInt(parts[2])]);\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.minTransfers(transactions));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minTransfers(vector<vector<int>>& transactions) {\n        // TODO: Return minimum number of transactions to settle debt\n        return 0;\n    }\n};\n\nint main() {\n    vector<vector<int>> transactions;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        int from, to, amount;\n        if (iss >> from >> to >> amount) {\n            transactions.push_back({from, to, amount});\n        }\n    }\n    Solution sol;\n    cout << sol.minTransfers(transactions) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid minTransfers(int** transactions, int transactionsSize, int* transactionsColSize) {\n    // TODO: Print minimum number of transactions to settle debt\n}\n\nint main() {\n    int transactions[8][3];\n    int transactionsSize = 0;\n    char line[1000];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int from, to, amount;\n        if (sscanf(line, \"%d %d %d\", &from, &to, &amount) == 3) {\n            transactions[transactionsSize][0] = from;\n            transactions[transactionsSize][1] = to;\n            transactions[transactionsSize][2] = amount;\n            transactionsSize++;\n        }\n    }\n    int* transPtrs[8];\n    int colSizes[8];\n    for (int i = 0; i < transactionsSize; i++) {\n        transPtrs[i] = transactions[i];\n        colSizes[i] = 3;\n    }\n    minTransfers(transPtrs, transactionsSize, colSizes);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Calculate net balance for each person (amount owed - amount to receive).",
+                "Use bit manipulation and backtracking to find minimum transactions to balance all debts."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Matchsticks to Square (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an integer array matchsticks where matchsticks[i] is the length of the ith matchstick. You want to use all the matchsticks to make one square. You should not break any stick, but you can link them up, and each matchstick must be used exactly one time.\nReturn true if you can make this square and false otherwise.\n",
+            "examples": "Sample Input\n1 1 2 2 2\n\nSample Output\nTrue\n\nExplanation: You can form a square with length 2, one side of the square came two sticks with length 1.\n\nSample Input\n3 3 3 3 4\n\nSample Output\nFalse\n\nExplanation: You cannot find a way to form a square with all the matchsticks.",
+            "constraints": "1 <= matchsticks.length <= 15\n1 <= matchsticks[i] <= 10^8",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 1 2 2 2",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "3 3 3 3 4",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "1 1 1 1 2 2 2 2",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1 3 3 3 4",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "5 5 5 5",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def makesquare(self, matchsticks):\n        # TODO: Return True if matchsticks can form a square, else False\n        pass\n\nif __name__ == '__main__':\n    import sys\n    matchsticks = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.makesquare(matchsticks)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean makesquare(int[] matchsticks) {\n        // TODO: Return true if matchsticks can form a square, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] matchsticks = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            matchsticks[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.makesquare(matchsticks) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    makesquare(matchsticks) {\n        // TODO: Return true if matchsticks can form a square, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const matchsticks = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.makesquare(matchsticks);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool makesquare(vector<int>& matchsticks) {\n        // TODO: Return true if matchsticks can form a square, else false\n        return false;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> matchsticks;\n    int num;\n    while (iss >> num) {\n        matchsticks.push_back(num);\n    }\n    Solution sol;\n    cout << (sol.makesquare(matchsticks) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n\nvoid makesquare(int* matchsticks, int matchsticksSize) {\n    // TODO: Print \"True\" if matchsticks can form a square, else \"False\"\n}\n\nint main() {\n    int matchsticks[16];\n    int matchsticksSize = 0;\n    char line[1000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        matchsticks[matchsticksSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    makesquare(matchsticks, matchsticksSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Calculate the target side length: sum of all matchsticks must be divisible by 4.",
+                "Use backtracking with bit manipulation to try all possible ways to form 4 sides."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Number Complement (Bit Manipulation)",
+            "description": "Problem Statement\n\nThe complement of an integer is the integer you get when you flip all the 0's to 1's and all the 1's to 0's in its binary representation.\nFor example, The integer 5 is \"101\" in binary and its complement is \"010\" which is the integer 2.\nGiven an integer num, return its complement.\n",
+            "examples": "Sample Input\n5\n\nSample Output\n2\n\nExplanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.\n\nSample Input\n1\n\nSample Output\n0\n\nExplanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.",
+            "constraints": "1 <= num < 2^31",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "32",
+                    "expectedOutput": "31"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "27"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findComplement(self, num):\n        # TODO: Return complement of num\n        pass\n\nif __name__ == '__main__':\n    num = int(input().strip())\n    sol = Solution()\n    print(sol.findComplement(num))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int findComplement(int num) {\n        // TODO: Return complement of num\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int num = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.findComplement(num));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findComplement(num) {\n        // TODO: Return complement of num\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const num = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.findComplement(num));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findComplement(int num) {\n        // TODO: Return complement of num\n        return 0;\n    }\n};\n\nint main() {\n    int num;\n    cin >> num;\n    Solution sol;\n    cout << sol.findComplement(num) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid findComplement(int num) {\n    // TODO: Print complement of num\n}\n\nint main() {\n    int num;\n    scanf(\"%d\", &num);\n    findComplement(num);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Find the highest bit position in num, then XOR with a mask of all 1's up to that position.",
+                "Create a mask: (1 << (number of bits)) - 1, then XOR with num."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Total Hamming Distance (Bit Manipulation)",
+            "description": "Problem Statement\n\nThe Hamming distance between two integers is the number of positions at which the corresponding bits are different.\nGiven an integer array nums, return the sum of Hamming distances between all the pairs of the integers in nums.\n",
+            "examples": "Sample Input\n4 14 2\n\nSample Output\n6\n\nExplanation: In binary representation, the 4 is 0100, 14 is 1110, and 2 is 0010 (just showing the four bits relevant in this case).\nThe answer will be:\nHammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 + 2 = 6.\n\nSample Input\n4 14 4\n\nSample Output\n4",
+            "constraints": "1 <= nums.length <= 10^4\n0 <= nums[i] <= 10^9\nThe answer for the given input will fit in a 32-bit integer.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 14 2",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "4 14 4",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 3 5",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 2 4 8 16",
+                    "expectedOutput": "20"
+                },
+                {
+                    "input": "3 3 3 3 3 3 3 3 3 3",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def totalHammingDistance(self, nums):\n        # TODO: Return sum of Hamming distances between all pairs\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.totalHammingDistance(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int totalHammingDistance(int[] nums) {\n        // TODO: Return sum of Hamming distances between all pairs\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.totalHammingDistance(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    totalHammingDistance(nums) {\n        // TODO: Return sum of Hamming distances between all pairs\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.totalHammingDistance(nums));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int totalHammingDistance(vector<int>& nums) {\n        // TODO: Return sum of Hamming distances between all pairs\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << sol.totalHammingDistance(nums) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid totalHammingDistance(int* nums, int numsSize) {\n    // TODO: Print sum of Hamming distances between all pairs\n}\n\nint main() {\n    int nums[10005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    totalHammingDistance(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each bit position, count how many numbers have that bit set and how many don't.",
+                "The contribution to total Hamming distance from bit i is: count(1) * count(0)."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Non-decreasing Subsequences (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums, return all the different possible non-decreasing subsequences of the given array with at least two elements. You may return the answer in any order.\n",
+            "examples": "Sample Input\n4 6 7 7\n\nSample Output\n4 6\n4 6 7\n4 6 7 7\n4 7\n4 7 7\n6 7\n6 7 7\n7 7\n\nExplanation: All non-decreasing subsequences with at least 2 elements.\n\nSample Input\n4 4 3 2 1\n\nSample Output\n4 4\n\nExplanation: Only one non-decreasing subsequence exists.",
+            "constraints": "1 <= nums.length <= 15\n-100 <= nums[i] <= 100",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 6 7 7",
+                    "expectedOutput": "4 6\n4 6 7\n4 6 7 7\n4 7\n4 7 7\n6 7\n6 7 7\n7 7"
+                },
+                {
+                    "input": "4 4 3 2 1",
+                    "expectedOutput": "4 4"
+                },
+                {
+                    "input": "1 2 2 3",
+                    "expectedOutput": "1 2\n1 2 2\n1 2 2 3\n1 2 3\n1 3\n2 2\n2 2 3\n2 3"
+                },
+                {
+                    "input": "1 3 2 4 5",
+                    "expectedOutput": "1 3\n1 3 4\n1 3 4 5\n1 3 5\n1 2\n1 2 4\n1 2 4 5\n1 2 5\n1 4\n1 4 5\n1 5\n3 4\n3 4 5\n3 5\n2 4\n2 4 5\n2 5\n4 5"
+                },
+                {
+                    "input": "10 9 8 7 6 5 4 3 2 1",
+                    "expectedOutput": ""
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findSubsequences(self, nums):\n        # TODO: Return all non-decreasing subsequences with at least 2 elements\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.findSubsequences(nums)\n    for seq in result:\n        print(' '.join(map(str, seq)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<Integer>> findSubsequences(int[] nums) {\n        // TODO: Return all non-decreasing subsequences with at least 2 elements\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        List<List<Integer>> result = sol.findSubsequences(nums);\n        for (List<Integer> seq : result) {\n            for (int i = 0; i < seq.size(); i++) {\n                System.out.print(seq.get(i) + (i == seq.size() - 1 ? \"\" : \" \"));\n            }\n            System.out.println();\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findSubsequences(nums) {\n        // TODO: Return all non-decreasing subsequences with at least 2 elements\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.findSubsequences(nums);\n    for (const seq of result) {\n        console.log(seq.join(' '));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> findSubsequences(vector<int>& nums) {\n        // TODO: Return all non-decreasing subsequences with at least 2 elements\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    vector<vector<int>> result = sol.findSubsequences(nums);\n    for (const auto& seq : result) {\n        for (int i = 0; i < seq.size(); i++) {\n            cout << seq[i] << (i == seq.size() - 1 ? \"\" : \" \");\n        }\n        cout << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid findSubsequences(int* nums, int numsSize) {\n    // TODO: Print all non-decreasing subsequences with at least 2 elements (one per line, space-separated)\n}\n\nint main() {\n    int nums[16];\n    int numsSize = 0;\n    char line[1000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    findSubsequences(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking with bit manipulation to generate all subsequences.",
+                "Track the last element in the current subsequence to ensure non-decreasing order."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Beautiful Arrangement (Bit Manipulation)",
+            "description": "Problem Statement\n\nSuppose you have n integers labeled 1 through n. A permutation of those n integers perm (1-indexed) is considered a beautiful arrangement if for every i (1 <= i <= n), either of the following is true:\n\nperm[i] is divisible by i.\ni is divisible by perm[i].\n\nGiven an integer n, return the number of the beautiful arrangements that you can construct.\n",
+            "examples": "Sample Input\n2\n\nSample Output\n2\n\nExplanation: \nThe first beautiful arrangement is [1,2]:\n    - perm[1] = 1 is divisible by i = 1\n    - perm[2] = 2 is divisible by i = 2\nThe second beautiful arrangement is [2,1]:\n    - perm[1] = 2 is divisible by i = 1\n    - i = 2 is divisible by perm[2] = 1\n\nSample Input\n1\n\nSample Output\n1",
+            "constraints": "1 <= n <= 15",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "8",
+                    "expectedOutput": "132"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countArrangement(self, n):\n        # TODO: Return number of beautiful arrangements\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    print(sol.countArrangement(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countArrangement(int n) {\n        // TODO: Return number of beautiful arrangements\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.countArrangement(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countArrangement(n) {\n        // TODO: Return number of beautiful arrangements\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.countArrangement(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countArrangement(int n) {\n        // TODO: Return number of beautiful arrangements\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.countArrangement(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid countArrangement(int n) {\n    // TODO: Print number of beautiful arrangements\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    countArrangement(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking with bit manipulation to track which numbers have been used.",
+                "For each position i, try all numbers that satisfy: num % i == 0 or i % num == 0."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Shopping Offers (Bit Manipulation)",
+            "description": "Problem Statement\n\nIn LeetCode Store, there are n items to sell. Each item has a price. However, there are some special offers, and a special offer consists of one or more different kinds of items with a sale price.\nYou are given an integer array price where price[i] is the price of the ith item, and an integer array needs where needs[i] is the number of pieces of the ith item you want to buy.\nYou are also given an array special where special[i] is of size n + 1 where special[i][j] is the number of pieces of the jth item in the ith offer and special[i][n] (i.e., the last integer in the array) is the price of the ith offer.\nReturn the lowest price you have to pay for exactly certain items as given, where you could make optimal use of the special offers. You are not allowed to buy more items than you want, even if that would lower the overall price. You could use any of the special offers as many times as you want.\n",
+            "examples": "Sample Input\n2 5\n3 0 5\n1 2 10\n3 2\n\nSample Output\n14\n\nExplanation: There are two kinds of items, A and B. Their prices are $2 and $5 respectively. \nIn special offer 1, you can pay $5 for 3A and 0B\nIn special offer 2, you can pay $10 for 1A and 2B. \nYou need to buy 3A and 2B, so you may pay $10 for 1A and 2B (special offer #2), and $4 for 2A.\n\nSample Input\n2 3 4\n1 1 0 4\n2 2 1 9\n1 2 1\n\nSample Output\n11\n\nExplanation: The price of A is $2, and $3 for B, $4 for C. \nYou may pay $4 for 1A and 1B, and $9 for 2A ,2B and 1C. \nYou need to buy 1A ,2B and 1C, so you may pay $4 for 1A and 1B (special offer #1), and $3 for 1B, $4 for 1C.",
+            "constraints": "n == price.length == needs.length\n1 <= n <= 6\n0 <= price[i], needs[i] <= 10\n1 <= special.length <= 100\nspecial[i].length == n + 1\n0 <= special[i][j] <= 50\nThe input is generated that at least one of special[i][j] is non-zero for 0 <= j <= n - 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2 5\n3 0 5\n1 2 10\n3 2",
+                    "expectedOutput": "14"
+                },
+                {
+                    "input": "2 3 4\n1 1 0 4\n2 2 1 9\n1 2 1",
+                    "expectedOutput": "11"
+                },
+                {
+                    "input": "10 10 10\n3 1 0 10\n1 2 1 15\n2 2 1",
+                    "expectedOutput": "25"
+                },
+                {
+                    "input": "5 5\n1 0 5\n0 1 5\n10 10",
+                    "expectedOutput": "100"
+                },
+                {
+                    "input": "1 2 3\n2 2 2 3\n1 1 1",
+                    "expectedOutput": "6"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def shoppingOffers(self, price, special, needs):\n        # TODO: Return lowest price to buy exactly needs items\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    price = list(map(int, lines[0].split()))\n    n = len(price)\n    special = []\n    i = 1\n    while i < len(lines) and len(lines[i].split()) == n + 1:\n        special.append(list(map(int, lines[i].split())))\n        i += 1\n    needs = list(map(int, lines[i].split()))\n    sol = Solution()\n    print(sol.shoppingOffers(price, special, needs))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int shoppingOffers(List<Integer> price, List<List<Integer>> special, List<Integer> needs) {\n        // TODO: Return lowest price to buy exactly needs items\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] priceParts = br.readLine().trim().split(\" \");\n        List<Integer> price = new ArrayList<>();\n        for (String p : priceParts) {\n            price.add(Integer.parseInt(p));\n        }\n        int n = price.size();\n        List<List<Integer>> special = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null) {\n            String[] parts = line.trim().split(\" \");\n            if (parts.length == n + 1) {\n                List<Integer> offer = new ArrayList<>();\n                for (String part : parts) {\n                    offer.add(Integer.parseInt(part));\n                }\n                special.add(offer);\n            } else if (parts.length == n) {\n                List<Integer> needs = new ArrayList<>();\n                for (String part : parts) {\n                    needs.add(Integer.parseInt(part));\n                }\n                Solution sol = new Solution();\n                System.out.println(sol.shoppingOffers(price, special, needs));\n                break;\n            }\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    shoppingOffers(price, special, needs) {\n        // TODO: Return lowest price to buy exactly needs items\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const price = lines[0].split(/\\s+/).map(Number);\n    const n = price.length;\n    const special = [];\n    let i = 1;\n    while (i < lines.length && lines[i].split(/\\s+/).length === n + 1) {\n        special.push(lines[i].split(/\\s+/).map(Number));\n        i++;\n    }\n    const needs = lines[i].split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.shoppingOffers(price, special, needs));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int shoppingOffers(vector<int>& price, vector<vector<int>>& special, vector<int>& needs) {\n        // TODO: Return lowest price to buy exactly needs items\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> price;\n    int num;\n    while (iss >> num) {\n        price.push_back(num);\n    }\n    int n = price.size();\n    vector<vector<int>> special;\n    while (getline(cin, line)) {\n        istringstream iss2(line);\n        vector<int> offer;\n        int count = 0;\n        while (iss2 >> num) {\n            offer.push_back(num);\n            count++;\n        }\n        if (count == n + 1) {\n            special.push_back(offer);\n        } else if (count == n) {\n            vector<int> needs = offer;\n            Solution sol;\n            cout << sol.shoppingOffers(price, special, needs) << endl;\n            break;\n        }\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid shoppingOffers(int* price, int priceSize, int** special, int specialSize, int* specialColSize, int* needs, int needsSize) {\n    // TODO: Print lowest price to buy exactly needs items\n}\n\nint main() {\n    char line[10000];\n    fgets(line, sizeof(line), stdin);\n    int price[6];\n    int priceSize = 0;\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        price[priceSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    int n = priceSize;\n    int special[100][7];\n    int specialSize = 0;\n    int specialColSize[100];\n    while (fgets(line, sizeof(line), stdin) != NULL) {\n        int offer[7];\n        int count = 0;\n        token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            offer[count++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (count == n + 1) {\n            for (int i = 0; i < count; i++) {\n                special[specialSize][i] = offer[i];\n            }\n            specialColSize[specialSize] = count;\n            specialSize++;\n        } else if (count == n) {\n            int needs[6];\n            for (int i = 0; i < count; i++) {\n                needs[i] = offer[i];\n            }\n            int* specialPtrs[100];\n            for (int i = 0; i < specialSize; i++) {\n                specialPtrs[i] = special[i];\n            }\n            shoppingOffers(price, priceSize, specialPtrs, specialSize, specialColSize, needs, n);\n            break;\n        }\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming with memoization, using a tuple/string to represent the current needs state.",
+                "For each state, try all special offers and also try buying items at regular price."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Set Mismatch (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou have a set of integers s, which originally contains all the numbers from 1 to n. Unfortunately, due to some error, one of the numbers in s got duplicated to another number in the set, which results in repetition of one number and loss of another number.\nYou are given an integer array nums representing the data status of this set after the error.\nFind the number that occurs twice and the number that is missing and return them in the form of an array.\n",
+            "examples": "Sample Input\n1 2 2 4\n\nSample Output\n2 3\n\nExplanation: The number 2 appears twice and the number 3 is missing.\n\nSample Input\n1 1\n\nSample Output\n1 2\n\nExplanation: The number 1 appears twice and the number 2 is missing.",
+            "constraints": "2 <= nums.length <= 10^4\n1 <= nums[i] <= 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "1 2 2 4",
+                    "expectedOutput": "2 3"
+                },
+                {
+                    "input": "1 1",
+                    "expectedOutput": "1 2"
+                },
+                {
+                    "input": "3 1 2 5 3",
+                    "expectedOutput": "3 4"
+                },
+                {
+                    "input": "1 2 4 6 6",
+                    "expectedOutput": "6 3"
+                },
+                {
+                    "input": "4 2 2 5 3",
+                    "expectedOutput": "2 1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def findErrorNums(self, nums):\n        # TODO: Return [duplicate, missing]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.findErrorNums(nums)\n    print(' '.join(map(str, result)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[] findErrorNums(int[] nums) {\n        // TODO: Return [duplicate, missing]\n        return new int[2];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        int[] result = sol.findErrorNums(nums);\n        System.out.println(result[0] + \" \" + result[1]);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    findErrorNums(nums) {\n        // TODO: Return [duplicate, missing]\n        return [0, 0];\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.findErrorNums(nums);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> findErrorNums(vector<int>& nums) {\n        // TODO: Return [duplicate, missing]\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    vector<int> result = sol.findErrorNums(nums);\n    cout << result[0] << \" \" << result[1] << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid findErrorNums(int* nums, int numsSize) {\n    // TODO: Print duplicate and missing (space-separated)\n}\n\nint main() {\n    int nums[10005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    findErrorNums(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use XOR to find the duplicate and missing numbers.",
+                "Calculate expected sum and actual sum to find the difference."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Bulb Switcher II (Bit Manipulation)",
+            "description": "Problem Statement\n\nThere is a room with n bulbs labeled from 1 to n that all are turned on initially, and four buttons on the wall. Each of the four buttons has a different functionality where:\n\nButton 1: Flips the status of all the bulbs.\nButton 2: Flips the status of all the bulbs with even labels (i.e., 2, 4, ...).\nButton 3: Flips the status of all the bulbs with odd labels (i.e., 1, 3, ...).\nButton 4: Flips the status of all the bulbs with a label j = 3k + 1 where k = 0, 1, 2, ... (i.e., 1, 4, 7, 10, ...).\n\nYou must make exactly presses button presses in total. For each press, you may pick any of the four buttons to press.\nGiven the two integers n and presses, return the number of different possible statuses after performing all presses button presses.\n",
+            "examples": "Sample Input\n1 1\n\nSample Output\n2\n\nExplanation: Status can be:\n- [off] by pressing button 1\n- [on] by pressing button 2\n\nSample Input\n2 1\n\nSample Output\n3\n\nExplanation: Status can be:\n- [off, off] by pressing button 1\n- [on, off] by pressing button 2\n- [off, on] by pressing button 3",
+            "constraints": "1 <= n <= 1000\n0 <= presses <= 1000",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "2 1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "3 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "4 2",
+                    "expectedOutput": "7"
+                },
+                {
+                    "input": "5 3",
+                    "expectedOutput": "8"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def flipLights(self, n, presses):\n        # TODO: Return number of different possible statuses\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n, presses = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    print(sol.flipLights(n, presses))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int flipLights(int n, int presses) {\n        // TODO: Return number of different possible statuses\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int presses = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.flipLights(n, presses));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    flipLights(n, presses) {\n        // TODO: Return number of different possible statuses\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const n = parseInt(parts[0]);\n    const presses = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.flipLights(n, presses));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int flipLights(int n, int presses) {\n        // TODO: Return number of different possible statuses\n        return 0;\n    }\n};\n\nint main() {\n    int n, presses;\n    cin >> n >> presses;\n    Solution sol;\n    cout << sol.flipLights(n, presses) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid flipLights(int n, int presses) {\n    // TODO: Print number of different possible statuses\n}\n\nint main() {\n    int n, presses;\n    scanf(\"%d %d\", &n, &presses);\n    flipLights(n, presses);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Notice that the operations are commutative and have cycles.",
+                "After 4 operations, the pattern repeats. Consider cases: presses = 0, 1, 2, 3, and >= 4."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Stickers to Spell Word (Bit Manipulation)",
+            "description": "Problem Statement\n\nWe are given n different types of stickers. Each sticker has a lowercase English word on it.\nYou would like to spell out the given string target by cutting individual letters from your collection of stickers and rearranging them. You can use each sticker more than once if you want, and you have infinite quantities of each sticker.\nReturn the minimum number of stickers that you need to spell out target. If the task is impossible, return -1.\n",
+            "examples": "Sample Input\nwith example science\nthehat\n\nSample Output\n3\n\nExplanation:\nWe can use 2 \"with\" stickers, and 1 \"example\" sticker.\nAfter cutting and rearrange the letters of those stickers, we can form the target \"thehat\".\nAlso, this is the minimum number of stickers necessary to form the target string.\n\nSample Input\nnotice possible\nbasicbasic\n\nSample Output\n-1\n\nExplanation:\nWe cannot form the target \"basicbasic\" from cutting letters from the given stickers.",
+            "constraints": "n == stickers.length\n1 <= n <= 50\n1 <= stickers[i].length <= 10\n1 <= target.length <= 15\nstickers[i] and target consist of lowercase English letters.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "with example science\nthehat",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "notice possible\nbasicbasic",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "a b c\nabc",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "abc abc\nabcabc",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "abc\nd",
+                    "expectedOutput": "-1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def minStickers(self, stickers, target):\n        # TODO: Return minimum number of stickers needed, or -1 if impossible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    stickers = lines[0].split()\n    target = lines[1] if len(lines) > 1 else \"\"\n    sol = Solution()\n    print(sol.minStickers(stickers, target))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int minStickers(String[] stickers, String target) {\n        // TODO: Return minimum number of stickers needed, or -1 if impossible\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] stickers = br.readLine().trim().split(\" \");\n        String target = br.readLine().trim();\n        Solution sol = new Solution();\n        System.out.println(sol.minStickers(stickers, target));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    minStickers(stickers, target) {\n        // TODO: Return minimum number of stickers needed, or -1 if impossible\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const stickers = lines[0].split(/\\s+/);\n    const target = lines[1] || '';\n    const sol = new Solution();\n    console.log(sol.minStickers(stickers, target));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minStickers(vector<string>& stickers, string target) {\n        // TODO: Return minimum number of stickers needed, or -1 if impossible\n        return -1;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> stickers;\n    string word;\n    while (iss >> word) {\n        stickers.push_back(word);\n    }\n    getline(cin, line);\n    string target = line;\n    Solution sol;\n    cout << sol.minStickers(stickers, target) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid minStickers(char** stickers, int stickersSize, char* target) {\n    // TODO: Print minimum number of stickers needed, or -1 if impossible\n}\n\nint main() {\n    char line[10000];\n    fgets(line, sizeof(line), stdin);\n    char* stickers[50];\n    int stickersSize = 0;\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        stickers[stickersSize] = (char*)malloc(strlen(token) + 1);\n        strcpy(stickers[stickersSize], token);\n        stickersSize++;\n        token = strtok(NULL, \" \\n\");\n    }\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    minStickers(stickers, stickersSize, line);\n    for (int i = 0; i < stickersSize; i++) {\n        free(stickers[i]);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use dynamic programming with bit manipulation to represent which characters of target are covered.",
+                "For each state, try using each sticker and update the state accordingly."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Binary Number with Alternating Bits (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a positive integer, check whether it has alternating bits: namely, if two adjacent bits will always have different values.\n",
+            "examples": "Sample Input\n5\n\nSample Output\nTrue\n\nExplanation: The binary representation of 5 is: 101\n\nSample Input\n7\n\nSample Output\nFalse\n\nExplanation: The binary representation of 7 is: 111.\n\nSample Input\n11\n\nSample Output\nFalse\n\nExplanation: The binary representation of 11 is: 1011.",
+            "constraints": "1 <= n <= 2^31 - 1",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "11",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "2",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "10",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def hasAlternatingBits(self, n):\n        # TODO: Return True if n has alternating bits, else False\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    result = sol.hasAlternatingBits(n)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean hasAlternatingBits(int n) {\n        // TODO: Return true if n has alternating bits, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.hasAlternatingBits(n) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    hasAlternatingBits(n) {\n        // TODO: Return true if n has alternating bits, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    const result = sol.hasAlternatingBits(n);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool hasAlternatingBits(int n) {\n        // TODO: Return true if n has alternating bits, else false\n        return false;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << (sol.hasAlternatingBits(n) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n\nvoid hasAlternatingBits(int n) {\n    // TODO: Print \"True\" if n has alternating bits, else \"False\"\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    hasAlternatingBits(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if (n ^ (n >> 1)) has all bits set to 1.",
+                "For alternating bits, n XOR (n >> 1) should be all 1's, then check if (n ^ (n >> 1)) + 1 is a power of 2."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Partition to K Equal Sum Subsets (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array nums and an integer k, return true if it is possible to divide this array into k non-empty subsets whose sums are all equal.\n",
+            "examples": "Sample Input\n4 3 2 3 5 2 1\n4\n\nSample Output\nTrue\n\nExplanation: It is possible to divide it into 4 subsets (5), (1, 4), (2,3), (2,3) with equal sums.\n\nSample Input\n1 2 3 4\n3\n\nSample Output\nFalse\n\nExplanation: It is not possible to divide the array into 3 equal sum subsets.",
+            "constraints": "1 <= k <= nums.length <= 16\n1 <= nums[i] <= 10^4\nThe frequency of each element is in the range [1, 4].",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 3 2 3 5 2 1\n4",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1 2 3 4\n3",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "1 1 1 1 1 1 1 1\n2",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1 2 3 4 5 6 7 8\n4",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "2 2 2 2 3 4 5\n4",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def canPartitionKSubsets(self, nums, k):\n        # TODO: Return True if nums can be partitioned into k equal sum subsets\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    nums = list(map(int, lines[0].split()))\n    k = int(lines[1]) if len(lines) > 1 else 0\n    sol = Solution()\n    result = sol.canPartitionKSubsets(nums, k)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean canPartitionKSubsets(int[] nums, int k) {\n        // TODO: Return true if nums can be partitioned into k equal sum subsets\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        int k = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.canPartitionKSubsets(nums, k) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    canPartitionKSubsets(nums, k) {\n        // TODO: Return true if nums can be partitioned into k equal sum subsets\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const nums = lines[0].split(/\\s+/).map(Number);\n    const k = parseInt(lines[1] || '0');\n    const sol = new Solution();\n    const result = sol.canPartitionKSubsets(nums, k);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool canPartitionKSubsets(vector<int>& nums, int k) {\n        // TODO: Return true if nums can be partitioned into k equal sum subsets\n        return false;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    int k;\n    cin >> k;\n    Solution sol;\n    cout << (sol.canPartitionKSubsets(nums, k) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <stdlib.h>\n\nvoid canPartitionKSubsets(int* nums, int numsSize, int k) {\n    // TODO: Print \"True\" if nums can be partitioned into k equal sum subsets, else \"False\"\n}\n\nint main() {\n    int nums[17];\n    int numsSize = 0;\n    char line[1000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    int k;\n    scanf(\"%d\", &k);\n    canPartitionKSubsets(nums, numsSize, k);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Calculate target sum = total_sum / k. Use backtracking with bit manipulation to track which elements are used.",
+                "Try to fill each subset one by one, ensuring each subset sums to target."
+            ]
+        },
+        {
+            "id": null,
+            "title": "IP to CIDR (Bit Manipulation)",
+            "description": "Problem Statement\n\nAn IP address is a formatted 32-bit unsigned integer where each group of 8 bits is printed as a decimal number and the dot character '.' splits the groups.\nA CIDR block is a format used to denote a specific set of IP addresses. It is a string consisting of a base IP address, followed by a slash, followed by a prefix length k. The addresses it covers are all the IPs whose first k bits are the same as the base IP address.\nYou are given a start IP address ip and the number of IP addresses we need to cover n. Your goal is to use as few CIDR blocks as possible to cover all the IP addresses in the inclusive range [ip, ip + n - 1] exactly. No other IP addresses outside of the range should be covered.\nReturn the shortest list of CIDR blocks that covers the range of IP addresses. If there are multiple answers, return any of them.\n",
+            "examples": "Sample Input\n255.0.0.7\n10\n\nSample Output\n255.0.0.7/32\n255.0.0.8/29\n255.0.0.16/32\n\nExplanation:\nThe IP addresses that need to be covered are:\n- 255.0.0.7 through 255.0.0.16\n\nThe CIDR block \"255.0.0.7/32\" covers the first address.\nThe CIDR block \"255.0.0.8/29\" covers the middle 8 addresses.\nThe CIDR block \"255.0.0.16/32\" covers the last address.\n\nSample Input\n117.145.102.62\n8\n\nSample Output\n117.145.102.62/31\n117.145.102.64/30\n117.145.102.68/31",
+            "constraints": "7 <= ip.length <= 15\nip is a valid IPv4 on the form \"a.b.c.d\" where a, b, c, and d are integers in the range [0, 255].\n1 <= n <= 1000\nEvery implied address ip + x (for x < n) will be a valid IPv4 address.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1.2.3.4\n4",
+                    "expectedOutput": "1.2.3.4/30"
+                },
+                {
+                    "input": "192.168.1.1\n1",
+                    "expectedOutput": "192.168.1.1/32"
+                },
+                {
+                    "input": "192.168.1.0\n16",
+                    "expectedOutput": "192.168.1.0/28"
+                },
+                {
+                    "input": "255.255.255.252\n4",
+                    "expectedOutput": "255.255.255.252/30"
+                },
+                {
+                    "input": "117.145.102.62\n8",
+                    "expectedOutput": "117.145.102.62/31\n117.145.102.64/30\n117.145.102.68/31"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def ipToCIDR(self, ip, n):\n        # TODO: Return list of CIDR blocks covering [ip, ip + n - 1]\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    ip = lines[0]\n    n = int(lines[1]) if len(lines) > 1 else 0\n    sol = Solution()\n    result = sol.ipToCIDR(ip, n)\n    for cidr in result:\n        print(cidr)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> ipToCIDR(String ip, int n) {\n        // TODO: Return list of CIDR blocks covering [ip, ip + n - 1]\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String ip = br.readLine().trim();\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        List<String> result = sol.ipToCIDR(ip, n);\n        for (String cidr : result) {\n            System.out.println(cidr);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    ipToCIDR(ip, n) {\n        // TODO: Return list of CIDR blocks covering [ip, ip + n - 1]\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const ip = lines[0];\n    const n = parseInt(lines[1] || '0');\n    const sol = new Solution();\n    const result = sol.ipToCIDR(ip, n);\n    for (const cidr of result) {\n        console.log(cidr);\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> ipToCIDR(string ip, int n) {\n        // TODO: Return list of CIDR blocks covering [ip, ip + n - 1]\n        return {};\n    }\n};\n\nint main() {\n    string ip;\n    getline(cin, ip);\n    int n;\n    cin >> n;\n    Solution sol;\n    vector<string> result = sol.ipToCIDR(ip, n);\n    for (const string& cidr : result) {\n        cout << cidr << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid ipToCIDR(char* ip, int n) {\n    // TODO: Print CIDR blocks covering [ip, ip + n - 1] (one per line)\n}\n\nint main() {\n    char ip[20];\n    fgets(ip, sizeof(ip), stdin);\n    ip[strcspn(ip, \"\\n\")] = 0;\n    int n;\n    scanf(\"%d\", &n);\n    ipToCIDR(ip, n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Convert IP address to integer, then use bit manipulation to find the largest power of 2 that fits.",
+                "For each remaining range, find the longest prefix that covers as many addresses as possible without exceeding the range."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Pyramid Transition Matrix (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are stacking blocks to form a pyramid. Each block has a color, which is represented by a single letter. Each row of blocks contains one less block than the row beneath it and is centered on top.\nTo make the pyramid aesthetically pleasing, there are only specific triangular patterns that are allowed. A triangular pattern consists of a single block stacked on top of two blocks. The patterns are given as a list of three-letter strings allowed, where the first two characters of a pattern represent the left and right bottom blocks respectively, and the third character is the top block.\nFor example, \"ABC\" represents a triangular pattern with a 'C' block stacked on top of an 'A' (left) and 'B' (right) block. Note that this is different from \"BAC\" where 'B' is on the left bottom and 'A' is on the right bottom.\nYou start with a bottom row of blocks bottom, given as a single string, that you must use as the base of the pyramid.\nGiven bottom and allowed, return true if you can build the pyramid all the way to the top such that every triangular pattern in the pyramid is in allowed, or false otherwise.\n",
+            "examples": "Sample Input\nBCD\nBCC CDE CEA FFF\n\nSample Output\nTrue\n\nExplanation: The allowed triangular patterns are shown.\nStarting from the bottom (level 3), we can build \"CE\" on level 2 and then build \"A\" on level 1.\nThere are three triangular patterns in the pyramid, which are \"BCC\", \"CDE\", and \"CEA\". All are allowed.\n\nSample Input\nAAAA\nAAB AAC BCD BBE DEF\n\nSample Output\nFalse\n\nExplanation: The allowed triangular patterns are shown.\nStarting from the bottom (level 4), there are multiple ways to build level 3, but trying all the possibilities, you will get always stuck before building level 1.",
+            "constraints": "2 <= bottom.length <= 6\n0 <= allowed.length <= 216\nallowed[i].length == 3\nThe letters in all input strings are from the set {'A', 'B', 'C', 'D', 'E', 'F'}.\nAll the values of allowed are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "BCD\nBCC CDE CEA FFF",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "AAAA\nAAB AAC BCD BBE DEF",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "ABC\nABD BCE DEF",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "FFFA\nFFF FFA FAF AFF",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "ABC\nABD BDC CDB BDD DEF DEE",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def pyramidTransition(self, bottom, allowed):\n        # TODO: Return True if pyramid can be built, else False\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    bottom = lines[0]\n    allowed = lines[1].split() if len(lines) > 1 else []\n    sol = Solution()\n    result = sol.pyramidTransition(bottom, allowed)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean pyramidTransition(String bottom, List<String> allowed) {\n        // TODO: Return true if pyramid can be built, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String bottom = br.readLine().trim();\n        String[] allowedParts = br.readLine().trim().split(\" \");\n        List<String> allowed = Arrays.asList(allowedParts);\n        Solution sol = new Solution();\n        System.out.println(sol.pyramidTransition(bottom, allowed) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    pyramidTransition(bottom, allowed) {\n        // TODO: Return true if pyramid can be built, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const bottom = lines[0];\n    const allowed = lines.length > 1 ? lines[1].split(/\\s+/) : [];\n    const sol = new Solution();\n    const result = sol.pyramidTransition(bottom, allowed);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool pyramidTransition(string bottom, vector<string>& allowed) {\n        // TODO: Return true if pyramid can be built, else false\n        return false;\n    }\n};\n\nint main() {\n    string bottom;\n    getline(cin, bottom);\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> allowed;\n    string word;\n    while (iss >> word) {\n        allowed.push_back(word);\n    }\n    Solution sol;\n    cout << (sol.pyramidTransition(bottom, allowed) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid pyramidTransition(char* bottom, char** allowed, int allowedSize) {\n    // TODO: Print \"True\" if pyramid can be built, else \"False\"\n}\n\nint main() {\n    char bottom[10];\n    fgets(bottom, sizeof(bottom), stdin);\n    bottom[strcspn(bottom, \"\\n\")] = 0;\n    \n    char line[3000];\n    fgets(line, sizeof(line), stdin);\n    char* allowed[216];\n    int allowedSize = 0;\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        allowed[allowedSize] = (char*)malloc(strlen(token) + 1);\n        strcpy(allowed[allowedSize], token);\n        allowedSize++;\n        token = strtok(NULL, \" \\n\");\n    }\n    pyramidTransition(bottom, allowed, allowedSize);\n    for (int i = 0; i < allowedSize; i++) {\n        free(allowed[i]);\n    }\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking with memoization. For each row, try all possible combinations of blocks.",
+                "Build the pyramid from bottom to top, checking if each triangular pattern is allowed."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Prime Number of Set Bits in Binary Representation (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven two integers left and right, return the count of numbers in the inclusive range [left, right] having a prime number of set bits in their binary representation.\nRecall that the number of set bits an integer has is the number of 1's present when written in binary.\nFor example, 21 written in binary is 10101, which has 3 set bits.\n",
+            "examples": "Sample Input\n6 10\n\nSample Output\n4\n\nExplanation:\n6  -> 110 (2 set bits, 2 is prime)\n7  -> 111 (3 set bits, 3 is prime)\n8  -> 1000 (1 set bit, 1 is not prime)\n9  -> 1001 (2 set bits, 2 is prime)\n10 -> 1010 (2 set bits, 2 is prime)\n4 numbers have a prime number of set bits.\n\nSample Input\n10 15\n\nSample Output\n5\n\nExplanation:\n10 -> 1010 (2 set bits, 2 is prime)\n11 -> 1011 (3 set bits, 3 is prime)\n12 -> 1100 (2 set bits, 2 is prime)\n13 -> 1101 (3 set bits, 3 is prime)\n14 -> 1110 (3 set bits, 3 is prime)\n15 -> 1111 (4 set bits, 4 is not prime)\n5 numbers have a prime number of set bits.",
+            "constraints": "1 <= left <= right <= 10^6\n0 <= right - left <= 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "6 10",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "10 15",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "1 20",
+                    "expectedOutput": "14"
+                },
+                {
+                    "input": "100 105",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "5 5",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countPrimeSetBits(self, left, right):\n        # TODO: Return count of numbers with prime number of set bits\n        pass\n\nif __name__ == '__main__':\n    import sys\n    left, right = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    print(sol.countPrimeSetBits(left, right))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int countPrimeSetBits(int left, int right) {\n        // TODO: Return count of numbers with prime number of set bits\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int left = Integer.parseInt(parts[0]);\n        int right = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.countPrimeSetBits(left, right));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countPrimeSetBits(left, right) {\n        // TODO: Return count of numbers with prime number of set bits\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const left = parseInt(parts[0]);\n    const right = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.countPrimeSetBits(left, right));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countPrimeSetBits(int left, int right) {\n        // TODO: Return count of numbers with prime number of set bits\n        return 0;\n    }\n};\n\nint main() {\n    int left, right;\n    cin >> left >> right;\n    Solution sol;\n    cout << sol.countPrimeSetBits(left, right) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid countPrimeSetBits(int left, int right) {\n    // TODO: Print count of numbers with prime number of set bits\n}\n\nint main() {\n    int left, right;\n    scanf(\"%d %d\", &left, &right);\n    countPrimeSetBits(left, right);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each number in range, count set bits and check if the count is prime.",
+                "Since numbers are up to 10^6, the maximum set bits is 20. Check if count is in {2, 3, 5, 7, 11, 13, 17, 19}."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Count Primes (Number Theory)",
+            "description": "Given an integer n, return the number of prime numbers that are strictly less than n.\n\nInput Format:\nFirst line: integer n.\n\nOutput Format:\nPrint a single integer: the count of primes.",
+            "examples": "Sample Input\n10\n\nSample Output\n4\n\nExplanation: Primes less than 10 are 2, 3, 5, 7.",
+            "constraints": "0 <= n <= 5 * 10^6",
+            "hints": 1,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 4033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "163",
+                    "expectedOutput": "37"
+                },
+                {
+                    "input": "621",
+                    "expectedOutput": "114"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def countPrimes(self, n):\n        # TODO: Return the number of prime numbers less than n\n        pass\n\nif __name__ == '__main__':\n    n = int(input().strip())\n    sol = Solution()\n    print(sol.countPrimes(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Solution {\n    public int countPrimes(int n) {\n        // TODO: Return the number of prime numbers less than n\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.println(sol.countPrimes(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    countPrimes(n) {\n        // TODO: Return the number of prime numbers less than n\n        return 0;\n    }\n}\n\nconst fs = require('fs');\nconst n = Number(fs.readFileSync(0, 'utf-8').trim());\nconst sol = new Solution();\nconsole.log(sol.countPrimes(n));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int countPrimes(int n) {\n        // TODO: Return the number of prime numbers less than n\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.countPrimes(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nint countPrimes(int n) {\n    // TODO: Return the number of prime numbers less than n\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%d\\n\", countPrimes(n));\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Sieve of Eratosthenes for efficiency."
+            ]
+        }
+    ]
+}

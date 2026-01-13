@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "String Matching in an Array (String Algorithm)",
+            "description": "Problem Statement\n\nGiven an array of string words, return all strings in words that are a substring of another word. You can return the answer in any order.\n\nReturn a space-separated string of all matching words. If no matches found, return empty string.\n",
+            "examples": "Sample Input\nmass as hero superhero\n\nSample Output\nas hero\n\nExplanation: \"as\" is substring of \"mass\" and \"hero\" is substring of \"superhero\".\n\nSample Input\nleetcode et code\n\nSample Output\net code\n\nExplanation: \"et\", \"code\" are substring of \"leetcode\".",
+            "constraints": "1 <= words.length <= 100\n1 <= words[i].length <= 30\nwords[i] contains only lowercase English letters.\nAll the strings of words are unique.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 2032,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "mass as hero superhero",
+                    "expectedOutput": "as hero"
+                },
+                {
+                    "input": "leetcode et code",
+                    "expectedOutput": "et code"
+                },
+                {
+                    "input": "blue green bu",
+                    "expectedOutput": ""
+                },
+                {
+                    "input": "a ab abc",
+                    "expectedOutput": "a ab"
+                },
+                {
+                    "input": "hello world hell",
+                    "expectedOutput": "hell"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def stringMatching(self, words):\n        # TODO: Return list of matching words\n        pass\n\nif __name__ == '__main__':\n    import sys\n    words = sys.stdin.read().strip().split()\n    sol = Solution()\n    result = sol.stringMatching(words)\n    print(' '.join(result))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public ArrayList<String> stringMatching(String[] words) {\n        // TODO: Return list of matching words\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] words = br.readLine().trim().split(\" \");\n        Solution sol = new Solution();\n        ArrayList<String> result = sol.stringMatching(words);\n        for (int i = 0; i < result.size(); i++) {\n            System.out.print(result.get(i) + (i == result.size() - 1 ? \"\" : \" \"));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    stringMatching(words) {\n        // TODO: Return array of matching words\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const words = input.trim().split(/\\s+/);\n    const sol = new Solution();\n    const result = sol.stringMatching(words);\n    console.log(result.join(' '));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> stringMatching(vector<string>& words) {\n        // TODO: Return vector of matching words\n        return {};\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<string> words;\n    string word;\n    while (iss >> word) {\n        words.push_back(word);\n    }\n    Solution sol;\n    vector<string> result = sol.stringMatching(words);\n    for (int i = 0; i < result.size(); i++) {\n        cout << result[i] << (i == result.size() - 1 ? \"\" : \" \");\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\nvoid stringMatching(char** words, int wordsSize) {\n    // TODO: Print matching words\n}\n\nint main() {\n    char line[3005];\n    fgets(line, sizeof(line), stdin);\n    line[strcspn(line, \"\\n\")] = 0;\n    char* words[105];\n    int wordsSize = 0;\n    char* token = strtok(line, \" \");\n    while (token != NULL) {\n        words[wordsSize++] = token;\n        token = strtok(NULL, \" \");\n    }\n    stringMatching(words, wordsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each word, check if it is a substring of any other word.",
+                "Use string matching functions to check substring relationships."
+            ]
+        }
+    ]
+}
+

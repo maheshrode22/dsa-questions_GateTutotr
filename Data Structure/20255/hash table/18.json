@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Isomorphic Strings (Hash Table)",
+            "description": "Problem Statement\n\nGiven two strings s and t, determine if they are isomorphic.\nTwo strings s and t are isomorphic if the characters in s can be replaced to get t.\nAll occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.\n",
+            "examples": "Example 1:\n\nInput: s = \"egg\", t = \"add\"\nOutput: true\nExplanation:\nThe strings s and t can be made identical by:\nMapping 'e' to 'a'.\nMapping 'g' to 'd'.\n\nExample 2:\n\nInput: s = \"foo\", t = \"bar\"\nOutput: false\nExplanation:\nThe strings s and t can not be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nExample 3:\n\nInput: s = \"paper\", t = \"title\"\nOutput: true",
+            "constraints": "1 <= s.length <= 5 * 10^4\nt.length == s.length\ns and t consist of any valid ascii character.",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "egg\nadd",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "foo\nbar",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "paper\ntitle",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "ab\naa",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "aa\nab",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def isIsomorphic(self, s, t):\n        # TODO: Check if strings are isomorphic using hash maps\n        # Return True if isomorphic, False otherwise\n        pass\n\nif __name__ == '__main__':\n    import sys\n    data = sys.stdin.read().strip().split('\\n')\n    s = data[0].strip()\n    t = data[1].strip()\n    sol = Solution()\n    result = sol.isIsomorphic(s, t)\n    print(\"true\" if result else \"false\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    boolean isIsomorphic(String s, String t){\n        // TODO: Check if strings are isomorphic using hash maps\n        // Return true if isomorphic, false otherwise\n        return false;\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        String t = br.readLine().trim();\n        Solution sol = new Solution();\n        boolean result = sol.isIsomorphic(s, t);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  isIsomorphic(s, t){\n    // TODO: Check if strings are isomorphic using hash maps\n    // Return true if isomorphic, false otherwise\n    return false;\n  }\n}\nfunction solve(input){\n  const lines = input.trim().split(\"\\n\");\n  const s = lines[0].trim();\n  const t = lines[1].trim();\n  const sol = new Solution();\n  const result = sol.isIsomorphic(s, t);\n  console.log(result ? \"true\" : \"false\");\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    bool isIsomorphic(string s, string t){\n        // TODO: Check if strings are isomorphic using hash maps\n        // Return true if isomorphic, false otherwise\n        return false;\n    }\n};\nint main(){\n    string s, t;\n    getline(cin, s);\n    getline(cin, t);\n    Solution sol;\n    bool result = sol.isIsomorphic(s, t);\n    cout << (result ? \"true\" : \"false\");\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n\nbool isIsomorphic(char* s, char* t){\n    // TODO: Check if strings are isomorphic\n    // Return true if isomorphic, false otherwise\n    return false;\n}\n\nint main(){\n    char s[50005], t[50005];\n    scanf(\"%s\", s);\n    scanf(\"%s\", t);\n    bool result = isIsomorphic(s, t);\n    printf(\"%s\", result ? \"true\" : \"false\");\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use two maps to store the mapping from s to t and from t to s.",
+                "If a character in s maps to a different character in t, or vice versa, return false."
+            ]
+        }
+    ]
+}

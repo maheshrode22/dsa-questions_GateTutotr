@@ -1,0 +1,64 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Fraction to Recurring Decimal (Hash Table)",
+            "description": "Problem Statement\n\nGiven two integers representing the numerator and denominator of a fraction, return the fraction in string format.\nIf the fractional part is repeating, enclose the repeating part in parentheses.\nIf multiple answers are possible, return any of them.\n",
+            "examples": "Example 1:\n\nInput: numerator = 1, denominator = 2\nOutput: \"0.5\"\n\nExample 2:\n\nInput: numerator = 2, denominator = 1\nOutput: \"2\"\n\nExample 3:\n\nInput: numerator = 4, denominator = 333\nOutput: \"0.(012)\"",
+            "constraints": "-2^31 <= numerator, denominator <= 2^31 - 1\ndenominator != 0",
+            "hints": 2,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "subdomainId": 2026,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 2",
+                    "expectedOutput": "0.5"
+                },
+                {
+                    "input": "2 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "4 333",
+                    "expectedOutput": "0.(012)"
+                },
+                {
+                    "input": "1 6",
+                    "expectedOutput": "0.1(6)"
+                },
+                {
+                    "input": "-1 2",
+                    "expectedOutput": "-0.5"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def fractionToDecimal(self, numerator, denominator):\n        # TODO: Use hash map to detect repeating remainders in division\n        # Return fraction as string with repeating part in parentheses\n        pass\n\nif __name__ == '__main__':\n    import sys\n    numerator, denominator = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    result = sol.fractionToDecimal(numerator, denominator)\n    print(result)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\nclass Solution{\n    String fractionToDecimal(int numerator, int denominator){\n        // TODO: Use hash map to detect repeating remainders in division\n        // Return fraction as string with repeating part in parentheses\n        return \"\";\n    }\n    public static void main(String[] args) throws Exception{\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int numerator = Integer.parseInt(parts[0]);\n        int denominator = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        String result = sol.fractionToDecimal(numerator, denominator);\n        System.out.println(result);\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution{\n  fractionToDecimal(numerator, denominator){\n    // TODO: Use hash map to detect repeating remainders in division\n    // Return fraction as string with repeating part in parentheses\n    return \"\";\n  }\n}\nfunction solve(input){\n  const [numerator, denominator] = input.trim().split(\" \").map(Number);\n  const sol = new Solution();\n  const result = sol.fractionToDecimal(numerator, denominator);\n  console.log(result);\n}\nconst fs = require('fs');\nsolve(fs.readFileSync(0,'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\nclass Solution{\npublic:\n    string fractionToDecimal(int numerator, int denominator){\n        // TODO: Use hash map to detect repeating remainders in division\n        // Return fraction as string with repeating part in parentheses\n        return \"\";\n    }\n};\nint main(){\n    int numerator, denominator;\n    cin >> numerator >> denominator;\n    Solution sol;\n    string result = sol.fractionToDecimal(numerator, denominator);\n    cout << result;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nchar* fractionToDecimal(int numerator, int denominator){\n    // TODO: Convert fraction to decimal string\n    // Return fraction as string with repeating part in parentheses\n    static char result[10000];\n    result[0] = '0';\n    result[1] = '\\0';\n    return result;\n}\n\nint main(){\n    int numerator, denominator;\n    scanf(\"%d %d\", &numerator, &denominator);\n    char* result = fractionToDecimal(numerator, denominator);\n    printf(\"%s\", result);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use a hash map to store each remainder and its position. When you see a remainder again, you've found the repeating cycle.",
+                "Handle the integer part separately. For the decimal part, multiply remainder by 10 and divide by denominator repeatedly."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,664 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "K-th Symbol in Grammar (Bit Manipulation)",
+            "description": "Problem Statement\n\nWe build a table of n rows (1-indexed). We start by writing 0 in the 1st row. Now in every subsequent row, we look at the previous row and replace each occurrence of 0 with 01, and each occurrence of 1 with 10.\nFor example, for n = 3, the 1st row is 0, the 2nd row is 01, and the 3rd row is 0110.\nGiven two integer n and k, return the kth (1-indexed) symbol in the nth row of a table of n rows.\n",
+            "examples": "Sample Input\n1 1\n\nSample Output\n0\n\nExplanation: row 1: 0\n\nSample Input\n2 1\n\nSample Output\n0\n\nExplanation:\nrow 1: 0\nrow 2: 01\n\nSample Input\n2 2\n\nSample Output\n1\n\nExplanation:\nrow 1: 0\nrow 2: 01",
+            "constraints": "1 <= n <= 30\n1 <= k <= 2^(n-1)",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "1 1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2 1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "2 2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3 2",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "4 8",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def kthGrammar(self, n, k):\n        # TODO: Return kth symbol in nth row\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n, k = map(int, sys.stdin.read().strip().split())\n    sol = Solution()\n    print(sol.kthGrammar(n, k))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int kthGrammar(int n, int k) {\n        // TODO: Return kth symbol in nth row\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int n = Integer.parseInt(parts[0]);\n        int k = Integer.parseInt(parts[1]);\n        Solution sol = new Solution();\n        System.out.println(sol.kthGrammar(n, k));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    kthGrammar(n, k) {\n        // TODO: Return kth symbol in nth row\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const parts = input.trim().split(/\\s+/);\n    const n = parseInt(parts[0]);\n    const k = parseInt(parts[1]);\n    const sol = new Solution();\n    console.log(sol.kthGrammar(n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int kthGrammar(int n, int k) {\n        // TODO: Return kth symbol in nth row\n        return 0;\n    }\n};\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    Solution sol;\n    cout << sol.kthGrammar(n, k) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nvoid kthGrammar(int n, int k) {\n    // TODO: Print kth symbol in nth row\n}\n\nint main() {\n    int n, k;\n    scanf(\"%d %d\", &n, &k);\n    kthGrammar(n, k);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Notice the recursive pattern: row n is built from row n-1 by replacing 0->01 and 1->10.",
+                "Use bit manipulation: the kth symbol in row n is related to the (k+1)/2th symbol in row n-1."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Transform to Chessboard (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an n x n binary grid board. In each move, you can swap any two rows with each other, or any two columns with each other.\nReturn the minimum number of moves to transform the board into a chessboard board. If the task is impossible, return -1.\nA chessboard board is a board where no 0's and no 1's are 4-directionally adjacent.\n",
+            "examples": "Sample Input\n0 1 1 0\n0 1 1 0\n1 0 0 1\n1 0 0 1\n\nSample Output\n2\n\nExplanation: One potential sequence of moves is shown.\nThe first move swaps the first and second column.\nThe second move swaps the second and third row.\n\nSample Input\n0 1\n1 0\n\nSample Output\n0\n\nExplanation: Also note that the board with 0 in the top left corner, is also a valid chessboard.\n\nSample Input\n1 0\n1 0\n\nSample Output\n-1\n\nExplanation: No matter what sequence of moves you make, you cannot end with a valid chessboard.",
+            "constraints": "n == board.length\nn == board[i].length\n2 <= n <= 30\nboard[i][j] is either 0 or 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "0 1 1 0\n0 1 1 0\n1 0 0 1\n1 0 0 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "0 1\n1 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1 0\n1 0",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "0 0 1 1\n1 1 0 0\n1 1 0 0\n0 0 1 1",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "1 0 1 0\n0 1 0 1\n1 0 1 0\n0 1 0 1",
+                    "expectedOutput": "0"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def movesToChessboard(self, board):\n        # TODO: Return minimum moves to transform to chessboard, or -1 if impossible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    board = []\n    for line in lines:\n        if line.strip():\n            board.append(list(map(int, line.strip().split())))\n    sol = Solution()\n    print(sol.movesToChessboard(board))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int movesToChessboard(int[][] board) {\n        // TODO: Return minimum moves to transform to chessboard, or -1 if impossible\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> boardList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            int[] row = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) {\n                row[i] = Integer.parseInt(parts[i]);\n            }\n            boardList.add(row);\n        }\n        int[][] board = boardList.toArray(new int[boardList.size()][]);\n        Solution sol = new Solution();\n        System.out.println(sol.movesToChessboard(board));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    movesToChessboard(board) {\n        // TODO: Return minimum moves to transform to chessboard, or -1 if impossible\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const board = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            board.push(line.trim().split(/\\s+/).map(Number));\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.movesToChessboard(board));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int movesToChessboard(vector<vector<int>>& board) {\n        // TODO: Return minimum moves to transform to chessboard, or -1 if impossible\n        return -1;\n    }\n};\n\nint main() {\n    vector<vector<int>> board;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> row;\n        int num;\n        while (iss >> num) {\n            row.push_back(num);\n        }\n        if (!row.empty()) {\n            board.push_back(row);\n        }\n    }\n    Solution sol;\n    cout << sol.movesToChessboard(board) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid movesToChessboard(int** board, int boardSize, int* boardColSize) {\n    // TODO: Print minimum moves to transform to chessboard, or -1 if impossible\n}\n\nint main() {\n    int board[30][30];\n    int boardSize = 0;\n    int boardColSize[30];\n    char line[1000];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int row[30];\n        int colSize = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            row[colSize++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (colSize > 0) {\n            for (int i = 0; i < colSize; i++) {\n                board[boardSize][i] = row[i];\n            }\n            boardColSize[boardSize] = colSize;\n            boardSize++;\n        }\n    }\n    int* boardPtrs[30];\n    for (int i = 0; i < boardSize; i++) {\n        boardPtrs[i] = board[i];\n    }\n    movesToChessboard(boardPtrs, boardSize, boardColSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if the board can be transformed: all rows must be identical or complementary, same for columns.",
+                "Use bit manipulation to represent rows and check patterns. Count mismatches for minimum swaps."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Letter Case Permutation (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a string s, you can transform every letter individually to be lowercase or uppercase to create another string.\nReturn a list of all possible strings we could create. Return the output in any order.\n",
+            "examples": "Sample Input\na1b2\n\nSample Output\na1b2\na1B2\nA1b2\nA1B2\n\nExplanation: All possible combinations of case for letters.\n\nSample Input\n3z4\n\nSample Output\n3z4\n3Z4\n\nExplanation: Only the letter 'z' can be transformed.",
+            "constraints": "1 <= s.length <= 12\ns consists of lowercase English letters, uppercase English letters, and digits.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "a1b2",
+                    "expectedOutput": "a1b2\na1B2\nA1b2\nA1B2"
+                },
+                {
+                    "input": "3z4",
+                    "expectedOutput": "3z4\n3Z4"
+                },
+                {
+                    "input": "aBc1",
+                    "expectedOutput": "aBc1\naBC1\nabC1\nabc1\nAbc1\nAbC1\nABC1\nABc1"
+                },
+                {
+                    "input": "ABC123",
+                    "expectedOutput": "ABC123\nABc123\nAbc123\nAbC123\nabC123\nabc123\naBc123\naBC123"
+                },
+                {
+                    "input": "1234567890",
+                    "expectedOutput": "1234567890"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def letterCasePermutation(self, s):\n        # TODO: Return all possible strings with letter case permutations\n        pass\n\nif __name__ == '__main__':\n    s = input().strip()\n    sol = Solution()\n    result = sol.letterCasePermutation(s)\n    for perm in sorted(result):\n        print(perm)"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<String> letterCasePermutation(String s) {\n        // TODO: Return all possible strings with letter case permutations\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n        Solution sol = new Solution();\n        List<String> result = sol.letterCasePermutation(s);\n        Collections.sort(result);\n        for (String perm : result) {\n            System.out.println(perm);\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    letterCasePermutation(s) {\n        // TODO: Return all possible strings with letter case permutations\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const s = input.trim();\n    const sol = new Solution();\n    const result = sol.letterCasePermutation(s);\n    result.sort();\n    for (const perm of result) {\n        console.log(perm);\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> letterCasePermutation(string s) {\n        // TODO: Return all possible strings with letter case permutations\n        return {};\n    }\n};\n\nint main() {\n    string s;\n    getline(cin, s);\n    Solution sol;\n    vector<string> result = sol.letterCasePermutation(s);\n    sort(result.begin(), result.end());\n    for (const string& perm : result) {\n        cout << perm << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n#include <ctype.h>\n\nvoid letterCasePermutation(char* s) {\n    // TODO: Print all possible strings with letter case permutations (one per line, sorted)\n}\n\nint main() {\n    char s[15];\n    fgets(s, sizeof(s), stdin);\n    s[strcspn(s, \"\\n\")] = 0;\n    letterCasePermutation(s);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use backtracking or bit manipulation to generate all combinations.",
+                "For each letter position, try both lowercase and uppercase versions."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Split Array with Same Average (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an integer array nums.\nYou should move each element of nums into one of the two arrays A and B such that A and B are non-empty, and average(A) == average(B).\nReturn true if it is possible to achieve that and false otherwise.\nNote that for an array arr, average(arr) is the sum of all the elements of arr over the length of arr.\n",
+            "examples": "Sample Input\n1 2 3 4 5 6 7 8\n\nSample Output\nTrue\n\nExplanation: We can split the array into [1,4,5,8] and [2,3,6,7], and both of them have an average of 4.5.\n\nSample Input\n3 1\n\nSample Output\nFalse\n\nExplanation: It is not possible to split into two arrays with the same average.",
+            "constraints": "1 <= nums.length <= 30\n0 <= nums[i] <= 10^4",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "1 2 3 4 5 6 7 8",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "3 1",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "10 20 30",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "5 5 5 5 5 5 5 5",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "2 4 6 8 10 12",
+                    "expectedOutput": "True"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def splitArraySameAverage(self, nums):\n        # TODO: Return True if nums can be split into two arrays with same average\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.splitArraySameAverage(nums)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean splitArraySameAverage(int[] nums) {\n        // TODO: Return true if nums can be split into two arrays with same average\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.splitArraySameAverage(nums) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    splitArraySameAverage(nums) {\n        // TODO: Return true if nums can be split into two arrays with same average\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.splitArraySameAverage(nums);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool splitArraySameAverage(vector<int>& nums) {\n        // TODO: Return true if nums can be split into two arrays with same average\n        return false;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << (sol.splitArraySameAverage(nums) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <stdlib.h>\n\nvoid splitArraySameAverage(int* nums, int numsSize) {\n    // TODO: Print \"True\" if nums can be split into two arrays with same average, else \"False\"\n}\n\nint main() {\n    int nums[31];\n    int numsSize = 0;\n    char line[1000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    splitArraySameAverage(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "If average(A) == average(B), then average(A) == average(nums). Use this to reduce the problem.",
+                "Use dynamic programming with bit manipulation to track possible sums and counts for subsets."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Chalkboard XOR Game (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an array of integers nums represents the numbers written on a chalkboard.\nAlice and Bob take turns erasing exactly one number from the chalkboard, with Alice starting first. If erasing a number causes the bitwise XOR of all the elements of the chalkboard to become 0, then that player loses. The bitwise XOR of one element is that element itself, and the bitwise XOR of no elements is 0.\nAlso, if any player starts their turn with the bitwise XOR of all the elements of the chalkboard equal to 0, then that player wins.\nReturn true if and only if Alice wins the game, assuming both players play optimally.\n",
+            "examples": "Sample Input\n1 1 2\n\nSample Output\nFalse\n\nExplanation: \nAlice has two choices: erase 1 or erase 2. \nIf she erases 1, the nums array becomes [1, 2]. The bitwise XOR of all the elements of the chalkboard is 1 XOR 2 = 3. Now Bob can remove any element he wants, because Alice will be the one to erase the last element and she will lose. \nIf Alice erases 2 first, now nums become [1, 1]. The bitwise XOR of all the elements of the chalkboard is 1 XOR 1 = 0. Alice will lose.\n\nSample Input\n0 1\n\nSample Output\nTrue\n\nExplanation: Alice wins.\n\nSample Input\n1 2 3\n\nSample Output\nTrue\n\nExplanation: Alice wins.",
+            "constraints": "1 <= nums.length <= 1000\n0 <= nums[i] < 2^16",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "1 1 2",
+                    "expectedOutput": "False"
+                },
+                {
+                    "input": "0 1",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1 2 3",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1 2 2 3",
+                    "expectedOutput": "True"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "False"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def xorGame(self, nums):\n        # TODO: Return True if Alice wins, else False\n        pass\n\nif __name__ == '__main__':\n    import sys\n    nums = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    result = sol.xorGame(nums)\n    print(\"True\" if result else \"False\")"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean xorGame(int[] nums) {\n        // TODO: Return true if Alice wins, else false\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.xorGame(nums) ? \"True\" : \"False\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    xorGame(nums) {\n        // TODO: Return true if Alice wins, else false\n        return false;\n    }\n}\n\nfunction solve(input) {\n    const nums = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    const result = sol.xorGame(nums);\n    console.log(result ? \"True\" : \"False\");\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool xorGame(vector<int>& nums) {\n        // TODO: Return true if Alice wins, else false\n        return false;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> nums;\n    int num;\n    while (iss >> num) {\n        nums.push_back(num);\n    }\n    Solution sol;\n    cout << (sol.xorGame(nums) ? \"True\" : \"False\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdbool.h>\n#include <stdlib.h>\n\nvoid xorGame(int* nums, int numsSize) {\n    // TODO: Print \"True\" if Alice wins, else \"False\"\n}\n\nint main() {\n    int nums[1005];\n    int numsSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        nums[numsSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    xorGame(nums, numsSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "If the XOR of all numbers is 0, Alice wins immediately.",
+                "If the XOR is non-zero and the array length is even, Alice can always force a win."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Flipping an Image (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an n x n binary matrix image, flip the image horizontally, then invert it, and return the resulting image.\nTo flip an image horizontally means that each row of the image is reversed.\nFor example, flipping [1,1,0] horizontally results in [0,1,1].\nTo invert an image means that each 0 is replaced by 1, and each 1 is replaced by 0.\nFor example, inverting [0,1,1] results in [1,0,0].\n",
+            "examples": "Sample Input\n1 1 0\n1 0 1\n0 0 0\n\nSample Output\n1 0 0\n0 1 0\n1 1 1\n\nExplanation: First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].\nThen, invert the image: [[1,0,0],[0,1,0],[1,1,1]]\n\nSample Input\n1 1 0 0\n1 0 0 1\n0 1 1 1\n1 0 1 0\n\nSample Output\n1 1 0 0\n0 1 1 0\n0 0 0 1\n1 0 1 0\n\nExplanation: First reverse each row: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]].\nThen invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]",
+            "constraints": "n == image.length\nn == image[i].length\n1 <= n <= 20\nimage[i][j] is either 0 or 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "1 1 0\n1 0 1\n0 0 0",
+                    "expectedOutput": "1 0 0\n0 1 0\n1 1 1"
+                },
+                {
+                    "input": "1 1 0 0\n1 0 0 1\n0 1 1 1\n1 0 1 0",
+                    "expectedOutput": "1 1 0 0\n0 1 1 0\n0 0 0 1\n1 0 1 0"
+                },
+                {
+                    "input": "1 0 1\n0 1 0\n1 0 1",
+                    "expectedOutput": "0 1 0\n1 0 1\n0 1 0"
+                },
+                {
+                    "input": "1 1 1\n1 1 1\n1 1 1",
+                    "expectedOutput": "0 0 0\n0 0 0\n0 0 0"
+                },
+                {
+                    "input": "0 0 0\n0 0 0\n0 0 0",
+                    "expectedOutput": "1 1 1\n1 1 1\n1 1 1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def flipAndInvertImage(self, image):\n        # TODO: Return flipped and inverted image\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    image = []\n    for line in lines:\n        if line.strip():\n            image.append(list(map(int, line.strip().split())))\n    sol = Solution()\n    result = sol.flipAndInvertImage(image)\n    for row in result:\n        print(' '.join(map(str, row)))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int[][] flipAndInvertImage(int[][] image) {\n        // TODO: Return flipped and inverted image\n        return new int[0][0];\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> imageList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            int[] row = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) {\n                row[i] = Integer.parseInt(parts[i]);\n            }\n            imageList.add(row);\n        }\n        int[][] image = imageList.toArray(new int[imageList.size()][]);\n        Solution sol = new Solution();\n        int[][] result = sol.flipAndInvertImage(image);\n        for (int[] row : result) {\n            for (int i = 0; i < row.length; i++) {\n                System.out.print(row[i] + (i == row.length - 1 ? \"\" : \" \"));\n            }\n            System.out.println();\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    flipAndInvertImage(image) {\n        // TODO: Return flipped and inverted image\n        return [];\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const image = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            image.push(line.trim().split(/\\s+/).map(Number));\n        }\n    }\n    const sol = new Solution();\n    const result = sol.flipAndInvertImage(image);\n    for (const row of result) {\n        console.log(row.join(' '));\n    }\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& image) {\n        // TODO: Return flipped and inverted image\n        return {};\n    }\n};\n\nint main() {\n    vector<vector<int>> image;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> row;\n        int num;\n        while (iss >> num) {\n            row.push_back(num);\n        }\n        if (!row.empty()) {\n            image.push_back(row);\n        }\n    }\n    Solution sol;\n    vector<vector<int>> result = sol.flipAndInvertImage(image);\n    for (const auto& row : result) {\n        for (int i = 0; i < row.size(); i++) {\n            cout << row[i] << (i == row.size() - 1 ? \"\" : \" \");\n        }\n        cout << endl;\n    }\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid flipAndInvertImage(int** image, int imageSize, int* imageColSize) {\n    // TODO: Print flipped and inverted image (one row per line, space-separated)\n}\n\nint main() {\n    int image[20][20];\n    int imageSize = 0;\n    int imageColSize[20];\n    char line[1000];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int row[20];\n        int colSize = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            row[colSize++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (colSize > 0) {\n            for (int i = 0; i < colSize; i++) {\n                image[imageSize][i] = row[i];\n            }\n            imageColSize[imageSize] = colSize;\n            imageSize++;\n        }\n    }\n    int* imagePtrs[20];\n    for (int i = 0; i < imageSize; i++) {\n        imagePtrs[i] = image[i];\n    }\n    flipAndInvertImage(imagePtrs, imageSize, imageColSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Flip each row horizontally, then invert each element (0->1, 1->0).",
+                "You can combine both operations: flip and invert in one pass using XOR with 1."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Shortest Path Visiting All Nodes (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou have an undirected, connected graph of n nodes labeled from 0 to n - 1. You are given an array graph where graph[i] is a list of all the nodes connected with node i by an edge.\nReturn the length of the shortest path that visits every node. You may start and stop at any node, you may revisit nodes multiple times, and you may reuse edges.\n",
+            "examples": "Sample Input\n1 2 3\n0\n0\n0\n\nSample Output\n4\n\nExplanation: One possible path is [1,0,2,0,3]\n\nSample Input\n1\n0 2 4\n1 3 4\n2\n1 2\n\nSample Output\n4\n\nExplanation: One possible path is [0,1,4,2,3]",
+            "constraints": "n == graph.length\n1 <= n <= 12\n0 <= graph[i].length < n\ngraph[i] does not contain i.\nIf graph[a] contains b, then graph[b] contains a.\nThe input graph is always connected.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "1 2 3\n0\n0\n0",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1\n0 2 4\n1 3 4\n2\n1 2",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1 2\n0 2 3\n0 1\n1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 2 3 4 5\n0 2 3 4 5\n0 1 3 4 5\n0 1 2 4 5\n0 1 2 3 5\n0 1 2 3 4",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "1 2\n0\n0",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def shortestPathLength(self, graph):\n        # TODO: Return length of shortest path visiting all nodes\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    graph = []\n    for line in lines:\n        if line.strip():\n            graph.append(list(map(int, line.strip().split())))\n    sol = Solution()\n    print(sol.shortestPathLength(graph))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int shortestPathLength(int[][] graph) {\n        // TODO: Return length of shortest path visiting all nodes\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<List<Integer>> graphList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            List<Integer> neighbors = new ArrayList<>();\n            for (String part : parts) {\n                neighbors.add(Integer.parseInt(part));\n            }\n            graphList.add(neighbors);\n        }\n        int[][] graph = new int[graphList.size()][];\n        for (int i = 0; i < graphList.size(); i++) {\n            graph[i] = graphList.get(i).stream().mapToInt(Integer::intValue).toArray();\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.shortestPathLength(graph));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    shortestPathLength(graph) {\n        // TODO: Return length of shortest path visiting all nodes\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const graph = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            graph.push(line.trim().split(/\\s+/).map(Number));\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.shortestPathLength(graph));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int shortestPathLength(vector<vector<int>>& graph) {\n        // TODO: Return length of shortest path visiting all nodes\n        return 0;\n    }\n};\n\nint main() {\n    vector<vector<int>> graph;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> neighbors;\n        int num;\n        while (iss >> num) {\n            neighbors.push_back(num);\n        }\n        if (!neighbors.empty()) {\n            graph.push_back(neighbors);\n        }\n    }\n    Solution sol;\n    cout << sol.shortestPathLength(graph) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid shortestPathLength(int** graph, int graphSize, int* graphColSize) {\n    // TODO: Print length of shortest path visiting all nodes\n}\n\nint main() {\n    int graph[12][12];\n    int graphSize = 0;\n    int graphColSize[12];\n    char line[1000];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int neighbors[12];\n        int colSize = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            neighbors[colSize++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (colSize > 0) {\n            for (int i = 0; i < colSize; i++) {\n                graph[graphSize][i] = neighbors[i];\n            }\n            graphColSize[graphSize] = colSize;\n            graphSize++;\n        }\n    }\n    int* graphPtrs[12];\n    for (int i = 0; i < graphSize; i++) {\n        graphPtrs[i] = graph[i];\n    }\n    shortestPathLength(graphPtrs, graphSize, graphColSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use BFS with state (current_node, visited_nodes_bitmask).",
+                "Track visited nodes using bit manipulation: mask = 1 << node."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Score After Flipping Matrix (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an m x n binary matrix grid.\nA move consists of choosing any row or column and toggling each value in that row or column (i.e., changing all 0's to 1's, and all 1's to 0's).\nEvery row of the matrix is interpreted as a binary number, and the score of the matrix is the sum of these numbers.\nReturn the highest possible score after making any number of moves (including zero moves).\n",
+            "examples": "Sample Input\n0 0 1 1\n1 0 1 0\n1 1 0 0\n\nSample Output\n39\n\nExplanation: 0b1111 + 0b1001 + 0b1111 = 15 + 9 + 15 = 39\n\nSample Input\n0\n\nSample Output\n1\n\nExplanation: After toggling, grid becomes [[1]] which is 1 in binary.",
+            "constraints": "m == grid.length\nn == grid[i].length\n1 <= m, n <= 20\ngrid[i][j] is either 0 or 1.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "0 0 1 1\n1 0 1 0\n1 1 0 0",
+                    "expectedOutput": "39"
+                },
+                {
+                    "input": "1 0 0\n0 1 1\n1 1 0",
+                    "expectedOutput": "19"
+                },
+                {
+                    "input": "0 1 0 1 0\n1 0 1 0 1\n0 0 0 0 0",
+                    "expectedOutput": "83"
+                },
+                {
+                    "input": "1 0 0 1 0\n1 0 1 0 1\n0 0 1 0 0",
+                    "expectedOutput": "78"
+                },
+                {
+                    "input": "1 1 1\n0 0 0\n1 0 1",
+                    "expectedOutput": "19"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def matrixScore(self, grid):\n        # TODO: Return highest possible score\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    grid = []\n    for line in lines:\n        if line.strip():\n            grid.append(list(map(int, line.strip().split())))\n    sol = Solution()\n    print(sol.matrixScore(grid))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int matrixScore(int[][] grid) {\n        // TODO: Return highest possible score\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<int[]> gridList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            String[] parts = line.trim().split(\" \");\n            int[] row = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) {\n                row[i] = Integer.parseInt(parts[i]);\n            }\n            gridList.add(row);\n        }\n        int[][] grid = gridList.toArray(new int[gridList.size()][]);\n        Solution sol = new Solution();\n        System.out.println(sol.matrixScore(grid));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    matrixScore(grid) {\n        // TODO: Return highest possible score\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const grid = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            grid.push(line.trim().split(/\\s+/).map(Number));\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.matrixScore(grid));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int matrixScore(vector<vector<int>>& grid) {\n        // TODO: Return highest possible score\n        return 0;\n    }\n};\n\nint main() {\n    vector<vector<int>> grid;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        istringstream iss(line);\n        vector<int> row;\n        int num;\n        while (iss >> num) {\n            row.push_back(num);\n        }\n        if (!row.empty()) {\n            grid.push_back(row);\n        }\n    }\n    Solution sol;\n    cout << sol.matrixScore(grid) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid matrixScore(int** grid, int gridSize, int* gridColSize) {\n    // TODO: Print highest possible score\n}\n\nint main() {\n    int grid[20][20];\n    int gridSize = 0;\n    int gridColSize[20];\n    char line[1000];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        int row[20];\n        int colSize = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            row[colSize++] = atoi(token);\n            token = strtok(NULL, \" \\n\");\n        }\n        if (colSize > 0) {\n            for (int i = 0; i < colSize; i++) {\n                grid[gridSize][i] = row[i];\n            }\n            gridColSize[gridSize] = colSize;\n            gridSize++;\n        }\n    }\n    int* gridPtrs[20];\n    for (int i = 0; i < gridSize; i++) {\n        gridPtrs[i] = grid[i];\n    }\n    matrixScore(gridPtrs, gridSize, gridColSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "First, toggle rows so that the leftmost column is all 1's (this maximizes the most significant bit).",
+                "Then, for each column, toggle it if more than half the values are 0's."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Shortest Path to Get All Keys (Bit Manipulation)",
+            "description": "Problem Statement\n\nYou are given an m x n grid grid where:\n'.' is an empty cell.\n'#' is a wall.\n'@' is the starting point.\nLowercase letters represent keys.\nUppercase letters represent locks.\n\nYou start at the starting point and one move consists of walking one space in one of the four cardinal directions. You cannot walk outside the grid, or walk into a wall.\nIf you walk over a key, you can pick it up and you cannot walk over a lock unless you have its corresponding key.\nFor some 1 <= k <= 6, there is exactly one lowercase and one uppercase letter of the first k letters of the English alphabet in the grid. This means that there is exactly one key for each lock, and one lock for each key; and also that the letters used to represent the keys and locks were chosen in the same order as the English alphabet.\nReturn the lowest number of moves to acquire all keys. If it is impossible, return -1.\n",
+            "examples": "Sample Input\n@.a..\n###.#\nb.A.B\n\nSample Output\n8\n\nExplanation: Note that the goal is to obtain all the keys not to open all the locks.\n\nSample Input\n@..aA\n..B#.\n....b\n\nSample Output\n6\n\nExplanation: One possible path is shown.\n\nSample Input\n@Aa\n\nSample Output\n-1\n\nExplanation: It's impossible to get all keys.",
+            "constraints": "m == grid.length\nn == grid[i].length\n1 <= m, n <= 30\ngrid[i][j] is either an English letter, '.', '#', or '@'.\nThere is exactly one '@' in the grid.\nThe number of keys in the grid is in the range [1, 6].\nEach key in the grid is unique.\nEach key in the grid has a matching lock.",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "@.a..\n###.#\nb.A.B",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "@..aA\n..B#.\n....b",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "@Aa",
+                    "expectedOutput": "-1"
+                },
+                {
+                    "input": "@.b..\n#.A#.\na.c.C",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "@...a\n#.#B.\n.....\nb.cC.\n.....",
+                    "expectedOutput": "11"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def shortestPathAllKeys(self, grid):\n        # TODO: Return lowest number of moves to acquire all keys, or -1 if impossible\n        pass\n\nif __name__ == '__main__':\n    import sys\n    lines = sys.stdin.read().strip().split('\\n')\n    grid = []\n    for line in lines:\n        if line.strip():\n            grid.append(line.strip())\n    sol = Solution()\n    print(sol.shortestPathAllKeys(grid))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int shortestPathAllKeys(String[] grid) {\n        // TODO: Return lowest number of moves to acquire all keys, or -1 if impossible\n        return -1;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        List<String> gridList = new ArrayList<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.trim().isEmpty()) {\n            gridList.add(line.trim());\n        }\n        String[] grid = gridList.toArray(new String[gridList.size()]);\n        Solution sol = new Solution();\n        System.out.println(sol.shortestPathAllKeys(grid));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    shortestPathAllKeys(grid) {\n        // TODO: Return lowest number of moves to acquire all keys, or -1 if impossible\n        return -1;\n    }\n}\n\nfunction solve(input) {\n    const lines = input.trim().split('\\n');\n    const grid = [];\n    for (const line of lines) {\n        if (line.trim()) {\n            grid.push(line.trim());\n        }\n    }\n    const sol = new Solution();\n    console.log(sol.shortestPathAllKeys(grid));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int shortestPathAllKeys(vector<string>& grid) {\n        // TODO: Return lowest number of moves to acquire all keys, or -1 if impossible\n        return -1;\n    }\n};\n\nint main() {\n    vector<string> grid;\n    string line;\n    while (getline(cin, line) && !line.empty()) {\n        if (!line.empty()) {\n            grid.push_back(line);\n        }\n    }\n    Solution sol;\n    cout << sol.shortestPathAllKeys(grid) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid shortestPathAllKeys(char** grid, int gridSize) {\n    // TODO: Print lowest number of moves to acquire all keys, or -1 if impossible\n}\n\nint main() {\n    char grid[30][31];\n    int gridSize = 0;\n    char line[100];\n    while (fgets(line, sizeof(line), stdin) && line[0] != '\\n') {\n        line[strcspn(line, \"\\n\")] = 0;\n        if (strlen(line) > 0) {\n            strcpy(grid[gridSize], line);\n            gridSize++;\n        }\n    }\n    char* gridPtrs[30];\n    for (int i = 0; i < gridSize; i++) {\n        gridPtrs[i] = grid[i];\n    }\n    shortestPathAllKeys(gridPtrs, gridSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use BFS with state (row, col, keys_bitmask) where keys_bitmask tracks which keys you have.",
+                "Use bit manipulation to track keys: key 'a' = bit 0, 'b' = bit 1, etc."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Binary Gap (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven a positive integer n, find and return the longest distance between any two adjacent 1's in the binary representation of n. If there are no two adjacent 1's, return 0.\nTwo 1's are adjacent if there are only 0's separating them (possibly no 0's). The distance between two 1's is the absolute difference between their bit positions. For example, the two 1's in \"1001\" have a distance of 3.\n",
+            "examples": "Sample Input\n22\n\nSample Output\n2\n\nExplanation: 22 in binary is \"10110\".\nThe first adjacent pair of 1's is \"10110\" with a distance of 2.\nThe second adjacent pair of 1's is \"10110\" with a distance of 1.\nThe answer is the largest of these two distances, which is 2.\nNote that \"10110\" is not a valid pair since there is a 1 separating the two 1's underlined.\n\nSample Input\n8\n\nSample Output\n0\n\nExplanation: 8 in binary is \"1000\".\nThere are not any adjacent pairs of 1's in the binary representation of 8, so we return 0.\n\nSample Input\n5\n\nSample Output\n2\n\nExplanation: 5 in binary is \"101\".",
+            "constraints": "1 <= n <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 1,
+            "testCases": [
+                {
+                    "input": "8",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "3",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "1041",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "22",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def binaryGap(self, n):\n        # TODO: Return longest distance between adjacent 1's in binary representation\n        pass\n\nif __name__ == '__main__':\n    import sys\n    n = int(sys.stdin.read().strip())\n    sol = Solution()\n    print(sol.binaryGap(n))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int binaryGap(int n) {\n        // TODO: Return longest distance between adjacent 1's in binary representation\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        Solution sol = new Solution();\n        System.out.println(sol.binaryGap(n));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    binaryGap(n) {\n        // TODO: Return longest distance between adjacent 1's in binary representation\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const n = parseInt(input.trim());\n    const sol = new Solution();\n    console.log(sol.binaryGap(n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int binaryGap(int n) {\n        // TODO: Return longest distance between adjacent 1's in binary representation\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    Solution sol;\n    cout << sol.binaryGap(n) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid binaryGap(int n) {\n    // TODO: Print longest distance between adjacent 1's in binary representation\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    binaryGap(n);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Convert the number to binary and track positions of 1's.",
+                "Use bit manipulation to iterate through bits and track the last position of 1."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Bitwise ORs of Subarrays (Bit Manipulation)",
+            "description": "Problem Statement\n\nGiven an integer array arr, return the number of distinct bitwise ORs of all the non-empty subarrays of arr.\nThe bitwise OR of a subarray is the bitwise OR of each integer in the subarray. The bitwise OR of a subarray of one integer is that integer.\nA subarray is a contiguous non-empty sequence of elements within an array.\n",
+            "examples": "Sample Input\n0\n\nSample Output\n1\n\nExplanation: There is only one possible result: 0.\n\nSample Input\n1 1 2\n\nSample Output\n3\n\nExplanation: The possible subarrays are [1], [1], [2], [1, 1], [1, 2], [1, 1, 2].\nThese yield the results 1, 1, 2, 1, 3, 3.\nThere are 3 unique values, so the answer is 3.\n\nSample Input\n1 2 4\n\nSample Output\n6\n\nExplanation: The possible results are 1, 2, 3, 4, 6, and 7.",
+            "constraints": "1 <= arr.length <= 5 * 10^4\n0 <= arr[i] <= 10^9",
+            "hints": 2,
+            "timeLimit": 1,
+            "memoryLimit": 256,
+            "subdomainId": 6033,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "0",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "1 1 2",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "1 2 4",
+                    "expectedOutput": "6"
+                },
+                {
+                    "input": "0 1 1 3",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "2 1 0 3 2",
+                    "expectedOutput": "4"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def subarrayBitwiseORs(self, arr):\n        # TODO: Return number of distinct bitwise ORs of all non-empty subarrays\n        pass\n\nif __name__ == '__main__':\n    import sys\n    arr = list(map(int, sys.stdin.read().strip().split()))\n    sol = Solution()\n    print(sol.subarrayBitwiseORs(arr))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int subarrayBitwiseORs(int[] arr) {\n        // TODO: Return number of distinct bitwise ORs of all non-empty subarrays\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] parts = br.readLine().trim().split(\" \");\n        int[] arr = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            arr[i] = Integer.parseInt(parts[i]);\n        }\n        Solution sol = new Solution();\n        System.out.println(sol.subarrayBitwiseORs(arr));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    subarrayBitwiseORs(arr) {\n        // TODO: Return number of distinct bitwise ORs of all non-empty subarrays\n        return 0;\n    }\n}\n\nfunction solve(input) {\n    const arr = input.trim().split(/\\s+/).map(Number);\n    const sol = new Solution();\n    console.log(sol.subarrayBitwiseORs(arr));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int subarrayBitwiseORs(vector<int>& arr) {\n        // TODO: Return number of distinct bitwise ORs of all non-empty subarrays\n        return 0;\n    }\n};\n\nint main() {\n    string line;\n    getline(cin, line);\n    istringstream iss(line);\n    vector<int> arr;\n    int num;\n    while (iss >> num) {\n        arr.push_back(num);\n    }\n    Solution sol;\n    cout << sol.subarrayBitwiseORs(arr) << endl;\n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid subarrayBitwiseORs(int* arr, int arrSize) {\n    // TODO: Print number of distinct bitwise ORs of all non-empty subarrays\n}\n\nint main() {\n    int arr[50005];\n    int arrSize = 0;\n    char line[200000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    while (token != NULL) {\n        arr[arrSize++] = atoi(token);\n        token = strtok(NULL, \" \\n\");\n    }\n    subarrayBitwiseORs(arr, arrSize);\n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "For each starting position, maintain a set of all possible OR values ending at that position.",
+                "The number of distinct OR values is bounded - at most 30 bits can be set, so at most 30 distinct values per position."
+            ]
+        }
+    ]
+}

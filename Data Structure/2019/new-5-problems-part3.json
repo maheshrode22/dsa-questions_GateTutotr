@@ -1,0 +1,354 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Sum of Array Elements",
+            "description": "Problem Statement\nYou are given an array of N integers. Your task is to calculate the sum of all elements in the array.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the sum of the array elements.\n\nExample\nInput: 5\n1 2 3 4 5\nOutput: 15",
+            "examples": "Sample Input\n5\n1 2 3 4 5\n\nSample Output\n15",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 4 5",
+                    "expectedOutput": "15",
+                    "problemTitle": "Sum of Array Elements"
+                },
+                {
+                    "input": "3\n10 20 30",
+                    "expectedOutput": "60",
+                    "problemTitle": "Sum of Array Elements"
+                },
+                {
+                    "input": "1\n100",
+                    "expectedOutput": "100",
+                    "problemTitle": "Sum of Array Elements"
+                },
+                {
+                    "input": "4\n-1 -2 -3 -4",
+                    "expectedOutput": "-10",
+                    "problemTitle": "Sum of Array Elements"
+                },
+                {
+                    "input": "5\n0 0 0 0 0",
+                    "expectedOutput": "0",
+                    "problemTitle": "Sum of Array Elements"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def calculateSum(arr, n):\n    # TODO: Return the sum of array elements\n    return 0\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    print(calculateSum(arr, n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Sum of Array Elements"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static long calculateSum(long[] arr, int n) {\n        // TODO: Return the sum of array elements\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            System.out.print(Result.calculateSum(arr, n));\n        }\n    }\n}",
+                    "problemTitle": "Sum of Array Elements"
+                },
+                {
+                    "language": 3,
+                    "code": "function calculateSum(arr, n) {\n    // TODO: Return the sum of array elements\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    console.log(calculateSum(arr, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Sum of Array Elements"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nlong long calculateSum(vector<long long>& arr, int n) {\n    // TODO: Return the sum of array elements\n    return 0;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << calculateSum(arr, n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Sum of Array Elements"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long calculateSum(long long arr[], int n) {\n    // TODO: Return the sum of array elements\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%lld\", calculateSum(arr, n));\n    }\n    return 0;\n}",
+                    "problemTitle": "Sum of Array Elements"
+                }
+            ],
+            "hintsList": [
+                "Initialize a sum variable to 0 and iterate through the array, adding each element to the sum."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Check for Palindrome Array",
+            "description": "Problem Statement\nYou are given an array of N integers. Your task is to check if the array is a palindrome. An array is a palindrome if it reads the same forward and backward.\nIf it is a palindrome, print YES, otherwise print NO.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint YES or NO.\n\nExample\nInput: 5\n1 2 3 2 1\nOutput: YES",
+            "examples": "Sample Input\n5\n1 2 3 2 1\n\nSample Output\nYES",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 1,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n1 2 3 2 1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check for Palindrome Array"
+                },
+                {
+                    "input": "4\n1 2 2 1",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check for Palindrome Array"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check for Palindrome Array"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "YES",
+                    "problemTitle": "Check for Palindrome Array"
+                },
+                {
+                    "input": "5\n1 1 2 1 2",
+                    "expectedOutput": "NO",
+                    "problemTitle": "Check for Palindrome Array"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def isPalindrome(arr, n):\n    # TODO: Return YES if palindrome, else NO\n    return \"NO\"\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    print(isPalindrome(arr, n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Check for Palindrome Array"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static String isPalindrome(long[] arr, int n) {\n        // TODO: Return YES if palindrome, else NO\n        return \"NO\";\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            System.out.print(Result.isPalindrome(arr, n));\n        }\n    }\n}",
+                    "problemTitle": "Check for Palindrome Array"
+                },
+                {
+                    "language": 3,
+                    "code": "function isPalindrome(arr, n) {\n    // TODO: Return YES if palindrome, else NO\n    return \"NO\";\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    console.log(isPalindrome(arr, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Check for Palindrome Array"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\nstring isPalindrome(vector<long long>& arr, int n) {\n    // TODO: Return YES if palindrome, else NO\n    return \"NO\";\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << isPalindrome(arr, n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Check for Palindrome Array"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nconst char* isPalindrome(long long arr[], int n) {\n    // TODO: Return YES if palindrome, else NO\n    return \"NO\";\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%s\", isPalindrome(arr, n));\n    }\n    return 0;\n}",
+                    "problemTitle": "Check for Palindrome Array"
+                }
+            ],
+            "hintsList": [
+                "Use two pointers, one at the beginning and one at the end, and compare elements while moving towards the center."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find the Kth Largest Element",
+            "description": "Problem Statement\nYou are given an array of N integers and an integer K. Your task is to find the Kth largest element in the array.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\nThe third line contains the integer K.\n\nOutput Format\nPrint the Kth largest element.\n\nExample\nInput:\n5\n3 2 1 5 6\n2\nOutput: 5\nExplanation: The sorted array is [1, 2, 3, 5, 6]. The 2nd largest element is 5.",
+            "examples": "Sample Input\n5\n3 2 1 5 6\n2\n\nSample Output\n5",
+            "constraints": "1 ≤ K ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N log N)\nSpace Complexity: O(1) or O(N)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n3 2 1 5 6\n2",
+                    "expectedOutput": "5",
+                    "problemTitle": "Find the Kth Largest Element"
+                },
+                {
+                    "input": "6\n3 2 3 1 2 4 5 5 6\n4",
+                    "expectedOutput": "4",
+                    "problemTitle": "Find the Kth Largest Element"
+                },
+                {
+                    "input": "1\n10\n1",
+                    "expectedOutput": "10",
+                    "problemTitle": "Find the Kth Largest Element"
+                },
+                {
+                    "input": "5\n-1 -2 -3 -4 -5\n2",
+                    "expectedOutput": "-2",
+                    "problemTitle": "Find the Kth Largest Element"
+                },
+                {
+                    "input": "4\n1 2 3 4\n4",
+                    "expectedOutput": "1",
+                    "problemTitle": "Find the Kth Largest Element"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def findKthLargest(arr, n, k):\n    # TODO: Return the Kth largest element\n    return 0\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:n+1]))\n    k = int(input_data[n+1])\n    print(findKthLargest(arr, n, k))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find the Kth Largest Element"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static long findKthLargest(long[] arr, int n, int k) {\n        // TODO: Return the Kth largest element\n        return 0;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            if (sc.hasNextInt()) {\n                int k = sc.nextInt();\n                System.out.print(Result.findKthLargest(arr, n, k));\n            }\n        }\n    }\n}",
+                    "problemTitle": "Find the Kth Largest Element"
+                },
+                {
+                    "language": 3,
+                    "code": "function findKthLargest(arr, n, k) {\n    // TODO: Return the Kth largest element\n    return 0;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1, n + 1).map(Number);\n    const k = parseInt(lines[n + 1]);\n    console.log(findKthLargest(arr, n, k));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find the Kth Largest Element"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nusing namespace std;\n\nlong long findKthLargest(vector<long long>& arr, int n, int k) {\n    // TODO: Return the Kth largest element\n    return 0;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int k;\n        cin >> k;\n        cout << findKthLargest(arr, n, k);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Kth Largest Element"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\n// Helper for qsort\nint compare(const void *a, const void *b) {\n    long long l = *(long long *)a;\n    long long r = *(long long *)b;\n    if (l < r) return -1;\n    if (l > r) return 1;\n    return 0;\n}\n\nlong long findKthLargest(long long arr[], int n, int k) {\n    // TODO: Return the Kth largest element\n    return 0;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        int k;\n        scanf(\"%d\", &k);\n        printf(\"%lld\", findKthLargest(arr, n, k));\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Kth Largest Element"
+                }
+            ],
+            "hintsList": [
+                "Sort the array in descending order and return the element at index K-1, or sort in ascending order and return the element at index N-K."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find the Majority Element",
+            "description": "Problem Statement\nYou are given an array of N integers. A majority element is an element that appears more than N/2 times in the array. Your task is to find the majority element. If no such element exists, print -1.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint the majority element or -1 if it doesn't exist.\n\nExample\nInput: 5\n3 3 4 2 3\nOutput: 3\nExplanation: 3 appears 3 times, which is more than 5/2 = 2.5.",
+            "examples": "Sample Input\n5\n3 3 4 2 3\n\nSample Output\n3",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(N)\nSpace Complexity: O(1) or O(N)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "5\n3 3 4 2 3",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find the Majority Element"
+                },
+                {
+                    "input": "4\n1 2 3 4",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Find the Majority Element"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "10",
+                    "problemTitle": "Find the Majority Element"
+                },
+                {
+                    "input": "6\n2 2 1 1 1 2",
+                    "expectedOutput": "-1",
+                    "problemTitle": "Find the Majority Element"
+                },
+                {
+                    "input": "7\n1 1 1 2 2 1 1",
+                    "expectedOutput": "1",
+                    "problemTitle": "Find the Majority Element"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def findMajorityElement(arr, n):\n    # TODO: Return the majority element or -1\n    return -1\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    print(findMajorityElement(arr, n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find the Majority Element"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static long findMajorityElement(long[] arr, int n) {\n        // TODO: Return the majority element or -1\n        return -1;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            System.out.print(Result.findMajorityElement(arr, n));\n        }\n    }\n}",
+                    "problemTitle": "Find the Majority Element"
+                },
+                {
+                    "language": 3,
+                    "code": "function findMajorityElement(arr, n) {\n    // TODO: Return the majority element or -1\n    return -1;\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    console.log(findMajorityElement(arr, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find the Majority Element"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nlong long findMajorityElement(vector<long long>& arr, int n) {\n    // TODO: Return the majority element or -1\n    return -1;\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << findMajorityElement(arr, n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Majority Element"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long findMajorityElement(long long arr[], int n) {\n    // TODO: Return the majority element or -1\n    return -1;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%lld\", findMajorityElement(arr, n));\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Majority Element"
+                }
+            ],
+            "hintsList": [
+                "You can use Boyer-Moore Voting Algorithm to find a candidate and then verify if it appears more than N/2 times."
+            ]
+        },
+        {
+            "id": null,
+            "title": "Find the Peak Element",
+            "description": "Problem Statement\nYou are given an array of N integers. An element is called a peak element if it is not smaller than its neighbors. For the first element, only the right neighbor is considered, and for the last element, only the left neighbor is considered. Your task is to find any one peak element and print it.\n\nInput Format\nThe first line contains an integer N (size of the array).\nThe second line contains N space-separated integers.\n\nOutput Format\nPrint any one peak element.\n\nExample\nInput: 4\n1 2 3 1\nOutput: 3\nExplanation: 3 is greater than its neighbors 2 and 1.",
+            "examples": "Sample Input\n4\n1 2 3 1\n\nSample Output\n3",
+            "constraints": "1 ≤ N ≤ 10^5\n-10^9 ≤ Array elements ≤ 10^9\nTime Complexity: O(log N) or O(N)\nSpace Complexity: O(1)",
+            "hints": 1,
+            "timeLimit": 5,
+            "memoryLimit": 256,
+            "difficulty": 2,
+            "subdomainId": 2019,
+            "streamId": null,
+            "testCases": [
+                {
+                    "input": "4\n1 2 3 1",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find the Peak Element"
+                },
+                {
+                    "input": "3\n1 2 3",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find the Peak Element"
+                },
+                {
+                    "input": "3\n3 2 1",
+                    "expectedOutput": "3",
+                    "problemTitle": "Find the Peak Element"
+                },
+                {
+                    "input": "1\n10",
+                    "expectedOutput": "10",
+                    "problemTitle": "Find the Peak Element"
+                },
+                {
+                    "input": "5\n1 5 2 6 3",
+                    "expectedOutput": "5",
+                    "problemTitle": "Find the Peak Element"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "def findPeakElement(arr, n):\n    # TODO: Return any one peak element\n    return arr[0]\n\ndef solve():\n    import sys\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    n = int(input_data[0])\n    arr = list(map(int, input_data[1:]))\n    print(findPeakElement(arr, n))\n\nif __name__ == '__main__':\n    solve()",
+                    "problemTitle": "Find the Peak Element"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.util.*;\n\nclass Result {\n    public static long findPeakElement(long[] arr, int n) {\n        // TODO: Return any one peak element\n        return arr[0];\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            long[] arr = new long[n];\n            for (int i = 0; i < n; i++) {\n                if (sc.hasNextLong()) arr[i] = sc.nextLong();\n            }\n            System.out.print(Result.findPeakElement(arr, n));\n        }\n    }\n}",
+                    "problemTitle": "Find the Peak Element"
+                },
+                {
+                    "language": 3,
+                    "code": "function findPeakElement(arr, n) {\n    // TODO: Return any one peak element\n    return arr[0];\n}\n\nfunction solve(input) {\n    const lines = input.trim().split(/\\s+/);\n    if (lines.length < 1) return;\n    const n = parseInt(lines[0]);\n    const arr = lines.slice(1).map(Number);\n    console.log(findPeakElement(arr, n));\n}\n\nconst fs = require('fs');\nsolve(fs.readFileSync(0, 'utf-8'));",
+                    "problemTitle": "Find the Peak Element"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nlong long findPeakElement(vector<long long>& arr, int n) {\n    // TODO: Return any one peak element\n    return arr[0];\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(NULL);\n    int n;\n    if (cin >> n) {\n        vector<long long> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        cout << findPeakElement(arr, n);\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Peak Element"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n\nlong long findPeakElement(long long arr[], int n) {\n    // TODO: Return any one peak element\n    return arr[0];\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        long long arr[100005];\n        for (int i = 0; i < n; i++) scanf(\"%lld\", &arr[i]);\n        printf(\"%lld\", findPeakElement(arr, n));\n    }\n    return 0;\n}",
+                    "problemTitle": "Find the Peak Element"
+                }
+            ],
+            "hintsList": [
+                "A peak element can be found in O(N) by linear scan or O(log N) using binary search."
+            ]
+        }
+    ]
+}
