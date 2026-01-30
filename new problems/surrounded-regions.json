@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Surrounded Regions (Union Find)",
+            "description": "You are given an m x n matrix board containing letters 'X' and 'O', capture regions that are surrounded:\n\nConnect: A cell is connected to adjacent cells horizontally or vertically.\nRegion: To form a region connect every 'O' cell.\nSurround: The region is surrounded with 'X' cells if you can connect the region with 'X' cells and none of the region cells are on the edge of the board.\n\nTo capture a surrounded region, replace all 'O's with 'X's in-place within the original board.\n\nInput Format:\nFirst line contains two integers m and n (rows and columns).\nNext m lines contain n space-separated characters ('X' or 'O') representing the board.\n\nOutput Format:\nPrint the modified board with m lines, each containing n space-separated characters.",
+            "examples": "Sample Input 1\n4 4\nX X X X\nX O O X\nX X O X\nX O X X\n\nSample Output 1\nX X X X\nX X X X\nX X X X\nX O X X\n\nExplanation:\nThe 'O' cells at positions (1,1), (1,2), and (2,2) are surrounded by 'X' cells and are not on the edge, so they are captured and replaced with 'X'. The 'O' at position (3,1) is on the edge region, so it remains 'O'.\n\nSample Input 2\n1 1\nX\n\nSample Output 2\nX\n\nExplanation:\nThe board has only one cell which is 'X', so it remains unchanged.",
+            "constraints": "1 <= m, n <= 200\nboard[i][j] is 'X' or 'O'",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4 4\nX X X X\nX O O X\nX X O X\nX O X X",
+                    "expectedOutput": "X X X X\nX X X X\nX X X X\nX O X X"
+                },
+                {
+                    "input": "1 1\nX",
+                    "expectedOutput": "X"
+                },
+                {
+                    "input": "3 3\nO O O\nO O O\nO O O",
+                    "expectedOutput": "O O O\nO O O\nO O O"
+                },
+                {
+                    "input": "3 4\nX X X X\nX O O X\nX X X X",
+                    "expectedOutput": "X X X X\nX X X X\nX X X X"
+                },
+                {
+                    "input": "2 2\nO X\nX O",
+                    "expectedOutput": "O X\nX O"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def solve(self, board):\n        # TODO: Capture all surrounded regions by replacing 'O' with 'X'\n        # Modify the board in-place\n        pass\n\nif __name__ == '__main__':\n    m, n = map(int, input().split())\n    board = []\n    for i in range(m):\n        row = input().split()\n        board.append(row)\n    \n    sol = Solution()\n    sol.solve(board)\n    \n    for row in board:\n        print(' '.join(row))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public void solve(char[][] board) {\n        // TODO: Capture all surrounded regions by replacing 'O' with 'X'\n        // Modify the board in-place\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int m = sc.nextInt();\n        int n = sc.nextInt();\n        sc.nextLine();\n        \n        char[][] board = new char[m][n];\n        for (int i = 0; i < m; i++) {\n            for (int j = 0; j < n; j++) {\n                board[i][j] = sc.next().charAt(0);\n            }\n        }\n        \n        Solution sol = new Solution();\n        sol.solve(board);\n        \n        for (int i = 0; i < m; i++) {\n            for (int j = 0; j < n; j++) {\n                System.out.print(board[i][j]);\n                if (j < n - 1) System.out.print(\" \");\n            }\n            System.out.println();\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    solve(board) {\n        // TODO: Capture all surrounded regions by replacing 'O' with 'X'\n        // Modify the board in-place\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const [m, n] = lines[0].split(' ').map(Number);\n    \n    const board = [];\n    for (let i = 1; i <= m; i++) {\n        board.push(lines[i].split(' '));\n    }\n    \n    const sol = new Solution();\n    sol.solve(board);\n    \n    for (let i = 0; i < m; i++) {\n        console.log(board[i].join(' '));\n    }\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    void solve(vector<vector<char>>& board) {\n        // TODO: Capture all surrounded regions by replacing 'O' with 'X'\n        // Modify the board in-place\n    }\n};\n\nint main() {\n    int m, n;\n    cin >> m >> n;\n    \n    vector<vector<char>> board(m, vector<char>(n));\n    for (int i = 0; i < m; i++) {\n        for (int j = 0; j < n; j++) {\n            cin >> board[i][j];\n        }\n    }\n    \n    Solution sol;\n    sol.solve(board);\n    \n    for (int i = 0; i < m; i++) {\n        for (int j = 0; j < n; j++) {\n            cout << board[i][j];\n            if (j < n - 1) cout << \" \";\n        }\n        cout << endl;\n    }\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid solve(char** board, int m, int n) {\n    // TODO: Capture all surrounded regions by replacing 'O' with 'X'\n    // Modify the board in-place\n}\n\nint main() {\n    int m, n;\n    scanf(\"%d %d\", &m, &n);\n    \n    char** board = (char**)malloc(m * sizeof(char*));\n    for (int i = 0; i < m; i++) {\n        board[i] = (char*)malloc(n * sizeof(char));\n        for (int j = 0; j < n; j++) {\n            scanf(\" %c\", &board[i][j]);\n        }\n    }\n    \n    solve(board, m, n);\n    \n    for (int i = 0; i < m; i++) {\n        for (int j = 0; j < n; j++) {\n            printf(\"%c\", board[i][j]);\n            if (j < n - 1) printf(\" \");\n        }\n        printf(\"\\n\");\n    }\n    \n    for (int i = 0; i < m; i++) {\n        free(board[i]);\n    }\n    free(board);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Start by identifying all 'O' cells that are on the border or connected to border 'O' cells - these cannot be captured.",
+                "Use DFS/BFS from border 'O' cells to mark all connected 'O' cells as safe (temporarily mark them differently).",
+                "After marking safe cells, iterate through the board: replace unmarked 'O' with 'X' and restore marked cells back to 'O'."
+            ]
+        }
+    ]
+}

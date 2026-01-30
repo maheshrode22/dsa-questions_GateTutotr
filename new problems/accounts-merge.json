@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Accounts Merge (Union Find)",
+            "description": "Given a list of accounts where each element accounts[i] is a list of strings, where the first element accounts[i][0] is a name, and the rest of the elements are emails representing emails of the account.\n\nNow, we would like to merge these accounts. Two accounts definitely belong to the same person if there is some common email to both accounts. Note that even if two accounts have the same name, they may belong to different people as people could have the same name. A person can have any number of accounts initially, but all of their accounts definitely have the same name.\n\nAfter merging the accounts, return the accounts in the following format: the first element of each account is the name, and the rest of the elements are emails in sorted order. The accounts themselves can be returned in any order.\n\nInput Format:\nFirst line contains an integer n (number of accounts).\nNext n lines: each line starts with a name, followed by space-separated emails.\n\nOutput Format:\nPrint the merged accounts, one per line. Each line should start with the name, followed by sorted emails separated by spaces.",
+            "examples": "Sample Input 1\n4\nJohn johnsmith@mail.com john_newyork@mail.com\nJohn johnsmith@mail.com john00@mail.com\nMary mary@mail.com\nJohn johnnybravo@mail.com\n\nSample Output 1\nJohn john00@mail.com john_newyork@mail.com johnsmith@mail.com\nMary mary@mail.com\nJohn johnnybravo@mail.com\n\nExplanation:\nThe first and second John's are the same person as they have the common email \"johnsmith@mail.com\". The third John and Mary are different people.\n\nSample Input 2\n5\nGabe Gabe0@m.co Gabe3@m.co Gabe1@m.co\nKevin Kevin3@m.co Kevin5@m.co Kevin0@m.co\nEthan Ethan5@m.co Ethan4@m.co Ethan0@m.co\nHanzo Hanzo3@m.co Hanzo1@m.co Hanzo0@m.co\nFern Fern5@m.co Fern1@m.co Fern0@m.co\n\nSample Output 2\nEthan Ethan0@m.co Ethan4@m.co Ethan5@m.co\nFern Fern0@m.co Fern1@m.co Fern5@m.co\nGabe Gabe0@m.co Gabe1@m.co Gabe3@m.co\nHanzo Hanzo0@m.co Hanzo1@m.co Hanzo3@m.co\nKevin Kevin0@m.co Kevin3@m.co Kevin5@m.co\n\nExplanation:\nEach person has distinct emails, so no merging occurs. Emails are sorted within each account.",
+            "constraints": "1 <= accounts.length <= 1000\n2 <= accounts[i].length <= 10\n1 <= accounts[i][j].length <= 30\naccounts[i][0] consists of English letters\naccounts[i][j] (for j > 0) is a valid email",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4\nJohn johnsmith@mail.com john_newyork@mail.com\nJohn johnsmith@mail.com john00@mail.com\nMary mary@mail.com\nJohn johnnybravo@mail.com",
+                    "expectedOutput": "John john00@mail.com john_newyork@mail.com johnsmith@mail.com\nMary mary@mail.com\nJohn johnnybravo@mail.com"
+                },
+                {
+                    "input": "5\nGabe Gabe0@m.co Gabe3@m.co Gabe1@m.co\nKevin Kevin3@m.co Kevin5@m.co Kevin0@m.co\nEthan Ethan5@m.co Ethan4@m.co Ethan0@m.co\nHanzo Hanzo3@m.co Hanzo1@m.co Hanzo0@m.co\nFern Fern5@m.co Fern1@m.co Fern0@m.co",
+                    "expectedOutput": "Ethan Ethan0@m.co Ethan4@m.co Ethan5@m.co\nFern Fern0@m.co Fern1@m.co Fern5@m.co\nGabe Gabe0@m.co Gabe1@m.co Gabe3@m.co\nHanzo Hanzo0@m.co Hanzo1@m.co Hanzo3@m.co\nKevin Kevin0@m.co Kevin3@m.co Kevin5@m.co"
+                },
+                {
+                    "input": "1\nAlice alice@mail.com",
+                    "expectedOutput": "Alice alice@mail.com"
+                },
+                {
+                    "input": "3\nBob bob1@mail.com bob2@mail.com\nBob bob2@mail.com bob3@mail.com\nBob bob3@mail.com bob4@mail.com",
+                    "expectedOutput": "Bob bob1@mail.com bob2@mail.com bob3@mail.com bob4@mail.com"
+                },
+                {
+                    "input": "2\nDavid david@mail.com\nDavid david2@mail.com",
+                    "expectedOutput": "David david2@mail.com\nDavid david@mail.com"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def accountsMerge(self, accounts):\n        # TODO: Merge accounts with common emails using Union-Find\n        # Build a graph where emails are connected if they belong to same account\n        # Return merged accounts with sorted emails\n        return []\n\nif __name__ == '__main__':\n    n = int(input())\n    accounts = []\n    for i in range(n):\n        line = input().split()\n        accounts.append(line)\n    \n    sol = Solution()\n    result = sol.accountsMerge(accounts)\n    for account in result:\n        print(' '.join(account))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public List<List<String>> accountsMerge(List<List<String>> accounts) {\n        // TODO: Merge accounts with common emails using Union-Find\n        // Build a graph where emails are connected if they belong to same account\n        // Return merged accounts with sorted emails\n        return new ArrayList<>();\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        sc.nextLine();\n        \n        List<List<String>> accounts = new ArrayList<>();\n        for (int i = 0; i < n; i++) {\n            String[] parts = sc.nextLine().split(\" \");\n            List<String> account = new ArrayList<>();\n            for (String part : parts) {\n                account.add(part);\n            }\n            accounts.add(account);\n        }\n        \n        Solution sol = new Solution();\n        List<List<String>> result = sol.accountsMerge(accounts);\n        for (List<String> account : result) {\n            System.out.println(String.join(\" \", account));\n        }\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    accountsMerge(accounts) {\n        // TODO: Merge accounts with common emails using Union-Find\n        // Build a graph where emails are connected if they belong to same account\n        // Return merged accounts with sorted emails\n        return [];\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    \n    const accounts = [];\n    for (let i = 1; i <= n; i++) {\n        accounts.push(lines[i].split(' '));\n    }\n    \n    const sol = new Solution();\n    const result = sol.accountsMerge(accounts);\n    for (const account of result) {\n        console.log(account.join(' '));\n    }\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<string>> accountsMerge(vector<vector<string>>& accounts) {\n        // TODO: Merge accounts with common emails using Union-Find\n        // Build a graph where emails are connected if they belong to same account\n        // Return merged accounts with sorted emails\n        return {};\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    cin.ignore();\n    \n    vector<vector<string>> accounts;\n    for (int i = 0; i < n; i++) {\n        string line;\n        getline(cin, line);\n        istringstream iss(line);\n        vector<string> account;\n        string word;\n        while (iss >> word) {\n            account.push_back(word);\n        }\n        accounts.push_back(account);\n    }\n    \n    Solution sol;\n    vector<vector<string>> result = sol.accountsMerge(accounts);\n    for (const auto& account : result) {\n        for (int i = 0; i < account.size(); i++) {\n            cout << account[i];\n            if (i < account.size() - 1) cout << \" \";\n        }\n        cout << endl;\n    }\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid accountsMerge(char*** accounts, int n, int** accountSizes) {\n    // TODO: Merge accounts with common emails using Union-Find\n    // Build a graph where emails are connected if they belong to same account\n    // Print merged accounts with sorted emails\n}\n\nint main() {\n    int n;\n    scanf(\"%d\\n\", &n);\n    \n    char*** accounts = (char***)malloc(n * sizeof(char**));\n    int* accountSizes = (int*)malloc(n * sizeof(int));\n    \n    for (int i = 0; i < n; i++) {\n        char line[1000];\n        fgets(line, sizeof(line), stdin);\n        \n        accounts[i] = (char**)malloc(10 * sizeof(char*));\n        int count = 0;\n        char* token = strtok(line, \" \\n\");\n        while (token != NULL) {\n            accounts[i][count] = (char*)malloc(strlen(token) + 1);\n            strcpy(accounts[i][count], token);\n            count++;\n            token = strtok(NULL, \" \\n\");\n        }\n        accountSizes[i] = count;\n    }\n    \n    accountsMerge(accounts, n, &accountSizes);\n    \n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < accountSizes[i]; j++) {\n            free(accounts[i][j]);\n        }\n        free(accounts[i]);\n    }\n    free(accounts);\n    free(accountSizes);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Union-Find to group emails that belong to the same person. Create a parent map for each email.",
+                "Build a graph where each email points to the first email in its account, then union emails within the same account.",
+                "After union operations, group all emails by their root parent, sort them, and prepend the person's name."
+            ]
+        }
+    ]
+}

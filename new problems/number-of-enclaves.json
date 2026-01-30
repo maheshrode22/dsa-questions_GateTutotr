@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Number of Enclaves (Union Find)",
+            "description": "You are given an m x n binary matrix grid, where 0 represents a sea cell and 1 represents a land cell.\n\nA move consists of walking from one land cell to another adjacent (4-directionally) land cell or walking off the boundary of the grid.\n\nReturn the number of land cells in grid for which we cannot walk off the boundary of the grid in any number of moves.\n\nInput Format:\nFirst line contains two integers m and n (rows and columns).\nNext m lines contain n space-separated integers (0 or 1) representing the grid.\n\nOutput Format:\nPrint a single integer representing the number of land cells that cannot reach the boundary.",
+            "examples": "Sample Input 1\n4 4\n0 0 0 0\n1 0 1 0\n0 1 1 0\n0 0 0 0\n\nSample Output 1\n3\n\nExplanation:\nThere are three 1s that are enclosed by 0s, and one 1 that is not enclosed because it's on the boundary.\n\nSample Input 2\n4 4\n0 1 1 0\n0 0 1 0\n0 0 1 0\n0 0 0 0\n\nSample Output 2\n0\n\nExplanation:\nAll 1s are either on the boundary or can reach the boundary.",
+            "constraints": "1 <= m, n <= 500\ngrid[i][j] is either 0 or 1",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "4 4\n0 0 0 0\n1 0 1 0\n0 1 1 0\n0 0 0 0",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "4 4\n0 1 1 0\n0 0 1 0\n0 0 1 0\n0 0 0 0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1 1\n0",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "1 1\n1",
+                    "expectedOutput": "0"
+                },
+                {
+                    "input": "3 3\n0 0 0\n0 1 0\n0 0 0",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def numEnclaves(self, grid):\n        # TODO: Count land cells that cannot reach the boundary\n        # Use DFS/BFS from boundary cells to mark reachable land\n        # Or use Union-Find to connect boundary-reachable cells\n        return 0\n\nif __name__ == '__main__':\n    m, n = map(int, input().split())\n    grid = []\n    for i in range(m):\n        row = list(map(int, input().split()))\n        grid.append(row)\n    \n    sol = Solution()\n    print(sol.numEnclaves(grid))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int numEnclaves(int[][] grid) {\n        // TODO: Count land cells that cannot reach the boundary\n        // Use DFS/BFS from boundary cells to mark reachable land\n        // Or use Union-Find to connect boundary-reachable cells\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int m = sc.nextInt();\n        int n = sc.nextInt();\n        \n        int[][] grid = new int[m][n];\n        for (int i = 0; i < m; i++) {\n            for (int j = 0; j < n; j++) {\n                grid[i][j] = sc.nextInt();\n            }\n        }\n        \n        Solution sol = new Solution();\n        System.out.println(sol.numEnclaves(grid));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    numEnclaves(grid) {\n        // TODO: Count land cells that cannot reach the boundary\n        // Use DFS/BFS from boundary cells to mark reachable land\n        // Or use Union-Find to connect boundary-reachable cells\n        return 0;\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const [m, n] = lines[0].split(' ').map(Number);\n    \n    const grid = [];\n    for (let i = 1; i <= m; i++) {\n        grid.push(lines[i].split(' ').map(Number));\n    }\n    \n    const sol = new Solution();\n    console.log(sol.numEnclaves(grid));\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int numEnclaves(vector<vector<int>>& grid) {\n        // TODO: Count land cells that cannot reach the boundary\n        // Use DFS/BFS from boundary cells to mark reachable land\n        // Or use Union-Find to connect boundary-reachable cells\n        return 0;\n    }\n};\n\nint main() {\n    int m, n;\n    cin >> m >> n;\n    \n    vector<vector<int>> grid(m, vector<int>(n));\n    for (int i = 0; i < m; i++) {\n        for (int j = 0; j < n; j++) {\n            cin >> grid[i][j];\n        }\n    }\n    \n    Solution sol;\n    cout << sol.numEnclaves(grid) << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint numEnclaves(int** grid, int m, int n) {\n    // TODO: Count land cells that cannot reach the boundary\n    // Use DFS/BFS from boundary cells to mark reachable land\n    // Or use Union-Find to connect boundary-reachable cells\n    return 0;\n}\n\nint main() {\n    int m, n;\n    scanf(\"%d %d\", &m, &n);\n    \n    int** grid = (int**)malloc(m * sizeof(int*));\n    for (int i = 0; i < m; i++) {\n        grid[i] = (int*)malloc(n * sizeof(int));\n        for (int j = 0; j < n; j++) {\n            scanf(\"%d\", &grid[i][j]);\n        }\n    }\n    \n    printf(\"%d\\n\", numEnclaves(grid, m, n));\n    \n    for (int i = 0; i < m; i++) {\n        free(grid[i]);\n    }\n    free(grid);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Start from all boundary land cells and use DFS/BFS to mark all land cells reachable from the boundary.",
+                "Alternatively, use Union-Find: create a virtual 'boundary' node and union all boundary land cells with it.",
+                "Count all land cells that are not connected to the boundary (or not marked as reachable)."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Making a Large Island (Union Find)",
+            "description": "You are given an n x n binary matrix grid. You are allowed to change at most one 0 to be 1.\n\nReturn the size of the largest island in grid after applying this operation.\n\nAn island is a 4-directionally connected group of 1s.\n\nInput Format:\nFirst line contains an integer n (size of grid).\nNext n lines contain n space-separated integers (0 or 1) representing the grid.\n\nOutput Format:\nPrint a single integer representing the size of the largest island after changing at most one 0 to 1.",
+            "examples": "Sample Input 1\n2\n1 0\n0 1\n\nSample Output 1\n3\n\nExplanation:\nChange one 0 to 1 and connect two 1s, then we get an island with area = 3.\n\nSample Input 2\n2\n1 1\n1 0\n\nSample Output 2\n4\n\nExplanation:\nChange the 0 to 1 and make the island bigger, only one island with area = 4.\n\nSample Input 3\n2\n1 1\n1 1\n\nSample Output 3\n4\n\nExplanation:\nCan't change any 0 to 1, only one island with area = 4.",
+            "constraints": "1 <= n <= 500\ngrid[i][j] is either 0 or 1",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2\n1 0\n0 1",
+                    "expectedOutput": "3"
+                },
+                {
+                    "input": "2\n1 1\n1 0",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "2\n1 1\n1 1",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "1\n0",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3\n0 0 0\n0 1 0\n0 0 0",
+                    "expectedOutput": "2"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def largestIsland(self, grid):\n        # TODO: Find the largest island after changing at most one 0 to 1\n        # Use DFS/BFS to find all islands and their sizes\n        # For each 0, calculate potential island size by merging adjacent islands\n        return 0\n\nif __name__ == '__main__':\n    n = int(input())\n    grid = []\n    for i in range(n):\n        row = list(map(int, input().split()))\n        grid.append(row)\n    \n    sol = Solution()\n    print(sol.largestIsland(grid))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int largestIsland(int[][] grid) {\n        // TODO: Find the largest island after changing at most one 0 to 1\n        // Use DFS/BFS to find all islands and their sizes\n        // For each 0, calculate potential island size by merging adjacent islands\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        \n        int[][] grid = new int[n][n];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                grid[i][j] = sc.nextInt();\n            }\n        }\n        \n        Solution sol = new Solution();\n        System.out.println(sol.largestIsland(grid));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    largestIsland(grid) {\n        // TODO: Find the largest island after changing at most one 0 to 1\n        // Use DFS/BFS to find all islands and their sizes\n        // For each 0, calculate potential island size by merging adjacent islands\n        return 0;\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    \n    const grid = [];\n    for (let i = 1; i <= n; i++) {\n        grid.push(lines[i].split(' ').map(Number));\n    }\n    \n    const sol = new Solution();\n    console.log(sol.largestIsland(grid));\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int largestIsland(vector<vector<int>>& grid) {\n        // TODO: Find the largest island after changing at most one 0 to 1\n        // Use DFS/BFS to find all islands and their sizes\n        // For each 0, calculate potential island size by merging adjacent islands\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    \n    vector<vector<int>> grid(n, vector<int>(n));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            cin >> grid[i][j];\n        }\n    }\n    \n    Solution sol;\n    cout << sol.largestIsland(grid) << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint largestIsland(int** grid, int n) {\n    // TODO: Find the largest island after changing at most one 0 to 1\n    // Use DFS/BFS to find all islands and their sizes\n    // For each 0, calculate potential island size by merging adjacent islands\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    \n    int** grid = (int**)malloc(n * sizeof(int*));\n    for (int i = 0; i < n; i++) {\n        grid[i] = (int*)malloc(n * sizeof(int));\n        for (int j = 0; j < n; j++) {\n            scanf(\"%d\", &grid[i][j]);\n        }\n    }\n    \n    printf(\"%d\\n\", largestIsland(grid, n));\n    \n    for (int i = 0; i < n; i++) {\n        free(grid[i]);\n    }\n    free(grid);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "First, use DFS/BFS to identify all islands and assign each a unique ID. Store the size of each island.",
+                "For each 0 cell, check its 4 adjacent cells. If they belong to different islands, calculate the total size if we flip this 0 to 1.",
+                "Use a set to avoid counting the same island multiple times when checking adjacent cells. The answer is the maximum of all potential island sizes."
+            ]
+        }
+    ]
+}

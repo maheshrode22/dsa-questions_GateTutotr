@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Similar String Groups (Union Find)",
+            "description": "Two strings, X and Y, are considered similar if either they are identical or we can make them equivalent by swapping at most two letters (in distinct positions) within the string X.\n\nFor example, \"tars\" and \"rats\" are similar (swapping at positions 0 and 2), and \"rats\" and \"arts\" are similar, but \"star\" is not similar to \"tars\", \"rats\", or \"arts\".\n\nTogether, these form two connected groups by similarity: {\"tars\", \"rats\", \"arts\"} and {\"star\"}. Notice that \"tars\" and \"arts\" are in the same group even though they are not similar. Formally, each group is such that a word is in the group if and only if it is similar to at least one other word in the group.\n\nWe are given a list strs of strings where every string in strs is an anagram of every other string in strs. How many groups are there?\n\nInput Format:\nFirst line contains an integer n (number of strings).\nNext n lines contain one string each.\n\nOutput Format:\nPrint a single integer representing the number of groups.",
+            "examples": "Sample Input 1\n4\ntars\nrats\narts\nstar\n\nSample Output 1\n2\n\nExplanation:\n\"tars\" and \"rats\" are similar. \"rats\" and \"arts\" are similar. So {\"tars\", \"rats\", \"arts\"} form one group. \"star\" is separate, forming another group.\n\nSample Input 2\n2\nomv\novm\n\nSample Output 2\n1\n\nExplanation:\n\"omv\" and \"ovm\" are similar (swap positions 1 and 2), so they form one group.",
+            "constraints": "1 <= strs.length <= 300\n1 <= strs[i].length <= 300\nstrs[i] consists of lowercase letters only\nAll words in strs have the same length and are anagrams of each other",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4\ntars\nrats\narts\nstar",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "2\nomv\novm",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "1\nabc",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3\nabc\nbac\ncab",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "5\nabc\nabc\nabc\nabc\nabc",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def numSimilarGroups(self, strs):\n        # TODO: Count number of similar string groups using Union-Find\n        # Two strings are similar if they differ in at most 2 positions\n        # Use Union-Find to group similar strings\n        return 0\n\nif __name__ == '__main__':\n    n = int(input())\n    strs = []\n    for i in range(n):\n        strs.append(input().strip())\n    \n    sol = Solution()\n    print(sol.numSimilarGroups(strs))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int numSimilarGroups(String[] strs) {\n        // TODO: Count number of similar string groups using Union-Find\n        // Two strings are similar if they differ in at most 2 positions\n        // Use Union-Find to group similar strings\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        sc.nextLine();\n        \n        String[] strs = new String[n];\n        for (int i = 0; i < n; i++) {\n            strs[i] = sc.nextLine();\n        }\n        \n        Solution sol = new Solution();\n        System.out.println(sol.numSimilarGroups(strs));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    numSimilarGroups(strs) {\n        // TODO: Count number of similar string groups using Union-Find\n        // Two strings are similar if they differ in at most 2 positions\n        // Use Union-Find to group similar strings\n        return 0;\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const strs = [];\n    for (let i = 1; i <= n; i++) {\n        strs.push(lines[i]);\n    }\n    \n    const sol = new Solution();\n    console.log(sol.numSimilarGroups(strs));\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int numSimilarGroups(vector<string>& strs) {\n        // TODO: Count number of similar string groups using Union-Find\n        // Two strings are similar if they differ in at most 2 positions\n        // Use Union-Find to group similar strings\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    cin.ignore();\n    \n    vector<string> strs(n);\n    for (int i = 0; i < n; i++) {\n        getline(cin, strs[i]);\n    }\n    \n    Solution sol;\n    cout << sol.numSimilarGroups(strs) << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint numSimilarGroups(char** strs, int n) {\n    // TODO: Count number of similar string groups using Union-Find\n    // Two strings are similar if they differ in at most 2 positions\n    // Use Union-Find to group similar strings\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\\n\", &n);\n    \n    char** strs = (char**)malloc(n * sizeof(char*));\n    for (int i = 0; i < n; i++) {\n        strs[i] = (char*)malloc(301 * sizeof(char));\n        fgets(strs[i], 301, stdin);\n        strs[i][strcspn(strs[i], \"\\n\")] = 0;\n    }\n    \n    printf(\"%d\\n\", numSimilarGroups(strs, n));\n    \n    for (int i = 0; i < n; i++) {\n        free(strs[i]);\n    }\n    free(strs);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Check if two strings are similar by counting the number of positions where they differ. They're similar if they differ in 0 or 2 positions.",
+                "Use Union-Find to group strings. For each pair of strings, if they're similar, union them.",
+                "The answer is the number of connected components in the Union-Find structure."
+            ]
+        }
+    ]
+}

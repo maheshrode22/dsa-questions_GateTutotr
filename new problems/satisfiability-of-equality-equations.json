@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Satisfiability of Equality Equations (Union Find)",
+            "description": "You are given an array of strings equations that represent relationships between variables where each string equations[i] is of length 4 and takes one of two different forms: \"xi==yi\" or \"xi!=yi\". Here, xi and yi are lowercase letters (not necessarily different) that represent one-letter variable names.\n\nReturn true if it is possible to assign integers to variable names so as to satisfy all the given equations, or false otherwise.\n\nInput Format:\nFirst line contains an integer n (number of equations).\nNext n lines contain strings representing each equation.\n\nOutput Format:\nPrint 'true' if all equations can be satisfied, otherwise print 'false'.",
+            "examples": "Sample Input 1\n2\na==b\nb!=a\n\nSample Output 1\nfalse\n\nExplanation:\nIf we assign a = 1 and b = 1, the first equation is satisfied but not the second.\n\nSample Input 2\n2\nb==a\na==b\n\nSample Output 2\ntrue\n\nExplanation:\nWe could assign a = 1 and b = 1 to satisfy both equations.",
+            "constraints": "1 <= equations.length <= 500\nequations[i].length == 4\nequations[i][0] is a lowercase letter\nequations[i][1] is either '=' or '!'\nequations[i][2] is '='\nequations[i][3] is a lowercase letter",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "2\na==b\nb!=a",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "2\nb==a\na==b",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "4\na==b\nb==c\na==c\na!=d",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "3\na==b\nb==c\na!=c",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1\na==a",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def equationsPossible(self, equations):\n        # TODO: Check if all equations can be satisfied\n        # Use Union-Find to group variables with == relations\n        # Then verify all != relations are between different groups\n        return False\n\nif __name__ == '__main__':\n    n = int(input())\n    equations = []\n    for i in range(n):\n        equations.append(input().strip())\n    \n    sol = Solution()\n    result = sol.equationsPossible(equations)\n    print('true' if result else 'false')"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean equationsPossible(String[] equations) {\n        // TODO: Check if all equations can be satisfied\n        // Use Union-Find to group variables with == relations\n        // Then verify all != relations are between different groups\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        sc.nextLine();\n        \n        String[] equations = new String[n];\n        for (int i = 0; i < n; i++) {\n            equations[i] = sc.nextLine();\n        }\n        \n        Solution sol = new Solution();\n        boolean result = sol.equationsPossible(equations);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    equationsPossible(equations) {\n        // TODO: Check if all equations can be satisfied\n        // Use Union-Find to group variables with == relations\n        // Then verify all != relations are between different groups\n        return false;\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const equations = [];\n    for (let i = 1; i <= n; i++) {\n        equations.push(lines[i]);\n    }\n    \n    const sol = new Solution();\n    const result = sol.equationsPossible(equations);\n    console.log(result ? 'true' : 'false');\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool equationsPossible(vector<string>& equations) {\n        // TODO: Check if all equations can be satisfied\n        // Use Union-Find to group variables with == relations\n        // Then verify all != relations are between different groups\n        return false;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    cin.ignore();\n    \n    vector<string> equations(n);\n    for (int i = 0; i < n; i++) {\n        getline(cin, equations[i]);\n    }\n    \n    Solution sol;\n    bool result = sol.equationsPossible(equations);\n    cout << (result ? \"true\" : \"false\") << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n\nbool equationsPossible(char** equations, int n) {\n    // TODO: Check if all equations can be satisfied\n    // Use Union-Find to group variables with == relations\n    // Then verify all != relations are between different groups\n    return false;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\\n\", &n);\n    \n    char** equations = (char**)malloc(n * sizeof(char*));\n    for (int i = 0; i < n; i++) {\n        equations[i] = (char*)malloc(5 * sizeof(char));\n        fgets(equations[i], 5, stdin);\n        equations[i][strcspn(equations[i], \"\\n\")] = 0;\n        getchar();\n    }\n    \n    bool result = equationsPossible(equations, n);\n    printf(\"%s\\n\", result ? \"true\" : \"false\");\n    \n    for (int i = 0; i < n; i++) {\n        free(equations[i]);\n    }\n    free(equations);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Process all '==' equations first and use Union-Find to group variables that must be equal.",
+                "After processing '==' equations, check all '!=' equations to ensure the two variables are in different groups.",
+                "If any '!=' equation has both variables in the same group, return false. Otherwise, return true."
+            ]
+        }
+    ]
+}

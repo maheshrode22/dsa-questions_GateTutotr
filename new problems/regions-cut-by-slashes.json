@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Regions Cut by Slashes (Union Find)",
+            "description": "An n x n grid is composed of 1 x 1 squares where each 1 x 1 square consists of a '/', '\\\\', or blank space ' '. These characters divide the square into contiguous regions.\n\nGiven the grid grid represented as a string array, return the number of regions.\n\nNote that backslash characters are escaped, so a '\\\\' is represented as '\\\\\\\\'.\n\nInput Format:\nFirst line contains an integer n (size of grid).\nNext n lines contain strings representing each row of the grid.\n\nOutput Format:\nPrint a single integer representing the number of regions.",
+            "examples": "Sample Input 1\n2\n /\n/ \n\nSample Output 1\n2\n\nExplanation:\nThe grid is divided into 2 regions by the slashes.\n\nSample Input 2\n2\n /\n  \n\nSample Output 2\n1\n\nExplanation:\nThe grid forms 1 region.\n\nSample Input 3\n2\n/\\\\\n\\\\/\n\nSample Output 3\n5\n\nExplanation:\nThe grid is divided into 5 regions.",
+            "constraints": "1 <= n <= 30\ngrid[i][j] is either '/', '\\\\', or ' '",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "2\n /\n/ ",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "2\n /\n  ",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "2\n/\\\\\n\\\\/",
+                    "expectedOutput": "5"
+                },
+                {
+                    "input": "1\n ",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3\n   \n   \n   ",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def regionsBySlashes(self, grid):\n        # TODO: Count the number of regions formed by slashes\n        # Divide each cell into 4 triangular parts and use Union-Find\n        # Connect parts based on slash type\n        return 0\n\nif __name__ == '__main__':\n    n = int(input())\n    grid = []\n    for i in range(n):\n        grid.append(input())\n    \n    sol = Solution()\n    print(sol.regionsBySlashes(grid))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int regionsBySlashes(String[] grid) {\n        // TODO: Count the number of regions formed by slashes\n        // Divide each cell into 4 triangular parts and use Union-Find\n        // Connect parts based on slash type\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        sc.nextLine();\n        \n        String[] grid = new String[n];\n        for (int i = 0; i < n; i++) {\n            grid[i] = sc.nextLine();\n        }\n        \n        Solution sol = new Solution();\n        System.out.println(sol.regionsBySlashes(grid));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    regionsBySlashes(grid) {\n        // TODO: Count the number of regions formed by slashes\n        // Divide each cell into 4 triangular parts and use Union-Find\n        // Connect parts based on slash type\n        return 0;\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const grid = [];\n    for (let i = 1; i <= n; i++) {\n        grid.push(lines[i]);\n    }\n    \n    const sol = new Solution();\n    console.log(sol.regionsBySlashes(grid));\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int regionsBySlashes(vector<string>& grid) {\n        // TODO: Count the number of regions formed by slashes\n        // Divide each cell into 4 triangular parts and use Union-Find\n        // Connect parts based on slash type\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    cin.ignore();\n    \n    vector<string> grid(n);\n    for (int i = 0; i < n; i++) {\n        getline(cin, grid[i]);\n    }\n    \n    Solution sol;\n    cout << sol.regionsBySlashes(grid) << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint regionsBySlashes(char** grid, int n) {\n    // TODO: Count the number of regions formed by slashes\n    // Divide each cell into 4 triangular parts and use Union-Find\n    // Connect parts based on slash type\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\\n\", &n);\n    \n    char** grid = (char**)malloc(n * sizeof(char*));\n    for (int i = 0; i < n; i++) {\n        grid[i] = (char*)malloc(31 * sizeof(char));\n        fgets(grid[i], 31, stdin);\n        grid[i][strcspn(grid[i], \"\\n\")] = 0;\n    }\n    \n    printf(\"%d\\n\", regionsBySlashes(grid, n));\n    \n    for (int i = 0; i < n; i++) {\n        free(grid[i]);\n    }\n    free(grid);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Divide each 1x1 cell into 4 triangular parts: top, right, bottom, left. Use Union-Find with 4*n*n nodes.",
+                "For each cell, connect the 4 parts based on the character: ' ' connects all 4, '/' connects top-left and bottom-right, '\\\\' connects top-right and bottom-left.",
+                "Also connect adjacent cells' parts that touch each other. The answer is the number of connected components."
+            ]
+        }
+    ]
+}

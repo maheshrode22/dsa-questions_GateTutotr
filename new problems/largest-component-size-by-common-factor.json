@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Largest Component Size by Common Factor (Union Find)",
+            "description": "You are given an integer array of unique positive integers nums. Consider the following graph:\n\n- There are nums.length nodes, labeled nums[0] to nums[nums.length - 1]\n- There is an undirected edge between nums[i] and nums[j] if nums[i] and nums[j] share a common factor greater than 1\n\nReturn the size of the largest connected component in the graph.\n\nInput Format:\nFirst line contains an integer n (number of elements).\nSecond line contains n space-separated integers representing the array nums.\n\nOutput Format:\nPrint a single integer representing the size of the largest connected component.",
+            "examples": "Sample Input 1\n4\n4 6 15 35\n\nSample Output 1\n4\n\nExplanation:\nAll numbers share common factors: 4 and 6 share 2, 6 and 15 share 3, 15 and 35 share 5. They form one component of size 4.\n\nSample Input 2\n4\n20 50 9 63\n\nSample Output 2\n2\n\nExplanation:\n20 and 50 share factor 10, forming a component of size 2. 9 and 63 share factor 9, forming another component of size 2.",
+            "constraints": "1 <= nums.length <= 20000\n1 <= nums[i] <= 100000\nAll values of nums are unique",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4\n4 6 15 35",
+                    "expectedOutput": "4"
+                },
+                {
+                    "input": "4\n20 50 9 63",
+                    "expectedOutput": "2"
+                },
+                {
+                    "input": "8\n2 3 6 7 4 12 21 39",
+                    "expectedOutput": "8"
+                },
+                {
+                    "input": "1\n100",
+                    "expectedOutput": "1"
+                },
+                {
+                    "input": "3\n2 3 5",
+                    "expectedOutput": "1"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def largestComponentSize(self, nums):\n        # TODO: Find the largest component size where nodes share common factors\n        # Use Union-Find to group numbers by their prime factors\n        # For each number, find its prime factors and union with those factors\n        return 0\n\nif __name__ == '__main__':\n    n = int(input())\n    nums = list(map(int, input().split()))\n    \n    sol = Solution()\n    print(sol.largestComponentSize(nums))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public int largestComponentSize(int[] nums) {\n        // TODO: Find the largest component size where nodes share common factors\n        // Use Union-Find to group numbers by their prime factors\n        // For each number, find its prime factors and union with those factors\n        return 0;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        \n        int[] nums = new int[n];\n        for (int i = 0; i < n; i++) {\n            nums[i] = sc.nextInt();\n        }\n        \n        Solution sol = new Solution();\n        System.out.println(sol.largestComponentSize(nums));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    largestComponentSize(nums) {\n        // TODO: Find the largest component size where nodes share common factors\n        // Use Union-Find to group numbers by their prime factors\n        // For each number, find its prime factors and union with those factors\n        return 0;\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const n = parseInt(lines[0]);\n    const nums = lines[1].split(' ').map(Number);\n    \n    const sol = new Solution();\n    console.log(sol.largestComponentSize(nums));\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    int largestComponentSize(vector<int>& nums) {\n        // TODO: Find the largest component size where nodes share common factors\n        // Use Union-Find to group numbers by their prime factors\n        // For each number, find its prime factors and union with those factors\n        return 0;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    \n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) {\n        cin >> nums[i];\n    }\n    \n    Solution sol;\n    cout << sol.largestComponentSize(nums) << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint largestComponentSize(int* nums, int n) {\n    // TODO: Find the largest component size where nodes share common factors\n    // Use Union-Find to group numbers by their prime factors\n    // For each number, find its prime factors and union with those factors\n    return 0;\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    \n    int* nums = (int*)malloc(n * sizeof(int));\n    for (int i = 0; i < n; i++) {\n        scanf(\"%d\", &nums[i]);\n    }\n    \n    printf(\"%d\\n\", largestComponentSize(nums, n));\n    \n    free(nums);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Instead of connecting numbers directly, connect each number to its prime factors using Union-Find.",
+                "For each number, find all its prime factors (up to sqrt(num)) and union the number with each of its prime factors.",
+                "After processing all numbers, count the size of each component and return the maximum size."
+            ]
+        }
+    ]
+}

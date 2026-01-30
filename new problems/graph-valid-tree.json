@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Graph Valid Tree (Union Find)",
+            "description": "You have a graph of n nodes labeled from 0 to n - 1. You are given an integer n and a list of edges where edges[i] = [ai, bi] indicates that there is an undirected edge between nodes ai and bi in the graph.\n\nReturn true if the edges of the given graph make up a valid tree, and false otherwise.\n\nA valid tree must satisfy two conditions:\n1. The graph must be fully connected (all nodes are reachable from any node)\n2. The graph must have no cycles\n\nInput Format:\nFirst line contains two integers n and e (number of nodes and number of edges).\nNext e lines contain two integers ai and bi representing an edge between nodes ai and bi.\n\nOutput Format:\nPrint 'true' if the graph is a valid tree, otherwise print 'false'.",
+            "examples": "Sample Input 1\n5 4\n0 1\n0 2\n0 3\n1 4\n\nSample Output 1\ntrue\n\nExplanation:\nThe graph has 5 nodes and 4 edges, forming a tree structure with node 0 as the root. All nodes are connected and there are no cycles.\n\nSample Input 2\n5 5\n0 1\n1 2\n2 3\n1 3\n1 4\n\nSample Output 2\nfalse\n\nExplanation:\nThe graph has a cycle: 1 -> 2 -> 3 -> 1. Therefore, it is not a valid tree.",
+            "constraints": "1 <= n <= 2000\n0 <= edges.length <= 5000\n0 <= ai, bi < n\nai != bi\nNo self-loops or repeated edges",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "5 4\n0 1\n0 2\n0 3\n1 4",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "5 5\n0 1\n1 2\n2 3\n1 3\n1 4",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1 0",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2 0",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "4 3\n0 1\n1 2\n2 3",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def validTree(self, n, edges):\n        # TODO: Check if the graph forms a valid tree\n        # A tree must have exactly n-1 edges, be fully connected, and have no cycles\n        return False\n\nif __name__ == '__main__':\n    n, e = map(int, input().split())\n    edges = []\n    for i in range(e):\n        a, b = map(int, input().split())\n        edges.append([a, b])\n    \n    sol = Solution()\n    result = sol.validTree(n, edges)\n    print('true' if result else 'false')"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean validTree(int n, int[][] edges) {\n        // TODO: Check if the graph forms a valid tree\n        // A tree must have exactly n-1 edges, be fully connected, and have no cycles\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int e = sc.nextInt();\n        \n        int[][] edges = new int[e][2];\n        for (int i = 0; i < e; i++) {\n            edges[i][0] = sc.nextInt();\n            edges[i][1] = sc.nextInt();\n        }\n        \n        Solution sol = new Solution();\n        boolean result = sol.validTree(n, edges);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    validTree(n, edges) {\n        // TODO: Check if the graph forms a valid tree\n        // A tree must have exactly n-1 edges, be fully connected, and have no cycles\n        return false;\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const [n, e] = lines[0].split(' ').map(Number);\n    \n    const edges = [];\n    for (let i = 1; i <= e; i++) {\n        const [a, b] = lines[i].split(' ').map(Number);\n        edges.push([a, b]);\n    }\n    \n    const sol = new Solution();\n    const result = sol.validTree(n, edges);\n    console.log(result ? 'true' : 'false');\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool validTree(int n, vector<vector<int>>& edges) {\n        // TODO: Check if the graph forms a valid tree\n        // A tree must have exactly n-1 edges, be fully connected, and have no cycles\n        return false;\n    }\n};\n\nint main() {\n    int n, e;\n    cin >> n >> e;\n    \n    vector<vector<int>> edges(e, vector<int>(2));\n    for (int i = 0; i < e; i++) {\n        cin >> edges[i][0] >> edges[i][1];\n    }\n    \n    Solution sol;\n    bool result = sol.validTree(n, edges);\n    cout << (result ? \"true\" : \"false\") << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nbool validTree(int n, int** edges, int edgesSize) {\n    // TODO: Check if the graph forms a valid tree\n    // A tree must have exactly n-1 edges, be fully connected, and have no cycles\n    return false;\n}\n\nint main() {\n    int n, e;\n    scanf(\"%d %d\", &n, &e);\n    \n    int** edges = (int**)malloc(e * sizeof(int*));\n    for (int i = 0; i < e; i++) {\n        edges[i] = (int*)malloc(2 * sizeof(int));\n        scanf(\"%d %d\", &edges[i][0], &edges[i][1]);\n    }\n    \n    bool result = validTree(n, edges, e);\n    printf(\"%s\\n\", result ? \"true\" : \"false\");\n    \n    for (int i = 0; i < e; i++) {\n        free(edges[i]);\n    }\n    free(edges);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "A valid tree with n nodes must have exactly n-1 edges. Check this condition first.",
+                "Use Union-Find (Disjoint Set Union) to detect cycles: if two nodes are already in the same set when adding an edge, there's a cycle.",
+                "After processing all edges, verify that all nodes are connected by checking if there's only one root in the Union-Find structure."
+            ]
+        }
+    ]
+}

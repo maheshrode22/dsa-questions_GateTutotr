@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Sentence Similarity II (Union Find)",
+            "description": "We can represent a sentence as an array of words, for example, the sentence \"I am happy with leetcode\" can be represented as arr = [\"I\",\"am\",\"happy\",\"with\",\"leetcode\"].\n\nGiven two sentences sentence1 and sentence2 each represented as a string array and given an array of string pairs similarPairs where similarPairs[i] = [xi, yi] indicates that the two words xi and yi are similar.\n\nReturn true if sentence1 and sentence2 are similar, or false if they are not similar.\n\nTwo sentences are similar if:\n- They have the same length (i.e., the same number of words)\n- sentence1[i] and sentence2[i] are similar\n\nNotice that a word is always similar to itself, also notice that the similarity relation is transitive. For example, if the words a and b are similar, and the words b and c are similar, then a and c are similar.\n\nInput Format:\nFirst line contains two integers n1 and n2 (lengths of sentence1 and sentence2).\nSecond line contains n1 space-separated words (sentence1).\nThird line contains n2 space-separated words (sentence2).\nFourth line contains integer p (number of similar pairs).\nNext p lines contain two space-separated words representing similar pairs.\n\nOutput Format:\nPrint 'true' if sentences are similar, otherwise print 'false'.",
+            "examples": "Sample Input 1\n3 3\ngreat acting skills\nfine drama talent\n4\ngreat good\nfine good\ndrama acting\nskills talent\n\nSample Output 1\ntrue\n\nExplanation:\nThe two sentences have the same length. \"great\" is similar to \"fine\" (both connect through \"good\"), \"acting\" is similar to \"drama\", and \"skills\" is similar to \"talent\".\n\nSample Input 2\n3 3\nI love leetcode\nI love onepiece\n4\nmanga onepiece\nplatform anime\nleetcode platform\nanime manga\n\nSample Output 2\ntrue\n\nExplanation:\n\"leetcode\" -> \"platform\" -> \"anime\" -> \"manga\" -> \"onepiece\". Since \"leetcode\" is similar to \"onepiece\" and the first two words are the same, the two sentences are similar.",
+            "constraints": "1 <= sentence1.length, sentence2.length <= 1000\n1 <= sentence1[i].length, sentence2[i].length <= 20\n0 <= similarPairs.length <= 2000\nsimilarPairs[i].length == 2",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "3 3\ngreat acting skills\nfine drama talent\n4\ngreat good\nfine good\ndrama acting\nskills talent",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "3 3\nI love leetcode\nI love onepiece\n4\nmanga onepiece\nplatform anime\nleetcode platform\nanime manga",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "3 3\nI love leetcode\nI love onepiece\n4\nmanga hunterXhunter\nplatform anime\nleetcode platform\nanime manga",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1 1\nhello\nhello\n0",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "2 3\nhello world\nhello beautiful world\n0",
+                    "expectedOutput": "false"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def areSentencesSimilarTwo(self, sentence1, sentence2, similarPairs):\n        # TODO: Check if two sentences are similar using Union-Find\n        # Build union-find structure from similarPairs\n        # Check if corresponding words in both sentences are in same component\n        return False\n\nif __name__ == '__main__':\n    n1, n2 = map(int, input().split())\n    sentence1 = input().split()\n    sentence2 = input().split()\n    p = int(input())\n    similarPairs = []\n    for i in range(p):\n        pair = input().split()\n        similarPairs.append(pair)\n    \n    sol = Solution()\n    result = sol.areSentencesSimilarTwo(sentence1, sentence2, similarPairs)\n    print('true' if result else 'false')"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean areSentencesSimilarTwo(String[] sentence1, String[] sentence2, List<List<String>> similarPairs) {\n        // TODO: Check if two sentences are similar using Union-Find\n        // Build union-find structure from similarPairs\n        // Check if corresponding words in both sentences are in same component\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n1 = sc.nextInt();\n        int n2 = sc.nextInt();\n        sc.nextLine();\n        \n        String[] sentence1 = sc.nextLine().split(\" \");\n        String[] sentence2 = sc.nextLine().split(\" \");\n        \n        int p = sc.nextInt();\n        sc.nextLine();\n        \n        List<List<String>> similarPairs = new ArrayList<>();\n        for (int i = 0; i < p; i++) {\n            String[] pair = sc.nextLine().split(\" \");\n            similarPairs.add(Arrays.asList(pair));\n        }\n        \n        Solution sol = new Solution();\n        boolean result = sol.areSentencesSimilarTwo(sentence1, sentence2, similarPairs);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    areSentencesSimilarTwo(sentence1, sentence2, similarPairs) {\n        // TODO: Check if two sentences are similar using Union-Find\n        // Build union-find structure from similarPairs\n        // Check if corresponding words in both sentences are in same component\n        return false;\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const [n1, n2] = lines[0].split(' ').map(Number);\n    const sentence1 = lines[1].split(' ');\n    const sentence2 = lines[2].split(' ');\n    const p = parseInt(lines[3]);\n    \n    const similarPairs = [];\n    for (let i = 4; i < 4 + p; i++) {\n        similarPairs.push(lines[i].split(' '));\n    }\n    \n    const sol = new Solution();\n    const result = sol.areSentencesSimilarTwo(sentence1, sentence2, similarPairs);\n    console.log(result ? 'true' : 'false');\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool areSentencesSimilarTwo(vector<string>& sentence1, vector<string>& sentence2, vector<vector<string>>& similarPairs) {\n        // TODO: Check if two sentences are similar using Union-Find\n        // Build union-find structure from similarPairs\n        // Check if corresponding words in both sentences are in same component\n        return false;\n    }\n};\n\nint main() {\n    int n1, n2;\n    cin >> n1 >> n2;\n    cin.ignore();\n    \n    string line;\n    getline(cin, line);\n    istringstream iss1(line);\n    vector<string> sentence1;\n    string word;\n    while (iss1 >> word) sentence1.push_back(word);\n    \n    getline(cin, line);\n    istringstream iss2(line);\n    vector<string> sentence2;\n    while (iss2 >> word) sentence2.push_back(word);\n    \n    int p;\n    cin >> p;\n    cin.ignore();\n    \n    vector<vector<string>> similarPairs;\n    for (int i = 0; i < p; i++) {\n        getline(cin, line);\n        istringstream iss(line);\n        vector<string> pair;\n        while (iss >> word) pair.push_back(word);\n        similarPairs.push_back(pair);\n    }\n    \n    Solution sol;\n    bool result = sol.areSentencesSimilarTwo(sentence1, sentence2, similarPairs);\n    cout << (result ? \"true\" : \"false\") << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n\nbool areSentencesSimilarTwo(char** sentence1, int n1, char** sentence2, int n2, char*** similarPairs, int p) {\n    // TODO: Check if two sentences are similar using Union-Find\n    // Build union-find structure from similarPairs\n    // Check if corresponding words in both sentences are in same component\n    return false;\n}\n\nint main() {\n    int n1, n2;\n    scanf(\"%d %d\\n\", &n1, &n2);\n    \n    char** sentence1 = (char**)malloc(n1 * sizeof(char*));\n    char line[1000];\n    fgets(line, sizeof(line), stdin);\n    char* token = strtok(line, \" \\n\");\n    int i = 0;\n    while (token != NULL && i < n1) {\n        sentence1[i] = (char*)malloc(strlen(token) + 1);\n        strcpy(sentence1[i], token);\n        i++;\n        token = strtok(NULL, \" \\n\");\n    }\n    \n    char** sentence2 = (char**)malloc(n2 * sizeof(char*));\n    fgets(line, sizeof(line), stdin);\n    token = strtok(line, \" \\n\");\n    i = 0;\n    while (token != NULL && i < n2) {\n        sentence2[i] = (char*)malloc(strlen(token) + 1);\n        strcpy(sentence2[i], token);\n        i++;\n        token = strtok(NULL, \" \\n\");\n    }\n    \n    int p;\n    scanf(\"%d\\n\", &p);\n    \n    char*** similarPairs = (char***)malloc(p * sizeof(char**));\n    for (int j = 0; j < p; j++) {\n        similarPairs[j] = (char**)malloc(2 * sizeof(char*));\n        fgets(line, sizeof(line), stdin);\n        token = strtok(line, \" \\n\");\n        similarPairs[j][0] = (char*)malloc(strlen(token) + 1);\n        strcpy(similarPairs[j][0], token);\n        token = strtok(NULL, \" \\n\");\n        similarPairs[j][1] = (char*)malloc(strlen(token) + 1);\n        strcpy(similarPairs[j][1], token);\n    }\n    \n    bool result = areSentencesSimilarTwo(sentence1, n1, sentence2, n2, similarPairs, p);\n    printf(\"%s\\n\", result ? \"true\" : \"false\");\n    \n    for (int j = 0; j < n1; j++) free(sentence1[j]);\n    free(sentence1);\n    for (int j = 0; j < n2; j++) free(sentence2[j]);\n    free(sentence2);\n    for (int j = 0; j < p; j++) {\n        free(similarPairs[j][0]);\n        free(similarPairs[j][1]);\n        free(similarPairs[j]);\n    }\n    free(similarPairs);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Union-Find to group similar words together. Each word pair in similarPairs should be in the same component.",
+                "First check if both sentences have the same length. If not, return false immediately.",
+                "For each position i, check if sentence1[i] and sentence2[i] are in the same component (or are the same word)."
+            ]
+        }
+    ]
+}

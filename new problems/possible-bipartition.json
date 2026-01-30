@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Possible Bipartition (Union Find)",
+            "description": "We want to split a group of n people (labeled from 1 to n) into two groups of any size. Each person may dislike some other people, and they should not go into the same group.\n\nGiven the integer n and the array dislikes where dislikes[i] = [ai, bi] indicates that the person labeled ai does not like the person labeled bi, return true if it is possible to split everyone into two groups in this way.\n\nInput Format:\nFirst line contains two integers n and d (number of people and number of dislikes).\nNext d lines contain two integers ai and bi representing a dislike relationship.\n\nOutput Format:\nPrint 'true' if it's possible to split into two groups, otherwise print 'false'.",
+            "examples": "Sample Input 1\n4 3\n1 2\n1 3\n2 4\n\nSample Output 1\ntrue\n\nExplanation:\nThe first group has [1,4], and the second group has [2,3].\n\nSample Input 2\n3 3\n1 2\n1 3\n2 3\n\nSample Output 2\nfalse\n\nExplanation:\nWe need at least 3 groups to divide them. We cannot put them in two groups.",
+            "constraints": "1 <= n <= 2000\n0 <= dislikes.length <= 10000\n1 <= ai < bi <= n\nAll pairs of dislikes are unique",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 3,
+            "testCases": [
+                {
+                    "input": "4 3\n1 2\n1 3\n2 4",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "3 3\n1 2\n1 3\n2 3",
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": "1 0",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "5 2\n1 2\n3 4",
+                    "expectedOutput": "true"
+                },
+                {
+                    "input": "4 4\n1 2\n2 3\n3 4\n4 1",
+                    "expectedOutput": "true"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def possibleBipartition(self, n, dislikes):\n        # TODO: Check if people can be split into two groups\n        # Build a graph where edges represent dislikes\n        # Check if the graph is bipartite using BFS/DFS or Union-Find\n        return False\n\nif __name__ == '__main__':\n    n, d = map(int, input().split())\n    dislikes = []\n    for i in range(d):\n        a, b = map(int, input().split())\n        dislikes.append([a, b])\n    \n    sol = Solution()\n    result = sol.possibleBipartition(n, dislikes)\n    print('true' if result else 'false')"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public boolean possibleBipartition(int n, int[][] dislikes) {\n        // TODO: Check if people can be split into two groups\n        // Build a graph where edges represent dislikes\n        // Check if the graph is bipartite using BFS/DFS or Union-Find\n        return false;\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int d = sc.nextInt();\n        \n        int[][] dislikes = new int[d][2];\n        for (int i = 0; i < d; i++) {\n            dislikes[i][0] = sc.nextInt();\n            dislikes[i][1] = sc.nextInt();\n        }\n        \n        Solution sol = new Solution();\n        boolean result = sol.possibleBipartition(n, dislikes);\n        System.out.println(result ? \"true\" : \"false\");\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    possibleBipartition(n, dislikes) {\n        // TODO: Check if people can be split into two groups\n        // Build a graph where edges represent dislikes\n        // Check if the graph is bipartite using BFS/DFS or Union-Find\n        return false;\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const [n, d] = lines[0].split(' ').map(Number);\n    const dislikes = [];\n    for (let i = 1; i <= d; i++) {\n        const [a, b] = lines[i].split(' ').map(Number);\n        dislikes.push([a, b]);\n    }\n    \n    const sol = new Solution();\n    const result = sol.possibleBipartition(n, dislikes);\n    console.log(result ? 'true' : 'false');\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool possibleBipartition(int n, vector<vector<int>>& dislikes) {\n        // TODO: Check if people can be split into two groups\n        // Build a graph where edges represent dislikes\n        // Check if the graph is bipartite using BFS/DFS or Union-Find\n        return false;\n    }\n};\n\nint main() {\n    int n, d;\n    cin >> n >> d;\n    \n    vector<vector<int>> dislikes(d, vector<int>(2));\n    for (int i = 0; i < d; i++) {\n        cin >> dislikes[i][0] >> dislikes[i][1];\n    }\n    \n    Solution sol;\n    bool result = sol.possibleBipartition(n, dislikes);\n    cout << (result ? \"true\" : \"false\") << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\nbool possibleBipartition(int n, int** dislikes, int d) {\n    // TODO: Check if people can be split into two groups\n    // Build a graph where edges represent dislikes\n    // Check if the graph is bipartite using BFS/DFS or Union-Find\n    return false;\n}\n\nint main() {\n    int n, d;\n    scanf(\"%d %d\", &n, &d);\n    \n    int** dislikes = (int**)malloc(d * sizeof(int*));\n    for (int i = 0; i < d; i++) {\n        dislikes[i] = (int*)malloc(2 * sizeof(int));\n        scanf(\"%d %d\", &dislikes[i][0], &dislikes[i][1]);\n    }\n    \n    bool result = possibleBipartition(n, dislikes, d);\n    printf(\"%s\\n\", result ? \"true\" : \"false\");\n    \n    for (int i = 0; i < d; i++) {\n        free(dislikes[i]);\n    }\n    free(dislikes);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Build an adjacency list where each person points to people they dislike. This is essentially a graph coloring problem.",
+                "Use BFS/DFS with 2-coloring: if person A dislikes person B, they must be in different groups (different colors).",
+                "Alternatively, use Union-Find: for each person, union all their enemies together. If a person and any of their enemies end up in the same set, it's impossible."
+            ]
+        }
+    ]
+}

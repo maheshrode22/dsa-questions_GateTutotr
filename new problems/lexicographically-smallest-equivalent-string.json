@@ -1,0 +1,65 @@
+{
+    "problems": [
+        {
+            "id": null,
+            "title": "Lexicographically Smallest Equivalent String (Union Find)",
+            "description": "You are given two strings of the same length s1 and s2 and a string baseStr.\n\nWe say s1[i] and s2[i] are equivalent characters.\n\nFor example, if s1 = \"abc\" and s2 = \"cde\", then we have 'a' == 'c', 'b' == 'd', and 'c' == 'e'.\n\nEquivalent characters follow the usual rules of any equivalence relation:\n- Reflexivity: 'a' == 'a'\n- Symmetry: 'a' == 'b' implies 'b' == 'a'\n- Transitivity: 'a' == 'b' and 'b' == 'c' implies 'a' == 'c'\n\nFor example, given the equivalency information from s1 = \"abc\" and s2 = \"cde\", \"acd\" and \"aab\" are equivalent strings of baseStr = \"eed\", and \"aab\" is the lexicographically smallest equivalent string of baseStr.\n\nReturn the lexicographically smallest equivalent string of baseStr by using the equivalency information from s1 and s2.\n\nInput Format:\nFirst line contains string s1.\nSecond line contains string s2.\nThird line contains string baseStr.\n\nOutput Format:\nPrint the lexicographically smallest equivalent string of baseStr.",
+            "examples": "Sample Input 1\nparker\nmorris\nparser\n\nSample Output 1\nmakkek\n\nExplanation:\nBased on equivalency: [m,p], [a,o], [k,r,s], [e,i]. Replace each character with the smallest in its group.\n\nSample Input 2\nhello\nworld\nhold\n\nSample Output 2\nhdld\n\nExplanation:\nBased on equivalency: [h,w], [d,e,o], [l,r]. Only 'o' changes to 'd'.",
+            "constraints": "1 <= s1.length, s2.length, baseStr <= 1000\ns1.length == s2.length\ns1, s2, and baseStr consist of lowercase English letters",
+            "hints": 3,
+            "timeLimit": 2,
+            "memoryLimit": 256,
+            "subdomainId": 7035,
+            "difficulty": 2,
+            "testCases": [
+                {
+                    "input": "parker\nmorris\nparser",
+                    "expectedOutput": "makkek"
+                },
+                {
+                    "input": "hello\nworld\nhold",
+                    "expectedOutput": "hdld"
+                },
+                {
+                    "input": "leetcode\nprograms\nsourcecode",
+                    "expectedOutput": "aauaaaaada"
+                },
+                {
+                    "input": "a\nb\nc",
+                    "expectedOutput": "c"
+                },
+                {
+                    "input": "abc\nabc\nabc",
+                    "expectedOutput": "abc"
+                }
+            ],
+            "starterCodes": [
+                {
+                    "language": 1,
+                    "code": "class Solution:\n    def smallestEquivalentString(self, s1, s2, baseStr):\n        # TODO: Find lexicographically smallest equivalent string\n        # Use Union-Find to group equivalent characters\n        # For each group, find the smallest character\n        return \"\"\n\nif __name__ == '__main__':\n    s1 = input().strip()\n    s2 = input().strip()\n    baseStr = input().strip()\n    \n    sol = Solution()\n    print(sol.smallestEquivalentString(s1, s2, baseStr))"
+                },
+                {
+                    "language": 2,
+                    "code": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public String smallestEquivalentString(String s1, String s2, String baseStr) {\n        // TODO: Find lexicographically smallest equivalent string\n        // Use Union-Find to group equivalent characters\n        // For each group, find the smallest character\n        return \"\";\n    }\n    \n    public static void main(String[] args) throws Exception {\n        Scanner sc = new Scanner(System.in);\n        String s1 = sc.nextLine();\n        String s2 = sc.nextLine();\n        String baseStr = sc.nextLine();\n        \n        Solution sol = new Solution();\n        System.out.println(sol.smallestEquivalentString(s1, s2, baseStr));\n    }\n}"
+                },
+                {
+                    "language": 3,
+                    "code": "class Solution {\n    smallestEquivalentString(s1, s2, baseStr) {\n        // TODO: Find lexicographically smallest equivalent string\n        // Use Union-Find to group equivalent characters\n        // For each group, find the smallest character\n        return \"\";\n    }\n}\n\nfunction solveProblem(input) {\n    const lines = input.trim().split('\\n');\n    const s1 = lines[0];\n    const s2 = lines[1];\n    const baseStr = lines[2];\n    \n    const sol = new Solution();\n    console.log(sol.smallestEquivalentString(s1, s2, baseStr));\n}\n\nconst fs = require('fs');\nsolveProblem(fs.readFileSync(0, 'utf-8'));"
+                },
+                {
+                    "language": 4,
+                    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    string smallestEquivalentString(string s1, string s2, string baseStr) {\n        // TODO: Find lexicographically smallest equivalent string\n        // Use Union-Find to group equivalent characters\n        // For each group, find the smallest character\n        return \"\";\n    }\n};\n\nint main() {\n    string s1, s2, baseStr;\n    getline(cin, s1);\n    getline(cin, s2);\n    getline(cin, baseStr);\n    \n    Solution sol;\n    cout << sol.smallestEquivalentString(s1, s2, baseStr) << endl;\n    \n    return 0;\n}"
+                },
+                {
+                    "language": 5,
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid smallestEquivalentString(char* s1, char* s2, char* baseStr, char* result) {\n    // TODO: Find lexicographically smallest equivalent string\n    // Use Union-Find to group equivalent characters\n    // For each group, find the smallest character\n    strcpy(result, baseStr);\n}\n\nint main() {\n    char s1[1001], s2[1001], baseStr[1001], result[1001];\n    \n    fgets(s1, sizeof(s1), stdin);\n    s1[strcspn(s1, \"\\n\")] = 0;\n    \n    fgets(s2, sizeof(s2), stdin);\n    s2[strcspn(s2, \"\\n\")] = 0;\n    \n    fgets(baseStr, sizeof(baseStr), stdin);\n    baseStr[strcspn(baseStr, \"\\n\")] = 0;\n    \n    smallestEquivalentString(s1, s2, baseStr, result);\n    printf(\"%s\\n\", result);\n    \n    return 0;\n}"
+                }
+            ],
+            "hintsList": [
+                "Use Union-Find with 26 nodes (one for each lowercase letter). Union s1[i] and s2[i] for all i.",
+                "When unioning, always make the lexicographically smaller character the parent to maintain the smallest character as root.",
+                "For each character in baseStr, find its root (smallest equivalent character) and build the result string."
+            ]
+        }
+    ]
+}
